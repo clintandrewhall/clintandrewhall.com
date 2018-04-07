@@ -3,6 +3,8 @@
 import React from 'react';
 import classnames from 'classnames';
 
+import Social from './Social.jsx';
+
 import styles from './Home.module.css';
 import gridStyles from './common/Grid.module.css';
 import buttonStyles from './common/Buttons.module.css';
@@ -58,32 +60,7 @@ const Home = () => {
           </div>
         </div>
       </div>
-      <ul className={styles.social}>
-        <li className={styles.socialItem}>
-          <a className={styles.socialLink} href="#">
-            <i className="im im-facebook" aria-hidden="true" />
-            <span>Facebook</span>
-          </a>
-        </li>
-        <li className={styles.socialItem}>
-          <a className={styles.socialLink} href="#">
-            <i className="im im-twitter" aria-hidden="true" />
-            <span>Twitter</span>
-          </a>
-        </li>
-        <li className={styles.socialItem}>
-          <a className={styles.socialLink} href="#">
-            <i className="im im-instagram" aria-hidden="true" />
-            <span>Instagram</span>
-          </a>
-        </li>
-        <li className={styles.socialItem}>
-          <a className={styles.socialLink} href="#">
-            <i className="im im-github" aria-hidden="true" />
-            <span>Github</span>
-          </a>
-        </li>
-      </ul>
+      <Social />
     </section>
   );
 };
