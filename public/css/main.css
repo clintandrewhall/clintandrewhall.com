@@ -1,0 +1,758 @@
+/* ===================================================================
+ * # webfonts and iconfonts
+ * ------------------------------------------------------------------- */
+
+@import url('iconic/css/iconmonstr-iconic-font.min.css');
+@import url('fonts.css');
+
+/* ===================================================================
+ * # base style overrides
+ * ------------------------------------------------------------------- */
+
+html {
+  font-size: 10px;
+}
+
+@media only screen and (max-width: 400px) {
+  html {
+    font-size: 9.375px;
+  }
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  background: #0a0809;
+  font-family: 'librebaskerville-regular', serif;
+  font-size: 1.6rem;
+  line-height: 1.875;
+  color: #5f5f5f;
+  margin: 0;
+  padding: 0;
+}
+
+/* ------------------------------------------------------------------- 
+ * ## links
+ * ------------------------------------------------------------------- */
+
+a {
+  color: #862121;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+a:hover,
+a:focus,
+a:active {
+  color: #191a3f;
+}
+
+a:focus {
+  outline: none;
+}
+
+/* ===================================================================
+ * # typography & general theme styles
+ * ------------------------------------------------------------------- */
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h01,
+.h02,
+.h03,
+.h04,
+.h05,
+.h06 {
+  font-family: 'montserrat-medium', sans-serif;
+  color: #0d0a0b;
+  font-style: normal;
+  font-weight: normal;
+  text-rendering: optimizeLegibility;
+}
+
+h1,
+.h01,
+h2,
+.h02,
+h3,
+.h03,
+h4,
+.h04 {
+  margin-top: 6rem;
+  margin-bottom: 1.8rem;
+}
+
+@media only screen and (max-width: 600px) {
+  h1,
+  .h01,
+  h2,
+  .h02,
+  h3,
+  .h03,
+  h4,
+  .h04 {
+    margin-top: 5.1rem;
+  }
+}
+
+h5,
+.h05,
+h6,
+.h06 {
+  margin-top: 4.2rem;
+  margin-bottom: 1.5rem;
+}
+
+@media only screen and (max-width: 600px) {
+  h5,
+  .h05,
+  h6,
+  .h06 {
+    margin-top: 3.6rem;
+    margin-bottom: 0.9rem;
+  }
+}
+
+h1,
+.h01 {
+  font-family: 'montserrat-bold', sans-serif;
+  font-size: 3.6rem;
+  line-height: 1.25;
+  letter-spacing: -0.1rem;
+}
+
+@media only screen and (max-width: 600px) {
+  h1,
+  .h01 {
+    font-size: 3.3rem;
+    letter-spacing: -0.07rem;
+  }
+}
+
+h2,
+.h02 {
+  font-size: 3rem;
+  line-height: 1.3;
+}
+
+h3,
+.h03 {
+  font-size: 2.4rem;
+  line-height: 1.25;
+}
+
+h4,
+.h04 {
+  font-size: 2.1rem;
+  line-height: 1.286;
+}
+
+h5,
+.h05 {
+  font-size: 1.6rem;
+  line-height: 1.3125;
+}
+
+h6,
+.h06 {
+  font-family: 'montserrat-bold', sans-serif;
+  font-size: 1.4rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.16rem;
+}
+
+p img {
+  margin: 0;
+}
+
+p.lead {
+  font-family: 'montserrat-regular', sans-serif;
+  font-size: 2rem;
+  line-height: 1.8;
+  margin-bottom: 3.6rem;
+  color: #0d0a0b;
+}
+
+@media only screen and (max-width: 800px) {
+  p.lead {
+    font-size: 1.8rem;
+  }
+}
+
+em,
+i,
+strong,
+b {
+  font-size: inherit;
+  line-height: inherit;
+  font-style: normal;
+  font-weight: normal;
+}
+
+em,
+i {
+  font-family: 'librebaskerville-italic', serif;
+}
+
+strong,
+b {
+  font-family: 'librebaskerville-bold', serif;
+}
+
+small {
+  font-size: 1.2rem;
+  line-height: inherit;
+}
+
+blockquote {
+  margin: 3.9rem 0;
+  padding-left: 4.5rem;
+  position: relative;
+}
+
+blockquote:before {
+  content: '\201C';
+  font-size: 10rem;
+  line-height: 0px;
+  margin: 0;
+  color: rgba(0, 0, 0, 0.15);
+  font-family: arial, sans-serif;
+  position: absolute;
+  top: 3.6rem;
+  left: 0;
+}
+
+blockquote p {
+  font-family: 'montserrat-regular', sans-serif;
+  padding: 0;
+  font-size: 2.1rem;
+  line-height: 1.857;
+  color: #0d0a0b;
+}
+
+blockquote cite {
+  display: block;
+  font-family: 'montserrat-regular', sans-serif;
+  font-size: 1.4rem;
+  font-style: normal;
+  line-height: 1.5;
+}
+
+blockquote cite:before {
+  content: '\2014 \0020';
+}
+
+blockquote cite a,
+blockquote cite a:visited {
+  color: #6c6c6c;
+  border: none;
+}
+
+abbr {
+  font-family: 'librebaskerville-bold', serif;
+  font-variant: small-caps;
+  text-transform: lowercase;
+  letter-spacing: 0.05rem;
+  color: #6c6c6c;
+}
+
+var,
+kbd,
+samp,
+code,
+pre {
+  font-family: Consolas, 'Andale Mono', Courier, 'Courier New', monospace;
+}
+
+pre {
+  padding: 2.4rem 3rem 3rem;
+  background: #f1f1f1;
+  overflow-x: auto;
+}
+
+code {
+  font-size: 1.4rem;
+  margin: 0 0.2rem;
+  padding: 0.3rem 0.6rem;
+  white-space: nowrap;
+  background: #f1f1f1;
+  border: 1px solid #e1e1e1;
+  border-radius: 3px;
+}
+
+pre > code {
+  display: block;
+  white-space: pre;
+  line-height: 2;
+  padding: 0;
+  margin: 0;
+}
+
+pre.prettyprint > code {
+  border: none;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+  text-decoration: none;
+}
+
+mark {
+  background: #ffd900;
+  color: #000000;
+}
+
+hr {
+  border: solid rgba(0, 0, 0, 0.1);
+  border-width: 1px 0 0;
+  clear: both;
+  margin: 2.4rem 0 1.5rem;
+  height: 0;
+}
+
+/* ------------------------------------------------------------------- 
+ * ## Lists
+ * ------------------------------------------------------------------- */
+
+ol {
+  list-style: decimal;
+}
+
+ul {
+  list-style: disc;
+}
+
+li {
+  display: list-item;
+}
+
+ol,
+ul {
+  margin-left: 1.7rem;
+}
+
+ul li {
+  padding-left: 0.4rem;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin: 0.6rem 0 0.6rem 1.7rem;
+}
+
+dt {
+  margin: 0;
+  color: #862121;
+}
+
+dd {
+  margin: 0 0 0 2rem;
+}
+
+/* ------------------------------------------------------------------- 
+ * ## responsive video container
+ * ------------------------------------------------------------------- */
+
+.video-container {
+  position: relative;
+  padding-bottom: 56.25%;
+  height: 0;
+  overflow: hidden;
+}
+
+.video-container iframe,
+.video-container object,
+.video-container embed,
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+/* ------------------------------------------------------------------- 
+ * ## floated image
+ * ------------------------------------------------------------------- */
+
+img.pull-right {
+  margin: 1.5rem 0 0 3rem;
+}
+
+img.pull-left {
+  margin: 1.5rem 3rem 0 0;
+}
+
+/* ------------------------------------------------------------------- 
+ * ## tables
+ * ------------------------------------------------------------------- */
+
+table {
+  border-width: 0;
+  width: 100%;
+  max-width: 100%;
+  font-family: 'librebaskerville-regular', serif;
+}
+
+th,
+td {
+  padding: 1.5rem 3rem;
+  text-align: left;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+th {
+  color: #0d0a0b;
+  font-family: 'montserrat-bold', sans-serif;
+}
+
+td {
+  line-height: 1.5;
+}
+
+th:first-child,
+td:first-child {
+  padding-left: 0;
+}
+
+th:last-child,
+td:last-child {
+  padding-right: 0;
+}
+
+.table-responsive {
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* ------------------------------------------------------------------- 
+ * ## Spacing
+ * ------------------------------------------------------------------- */
+
+button {
+  margin-bottom: 1.2rem;
+}
+
+fieldset {
+  margin-bottom: 1.5rem;
+}
+
+input,
+textarea,
+select,
+pre,
+blockquote,
+figure,
+table,
+p,
+ul,
+ol,
+dl,
+form {
+  margin-bottom: 3rem;
+}
+
+/* ------------------------------------------------------------------- 
+ * ## pace.js styles - minimal
+ * ------------------------------------------------------------------- */
+
+.pace {
+  -webkit-pointer-events: none;
+  pointer-events: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.pace-inactive {
+  display: none;
+}
+
+.pace .pace-progress {
+  background: #862121;
+  position: fixed;
+  z-index: 900;
+  top: 0;
+  right: 100%;
+  width: 100%;
+  height: 4px;
+}
+
+.oldie .pace {
+  display: none;
+}
+
+/* ===================================================================
+ * preloader
+ * ------------------------------------------------------------------- */
+
+#preloader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #0f1215;
+  z-index: 800;
+  height: 100%;
+  width: 100%;
+}
+
+.no-js #preloader,
+.oldie #preloader {
+  display: none;
+}
+
+#loader {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 60px;
+  height: 60px;
+  margin-left: -30px;
+  margin-top: -30px;
+  padding: 0;
+  background-color: #862121;
+  border-radius: 100%;
+  -webkit-animation: sk-scaleout 1s infinite ease-in-out;
+  animation: sk-scaleout 1s infinite ease-in-out;
+}
+
+@-webkit-keyframes sk-scaleout {
+  0% {
+    -webkit-transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    opacity: 0;
+  }
+}
+
+@keyframes sk-scaleout {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+
+/* ===================================================================
+ * # forms
+ * ------------------------------------------------------------------- */
+
+fieldset {
+  border: none;
+}
+
+input[type='email'],
+input[type='number'],
+input[type='search'],
+input[type='text'],
+input[type='tel'],
+input[type='url'],
+input[type='password'],
+textarea,
+select {
+  display: block;
+  height: 6rem;
+  padding: 1.5rem 0;
+  border: 0;
+  outline: none;
+  color: #333333;
+  font-family: 'montserrat-regular', sans-serif;
+  font-size: 1.5rem;
+  line-height: 3rem;
+  max-width: 100%;
+  background: transparent;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.15);
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
+/* IE9 and below */
+
+.oldie .ss-custom-select::after {
+  display: none;
+}
+
+textarea {
+  min-height: 25rem;
+}
+
+input[type='email']:focus,
+input[type='number']:focus,
+input[type='search']:focus,
+input[type='text']:focus,
+input[type='tel']:focus,
+input[type='url']:focus,
+input[type='password']:focus,
+textarea:focus,
+select:focus {
+  color: #000000;
+  border-bottom: 2px solid black;
+}
+
+label,
+legend {
+  font-family: 'montserrat-bold', sans-serif;
+  font-size: 1.4rem;
+  margin-bottom: 0.9rem;
+  line-height: 1.714;
+  color: #0d0a0b;
+  display: block;
+}
+
+input[type='checkbox'],
+input[type='radio'] {
+  display: inline;
+}
+
+label > .label-text {
+  display: inline-block;
+  margin-left: 1rem;
+  font-family: 'montserrat-regular', sans-serif;
+  line-height: inherit;
+}
+
+label > input[type='checkbox'],
+label > input[type='radio'] {
+  margin: 0;
+  position: relative;
+  top: 0.15rem;
+}
+
+/* ------------------------------------------------------------------- 
+ * ## style placeholder text
+ * ------------------------------------------------------------------- */
+
+::-webkit-input-placeholder {
+  color: #6c6c6c;
+}
+
+:-moz-placeholder {
+  color: #6c6c6c;
+  /* Firefox 18- */
+}
+
+::-moz-placeholder {
+  color: #6c6c6c;
+  /* Firefox 19+ */
+}
+
+:-ms-input-placeholder {
+  color: #6c6c6c;
+}
+
+.placeholder {
+  color: #6c6c6c !important;
+}
+
+/* ------------------------------------------------------------------- 
+ * ## Change Autocomplete styles in Chrome 
+ * ------------------------------------------------------------------- */
+
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus input:-webkit-autofill,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:hover textarea:-webkit-autofill:focus,
+select:-webkit-autofill,
+select:-webkit-autofill:hover,
+select:-webkit-autofill:focus {
+  -webkit-text-fill-color: #cf3e3e;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* ===================================================================
+ * # buttons
+ * ------------------------------------------------------------------- */
+
+button,
+input[type='submit'],
+input[type='reset'],
+input[type='button'] {
+  display: inline-block;
+  font-family: 'montserrat-semibold', sans-serif;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  height: 5.4rem;
+  line-height: calc(5.4rem - 0.6rem);
+  padding: 0 3rem;
+  margin: 0 0.3rem 1.2rem 0;
+  color: #151515;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #c5c5c5;
+  border: 0.3rem solid #c5c5c5;
+}
+
+button:hover,
+input[type='submit']:hover,
+input[type='reset']:hover,
+input[type='button']:hover,
+input[type='submit']:focus,
+input[type='reset']:focus,
+input[type='button']:focus {
+  background-color: #b8b8b8;
+  border-color: #b8b8b8;
+  color: #000000;
+  outline: 0;
+}
+
+/* button primary
+ * ------------------------------------------------- */
+
+.btn.btn--primary,
+button.btn--primary,
+input[type='submit'].btn--primary,
+input[type='reset'].btn--primary,
+input[type='button'].btn--primary {
+  background: #0d0a0b;
+  border-color: #0d0a0b;
+  color: #ffffff;
+}
+
+.btn.btn--primary:hover,
+button.btn--primary:hover,
+input[type='submit'].btn--primary:hover,
+input[type='reset'].btn--primary:hover,
+input[type='button'].btn--primary:hover,
+.btn.btn--primary:focus,
+button.btn--primary:focus,
+input[type='submit'].btn--primary:focus,
+input[type='reset'].btn--primary:focus,
+input[type='button'].btn--primary:focus {
+  background: #862121;
+  border-color: #862121;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
