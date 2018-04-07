@@ -1,3 +1,5 @@
+## From github.com for node projects.
+
 # Logs
 logs
 *.log
@@ -57,3 +59,14 @@ typings/
 # dotenv environment variables file
 .env
 
+## From create-react-app
+
+# production
+/build
+
+# misc
+.DS_Store
+.env.local
+.env.development.local
+.env.test.local
+.env.production.local
