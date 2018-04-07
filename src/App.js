@@ -1,126 +1,70 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
+import React from 'react';
+import { BrowserRouter as Router, Route, Link } from 'react-router-dom';
 
-//components
-import Emoji from './Emoji';
+const BasicExample = () => (
+  <Router>
+    <div>
+      <ul>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/about">About</Link>
+        </li>
+        <li>
+          <Link to="/topics">Topics</Link>
+        </li>
+      </ul>
 
-//styles
-import './App.scss';
-import './App.less';
-import './App.styl';
+      <hr />
 
-//modules
-import cssStyles from './First.module.css';
-import sassStyles from './Second.module.scss';
-import lessStyles from './Third.module.less';
-import stylusStyles from './Fourth.module.styl';
+      <Route exact path="/" component={Home} />
+      <Route path="/about" component={About} />
+      <Route path="/topics" component={Topics} />
+    </div>
+  </Router>
+);
 
-class App extends Component {
-  render() {
-    return (
-      <div className="App">
-        <div className={cssStyles.header}>
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2 className="App-title">
-            <Emoji label="danger" emoji="☢" />
-            <span> custom-react-scripts </span>
-            <Emoji label="danger" emoji="☢" />
-          </h2>
-          <div className="App-subtitle">
-            allow custom config for create-react-app without ejecting
-          </div>
-        </div>
+const Home = () => (
+  <div>
+    <h2>Home</h2>
+  </div>
+);
 
-        <div className={stylusStyles.description}>
-          <div className={sassStyles.command}>
-            <code>
-              create-react-app my-app --scripts-version custom-react-scripts
-            </code>
-          </div>
+const About = () => (
+  <div>
+    <h2>About</h2>
+  </div>
+);
 
-          <p>
-            If you want to enable/disable certain features just modify the
-            <b> .env</b> file in the root directory of the project.
-          </p>
+const Topics = ({ match }) => (
+  <div>
+    <h2>Topics</h2>
+    <ul>
+      <li>
+        <Link to={`${match.url}/rendering`}>Rendering with React</Link>
+      </li>
+      <li>
+        <Link to={`${match.url}/components`}>Components</Link>
+      </li>
+      <li>
+        <Link to={`${match.url}/props-v-state`}>Props v. State</Link>
+      </li>
+    </ul>
 
-          <b> Styling </b>
-          <ul className="configs style-configs">
-            <li>
-              <code>REACT_APP_SASS=true</code>
-              <span>- Enable SASS</span>
-            </li>
-            <li>
-              <code>REACT_APP_LESS=true</code>
-              <span>- Enable LESS</span>
-            </li>
-            <li>
-              <code>REACT_APP_STYLUS=true</code>
-              <span>- Enable Stylus</span>
-            </li>
-            <li>
-              <code>REACT_APP_CSS_MODULES=true</code>
-              <span>- Enable CSS modules </span>
-            </li>
-            <li>
-              <code>REACT_APP_SASS_MODULES=true</code>
-              <span>- Enable Sass modules </span>
-            </li>
-            <li>
-              <code>REACT_APP_SASS_MODULES=true</code>
-              <span>- Enable Stylus modules </span>
-            </li>
-            <li>
-              <code>REACT_APP_SASS_MODULES=true</code>
-              <span>- Enable Less modules </span>
-            </li>
-          </ul>
+    <Route path={`${match.url}/:topicId`} component={Topic} />
+    <Route
+      exact
+      path={match.url}
+      render={() => <h3>Please select a topic.</h3>}
+    />
+  </div>
+);
 
-          <b>Babel</b>
+const Topic = ({ match }) => (
+  <div>
+    <h3>{match.params.topicId}</h3>
+  </div>
+);
 
-          <ul className="configs babel-configs">
-            <li>
-              <code>REACT_APP_BABEL_STAGE_0=true</code>
-              <span>- Enable stage-0 preset</span>
-            </li>
-            <li>
-              <code>REACT_APP_DECORATORS=true</code>
-              <span>- Enable usage of decorators</span>
-            </li>
-          </ul>
-
-          <b>Other</b>
-
-          <ul className="configs babel-configs">
-            <li>
-              <code>REACT_APP_WEBPACK_DASHBOARD=true</code>
-              <span>
-                - Enables connection to {' '}
-                <a
-                  target="_blank"
-                  ref="noopener noreferrer"
-                  href="https://github.com/FormidableLabs/electron-webpack-dashboard"
-                >
-                  webpack-dashboard
-                </a>{' '}
-                 (must be installed)
-              </span>
-            </li>
-          </ul>
-
-          <br />
-          <br />
-          <a
-            target="_blank"
-            rel="noopener noreferrer"
-            className={lessStyles.readmeLink}
-            href="https://github.com/kitze/create-react-app/tree/master/packages/react-scripts"
-          >
-            Link to full README.md
-          </a>
-        </div>
-      </div>
-    );
-  }
-}
-
-export default App;
+export default BasicExample;
