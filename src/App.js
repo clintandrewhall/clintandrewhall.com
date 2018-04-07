@@ -2,13 +2,14 @@
 
 import React from 'react';
 import { BrowserRouter as Router, Link, Route, Switch } from 'react-router-dom';
+
 import Header from './components/Header.jsx';
+import Home from './components/Home.jsx';
 
 const BasicExample = () => (
   <Router>
     <div>
       <Header />
-      <hr />
       <Switch>
         <Route path="/" component={Home} exact />
         <Route path="/about" component={About} />
@@ -17,12 +18,6 @@ const BasicExample = () => (
       </Switch>
     </div>
   </Router>
-);
-
-const Home = () => (
-  <div>
-    <h2>Home</h2>
-  </div>
 );
 
 const About = () => (

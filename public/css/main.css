@@ -34,7 +34,7 @@ body {
   padding: 0;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## links
  * ------------------------------------------------------------------- */
 
@@ -324,7 +324,7 @@ hr {
   height: 0;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## Lists
  * ------------------------------------------------------------------- */
 
@@ -365,7 +365,7 @@ dd {
   margin: 0 0 0 2rem;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## responsive video container
  * ------------------------------------------------------------------- */
 
@@ -387,7 +387,7 @@ dd {
   height: 100%;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## floated image
  * ------------------------------------------------------------------- */
 
@@ -399,7 +399,7 @@ img.pull-left {
   margin: 1.5rem 3rem 0 0;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## tables
  * ------------------------------------------------------------------- */
 
@@ -441,7 +441,7 @@ td:last-child {
   -webkit-overflow-scrolling: touch;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## Spacing
  * ------------------------------------------------------------------- */
 
@@ -468,7 +468,7 @@ form {
   margin-bottom: 3rem;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## pace.js styles - minimal
  * ------------------------------------------------------------------- */
 
@@ -641,7 +641,7 @@ label > input[type='radio'] {
   top: 0.15rem;
 }
 
-/* ------------------------------------------------------------------- 
+/* -------------------------------------------------------------------
  * ## style placeholder text
  * ------------------------------------------------------------------- */
 
@@ -667,8 +667,8 @@ label > input[type='radio'] {
   color: #6c6c6c !important;
 }
 
-/* ------------------------------------------------------------------- 
- * ## Change Autocomplete styles in Chrome 
+/* -------------------------------------------------------------------
+ * ## Change Autocomplete styles in Chrome
  * ------------------------------------------------------------------- */
 
 input:-webkit-autofill,
@@ -683,76 +683,89 @@ select:-webkit-autofill:focus {
   transition: background-color 5000s ease-in-out 0s;
 }
 
-/* ===================================================================
- * # buttons
- * ------------------------------------------------------------------- */
-
-button,
-input[type='submit'],
-input[type='reset'],
-input[type='button'] {
-  display: inline-block;
-  font-family: 'montserrat-semibold', sans-serif;
-  font-size: 1.2rem;
-  text-transform: uppercase;
-  letter-spacing: 0.3rem;
-  height: 5.4rem;
-  line-height: calc(5.4rem - 0.6rem);
-  padding: 0 3rem;
-  margin: 0 0.3rem 1.2rem 0;
-  color: #151515;
-  text-decoration: none;
-  cursor: pointer;
-  text-align: center;
-  white-space: nowrap;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-  background-color: #c5c5c5;
-  border: 0.3rem solid #c5c5c5;
+/* bounce */
+@-webkit-keyframes bounce {
+  0%,
+  100% {
+    -webkit-transform: translate3d(0, -30px, 0);
+    -ms-transform: translate3d(0, -30px, 0);
+    transform: translate3d(0, -30px, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(0, -4px, 0);
+    -ms-transform: translate3d(0, -4px, 0);
+    transform: translate3d(0, -4px, 0);
+  }
 }
 
-button:hover,
-input[type='submit']:hover,
-input[type='reset']:hover,
-input[type='button']:hover,
-input[type='submit']:focus,
-input[type='reset']:focus,
-input[type='button']:focus {
-  background-color: #b8b8b8;
-  border-color: #b8b8b8;
-  color: #000000;
-  outline: 0;
+@keyframes bounce {
+  0%,
+  100% {
+    -webkit-transform: translate3d(0, -30px, 0);
+    -ms-transform: translate3d(0, -30px, 0);
+    transform: translate3d(0, -30px, 0);
+  }
+  50% {
+    -webkit-transform: translate3d(0, -4px, 0);
+    -ms-transform: translate3d(0, -4px, 0);
+    transform: translate3d(0, -4px, 0);
+  }
 }
 
-/* button primary
- * ------------------------------------------------- */
+/* fade in */
 
-.btn.btn--primary,
-button.btn--primary,
-input[type='submit'].btn--primary,
-input[type='reset'].btn--primary,
-input[type='button'].btn--primary {
-  background: #0d0a0b;
-  border-color: #0d0a0b;
-  color: #ffffff;
+@-webkit-keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -150%, 0);
+    -ms-transform: translate3d(0, -150%, 0);
+    transform: translate3d(0, -150%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
 }
 
-.btn.btn--primary:hover,
-button.btn--primary:hover,
-input[type='submit'].btn--primary:hover,
-input[type='reset'].btn--primary:hover,
-input[type='button'].btn--primary:hover,
-.btn.btn--primary:focus,
-button.btn--primary:focus,
-input[type='submit'].btn--primary:focus,
-input[type='reset'].btn--primary:focus,
-input[type='button'].btn--primary:focus {
-  background: #862121;
-  border-color: #862121;
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -150%, 0);
+    -ms-transform: translate3d(0, -150%, 0);
+    transform: translate3d(0, -150%, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: translate3d(0, 0, 0);
+    -ms-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
 }
 
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
+/* fade out */
+
+@-webkit-keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -150%, 0);
+    -ms-transform: translate3d(0, -150%, 0);
+    transform: translate3d(0, -150%, 0);
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    -webkit-transform: translate3d(0, -150%, 0);
+    -ms-transform: translate3d(0, -150%, 0);
+    transform: translate3d(0, -150%, 0);
+  }
 }

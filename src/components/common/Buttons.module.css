@@ -1,0 +1,114 @@
+.button,
+button,
+input[type='submit'],
+input[type='reset'],
+input[type='button'] {
+  display: inline-block;
+  font-family: 'montserrat-semibold', sans-serif;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  height: 5.4rem;
+  line-height: calc(5.4rem - 0.6rem);
+  padding: 0 3rem;
+  margin: 0 0.3rem 1.2rem 0;
+  color: #151515;
+  text-decoration: none;
+  cursor: pointer;
+  text-align: center;
+  white-space: nowrap;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  background-color: #c5c5c5;
+  border: 0.3rem solid #c5c5c5;
+}
+
+.button:hover,
+button:hover,
+input[type='submit']:hover,
+input[type='reset']:hover,
+input[type='button']:hover,
+.button:focus,
+button:focus,
+input[type='submit']:focus,
+input[type='reset']:focus,
+input[type='button']:focus {
+  background-color: #b8b8b8;
+  border-color: #b8b8b8;
+  color: #000000;
+  outline: 0;
+}
+
+/* button primary
+ * ------------------------------------------------- */
+
+.button.primary,
+button.primary,
+input[type='submit'].primary,
+input[type='reset'].primary,
+input[type='button'].primary {
+  background: #0d0a0b;
+  border-color: #0d0a0b;
+  color: #ffffff;
+}
+
+.button.primary:hover,
+button.primary:hover,
+input[type='submit'].primary:hover,
+input[type='reset'].primary:hover,
+input[type='button'].primary:hover,
+.button.primary:focus,
+button.primary:focus,
+input[type='submit'].primary:focus,
+input[type='reset'].primary:focus,
+input[type='button'].primary:focus {
+  background: #862121;
+  border-color: #862121;
+}
+
+/* button modifiers
+ * ------------------------------------------------- */
+
+.button.fullWidth,
+button.fullWidth {
+  width: 100%;
+  margin-right: 0;
+}
+
+.medium,
+button.medium {
+  height: 5.7rem;
+  line-height: calc(5.7rem - 0.6rem);
+}
+
+.large,
+button.large {
+  height: 6rem;
+  line-height: calc(6rem - 0.6rem);
+}
+
+.stroke,
+button.stroke {
+  background: transparent;
+  border: 0.3rem solid #000000;
+  color: #000000;
+}
+
+.stroke:hover,
+button.stroke:hover {
+  border: 0.3rem solid #862121;
+  color: #862121;
+}
+
+.pill,
+button.pill {
+  padding-left: 3rem;
+  padding-right: 3rem;
+  border-radius: 1000px;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
