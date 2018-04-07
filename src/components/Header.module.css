@@ -131,29 +131,29 @@
   bottom: -9px;
 }
 
-.header.sticky .headerMenuToggle {
+.header.sticky .header-menu-toggle {
   top: 12px;
 }
 
-.headerMenuToggle.is-clicked span {
+.header-menu-toggle.is-clicked span {
   background-color: rgba(255, 255, 255, 0);
   -webkit-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
 
-.headerMenuToggle.is-clicked span::before,
-.headerMenuToggle.is-clicked span::after {
+.header-menu-toggle.is-clicked span::before,
+.header-menu-toggle.is-clicked span::after {
   background-color: white;
 }
 
-.headerMenuToggle.is-clicked span::before {
+.header-menu-toggle.is-clicked span::before {
   top: 0;
   -webkit-transform: rotate(135deg);
   -ms-transform: rotate(135deg);
   transform: rotate(135deg);
 }
 
-.headerMenuToggle.is-clicked span::after {
+.header-menu-toggle.is-clicked span::after {
   bottom: 0;
   -webkit-transform: rotate(225deg);
   -ms-transform: rotate(225deg);

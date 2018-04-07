@@ -1,6 +1,8 @@
 // @flow
 
 import React from 'react';
+
+import HeaderLink from './HeaderLink.jsx';
 import styles from './Header.module.css';
 
 const Header = () => {
@@ -13,31 +15,11 @@ const Header = () => {
       </div>
       <nav className={styles.headerNavWrap}>
         <ul className={styles.headerNav}>
-          <li className={styles.current}>
-            <a className="smoothscroll" href="#home" title="home">
-              Home
-            </a>
-          </li>
-          <li>
-            <a className="smoothscroll" href="#about" title="about">
-              About
-            </a>
-          </li>
-          <li>
-            <a className="smoothscroll" href="#works" title="works">
-              Portfolio
-            </a>
-          </li>
-          <li>
-            <a className="smoothscroll" href="#blog" title="blog">
-              Articles
-            </a>
-          </li>
-          <li>
-            <a className="smoothscroll" href="#contact" title="contact">
-              Contact
-            </a>
-          </li>
+          <HeaderLink to="#" label="Home" />
+          <HeaderLink to="#about" label="About" />
+          <HeaderLink to="#portfolio" label="Portfolio" />
+          <HeaderLink to="#blog" label="Blog" />
+          <HeaderLink to="#contact" label="Contact" />
         </ul>
       </nav>
       <a className={styles.headerMenuToggle} href="#0">
