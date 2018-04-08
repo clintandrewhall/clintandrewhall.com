@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { Route, Link } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import classnames from 'classnames';
 
 import styles from './HeaderLink.module.css';
@@ -27,9 +27,9 @@ const HeaderLink = (props: Props) => {
             className={classnames(styles.headerLink, {
               [`${styles.current}`]: hash.substr(1) === to.substr(1),
             })}>
-            <Link to={to} title={label}>
+            <a href={to} title={label}>
               {label}
-            </Link>
+            </a>
           </li>
         );
       }}

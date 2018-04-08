@@ -12,7 +12,7 @@ type Props = {};
 type State = {
   user: ?Object,
   repos: ?Object,
-  totalLoc: ?Array<Object>,
+  loc: ?Array<Object>,
 };
 
 const username = 'clintandrewhall';
@@ -30,7 +30,7 @@ class GithubCard extends React.Component<Props, State> {
   state = {
     user: null,
     repos: null,
-    totalLoc: null,
+    loc: null,
   };
 
   async componentDidMount() {
@@ -38,6 +38,7 @@ class GithubCard extends React.Component<Props, State> {
     const jsons = await Promise.all(responses.map(result => result.json()));
     const user = jsons[0];
     let repos = jsons[1];
+    console.log(user, repos);
 
     const repoReponses = await Promise.all(
       repos.map((repo: Object) => fetch(repo.languages_url)),
@@ -47,28 +48,28 @@ class GithubCard extends React.Component<Props, State> {
       repoReponses.map(result => result.json()),
     );
 
-    let totalLocEntries = {};
+    let entries = {};
 
     repos.forEach((repo: Object, index: number) => {
       Object.entries(languages[index]).forEach(entry => {
         const name = entry[0];
         const loc = entry[1];
-        let item = totalLocEntries[name] || { name, loc: 0 };
+        let item = entries[name] || { name, loc: 0 };
         item.loc += parseInt(loc, 10) || 0;
-        totalLocEntries[name] = item;
+        entries[name] = item;
       });
     });
 
-    const totalLoc = values(totalLocEntries).sort(function(a: LOC, b: LOC) {
+    const loc = values(entries).sort(function(a: LOC, b: LOC) {
       return b.loc - a.loc;
     });
 
-    await this.setState({ user, repos, totalLoc });
+    await this.setState({ user, repos, loc });
   }
 
   render() {
-    const { user, totalLoc, repos } = this.state;
-    let content = null;
+    const { user, loc, repos } = this.state;
+    let content = [];
 
     if (user === null || repos === null) {
       return (
@@ -77,15 +78,41 @@ class GithubCard extends React.Component<Props, State> {
         </div>
       );
     } else {
-      if (totalLoc) {
+      if (user) {
+        const { followers, following, public_gists, public_repos } = user;
+        const stats = (
+          <section id="stats" key="stats" className={styles.stats}>
+            <div className={styles.statsRow}>
+              <div className={styles.statsCol}>
+                <div className={styles.statsCount}>{public_repos}</div>
+                <h4 className={styles.statsTitle}>Repos</h4>
+              </div>
+              <div className={styles.statsCol}>
+                <div className={styles.statsCount}>{followers}</div>
+                <h4 className={styles.statsTitle}>Followers</h4>
+              </div>
+              <div className={styles.statsCol}>
+                <div className={styles.statsCount}>{following}</div>
+                <h4 className={styles.statsTitle}>Following</h4>
+              </div>
+              <div className={styles.statsCol}>
+                <div className={styles.statsCount}>{public_gists}</div>
+                <h4 className={styles.statsTitle}>Gists</h4>
+              </div>
+            </div>
+          </section>
+        );
+        content.push(stats);
+      }
+      if (loc) {
         let total = 0;
         let other = 0;
 
-        totalLoc.forEach((language: LOC) => {
+        loc.forEach((language: LOC) => {
           total += language.loc;
         });
 
-        let items = totalLoc
+        let items = loc
           .map((language: LOC, index: number) => {
             const { name, loc } = language;
             const percent = loc / total * 100;
@@ -139,7 +166,7 @@ class GithubCard extends React.Component<Props, State> {
             </ul>
           );
         }
-        content = [items];
+        content.push(items);
       }
     }
 

@@ -1,4 +1,6 @@
 .home {
+  composes: page-hero from global;
+  composes: target-section from global;
   width: 100%;
   height: 100%;
   min-height: 786px;
@@ -13,23 +15,12 @@
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.8;
-  background: -moz-linear-gradient(
-    top,
-    transparent 0%,
-    rgba(0, 0, 0, 0.8) 100%
-  );
-  background: -webkit-linear-gradient(
-    top,
-    transparent 0%,
-    rgba(0, 0, 0, 0.8) 100%
-  );
+  opacity: 0.6;
   background: linear-gradient(
     to bottom,
     transparent 0%,
     rgba(0, 0, 0, 0.8) 100%
   );
-  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#00000', endColorstr='#cc000', GradientType=0);
 }
 
 .overlay {
@@ -38,7 +29,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  opacity: 0.35;
+  opacity: 0.3;
   background-color: #111111;
 }
 
@@ -60,15 +51,17 @@
 }
 
 .greeting {
+  composes: h03 from global;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.5);
   font-family: 'montserrat-bold', sans-serif;
   font-size: 1.8rem;
-  color: #862121;
+  color: #fff;
   text-transform: uppercase;
   letter-spacing: 0.5rem;
   position: relative;
   padding-left: 80px;
   margin-left: -30px;
-  margin-bottom: 0.6rem;
+  margin-bottom: 1rem;
 }
 
 .greeting::before {
@@ -76,7 +69,7 @@
   content: '';
   width: 60px;
   height: 2px;
-  background-color: #862121;
+  background-color: #fff;
   margin-top: -1.5px;
   position: absolute;
   left: 0;
@@ -84,6 +77,8 @@
 }
 
 .intro {
+  composes: h01 from global;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.5);
   font-family: 'librebaskerville-bold', serif;
   color: #fff;
   font-size: 6rem;
@@ -91,7 +86,8 @@
   margin-top: 0;
 }
 
-.home .main {
+.main {
+  composes: row from './common/Grid.module.css';
   padding-right: 300px;
   position: relative;
 }
@@ -103,7 +99,10 @@
   text-align: center;
 }
 
-.buttons .button {
+.button {
+  composes: smoothscroll from global;
+  composes: button from './common/Buttons.module.css';
+  composes: stroke from './common/Buttons.module.css';
   display: block;
   width: 210px;
   border-color: #fff;
@@ -114,8 +113,8 @@
   transition: all 0.5s ease-in-out;
 }
 
-.buttons .button:hover,
-.buttons .button:focus {
+.button:hover,
+.button:focus {
   background: #fff;
   border-color: #fff;
   color: #000;
@@ -128,6 +127,7 @@
 }
 
 .scrollLink {
+  composes: smoothscroll from global;
   font-family: 'montserrat-semibold', sans-serif;
   font-size: 1.1rem;
   text-transform: uppercase;

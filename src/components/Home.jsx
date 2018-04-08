@@ -1,60 +1,40 @@
 // @flow
 
 import React from 'react';
-import classnames from 'classnames';
-
 import Social from './Social.jsx';
 
 import styles from './Home.module.css';
-import gridStyles from './common/Grid.module.css';
-import buttonStyles from './common/Buttons.module.css';
 
 const Home = () => {
   return (
     <section
       id="home"
-      className={classnames(styles.home, 'page-hero', 'target-section')}
+      className={styles.home}
       data-parallax="scroll"
       data-image-src="images/hero-two.jpg"
-      data-natural-width="3000"
-      data-natural-height="2000"
+      data-natural-width={3000}
+      data-natural-height={2000}
       data-position-y="center">
       <div className={styles.overlay} />
       <div className={styles.shadowOverlay} />
       <div className={styles.content}>
-        <div className={classnames(gridStyles.row, styles.main)}>
-          <h3 className={styles.greeting}>Hello There</h3>
+        <div className={styles.main}>
+          <h2 className={styles.greeting}>Hello There...!</h2>
           <h1 className={styles.intro}>
-            I'm Clint Andrew Hall...! <br />
+            I'm Clint Andrew Hall. <br />
             I'm a User Interface Engineer <br />
             and Socially Adept Geek.
           </h1>
           <div className={styles.buttons}>
-            <a
-              href="#portfolio"
-              className={classnames(
-                buttonStyles.button,
-                buttonStyles.stroke,
-                styles.button,
-                'smoothscroll',
-              )}>
+            <a href="#portfolio" className={styles.button}>
               Latest Projects
             </a>
-            <a
-              href="#about"
-              className={classnames(
-                buttonStyles.button,
-                buttonStyles.stroke,
-                styles.button,
-                'smoothscroll',
-              )}>
+            <a href="#about" className={styles.button}>
               More About Me
             </a>
           </div>
           <div className={styles.scroll}>
-            <a
-              href="#about"
-              className={classnames(styles.scrollLink, 'smoothscroll')}>
+            <a href="#about" className={styles.scrollLink}>
               <span>Scroll Down</span>
             </a>
           </div>

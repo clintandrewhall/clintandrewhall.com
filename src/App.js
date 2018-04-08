@@ -9,7 +9,7 @@ import About from './components/About.jsx';
 
 const App = () => (
   <Router>
-    <div>
+    <div style={{ height: '100%', width: '100%' }}>
       <Header />
       <Home />
       <About />
