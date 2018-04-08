@@ -1,0 +1,107 @@
+.about {
+  composes: target-section from global;
+  padding-top: 15rem;
+  padding-bottom: 9rem;
+  background-color: #ffffff;
+  position: relative;
+}
+
+.intro {
+  composes: row from './common/Grid.module.css';
+  max-width: 800px;
+  padding-bottom: 1.5rem;
+  position: relative;
+  text-align: center;
+}
+
+.intro::after {
+  display: inline-block;
+  height: 1px;
+  width: 240px;
+  background-color: rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.introContent {
+  composes: col_full from './common/Grid.module.css';
+  composes: text-center from global;
+}
+
+.title {
+  composes: h03 from global;
+  font-family: 'montserrat-semibold', sans-serif;
+  font-size: 2rem;
+  color: #862121;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.subtitle {
+  composes: h01 from global;
+  font-family: 'librebaskerville-bold', serif;
+  font-size: 4.8rem;
+  line-height: 1.375;
+  margin-top: 0;
+}
+
+.columns {
+  composes: row from './common/Grid.module.css';
+}
+
+.left {
+  composes: left from global;
+  composes: col_six from './common/Grid.module.css';
+  composes: tab_full from './common/Grid.module.css';
+  padding-right: 40px;
+}
+
+.right {
+  composes: right from global;
+  composes: col_six from './common/Grid.module.css';
+  composes: tab_full from './common/Grid.module.css';
+  padding-left: 40px;
+}
+
+.columnTitle {
+  composes: h03 from global;
+}
+
+.lead {
+  font-family: 'montserrat-regular', sans-serif;
+  font-size: 2rem;
+  line-height: 1.8;
+  margin-bottom: 3.6rem;
+  color: #0d0a0b;
+}
+
+@media only screen and (max-width: 800px) {
+  .intro h1 {
+    font-size: 4.2rem;
+  }
+  .intro h3 {
+    font-size: 1.8rem;
+  }
+  .lead {
+    font-size: 1.8rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .intro h1 {
+    font-size: 3.6rem;
+  }
+  .intro h3 {
+    font-size: 1.7rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .intro h1 {
+    font-size: 3.3rem;
+  }
+  .intro h3 {
+    font-size: 1.6rem;
+  }
+}
