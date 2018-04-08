@@ -1,0 +1,172 @@
+.gh {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+.gh a,
+.gh a:visited {
+  text-decoration: none;
+  color: #4484c2;
+}
+
+.gh a:hover {
+  text-decoration: underline;
+}
+
+.card {
+  position: relative;
+}
+
+.header {
+  background-color: #fafafb;
+  border-bottom: 1px solid #e5e5e5;
+  border-top-left-radius: 6px;
+  border-top-right-radius: 6px;
+  padding-top: 6px;
+  padding-left: 11px;
+  padding-right: 11px;
+  padding-bottom: 11px;
+}
+
+.octocat {
+  text-align: center;
+  margin-bottom: 8px;
+  padding-top: 10rem;
+}
+
+.title {
+  font-weight: bold;
+  font-size: 11px;
+  color: #767676;
+  vertical-align: 65%;
+  padding-left: 2px;
+}
+
+.avatar img {
+  width: 30px;
+  height: 30px;
+  float: left;
+  border-radius: 3px;
+}
+
+.username {
+  font-size: 13px;
+  font-weight: bold;
+  padding-left: 37px;
+  padding-top: 1px;
+  margin-bottom: 4px;
+}
+
+.hidden {
+  display: none;
+}
+
+.recentlyActive {
+  font-size: 11px;
+  color: #999999;
+  padding-left: 37px;
+}
+
+.greenbox {
+  width: 10px;
+  height: 10px;
+  background-color: #44a340;
+  border-radius: 1px;
+  display: inline-block;
+  vertical-align: middle;
+  display: none;
+}
+
+.recentText {
+  vertical-align: middle;
+  padding-left: 1px;
+}
+
+.contents {
+  clear: both;
+  font-size: 13px;
+  border-bottom: 1px solid #e5e5e5;
+  padding-top: 9px;
+  padding-left: 11px;
+  padding-right: 11px;
+  padding-bottom: 9px;
+}
+
+.repos {
+  margin-bottom: 12px;
+}
+
+.languages {
+  list-style: none;
+  margin: 6rem 0 3rem;
+}
+
+.language {
+  height: 0.6rem;
+  background: #c9c9c9;
+  width: 100%;
+  margin-bottom: 5.5rem;
+  position: relative;
+}
+
+.languageName {
+  position: absolute;
+  left: 0;
+  top: -3.25rem;
+  font-family: 'montserrat-extrabold', sans-serif;
+  color: #0d0a0b;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  font-size: 1.4rem;
+  line-height: 2.4rem;
+}
+
+.progress {
+  background: #000000;
+  background-image: linear-gradient(to right, #191a3f, #2d462c);
+  position: relative;
+  height: 100%;
+  top: -1.4rem;
+  left: -0.4rem;
+  display: inline-block;
+  border: 1px solid rgba(0, 0, 0, 0.25);
+}
+
+.loc {
+  position: relative;
+  left: 7px;
+  top: -1.4rem;
+  display: inline-block;
+  font-family: 'montserrat-regular', sans-serif;
+  color: #ffffff;
+  font-size: 1.1rem;
+  line-height: 1;
+  background: #000000;
+  padding: 0.6rem 0.6rem;
+  border-radius: 3px;
+}
+
+.loc::after {
+  position: absolute;
+  top: 50%;
+  left: 0px;
+  margin-top: -5px;
+  margin-left: -5px;
+  border-bottom: 5px solid transparent;
+  border-top: 5px solid transparent;
+  border-right: 5px solid #000000;
+  content: '';
+}
+
+.languageBlock {
+  display: inline-block;
+}
+
+.color {
+  display: inline-block;
+  padding: 5px;
+}

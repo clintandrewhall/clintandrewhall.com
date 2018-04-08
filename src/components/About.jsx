@@ -1,10 +1,9 @@
 // @flow
 
 import React from 'react';
-import classnames from 'classnames';
 
+import GithubCard from './GithubCard.jsx';
 import styles from './About.module.css';
-import gridStyles from './common/Grid.module.css';
 
 const About = () => {
   return (
@@ -63,6 +62,7 @@ const About = () => {
         </div>
         <div className={styles.right}>
           <h2 className={styles.columnTitle}>About My Code</h2>
+          <GithubCard />
         </div>
       </div>
     </section>
