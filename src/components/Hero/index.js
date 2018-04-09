@@ -14,6 +14,7 @@ const Hero = () => {
       data-image-src="images/hero-two.jpg"
       data-natural-width={3000}
       data-natural-height={2000}
+      data-position-x="right"
       data-position-y="center">
       <div className={styles.overlay} />
       <div className={styles.shadowOverlay} />

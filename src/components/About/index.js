@@ -32,7 +32,7 @@ const About = () => {
       </div>
       <div className={styles.columns}>
         <div className={styles.left}>
-          <h2 className={styles.columnTitle}>About My Work</h2>
+          <h3 className={styles.columnTitle}>About My Work</h3>
           <p>
             I want to make the web “beautiful”, both on the surface and beneath
             it. If I have a suggestion for a website or application, I prefer to
@@ -62,7 +62,7 @@ const About = () => {
           </p>
         </div>
         <div className={styles.right}>
-          <h2 className={styles.columnTitle}>About My Code</h2>
+          <h3 className={styles.columnTitle}>About My Code</h3>
           <GithubCard />
         </div>
       </div>
