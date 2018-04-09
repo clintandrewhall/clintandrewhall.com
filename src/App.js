@@ -4,14 +4,14 @@ import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import Header from './components/core/Header.js';
-import Home from './components/Hero';
+import Hero from './components/Hero';
 import About from './components/About';
 
 const App = () => (
   <Router>
     <div style={{ height: '100%', width: '100%' }}>
       <Header />
-      <Home />
+      <Hero />
       <About />
     </div>
   </Router>
