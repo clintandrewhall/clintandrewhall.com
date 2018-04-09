@@ -2,9 +2,9 @@
 
 import React from 'react';
 
-import GithubCard from './github/Card.jsx';
-import Timeline from './Timeline.jsx';
-import styles from './About.module.css';
+import GithubCard from './Github';
+import Timeline from './Timeline.js';
+import styles from './index.module.css';
 
 const About = () => {
   return (

@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import HeaderLink from './HeaderLink.jsx';
+import HeaderLink from './HeaderLink.js';
 import styles from './Header.module.css';
 
 const Header = () => {

@@ -3,9 +3,9 @@
 import React from 'react';
 
 import octocat from './octocat-spinner-128.gif';
-import styles from './Card.module.css';
-import Stats from './Stats.jsx';
-import LOC from './LOC.jsx';
+import styles from './index.module.css';
+import Stats from './Stats.js';
+import LOC from './LOC.js';
 
 type Props = {};
 type State = {

@@ -1,7 +1,7 @@
 // @flow
 
 import React from 'react';
-import Social from './Social.jsx';
+import Social from './Social.js';
 
 import styles from './Home.module.css';
 
