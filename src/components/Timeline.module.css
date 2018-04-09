@@ -1,0 +1,75 @@
+.root {
+  composes: row from './common/Grid.module.css';
+}
+
+.timeline {
+  position: relative;
+  text-align: left;
+  margin-top: 3.6rem;
+}
+
+.timeline::before {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: 2rem;
+  top: 0;
+}
+
+.heading {
+  composes: col_full from './common/Grid.module.css';
+  composes: text-center from global;
+}
+
+.left {
+  composes: left from './About.module.css';
+}
+
+.right {
+  composes: right from './About.module.css';
+}
+
+.block {
+  position: relative;
+  padding-left: 8rem;
+  min-height: 28.8rem;
+}
+
+.bullet {
+  background: #0d0a0b;
+  height: 1.5rem;
+  width: 1.5rem;
+  border-radius: 50%;
+  margin-left: -0.75rem;
+  box-shadow: 0 0 0 9px #e9e9e9;
+  position: absolute;
+  left: 2rem;
+  top: 0.3rem;
+}
+
+.header .timeframe {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  color: rgba(0, 0, 0, 0.5);
+  margin-bottom: 0.9rem;
+  font-family: 'montserrat-bold', sans-serif;
+}
+
+.header h3 {
+  line-height: 1.25;
+  margin: 0 0 0.3rem 0;
+}
+
+.header h5 {
+  margin-top: 0;
+}
+
+.desc p {
+  margin: 0;
+  padding-bottom: 3rem;
+}
