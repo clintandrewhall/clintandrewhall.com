@@ -7,7 +7,7 @@
 }
 
 .intro {
-  composes: row from './../common/Grid.module.css';
+  composes: row from './../core/Grid.module.css';
   max-width: 800px;
   padding-bottom: 1.5rem;
   position: relative;
@@ -23,7 +23,7 @@
 }
 
 .introContent {
-  composes: col_full from './../common/Grid.module.css';
+  composes: col_full from './../core/Grid.module.css';
   composes: text-center from global;
 }
 
@@ -47,20 +47,20 @@
 }
 
 .columns {
-  composes: row from './../common/Grid.module.css';
+  composes: row from './../core/Grid.module.css';
 }
 
 .left {
   composes: left from global;
-  composes: col_six from './../common/Grid.module.css';
-  composes: tab_full from './../common/Grid.module.css';
+  composes: col_six from './../core/Grid.module.css';
+  composes: tab_full from './../core/Grid.module.css';
   padding-right: 40px;
 }
 
 .right {
   composes: right from global;
-  composes: col_six from './../common/Grid.module.css';
-  composes: tab_full from './../common/Grid.module.css';
+  composes: col_six from './../core/Grid.module.css';
+  composes: tab_full from './../core/Grid.module.css';
   padding-left: 40px;
 }
 

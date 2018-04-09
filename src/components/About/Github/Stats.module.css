@@ -14,10 +14,10 @@
 }
 
 .row {
-  composes: row from './../../common/Grid.module.css';
-  composes: block_1_4 from './../../common/Grid.module.css';
-  composes: block_tab_1_2 from './../../common/Grid.module.css';
-  composes: block_mob_full from './../../common/Grid.module.css';
+  composes: row from './../../core/Grid.module.css';
+  composes: block_1_4 from './../../core/Grid.module.css';
+  composes: block_tab_1_2 from './../../core/Grid.module.css';
+  composes: block_mob_full from './../../core/Grid.module.css';
   margin: 1.6rem 0 0 0;
   padding: 0;
 }
@@ -27,7 +27,7 @@
 }
 
 .column {
-  composes: col_block from './../../common/Grid.module.css';
+  composes: col_block from './../../core/Grid.module.css';
   background-color: #f1f1f1;
   padding: 2rem;
   position: relative;

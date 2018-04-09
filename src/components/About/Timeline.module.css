@@ -1,5 +1,5 @@
 .root {
-  composes: row from './../common/Grid.module.css';
+  composes: row from './../core/Grid.module.css';
 }
 
 .timeline {
@@ -20,7 +20,7 @@
 }
 
 .heading {
-  composes: col_full from './../common/Grid.module.css';
+  composes: col_full from './../core/Grid.module.css';
   composes: text-center from global;
 }
 

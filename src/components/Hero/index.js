@@ -3,9 +3,9 @@
 import React from 'react';
 import Social from './Social.js';
 
-import styles from './Home.module.css';
+import styles from './index.module.css';
 
-const Home = () => {
+const Hero = () => {
   return (
     <section
       id="home"
@@ -45,4 +45,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default Hero;
