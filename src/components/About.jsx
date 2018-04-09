@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import GithubCard from './GithubCard.jsx';
+import GithubCard from './github/Card.jsx';
 import styles from './About.module.css';
 
 const About = () => {
