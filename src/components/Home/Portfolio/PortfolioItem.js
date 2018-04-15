@@ -7,8 +7,10 @@ import styles from './PortfolioItem.module.css';
 
 export type PortfolioItemType = {
   caption: string,
-  coverSrc: string,
-  coverSize: string,
+  cover: {
+    src: string,
+    size: string,
+  },
   slug: string,
   tags: Array<{ slug: string, name: string }>,
   timestamp: number,
@@ -22,7 +24,8 @@ type Props = {
 
 const PortfolioItem = (props: Props) => {
   const { item, onClick } = props;
-  const { caption, coverSize, coverSrc, slug, tags, timestamp, title } = item;
+  const { caption, cover, slug, tags, timestamp, title } = item;
+  const { src, size } = cover;
 
   const subtitle = tags.map((tag, index) => (
     <Link
@@ -46,8 +49,8 @@ const PortfolioItem = (props: Props) => {
               return false;
             }}
             title={title}
-            data-size={coverSize}>
-            <img src={coverSrc} alt="" />
+            data-size={size}>
+            <img src={src} alt="" />
             <span className={styles.shadow} />
           </a>
         </div>

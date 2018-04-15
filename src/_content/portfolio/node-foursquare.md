@@ -1,6 +1,7 @@
 ---
-coverSrc: "/images/portfolio/node-foursquare-1.jpg"
-coverSize: "750x450"
+cover:
+  src: "/images/portfolio/node-foursquare-1.jpg"
+  size: "750x450"
 slug: "node-foursquare"
 caption: ""
 tags: [{name: 'NodeJS', slug: 'node'}, {name: 'Swarm', slug: 'swarm'}]

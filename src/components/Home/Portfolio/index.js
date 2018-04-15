@@ -51,10 +51,11 @@ class Portfolio extends React.Component<Props, State> {
       );
 
     const swipes = [...entries.values()].map(entry => ({
-      src: entry.coverSrc,
-      w: entry.coverSize.split('x')[0],
-      h: entry.coverSize.split('x')[1],
+      src: entry.cover.src,
+      w: entry.cover.size.split('x')[0],
+      h: entry.cover.size.split('x')[1],
       title: entry.title,
+      caption: entry.caption,
     }));
 
     const items = [...entries.values()].map((entry, index) => (
@@ -86,6 +87,9 @@ class Portfolio extends React.Component<Props, State> {
         isOpen={this.state.isOpen}
         onClose={() => {
           this.setState({ isOpen: false });
+        }}
+        options={{
+          index: this.state.index,
         }}
         items={swipes}
         key="swipe"
