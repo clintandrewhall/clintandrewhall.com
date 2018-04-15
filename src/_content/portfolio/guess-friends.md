@@ -1,11 +1,11 @@
 ---
 cover:
-  src: "/images/portfolio/guess-friends-1.png"
+  src: "/images/portfolio/guess-friends-1.jpg"
   size: "1272x816"
 slug: "guess-friends"
-caption: ""
+caption: "Guess Friends was a website a few friends and I wrote for the first Node Knockout"
 tags: [{name: 'NodeJS', slug: 'node'}, {name: 'Node Knockout', slug: 'node-knockout'}]
-timestamp: 1450224000
+timestamp: 1313020800
 title: "Guess Friends"
 ---
 

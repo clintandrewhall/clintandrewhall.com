@@ -7,6 +7,7 @@ caption: "My Event Wall is an open-source art installation used to project photo
 tags: [{name: 'NodeJS', slug: 'node'}, {name: 'Facebook', slug: 'facebook'}]
 timestamp: 1471203000
 title: "Event Wall"
+website: "https://www.github.com/clintandrewhall/photo-wall"
 ---
 
 # Background

@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Masonry from 'react-masonry-component';
-import { PhotoSwipe } from 'react-photoswipe';
 
 import PortfolioItem from './PortfolioItem';
 
@@ -12,90 +11,52 @@ import styles from './index.module.css';
 
 const masonryOptions = {
   resize: true,
+  columnWidth: 400,
+  fitWidth: true,
 };
 
-type Props = {};
+const Portfolio = () => {
+  // $FlowFixMe
+  const portfolioContext = require.context(
+    '!markdown-with-front-matter-loader!./../../../_content/portfolio',
+    false,
+    /.md$/,
+  );
 
-type State = {
-  isOpen: boolean,
-  index: number,
-};
-
-class Portfolio extends React.Component<Props, State> {
-  state = {
-    isOpen: false,
-    index: 0,
-  };
-
-  _openSwipe(index: number) {
-    this.setState({ index, isOpen: true });
-  }
-
-  render() {
-    // $FlowFixMe
-    const portfolioContext = require.context(
-      '!markdown-with-front-matter-loader!./../../../_content/portfolio',
-      false,
-      /.md$/,
+  const entries = portfolioContext
+    .keys()
+    .reduce(
+      (memo, fileName) =>
+        memo.set(fileName.match(/.\/([^.]+).*/)[1], portfolioContext(fileName)),
+      new Map(),
     );
 
-    const entries = portfolioContext
-      .keys()
-      .reduce(
-        (memo, fileName) =>
-          memo.set(
-            fileName.match(/.\/([^.]+).*/)[1],
-            portfolioContext(fileName),
-          ),
-        new Map(),
-      );
-
-    const swipes = [...entries.values()].map(entry => ({
-      src: entry.cover.src,
-      w: entry.cover.size.split('x')[0],
-      h: entry.cover.size.split('x')[1],
-      title: entry.title,
-      caption: entry.caption,
-    }));
-
-    const items = [...entries.values()].map((entry, index) => (
-      <PortfolioItem
-        item={entry}
-        key={entry.timestamp + '_' + index}
-        onClick={() => this._openSwipe(index)}
-      />
+  const items = [...entries.values()]
+    .sort((a, b) => {
+      return b.timestamp - a.timestamp;
+    })
+    .map((entry, index) => (
+      <PortfolioItem item={entry} key={entry.timestamp + '_' + index} />
     ));
 
-    return [
-      <section className={styles.root} id="works" key="root">
-        <div className={styles.intro}>
-          <div className={styles.introContent}>
-            <h2 className={styles.title}>Portfolio</h2>
-            <h3 className={styles.subtitle}>See My Latest Projects</h3>
-            <p className={styles.lead}>
-              Here are a few of the things I've been working on recently.
-            </p>
-          </div>
+  return [
+    <section className={styles.root} id="works" key="root">
+      <div className={styles.intro}>
+        <div className={styles.introContent}>
+          <h2 className={styles.title}>Portfolio</h2>
+          <h3 className={styles.subtitle}>See My Latest Projects</h3>
+          <p className={styles.lead}>
+            Here are a few of the things I've been working on recently.
+          </p>
         </div>
-        <div className={styles.portfolio}>
-          <Masonry className={styles.masonry} options={masonryOptions}>
-            {items}
-          </Masonry>
-        </div>
-      </section>,
-      <PhotoSwipe
-        isOpen={this.state.isOpen}
-        onClose={() => {
-          this.setState({ isOpen: false });
-        }}
-        options={{
-          index: this.state.index,
-        }}
-        items={swipes}
-        key="swipe"
-      />,
-    ];
-  }
-}
+      </div>
+      <div className={styles.portfolio}>
+        <Masonry className={styles.masonry} options={masonryOptions}>
+          {items}
+        </Masonry>
+      </div>
+    </section>,
+  ];
+};
 
 export default Portfolio;

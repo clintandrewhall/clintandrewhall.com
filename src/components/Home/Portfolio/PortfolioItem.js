@@ -15,17 +15,17 @@ export type PortfolioItemType = {
   tags: Array<{ slug: string, name: string }>,
   timestamp: number,
   title: string,
+  website: string,
 };
 
 type Props = {
   item: PortfolioItemType,
-  onClick: Function,
 };
 
 const PortfolioItem = (props: Props) => {
-  const { item, onClick } = props;
-  const { caption, cover, slug, tags, timestamp, title } = item;
-  const { src, size } = cover;
+  const { item } = props;
+  const { caption, cover, slug, tags, timestamp, title, website } = item;
+  const { src } = cover;
 
   const subtitle = tags.map((tag, index) => (
     <Link
@@ -36,37 +36,39 @@ const PortfolioItem = (props: Props) => {
     </Link>
   ));
 
+  let websiteLink = null;
+
+  if (website) {
+    websiteLink = (
+      <a href={website} className={styles.projectLink} title="Website">
+        <i className="im im-link" />
+      </a>
+    );
+  }
+
   return (
     <div className={styles.masonryBrick} key={timestamp}>
       <div className={styles.root}>
         <div className={styles.thumb}>
-          <a
-            href={'/portfolio/' + slug}
-            className="thumb-link"
-            onClick={(e: Event) => {
-              onClick();
-              e.preventDefault();
-              return false;
-            }}
-            title={title}
-            data-size={size}>
+          <div className={styles.thumbArea}>
             <img src={src} alt="" />
             <span className={styles.shadow} />
-          </a>
+          </div>
         </div>
         <div className={styles.text}>
           <h3 className={styles.title}>{title}</h3>
-          <p className={styles.category}>{subtitle}</p>
+          <p className={styles.subtitle}>{subtitle}</p>
         </div>
-        <Link
-          to={'/portfolio/' + slug}
-          className={styles.projectLink}
-          title={title}>
-          <i className="im im-link" />
-        </Link>
-        <div className={styles.caption}>
-          <p>{caption}</p>
-        </div>
+        <p className={styles.caption}>
+          {caption}
+          <Link
+            to={'/portfolio/' + slug}
+            title={title}
+            className={styles.details}>
+            View Details
+          </Link>
+        </p>
+        {websiteLink}
       </div>
     </div>
   );
