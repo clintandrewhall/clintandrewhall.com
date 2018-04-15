@@ -8,7 +8,7 @@ import styles from './index.module.css';
 
 const About = () => {
   return (
-    <section id="about" className={styles.about}>
+    <section id="about" className={styles.root}>
       <div className={styles.intro}>
         <div className={styles.introContent}>
           <h2 className={styles.title}>About Me</h2>

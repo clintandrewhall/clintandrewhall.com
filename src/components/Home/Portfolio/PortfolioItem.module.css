@@ -1,0 +1,217 @@
+.masonryBrick {
+  float: left;
+  padding: 0;
+  width: 400px;
+}
+
+.root {
+  position: relative;
+  overflow: hidden;
+}
+
+.thumb img {
+  vertical-align: top;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.shadow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  background: linear-gradient(
+    to bottom,
+    transparent 0%,
+    rgba(0, 0, 0, 0.8) 100%
+  );
+}
+
+.thumb a {
+  display: block;
+}
+
+.thumb a::before {
+  display: block;
+  background-color: rgba(0, 0, 0, 0.8);
+  content: '';
+  opacity: 0;
+  visibility: hidden;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  z-index: 1;
+}
+
+.thumb a::after {
+  content: '...';
+  font-family: georgia, serif;
+  font-size: 3rem;
+  display: block;
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+  margin-left: -15px;
+  margin-top: -15px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  text-align: center;
+  color: #ffffff;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+  -webkit-transform: scale(0.5);
+  -ms-transform: scale(0.5);
+  transform: scale(0.5);
+  z-index: 1;
+}
+
+.text {
+  position: absolute;
+  left: 0;
+  bottom: 3rem;
+  padding: 0 3rem;
+  z-index: 2;
+}
+
+.title {
+  color: #ffffff;
+  font-family: 'montserrat-semibold', sans-serif;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  margin: 0;
+}
+
+.category {
+  color: rgba(255, 255, 255, 0.5);
+  font-family: 'montserrat-regular', sans-serif;
+  font-size: 1.5rem;
+  margin-bottom: 0;
+}
+
+.caption {
+  display: none;
+}
+
+.projectLink {
+  display: block;
+  color: #ffffff;
+  box-shadow: 0 0 0 1px #ffffff;
+  border-radius: 50%;
+  height: 4.2rem;
+  width: 4.2rem;
+  text-align: center;
+  z-index: 500;
+  position: absolute;
+  top: 3rem;
+  left: 3rem;
+  opacity: 0;
+  visibility: hidden;
+  -webkit-transform: translate3d(-100%, 0, 0);
+  -ms-transform: translate3d(-100%, 0, 0);
+  transform: translate3d(-100%, 0, 0);
+}
+
+.projectLink i {
+  font-size: 1.8rem;
+  line-height: 4.2rem;
+}
+
+.projectLink::before {
+  display: block;
+  content: '';
+  height: 1px;
+  width: 3rem;
+  background-color: rgba(255, 255, 255, 0.1);
+  position: absolute;
+  top: 50%;
+  left: -3rem;
+}
+
+.projectLink:hover,
+.projectLink:focus,
+.projectLink:active {
+  background-color: #ffffff;
+  color: #000000;
+}
+
+/* on hover */
+
+.root:hover .thumb a::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+.root:hover .thumb a::after {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: scale(1);
+  -ms-transform: scale(1);
+  transform: scale(1);
+}
+
+.root:hover .thumb img {
+  -webkit-transform: scale(1.05);
+  -ms-transform: scale(1.05);
+  transform: scale(1.05);
+}
+
+.root:hover .projectLink {
+  opacity: 1;
+  visibility: visible;
+  -webkit-transform: translate3d(0, 0, 0);
+  -ms-transform: translate3d(0, 0, 0);
+  transform: translate3d(0, 0, 0);
+}
+
+.slugLink {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.slugLink:hover {
+  color: #fff;
+}
+
+/* -------------------------------------------------------------------
+ * responsive:
+ * works
+ * ------------------------------------------------------------------- */
+
+@media only screen and (max-width: 1700px) {
+  .masonryBrick {
+    width: 350px;
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  .masonryBrick {
+    width: 400px;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .masonryBrick {
+    width: 333px;
+  }
+}
+
+@media only screen and (max-width: 1099px) {
+  .masonryBrick {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .masonryBrick {
+    width: 100%;
+  }
+}
