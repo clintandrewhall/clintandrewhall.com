@@ -18,6 +18,7 @@ const Header = () => {
           <HeaderLink to="#" label="Home" />
           <HeaderLink to="#about" label="About" />
           <HeaderLink to="#portfolio" label="Portfolio" />
+          <HeaderLink to="#career" label="Career" />
           <HeaderLink to="#blog" label="Blog" />
           <HeaderLink to="#contact" label="Contact" />
         </ul>

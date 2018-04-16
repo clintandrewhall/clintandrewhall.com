@@ -7,6 +7,7 @@ import Hero from './Hero';
 import About from './About';
 import Portfolio from './Portfolio';
 import Posts from './Posts';
+import Work from './Work';
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       <Hero />
       <About />
       <Portfolio />
+      <Work />
       <Posts />
     </div>
   );

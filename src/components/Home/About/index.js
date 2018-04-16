@@ -3,7 +3,6 @@
 import React from 'react';
 
 import GithubCard from './Github';
-import Timeline from './Timeline.js';
 import styles from './index.module.css';
 
 const About = () => {
@@ -66,7 +65,6 @@ const About = () => {
           <GithubCard />
         </div>
       </div>
-      <Timeline />
     </section>
   );
 };

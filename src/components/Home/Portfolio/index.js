@@ -44,9 +44,9 @@ const Portfolio = () => {
       <div className={styles.intro}>
         <div className={styles.introContent}>
           <h2 className={styles.title}>Portfolio</h2>
-          <h3 className={styles.subtitle}>See My Latest Projects</h3>
+          <h3 className={styles.subtitle}>Explore My Projects</h3>
           <p className={styles.lead}>
-            Here are a few of the things I've been working on recently.
+            Here are a few of the things I've worked on in my spare time.
           </p>
         </div>
       </div>

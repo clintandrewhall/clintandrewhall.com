@@ -1,5 +1,33 @@
 .root {
+  composes: section from './../../core/Section.module.css';
+  padding-top: 15rem;
+  padding-bottom: 15.6rem;
+  background-color: #fff;
+  position: relative;
+}
+
+.work {
   composes: row from './../../core/Grid.module.css';
+}
+
+.intro {
+  composes: intro from './../../core/Section.module.css';
+}
+
+.introContent {
+  composes: introContent from './../../core/Section.module.css';
+}
+
+.title {
+  composes: title from './../../core/Section.module.css';
+}
+
+.subtitle {
+  composes: subtitle from './../../core/Section.module.css';
+}
+
+.lead {
+  composes: lead from './../../core/Section.module.css';
 }
 
 .timeline {
@@ -25,11 +53,17 @@
 }
 
 .left {
-  composes: left from './index.module.css';
+  composes: left from global;
+  composes: col_six from './../../core/Grid.module.css';
+  composes: tab_full from './../../core/Grid.module.css';
+  padding-right: 40px;
 }
 
 .right {
-  composes: right from './index.module.css';
+  composes: right from global;
+  composes: col_six from './../../core/Grid.module.css';
+  composes: tab_full from './../../core/Grid.module.css';
+  padding-left: 40px;
 }
 
 .block {
