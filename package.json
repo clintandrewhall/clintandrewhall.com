@@ -27,8 +27,9 @@
   },
   "scripts": {
     "build-posts": "babel-node --presets babel-preset-env --plugins babel-plugin-transform-flow-strip-types -- ./data/posts",
-    "start": "react-scripts start",
+    "start": "react-scripts build && serve -s build",
     "build": "react-scripts build",
+    "develop": "react-scripts start",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "flow": "flow"
