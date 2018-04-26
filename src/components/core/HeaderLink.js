@@ -30,7 +30,7 @@ const HeaderLink = (props: Props) => {
           !pathMatch &&
           (hash.length > 0 || (hash.length === 0 && to === "#")) &&
           hash.substr(1) === to.substr(1);
-        debugger;
+
         const selected = pathMatch || hashMatch;
         console.log(pathname, to);
 
