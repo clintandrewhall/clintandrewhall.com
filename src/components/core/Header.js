@@ -5,7 +5,11 @@ import React from 'react';
 import HeaderLink from './HeaderLink.js';
 import styles from './Header.module.css';
 
-const Header = () => {
+type Props = {
+  home?: boolean,
+};
+
+const Header = (props: Props) => {
   return (
     <header className={styles.header}>
       <div className={styles.headerLogo}>
@@ -15,12 +19,12 @@ const Header = () => {
       </div>
       <nav className={styles.headerNavWrap}>
         <ul className={styles.headerNav}>
-          <HeaderLink to="#" label="Home" />
-          <HeaderLink to="#about" label="About" />
-          <HeaderLink to="#portfolio" label="Portfolio" />
-          <HeaderLink to="#career" label="Career" />
-          <HeaderLink to="#blog" label="Blog" />
-          <HeaderLink to="#contact" label="Contact" />
+          <HeaderLink to={props.home ? '#' : '/'} label="Home" />
+          <HeaderLink to={props.home ? '#about' : '/#about'} label="About" />
+          <HeaderLink to={props.home ? '#portfolio' : '/portfolio'} label="Portfolio" />
+          <HeaderLink to={props.home ? '#career' : '/#career'} label="Career" />
+          <HeaderLink to={props.home ? '#blog' : '/#blog'} label="Blog" />
+          <HeaderLink to={props.home ? '#contact' : '/#contact'} label="Contact" />
         </ul>
       </nav>
       <a className={styles.headerMenuToggle} href="#0">

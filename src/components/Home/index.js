@@ -12,7 +12,7 @@ import Work from './Work';
 const Home = (): React$Element<any> => {
   return (
     <div style={{ height: '100%', width: '100%' }}>
-      <Header />
+      <Header home={true} />
       <Hero />
       <About />
       <Portfolio />
