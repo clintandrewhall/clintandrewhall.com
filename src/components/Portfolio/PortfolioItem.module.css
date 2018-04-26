@@ -79,8 +79,8 @@
 
 .details {
   composes: smoothscroll from global;
-  composes: button from './../../core/Buttons.module.css';
-  composes: stroke from './../../core/Buttons.module.css';
+  composes: button from './../core/Buttons.module.css';
+  composes: stroke from './../core/Buttons.module.css';
   display: block;
   border-color: #fff;
   color: #fff;

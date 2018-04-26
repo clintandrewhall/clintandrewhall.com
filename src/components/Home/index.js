@@ -9,7 +9,7 @@ import Portfolio from './Portfolio';
 import Posts from './Posts';
 import Work from './Work';
 
-const Home = () => {
+const Home = (): React$Element<any> => {
   return (
     <div style={{ height: '100%', width: '100%' }}>
       <Header />

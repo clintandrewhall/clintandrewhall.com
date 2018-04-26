@@ -3,7 +3,7 @@
 import React from 'react';
 import Masonry from 'react-masonry-component';
 
-import PortfolioItem from './PortfolioItem';
+import PortfolioItem from './../../Portfolio/PortfolioItem';
 
 import 'react-photoswipe/lib/photoswipe.css';
 
