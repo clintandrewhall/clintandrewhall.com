@@ -1,4 +1,4 @@
-.home {
+.root {
   composes: page-hero from global;
   composes: target-section from global;
   width: 100%;
@@ -7,6 +7,19 @@
   background-color: transparent;
   position: relative;
   display: table;
+}
+
+html.preload .main {
+  opacity: 0;
+}
+
+html.loaded .main {
+  animation-duration: 2s;
+  animation-name: fadeIn;
+}
+
+html.no-csstransitions .main {
+  opacity: 1;
 }
 
 .shadowOverlay {
@@ -36,10 +49,6 @@
 .no-js .home {
   background: #0d0a0b;
 }
-
-/* -------------------------------------------------------------------
- * ## home content - (_site-layout.scss)
- * ------------------------------------------------------------------- */
 
 .content {
   display: table-cell;

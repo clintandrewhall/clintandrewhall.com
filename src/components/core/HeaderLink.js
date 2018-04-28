@@ -32,7 +32,6 @@ const HeaderLink = (props: Props) => {
           hash.substr(1) === to.substr(1);
 
         const selected = pathMatch || hashMatch;
-        console.log(pathname, to);
 
         return (
           <li

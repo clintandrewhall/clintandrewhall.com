@@ -9,7 +9,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className={styles.home}
+      className={styles.root}
       data-parallax="scroll"
       data-image-src="images/hero-two.jpg"
       data-natural-width={3000}

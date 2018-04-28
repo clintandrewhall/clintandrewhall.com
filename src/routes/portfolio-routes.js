@@ -34,8 +34,6 @@ export default (): Array<React$Node> => {
       new Map(),
     );
 
-  console.log(entries);
-
   // eslint-disable-next-line import/first
   return [
     <Route key="index" path="/portfolio" exact={true} component={entryIndex(entries)} />,
