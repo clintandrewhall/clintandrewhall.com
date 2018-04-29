@@ -12,8 +12,8 @@ const Hero = () => {
       className={styles.root}
       data-parallax="scroll"
       data-image-src="images/hero-two.jpg"
-      data-natural-width={3000}
-      data-natural-height={2000}
+      data-natural-width={2581}
+      data-natural-height={1721}
       data-position-x="right"
       data-position-y="center">
       <div className={styles.overlay} />
