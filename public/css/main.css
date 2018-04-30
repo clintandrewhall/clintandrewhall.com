@@ -2,8 +2,8 @@
  * # webfonts and iconfonts
  * ------------------------------------------------------------------- */
 
-@import url("iconic/css/iconmonstr-iconic-font.min.css");
-@import url("fonts.css");
+@import url('iconic/css/iconmonstr-iconic-font.min.css');
+@import url('fonts.css');
 
 /* ===================================================================
  * # base style overrides
@@ -26,7 +26,7 @@ body {
 
 body {
   background: #0a0809;
-  font-family: "librebaskerville-regular", serif;
+  font-family: 'librebaskerville-regular', serif;
   font-size: 1.6rem;
   line-height: 1.875;
   color: #5f5f5f;
@@ -70,7 +70,7 @@ h6,
 .h04,
 .h05,
 .h06 {
-  font-family: "montserrat-medium", sans-serif;
+  font-family: 'montserrat-medium', sans-serif;
   color: #0d0a0b;
   font-style: normal;
   font-weight: normal;
@@ -122,7 +122,7 @@ h6,
 
 h1,
 .h01 {
-  font-family: "montserrat-bold", sans-serif;
+  font-family: 'montserrat-bold', sans-serif;
   font-size: 3.6rem;
   line-height: 1.25;
   letter-spacing: -0.1rem;
@@ -162,7 +162,7 @@ h5,
 
 h6,
 .h06 {
-  font-family: "montserrat-bold", sans-serif;
+  font-family: 'montserrat-bold', sans-serif;
   font-size: 1.4rem;
   line-height: 1.5;
   text-transform: uppercase;
@@ -174,7 +174,7 @@ p img {
 }
 
 p.lead {
-  font-family: "montserrat-regular", sans-serif;
+  font-family: 'montserrat-regular', sans-serif;
   font-size: 2rem;
   line-height: 1.8;
   margin-bottom: 3.6rem;
@@ -199,12 +199,12 @@ b {
 
 em,
 i {
-  font-family: "librebaskerville-italic", serif;
+  font-family: 'librebaskerville-italic', serif;
 }
 
 strong,
 b {
-  font-family: "librebaskerville-bold", serif;
+  font-family: 'librebaskerville-bold', serif;
 }
 
 small {
@@ -219,7 +219,7 @@ blockquote {
 }
 
 blockquote:before {
-  content: "\201C";
+  content: '\201C';
   font-size: 10rem;
   line-height: 0px;
   margin: 0;
@@ -231,7 +231,7 @@ blockquote:before {
 }
 
 blockquote p {
-  font-family: "montserrat-regular", sans-serif;
+  font-family: 'montserrat-regular', sans-serif;
   padding: 0;
   font-size: 2.1rem;
   line-height: 1.857;
@@ -240,14 +240,14 @@ blockquote p {
 
 blockquote cite {
   display: block;
-  font-family: "montserrat-regular", sans-serif;
+  font-family: 'montserrat-regular', sans-serif;
   font-size: 1.4rem;
   font-style: normal;
   line-height: 1.5;
 }
 
 blockquote cite:before {
-  content: "\2014 \0020";
+  content: '\2014 \0020';
 }
 
 blockquote cite a,
@@ -257,7 +257,7 @@ blockquote cite a:visited {
 }
 
 abbr {
-  font-family: "librebaskerville-bold", serif;
+  font-family: 'librebaskerville-bold', serif;
   font-variant: small-caps;
   text-transform: lowercase;
   letter-spacing: 0.05rem;
@@ -269,7 +269,7 @@ kbd,
 samp,
 code,
 pre {
-  font-family: Consolas, "Andale Mono", Courier, "Courier New", monospace;
+  font-family: Consolas, 'Andale Mono', Courier, 'Courier New', monospace;
 }
 
 pre {
@@ -407,7 +407,7 @@ table {
   border-width: 0;
   width: 100%;
   max-width: 100%;
-  font-family: "librebaskerville-regular", serif;
+  font-family: 'librebaskerville-regular', serif;
 }
 
 th,
@@ -419,7 +419,7 @@ td {
 
 th {
   color: #0d0a0b;
-  font-family: "montserrat-bold", sans-serif;
+  font-family: 'montserrat-bold', sans-serif;
 }
 
 td {
@@ -564,13 +564,13 @@ fieldset {
   border: none;
 }
 
-input[type="email"],
-input[type="number"],
-input[type="search"],
-input[type="text"],
-input[type="tel"],
-input[type="url"],
-input[type="password"],
+input[type='email'],
+input[type='number'],
+input[type='search'],
+input[type='text'],
+input[type='tel'],
+input[type='url'],
+input[type='password'],
 textarea,
 select {
   display: block;
@@ -579,7 +579,7 @@ select {
   border: 0;
   outline: none;
   color: #333333;
-  font-family: "montserrat-regular", sans-serif;
+  font-family: 'montserrat-regular', sans-serif;
   font-size: 1.5rem;
   line-height: 3rem;
   max-width: 100%;
@@ -599,13 +599,13 @@ textarea {
   min-height: 25rem;
 }
 
-input[type="email"]:focus,
-input[type="number"]:focus,
-input[type="search"]:focus,
-input[type="text"]:focus,
-input[type="tel"]:focus,
-input[type="url"]:focus,
-input[type="password"]:focus,
+input[type='email']:focus,
+input[type='number']:focus,
+input[type='search']:focus,
+input[type='text']:focus,
+input[type='tel']:focus,
+input[type='url']:focus,
+input[type='password']:focus,
 textarea:focus,
 select:focus {
   color: #000000;
@@ -614,7 +614,7 @@ select:focus {
 
 label,
 legend {
-  font-family: "montserrat-bold", sans-serif;
+  font-family: 'montserrat-bold', sans-serif;
   font-size: 1.4rem;
   margin-bottom: 0.9rem;
   line-height: 1.714;
@@ -622,20 +622,20 @@ legend {
   display: block;
 }
 
-input[type="checkbox"],
-input[type="radio"] {
+input[type='checkbox'],
+input[type='radio'] {
   display: inline;
 }
 
 label > .label-text {
   display: inline-block;
   margin-left: 1rem;
-  font-family: "montserrat-regular", sans-serif;
+  font-family: 'montserrat-regular', sans-serif;
   line-height: inherit;
 }
 
-label > input[type="checkbox"],
-label > input[type="radio"] {
+label > input[type='checkbox'],
+label > input[type='radio'] {
   margin: 0;
   position: relative;
   top: 0.15rem;
@@ -786,4 +786,19 @@ select:-webkit-autofill:focus {
   .grid-sizer {
     width: 100%;
   }
+}
+
+.rellax {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.background {
+  background: url(/images/hero-two.jpg) no-repeat;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-size: cover;
+  background-position-x: right;
 }
