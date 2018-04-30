@@ -4,15 +4,14 @@ import React from 'react';
 import Masonry from 'react-masonry-component';
 
 import PortfolioItem from './../../Portfolio/PortfolioItem';
-
-import 'react-photoswipe/lib/photoswipe.css';
+import itemStyles from './../../Portfolio/PortfolioItem.module.css';
 
 import styles from './index.module.css';
 
 const masonryOptions = {
-  resize: true,
-  columnWidth: 400,
-  fitWidth: true,
+  enableResizableChildren: true,
+  transitionDuration: 0,
+  itemSelector: itemStyles.root,
 };
 
 const Portfolio = () => {
