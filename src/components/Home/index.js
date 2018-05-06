@@ -18,23 +18,24 @@ class Home extends React.Component<{}, State> {
   heroRef = React.createRef();
 
   state: State = {
-    triggerHeight: 0
+    triggerHeight: 0,
   };
 
   componentDidMount() {
-    if (this.heroRef) {
-      const node = ReactDOM.findDOMNode(this.heroRef.current);
-      if (node instanceof HTMLElement) {
-        this.setState({triggerHeight: node.offsetHeight});
+    window.addEventListener('pace-finished', () => {
+      if (this.heroRef) {
+        const node = ReactDOM.findDOMNode(this.heroRef.current);
+        if (node instanceof HTMLElement) {
+          this.setState({ triggerHeight: node.offsetHeight });
+        }
       }
-    }
+    });
   }
 
   render() {
-    const {triggerHeight} = this.state;
-    console.log(triggerHeight);
+    const { triggerHeight } = this.state;
     return (
-      <div>
+      <div style={{ height: '100%' }}>
         <Header home={true} triggerHeight={triggerHeight} />
         <Hero ref={this.heroRef} />
         <About />
@@ -44,6 +45,6 @@ class Home extends React.Component<{}, State> {
       </div>
     );
   }
-};
+}
 
 export default Home;

@@ -30,6 +30,10 @@
 new Rellax('.rellax', {
   speed: -6,
 });
+Pace.on('done', function() {
+  var event = new Event('pace-finished');
+  window.dispatchEvent(event);
+});
 </script>
   </body>
 </html>

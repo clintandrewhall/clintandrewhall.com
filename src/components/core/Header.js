@@ -17,8 +17,10 @@ type State = {
   sticky: boolean,
 };
 
-class Header extends React.Component<Props, State> {
+const OFFSET_LIMIT = 0;
+const SCROLLING_LIMIT = 0;
 
+class Header extends React.Component<Props, State> {
   state: State = {
     offset: false,
     scrolling: false,
@@ -26,49 +28,49 @@ class Header extends React.Component<Props, State> {
   };
 
   componentDidMount() {
-    window.addEventListener('scroll', () => this._handleScroll(), { passive: true })
+    window.addEventListener('scroll', () => this._handleScroll(), {
+      passive: true,
+    });
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll',() => this._handleScroll())
+    window.removeEventListener('scroll', () => this._handleScroll());
   }
 
   _handleScroll() {
     const loc = window.scrollY;
-    const {triggerHeight} = this.props;
+    const { triggerHeight } = this.props;
 
     if (loc > triggerHeight) {
-      this.setState({sticky: true});
+      this.setState({ sticky: true });
     } else {
-      this.setState({sticky: false});
+      this.setState({ sticky: false });
     }
 
-    if (loc > triggerHeight + 20) {
-      this.setState({offset: true});
+    if (loc > triggerHeight + OFFSET_LIMIT) {
+      this.setState({ offset: true });
     } else {
-      this.setState({offset: false});
+      this.setState({ offset: false });
     }
 
-    if (loc > triggerHeight + 150) {
-      this.setState({scrolling: true});
+    if (loc > triggerHeight + SCROLLING_LIMIT) {
+      this.setState({ scrolling: true });
     } else {
-      this.setState({scrolling: false});
+      this.setState({ scrolling: false });
     }
-      // var hero = $('.page-hero'),
-      //     hdr = $('header'),
-      //     triggerHeight = hero.outerHeight() - 170;
   }
 
   render() {
-    const {home} = this.props;
-    const {offset, scrolling, sticky} = this.state;
+    const { home } = this.props;
+    const { offset, scrolling, sticky } = this.state;
     return (
-      <header className={classNames({
-        [styles.header]: true,
-        [styles.offset]: offset,
-        [styles.scrolling]: scrolling,
-        [styles.sticky]: sticky,
-      })}>
+      <header
+        className={classNames({
+          [styles.header]: true,
+          [styles.offset]: offset,
+          [styles.scrolling]: scrolling,
+          [styles.sticky]: sticky,
+        })}>
         <div className={styles.headerLogo}>
           <a href="/">
             <img src="/images/logo.png" alt="Home" />
@@ -82,15 +84,9 @@ class Header extends React.Component<Props, State> {
               to={home ? '#portfolio' : '/portfolio'}
               label="Portfolio"
             />
-            <HeaderLink
-              to={home ? '#career' : '/#career'}
-              label="Career"
-            />
+            <HeaderLink to={home ? '#career' : '/#career'} label="Career" />
             <HeaderLink to={home ? '#blog' : '/#blog'} label="Blog" />
-            <HeaderLink
-              to={home ? '#contact' : '/#contact'}
-              label="Contact"
-            />
+            <HeaderLink to={home ? '#contact' : '/#contact'} label="Contact" />
           </ul>
         </nav>
         <a className={styles.headerMenuToggle} href="#0">

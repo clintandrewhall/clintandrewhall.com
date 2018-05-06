@@ -28,7 +28,7 @@
   background-image: linear-gradient(to right, #191a3f, #2d462c);
   position: relative;
   height: 100%;
-  top: -1.4rem;
+  top: -1.5rem;
   left: -0.4rem;
   display: inline-block;
   border: 1px solid rgba(0, 0, 0, 0.25);
@@ -37,7 +37,7 @@
 .loc {
   position: relative;
   left: 7px;
-  top: -1.4rem;
+  top: -1.5rem;
   display: inline-block;
   font-family: 'montserrat-regular', sans-serif;
   color: #ffffff;

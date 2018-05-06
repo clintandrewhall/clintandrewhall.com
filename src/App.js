@@ -45,7 +45,7 @@ class App extends React.PureComponent<void> {
   render() {
     return (
       <Router>
-        <div>
+        <div style={{ height: '100%' }}>
           <Route path="/" component={Home} exact={true} />
           {routes()}
           <div id="preloader">
