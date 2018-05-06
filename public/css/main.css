@@ -782,37 +782,23 @@ select:-webkit-autofill:focus {
   }
 }
 
-/* -------------------------------------------------------------------
- * responsive:
- * works
- * ------------------------------------------------------------------- */
-
-@media only screen and (max-width: 1700px) {
-  .grid-sizer {
-    width: 350px;
-  }
-}
-
-@media only screen and (max-width: 1500px) {
-  .grid-sizer {
-    width: 400px;
-  }
-}
-
-@media only screen and (max-width: 1300px) {
-  .grid-sizer {
-    width: 333px;
-  }
-}
-
-@media only screen and (max-width: 1099px) {
-  .grid-sizer {
-    width: 50%;
-  }
-}
-
 @media only screen and (max-width: 600px) {
   .grid-sizer {
     width: 100%;
   }
+}
+
+.rellax {
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+.background {
+  background: url(/images/hero-two.jpg) no-repeat;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-size: cover;
+  background-position-x: right;
 }

@@ -1,4 +1,4 @@
-.home {
+.root {
   composes: page-hero from global;
   composes: target-section from global;
   width: 100%;
@@ -7,6 +7,19 @@
   background-color: transparent;
   position: relative;
   display: table;
+}
+
+html.preload .main {
+  opacity: 0;
+}
+
+html.loaded .main {
+  animation-duration: 2s;
+  animation-name: fadeIn;
+}
+
+html.no-csstransitions .main {
+  opacity: 1;
 }
 
 .shadowOverlay {
@@ -36,10 +49,6 @@
 .no-js .home {
   background: #0d0a0b;
 }
-
-/* -------------------------------------------------------------------
- * ## home content - (_site-layout.scss)
- * ------------------------------------------------------------------- */
 
 .content {
   display: table-cell;
@@ -161,20 +170,20 @@
   transition: all 0.15s ease-in-out;
 }
 
-/* animate .home .main
+/* animate .main
  * ------------------------------------------------------------------- */
 
-html.ss-preload .home .main {
+html.ss-preload .main {
   opacity: 0;
 }
 
-html.ss-loaded .home .main {
+html.ss-loaded .main {
   animation-duration: 2s;
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
 }
 
-html.no-csstransitions .home .main {
+html.no-csstransitions .main {
   opacity: 1;
 }
 
@@ -187,7 +196,7 @@ html.no-csstransitions .home .main {
   .intro {
     font-size: 4.5rem;
   }
-  .home .main {
+  .main {
     max-width: 1000px;
   }
 }
@@ -199,7 +208,7 @@ html.no-csstransitions .home .main {
   .content br {
     display: none;
   }
-  .home .main {
+  .main {
     max-width: 800px;
   }
   .buttons {
@@ -211,7 +220,7 @@ html.no-csstransitions .home .main {
   .intro {
     font-size: 4.15rem;
   }
-  .home .main {
+  .main {
     padding-right: 40px;
     max-width: 680px;
   }
@@ -237,7 +246,7 @@ html.no-csstransitions .home .main {
   .intro {
     font-size: 3.4rem;
   }
-  .home .main {
+  .main {
     max-width: 500px;
   }
 }
@@ -249,7 +258,7 @@ html.no-csstransitions .home .main {
   .intro {
     font-size: 3.6rem;
   }
-  .home .main {
+  .main {
     max-width: 380px;
     padding: 0;
   }
@@ -274,7 +283,7 @@ html.no-csstransitions .home .main {
   .intro {
     font-size: 3.3rem;
   }
-  .home .main {
+  .main {
     max-width: none;
     width: 85%;
     margin-top: 150px;
@@ -288,7 +297,7 @@ html.no-csstransitions .home .main {
   .intro {
     font-size: 3rem;
   }
-  .home .main {
+  .main {
     width: auto;
     margin-left: 25px;
     margin-right: 25px;

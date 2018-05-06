@@ -12,16 +12,24 @@
     <link rel="stylesheet" href="%PUBLIC_URL%/css/main.css">
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <script src="js/modernizr.js"></script>
-    <script src="js/pace.min.js"></script>
+    <script src="%PUBLIC_URL%/js/modernizr.js"></script>
+    <script src="%PUBLIC_URL%/js/pace.min.js"></script>
     <title>Clint Andrew Hall - My Portfolio</title>
   </head>
   <body id="top">
     <noscript>
       You need to enable JavaScript to run this site.
     </noscript>
+    <div class="rellax">
+      <div class="background"></div>
+    </div>
     <div id="root" class="root"></div>
-    <script src="js/jquery-3.2.1.min.js"></script>
-    <script src="js/plugins.js"></script>
+    <script src="%PUBLIC_URL%/js/rellax.min.js"></script>
+    <script>
+    // Also can pass in optional settings block
+new Rellax('.rellax', {
+  speed: -6,
+});
+</script>
   </body>
 </html>

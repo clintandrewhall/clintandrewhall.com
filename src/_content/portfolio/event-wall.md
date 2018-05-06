@@ -2,11 +2,11 @@
 cover:
   src: "/images/portfolio/event-wall-1.jpg"
   size: "1024x752"
-slug: "photo-wall"
+slug: "event-wall"
 caption: "My Event Wall is an open-source art installation used to project photos uploaded to a Facebook Event in real time."
 tags: [{name: 'NodeJS', slug: 'node'}, {name: 'Facebook', slug: 'facebook'}]
 timestamp: 1471203000
-title: "Event Wall"
+title: "Event Photo Wall"
 website: "https://www.github.com/clintandrewhall/photo-wall"
 ---
 
