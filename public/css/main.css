@@ -789,9 +789,14 @@ select:-webkit-autofill:focus {
 }
 
 .rellax {
+  display: none;
   height: 100%;
   width: 100%;
   position: absolute;
+}
+
+.loaded .rellax {
+  display: block;
 }
 
 .background {

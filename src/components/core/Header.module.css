@@ -58,6 +58,7 @@
   outline: 0;
   border: none;
   width: 80px;
+  height: 27px;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
 }
@@ -126,29 +127,29 @@
   bottom: -9px;
 }
 
-.header.sticky .header-menu-toggle {
+.header.sticky .headerMenuToggle {
   top: 12px;
 }
 
-.header-menu-toggle.is-clicked span {
+.headerMenuToggle.isClicked span {
   background-color: rgba(255, 255, 255, 0);
   -webkit-transition: all 0.1s ease-in-out;
   transition: all 0.1s ease-in-out;
 }
 
-.header-menu-toggle.is-clicked span::before,
-.header-menu-toggle.is-clicked span::after {
+.headerMenuToggle.isClicked span::before,
+.headerMenuToggle.isClicked span::after {
   background-color: white;
 }
 
-.header-menu-toggle.is-clicked span::before {
+.headerMenuToggle.isClicked span::before {
   top: 0;
   -webkit-transform: rotate(135deg);
   -ms-transform: rotate(135deg);
   transform: rotate(135deg);
 }
 
-.header-menu-toggle.is-clicked span::after {
+.headerMenuToggle.isClicked span::after {
   bottom: 0;
   -webkit-transform: rotate(225deg);
   -ms-transform: rotate(225deg);
@@ -164,6 +165,7 @@
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: 0.25rem;
+  overflow: hidden;
   position: absolute;
   top: 9px;
   right: 50px;
@@ -203,19 +205,17 @@
     left: 40px;
   }
   .headerNavWrap {
-    display: none;
     height: auto;
     width: 100%;
     right: auto;
     top: 0;
     left: 0;
     background-color: #000000;
-    padding: 120px 40px 21px;
   }
   .headerNavWrap .headerNav {
     display: block;
     height: auto;
-    margin: 0 0 4.2rem 0;
+    margin: 120px 40px 4.2rem 40px;
     border-top: 1px solid rgba(255, 255, 255, 0.07);
   }
   .headerNavWrap .headerNav li {

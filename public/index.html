@@ -13,7 +13,6 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
     <script src="%PUBLIC_URL%/js/modernizr.js"></script>
-    <script src="%PUBLIC_URL%/js/pace.min.js"></script>
     <title>Clint Andrew Hall - My Portfolio</title>
   </head>
   <body id="top">
@@ -29,10 +28,6 @@
     // Also can pass in optional settings block
 new Rellax('.rellax', {
   speed: -6,
-});
-Pace.on('done', function() {
-  var event = new Event('pace-finished');
-  window.dispatchEvent(event);
 });
 </script>
   </body>

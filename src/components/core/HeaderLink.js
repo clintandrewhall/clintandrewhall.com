@@ -1,19 +1,20 @@
 // @flow
-import React from "react";
-import { Route } from "react-router-dom";
-import classnames from "classnames";
+import React from 'react';
+import { Route } from 'react-router-dom';
+import classnames from 'classnames';
 
-import styles from "./HeaderLink.module.css";
-import type { ContextRouter as LinkProps } from "react-router-dom";
+import styles from './HeaderLink.module.css';
+import type { ContextRouter as LinkProps } from 'react-router-dom';
 
 type Props = {
   exact: boolean,
   label: string,
-  to: string
+  onClick: ?Function,
+  to: string,
 };
 
 const HeaderLink = (props: Props) => {
-  const { exact, label, to } = props;
+  const { exact, label, onClick, to } = props;
 
   return (
     <Route
@@ -26,20 +27,18 @@ const HeaderLink = (props: Props) => {
         const pathMatch = pathname.substr(0, to.length) === to && to.length > 1;
 
         // FIXME: ugh, this is ugly.
-        const hashMatch =
-          !pathMatch &&
-          (hash.length > 0 || (hash.length === 0 && to === "#")) &&
-          hash.substr(1) === to.substr(1);
+        const hashCheck = hash.length > 0 || (hash.length === 0 && to === '#');
+        const hashSub = hash.substr(1) === to.substr(1);
+        const hashMatch = !pathMatch && hashCheck && hashSub;
 
         const selected = pathMatch || hashMatch;
 
         return (
           <li
             className={classnames(styles.headerLink, {
-              [`${styles.current}`]: selected
-            })}
-          >
-            <a href={to} title={label}>
+              [`${styles.current}`]: selected,
+            })}>
+            <a href={to} title={label} onClick={onClick}>
               {label}
             </a>
           </li>

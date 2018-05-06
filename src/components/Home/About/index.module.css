@@ -7,47 +7,59 @@
 }
 
 .root {
-  composes: section from "./../../core/Section.module.css";
+  composes: section from './../../core/Section.module.css';
 }
 
 .intro {
-  composes: intro from "./../../core/Section.module.css";
+  composes: intro from './../../core/Section.module.css';
 }
 
 .introContent {
-  composes: introContent from "./../../core/Section.module.css";
+  composes: introContent from './../../core/Section.module.css';
 }
 
 .title {
-  composes: title from "./../../core/Section.module.css";
+  composes: title from './../../core/Section.module.css';
 }
 
 .subtitle {
-  composes: subtitle from "./../../core/Section.module.css";
+  composes: subtitle from './../../core/Section.module.css';
 }
 
 .lead {
-  composes: lead from "./../../core/Section.module.css";
+  composes: lead from './../../core/Section.module.css';
 }
 
 .columns {
-  composes: row from "./../../core/Grid.module.css";
+  composes: row from './../../core/Grid.module.css';
 }
 
 .left {
   composes: left from global;
-  composes: col_six from "./../../core/Grid.module.css";
-  composes: tab_full from "./../../core/Grid.module.css";
+  composes: col_six from './../../core/Grid.module.css';
+  composes: tab_full from './../../core/Grid.module.css';
   padding-right: 40px;
 }
 
 .right {
   composes: right from global;
-  composes: col_six from "./../../core/Grid.module.css";
-  composes: tab_full from "./../../core/Grid.module.css";
+  composes: col_six from './../../core/Grid.module.css';
+  composes: tab_full from './../../core/Grid.module.css';
   padding-left: 40px;
 }
 
 .columnTitle {
   composes: h03 from global;
+}
+
+@media only screen and (max-width: 800px) {
+  .right {
+    padding-left: 10px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+}
+
+@media only screen and (max-width: 400px) {
 }

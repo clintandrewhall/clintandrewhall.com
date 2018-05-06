@@ -173,11 +173,11 @@ html.no-csstransitions .main {
 /* animate .main
  * ------------------------------------------------------------------- */
 
-html.ss-preload .main {
+html.preload .main {
   opacity: 0;
 }
 
-html.ss-loaded .main {
+html.loaded .main {
   animation-duration: 2s;
   -webkit-animation-name: fadeIn;
   animation-name: fadeIn;
