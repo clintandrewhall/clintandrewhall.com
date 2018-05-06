@@ -22,7 +22,7 @@ class Home extends React.Component<{}, State> {
   };
 
   componentDidMount() {
-    window.addEventListener('pace-finished', () => {
+    window.addEventListener('fade-finished', () => {
       if (this.heroRef) {
         const node = ReactDOM.findDOMNode(this.heroRef.current);
         if (node instanceof HTMLElement) {

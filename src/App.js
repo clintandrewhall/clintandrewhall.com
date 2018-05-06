@@ -37,6 +37,8 @@ window.addEventListener('load', function() {
       html.classList.remove('preload');
       html.classList.add('loaded');
       fade(preloader);
+      var event = new Event('fade-finished');
+      window.dispatchEvent(event);
     });
   }
 });

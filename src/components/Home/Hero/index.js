@@ -6,18 +6,9 @@ import Social from './Social.js';
 import styles from './index.module.css';
 
 class Hero extends React.PureComponent<{}> {
-
   render() {
     return (
-      <section
-        id="home"
-        className={styles.root}
-        data-parallax="scroll"
-        data-image-src="images/hero-two.jpg"
-        data-natural-width={2581}
-        data-natural-height={1721}
-        data-position-x="right"
-        data-position-y="center">
+      <section id="home" className={styles.root}>
         <div className={styles.overlay} />
         <div className={styles.shadowOverlay} />
         <div className={styles.content}>
@@ -47,6 +38,6 @@ class Hero extends React.PureComponent<{}> {
       </section>
     );
   }
-};
+}
 
 export default Hero;
