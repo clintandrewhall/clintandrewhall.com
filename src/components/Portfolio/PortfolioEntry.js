@@ -3,6 +3,7 @@
 import React from 'react';
 import moment from 'moment';
 
+import ScrollToTopOnMount from '../core/ScrollToTopOnMount';
 import Header from './../core/Header';
 
 import type { PortfolioItemType } from './PortfolioItem';
@@ -42,6 +43,7 @@ export default (props: Props) => {
           dangerouslySetInnerHTML={{ __html: entry.__content }}
         />
       </div>
+      <ScrollToTopOnMount />
     </div>
   );
 };

@@ -4,6 +4,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Rellax from 'rellax';
 
+import ScrollToTopOnMount from '../core/ScrollToTopOnMount';
 import Header from './../core/Header';
 import Hero from './Hero';
 import About from './About';
@@ -49,6 +50,7 @@ class Home extends React.Component<{}, State> {
         <Portfolio />
         <Work />
         <Posts />
+        <ScrollToTopOnMount />
       </div>
     );
   }

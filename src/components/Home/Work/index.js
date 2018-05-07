@@ -13,8 +13,7 @@ const Work = () => {
             <h2 className={styles.title}>Career</h2>
             <h3 className={styles.subtitle}>Read About My Experience</h3>
             <p className={styles.lead}>
-              I'm currently a User Interface Engineer at Facebook. These are a
-              few of the other roles I've held.
+              These are a few roles I've held recently.
             </p>
           </div>
         </div>
