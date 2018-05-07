@@ -169,10 +169,7 @@ class Header extends React.Component<Props, State> {
                   [styles.headerMenuToggle]: true,
                   [styles.isClicked]: toggleState !== 'COLLAPSED',
                 })}
-                href="#0"
-                onClick={() => {
-                  onToggle();
-                }}>
+                onClick={() => onToggle()}>
                 <span>Menu</span>
               </a>
             </div>

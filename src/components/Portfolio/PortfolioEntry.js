@@ -14,6 +14,7 @@ type Props = {
 };
 
 export default (props: Props) => {
+  document.title = 'Clint Andrew Hall - Portfolio';
   const { entry } = props;
   const { title, tags, timestamp } = entry;
   const tagList = tags.map(tag => (
