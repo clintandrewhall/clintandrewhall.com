@@ -46,7 +46,7 @@ window.addEventListener('load', function() {
 class App extends React.PureComponent<void> {
   render() {
     return (
-      <Router>
+      <Router onUpdate={() => window.scrollTo(0, 0)}>
         <div style={{ height: '100%' }}>
           <Route path="/" component={Home} exact={true} />
           {routes()}

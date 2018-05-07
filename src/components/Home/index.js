@@ -2,6 +2,7 @@
 
 import React from 'react';
 import ReactDOM from 'react-dom';
+import Rellax from 'rellax';
 
 import Header from './../core/Header';
 import Hero from './Hero';
@@ -30,12 +31,18 @@ class Home extends React.Component<{}, State> {
         }
       }
     });
+    new Rellax('.rellax', {
+      speed: -6,
+    });
   }
 
   render() {
     const { triggerHeight } = this.state;
     return (
       <div style={{ height: '100%' }}>
+        <div className="rellax">
+          <div className="background" />
+        </div>
         <Header home={true} triggerHeight={triggerHeight} />
         <Hero ref={this.heroRef} />
         <About />

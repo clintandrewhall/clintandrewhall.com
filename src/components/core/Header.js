@@ -24,6 +24,7 @@ const SCROLLING_LIMIT = -1;
 
 class Header extends React.Component<Props, State> {
   toggleButton = React.createRef();
+  _scrollHandler = null;
 
   static defaultProps = {
     home: false,
@@ -37,13 +38,13 @@ class Header extends React.Component<Props, State> {
   };
 
   componentDidMount() {
-    window.addEventListener('scroll', () => this._handleScroll(), {
-      passive: true,
-    });
+    this._scrollHandler = this._handleScroll.bind(this);
+    window.addEventListener('scroll', this._scrollHandler);
   }
 
   componentWillUnmount() {
-    window.removeEventListener('scroll', () => this._handleScroll());
+    window.removeEventListener('scroll', this._scrollHandler);
+    this._scrollHandler = null;
   }
 
   _handleScroll() {

@@ -16,7 +16,9 @@ export default (props: Props) => {
   const { entry } = props;
   const { title, tags, timestamp } = entry;
   const tagList = tags.map(tag => (
-    <li className={styles.category}>{tag.name}</li>
+    <li className={styles.category} key={tag.name}>
+      {tag.name}
+    </li>
   ));
   const date = moment(timestamp * 1000).format('MMMM Do YYYY');
   return (
@@ -34,7 +36,7 @@ export default (props: Props) => {
         </header>
       </article>
       <div className={styles.content}>
-        <div class={styles.caption}>{entry.caption}</div>
+        <div className={styles.caption}>{entry.caption}</div>
         <div
           className={styles.markdown}
           dangerouslySetInnerHTML={{ __html: entry.__content }}
