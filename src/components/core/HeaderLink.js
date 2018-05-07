@@ -1,6 +1,6 @@
 // @flow
 import React from 'react';
-import { Route } from 'react-router-dom';
+import { Route, Link } from 'react-router-dom';
 import classnames from 'classnames';
 
 import styles from './HeaderLink.module.css';
@@ -38,9 +38,9 @@ const HeaderLink = (props: Props) => {
             className={classnames(styles.headerLink, {
               [`${styles.current}`]: selected,
             })}>
-            <a href={to} title={label} onClick={onClick}>
+            <Link to={to} title={label} onClick={onClick}>
               {label}
-            </a>
+            </Link>
           </li>
         );
       }}
