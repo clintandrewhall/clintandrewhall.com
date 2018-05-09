@@ -15,14 +15,17 @@ type Props = {
 
 export default (props: Props) => {
   document.title = 'Clint Andrew Hall - Portfolio';
+
   const { entry } = props;
   const { title, tags, timestamp } = entry;
+  const date = moment(timestamp * 1000).format('MMMM Do YYYY');
+
   const tagList = tags.map(tag => (
     <li className={styles.category} key={tag.name}>
       {tag.name}
     </li>
   ));
-  const date = moment(timestamp * 1000).format('MMMM Do YYYY');
+
   return (
     <div className={styles.root}>
       <Header />
@@ -32,18 +35,18 @@ export default (props: Props) => {
           style={{ backgroundImage: 'url(' + entry.cover.src + ')' }}>
           <div className={styles.headerContent}>
             <h1 className={styles.title}>{title}</h1>
+            <h2 className={styles.caption}>{entry.caption}</h2>
             <p className={styles.date}>{date}</p>
             <ul className={styles.categories}>{tagList}</ul>
           </div>
         </header>
+        <div className={styles.content}>
+          <div
+            className={styles.markdown}
+            dangerouslySetInnerHTML={{ __html: entry.__content }}
+          />
+        </div>
       </article>
-      <div className={styles.content}>
-        <div className={styles.caption}>{entry.caption}</div>
-        <div
-          className={styles.markdown}
-          dangerouslySetInnerHTML={{ __html: entry.__content }}
-        />
-      </div>
       <ScrollToTopOnMount />
     </div>
   );
