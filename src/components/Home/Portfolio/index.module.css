@@ -33,6 +33,12 @@
   width: 1600px;
 }
 
+.content {
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+}
+
 .masonry {
   composes: masonry from global;
 }

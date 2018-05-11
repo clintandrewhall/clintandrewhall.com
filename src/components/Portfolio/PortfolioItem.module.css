@@ -1,8 +1,9 @@
 .masonryBrick {
-  float: left;
+  display: inline-block;
   padding-top: 360px;
   width: 480px;
   position: relative;
+  text-align: left;
 }
 
 .root {

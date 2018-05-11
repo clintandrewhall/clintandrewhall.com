@@ -41,7 +41,9 @@ const Portfolio = () => {
           </p>
         </div>
       </div>
-      <div className={styles.portfolio}>{items}</div>
+      <div className={styles.portfolio}>
+        <div className={styles.content}>{items}</div>
+      </div>
     </section>,
   ];
 };

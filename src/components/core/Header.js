@@ -4,6 +4,7 @@ import React from 'react';
 import classNames from 'classnames';
 import smoothscroll from 'smoothscroll';
 import { SlideToggle } from 'react-slide-toggle';
+import { Link } from 'react-router-dom';
 
 import HeaderLink from './HeaderLink.js';
 import styles from './Header.module.css';
@@ -99,9 +100,9 @@ class Header extends React.Component<Props, State> {
           [styles.sticky]: sticky,
         })}>
         <div className={styles.headerLogo}>
-          <a href="/">
+          <Link to={home ? '#' : '/'}>
             <img src="/images/logo.png" alt="Home" />
-          </a>
+          </Link>
         </div>
         <SlideToggle
           collapsed={true}

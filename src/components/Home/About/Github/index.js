@@ -38,6 +38,10 @@ class GithubCard extends React.Component<Props, State> {
     const user = jsons[0];
     let repos = jsons[1];
 
+    if (repos.message) {
+      return;
+    }
+
     const repoReponses = await Promise.all(
       repos.map((repo: Object) => fetch(repo.languages_url)),
     );
