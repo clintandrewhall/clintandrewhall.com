@@ -5,6 +5,7 @@ import moment from 'moment';
 
 import ScrollToTopOnMount from '../core/ScrollToTopOnMount';
 import Header from './../core/Header';
+import Footer from './../core/Footer';
 
 import type { PortfolioItemType } from './PortfolioItem';
 import styles from './PortfolioEntry.module.css';
@@ -47,6 +48,7 @@ export default (props: Props) => {
           />
         </div>
       </article>
+      <Footer />
       <ScrollToTopOnMount />
     </div>
   );

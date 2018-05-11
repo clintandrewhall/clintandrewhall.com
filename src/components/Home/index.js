@@ -11,6 +11,7 @@ import About from './About';
 import Portfolio from './Portfolio';
 import Posts from './Posts';
 import Work from './Work';
+import Footer from './../core/Footer';
 
 type State = {
   triggerHeight: number,
@@ -51,6 +52,7 @@ class Home extends React.Component<{}, State> {
         <Portfolio />
         <Work />
         <Posts />
+        <Footer />
         <ScrollToTopOnMount />
       </div>
     );
