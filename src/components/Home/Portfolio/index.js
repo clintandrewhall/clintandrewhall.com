@@ -49,11 +49,7 @@ const Portfolio = () => {
           </p>
         </div>
       </div>
-      <div className={styles.portfolio}>
-        <Masonry className={styles.masonry} options={masonryOptions}>
-          {items}
-        </Masonry>
-      </div>
+      <div className={styles.portfolio}>{items}</div>
     </section>,
   ];
 };

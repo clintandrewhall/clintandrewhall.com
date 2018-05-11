@@ -5,13 +5,17 @@
 }
 
 .root {
+  height: 100%;
+  width: 100%;
   position: relative;
   overflow: hidden;
 }
 
 .thumb img {
+  display: block;
+  height: 100%;
+  width: 100%;
   vertical-align: top;
-  -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
 }
 
@@ -30,6 +34,7 @@
 }
 
 .thumbArea {
+  height: 100%;
   display: block;
 }
 
@@ -98,6 +103,10 @@
   background: #fff;
   border-color: #fff;
   color: #000;
+}
+
+.thumb {
+  height: 100%;
 }
 
 .text {
@@ -181,18 +190,18 @@
 
 /* on hover */
 
-.root:hover .thumbArea::before {
+.masonryBrick:hover .thumbArea::before {
   opacity: 1;
   visibility: visible;
 }
 
-.root:hover .thumb img {
+.masonryBrick:hover .thumb img {
   -webkit-transform: scale(1.05);
   -ms-transform: scale(1.05);
   transform: scale(1.05);
 }
 
-.root:hover .projectLink {
+.masonryBrick:hover .projectLink {
   opacity: 1;
   visibility: visible;
   -webkit-transform: translate3d(0, 0, 0);
@@ -200,7 +209,7 @@
   transform: translate3d(0, 0, 0);
 }
 
-.root:hover .caption {
+.masonryBrick:hover .caption {
   display: block;
 }
 
@@ -212,37 +221,37 @@
   color: #fff;
 }
 
-/* -------------------------------------------------------------------
- * responsive:
- * works
- * ------------------------------------------------------------------- */
-
 @media only screen and (max-width: 1700px) {
   .masonryBrick {
-    width: 350px;
+    height: 360px;
+    width: 480px;
   }
 }
 
 @media only screen and (max-width: 1500px) {
   .masonryBrick {
+    height: 300px;
     width: 400px;
   }
 }
 
 @media only screen and (max-width: 1300px) {
   .masonryBrick {
+    height: 250px;
     width: 333px;
   }
 }
 
 @media only screen and (max-width: 1099px) {
   .masonryBrick {
+    height: 37.5%;
     width: 50%;
   }
 }
 
 @media only screen and (max-width: 600px) {
   .masonryBrick {
+    height: 75%;
     width: 100%;
   }
 }
