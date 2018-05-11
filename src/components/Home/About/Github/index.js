@@ -7,6 +7,8 @@ import styles from './index.module.css';
 import Stats from './Stats.js';
 import LOC from './LOC.js';
 
+import backup from './../../../../_content/github';
+
 type Props = {};
 type State = {
   user: ?Object,
@@ -34,12 +36,14 @@ class GithubCard extends React.Component<Props, State> {
 
   async componentDidMount() {
     const responses = await Promise.all([fetch(userAPI), fetch(reposAPI)]);
-    const jsons = await Promise.all(responses.map(result => result.json()));
-    const user = jsons[0];
+    let jsons = await Promise.all(responses.map(result => result.json()));
+    let user = jsons[0];
     let repos = jsons[1];
 
-    if (repos.message) {
-      return;
+    if (repos.message || user.message) {
+      jsons = backup;
+      user = jsons[0];
+      repos = jsons[1];
     }
 
     const repoReponses = await Promise.all(

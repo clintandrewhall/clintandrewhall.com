@@ -33,18 +33,19 @@
     "smoothscroll": "^0.4.0"
   },
   "scripts": {
-    "build-medium": "babel-node --presets babel-preset-env --plugins babel-plugin-transform-flow-strip-types -- ./data/medium",
+    "build-medium":
+      "babel-node --presets babel-preset-env --plugins babel-plugin-transform-flow-strip-types -- ./data/medium",
+    "build-github":
+      "babel-node --presets babel-preset-env --plugins babel-plugin-transform-flow-strip-types -- ./data/github",
     "develop": "react-scripts start",
     "start": "serve -s build",
-    "build": "yarn run build-medium && react-scripts build",
+    "build":
+      "yarn run build-medium && yarn run build-github && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "flow": "flow"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": [
-      "prettier --single-quote --write",
-      "git add"
-    ]
+    "src/**/*.{js,jsx,json,css}": ["prettier --single-quote --write", "git add"]
   }
 }
