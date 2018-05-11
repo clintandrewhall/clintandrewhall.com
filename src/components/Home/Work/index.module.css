@@ -7,7 +7,7 @@
 }
 
 .work {
-  composes: row from './../../core/Grid.module.css';
+  composes: row from global;
 }
 
 .intro {
@@ -48,21 +48,21 @@
 }
 
 .heading {
-  composes: col_full from './../../core/Grid.module.css';
+  composes: col_full from global;
   composes: text-center from global;
 }
 
 .left {
   composes: left from global;
-  composes: col_six from './../../core/Grid.module.css';
-  composes: tab_full from './../../core/Grid.module.css';
+  composes: col_six from global;
+  composes: tab_full from global;
   padding-right: 40px;
 }
 
 .right {
   composes: right from global;
-  composes: col_six from './../../core/Grid.module.css';
-  composes: tab_full from './../../core/Grid.module.css';
+  composes: col_six from global;
+  composes: tab_full from global;
   padding-left: 40px;
 }
 

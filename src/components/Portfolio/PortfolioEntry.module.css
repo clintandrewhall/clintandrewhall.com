@@ -44,8 +44,8 @@
 }
 
 .headerContent {
-  composes: row from './../core/Grid.module.css';
-  composes: narrow from './../core/Grid.module.css';
+  composes: row from global;
+  composes: narrow from global;
   font-family: 'montserrat-regular', sans-serif;
   font-size: 2rem;
   line-height: 1.8;

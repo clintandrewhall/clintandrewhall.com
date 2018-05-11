@@ -7,7 +7,7 @@
 }
 
 .intro {
-  composes: row from './Grid.module.css';
+  composes: row from global;
   max-width: 800px;
   padding-bottom: 1.5rem;
   position: relative;
@@ -23,7 +23,7 @@
 }
 
 .introContent {
-  composes: col_full from './Grid.module.css';
+  composes: col_full from global;
   composes: text-center from global;
 }
 

@@ -51,10 +51,11 @@ const PortfolioItem = (props: Props) => {
     <div className={styles.masonryBrick} key={timestamp}>
       <div className={styles.root}>
         <div className={styles.thumb}>
-          <div className={styles.thumbArea}>
-            <img src={src} alt="" />
-            <span className={styles.shadow} />
-          </div>
+          <div
+            className={styles.thumbArea}
+            style={{ backgroundImage: 'url(' + src + ')' }}
+          />
+          <span className={styles.shadow} />
         </div>
         <div className={styles.text}>
           <h3 className={styles.title}>{title}</h3>

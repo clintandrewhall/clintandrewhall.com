@@ -1347,10 +1347,6 @@ basic-auth@2.0.0:
   dependencies:
     safe-buffer "5.1.1"
 
-batch-processor@^1.0.0:
-  version "1.0.0"
-  resolved "https://registry.yarnpkg.com/batch-processor/-/batch-processor-1.0.0.tgz#75c95c32b748e0850d10c2b168f6bdbe9891ace8"
-
 batch@0.6.1:
   version "0.6.1"
   resolved "https://registry.yarnpkg.com/batch/-/batch-0.6.1.tgz#dc34314f4e679318093fc760272525f94bf25c16"
@@ -1757,10 +1753,6 @@ chardet@^0.4.0:
   version "0.4.2"
   resolved "https://registry.yarnpkg.com/chardet/-/chardet-0.4.2.tgz#b5473b33dc97c424e5d98dc87d55d4d8a29c8bf2"
 
-charm@~0.1.0:
-  version "0.1.2"
-  resolved "https://registry.yarnpkg.com/charm/-/charm-0.1.2.tgz#06c21eed1a1b06aeb67553cdc53e23274bac2296"
-
 chokidar@^1.6.0, chokidar@^1.6.1:
   version "1.7.0"
   resolved "https://registry.yarnpkg.com/chokidar/-/chokidar-1.7.0.tgz#798e689778151c8076b4b360e5edd28cda2bb468"
@@ -2165,14 +2157,6 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     ripemd160 "^2.0.0"
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
-
-create-react-class@^15.6.2:
-  version "15.6.3"
-  resolved "https://registry.yarnpkg.com/create-react-class/-/create-react-class-15.6.3.tgz#2d73237fb3f970ae6ebe011a9e66f46dbca80036"
-  dependencies:
-    fbjs "^0.8.9"
-    loose-envify "^1.3.1"
-    object-assign "^4.1.1"
 
 cross-spawn@5.1.0, cross-spawn@^5.0.1, cross-spawn@^5.1.0:
   version "5.1.0"
@@ -2732,12 +2716,6 @@ electron-to-chromium@^1.2.7, electron-to-chromium@^1.3.30:
 elegant-spinner@^1.0.1:
   version "1.0.1"
   resolved "https://registry.yarnpkg.com/elegant-spinner/-/elegant-spinner-1.0.1.tgz#db043521c95d7e303fd8f345bedc3349cfb0729e"
-
-element-resize-detector@^1.1.9:
-  version "1.1.14"
-  resolved "https://registry.yarnpkg.com/element-resize-detector/-/element-resize-detector-1.1.14.tgz#af064a0a618a820ad570a95c5eec5b77be0128c1"
-  dependencies:
-    batch-processor "^1.0.0"
 
 elliptic@^6.0.0:
   version "6.4.0"
@@ -3363,7 +3341,7 @@ fbemitter@^2.1.1:
   dependencies:
     fbjs "^0.8.4"
 
-fbjs@^0.8.16, fbjs@^0.8.4, fbjs@^0.8.9:
+fbjs@^0.8.16, fbjs@^0.8.4:
   version "0.8.16"
   resolved "https://registry.yarnpkg.com/fbjs/-/fbjs-0.8.16.tgz#5e67432f550dc41b572bf55847b8aca64e5337db"
   dependencies:
@@ -4209,12 +4187,6 @@ ignore@^3.3.3:
 image-size@~0.5.0:
   version "0.5.5"
   resolved "https://registry.yarnpkg.com/image-size/-/image-size-0.5.5.tgz#09dfd4ab9d20e29eb1c3e80b8990378df9e3cb9c"
-
-imagesloaded@^4.0.0:
-  version "4.1.4"
-  resolved "https://registry.yarnpkg.com/imagesloaded/-/imagesloaded-4.1.4.tgz#1376efcd162bb768c34c3727ac89cc04051f3cc7"
-  dependencies:
-    ev-emitter "^1.0.0"
 
 import-lazy@^2.1.0:
   version "2.1.0"
@@ -5634,7 +5606,7 @@ marked@^0.3.3:
   version "0.3.19"
   resolved "https://registry.yarnpkg.com/marked/-/marked-0.3.19.tgz#5d47f709c4c9fc3c216b6d46127280f40b39d790"
 
-masonry-layout@^4.2.0, masonry-layout@^4.2.1:
+masonry-layout@^4.2.1:
   version "4.2.1"
   resolved "https://registry.yarnpkg.com/masonry-layout/-/masonry-layout-4.2.1.tgz#1c878b85a88866ba6b39b9bd0e162348aed7ce13"
   dependencies:
@@ -6346,12 +6318,6 @@ pace-js@^1.0.2:
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/pace-js/-/pace-js-1.0.2.tgz#673a717f833ccb4f4315531b75ee4788376600f7"
 
-pace@^0.0.4:
-  version "0.0.4"
-  resolved "https://registry.yarnpkg.com/pace/-/pace-0.0.4.tgz#d66405d5f5bc12d25441a6e26c878dbc69e77a77"
-  dependencies:
-    charm "~0.1.0"
-
 package-json@^4.0.0:
   version "4.0.1"
   resolved "https://registry.yarnpkg.com/package-json/-/package-json-4.0.1.tgz#8869a0401253661c4c4ca3da6c2121ed555f5eed"
@@ -6938,7 +6904,7 @@ promise@^7.1.1:
   dependencies:
     asap "~2.0.3"
 
-prop-types@^15.0.0, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.5.8, prop-types@^15.6.0:
+prop-types@^15.0.0, prop-types@^15.5.10, prop-types@^15.5.4, prop-types@^15.6.0:
   version "15.6.1"
   resolved "https://registry.yarnpkg.com/prop-types/-/prop-types-15.6.1.tgz#36644453564255ddda391191fb3a125cbdf654ca"
   dependencies:
@@ -7111,17 +7077,6 @@ react-error-overlay@^1.0.10:
     react-dev-utils "^3.1.0"
     settle-promise "1.0.0"
     source-map "0.5.6"
-
-react-masonry-component@^6.2.0:
-  version "6.2.0"
-  resolved "https://registry.yarnpkg.com/react-masonry-component/-/react-masonry-component-6.2.0.tgz#e0689ff2b819da34785a8d8604ea52ff9e1caae6"
-  dependencies:
-    create-react-class "^15.6.2"
-    element-resize-detector "^1.1.9"
-    imagesloaded "^4.0.0"
-    lodash "^4.17.4"
-    masonry-layout "^4.2.0"
-    prop-types "^15.5.8"
 
 react-photoswipe@^1.3.0:
   version "1.3.0"

@@ -1,18 +1,10 @@
 // @flow
 
 import React from 'react';
-import Masonry from 'react-masonry-component';
 
 import PortfolioItem from './../../Portfolio/PortfolioItem';
-import itemStyles from './../../Portfolio/PortfolioItem.module.css';
 
 import styles from './index.module.css';
-
-const masonryOptions = {
-  enableResizableChildren: true,
-  transitionDuration: 0,
-  itemSelector: itemStyles.root,
-};
 
 const Portfolio = () => {
   // $FlowFixMe

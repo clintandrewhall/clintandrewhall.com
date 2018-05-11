@@ -96,7 +96,7 @@ html.no-csstransitions .main {
 }
 
 .main {
-  composes: row from './../../core/Grid.module.css';
+  composes: row from global;
   padding-right: 300px;
   position: relative;
 }

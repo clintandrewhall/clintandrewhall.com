@@ -27,7 +27,7 @@
 }
 
 .portfolio {
-  composes: row from './../../core/Grid.module.css';
+  composes: row from global;
   margin-top: 4.8rem;
   max-width: none;
   width: 1600px;
