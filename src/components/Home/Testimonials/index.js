@@ -2,7 +2,6 @@
 
 import React from 'react';
 import Slider from 'react-slick';
-import cx from 'classnames';
 
 import Testimonial from './Testimonial';
 import styles from './index.module.css';
@@ -10,6 +9,8 @@ import data from './../../../_content/linkedin';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+
+import type { Recommendation } from './../../../_content/linkedin';
 
 const PrevArrow = (props: {
   className?: string,
@@ -50,7 +51,13 @@ const settings = {
 };
 
 const Testimonials = () => {
-  const items = data.recommendations.map((recommendation, index) => (
+  const { recommendations } = data;
+
+  recommendations.sort((a: Recommendation, b: Recommendation) => {
+    return b.timestamp - a.timestamp;
+  });
+
+  const items = recommendations.map((recommendation, index) => (
     <Testimonial key={index} testmonial={recommendation} />
   ));
 
