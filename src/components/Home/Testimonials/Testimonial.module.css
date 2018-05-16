@@ -1,0 +1,74 @@
+.root {
+  position: relative;
+  padding-top: 4.5rem;
+  padding-left: 12rem;
+  padding-right: 3rem;
+  line-height: 2.063;
+}
+
+.root::before {
+  content: '';
+  display: block;
+  width: 1px;
+  height: 3rem;
+  position: absolute;
+  left: calc(3.3rem + 0.9rem);
+  top: 0;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.avatar {
+  width: 6.6rem;
+  height: 6.6rem;
+  box-shadow: 0 0 0 0.9rem rgba(255, 255, 255, 0.1);
+  border-radius: 100%;
+  position: absolute;
+  left: 0.9rem;
+  top: 4.8rem;
+  outline: none;
+}
+
+.name,
+.title,
+.connection {
+  display: block;
+}
+
+.title,
+.connection {
+  font-family: 'montserrat-regular', sans-serif;
+  font-size: 1.3rem;
+  color: rgba(95, 95, 95, 0.7);
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.name {
+  composes: h06 from global;
+  margin: 0rem;
+  color: #ffffff;
+}
+
+@media only screen and (max-width: 1000px) {
+  .root {
+    padding-left: 11rem;
+  }
+  .avatar {
+    width: 6rem;
+    height: 6rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .root {
+    padding: 13.2rem 0 0;
+    text-align: center;
+  }
+  .root::before {
+    left: 50%;
+  }
+  .avatar {
+    left: 50%;
+    margin-left: -3rem;
+  }
+}

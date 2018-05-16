@@ -1,0 +1,145 @@
+.root {
+  background-color: #0d0a0b;
+  background-image: url('/images/testimonial-bg.jpg');
+  background-repeat: no-repeat;
+  background-position: center, center;
+  clear: both;
+  padding-top: 9.6rem;
+  padding-bottom: 10.2rem;
+  color: rgba(255, 255, 255, 0.5);
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  opacity: 0.9;
+  background: linear-gradient(to bottom, #0d0a0b 100%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+.header {
+  composes: row from global;
+  text-align: center;
+  padding: 0 14rem;
+  position: relative;
+}
+
+.headerContent {
+  composes: col-full from global;
+}
+
+.heading {
+  font-family: 'librebaskerville-bold', serif;
+  font-size: 4.2rem;
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.subheading {
+  font-size: 1.5rem;
+  color: #fff;
+  margin: 0;
+}
+
+.subheading a:hover,
+.subheading a:focus {
+  color: #fff;
+}
+
+.content {
+  composes: row from global;
+  margin-top: 4.2rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  position: relative;
+}
+
+.slider {
+  composes: col-full from global;
+  position: relative;
+}
+
+.root :global(.slick-slide) {
+  outline: none;
+}
+
+.prev,
+.next {
+  position: absolute;
+  top: -10.2rem;
+  color: white;
+  border-radius: 100%;
+  padding-right: 0;
+  padding-left: 0;
+  background-color: rgba(255, 255, 255, 0.15);
+  border: none;
+  box-shadow: 0 0 0 5px rgba(255, 255, 255, 0);
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+  z-index: 2;
+}
+
+.prev :global(.im),
+.next :global(.im) {
+  font-size: 1.2rem;
+  height: 4.5rem;
+  width: 4.5rem;
+  line-height: 4.5rem;
+  text-align: center;
+}
+
+.prev:hover,
+.prev:focus,
+.next:hover,
+.next:focus {
+  color: white;
+  box-shadow: 0 0 0 5px white;
+  background-color: transparent;
+}
+
+.prev {
+  left: 4.5rem;
+}
+
+.next {
+  right: 4.5rem;
+}
+
+@media only screen and (max-width: 1200px) {
+  .heading {
+    font-size: 3.8rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .heading {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .content {
+    margin-top: 3rem;
+  }
+  .header {
+    padding: 0;
+  }
+  .heading {
+    font-size: 2.7rem;
+  }
+  .prev,
+  .next {
+    top: 5.1rem;
+  }
+  .prev {
+    left: 1rem;
+  }
+  .next {
+    right: 1rem;
+  }
+}

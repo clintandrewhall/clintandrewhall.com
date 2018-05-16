@@ -9,7 +9,7 @@
     "custom-react-scripts": "0.2.2",
     "dotenv": "^5.0.1",
     "fbemitter": "^2.1.1",
-    "flow-bin": "^0.71.0",
+    "flow-bin": "^0.72.0",
     "github-markdown-css": "^2.10.0",
     "husky": "^0.14.3",
     "lint-staged": "^7.0.4",
@@ -25,27 +25,29 @@
     "react-dom": "^16.3.1",
     "react-photoswipe": "^1.3.0",
     "react-router-dom": "^4.2.2",
+    "react-slick": "^0.23.1",
     "react-slide-toggle": "^0.1.12",
     "react-waypoint": "^8.0.1",
     "rellax": "^1.6.2",
     "request": "^2.85.0",
     "serve": "^6.5.5",
+    "slick-carousel": "^1.8.1",
     "smoothscroll": "^0.4.0"
   },
   "scripts": {
-    "build-medium":
-      "babel-node --presets babel-preset-env --plugins babel-plugin-transform-flow-strip-types -- ./data/medium",
-    "build-github":
-      "babel-node --presets babel-preset-env --plugins babel-plugin-transform-flow-strip-types -- ./data/github",
+    "build-medium": "babel-node --presets babel-preset-env --plugins babel-plugin-transform-flow-strip-types -- ./data/medium",
+    "build-github": "babel-node --presets babel-preset-env --plugins babel-plugin-transform-flow-strip-types -- ./data/github",
     "develop": "react-scripts start",
     "start": "serve -s build",
-    "build":
-      "yarn run build-medium && yarn run build-github && react-scripts build",
+    "build": "yarn run build-medium && yarn run build-github && react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject",
     "flow": "flow"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json,css}": ["prettier --single-quote --write", "git add"]
+    "src/**/*.{js,jsx,json,css}": [
+      "prettier --single-quote --write",
+      "git add"
+    ]
   }
 }
