@@ -1,5 +1,6 @@
 /* ===================================================================
- * # grid
+ * # grid - (_grid.scss)
+ *
  * ------------------------------------------------------------------- */
 
 .row {
@@ -24,79 +25,79 @@
 /* column blocks
  * -------------------------------------- */
 
-[class*='col_'] {
+[class*='col-'] {
   float: left;
 }
 
-[class*='col_'] + [class*='col_'].end {
+[class*='col-'] + [class*='col-'].end {
   float: right;
 }
 
-[class*='col_'] {
+[class*='col-'] {
   padding: 0 20px;
 }
 
-/* column width classes
+/* column width classes 
  * -------------------------------------- */
 
-.col_one {
+.col-one {
   width: 8.33333%;
 }
 
-.col_two,
-.col_1_6 {
+.col-two,
+.col-1-6 {
   width: 16.66667%;
 }
 
-.col_three,
-.col_1_4 {
+.col-three,
+.col-1-4 {
   width: 25%;
 }
 
-.col_four,
-.col_1_3 {
+.col-four,
+.col-1-3 {
   width: 33.33333%;
 }
 
-.col_five {
+.col-five {
   width: 41.66667%;
 }
 
-.col_six,
-.col_1_2 {
+.col-six,
+.col-1-2 {
   width: 50%;
 }
 
-.col_seven {
+.col-seven {
   width: 58.33333%;
 }
 
-.col_eight,
-.col_2-3 {
+.col-eight,
+.col-2-3 {
   width: 66.66667%;
 }
 
-.col_nine,
-.col_3-4 {
+.col-nine,
+.col-3-4 {
   width: 75%;
 }
 
-.col_ten,
-.col_5-6 {
+.col-ten,
+.col-5-6 {
   width: 83.33333%;
 }
 
-.col_eleven {
+.col-eleven {
   width: 91.66667%;
 }
 
-.col_twelve,
-.col_full {
+.col-twelve,
+.col-full {
   width: 100%;
 }
 
-/* -------------------------------------------------------------------
- * ## medium size devices
+/* ------------------------------------------------------------------- 
+ * ## medium size devices - (_grid.scss)
  * ------------------------------------------------------------------- */
 
 @media only screen and (max-width: 1200px) {
@@ -104,85 +105,85 @@
     margin-left: -15px;
     margin-right: -15px;
   }
-  [class*='col_'] {
+  [class*='col-'] {
     padding: 0 15px;
   }
-  .md_two,
-  .md_1_6 {
+  .md-two,
+  .md-1-6 {
     width: 16.66667%;
   }
-  .md_one {
+  .md-one {
     width: 8.33333%;
   }
-  .md_three,
-  .md_1_4 {
+  .md-three,
+  .md-1-4 {
     width: 25%;
   }
-  .md_four,
-  .md_1_3 {
+  .md-four,
+  .md-1-3 {
     width: 33.33333%;
   }
-  .md_five {
+  .md-five {
     width: 41.66667%;
   }
-  .md_six,
-  .md_1_2 {
+  .md-six,
+  .md-1-2 {
     width: 50%;
   }
-  .md_seven {
+  .md-seven {
     width: 58.33333%;
   }
-  .md_eight,
-  .md_2-3 {
+  .md-eight,
+  .md-2-3 {
     width: 66.66667%;
   }
-  .md_nine,
-  .md_3-4 {
+  .md-nine,
+  .md-3-4 {
     width: 75%;
   }
-  .md_ten,
-  .md_5-6 {
+  .md-ten,
+  .md-5-6 {
     width: 83.33333%;
   }
-  .md_eleven {
+  .md-eleven {
     width: 91.66667%;
   }
-  .md_twelve,
-  .md_full {
+  .md-twelve,
+  .md-full {
     width: 100%;
   }
 }
 
-/* -------------------------------------------------------------------
- * ## tablets
+/* ------------------------------------------------------------------- 
+ * ## tablets - (_grid.scss)
  * ------------------------------------------------------------------- */
 
 @media only screen and (max-width: 800px) {
   .row {
     width: 90%;
   }
-  .tab_1_4 {
+  .tab-1-4 {
     width: 25%;
   }
-  .tab_1_3 {
+  .tab-1-3 {
     width: 33.33333%;
   }
-  .tab_1_2 {
+  .tab-1-2 {
     width: 50%;
   }
-  .tab_2-3 {
+  .tab-2-3 {
     width: 66.66667%;
   }
-  .tab_3-4 {
+  .tab-3-4 {
     width: 75%;
   }
-  .tab_full {
+  .tab-full {
     width: 100%;
   }
 }
 
-/* -------------------------------------------------------------------
- * ## mobile devices
+/* ------------------------------------------------------------------- 
+ * ## mobile devices - (_grid.scss)
  * ------------------------------------------------------------------- */
 
 @media only screen and (max-width: 600px) {
@@ -195,31 +196,31 @@
     margin-left: -10px;
     margin-right: -10px;
   }
-  [class*='col_'] {
+  [class*='col-'] {
     padding: 0 10px;
   }
-  .mob_1_4 {
+  .mob-1-4 {
     width: 25%;
   }
-  .mob_1_3 {
+  .mob-1-3 {
     width: 33.33333%;
   }
-  .mob_1_2 {
+  .mob-1-2 {
     width: 50%;
   }
-  .mob_2-3 {
+  .mob-2-3 {
     width: 66.66667%;
   }
-  .mob_3-4 {
+  .mob-3-4 {
     width: 75%;
   }
-  .mob_full {
+  .mob-full {
     width: 100%;
   }
 }
 
-/* -------------------------------------------------------------------
- * ## small mobile devices
+/* ------------------------------------------------------------------- 
+ * ## small mobile devices - (_grid.scss) 
  * ------------------------------------------------------------------- */
 
 /* stack columns on small mobile devices
@@ -232,7 +233,7 @@
     margin-left: 0;
     margin-right: 0;
   }
-  [class*='col_'] {
+  [class*='col-'] {
     width: 100% !important;
     float: none !important;
     clear: both !important;
@@ -240,178 +241,189 @@
     margin-right: 0;
     padding: 0;
   }
-  [class*='col_'] + [class*='col_'].end {
+  [class*='col-'] + [class*='col-'].end {
     float: none;
   }
 }
 
 /* ===================================================================
- * # block grids
+ * # block grids - (_grid.scss)
  * ------------------------------------------------------------------- */
 
 /*   Equally-sized columns define at row level
  * ------------------------------------------------------------------- */
 
-[class*='block_']:after {
+[class*='block-']:after {
   content: '';
   display: table;
   clear: both;
 }
 
-.block_1_6 .col_block {
+.block-1-6 .col-block {
   width: 16.66667%;
 }
 
-.block_1_5 .col_block {
+.block-1-5 .col-block {
   width: 20%;
 }
 
-.block_1_4 .col_block {
+.block-1-4 .col-block {
   width: 25%;
 }
 
-.block_1_3 .col_block {
+.block-1-3 .col-block {
   width: 33.33333%;
 }
 
-.block_1_2 .col_block {
+.block-1-2 .col-block {
   width: 50%;
 }
 
 /**
- * Clearing for block grid columns. Allow columns with
+ * Clearing for block grid columns. Allow columns with 
  * different heights to align properly.
  */
 
-.block_1_6 .col_block:nth-child(6n + 1),
-.block_1_5 .col_block:nth-child(5n + 1),
-.block_1_4 .col_block:nth-child(4n + 1),
-.block_1_3 .col_block:nth-child(3n + 1),
-.block_1_2 .col_block:nth-child(2n + 1) {
+.block-1-6 .col-block:nth-child(6n + 1),
+.block-1-5 .col-block:nth-child(5n + 1),
+.block-1-4 .col-block:nth-child(4n + 1),
+.block-1-3 .col-block:nth-child(3n + 1),
+.block-1-2 .col-block:nth-child(2n + 1) {
   clear: both;
 }
 
-/* -------------------------------------------------------------------
- * ## medium size devices
+/* ------------------------------------------------------------------- 
+ * ## medium size devices - (_grid.scss)
  * ------------------------------------------------------------------- */
 
 @media only screen and (max-width: 1200px) {
-  .block_m-1-6 .col_block {
+  .block-m-1-6 .col-block {
     width: 16.66667%;
   }
-  .block_m-1-5 .col_block {
+  .block-m-1-5 .col-block {
     width: 20%;
   }
-  .block_m-1-4 .col_block {
+  .block-m-1-4 .col-block {
     width: 25%;
   }
-  .block_m-1-3 .col_block {
+  .block-m-1-3 .col-block {
     width: 33.33333%;
   }
-  .block_m-1-2 .col_block {
+  .block-m-1-2 .col-block {
     width: 50%;
   }
-  .block_m-full .col_block {
+  .block-m-full .col-block {
     width: 100%;
     clear: both;
   }
-  [class*='block_m-'] .bgrid:nth-child(n) {
+  [class*='block-m-'] .bgrid:nth-child(n) {
     clear: none;
   }
-  .block_m-1-6 .col_block:nth-child(6n + 1),
-  .block_m-1-5 .col_block:nth-child(5n + 1),
-  .block_m-1-4 .col_block:nth-child(4n + 1),
-  .block_m-1-3 .col_block:nth-child(3n + 1),
-  .block_m-1-2 .col_block:nth-child(2n + 1) {
+  .block-m-1-6 .col-block:nth-child(6n + 1),
+  .block-m-1-5 .col-block:nth-child(5n + 1),
+  .block-m-1-4 .col-block:nth-child(4n + 1),
+  .block-m-1-3 .col-block:nth-child(3n + 1),
+  .block-m-1-2 .col-block:nth-child(2n + 1) {
     clear: both;
   }
 }
 
-/* -------------------------------------------------------------------
- * ## tablets
+/* ------------------------------------------------------------------- 
+ * ## tablets - (_grid.scss)
  * ------------------------------------------------------------------- */
 
 @media only screen and (max-width: 800px) {
-  .block_tab_1_6 .col_block {
+  .block-tab-1-6 .col-block {
     width: 16.66667%;
   }
-  .block_tab_1_5 .col_block {
+  .block-tab-1-5 .col-block {
     width: 20%;
   }
-  .block_tab_1_4 .col_block {
+  .block-tab-1-4 .col-block {
     width: 25%;
   }
-  .block_tab_1_3 .col_block {
+  .block-tab-1-3 .col-block {
     width: 33.33333%;
   }
-  .block_tab_1_2 .col_block {
+  .block-tab-1-2 .col-block {
     width: 50%;
   }
-  .block_tab_full .col_block {
+  .block-tab-full .col-block {
     width: 100%;
     clear: both;
   }
-  [class*='block_tab_'] .bgrid:nth-child(n) {
+  [class*='block-tab-'] .bgrid:nth-child(n) {
     clear: none;
   }
-  .block_tab_1_6 .col_block:nth-child(6n + 1),
-  .block_tab_1_6 .col_block:nth-child(5n + 1),
-  .block_tab_1_4 .col_block:nth-child(4n + 1),
-  .block_tab_1_3 .col_block:nth-child(3n + 1),
-  .block_tab_1_2 .col_block:nth-child(2n + 1) {
+  .block-tab-1-6 .col-block:nth-child(6n + 1),
+  .block-tab-1-6 .col-block:nth-child(5n + 1),
+  .block-tab-1-4 .col-block:nth-child(4n + 1),
+  .block-tab-1-3 .col-block:nth-child(3n + 1),
+  .block-tab-1-2 .col-block:nth-child(2n + 1) {
     clear: both;
   }
 }
 
-/* -------------------------------------------------------------------
- * ## mobile devices
+/* ------------------------------------------------------------------- 
+ * ## mobile devices - (_grid.scss)
  * ------------------------------------------------------------------- */
 
 @media only screen and (max-width: 600px) {
-  .block_mob_1_6 .col_block {
+  .block-mob-1-6 .col-block {
     width: 16.66667%;
   }
-  .block_mob_1_5 .col_block {
+  .block-mob-1-5 .col-block {
     width: 20%;
   }
-  .block_mob_1_4 .col_block {
+  .block-mob-1-4 .col-block {
     width: 25%;
   }
-  .block_mob_1_3 .col_block {
+  .block-mob-1-3 .col-block {
     width: 33.33333%;
   }
-  .block_mob_1_2 .col_block {
+  .block-mob-1-2 .col-block {
     width: 50%;
   }
-  .block_mob_full .col_block {
+  .block-mob-full .col-block {
     width: 100%;
     clear: both;
   }
-  [class*='block_mob_'] .bgrid:nth-child(n) {
+  [class*='block-mob-'] .bgrid:nth-child(n) {
     clear: none;
   }
-  .block_mob_1_6 .col_block:nth-child(6n + 1),
-  .block_mob_1_5 .col_block:nth-child(5n + 1),
-  .block_mob_1_4 .col_block:nth-child(4n + 1),
-  .block_mob_1_3 .col_block:nth-child(3n + 1),
-  .block_mob_1_2 .col_block:nth-child(2n + 1) {
+  .block-mob-1-6 .col-block:nth-child(6n + 1),
+  .block-mob-1-5 .col-block:nth-child(5n + 1),
+  .block-mob-1-4 .col-block:nth-child(4n + 1),
+  .block-mob-1-3 .col-block:nth-child(3n + 1),
+  .block-mob-1-2 .col-block:nth-child(2n + 1) {
     clear: both;
   }
 }
 
-/* -------------------------------------------------------------------
- * ## small mobile devices
+/* ------------------------------------------------------------------- 
+ * ## small mobile devices - (_grid.scss) 
  * ------------------------------------------------------------------- */
 
 /* stack columns on small mobile devices
  * ------------------------------------------------------------------- */
 
 @media only screen and (max-width: 400px) {
-  .stack .col_block {
+  .stack .col-block {
     width: 100% !important;
     float: none !important;
     clear: both !important;
     margin-left: 0;
     margin-right: 0;
   }
+}
+
+/* ===================================================================
+ * # MISC  - (_grid.scss)
+ *
+ * ------------------------------------------------------------------- */
+
+.group:after {
+  content: '';
+  display: table;
+  clear: both;
 }

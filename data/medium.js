@@ -6,11 +6,12 @@ const BASE_URL = 'https://medium.com';
 const username = 'clintandrewhall';
 const writePath = './src/_content/posts/';
 
-const TAG_BASE = 'https://mediums.com/tag/';
+const TAG_BASE = 'https://medium.com/tag/';
 const IMG_BASE = 'https://cdn-images-1.medium.com/freeze/fit/t/800/350/';
 
 type Post = {
   coverSrc: string,
+  href: string,
   latestTimestamp: number,
   slug: string,
   subtitle: string,
@@ -20,33 +21,28 @@ type Post = {
 };
 
 const Template = (post: Post) => {
-  const {
-    coverSrc,
-    latestTimestamp,
-    slug,
-    subtitle,
-    tags,
-    timestamp,
-    title,
-  } = post;
+  const { coverSrc, href, slug, subtitle, tags, timestamp, title } = post;
 
   let tagOutput = '';
+  let jsOutput = '';
 
   if (tags && tags.length > 0) {
     tagOutput = 'Tags: ';
     tags.forEach(tag => {
       tagOutput += '[' + tag.name + '](' + TAG_BASE + tag.slug + '), ';
+      jsOutput += '  - ' + tag.name + '\n';
     });
   }
 
-  return `
----
-coverSrc: ${coverSrc}
-latestTimestamp: ${latestTimestamp}
-slug: ${slug}
-subtitle: ${subtitle}
+  return `---
+coverSrc: '${coverSrc}'
+href: '${href}'
+latestTimestamp: ${timestamp}
+slug: '${slug}'
+subtitle: '${subtitle}'
+tags: ${'\n'}${jsOutput || ''}
 timestamp: ${timestamp}
-title: ${title}
+title: '${title}'
 ---
 # ${title}
 ## ${subtitle}
@@ -104,6 +100,7 @@ ${tagOutput}
 
     return {
       coverSrc: IMG_BASE + imageId,
+      href: `${BASE_URL}/@${username}/${uniqueSlug}`,
       latestTimestamp: latestPublishedAt,
       slug: uniqueSlug,
       source: 'medium',
@@ -120,13 +117,9 @@ ${tagOutput}
   }
 
   const writes = posts.map(post =>
-    fs.writeFile(
-      writePath + post.latestTimestamp + '.md',
-      Template(post),
-      () => {
-        console.log('wrote: ' + post.latestTimestamp);
-      },
-    ),
+    fs.writeFile(writePath + post.timestamp + '.md', Template(post), () => {
+      console.log('wrote: ' + post.timestamp);
+    }),
   );
 
   await Promise.all(writes);

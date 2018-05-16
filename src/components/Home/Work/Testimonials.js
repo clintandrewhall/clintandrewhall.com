@@ -4,7 +4,7 @@ import React from 'react';
 import Slider from 'react-slick';
 
 import Testimonial from './Testimonial';
-import styles from './index.module.css';
+import styles from './Testimonials.module.css';
 import data from './../../../_content/linkedin';
 
 import 'slick-carousel/slick/slick.css';

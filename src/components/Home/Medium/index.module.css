@@ -1,0 +1,51 @@
+.root {
+  composes: section from './../../../components/core/Section.module.css';
+  background-color: #f1f1f1;
+  position: relative;
+}
+
+.header {
+  composes: row narrow has-bottom-sep from global;
+  composes: intro from './../../../components/core/Section.module.css';
+}
+
+.headerContent {
+  composes: col-full from global;
+}
+
+.title {
+  composes: title from './../../../components/core/Section.module.css';
+}
+
+.subtitle {
+  composes: subtitle from './../../../components/core/Section.module.css';
+}
+
+.lead {
+  composes: lead from './../../../components/core/Section.module.css';
+}
+
+.content {
+  composes: row from global;
+  max-width: 1000px;
+}
+
+.area {
+  composes: col-full from global;
+}
+
+.list {
+  composes: block-1-2 block-tab-full from global;
+}
+
+@media only screen and (max-width: 1200px) {
+  .content {
+    max-width: 900px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .content {
+    max-width: 800px;
+  }
+}

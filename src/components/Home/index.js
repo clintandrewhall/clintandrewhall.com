@@ -9,7 +9,7 @@ import Header from './../core/Header';
 import Hero from './Hero';
 import About from './About';
 import Portfolio from './Portfolio';
-import Posts from './Posts';
+import Medium from './Medium';
 import Work from './Work';
 import Footer from './../core/Footer';
 
@@ -51,7 +51,7 @@ class Home extends React.Component<{}, State> {
         <About />
         <Portfolio />
         <Work />
-        <Posts />
+        <Medium />
         <Footer />
         <ScrollToTopOnMount />
       </div>

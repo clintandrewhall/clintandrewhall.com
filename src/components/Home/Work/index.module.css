@@ -1,7 +1,7 @@
 .root {
   composes: section from './../../core/Section.module.css';
   padding-top: 15rem;
-  padding-bottom: 15.6rem;
+  padding-bottom: 0;
   background-color: #fff;
   position: relative;
 }
@@ -49,21 +49,21 @@
 }
 
 .heading {
-  composes: col_full from global;
+  composes: col-full from global;
   composes: text-center from global;
 }
 
 .left {
   composes: left from global;
-  composes: col_six from global;
-  composes: tab_full from global;
+  composes: col-six from global;
+  composes: tab-full from global;
   padding-right: 40px;
 }
 
 .right {
   composes: right from global;
-  composes: col_six from global;
-  composes: tab_full from global;
+  composes: col-six from global;
+  composes: tab-full from global;
   padding-left: 40px;
 }
 

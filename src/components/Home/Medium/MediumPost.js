@@ -1,0 +1,44 @@
+// @flow
+
+import React from 'react';
+import moment from 'moment';
+
+import styles from './MediumPost.module.css';
+
+export type MediumPostType = {
+  coverSrc: string,
+  href: string,
+  latestTimestamp: number,
+  slug: string,
+  subtitle: string,
+  timestamp: number,
+  title: string,
+};
+
+type Props = {
+  post: MediumPostType,
+};
+
+const MediumPost = (props: Props) => {
+  const { post } = props;
+  const { href, latestTimestamp, subtitle, title } = post;
+  const date = moment(latestTimestamp).format('MMMM Do, YYYY');
+
+  return (
+    <article className={styles.root}>
+      <div className={styles.date}>
+        <a href={href} target="_blank">
+          {date}
+        </a>
+      </div>
+      <h2 className={styles.heading}>
+        <a href={href} target="_blank">
+          {title}
+        </a>
+      </h2>
+      <p>{subtitle}</p>
+    </article>
+  );
+};
+
+export default MediumPost;

@@ -36,15 +36,15 @@
 
 .left {
   composes: left from global;
-  composes: col_six from global;
-  composes: tab_full from global;
+  composes: col-six from global;
+  composes: tab-full from global;
   padding-right: 40px;
 }
 
 .right {
   composes: right from global;
-  composes: col_six from global;
-  composes: tab_full from global;
+  composes: col-six from global;
+  composes: tab-full from global;
   padding-left: 40px;
 }
 

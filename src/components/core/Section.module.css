@@ -23,7 +23,7 @@
 }
 
 .introContent {
-  composes: col_full from global;
+  composes: col-full from global;
   composes: text-center from global;
 }
 

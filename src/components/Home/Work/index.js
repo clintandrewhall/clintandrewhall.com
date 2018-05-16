@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import Testimonials from '../Testimonials/index';
+import Testimonials from './Testimonials';
 import styles from './index.module.css';
 
 const Work = () => {

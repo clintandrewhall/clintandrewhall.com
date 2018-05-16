@@ -150,10 +150,10 @@ class Header extends React.Component<Props, State> {
                     }
                   />
                   <HeaderLink
-                    to={home ? '#blog' : '/#blog'}
-                    label="Blog"
+                    to={home ? '#medium' : '/#medium'}
+                    label="Medium"
                     onClick={() =>
-                      this._handleClick(home, 'blog', toggleState, onToggle)
+                      this._handleClick(home, 'medium', toggleState, onToggle)
                     }
                   />
                   <HeaderLink

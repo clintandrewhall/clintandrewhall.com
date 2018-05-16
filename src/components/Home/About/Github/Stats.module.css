@@ -15,9 +15,9 @@
 
 .row {
   composes: row from global;
-  composes: block_1_4 from global;
-  composes: block_tab_1_2 from global;
-  composes: block_mob_full from global;
+  composes: block-1-4 from global;
+  composes: block-tab-1-2 from global;
+  composes: block-mob-full from global;
   margin: 1.6rem 0 0 0;
   padding: 0;
 }
@@ -27,7 +27,7 @@
 }
 
 .column {
-  composes: col_block from global;
+  composes: col-block from global;
   background-color: #f1f1f1;
   padding: 2rem;
   position: relative;
