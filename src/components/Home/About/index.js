@@ -18,7 +18,7 @@ const About = () => {
             my career.
           </p>
           <p className={styles.lead}>
-            I enjoy conferences like{' '}
+            I pursue them, too. I enjoy conferences like{' '}
             <a href="http://sxsw.com/" rel="external">
               SxSW
             </a>, gatherings like{' '}
