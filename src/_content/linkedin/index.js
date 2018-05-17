@@ -19,6 +19,24 @@ const content: LinkedIn = {
   recommendations: [
     {
       person: {
+        name: 'Jacob McDaniel',
+        imageSrc: '/images/linkedin/jacob.jpg',
+        title: 'Sr. Experience Designer at HomeAway',
+        connection: 'Jacob worked with Clint, but at different companies',
+      },
+      timestamp: 1526515200,
+      content: `Hands down, Clint is by far one of the most intelligent
+        engineers I have had the opportunity of working near. As an experience
+        designer working with an engineer, building the most intuitive and
+        functionally sound experience is critical. Clint brings a different
+        perspective to the table and isn't afraid to get his hands dirty. He
+        has an incredible capability of asking comprehensive questions to
+        understand the requirements and data for building the appropriate
+        solution. If given the opportunity in the future to work with Clint, I
+        would sprint versus walk.`,
+    },
+    {
+      person: {
         name: 'Patrick Keenan',
         imageSrc: '/images/linkedin/patrick.jpg',
         title: 'Lead Product Designer: Facebook Local App',

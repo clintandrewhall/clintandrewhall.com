@@ -15,10 +15,11 @@ type Props = {
 };
 
 export default (props: Props) => {
-  document.title = 'Clint Andrew Hall - Portfolio';
-
   const { entry } = props;
   const { title, tags, timestamp } = entry;
+
+  document.title = 'Clint Andrew Hall [beta] - Portfolio - ' + title;
+
   const date = moment(timestamp * 1000).format('MMMM Do YYYY');
 
   const tagList = tags.map(tag => (
