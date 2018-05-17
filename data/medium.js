@@ -13,6 +13,7 @@ type Post = {
   coverSrc: string,
   href: string,
   latestTimestamp: number,
+  description: string,
   slug: string,
   subtitle: string,
   tags: Array<{ slug: string, name: string }>,
@@ -21,7 +22,16 @@ type Post = {
 };
 
 const Template = (post: Post) => {
-  const { coverSrc, href, slug, subtitle, tags, timestamp, title } = post;
+  const {
+    coverSrc,
+    href,
+    description,
+    slug,
+    subtitle,
+    tags,
+    timestamp,
+    title,
+  } = post;
 
   let tagOutput = '';
   let jsOutput = '';
@@ -36,6 +46,7 @@ const Template = (post: Post) => {
 
   return `---
 coverSrc: '${coverSrc}'
+decription: '${description}'
 href: '${href}'
 latestTimestamp: ${timestamp}
 slug: '${slug}'
@@ -46,6 +57,8 @@ title: '${title}'
 ---
 # ${title}
 ## ${subtitle}
+
+${description}
 
 ${tagOutput}
 `;
@@ -85,7 +98,7 @@ ${tagOutput}
     } = post;
 
     const { subtitle } = content;
-    const { previewImage, tags } = virtuals;
+    const { metaDescription, previewImage, tags } = virtuals;
     const { imageId } = previewImage;
 
     const displayTags =
@@ -100,6 +113,7 @@ ${tagOutput}
 
     return {
       coverSrc: IMG_BASE + imageId,
+      description: metaDescription,
       href: `${BASE_URL}/@${username}/${uniqueSlug}`,
       latestTimestamp: latestPublishedAt,
       slug: uniqueSlug,
