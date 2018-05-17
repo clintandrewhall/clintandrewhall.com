@@ -100,7 +100,7 @@ class Header extends React.Component<Props, State> {
           [styles.sticky]: sticky,
         })}>
         <div className={styles.headerLogo}>
-          <Link to={home ? '#' : '/'}>
+          <Link to={'/'}>
             <img src="/images/logo.png" alt="Home" />
           </Link>
         </div>
