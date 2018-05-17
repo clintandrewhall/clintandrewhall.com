@@ -14,8 +14,8 @@ const About = () => {
           <h3 className={styles.subtitle}>I Live for Experiences</h3>
           <p className={styles.lead}>
             I build them for desktop and mobile browsers, professionally and in
-            my spare time. I'm incredibly fortunate that my passion has become
-            my career.
+            my spare time. I'm incredibly fortunate that my passion became my
+            career.
           </p>
           <p className={styles.lead}>
             I pursue them, too. I enjoy conferences like{' '}

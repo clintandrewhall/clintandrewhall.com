@@ -28,6 +28,11 @@
 
 .lead {
   composes: lead from './../../core/Section.module.css';
+  font-family: 'librebaskerville-regular', serif;
+}
+
+.lead a {
+  font-family: 'librebaskerville-bold', serif;
 }
 
 .columns {
