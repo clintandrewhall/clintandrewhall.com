@@ -19,6 +19,19 @@ const content: LinkedIn = {
   recommendations: [
     {
       person: {
+        name: 'Freddy Gottesman',
+        imageSrc: '/images/linkedin/freddy.jpg',
+        title: 'Product Manager at Facebook',
+        connection: 'Clint worked with Freddy in the same group',
+      },
+      timestamp: 1526601600,
+      content: `Clint is a motivated and creative engineer with exceptional
+        product sense. In my time working with him I was impressed by his
+        ability to identify a user problem, design a solution and then
+        implement the code to make it happen.`,
+    },
+    {
+      person: {
         name: 'Jacob McDaniel',
         imageSrc: '/images/linkedin/jacob.jpg',
         title: 'Sr. Experience Designer at HomeAway',

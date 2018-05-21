@@ -98,7 +98,7 @@ class GithubCard extends React.Component<Props, State> {
           <p>
             These lines-of-code counts and repository information{' '}
             {live ? 'are' : 'were'} gathered
-            {live ? 'live, ' : ''} directly from my{' '}
+            {live ? ' live, ' : ''} directly from my{' '}
             <a
               href="https://www.github.com/clintandrewhall"
               rel="noopener noreferrer"
