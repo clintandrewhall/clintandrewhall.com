@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import styles from './PortfolioItem.module.css';
 
 export type PortfolioItemType = {
-  __content: any,
+  __content: string,
   caption: string,
   cover: {
     src: string,

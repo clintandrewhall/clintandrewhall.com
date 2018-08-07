@@ -41,7 +41,7 @@ const Footer = () => (
       </div>
     </div>
     <div className={styles.bottom}>
-      <div className={styles.bottomContent}>
+      <div>
         <div className={styles.copyright}>
           <span>© Copyright Clint Andrew Hall 2018</span>
           <span>

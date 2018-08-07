@@ -53,11 +53,7 @@ const settings = {
 const Testimonials = () => {
   const { recommendations } = data;
 
-  recommendations.sort((a: Recommendation, b: Recommendation) => {
-    return b.timestamp - a.timestamp;
-  });
-
-  const items = recommendations.map((recommendation, index) => (
+  const items = recommendations.map((recommendation: Recommendation, index) => (
     <Testimonial key={index} testmonial={recommendation} />
   ));
 

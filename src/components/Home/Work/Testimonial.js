@@ -16,10 +16,10 @@ const Testimonial = (props: Props) => {
   const { name, imageSrc, title, connection } = person;
 
   return (
-    <div className={cx([styles.root, className])}>
+    <div className={className ? cx([styles.root, className]) : styles.root}>
       <img src={imageSrc} alt={name} className={styles.avatar} />
-      <p className={styles.content}>{content}</p>
-      <div className={styles.author}>
+      <p>{content}</p>
+      <div>
         <span className={styles.name}>{name}</span>
         <span className={styles.title}>{title}</span>
         <span className={styles.connection}>{connection}</span>

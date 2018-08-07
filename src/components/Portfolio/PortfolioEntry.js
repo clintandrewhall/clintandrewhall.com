@@ -31,7 +31,7 @@ export default (props: Props) => {
   return (
     <div className={styles.root}>
       <Header />
-      <article className={styles.article}>
+      <article>
         <header
           className={styles.header}
           style={{ backgroundImage: 'url(' + entry.cover.src + ')' }}>
@@ -43,10 +43,7 @@ export default (props: Props) => {
           </div>
         </header>
         <div className={styles.content}>
-          <div
-            className={styles.markdown}
-            dangerouslySetInnerHTML={{ __html: entry.__content }}
-          />
+          <div dangerouslySetInnerHTML={{ __html: entry.__content }} />
         </div>
       </article>
       <Footer />

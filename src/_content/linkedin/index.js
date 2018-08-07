@@ -32,6 +32,20 @@ const content: LinkedIn = {
     },
     {
       person: {
+        name: 'Patrick Keenan',
+        imageSrc: '/images/linkedin/patrick.jpg',
+        title: 'Lead Product Designer: Facebook Local App',
+        connection: 'Clint worked with Patrick on the same team',
+      },
+      timestamp: 1526342400,
+      content: `Clint is a powerhouse of code and collaboration. He single
+        handedly maintained and updated the product on web, refactoring when
+        appropriate. He was proactive in working with design and also brought
+        good questions to help round out the approach. Even in a remote office,
+        it felt like he was always ready to help out.`,
+    },
+    {
+      person: {
         name: 'Jacob McDaniel',
         imageSrc: '/images/linkedin/jacob.jpg',
         title: 'Sr. Experience Designer at HomeAway',
@@ -47,20 +61,6 @@ const content: LinkedIn = {
         understand the requirements and data for building the appropriate
         solution. If given the opportunity in the future to work with Clint, I
         would sprint versus walk.`,
-    },
-    {
-      person: {
-        name: 'Patrick Keenan',
-        imageSrc: '/images/linkedin/patrick.jpg',
-        title: 'Lead Product Designer: Facebook Local App',
-        connection: 'Clint worked with Patrick on the same team',
-      },
-      timestamp: 1526342400,
-      content: `Clint is a powerhouse of code and collaboration. He single
-        handedly maintained and updated the product on web, refactoring when
-        appropriate. He was proactive in working with design and also brought
-        good questions to help round out the approach. Even in a remote office,
-        it felt like he was always ready to help out.`,
     },
     {
       person: {
