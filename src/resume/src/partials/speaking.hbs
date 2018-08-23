@@ -1,0 +1,22 @@
+<section id="speaking" class="section experiences-section">
+  <h2 class="section-title">
+    <span class="title-icon"><i class="fas fa-microphone-alt"></i></span>
+    <span>Speaking</span>
+  </h2>
+  {{#each r.speaking}}
+  <div class="item">
+    <header class="meta">
+      <div class="upper-row">
+        <h3 class="job-title">
+          <a target="_blank" href="{{url}}">{{name}}</a>
+        </h3>
+        <p class="time">{{moment releaseDate format="MMMM YYYY"}}</p>
+      </div>
+      <div class="company">{{publisher}}</div>
+    </header>
+    <div class="details">
+      {{#markdown}}{{{summary}}}{{/markdown}}
+    </div>
+  </div>
+  {{/each}}
+</section>

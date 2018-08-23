@@ -1,0 +1,23 @@
+<section id="contact" class="contact-container container-block">
+  <h2 class="hidden">Contact</h2>
+  <dl class="list-unstyled contact-list">
+    {{#if r.contact.email}}
+    <dt class="hidden">Email</dt>
+    <dd class="contact-info contact-info-email">
+      <i class="fas fa-envelope contact-icon"></i>
+      <a target="_blank" href="mailto:{{ RAW.contact.email }}">{{{ r.contact.email }}}</a>
+    </dd>
+    {{/if}}
+    {{#if r.contact.phone}}
+    <dt class="hidden">Phone</dt>
+    <dd class="contact-info contact-info-phone"><i class="fas fa-phone contact-icon"></i>{{{ r.contact.phone }}}</dd>
+    {{/if}}
+    {{#if r.contact.website}}
+    <dt class="hidden">Website</dt>
+    <dd class="contact-info contact-info-website">
+      <i class="fas fa-globe contact-icon" ></i>
+      <a target="_blank" href="{{ RAW.contact.website }}">{{{ r.contact.website }}}</a>
+    </dd>
+    {{/if}}
+  </dl>
+</section>

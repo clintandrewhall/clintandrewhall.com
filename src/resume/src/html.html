@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>{{ RAW.name }}</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous" />
+    <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic' rel='stylesheet' type='text/css'>
+    <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js" integrity="sha384-3LK/3kTpDE/Pkp8gTNp2gR/2gOiwQ6QaO7Td0zV76UFJVhqLl4Vl3KL1We6q6wR9" crossorigin="anonymous"></script>
+    {{{styleSheet "html.css"}}}
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="sidebar-wrapper">
+        <header class="profile-container">
+          <img src="{{RAW.info.image}}" class="profile" />
+          <h1 class="name">{{r.name}}</h1>
+          <h2 class="tagline">{{r.info.label}}</h2>
+      	</header>
+        {{> contact }}
+        {{> profiles }}
+        {{> education }}
+      </div>
+      <main class="main-wrapper">
+        {{> summary }}
+        {{> employment }}
+        {{> speaking}}
+      </main>
+    </div>
+  </body>
+</html>

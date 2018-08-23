@@ -1,0 +1,12 @@
+<section id="profiles" class="contact-container container-block">
+  <h2 class="container-block-title">Profiles</h2>
+  <dl class="list-unstyled contact-list">
+    {{#each r.social}}
+    <dt class="hidden">Email</dt>
+    <dd class="contact-info contact-info-{{network}}">
+      <a target="_blank" href="{{url}}">
+        <i class="fab fa-{{network}} contact-icon"></i>{{user}}</a>
+    </dd>
+    {{/each}}
+  </dl>
+</section>

@@ -1,0 +1,10 @@
+{
+  "directoryListing": false,
+  "public": "build",
+  "rewrites": [
+    {
+      "source": "resume/**",
+      "destination": "/static/resume/index.html"
+    }
+  ]
+}
