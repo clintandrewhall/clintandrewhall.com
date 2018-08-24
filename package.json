@@ -36,7 +36,7 @@
     "build:css": "css-modules-flow-types src/components",
     "build:github": "babel-node --presets babel-preset-env --plugins babel-plugin-transform-flow-strip-types -- ./data/github",
     "build:medium": "babel-node --presets babel-preset-env --plugins babel-plugin-transform-flow-strip-types -- ./data/medium",
-    "build:resume": "hackmyresume build ./src/_content/resume.json TO ./build/resume/index.all --pdf phantomjs -t ./src/resume",
+    "build:resume": "hackmyresume build ./src/_content/resume.json TO ./build/resume/index.all -t ./src/resume",
     "build:site": "react-app-rewired build",
     "build": "yarn run build:site && yarn run build:css && yarn run build:medium && yarn run build:github && yarn run build:resume",
     "develop:resume": "nodemon --exec \"clear && yarn run build:resume\" -e json,hbs,css,html -w ./src/resume -w ./src/_content/resume",
