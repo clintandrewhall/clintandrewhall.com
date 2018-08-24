@@ -1,16 +1,16 @@
-<section id="speaking" class="section speaking-section">
+<section id="writing" class="section recognition-section">
   <h2 class="section-title">
-    <span class="title-icon"><i class="fas fa-microphone-alt"></i></span>
-    <span>Speaking</span>
+    <span class="title-icon"><i class="fas fa-award"></i></span>
+    <span>Recognition</span>
   </h2>
-  {{#each r.speaking}}
+  {{#each r.recognition}}
   <div class="item">
     <header class="meta">
       <div class="upper-row">
         <h3 class="job-title">
-          <a target="_blank" href="{{url}}">{{name}}</a>
+          <a target="_blank" href="{{url}}">{{title}}</a>
         </h3>
-        <p class="time">{{moment releaseDate format="MMMM YYYY"}}</p>
+        <p class="time">{{moment date format="MMMM YYYY"}}</p>
       </div>
       <div class="company">{{event}}</div>
     </header>

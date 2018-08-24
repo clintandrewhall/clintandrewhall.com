@@ -1,5 +1,5 @@
-/*!
- * Template Name: Orbit - Bootstrap 4 Resume/CV Template for Developers
+/*
+ * Adapted from: Orbit - Bootstrap 4 Resume/CV Template for Developers
  * Version: 2.0
  * Author: Xiaoying Riley
  * Copyright: 3rd Wave Media
@@ -8,15 +8,20 @@
  * Website: http://themes.3rdwavemedia.com/
 */
 body {
-  font-family: 'Roboto', sans-serif;
-  color: #545E6C;
-  background: #f5f5f5;
+  font-family: "Roboto", sans-serif;
+  color: #545e6c;
+  background: linear-gradient(180deg, #0d0a0b 100%, rgba(0, 0, 0, 0.8) 0);
   font-size: 14px;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-weight: 700;
 }
 
@@ -42,10 +47,10 @@ p {
 }
 
 .wrapper {
-  background: #4B6A78;
+  background: #f5f5f5;
+  border-radius: 8px 10px 10px 8px;
   max-width: 960px;
-  margin: 0 auto;
-  margin-top: 30px;
+  margin: 30px auto;
   position: relative;
   -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
   -moz-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
@@ -53,7 +58,8 @@ p {
 }
 
 .sidebar-wrapper {
-  background: #4B6A78;
+  border-radius: 0 8px 8px 0;
+  background: #862121;
   position: absolute;
   right: 0;
   width: 240px;
@@ -147,7 +153,6 @@ p {
 .sidebar-wrapper .education-container .time {
   color: rgba(255, 255, 255, 0.6);
   font-weight: 500;
-  margin-bottom: 0px;
 }
 
 .sidebar-wrapper .languages-container .lang-desc {
@@ -179,6 +184,7 @@ p {
 }
 
 .main-wrapper {
+  border-radius: 8px;
   background: #fff;
   padding: 60px;
   padding-right: 300px;
@@ -198,18 +204,20 @@ p {
   margin-bottom: 60px;
 }
 
-.main-wrapper .experiences-section .item {
+.main-wrapper .experiences-section .item,
+.main-wrapper .speaking-section .item,
+.main-wrapper .writing-section .item,
+.main-wrapper .recognition-section .item {
   margin-bottom: 30px;
+  position: relative;
 }
 
 .main-wrapper .upper-row {
-  position: relative;
-  overflow: hidden;
-  margin-bottom: 2px;
+  display: flex;
 }
 
 .main-wrapper .job-title {
-  color: #3F4650;
+  color: #3f4650;
   font-size: 16px;
   margin-top: 0;
   margin-bottom: 0;
@@ -217,15 +225,18 @@ p {
 }
 
 .main-wrapper .time {
-  position: absolute;
-  right: 0;
-  top: 0;
-  color: #97AAC3;
+  color: #97aac3;
+  white-space: nowrap;
+  margin: 0 0 0 auto;
 }
 
 .main-wrapper .company {
-  margin-bottom: 10px;
-  color: #97AAC3;
+  margin-bottom: 5px;
+}
+
+.main-wrapper .company,
+.main-wrapper .company a {
+  color: #97aac3;
 }
 
 .main-wrapper .project-title {
@@ -243,34 +254,6 @@ p {
   margin-bottom: 15px;
 }
 
-.skillset .item {
-  margin-bottom: 15px;
-  overflow: hidden;
-}
-
-.skillset .level-title {
-  font-size: 14px;
-  margin-top: 0;
-  margin-bottom: 12px;
-}
-
-.skillset .level-bar {
-  height: 12px;
-  background: #f5f5f5;
-  -webkit-border-radius: 2px;
-  -moz-border-radius: 2px;
-  -ms-border-radius: 2px;
-  -o-border-radius: 2px;
-  border-radius: 2px;
-  -moz-background-clip: padding;
-  -webkit-background-clip: padding-box;
-  background-clip: padding-box;
-}
-
-.skillset .theme-progress-bar {
-  background: #5f8697;
-}
-
 .footer {
   padding: 30px;
   padding-top: 60px;
@@ -278,7 +261,7 @@ p {
 
 .footer .copyright {
   line-height: 1.6;
-  color: #545E6C;
+  color: #545e6c;
   font-size: 13px;
 }
 
@@ -286,73 +269,51 @@ p {
   color: #fb866a;
 }
 
-@media (max-width: 767.98px) {
-  .sidebar-wrapper {
-    position: static;
-    width: inherit;
-  }
-  .main-wrapper {
-    padding: 30px;
-  }
-  .main-wrapper .time {
-    position: static;
-    display: block;
-    margin-top: 5px;
-  }
-  .main-wrapper .upper-row {
-    margin-bottom: 0;
-  }
-}
-
-@media (min-width: 992px) {
-  .skillset .level-title {
-    display: inline-block;
-    float: left;
-    width: 30%;
-    margin-bottom: 0;
-  }
-}
-
 /** Customizations */
-
 .hidden {
-	position: absolute;
-	visibility: hidden;
+  position: absolute;
+  visibility: hidden;
 }
 
 .profile {
-	border-radius: 50%;
+  border-radius: 50%;
 }
 
 .sidebar-wrapper {
-	width: 330px;
+  width: 330px;
 }
 
 .main-wrapper {
-	padding-right: 380px;
+  padding-right: 380px;
 }
 
 .contact-info {
-	padding-left: 26px;
-	position: relative;
+  padding-left: 26px;
+  position: relative;
 }
 
 .contact-icon {
-	left: 0;
-	position: absolute;
-	top: 1px;
+  left: 0;
+  position: absolute;
+  top: 1px;
 }
 
 .summary blockquote {
-	font-style: italic;
+  font-style: italic;
+}
+
+.summary-section .summary,
+.speaking-section .item,
+.writing-section .item {
+  margin-left: 4px;
 }
 
 .section-title {
-	line-height: 32px;
+  line-height: 32px;
 }
 
 .title-icon {
-	width: 30px;
+  width: 30px;
   height: 30px;
   margin-right: 8px;
   display: inline-block;
@@ -370,18 +331,118 @@ p {
   font-size: 16px;
 }
 
+.experiences-section .details {
+  margin-left: 42px;
+}
+
 .highlights-header {
-  color: #3F4650;
+  color: #3f4650;
   font-size: 14px;
   margin-top: 0;
   font-weight: 500;
 }
 
 .highlights-list {
-	padding: 0;
+  padding: 0;
 }
 
 .highlights-list .bullet {
-	margin: 0 0 0 16px;
-	padding: 0;
+  margin: 0 0 0 16px;
+  padding: 0;
+}
+
+.experiences-section .item .meta {
+  padding-left: 42px;
+  position: relative;
+}
+
+.experiences-section .item::before {
+  content: "";
+  display: block;
+  width: 1px;
+  background: rgba(0, 0, 0, 0.1);
+  position: absolute;
+  left: 15px;
+  top: 36px;
+  bottom: -24px;
+}
+
+.experiences-section .item .meta::before {
+  display: block;
+  content: "";
+  background: #f1f1f1;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+.experiences-section .item.facebook .meta::before {
+  background: url("../images/fb.png") no-repeat center center;
+}
+
+.experiences-section .item.cerner .meta::before {
+  background: url("../images/cerner.png") no-repeat center center;
+}
+
+.experiences-section .item.sprint .meta::before {
+  background: url("../images/sprint.png") no-repeat center center;
+}
+
+.experiences-section .item.accenture .meta::before {
+  background: url("../images/accenture.png") no-repeat center center;
+}
+
+.experiences-section .item.sag .meta::before {
+  background: url("../images/sag.png") no-repeat center center;
+}
+
+.experiences-section .item.symbol .meta::before {
+  background: url("../images/symbol.png") no-repeat center center;
+}
+
+/* Media Queries */
+@media (max-width: 850px) {
+  .wrapper,
+  .sidebar-wrapper,
+  .main-wrapper {
+    border-radius: 0;
+  }
+
+  .wrapper {
+    margin: 0 auto;
+  }
+
+  .sidebar-wrapper {
+    position: static;
+    width: inherit;
+  }
+
+  .sidebar-wrapper .container-block {
+    padding: 10px 30px;
+  }
+
+  .contact-container.container-block > .hidden {
+    position: static;
+    visibility: visible;
+  }
+
+  .sidebar-wrapper .contact-container.container-block {
+    padding-top: 30px;
+  }
+
+  .main-wrapper {
+    padding: 30px;
+  }
+}
+
+@media (max-width: 639px) {
+  .main-wrapper .upper-row {
+    display: block;
+  }
+  .main-wrapper .upper-row .job-title {
+    margin-bottom: 2px;
+  }
 }

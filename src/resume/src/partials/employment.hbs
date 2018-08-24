@@ -4,10 +4,10 @@
     <span>Employment History</span>
   </h2>
   {{#each r.employment.history}}
-  <div class="item">
+  <div class="item {{key}}">
     <header class="meta">
       <div class="upper-row">
-        <h3 class="job-title">Lead Developer</h3>
+        <h3 class="job-title">{{ position }}</h3>
         <p class="time">{{moment start format="MMMM YYYY"}} — {{moment end format="MMMM YYYY"}}</p>
       </div>
       <div class="company">{{ employer }}</div>
