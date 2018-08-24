@@ -37,7 +37,7 @@
     "build:medium": "babel-node --presets babel-preset-env --plugins babel-plugin-transform-flow-strip-types -- ./data/medium",
     "build:resume": "hackmyresume build ./src/_content/resume.json TO ./build/resume/index.all -t ./src/resume",
     "build:site": "react-app-rewired build",
-    "build": "yarn run build:site && yarn run build:css && yarn run build:medium && yarn run build:github && yarn run build:resume",
+    "build": "yarn run build:medium && yarn run build:github && yarn run build:site && yarn run build:css && yarn run build:resume",
     "develop:resume": "nodemon --exec \"clear && yarn run build:resume\" -e json,hbs,css,html -w ./src/resume -w ./src/_content/resume",
     "develop:site": "react-app-rewired start",
     "eject": "react-scripts eject",
