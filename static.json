@@ -3,7 +3,8 @@
   "routes": {
     "/": "index.html",
     "/portfolio": "index.html",
-    "/portfolio/**": "index.html"
+    "/portfolio/**": "index.html",
+    "/resume": "resume/index.html"
   },
   "https_only": true
 }
