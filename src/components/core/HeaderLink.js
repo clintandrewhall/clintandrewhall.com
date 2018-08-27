@@ -9,7 +9,7 @@ import type { ContextRouter as LinkProps } from 'react-router-dom';
 type Props = {
   exact: boolean,
   label: string,
-  onClick: ?Function,
+  onClick?: ?Function,
   to: string,
 };
 

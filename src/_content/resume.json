@@ -45,6 +45,12 @@
       "network": "facebook",
       "user": "clint.hall",
       "url": "https://facebook.com/clint.hall"
+    },
+    {
+      "label": "Instagram",
+      "network": "instagram",
+      "user": "clintandrewhall",
+      "url": "https://instagram.com/clintandrewhall"
     }
   ],
   "employment": {

@@ -1,5 +1,6 @@
 [ignore]
 .*/node_modules/jsonlint/test/fails/.*
+.*/node_modules/json-lint/test/.*
 
 [include]
 
@@ -8,5 +9,8 @@
 [lints]
 
 [options]
+module.file_ext=.js
+module.file_ext=.json
+module.file_ext=.module.css
 
 [strict]

@@ -1,5 +1,5 @@
 .root {
-  composes: section from './../../core/Section.module.css';
+  composes: section from "./../../core/Section.module.css";
   padding-top: 15rem;
   padding-bottom: 0;
   background-color: #fff;
@@ -12,23 +12,23 @@
 }
 
 .intro {
-  composes: intro from './../../core/Section.module.css';
+  composes: intro from "./../../core/Section.module.css";
 }
 
 .introContent {
-  composes: introContent from './../../core/Section.module.css';
+  composes: introContent from "./../../core/Section.module.css";
 }
 
 .title {
-  composes: title from './../../core/Section.module.css';
+  composes: title from "./../../core/Section.module.css";
 }
 
 .subtitle {
-  composes: subtitle from './../../core/Section.module.css';
+  composes: subtitle from "./../../core/Section.module.css";
 }
 
 .lead {
-  composes: lead from './../../core/Section.module.css';
+  composes: lead from "./../../core/Section.module.css";
 }
 
 .timeline {
@@ -38,7 +38,7 @@
 }
 
 .timeline::before {
-  content: '';
+  content: "";
   display: block;
   width: 1px;
   height: 100%;
@@ -67,82 +67,23 @@
   padding-left: 40px;
 }
 
-.block {
-  position: relative;
-  padding-left: 8rem;
-  min-height: 28.8rem;
+.resumeRow {
+  composes: col-six from global;
+  float: none;
+  margin: 0 auto;
 }
 
-.cerner::before,
-.fb::before,
-.bullet::before {
-  content: '';
+.resumeRow::before {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.resumeButton {
+  composes: button from "./../../core/Buttons.module.css";
+  composes: primary from "./../../core/Buttons.module.css";
   display: block;
-  height: 24px;
-  width: 24px;
-  position: absolute;
-  z-index: 2;
-}
-
-.cerner,
-.fb,
-.bullet {
-  height: 24px;
-  width: 24px;
-  margin-left: -0.75rem;
-  position: absolute;
-  left: 16px;
-  top: 0.3rem;
-}
-
-.cerner::after,
-.fb::after,
-.bullet::after {
-  background: #e9e9e9;
-  content: '';
-  display: block;
-  height: 40px;
-  width: 40px;
-  left: -8px;
-  top: -8px;
-  border-radius: 50%;
-  position: absolute;
-  z-index: 1;
-}
-
-.cerner::before {
-  background: url(./cerner.png) no-repeat center center;
-}
-
-.fb::before {
-  border-radius: 50%;
-  background: url(./fb.png) no-repeat center center;
-}
-
-.header .timeframe {
-  font-size: 1.4rem;
-  line-height: 1.5;
-  text-transform: uppercase;
-  letter-spacing: 0.15rem;
-  color: rgba(0, 0, 0, 0.5);
-  margin-bottom: 0.9rem;
-  font-family: 'montserrat-bold', sans-serif;
-}
-
-.itemTitle {
-  composes: h03 from global;
-  line-height: 1.25;
-  margin: 0 0 0.3rem 0;
-}
-
-.itemSubtitle {
-  composes: h05 from global;
-  margin-top: 0;
-}
-
-.desc p {
-  margin: 0;
-  padding-bottom: 3rem;
+  margin: 4rem auto 0 auto;
 }
 
 @media only screen and (max-width: 800px) {
