@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 
 import HeaderLink from './HeaderLink.js';
 import styles from './Header.module.css';
+import linkStyles from './HeaderLink.module.css';
 
 type Props = {
   home: boolean,
@@ -157,7 +158,9 @@ class Header extends React.Component<Props, State> {
                       this._handleClick(home, 'medium', toggleState, onToggle)
                     }
                   />
-                  <HeaderLink to="/resume" label="Resume" />
+                  <li className={linkStyles.headerLink}>
+                    <a href="/resume">Resume</a>
+                  </li>
                 </ul>
               </nav>
               <a
