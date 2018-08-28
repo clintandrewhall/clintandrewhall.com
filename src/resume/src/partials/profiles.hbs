@@ -2,7 +2,7 @@
   <h2 class="container-block-title">Profiles</h2>
   <dl class="list-unstyled contact-list">
     {{#each r.social}}
-    <dt class="hidden">Email</dt>
+    <dt class="hidden">{{label}}</dt>
     <dd class="contact-info contact-info-{{network}}">
       <a target="_blank" href="{{url}}">
         <i class="fab fa-{{network}} contact-icon"></i>{{user}}</a>

@@ -98,6 +98,7 @@ p {
   margin-bottom: 15px;
 }
 
+.sidebar-wrapper .formats-list .svg-inline--fa,
 .sidebar-wrapper .contact-list .svg-inline--fa {
   margin-right: 5px;
   font-size: 18px;
@@ -117,7 +118,11 @@ p {
 }
 
 .sidebar-wrapper .container-block {
-  padding: 30px;
+  padding: 15px 30px;
+}
+
+.sidebar-wrapper .contact-container.container-block {
+  padding: 30px 30px 15px 30px;
 }
 
 .sidebar-wrapper .container-block-title {
@@ -287,15 +292,22 @@ p {
   padding-right: 380px;
 }
 
+.format-info,
 .contact-info {
   padding-left: 26px;
   position: relative;
+  margin-bottom: .5rem;
 }
 
+.format-icon,
 .contact-icon {
   left: 0;
   position: absolute;
   top: 1px;
+}
+
+.format-icon.fa-markdown {
+  left: -4px;
 }
 
 .summary blockquote {
@@ -418,10 +430,6 @@ p {
   .sidebar-wrapper {
     position: static;
     width: inherit;
-  }
-
-  .sidebar-wrapper .container-block {
-    padding: 10px 30px;
   }
 
   .contact-container.container-block > .hidden {
