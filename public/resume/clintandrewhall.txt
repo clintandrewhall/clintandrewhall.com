@@ -111,11 +111,11 @@ In this paper, I present a the Web Bootstrapper, a technique that allows a devel
 
 RECOGNITION --------------------------------------------------------------------
 
-2nd Place - Arts and Literature, ThinkQuest (Invalid date)
-Created "Shakey's Place", a website about Shakespeare featuring a 3D Globe Theatre. Placed Second in Arts and Literature category totaling $48,000 in scholarships. Team Leader, designed interface and 3D graphics, programmed Perl 5 scripts, designed HTML layout.
-
 Irene Ryan Acting Scholarship, KC/ACTF (Invalid date)
 Three-time nominee for excellence in Acting.
+
+2nd Place - Arts and Literature, ThinkQuest (Invalid date)
+Created "Shakey's Place", a website about Shakespeare featuring a 3D Globe Theatre. Placed Second in Arts and Literature category totaling $48,000 in scholarships. Team Leader, designed interface and 3D graphics, programmed Perl 5 scripts, designed HTML layout.
 
 
 

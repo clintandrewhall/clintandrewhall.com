@@ -4,67 +4,22 @@
     <meta charset="utf-8">
     <title>{{ RAW.name }}</title>
     {{{styleSheet "html.css"}}}
+    {{{styleSheet "pdf.css"}}}
   </head>
-  <body>
-    <main>
-      <header>
-        <h1>{{{ r.name }}}</h1>
-        <div id="contact">
-          {{#has 'contact.email'}}<div class="email"><a href="mailto:{{{ RAW.contact.email }}}">{{ RAW.contact.email }}</a></div>{{/has}}
-          {{#has 'contact.phone'}}<div class="phone">{{ RAW.contact.phone }}</div>{{/has}}
-          {{#has 'contact.website'}}<div class="website"><a href="{{{ RAW.contact.website }}}">{{trimURL RAW.contact.website }}</a></div>{{/has}}
-        </div>
+  <body class="pdf">
+    <div class="main-wrapper">
+      <header class="profile-container">
+        <h1 class="name">{{r.name}}</h1>
+        <h2 class="tagline">{{r.info.label}}</h2>
       </header>
-
-
-
-{{#has "info.brief"}}
-<section id="summary">
-  {{{ r.info.brief }}}
-</section>
-{{/has}}
-
-
-
-{{!<!--
-  Use predefined global partials for the other sections.
-
-  The "inline" bit before each section allows us to pass a custom heading
-  icon into the global partial. For this theme, we're using Font Awesome.
--->}}
-
-{{> section/skills }}
-
-{{> section/employment }}
-
-{{> section/projects }}
-
-{{> section/governance }}
-
-{{> section/education }}
-
-{{> section/affiliation }}
-
-{{> section/service }}
-
-{{> section/extracurricular }}
-
-{{> section/samples }}
-
-{{> section/writing }}
-
-{{> section/reading }}
-
-{{> section/recognition }}
-
-{{> section/speaking }}
-
-{{> section/references }}
-
-{{> section/interests }}
-
-
-
-    </main>
+      {{> contact }}
+      {{> profiles }}
+      {{> education }}
+      {{> summary }}
+      {{> employment }}
+      {{> speaking}}
+      {{> writing}}
+      {{> recognition}}
+    </div>
   </body>
 </html>

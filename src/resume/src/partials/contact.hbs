@@ -1,5 +1,5 @@
 <section id="contact" class="contact-container container-block">
-  <h2 class="container-block-title hidden">Contact</h2>
+  <h2 class="container-block-title hidden section-title">Contact</h2>
   <dl class="list-unstyled contact-list">
     {{#if r.contact.email}}
     <dt class="hidden">Email</dt>
@@ -17,6 +17,13 @@
     <dd class="contact-info contact-info-website">
       <i class="fas fa-globe contact-icon" ></i>
       <a target="_blank" href="{{ RAW.contact.website }}">{{{ r.contact.website }}}</a>
+    </dd>
+    {{/if}}
+    {{#if r.location}}
+    <dt class="hidden">Location</dt>
+    <dd class="contact-info contact-info-location">
+      <i class="fas fa-globe-americas contact-icon" ></i>
+      {{r.location.city}}, {{r.location.region}}, {{r.location.country}}
     </dd>
     {{/if}}
   </dl>
