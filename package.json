@@ -81,7 +81,7 @@
     "eject": "react-scripts eject",
     "start": "node server",
     "test": "react-app-rewired test --env=jsdom",
-    "precommit": "lint-staged && yarn generate"
+    "precommit": "yarn generate && lint-staged"
   },
   "lint-staged": {
     "*.{js,json,md,scss,yaml,yml}": [
