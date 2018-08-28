@@ -1,5 +1,5 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import { render } from 'react-snapshot';
 import App from './App';
 // import Pace from 'pace-js';
 // import registerServiceWorker from './registerServiceWorker';
@@ -12,5 +12,5 @@ import App from './App';
 import { unregister } from './registerServiceWorker';
 unregister();
 
-ReactDOM.render(<App />, document.getElementById('root'));
+render(<App />, document.getElementById('root'));
 // registerServiceWorker();

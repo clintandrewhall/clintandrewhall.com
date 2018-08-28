@@ -1,13 +1,13 @@
 ---
 caption: "Backstrok.es is a website for discovering where you've been on Foursquare and Swarm."
 cover:
-  src: "/images/portfolio/backstrokes-1.jpg"
-  size: "600x400"
-slug: "backstrokes"
-tags: [{name: 'NodeJS', slug: 'node'}, {name: 'Swarm', slug: 'swarm'}]
+  src: '/images/portfolio/backstrokes-1.jpg'
+  size: '600x400'
+slug: 'backstrokes'
+tags: [{ name: 'NodeJS', slug: 'node' }, { name: 'Swarm', slug: 'swarm' }]
 timestamp: 1450224000
-title: "Backstrok.es"
-website: "http://www.backstrok.es"
+title: 'Backstrok.es'
+website: 'http://www.backstrok.es'
 ---
 
 # Background
@@ -16,9 +16,9 @@ I attended [SxSW](http://www.sxsw.com/) in 2010, for the third time. As always
 there were a ton of things to see and do... but I found myself remembering
 places from past trips to Austin. Things like:
 
-* "where was that one place we went on Friday last year, with the **\_\_\_\_**
-* and the **\_\_\_\_**? Did we go to the **\_\_\_\_**-sponsored talk last time?
-* Where was that awesome restaurant where we met **\_\_\_\_**?"
+- "where was that one place we went on Friday last year, with the **\_\_\_\_**
+- and the **\_\_\_\_**? Did we go to the **\_\_\_\_**-sponsored talk last time?
+- Where was that awesome restaurant where we met **\_\_\_\_**?"
 
 With FOMO on my mind, those questions inevitably got answered, usually after a
 lot of painful searching through memory, anecdote, blog and social media.

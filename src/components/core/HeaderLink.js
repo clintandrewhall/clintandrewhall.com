@@ -37,7 +37,8 @@ const HeaderLink = (props: Props) => {
           <li
             className={classnames(styles.headerLink, {
               [`${styles.current}`]: selected,
-            })}>
+            })}
+          >
             <Link to={to} title={label} onClick={onClick}>
               {label}
             </Link>

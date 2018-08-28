@@ -1,11 +1,11 @@
 // @flow
 
-import React from "react";
+import React from 'react';
 
-import Testimonials from "./Testimonials";
-import Item from "./WorkHistoryItem";
-import styles from "./index.module.css";
-import resume from "./../../../_content/resume.json";
+import Testimonials from './Testimonials';
+import Item from './WorkHistoryItem';
+import styles from './index.module.css';
+import resume from './../../../_content/resume.json';
 
 type Resume = {
   employment: {
@@ -17,9 +17,9 @@ type Resume = {
       start: string,
       end: string,
       keywords: Array<string>,
-      highlights: Array<string>
-    }>
-  }
+      highlights: Array<string>,
+    }>,
+  },
 };
 
 const Work = () => {
@@ -32,7 +32,7 @@ const Work = () => {
   }
 
   const blocks = history.map((item, index) => (
-    <Item key={"item" + index} item={item} />
+    <Item key={'item' + index} item={item} />
   ));
 
   return (

@@ -1,9 +1,9 @@
 // @flow
 
-import React from "react";
-import { Route } from "react-router-dom";
-import PortfolioItem from "./../components/Portfolio/PortfolioItem";
-import PortfolioEntry from "./../components/Portfolio/PortfolioEntry";
+import React from 'react';
+import { Route } from 'react-router-dom';
+import PortfolioItem from './../components/Portfolio/PortfolioItem';
+import PortfolioEntry from './../components/Portfolio/PortfolioEntry';
 
 export default (): Array<React$Node> => {
   const entryIndex = entries => () => (
@@ -16,9 +16,9 @@ export default (): Array<React$Node> => {
 
   // $FlowFixMe
   const portfolioContext = require.context(
-    "!markdown-with-front-matter-loader!./../_content/portfolio",
+    '!markdown-with-front-matter-loader!./../_content/portfolio',
     false,
-    /.md$/
+    /.md$/,
   );
 
   const entries = portfolioContext
@@ -26,7 +26,7 @@ export default (): Array<React$Node> => {
     .reduce(
       (memo, fileName) =>
         memo.set(fileName.match(/.\/([^.]+).*/)[1], portfolioContext(fileName)),
-      new Map()
+      new Map(),
     );
 
   // eslint-disable-next-line import/first
@@ -36,17 +36,17 @@ export default (): Array<React$Node> => {
       path="/portfolio"
       exact={true}
       component={entryIndex(entries)}
-    />
+    />,
   ].concat(
     [...entries.keys()].map(path => {
       const entry = entries.get(path);
       return (
         <Route
           key={path}
-          path={"/portfolio/" + entry.slug}
+          path={'/portfolio/' + entry.slug}
           component={() => <PortfolioEntry entry={entry} />}
         />
       );
-    })
+    }),
   );
 };

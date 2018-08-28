@@ -4,7 +4,7 @@
     "/": "index.html",
     "/portfolio": "index.html",
     "/portfolio/**": "index.html",
-    "/resume": "resume/resume.html"
+    "/resume": "resume/clintandrewhall.html"
   },
   "https_only": true
 }

@@ -1,5 +1,5 @@
 .root {
-  composes: section from './../../core/Section.module.css';
+  composes: section from "./../../core/Section.module.css";
   padding-top: 15rem;
   padding-bottom: 15.6rem;
   background-color: #f1f1f1;
@@ -7,23 +7,23 @@
 }
 
 .intro {
-  composes: intro from './../../core/Section.module.css';
+  composes: intro from "./../../core/Section.module.css";
 }
 
 .introContent {
-  composes: introContent from './../../core/Section.module.css';
+  composes: introContent from "./../../core/Section.module.css";
 }
 
 .title {
-  composes: title from './../../core/Section.module.css';
+  composes: title from "./../../core/Section.module.css";
 }
 
 .subtitle {
-  composes: subtitle from './../../core/Section.module.css';
+  composes: subtitle from "./../../core/Section.module.css";
 }
 
 .lead {
-  composes: lead from './../../core/Section.module.css';
+  composes: lead from "./../../core/Section.module.css";
 }
 
 .portfolio {
@@ -44,7 +44,7 @@
 }
 
 .masonry:after {
-  content: '';
+  content: "";
   display: table;
   clear: both;
 }
@@ -96,6 +96,9 @@
 }
 
 @media only screen and (max-width: 600px) {
+  .portfolio {
+    padding: 0;
+  }
   .masonry .grid-sizer {
     width: 100%;
   }

@@ -29,7 +29,7 @@ const LOC = (props: Props) => {
   let items = loc
     .map((language: LOC, index: number) => {
       const { name, loc } = language;
-      const percent = loc / total * 100;
+      const percent = (loc / total) * 100;
 
       if (percent < 1) {
         other += loc;
@@ -55,7 +55,7 @@ const LOC = (props: Props) => {
     .slice(0, other > 0 ? 9 : 10);
 
   if (other > 0) {
-    const percent = other / total * 100;
+    const percent = (other / total) * 100;
     items.push(
       <li className={styles.language} key="other">
         <div

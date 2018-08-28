@@ -102,9 +102,11 @@ class GithubCard extends React.Component<Props, State> {
             <a
               href="https://www.github.com/clintandrewhall"
               rel="noopener noreferrer"
-              target="_blank">
+              target="_blank"
+            >
               Github account
-            </a>.
+            </a>
+            .
           </p>
           <Stats user={user} />
           <LOC loc={loc} />

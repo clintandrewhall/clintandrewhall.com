@@ -34,7 +34,8 @@ export default (props: Props) => {
       <article>
         <header
           className={styles.header}
-          style={{ backgroundImage: 'url(' + entry.cover.src + ')' }}>
+          style={{ backgroundImage: 'url(' + entry.cover.src + ')' }}
+        >
           <div className={styles.headerContent}>
             <h1 className={styles.title}>{title}</h1>
             <h2 className={styles.caption}>{entry.caption}</h2>

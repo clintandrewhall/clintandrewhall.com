@@ -98,7 +98,8 @@ class Header extends React.Component<Props, State> {
           [styles.offset]: offset,
           [styles.scrolling]: scrolling,
           [styles.sticky]: sticky,
-        })}>
+        })}
+      >
         <div className={styles.headerLogo}>
           <Link to={'/'}>
             <img src="/images/logo.png" alt="Home" />
@@ -164,7 +165,8 @@ class Header extends React.Component<Props, State> {
                   [styles.headerMenuToggle]: true,
                   [styles.isClicked]: toggleState !== 'COLLAPSED',
                 })}
-                onClick={() => onToggle()}>
+                onClick={() => onToggle()}
+              >
                 <span>Menu</span>
               </a>
             </div>

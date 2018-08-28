@@ -32,7 +32,8 @@ const PortfolioItem = (props: Props) => {
     <Link
       className={styles.slugLink}
       to={'/portfolio/' + tag.slug}
-      key={tag.slug}>
+      key={tag.slug}
+    >
       {tag.name + (index < tags.length - 1 ? ', ' : '')}
     </Link>
   ));
@@ -66,7 +67,8 @@ const PortfolioItem = (props: Props) => {
           <Link
             to={'/portfolio/' + slug}
             title={title}
-            className={styles.details}>
+            className={styles.details}
+          >
             View Details
           </Link>
         </p>

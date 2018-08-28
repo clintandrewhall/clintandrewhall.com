@@ -1,0 +1,1005 @@
+<!doctype html>
+<html lang="en">
+    
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+        <title>Clint Andrew Hall</title>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
+        crossorigin="anonymous" />
+        <link href='https://fonts.googleapis.com/css?family=Roboto:400,500,400italic,300italic,300,500italic,700,700italic,900,900italic'
+        rel='stylesheet' type='text/css'>
+        <script defer src="https://use.fontawesome.com/releases/v5.1.0/js/all.js"
+        integrity="sha384-3LK/3kTpDE/Pkp8gTNp2gR/2gOiwQ6QaO7Td0zV76UFJVhqLl4Vl3KL1We6q6wR9"
+        crossorigin="anonymous"></script>
+        <style>
+            /*
+             * Adapted from: Orbit - Bootstrap 4 Resume/CV Template for Developers
+             * Version: 2.0
+             * Author: Xiaoying Riley
+             * Copyright: 3rd Wave Media
+             * Twitter: @3rdwave_themes
+             * License: Creative Commons Attribution 3.0 License
+             * Website: http://themes.3rdwavemedia.com/
+            */
+            body {
+              font-family: "Roboto", sans-serif;
+              color: #545e6c;
+              background: linear-gradient(180deg, #0d0a0b 100%, rgba(0, 0, 0, 0.8) 0);
+              font-size: 14px;
+              -webkit-font-smoothing: antialiased;
+              -moz-osx-font-smoothing: grayscale;
+            }
+            
+            h1,
+            h2,
+            h3,
+            h4,
+            h5,
+            h6 {
+              font-weight: 700;
+            }
+            
+            a {
+              color: #2e4049;
+              -webkit-transition: all 0.4s ease-in-out;
+              -moz-transition: all 0.4s ease-in-out;
+              -ms-transition: all 0.4s ease-in-out;
+              -o-transition: all 0.4s ease-in-out;
+            }
+            
+            a:hover {
+              text-decoration: underline;
+              color: #10171a;
+            }
+            
+            a:focus {
+              text-decoration: none;
+            }
+            
+            p {
+              line-height: 1.5;
+            }
+            
+            .wrapper {
+              background: #f5f5f5;
+              border-radius: 8px 10px 10px 8px;
+              max-width: 960px;
+              margin: 30px auto;
+              position: relative;
+              -webkit-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+              -moz-box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+              box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+            }
+            
+            .sidebar-wrapper {
+              border-radius: 0 8px 8px 0;
+              background: #862121;
+              position: absolute;
+              right: 0;
+              width: 240px;
+              height: 100%;
+              min-height: 800px;
+              color: #fff;
+            }
+            
+            .sidebar-wrapper a {
+              color: #fff;
+            }
+            
+            .sidebar-wrapper .profile-container {
+              padding: 30px;
+              background: rgba(0, 0, 0, 0.2);
+              text-align: center;
+              color: #fff;
+            }
+            
+            .sidebar-wrapper .name {
+              font-size: 32px;
+              font-weight: 900;
+              margin-top: 0;
+              margin-bottom: 10px;
+            }
+            
+            .sidebar-wrapper .tagline {
+              color: rgba(255, 255, 255, 0.6);
+              font-size: 16px;
+              font-weight: 400;
+              margin-top: 0;
+              margin-bottom: 0;
+            }
+            
+            .sidebar-wrapper .profile {
+              margin-bottom: 15px;
+            }
+            
+            .sidebar-wrapper .contact-list .svg-inline--fa {
+              margin-right: 5px;
+              font-size: 18px;
+              vertical-align: middle;
+            }
+            
+            .sidebar-wrapper .contact-list li {
+              margin-bottom: 15px;
+            }
+            
+            .sidebar-wrapper .contact-list li:last-child {
+              margin-bottom: 0;
+            }
+            
+            .sidebar-wrapper .contact-list .email .svg-inline--fa {
+              font-size: 14px;
+            }
+            
+            .sidebar-wrapper .container-block {
+              padding: 30px;
+            }
+            
+            .sidebar-wrapper .container-block-title {
+              text-transform: uppercase;
+              font-size: 16px;
+              font-weight: 700;
+              margin-top: 0;
+              margin-bottom: 15px;
+            }
+            
+            .sidebar-wrapper .degree {
+              font-size: 14px;
+              margin-top: 0;
+              margin-bottom: 5px;
+            }
+            
+            .sidebar-wrapper .education-container .item {
+              margin-bottom: 15px;
+            }
+            
+            .sidebar-wrapper .education-container .item:last-child {
+              margin-bottom: 0;
+            }
+            
+            .sidebar-wrapper .education-container .meta {
+              color: rgba(255, 255, 255, 0.6);
+              font-weight: 500;
+              margin-bottom: 0px;
+              margin-top: 0;
+              font-size: 14px;
+            }
+            
+            .sidebar-wrapper .education-container .time {
+              color: rgba(255, 255, 255, 0.6);
+              font-weight: 500;
+            }
+            
+            .sidebar-wrapper .languages-container .lang-desc {
+              color: rgba(255, 255, 255, 0.6);
+            }
+            
+            .sidebar-wrapper .languages-list {
+              margin-bottom: 0;
+            }
+            
+            .sidebar-wrapper .languages-list li {
+              margin-bottom: 10px;
+            }
+            
+            .sidebar-wrapper .languages-list li:last-child {
+              margin-bottom: 0;
+            }
+            
+            .sidebar-wrapper .interests-list {
+              margin-bottom: 0;
+            }
+            
+            .sidebar-wrapper .interests-list li {
+              margin-bottom: 10px;
+            }
+            
+            .sidebar-wrapper .interests-list li:last-child {
+              margin-bottom: 0;
+            }
+            
+            .main-wrapper {
+              border-radius: 8px;
+              background: #fff;
+              padding: 60px;
+              padding-right: 300px;
+            }
+            
+            .main-wrapper .section-title {
+              text-transform: uppercase;
+              font-size: 20px;
+              font-weight: 500;
+              color: #2e4049;
+              position: relative;
+              margin-top: 0;
+              margin-bottom: 20px;
+            }
+            
+            .main-wrapper .section {
+              margin-bottom: 60px;
+            }
+            
+            .main-wrapper .experiences-section .item,
+            .main-wrapper .speaking-section .item,
+            .main-wrapper .writing-section .item,
+            .main-wrapper .recognition-section .item {
+              margin-bottom: 30px;
+              position: relative;
+            }
+            
+            .main-wrapper .upper-row {
+              display: flex;
+            }
+            
+            .main-wrapper .job-title {
+              color: #3f4650;
+              font-size: 16px;
+              margin-top: 0;
+              margin-bottom: 0;
+              font-weight: 500;
+            }
+            
+            .main-wrapper .time {
+              color: #97aac3;
+              white-space: nowrap;
+              margin: 0 0 0 auto;
+            }
+            
+            .main-wrapper .company {
+              margin-bottom: 5px;
+            }
+            
+            .main-wrapper .company,
+            .main-wrapper .company a {
+              color: #97aac3;
+            }
+            
+            .main-wrapper .project-title {
+              font-size: 16px;
+              font-weight: 400;
+              margin-top: 0;
+              margin-bottom: 5px;
+            }
+            
+            .main-wrapper .projects-section .intro {
+              margin-bottom: 30px;
+            }
+            
+            .main-wrapper .projects-section .item {
+              margin-bottom: 15px;
+            }
+            
+            .footer {
+              padding: 30px;
+              padding-top: 60px;
+            }
+            
+            .footer .copyright {
+              line-height: 1.6;
+              color: #545e6c;
+              font-size: 13px;
+            }
+            
+            .footer .fa-heart {
+              color: #fb866a;
+            }
+            
+            /** Customizations */
+            .hidden {
+              position: absolute;
+              visibility: hidden;
+            }
+            
+            .profile {
+              border-radius: 50%;
+            }
+            
+            .sidebar-wrapper {
+              width: 330px;
+            }
+            
+            .main-wrapper {
+              padding-right: 380px;
+            }
+            
+            .contact-info {
+              padding-left: 26px;
+              position: relative;
+            }
+            
+            .contact-icon {
+              left: 0;
+              position: absolute;
+              top: 1px;
+            }
+            
+            .summary blockquote {
+              font-style: italic;
+            }
+            
+            .summary-section .summary,
+            .speaking-section .item,
+            .writing-section .item {
+              margin-left: 4px;
+            }
+            
+            .section-title {
+              line-height: 32px;
+            }
+            
+            .title-icon {
+              width: 30px;
+              height: 30px;
+              margin-right: 8px;
+              display: inline-block;
+              color: #fff;
+              -webkit-border-radius: 50%;
+              -moz-border-radius: 50%;
+              -ms-border-radius: 50%;
+              -o-border-radius: 50%;
+              border-radius: 50%;
+              -moz-background-clip: padding;
+              -webkit-background-clip: padding-box;
+              background-clip: padding-box;
+              background: #2e4049;
+              text-align: center;
+              font-size: 16px;
+            }
+            
+            .experiences-section .details {
+              margin-left: 42px;
+            }
+            
+            .highlights-header {
+              color: #3f4650;
+              font-size: 14px;
+              margin-top: 0;
+              font-weight: 500;
+            }
+            
+            .highlights-list {
+              padding: 0;
+            }
+            
+            .highlights-list .bullet {
+              margin: 0 0 0 16px;
+              padding: 0;
+            }
+            
+            .experiences-section .item .meta {
+              padding-left: 42px;
+              position: relative;
+            }
+            
+            .experiences-section .item::before {
+              content: "";
+              display: block;
+              width: 1px;
+              background: rgba(0, 0, 0, 0.1);
+              position: absolute;
+              left: 15px;
+              top: 36px;
+              bottom: -24px;
+            }
+            
+            .experiences-section .item .meta::before {
+              display: block;
+              content: "";
+              background: #f1f1f1;
+              height: 30px;
+              width: 30px;
+              border-radius: 50%;
+              position: absolute;
+              left: 0;
+              top: 0;
+            }
+            
+            .experiences-section .item.facebook .meta::before {
+              background: url("../images/fb.png") no-repeat center center;
+            }
+            
+            .experiences-section .item.cerner .meta::before {
+              background: url("../images/cerner.png") no-repeat center center;
+            }
+            
+            .experiences-section .item.sprint .meta::before {
+              background: url("../images/sprint.png") no-repeat center center;
+            }
+            
+            .experiences-section .item.accenture .meta::before {
+              background: url("../images/accenture.png") no-repeat center center;
+            }
+            
+            .experiences-section .item.sag .meta::before {
+              background: url("../images/sag.png") no-repeat center center;
+            }
+            
+            .experiences-section .item.symbol .meta::before {
+              background: url("../images/symbol.png") no-repeat center center;
+            }
+            
+            /* Media Queries */
+            @media (max-width: 850px) {
+              .wrapper,
+              .sidebar-wrapper,
+              .main-wrapper {
+                border-radius: 0;
+              }
+            
+              .wrapper {
+                margin: 0 auto;
+              }
+            
+              .sidebar-wrapper {
+                position: static;
+                width: inherit;
+              }
+            
+              .sidebar-wrapper .container-block {
+                padding: 10px 30px;
+              }
+            
+              .contact-container.container-block > .hidden {
+                position: static;
+                visibility: visible;
+              }
+            
+              .sidebar-wrapper .contact-container.container-block {
+                padding-top: 30px;
+              }
+            
+              .main-wrapper {
+                padding: 30px;
+              }
+            }
+            
+            @media (max-width: 639px) {
+              .main-wrapper .upper-row {
+                display: block;
+              }
+              .main-wrapper .upper-row .job-title {
+                margin-bottom: 2px;
+              }
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div class="wrapper">
+            <div class="sidebar-wrapper">
+                <header class="profile-container">
+                    <img src="http://www.gravatar.com/avatar/302764dcbe429cbf873064a2b8653da4.jpg?s&#x3D;200"
+                    class="profile" />
+                     <h1 class="name">Clint Andrew Hall</h1>
+
+                     <h2 class="tagline">User Interface Engineer</h2>
+
+                </header>
+                <section id="contact" class="contact-container container-block">
+                     <h2 class="container-block-title hidden">Contact</h2>
+
+                    <dl class="list-unstyled contact-list"> <dt class="hidden">Email</dt>
+
+                        <dd class="contact-info contact-info-email"> <i class="fas fa-envelope contact-icon"></i>
+ <a target="_blank" href="mailto:resume@clintandrewhall.com"><a href="mailto:resume@clintandrewhall.com">resume@clintandrewhall.com</a></a>
+                        </dd> <dt class="hidden">Website</dt>
+
+                        <dd class="contact-info contact-info-website"> <i class="fas fa-globe contact-icon"></i>
+ <a target="_blank" href="https://www.clintandrewhall.com"><a href="https://www.clintandrewhall.com">https://www.clintandrewhall.com</a></a>
+                        </dd>
+                    </dl>
+                </section>
+                <section id="profiles" class="profiles-container container-block">
+                     <h2 class="container-block-title">Profiles</h2>
+
+                    <dl class="list-unstyled contact-list"> <dt class="hidden">Email</dt>
+
+                        <dd class="contact-info contact-info-github"> <a target="_blank" href="https://github.com/clintandrewhall">
+                <i class="fab fa-github contact-icon"></i>clintandrewhall</a>
+
+                        </dd> <dt class="hidden">Email</dt>
+
+                        <dd class="contact-info contact-info-linkedin"> <a target="_blank" href="https://www.linkedin.com/in/clinthall">
+                <i class="fab fa-linkedin contact-icon"></i>clinthall</a>
+
+                        </dd> <dt class="hidden">Email</dt>
+
+                        <dd class="contact-info contact-info-twitter"> <a target="_blank" href="https://twitter.com/clintandrewhall">
+                <i class="fab fa-twitter contact-icon"></i>clintandrewhall</a>
+
+                        </dd> <dt class="hidden">Email</dt>
+
+                        <dd class="contact-info contact-info-facebook"> <a target="_blank" href="https://facebook.com/clint.hall">
+                <i class="fab fa-facebook contact-icon"></i>clint.hall</a>
+
+                        </dd> <dt class="hidden">Email</dt>
+
+                        <dd class="contact-info contact-info-instagram"> <a target="_blank" href="https://instagram.com/clintandrewhall">
+                <i class="fab fa-instagram contact-icon"></i>clintandrewhall</a>
+
+                        </dd>
+                    </dl>
+                </section>
+                <section class="education-container container-block">
+                     <h2 class="container-block-title">Education</h2>
+
+                    <div class="item">
+                         <h3 class="degree">BS Computer Science</h3>
+
+                         <h4 class="meta">Rockhurst University</h4>
+
+                        <p class="time">09/1997 — 08/2001</p>
+                    </div>
+                </section>
+            </div>
+            <main class="main-wrapper">
+                <section id="summary" class="section summary-section">
+                     <h2 class="section-title">
+            <span class="title-icon"><i class="fas fa-user"></i></span>
+            <span>Personal Summary</span>
+          </h2>
+
+                    <div class="summary">
+                        <blockquote>
+                            <p>I&#39;m currently enjoying some time off, working on a number of personal
+                                projects, but I&#39;m open to inquiries about positions that allow for
+                                working remotely.</p>
+                        </blockquote>
+                        <p>I&#39;m a User Interface Engineer and Web Evangelist. I work to make the
+                            web beautiful, both on its surface and beneath.</p>
+                        <p>I&#39;m a demonstrated expert in HTML, CSS and JavaScript, React/Flux/Relay,
+                            and more. I specialize in techniques promoting web agnostics, semantics,
+                            and accessibility. I&#39;m comfortable with varying levels of skill in
+                            any web stack, having written and maintained code in JS, PHP, Java and
+                            Ruby-on-Rails. I currently prefer Node+React or React Native for most of
+                            my projects.</p>
+                        <p>I&#39;m a regular consumer and occasional contributor to open source projects
+                            and client APIs. If I have a suggestion for a website or application, I
+                            prefer to demonstrate the idea using an API rather than just describe it--
+                            Code Wins Arguments.</p>
+                        <p>I look for opportunities where I can make strong, direct and meaningful
+                            contributions to a team, to users and to the web. I&#39;m comfortable functioning
+                            as both designer and engineer, advising on both the technical and aesthetic.
+                            I&#39;m affable and good-natured, yet results-driven and competitive. I
+                            have extensive experience working remotely, particularly during my time
+                            at Facebook..</div>
+                </section>
+                <section id="employment" class="section experiences-section">
+                     <h2 class="section-title">
+            <span class="title-icon"><i class="fas fa-briefcase"></i></span>
+            <span>Employment History</span>
+          </h2>
+
+                    <div class="item facebook">
+                        <header class="meta">
+                            <div class="upper-row">
+                                 <h3 class="job-title">User Interface Engineer</h3>
+
+                                <p class="time">April 2015 — June 2018</p>
+                            </div>
+                            <div class="company">Facebook NYC</div>
+                        </header>
+                        <div class="details">
+                            <p>When I first moved to the NYC Facebook office, I joined the Composer team
+                                for a &quot;hack-a-quarter&quot;, converting the Composer to React, and
+                                then worked on the Share Dialog.</p>
+                            <p>Eventually Events found themselves with a large number of React and Relay
+                                projects, so I rejoined my former team remotely. I built the new Events
+                                Dashboard and Permalink, and implemented many &quot;under the hood&quot;
+                                improvements.</p>
+                            <div class="highlights">
+                                 <h5 class="highlights-header">Highlights</h5>
+
+                                <ul class="highlights-list">
+                                    <li class="bullet">New Events Dashboard for desktop in Relay.</li>
+                                    <li class="bullet">New Events Dashboard for the mobile site in XHP.</li>
+                                    <li class="bullet">New Events Permalink for all web surfaces in XHP.</li>
+                                    <li class="bullet">New React + Flux Composer, and the new Share Dialog using that component.</li>
+                                    <li
+                                    class="bullet">New &#39;Minutiae&#39; controls, the structured data (Photos, Activity,
+                                        Tags) found in Composer.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item facebook">
+                        <header class="meta">
+                            <div class="upper-row">
+                                 <h3 class="job-title">User Interface Engineer</h3>
+
+                                <p class="time">August 2013 — April 2015</p>
+                            </div>
+                            <div class="company">Facebook Vancouver</div>
+                        </header>
+                        <div class="details">
+                            <p>In 2013 I joined the Vancouver office with an amazing cadre of engineers
+                                from all over the world. With a Canadian fiance, it made sense for me to
+                                bring Facebook experience (and culture) to a group of &quot;n00bs&quot;.</p>
+                            <p>While there, I worked on the Protect and Care team developing a new Messaging
+                                Inbox built in React. I also implemented the Open Graph Share dialog for
+                                FB Platform in XHP.</p>
+                            <div class="highlights">
+                                 <h5 class="highlights-header">Highlights</h5>
+
+                                <ul class="highlights-list">
+                                    <li class="bullet">New Help Center Inbox for desktop in React.</li>
+                                    <li class="bullet">New &quot;How-to&quot; panels for the Help Center.</li>
+                                    <li class="bullet">New Platform Share Dialog for mobile and desktop in XHP.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item facebook">
+                        <header class="meta">
+                            <div class="upper-row">
+                                 <h3 class="job-title">User Interface Engineer</h3>
+
+                                <p class="time">August 2013 — April 2015</p>
+                            </div>
+                            <div class="company">Facebook HQ</div>
+                        </header>
+                        <div class="details">
+                            <p>I joined Facebook in 2012 as a User Interface Engineer (UIE) on the Mobile
+                                Core Web team. I then joined the Accessibility team to help make Facebook
+                                more useful to everyone on the web.</p>
+                            <p>After several hackathons involving Events, I joined the team full time
+                                to rewrite the web experiences on both the mobile and main website.</p>
+                            <p>Afterwards, I spent some time with the Platform team, reworking a number
+                                of different web flows, like OAuth, and embeddable components like Share,
+                                Hashtags and Topics.</p>
+                            <div class="highlights">
+                                 <h5 class="highlights-header">Highlights</h5>
+
+                                <ul class="highlights-list">
+                                    <li class="bullet">New OAuth flow dialogs for developers using Facebook.</li>
+                                    <li class="bullet">New Share, Hashtags and Topics plugins for developers.</li>
+                                    <li class="bullet">New mobile web experience for the Events Dashboard and Permalink.</li>
+                                    <li
+                                    class="bullet">Improved the Accessibility of Facebook, including a new way to &quot;see&quot;
+                                        photos.</li>
+                                        <li class="bullet">New core components for mobile web for product teams.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item cerner">
+                        <header class="meta">
+                            <div class="upper-row">
+                                 <h3 class="job-title">Web Evangelist</h3>
+
+                                <p class="time">October 2009 — January 2012</p>
+                            </div>
+                            <div class="company">Cerner Corporation</div>
+                        </header>
+                        <div class="details">
+                            <p>As Cerner&#39;s first Web Evanglist, I was responsible for advancing web
+                                best-practices to teams, both existing and emerging. I basically served
+                                as ad-hoc advisor with respect to semantics, accessibility, web agnostics
+                                and the responsible use of CSS and JavaScript.</p>
+                            <div class="highlights">
+                                 <h5 class="highlights-header">Highlights</h5>
+
+                                <ul class="highlights-list">
+                                    <li class="bullet">New OpenID SDK for the iPhone.</li>
+                                    <li class="bullet">Redesigned a semantic search servive to use JSON-P</li>
+                                    <li class="bullet">&quot;Proscenium&quot;, an experimental technique of compiling templates
+                                        in JS libaries for isomorphic rendering.</li>
+                                    <li class="bullet">Spoke about Progressive Enhancement as a necessary philosophy.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="item sag">
+                        <header class="meta">
+                            <div class="upper-row">
+                                 <h3 class="job-title">Principal Architect</h3>
+
+                                <p class="time">October 2010 — January 2012</p>
+                            </div>
+                            <div class="company">Socially Adept Geek, LLC</div>
+                        </header>
+                        <div class="details">
+                            <p>In my spare time I operated a consultancy where I helped clients and friends
+                                with custom code, strategies and advice on their web projects.</p>
+                            <p>I shuttered this consulting business as part of my agreement to work at
+                                Facebook.</p>
+                        </div>
+                    </div>
+                    <div class="item cerner">
+                        <header class="meta">
+                            <div class="upper-row">
+                                 <h3 class="job-title">Software Architect</h3>
+
+                                <p class="time">January 2007 — October 2009</p>
+                            </div>
+                            <div class="company">Cerner Corporation</div>
+                        </header>
+                        <div class="details">
+                            <p>For a several years I was a Software Architect for Healthe, enforcing
+                                cross-browser compatibility, semantic markup and accessibility, developing
+                                CSS layouts and advanced JavaScript controls, and conducting platform research.
+                                I would also prototype HTML code based on paper designs, allowing the team
+                                to communicate intent to clients, stakeholders, usability and engineers.</p>
+                            <div
+                            class="highlights">
+                                 <h5 class="highlights-header">Highlights</h5>
+
+                                <ul class="highlights-list">
+                                    <li class="bullet">Inculcated a comprehensive browser-agnostic web philosophy, massively
+                                        improving accessibility, portability and performance.</li>
+                                    <li class="bullet">Invented the &#39;Web Bootstrapper&#39;, a patented technology that allowed
+                                        semantic web pages to adapt to the heuristics of any device, dynamically.</li>
+                                    <li
+                                    class="bullet">Consultant and mentor to teams and engineers on web technology and development.</li>
+                                </ul>
+                        </div>
+                    </div>
+        </div>
+        <div class="item cerner">
+            <header class="meta">
+                <div class="upper-row">
+                     <h3 class="job-title">Sr. Software Engineer</h3>
+
+                    <p class="time">January 2005 — January 2007</p>
+                </div>
+                <div class="company">Cerner Corporation</div>
+            </header>
+            <div class="details">
+                <p>For several years I worked on the ePrescribing (eRx) and Community Health
+                    Record (CHR) solutions for treating Medicare populations in several states.
+                    I would interpret functional requirements into a coherent user interface
+                    and visual design.</p>
+                <div class="highlights">
+                     <h5 class="highlights-header">Highlights</h5>
+
+                    <ul class="highlights-list">
+                        <li class="bullet">Proposed and built the &quot;New Navigation&quot; project, which was a
+                            radical redesign of the UI based on usability studies and feedback from
+                            sales.</li>
+                        <li class="bullet">Novel architecture pattern discarding JSPs in favor of full modules of
+                            aggregate presentation components, adding entire workflows to any WAR using
+                            standard J2EE and Struts configurations.</li>
+                        <li class="bullet">Mentored software engineers and other architects in semantic markup practices
+                            and prudent Javascript.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="item cerner">
+            <header class="meta">
+                <div class="upper-row">
+                     <h3 class="job-title">Application Developer</h3>
+
+                    <p class="time">October 2003 — January 2005</p>
+                </div>
+                <div class="company">Cerner Corporation</div>
+            </header>
+            <div class="details">
+                <p>When I joined Cerner, I took on the role of Presentation Layer Developer
+                    for the &quot;Web Experience&quot; solution, specifically Order Management.
+                    I would design, document, and develop the UI for order placement, drug
+                    catalog browsing, and proactive interaction checking and alerting.</p>
+                <div
+                class="highlights">
+                     <h5 class="highlights-header">Highlights</h5>
+
+                    <ul class="highlights-list">
+                        <li class="bullet">Reusable, component-based rendering system which resulted in an 80% reduction
+                            in markup in JPSs, as well as sharing between solutions.</li>
+                        <li class="bullet">Subject matter expert for most presentation layer technologies, and reviewed
+                            most of that code from my (and other) teams. I ended up teaching a few
+                            courses for new associates.</li>
+                    </ul>
+            </div>
+        </div>
+        </div>
+        <div class="item sprint">
+            <header class="meta">
+                <div class="upper-row">
+                     <h3 class="job-title">Application Developer II</h3>
+
+                    <p class="time">June 2003 — October 2003</p>
+                </div>
+                <div class="company">Sprint</div>
+            </header>
+            <div class="details">
+                <p>I held a brief role at Sprint, transitioning from Accenture Outsourcing
+                    to Sprint PCS. I rolled on to the Architecture team, and was responsible
+                    for applying design patterns, creating interfaces to back-end applications,
+                    and overseeing code development across releases.</p>
+            </div>
+        </div>
+        <div class="item accenture">
+            <header class="meta">
+                <div class="upper-row">
+                     <h3 class="job-title">Outsourced Analyst</h3>
+
+                    <p class="time">July 2001 — June 2003</p>
+                </div>
+                <div class="company">Accenture</div>
+            </header>
+            <div class="details">
+                <p>Employed as an Analyst in the Outsourcing organization for a number of
+                    client engagements.</p>
+                <div class="highlights">
+                     <h5 class="highlights-header">Highlights</h5>
+
+                    <ul class="highlights-list">
+                        <li class="bullet">At a Wireless Telecom engagement, I wrote web-based Java interfaces for
+                            a customer care billing platform.</li>
+                        <li class="bullet">At a Long Distance Telecom engagement, I was on-call and responsible for
+                            monitoring load balance and processing time on switches using SQL.</li>
+                        <li
+                        class="bullet">At a Broadband Telecom engagement, I created test plans for development
+                            teams across the US and Canada.</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="item symbol">
+            <header class="meta">
+                <div class="upper-row">
+                     <h3 class="job-title">Intern</h3>
+
+                    <p class="time">January 1998 — January 2001</p>
+                </div>
+                <div class="company">Symbol Technologies</div>
+            </header>
+            <div class="details">
+                <p>I spent three summers writing complete web-based applications for quality
+                    control efforts.</p>
+            </div>
+        </div>
+        </section>
+        <section id="speaking" class="section speaking-section">
+             <h2 class="section-title">
+            <span class="title-icon"><i class="fas fa-microphone-alt"></i></span>
+            <span>Speaking</span>
+          </h2>
+
+            <div class="item">
+                <header class="meta">
+                    <div class="upper-row">
+                         <h3 class="job-title">
+                  <a target="_blank" href="http://metaphorical.ly/">Redefining How We See Technology</a>
+                </h3>
+
+                        <p class="time">October 2014</p>
+                    </div>
+                    <div class="company">TEDx RenfrewCollingwood</div>
+                </header>
+                <div class="details">
+                    <p>I was invited to speak at TEDxRenfrewCollingwood about using metaphors
+                        to explain technology, to “bridge the gap” between what people believe
+                        software can do, and what it actually can do. I created an open-source
+                        website called metaphorical.ly where anyone could create a technology metaphor.</p>
+                </div>
+            </div>
+            <div class="item">
+                <header class="meta">
+                    <div class="upper-row">
+                         <h3 class="job-title">
+                  <a target="_blank" href="https://dl.acm.org/citation.cfm?id&#x3D;1535654">Web Presentation Layer Bootstrapping for Accessibility and Performance</a>
+                </h3>
+
+                        <p class="time">August 28, 2018</p>
+                    </div>
+                    <div class="company">International Cross-Disciplinary Conference on Web Accessibility</div>
+                </header>
+                <div class="details">
+                    <p>I wrote a paper and delivered a talk about my findings using the Web Bootstrapper
+                        at Cerner in Madrid, Spain.</p>
+                </div>
+            </div>
+            <div class="item">
+                <header class="meta">
+                    <div class="upper-row">
+                         <h3 class="job-title">
+                  <a target="_blank" href="http://www2009.wwwconference.org/developers.html">Bootstrapping Web Pages for Accessibility and Performance</a>
+                </h3>
+
+                        <p class="time">August 28, 2018</p>
+                    </div>
+                    <div class="company">18th International World Wide Web Conference</div>
+                </header>
+                <div class="details">
+                    <p>I delivered a talk on the Web Bootstrapper I developed at Cerner at the
+                        WWW Conference in Madrid, Spain.</p>
+                </div>
+            </div>
+            <div class="item">
+                <header class="meta">
+                    <div class="upper-row">
+                         <h3 class="job-title">
+                  <a target="_blank" href="https://www.siggraph.org/s99/media/news/rel4.html">SP3D and the Lighthouse: Explorations in 3D Internet Learning</a>
+                </h3>
+
+                        <p class="time">August 28, 2018</p>
+                    </div>
+                    <div class="company">SIGGRAPH</div>
+                </header>
+                <div class="details">
+                    <p>I was a speaker in the &#39;Playground&#39; and &#39;Classroom&#39; discussing
+                        the success of my 1997 and 1998 ThinkQuest websites, which used 3D graphics
+                        combined with Internet technology to teach difficult subjects to students
+                        of all ages.</p>
+                </div>
+            </div>
+        </section>
+        <section id="writing" class="section writing-section">
+             <h2 class="section-title">
+            <span class="title-icon"><i class="fas fa-pencil-alt"></i></span>
+            <span>Writing</span>
+          </h2>
+
+            <div class="item">
+                <header class="meta">
+                    <div class="upper-row">
+                         <h3 class="job-title">
+                  <a target="_blank" href="https://dl.acm.org/citation.cfm?id&#x3D;1535654.1535671">Web Presentation Layer Bootstrapping for Accessibility and Performance</a>
+                </h3>
+
+                        <p class="time">April 2009</p>
+                    </div>
+                    <div class="company"> <a target="_blank" href="http://www.w4a.info/">W4A</a>
+
+                    </div>
+                </header>
+                <div class="details">
+                    <p>In this paper, I present a the Web Bootstrapper, a technique that allows
+                        a developer to write a single site while still providing multiple experiences,
+                        or &quot;skins,&quot; without altering source or running costly client-side
+                        code. It is a process by which an accurate collection of only those static
+                        resources and metadata necessary for a unique experience be delivered passively,
+                        by the most performant means possible.</p>
+                </div>
+            </div>
+        </section>
+        <section id="writing" class="section recognition-section">
+             <h2 class="section-title">
+            <span class="title-icon"><i class="fas fa-award"></i></span>
+            <span>Recognition</span>
+          </h2>
+
+            <div class="item">
+                <header class="meta">
+                    <div class="upper-row">
+                         <h3 class="job-title">
+                  <a target="_blank" href="https://web.archive.org/web/20140822164240/http://library.thinkquest.org/10502/">2nd Place - Arts and Literature</a>
+                </h3>
+
+                        <p class="time">October 1997</p>
+                    </div>
+                    <div class="company">ThinkQuest 1997</div>
+                </header>
+                <div class="details">
+                    <p>Created &quot;Shakey&#39;s Place&quot;, a website about Shakespeare featuring
+                        a 3D Globe Theatre. Placed Second in Arts and Literature category totaling
+                        $48,000 in scholarships. Team Leader, designed interface and 3D graphics,
+                        programmed Perl 5 scripts, designed HTML layout.</p>
+                </div>
+            </div>
+            <div class="item">
+                <header class="meta">
+                    <div class="upper-row">
+                         <h3 class="job-title">
+                  <a target="_blank" href="">Irene Ryan Acting Scholarship</a>
+                </h3>
+
+                        <p class="time">May 2001</p>
+                    </div>
+                    <div class="company">KC/ACTF Region V Conference</div>
+                </header>
+                <div class="details">
+                    <p>Three-time nominee for excellence in Acting.</p>
+                </div>
+            </div>
+        </section>
+        </main>
+        </div>
+    </body>
+
+</html>

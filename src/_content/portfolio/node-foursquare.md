@@ -1,13 +1,13 @@
 ---
-caption: "I maintain the Foursquare/Swarm library for Node.js."
+caption: 'I maintain the Foursquare/Swarm library for Node.js.'
 cover:
-  src: "/images/portfolio/node-foursquare-1.jpg"
-  size: "750x450"
-slug: "node-foursquare"
-tags: [{name: 'NodeJS', slug: 'node'}, {name: 'Swarm', slug: 'swarm'}]
+  src: '/images/portfolio/node-foursquare-1.jpg'
+  size: '750x450'
+slug: 'node-foursquare'
+tags: [{ name: 'NodeJS', slug: 'node' }, { name: 'Swarm', slug: 'swarm' }]
 timestamp: 1513728000
-title: "node-foursquare"
-website: "http://www.github.com/clintandrewhall/node-foursquare"
+title: 'node-foursquare'
+website: 'http://www.github.com/clintandrewhall/node-foursquare'
 ---
 
 # Background

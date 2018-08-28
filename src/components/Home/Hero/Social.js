@@ -12,7 +12,8 @@ const Social = () => {
           className={styles.socialLink}
           href="https://www.facebook.com/clint.hall"
           rel="noopener noreferrer"
-          target="_blank">
+          target="_blank"
+        >
           <i className="im im-facebook" aria-hidden="true" />
           <span>Facebook</span>
         </a>
@@ -22,7 +23,8 @@ const Social = () => {
           className={styles.socialLink}
           href="https://www.twitter.com/clintandrewhall"
           rel="noopener noreferrer"
-          target="_blank">
+          target="_blank"
+        >
           <i className="im im-twitter" aria-hidden="true" />
           <span>Twitter</span>
         </a>
@@ -32,7 +34,8 @@ const Social = () => {
           className={styles.socialLink}
           href="https://www.instagram.com/clintandrewhall"
           rel="noopener noreferrer"
-          target="_blank">
+          target="_blank"
+        >
           <i className="im im-instagram" aria-hidden="true" />
           <span>Instagram</span>
         </a>
@@ -42,7 +45,8 @@ const Social = () => {
           className={styles.socialLink}
           href="https://www.github.com/clintandrewhall"
           rel="noopener noreferrer"
-          target="_blank">
+          target="_blank"
+        >
           <i className="im im-github" aria-hidden="true" />
           <span>Github</span>
         </a>
