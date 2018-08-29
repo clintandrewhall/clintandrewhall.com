@@ -3,14 +3,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import PortfolioItem from './../../Portfolio/PortfolioItem';
+import PortfolioItem from './../Portfolio/PortfolioItem';
 
-import styles from './index.module.css';
+import styles from './Portfolio.module.css';
 
 const Portfolio = () => {
   // $FlowFixMe
   const portfolioContext = require.context(
-    '!markdown-with-front-matter-loader!./../../../_content/portfolio',
+    '!markdown-with-front-matter-loader!./../../_content/portfolio',
     false,
     /.md$/,
   );

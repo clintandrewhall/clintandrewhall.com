@@ -7,7 +7,7 @@ import styles from './index.module.css';
 import Stats from './Stats.js';
 import LOC from './LOC.js';
 
-import backup from './../../../../_content/github';
+import backup from './../../../_content/github';
 
 type Props = {};
 type State = {

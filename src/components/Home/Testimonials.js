@@ -5,7 +5,7 @@ import Flickity from 'react-flickity-component';
 
 import TestimonialComponent from './Testimonial';
 import styles from './Testimonials.module.css';
-import data from './../../../_content/resume.json';
+import data from './../../_content/resume.json';
 
 import 'flickity/css/flickity.css';
 

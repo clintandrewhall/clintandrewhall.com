@@ -3,7 +3,7 @@
 import React from 'react';
 import Social from './Social.js';
 
-import styles from './index.module.css';
+import styles from './Hero.module.css';
 
 class Hero extends React.PureComponent<{}> {
   render() {

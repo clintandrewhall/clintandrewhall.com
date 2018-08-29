@@ -4,8 +4,8 @@ import React from 'react';
 
 import Testimonials from './Testimonials';
 import Item from './WorkHistoryItem';
-import styles from './index.module.css';
-import resume from './../../../_content/resume.json';
+import styles from './Work.module.css';
+import resume from './../../_content/resume.json';
 
 type Resume = {
   employment: {

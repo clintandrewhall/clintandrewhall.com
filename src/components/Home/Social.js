@@ -2,7 +2,7 @@
 
 import React from 'react';
 
-import resume from './../../../_content/resume.json';
+import resume from './../../_content/resume.json';
 import styles from './Social.module.css';
 
 const Social = () => {

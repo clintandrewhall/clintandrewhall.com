@@ -3,9 +3,9 @@
 import React from 'react';
 import Markdown from 'react-markdown';
 
-import resume from './../../../_content/resume.json';
+import resume from './../../_content/resume.json';
 import GithubCard from './Github';
-import styles from './index.module.css';
+import styles from './About.module.css';
 
 const About = () => {
   const { info } = (resume: FreshResume);

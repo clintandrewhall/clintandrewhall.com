@@ -3,12 +3,12 @@
 import React from 'react';
 
 import MediumPost from './MediumPost';
-import styles from './index.module.css';
+import styles from './Medium.module.css';
 
 const Medium = () => {
   // $FlowFixMe
   const portfolioContext = require.context(
-    '!markdown-with-front-matter-loader!./../../../_content/posts',
+    '!markdown-with-front-matter-loader!./../../_content/posts',
     false,
     /.md$/,
   );
