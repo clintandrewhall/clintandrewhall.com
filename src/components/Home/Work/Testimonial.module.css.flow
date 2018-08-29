@@ -4,6 +4,7 @@ declare module.exports: {|
   +'avatar': string;
   +'connection': string;
   +'name': string;
+  +'quote': string;
   +'root': string;
   +'title': string;
 |};

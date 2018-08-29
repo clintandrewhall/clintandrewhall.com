@@ -512,13 +512,13 @@
           </w:rPr>
           <w:t><w:br/></w:t>
         </w:r>
-        <w:hlink w:dest="https://beta.clintandrewhall.com">
+        <w:hlink w:dest="https://www.clintandrewhall.com">
           <w:r wsp:rsidRPr="003876BF">
             <w:rPr>
               <w:rStyle w:val="Hyperlink"/>
               <w:sz w:val="16"/>
             </w:rPr>
-            <w:t>https://beta.clintandrewhall.com</w:t>
+            <w:t>https://www.clintandrewhall.com</w:t>
           </w:r>
         </w:hlink>
       </w:p>

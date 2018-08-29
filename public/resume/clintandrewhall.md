@@ -2,7 +2,7 @@
 
 Email: resume@clintandrewhall.com
 
-Web: https://beta.clintandrewhall.com
+Web: https://www.clintandrewhall.com
 
 > I'm currently enjoying some time off, working on a number of personal projects, but I'm open to inquiries about positions that allow for working remotely.
 
