@@ -38,9 +38,8 @@ class Testimonials extends React.Component<any> {
         <div className={styles.header}>
           <div className={styles.headerContent}>
             <h2 className={styles.heading}>What People Say.</h2>
-            <h3 className={styles.subheading}>
-              See more on{' '}
-              <a href="https://www.linkedin.com/in/clinthall/">LinkedIn</a>
+            <h3 className={styles.lead}>
+              I've worked with some remarkable people.
             </h3>
           </div>
         </div>
@@ -52,6 +51,16 @@ class Testimonials extends React.Component<any> {
           >
             {items}
           </Flickity>
+        </div>
+        <div className={styles.buttonRow}>
+          <a
+            className={styles.button}
+            href="https://www.linkedin.com/in/clinthall"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Visit my LinkedIn Profile
+          </a>
         </div>
       </div>
     );

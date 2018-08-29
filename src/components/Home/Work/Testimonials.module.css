@@ -36,24 +36,17 @@
   font-family: 'librebaskerville-bold', serif;
   font-size: 4.2rem;
   margin-top: 0;
-  margin-bottom: 1rem;
   color: #fff;
 }
 
-.subheading {
-  font-size: 1.5rem;
+.lead {
+  composes: lead from './../../core/Section.module.css';
   color: #fff;
-  margin: 0;
-}
-
-.subheading a:hover,
-.subheading a:focus {
-  color: #fff;
+  margin-top: 0;
 }
 
 .content {
   composes: row from global;
-  margin-top: 4.2rem;
   border-top: 1px solid rgba(255, 255, 255, 0.1);
   position: relative;
 }
@@ -108,6 +101,32 @@
 
 .next {
   right: 4.5rem;
+}
+
+.buttonRow {
+  composes: col-four from global;
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  float: none;
+}
+
+.button {
+  composes: button from './../../core/Buttons.module.css';
+  composes: stroke from './../../core/Buttons.module.css';
+  display: block;
+  border-color: #fff;
+  color: #fff;
+  letter-spacing: 0.25rem;
+  -webkit-transition: all 0.5s ease-in-out;
+  transition: all 0.5s ease-in-out;
+}
+
+.button:hover,
+.button:focus {
+  background: #fff;
+  border-color: #fff;
+  color: #000;
 }
 
 @media only screen and (max-width: 1200px) {

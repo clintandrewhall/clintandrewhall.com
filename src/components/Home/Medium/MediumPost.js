@@ -27,12 +27,12 @@ const MediumPost = (props: Props) => {
   return (
     <article className={styles.root}>
       <div className={styles.date}>
-        <a href={href} target="_blank">
+        <a href={href} target="_blank" rel="noopener noreferrer">
           {date}
         </a>
       </div>
       <h2 className={styles.heading}>
-        <a href={href} target="_blank">
+        <a href={href} target="_blank" rel="noopener noreferrer">
           {title}
         </a>
       </h2>

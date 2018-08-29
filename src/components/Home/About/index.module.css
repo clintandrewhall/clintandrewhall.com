@@ -57,6 +57,14 @@
   composes: h03 from global;
 }
 
+.markdown blockquote {
+  display: none;
+}
+
+.markdown blockquote::before {
+  display: none;
+}
+
 @media only screen and (max-width: 800px) {
   .right {
     padding-left: 10px;

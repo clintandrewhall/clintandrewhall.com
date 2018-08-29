@@ -8,6 +8,7 @@ declare module.exports: {|
   +'introContent': string;
   +'lead': string;
   +'left': string;
+  +'markdown': string;
   +'right': string;
   +'root': string;
   +'subtitle': string;

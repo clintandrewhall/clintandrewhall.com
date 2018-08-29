@@ -1,11 +1,16 @@
 // @flow
 
 import React from 'react';
+import Markdown from 'react-markdown';
 
+import resume from './../../../_content/resume.json';
 import GithubCard from './Github';
 import styles from './index.module.css';
 
 const About = () => {
+  const { info } = (resume: FreshResume);
+  const { brief } = info;
+
   return (
     <section id="about" className={styles.root}>
       <div className={styles.intro}>
@@ -86,33 +91,7 @@ const About = () => {
       <div className={styles.columns}>
         <div className={styles.left}>
           <h3 className={styles.columnTitle}>About My Work</h3>
-          <p>
-            I want to make the web “beautiful”, both on the surface and beneath
-            it. If I have a suggestion for a website or application, I prefer to
-            demonstrate the idea through an API rather than write a blog about
-            it.
-          </p>
-          <p>
-            I draw a distinction between “web sites” and “web applications”,
-            touting a strict progressive enhancement philosophy in the former,
-            (e.g. “the web is HTML”), and responsible use of front-end tech in
-            the latter, (focus on performance, avoid library bloat,
-            accessibility, etc).
-          </p>
-          <p>
-            I’m comfortable with varying levels of skill in just about any web
-            stack, having written and maintained code in PHP, Java and Ruby on
-            Rails. I currently prefer Node for most of my personal projects, as
-            I find I can get them up and running very quickly; I also love the
-            very active community.
-          </p>
-          <p>
-            I look for opportunities in “two-way street” environments, where I
-            learn from others while making strong, direct and meaningful
-            contributions to a team and impact on the web. I strive to take the
-            mysticism out of my profession, encouraging anyone and everyone that
-            creating things on the web was meant for them, too.
-          </p>
+          <Markdown source={brief} className={styles.markdown} />
         </div>
         <div className={styles.right}>
           <h3 className={styles.columnTitle}>About My Code</h3>
