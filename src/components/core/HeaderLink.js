@@ -22,6 +22,7 @@ const HeaderLink = (props: Props) => {
       exact={exact}
       children={(props: LinkProps) => {
         const { location } = props;
+        // $FlowFixMe
         const { hash, pathname } = location;
 
         const pathMatch = pathname.substr(0, to.length) === to && to.length > 1;

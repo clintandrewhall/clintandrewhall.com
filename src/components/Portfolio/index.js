@@ -9,7 +9,7 @@ import Footer from './../core/Footer';
 import styles from './index.module.css';
 
 type Props = {
-  children: Array<React$Component<any, any>>,
+  children: Array<React$Element<any>>,
 };
 
 export default (props: Props) => {
