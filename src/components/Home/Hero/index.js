@@ -27,6 +27,7 @@ class Hero extends React.PureComponent<{}> {
                 More About Me
               </a>
             </div>
+            <Social />
             <div className={styles.scroll}>
               <a href="#about" className={styles.scrollLink}>
                 <span>Scroll Down</span>
@@ -34,7 +35,6 @@ class Hero extends React.PureComponent<{}> {
             </div>
           </div>
         </div>
-        <Social />
       </section>
     );
   }

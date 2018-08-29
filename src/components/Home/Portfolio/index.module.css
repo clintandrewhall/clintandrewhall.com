@@ -57,6 +57,7 @@
   composes: col-four from global;
   float: none;
   margin: 0 auto;
+  padding: 0 25px;
 }
 
 .buttonRow::before {

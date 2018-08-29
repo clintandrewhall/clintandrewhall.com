@@ -18,7 +18,7 @@ const About = () => {
           <h2 className={styles.title}>About Me</h2>
           <h3 className={styles.subtitle}>I Live for Experiences</h3>
           <p className={styles.lead}>
-            I build them for desktop and mobile browsers, professionally and in
+            I craft them for desktop and mobile browsers, professionally and in
             my spare time. I'm incredibly fortunate that my passion became my
             career.
           </p>
