@@ -22,7 +22,7 @@ class Testimonials extends React.Component<any> {
   componentDidMount() {
     setTimeout(() => {
       this._flkty.reposition();
-    }, 3000);
+    }, 4000);
   }
 
   render() {

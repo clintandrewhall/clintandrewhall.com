@@ -25,7 +25,7 @@ class Home extends React.Component<{}, State> {
   };
 
   componentDidMount() {
-    document.title = 'Clint Andrew Hall [beta]';
+    document.title = 'Clint Andrew Hall';
     window.addEventListener('fade-finished', () => {
       if (this.heroRef) {
         const node = ReactDOM.findDOMNode(this.heroRef.current);

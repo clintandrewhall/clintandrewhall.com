@@ -53,6 +53,25 @@
   width: 400px;
 }
 
+.buttonRow {
+  composes: col-four from global;
+  float: none;
+  margin: 0 auto;
+}
+
+.buttonRow::before {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.button {
+  composes: button from "./../../core/Buttons.module.css";
+  composes: primary from "./../../core/Buttons.module.css";
+  display: block;
+  margin: 4rem auto 0 auto;
+}
+
 /* -------------------------------------------------------------------
  * responsive:
  * works

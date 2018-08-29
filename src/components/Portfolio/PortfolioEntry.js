@@ -18,7 +18,7 @@ export default (props: Props) => {
   const { entry } = props;
   const { title, tags, timestamp } = entry;
 
-  document.title = 'Clint Andrew Hall [beta] - Portfolio - ' + title;
+  document.title = 'Clint Andrew Hall - Portfolio - ' + title;
 
   const date = moment(timestamp * 1000).format('MMMM Do YYYY');
 

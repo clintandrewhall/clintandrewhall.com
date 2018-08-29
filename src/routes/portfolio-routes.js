@@ -2,16 +2,17 @@
 
 import React from 'react';
 import { Route } from 'react-router-dom';
+import Portfolio from './../components/Portfolio';
 import PortfolioItem from './../components/Portfolio/PortfolioItem';
 import PortfolioEntry from './../components/Portfolio/PortfolioEntry';
 
 export default (): Array<React$Node> => {
   const entryIndex = entries => () => (
-    <ul>
+    <Portfolio>
       {[...entries.keys()].map(path => (
         <PortfolioItem item={entries.get(path)} />
       ))}
-    </ul>
+    </Portfolio>
   );
 
   // $FlowFixMe

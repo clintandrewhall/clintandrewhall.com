@@ -1,6 +1,7 @@
 // @flow
 
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import PortfolioItem from './../../Portfolio/PortfolioItem';
 
@@ -43,6 +44,15 @@ const Portfolio = () => {
       </div>
       <div className={styles.portfolio}>
         <div className={styles.content}>{items}</div>
+      </div>
+      <div className={styles.buttonRow}>
+        <Link
+          to="/portfolio"
+          title="View my portfolio"
+          className={styles.button}
+        >
+          View my portfolio
+        </Link>
       </div>
     </section>,
   ];
