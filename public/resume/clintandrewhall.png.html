@@ -246,12 +246,14 @@
               position: relative;
               margin-top: 0;
               margin-bottom: 20px;
+              border-bottom: 1px solid #97aac3;
             }
             
             .main-wrapper .section {
               margin-bottom: 60px;
             }
             
+            .main-wrapper .testimonials-section .item,
             .main-wrapper .experiences-section .item,
             .main-wrapper .speaking-section .item,
             .main-wrapper .writing-section .item,
@@ -264,6 +266,7 @@
               display: flex;
             }
             
+            .main-wrapper .person-name,
             .main-wrapper .job-title {
               color: #3f4650;
               font-size: 16px;
@@ -272,7 +275,8 @@
               font-weight: 500;
             }
             
-            .main-wrapper .time {
+            .main-wrapper .time,
+            .person-title {
               color: #97aac3;
               white-space: nowrap;
               margin: 0 0 0 auto;
@@ -303,19 +307,16 @@
             }
             
             .footer {
-              padding: 30px;
-              padding-top: 60px;
-            }
-            
-            .footer .copyright {
+              font-style: italic;
+              text-align: center;
               line-height: 1.6;
               color: #545e6c;
               font-size: 13px;
+              margin-right: 330px;
+              padding: 15px;
             }
             
-            .footer .fa-heart {
-              color: #fb866a;
-            }
+            .footer a { text-decoration: underline; }
             
             /** Customizations */
             .hidden {
@@ -406,11 +407,13 @@
               padding: 0;
             }
             
+            .testimonials-section .item .meta,
             .experiences-section .item .meta {
               padding-left: 42px;
               position: relative;
             }
             
+            .testimonials-section .item::before,
             .experiences-section .item::before {
               content: "";
               display: block;
@@ -456,6 +459,42 @@
             
             .experiences-section .item.symbol .meta::before {
               background: url("../images/symbol.png") no-repeat center center;
+            }
+            
+            .main-wrapper .testimonials-section .upper-row {
+              display: block;
+            }
+            
+            img.avatar {
+              display: block;
+              content: "";
+              background: #f1f1f1;
+              height: 30px;
+              width: 30px;
+              border-radius: 50%;
+              position: absolute;
+              left: 0;
+              top: 0;
+              border: 1px solid #97aac3;
+            }
+            
+            .person-name {
+              line-height: 1.3em;
+            }
+            
+            .person-title {
+              font-weight: normal;
+              font-size: 14px;
+              line-height: 1.3em;
+            }
+            
+            .person-connection {
+              color: #97aac3;
+              font-style: italic;
+            }
+            
+            .testimonials-section .details {
+              padding-left: 42px;
             }
             
             /* Media Queries */
@@ -1014,6 +1053,154 @@ Kansas City, MO, US</dd>
                 </div>
             </div>
         </section>
+        <section id="testimonials" class="section testimonials-section">
+             <h2 class="section-title">
+            <span class="title-icon"><i class="fas fa-bullhorn"></i></span>
+            <span>Testimonals</span>
+          </h2>
+
+            <div class="item">
+                <header class="meta">
+                    <div class="upper-row">
+                        <img class="avatar" src="https://www.clintandrewhall.com/images/linkedin/freddy.jpg"
+                        alt="Freddy Gottesman" />
+                         <h3 class="person-name">Freddy Gottesman</h3>
+
+                         <h4 class="person-title">Product Manager at Facebook</h4>
+
+                        <p class="person-connection">Clint worked with Freddy in the same group</p>
+                    </div>
+                </header>
+                <blockquote class="details">
+                    <p>Clint is a motivated and creative engineer with exceptional product sense.
+                        In my time working with him I was impressed by his ability to identify
+                        a user problem, design a solution and then implement the code to make it
+                        happen.</p>
+                </blockquote>
+            </div>
+            <div class="item">
+                <header class="meta">
+                    <div class="upper-row">
+                        <img class="avatar" src="https://www.clintandrewhall.com/images/linkedin/patrick.jpg"
+                        alt="Patrick Keenan" />
+                         <h3 class="person-name">Patrick Keenan</h3>
+
+                         <h4 class="person-title">Lead Product Designer: Facebook Local App</h4>
+
+                        <p class="person-connection">Clint worked with Patrick on the same team</p>
+                    </div>
+                </header>
+                <blockquote class="details">
+                    <p>Clint is a powerhouse of code and collaboration. He single handedly maintained
+                        and updated the product on web, refactoring when appropriate. He was proactive
+                        in working with design and also brought good questions to help round out
+                        the approach. Even in a remote office, it felt like he was always ready
+                        to help out.</p>
+                </blockquote>
+            </div>
+            <div class="item">
+                <header class="meta">
+                    <div class="upper-row">
+                        <img class="avatar" src="https://www.clintandrewhall.com/images/linkedin/jacob.jpg"
+                        alt="Jacob McDaniel" />
+                         <h3 class="person-name">Jacob McDaniel</h3>
+
+                         <h4 class="person-title">Sr. Experience Designer at HomeAway</h4>
+
+                        <p class="person-connection">Jacob worked with Clint, but at different companies</p>
+                    </div>
+                </header>
+                <blockquote class="details">
+                    <p>Hands down, Clint is by far one of the most intelligent engineers I have
+                        had the opportunity of working near. As an experience designer working
+                        with an engineer, building the most intuitive and functionally sound experience
+                        is critical. Clint brings a different perspective to the table and isn't
+                        afraid to get his hands dirty. He has an incredible capability of asking
+                        comprehensive questions to understand the requirements and data for building
+                        the appropriate solution. If given the opportunity in the future to work
+                        with Clint, I would sprint versus walk.</p>
+                </blockquote>
+            </div>
+            <div class="item">
+                <header class="meta">
+                    <div class="upper-row">
+                        <img class="avatar" src="https://www.clintandrewhall.com/images/linkedin/naithan.jpg"
+                        alt="Naithan Jones" />
+                         <h3 class="person-name">Naithan Jones</h3>
+
+                         <h4 class="person-title">Partner at Andreessen Horowitz</h4>
+
+                        <p class="person-connection">Naithan worked with Clint but at different companies</p>
+                    </div>
+                </header>
+                <blockquote class="details">
+                    <p>Clint worked as an consulting engineer on the initial build of my first
+                        venture backed product. Thoughtful and pragmatic engineer with advanced
+                        understanding of how to scale code for future usability and performance.
+                        One of the strongest engineers I know and a great all around person to
+                        boot. Would highly recommend Clint.</p>
+                </blockquote>
+            </div>
+            <div class="item">
+                <header class="meta">
+                    <div class="upper-row">
+                        <img class="avatar" src="https://www.clintandrewhall.com/images/linkedin/david.jpg"
+                        alt="David Cacioppo" />
+                         <h3 class="person-name">David Cacioppo</h3>
+
+                         <h4 class="person-title">President/CEO of emfluence</h4>
+
+                        <p class="person-connection">David was a client of Clint&amp;#39;s</p>
+                    </div>
+                </header>
+                <blockquote class="details">
+                    <p>Clint delivers on what he says he will and brings great ideas to the table.
+                        If you get the opportunity to work with Clint, bring him in early in the
+                        concept phase of your project. Odds are, he will have input that makes
+                        your project better.</p>
+                </blockquote>
+            </div>
+            <div class="item">
+                <header class="meta">
+                    <div class="upper-row">
+                        <img class="avatar" src="https://www.clintandrewhall.com/images/linkedin/scott.jpg"
+                        alt="Scott Ackerson" />
+                         <h3 class="person-name">Scott Ackerson</h3>
+
+                         <h4 class="person-title">Vice President at Cerner Corporation</h4>
+
+                        <p class="person-connection">Scott managed Clint directly</p>
+                    </div>
+                </header>
+                <blockquote class="details">
+                    <p>Clint Hall embodies all that is web. His code, ideas and passion for all
+                        things web extend past his professional career into his social and personal
+                        life. He is un-conventional only in the fact that he is ahead of the thought
+                        leadership and natural curve of web developers. He also has a certain social
+                        adeptness that garners many opportunities for him and those around him.</p>
+                </blockquote>
+            </div>
+            <div class="item">
+                <header class="meta">
+                    <div class="upper-row">
+                        <img class="avatar" src="https://www.clintandrewhall.com/images/linkedin/bo.jpg"
+                        alt="Bo Fishback" />
+                         <h3 class="person-name">Bo Fishback</h3>
+
+                         <h4 class="person-title">CEO of Zaarly, Inc</h4>
+
+                        <p class="person-connection">Bo worked with Clint, but at different companies</p>
+                    </div>
+                </header>
+                <blockquote class="details">
+                    <p>Clint is a great guy to work with. He's a sharp, curious, problem solver
+                        and has both a deep knowledge base to draw from and an impressive capacity
+                        to learn quickly and apply new skills. I've had the chance to work with
+                        him on multiple occasions at multiple different companies and have been
+                        impressed at every turn.</p>
+                </blockquote>
+            </div>
+        </section>
         <section id="recognition" class="section recognition-section">
              <h2 class="section-title">
             <span class="title-icon"><i class="fas fa-award"></i></span>
@@ -1055,6 +1242,10 @@ Kansas City, MO, US</dd>
             </div>
         </section>
         </main>
+        <footer class="footer">Built with a <a href="https://github.com/clintandrewhall/HackMyResume"
+            target="_blank">fork</a> of <a href="https://github.com/hacksalot/HackMyResume"
+            target="_blank">HackMyResume</a>, with a template adapted from <a href="https://themes.3rdwavemedia.com/bootstrap-templates/resume/orbit-free-resume-cv-bootstrap-theme-for-developers/"
+            target="_blank">Orbit</a> by <a href="https://themes.3rdwavemedia.com/">3rd Wave Media</a>.</footer>
         </div>
     </body>
 

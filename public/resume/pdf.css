@@ -110,6 +110,7 @@ a {
 
 .pdf .main-wrapper .job-title {
   font-weight: bold;
+  white-space: nowrap;
 }
 
 .pdf .main-wrapper .time,
@@ -131,4 +132,8 @@ a {
 
 .pdf .section .item {
   margin-left: 0;
+}
+
+.pdf .degree, .pdf .meta {
+  white-space: nowrap;
 }
