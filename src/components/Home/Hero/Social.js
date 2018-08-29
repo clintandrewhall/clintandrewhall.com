@@ -8,7 +8,7 @@ import styles from './Social.module.css';
 const Social = () => {
   const { social } = (resume: FreshResume);
   const items = social.map(item => (
-    <li className={styles.socialItem}>
+    <li className={styles.socialItem} key={item.network}>
       <a
         className={styles.socialLink}
         href={item.url}

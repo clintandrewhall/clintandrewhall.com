@@ -7,7 +7,7 @@ import styles from './Footer.module.css';
 const Footer = () => {
   const { social } = (resume: FreshResume);
   const items = social.map(item => (
-    <li>
+    <li key={item.network}>
       <a href={item.url} rel="noopener noreferrer" target="_blank">
         <i className={'im im-' + item.network} aria-hidden="true" />
         <span>{item.label}</span>

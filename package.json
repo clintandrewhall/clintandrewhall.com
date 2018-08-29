@@ -56,10 +56,10 @@
     "smoothscroll": "^0.4.0"
   },
   "scripts": {
-    "prettier": "prettier \"**/*.{js,json,md,scss,yaml,yml}\"",
+    "prettier": "prettier \"**/*.{md,scss,yaml,yml}\"",
     "check:flow": "flow",
     "check:other": "yarn prettier --list-different",
-    "check:js": "eslint --ignore-path .gitignore --ignore-path .prettierignore \"**/*.{js,jsx}\"",
+    "check:js": "eslint --ignore-path .gitignore --ignore-path .prettierignore --ignore-pattern '/public/' \"**/*.{js,jsx}\"",
     "check": "yarn check:flow && yarn check:other && yarn check:js",
     "fix:other": "yarn prettier --write",
     "fix:js": "yarn check:js --fix",
@@ -80,12 +80,12 @@
     "precommit": "lint-staged && yarn generate"
   },
   "lint-staged": {
-    "*.{js,json,md,scss,yaml,yml}": [
+    "*.{md,scss,yaml,yml}": [
       "prettier --write",
       "git add"
     ],
     "*.{js,jsx}": [
-      "eslint --fix",
+      "eslint --fix --ignore-pattern '/public/'",
       "git add"
     ]
   }

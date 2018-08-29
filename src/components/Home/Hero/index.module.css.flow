@@ -9,12 +9,9 @@ declare module.exports: {|
   +'hello': string;
   +'home': string;
   +'intro': string;
-  +'loaded': string;
   +'main': string;
-  +'no-csstransitions': string;
   +'no-js': string;
   +'overlay': string;
-  +'preload': string;
   +'root': string;
   +'scroll': string;
   +'scrollLink': string;

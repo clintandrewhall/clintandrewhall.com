@@ -10,7 +10,7 @@ export default (): Array<React$Node> => {
   const entryIndex = entries => () => (
     <Portfolio>
       {[...entries.keys()].map(path => (
-        <PortfolioItem item={entries.get(path)} />
+        <PortfolioItem item={entries.get(path)} key={path} />
       ))}
     </Portfolio>
   );
