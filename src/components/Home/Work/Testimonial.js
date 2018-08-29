@@ -3,22 +3,20 @@
 import React from 'react';
 import styles from './Testimonial.module.css';
 import cx from 'classnames';
-import type { Recommendation } from './../../../_content/linkedin';
 
 type Props = {
   className?: ?string,
-  testmonial: Recommendation,
+  testmonial: Testimonial,
 };
 
-const Testimonial = (props: Props) => {
+const TestimonialComponent = (props: Props) => {
   const { className, testmonial } = props;
-  const { person, content } = testmonial;
-  const { name, imageSrc, title, connection } = person;
+  const { name, imageSrc, title, connection, quote } = testmonial;
 
   return (
     <div className={className ? cx([styles.root, className]) : styles.root}>
       <img src={imageSrc} alt={name} className={styles.avatar} />
-      <p>{content}</p>
+      <blockquote className={styles.quote}>{quote}</blockquote>
       <div>
         <span className={styles.name}>{name}</span>
         <span className={styles.title}>{title}</span>
@@ -28,4 +26,4 @@ const Testimonial = (props: Props) => {
   );
 };
 
-export default Testimonial;
+export default TestimonialComponent;

@@ -3,11 +3,9 @@
 import React from 'react';
 import Flickity from 'react-flickity-component';
 
-import Testimonial from './Testimonial';
+import TestimonialComponent from './Testimonial';
 import styles from './Testimonials.module.css';
-import data from './../../../_content/linkedin';
-
-import type { Recommendation } from './../../../_content/linkedin';
+import data from './../../../_content/resume.json';
 
 import 'flickity/css/flickity.css';
 
@@ -28,13 +26,11 @@ class Testimonials extends React.Component<any> {
   }
 
   render() {
-    const { recommendations } = data;
+    const { testimonials } = (data: FreshResume);
 
-    const items = recommendations.map(
-      (recommendation: Recommendation, index) => (
-        <Testimonial key={index} testmonial={recommendation} />
-      ),
-    );
+    const items = testimonials.map((testimonial: Testimonial, index) => (
+      <TestimonialComponent key={index} testmonial={testimonial} />
+    ));
 
     return (
       <div className={styles.root}>

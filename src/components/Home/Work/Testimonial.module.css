@@ -54,6 +54,11 @@
   color: #ccc;
 }
 
+.quote {
+  margin: 0 0 2em 0;
+  padding: 0;
+}
+
 @media only screen and (max-width: 1000px) {
   .root {
     padding-left: 11rem;
