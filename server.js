@@ -2,7 +2,10 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-app.use('/resume', express.static(path.join(__dirname, 'build/resume')));
+app.get('/resume', function(req, res) {
+  res.sendFile(path.join(__dirname, 'build/resume', 'clintandrewhall.html'));
+});
+
 app.use('/', express.static(path.join(__dirname, 'build')));
 
 app.get('/*', function(req, res) {
