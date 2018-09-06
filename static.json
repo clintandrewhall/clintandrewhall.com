@@ -6,19 +6,5 @@
     "/portfolio/**": "index.html",
     "/resume": "resume/clintandrewhall.html"
   },
-  "headers": {
-    "/*.js": {
-      "Cache-Control": "public, max-age=512000"
-    },
-    "/*.css": {
-      "Cache-Control": "public, max-age=512000"
-    },
-    "/static/**": {
-      "Cache-Control": "public, max-age=512000"
-    },
-    "/resume/**": {
-      "Cache-Control": "no-store, no-cache"
-    }
-  },
   "https_only": true
 }
