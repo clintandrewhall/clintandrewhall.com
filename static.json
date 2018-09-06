@@ -7,10 +7,13 @@
     "/resume": "resume/clintandrewhall.html"
   },
   "headers": {
-    "/**.js": {
+    "/*.js": {
       "Cache-Control": "public, max-age=512000"
     },
-    "/**.css": {
+    "/*.css": {
+      "Cache-Control": "public, max-age=512000"
+    },
+    "/static/**": {
       "Cache-Control": "public, max-age=512000"
     },
     "/resume/**": {
