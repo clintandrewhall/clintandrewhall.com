@@ -1,7 +1,7 @@
 ---
 caption: 'A method of flexing semantic HTML based on the immutable properties of the device before code is even downloaded.'
 cover:
-  src: '/images/portfolio/bootstrapper-1.png'
+  src: './bootstrapper-1.png'
   size: '1525x1162'
 slug: 'web-bootstrapper'
 tags: [{ name: 'Cerner', slug: 'cerner' }, { name: 'Web', slug: 'web' }]
@@ -55,13 +55,8 @@ at the [Ajax
 Experience](http://ajaxexperience.techtarget.com/conference/index.html) in
 Boston.
 
-![alt text][bootstrap]
-![alt text][how]
-![alt text][ae09]
-![alt text][demo]
-
-[bootstrap]: /images/portfolio/bootstrapper-1.png 'Bootstrap the Web'
-[how]: /images/portfolio/bootstrapper-2.jpg 'How the Bootstrapper Works'
-[landscape]: /images/portfolio/bootstrapper-3.jpg 'Such a Broad Landscape'
-[ae09]: /images/portfolio/bootstrapper-4.png 'Ajax Experience 2009'
-[demo]: /images/portfolio/bootstrapper-5.png 'Demo of 12 skins on one site'
+![Bootstrap the Web](./../../images/portfolio/bootstrapper-1.png)
+![How the Bootstrapper Works](./../../images/portfolio/bootstrapper-2.jpg)
+![Such a Broad Landscape](./../../images/portfolio/bootstrapper-3.jpg)
+![Ajax Experience 2009](./../../images/portfolio/bootstrapper-4.png)
+![Demo of 12 skins on one site](./../../images/portfolio/bootstrapper-5.png)

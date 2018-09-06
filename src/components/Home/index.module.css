@@ -1,0 +1,20 @@
+.background {
+  background: url(../../images/hero-two.jpg) no-repeat;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+  background-size: cover;
+  background-position-x: right;
+}
+
+.rellax {
+  composes: rellax from global;
+  display: none;
+  height: 100%;
+  width: 100%;
+  position: absolute;
+}
+
+:global(.loaded) .rellax {
+  display: block;
+}

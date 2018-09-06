@@ -1,6 +1,6 @@
 ---
 cover:
-  src: '/images/portfolio/guess-friends-2.jpg'
+  src: './guess-friends-2.jpg'
   size: '667x500'
 slug: 'guess-friends'
 caption: 'Guess Friends was a website a few friends and I wrote for the first Node Knockout.'
@@ -31,10 +31,10 @@ hashing out what we would build, we decided on a classic childhood game that had
 yet to be recreated in the social media space: [Guess
 Who](http://www.hasbro.com/games/en_US/guess-who/).
 
-![alt text][one]
-![alt text][two]
-![alt text][three]
-![alt text][four]
+![Welcome Screen](./../../images/portfolio/guess-friends-1.jpg)
+![Game Board](./../../images/portfolio/guess-friends-2.jpg)
+![Lobby](./../../images/portfolio/guess-friends-3.jpg)
+![Node Knockout Project Page](./../../images/portfolio/guess-friends-4.jpg)
 
 # Implementation
 
@@ -55,8 +55,3 @@ categories](http://nodeknockout.com/entries). Judges and users alike loved the
 design and concept, and our friends were delighted to play. Had we had more
 time, we could have gotten a lot more done: notifications, mobile, invites, etc.
 We’re still planning some enhancements, (as soon as we have some time, that is!)
-
-[one]: /images/portfolio/guess-friends-1.jpg 'Welcome Screen'
-[two]: /images/portfolio/guess-friends-2.jpg 'Game Board'
-[three]: /images/portfolio/guess-friends-3.jpg 'Lobby'
-[four]: /images/portfolio/guess-friends-4.jpg 'Node Knockout Project Page'

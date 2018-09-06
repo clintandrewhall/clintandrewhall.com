@@ -1,7 +1,7 @@
 ---
 caption: 'I maintain the Foursquare/Swarm library for Node.js.'
 cover:
-  src: '/images/portfolio/node-foursquare-1.jpg'
+  src: './node-foursquare-1.jpg'
   size: '750x450'
 slug: 'node-foursquare'
 tags: [{ name: 'NodeJS', slug: 'node' }, { name: 'Swarm', slug: 'swarm' }]
@@ -28,8 +28,8 @@ repository for Node. It is currently
 [Foursquare Developer site](http://developer.foursquare.com/) as the only
 library for using Foursquare within Node.
 
-![alt text][two]
-![alt text][three]
+![Two](./../../images/portfolio/node-foursquare-2.jpg)
+![Three](./../../images/portfolio/node-foursquare-3.jpg)
 
 # Implementation
 
@@ -48,6 +48,3 @@ options](https://github.com/clintandrewhall/node-foursquare), such as warnings
 vs. errors on deprecated endpoints and targeting specific API changelog numbers.
 I currently use it in my
 [Backstrok.es](http://www.clintandrewhall.com/portfolio/backstrokes) project.
-
-[two]: /images/portfolio/node-foursquare-2.jpg 'Two'
-[three]: /images/portfolio/node-foursquare-3.jpg 'Three'

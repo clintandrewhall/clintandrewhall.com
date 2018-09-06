@@ -13,6 +13,8 @@ import Medium from './Medium';
 import Work from './Work';
 import Footer from './../core/Footer';
 
+import styles from './index.module.css';
+
 type State = {
   triggerHeight: number,
 };
@@ -43,8 +45,8 @@ class Home extends React.Component<{}, State> {
     const { triggerHeight } = this.state;
     return (
       <div style={{ height: '100%' }}>
-        <div className="rellax">
-          <div className="background" />
+        <div className={styles.rellax}>
+          <div className={styles.background} />
         </div>
         <Header home={true} triggerHeight={triggerHeight} />
         <Hero ref={this.heroRef} />

@@ -23,6 +23,11 @@ type Props = {
   item: PortfolioItemType,
 };
 
+const pathContext = require.context(
+  'responsive-loader!./../../images/portfolio',
+  true,
+);
+
 const PortfolioItem = (props: Props) => {
   const { item } = props;
   const { caption, cover, slug, tags, timestamp, title, website } = item;
@@ -37,6 +42,8 @@ const PortfolioItem = (props: Props) => {
       {tag.name + (index < tags.length - 1 ? ', ' : '')}
     </Link>
   ));
+
+  const responsiveImage = pathContext(src);
 
   let websiteLink = null;
 
@@ -54,7 +61,7 @@ const PortfolioItem = (props: Props) => {
         <div className={styles.thumb}>
           <div
             className={styles.thumbArea}
-            style={{ backgroundImage: 'url(' + src + ')' }}
+            style={{ backgroundImage: 'url(' + responsiveImage + ')' }}
           />
           <span className={styles.shadow} />
         </div>

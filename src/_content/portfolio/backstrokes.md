@@ -1,7 +1,7 @@
 ---
 caption: "Backstrok.es is a website for discovering where you've been on Foursquare and Swarm."
 cover:
-  src: '/images/portfolio/backstrokes-1.jpg'
+  src: './backstrokes-1.jpg'
   size: '600x400'
 slug: 'backstrokes'
 tags: [{ name: 'NodeJS', slug: 'node' }, { name: 'Swarm', slug: 'swarm' }]
@@ -51,9 +51,9 @@ into "trips", making it easy to list and recall the places you’ve been.
 The code is now [open-source](https://github.com/clintandrewhall/backstrok.es)
 on [my Github](https://github.com/clintandrewhall).  I update it as I have time.
 
-![alt text][home]
-![alt text][custom]
-![alt text][results]
+![Backstrokes Results View](./../../images/portfolio/backstrokes-1.jpg)
+![Custom Parameters](./../../images/portfolio/backstrokes-2.jpg)
+![Backstrokes Home](./../../images/portfolio/backstrokes-3.jpg)
 
 # Colophon
 
@@ -66,7 +66,3 @@ organized on each page load.
 Perhaps in the future I’ll use a database for "sharing" trips with your friends.
 But for now, it's a useful tool when friends of mine are looking for
 recommendations in cities I've visited.
-
-[results]: /images/portfolio/backstrokes-1.jpg 'Backstrokes Results View'
-[custom]: /images/portfolio/backstrokes-2.jpg 'Custom Parameters'
-[home]: /images/portfolio/backstrokes-3.jpg 'Backstrokes Home'

@@ -1,6 +1,6 @@
 .root {
   background-color: #0d0a0b;
-  background-image: url('/images/testimonial-bg.jpg');
+  background-image: url('./../../images/testimonial-bg.jpg?size=1140');
   background-repeat: no-repeat;
   background-position: center, center;
   clear: both;
@@ -137,12 +137,18 @@
 }
 
 @media only screen and (max-width: 800px) {
+  .root {
+    background-image: url('./../../images/testimonial-bg.jpg?size=800');
+  }
   .heading {
     font-size: 3rem;
   }
 }
 
 @media only screen and (max-width: 600px) {
+  .root {
+    background-image: url('./../../images/testimonial-bg.jpg?size=600');
+  }
   .content {
     margin-top: 3rem;
   }

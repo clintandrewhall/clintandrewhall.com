@@ -2,11 +2,26 @@
 
 import React from 'react';
 import { Route } from 'react-router-dom';
+import marked from 'marked';
+import yaml from 'yaml-front-matter';
 import Portfolio from './../components/Portfolio';
 import PortfolioItem from './../components/Portfolio/PortfolioItem';
 import PortfolioEntry from './../components/Portfolio/PortfolioEntry';
 
 export default (): Array<React$Node> => {
+  // $FlowFixMe
+  const portfolioContext = require.context(
+    '!markdown-image-loader!./../_content/portfolio',
+    false,
+    /.md$/,
+  );
+
+  const entries = portfolioContext.keys().reduce((memo, fileName) => {
+    let obj = yaml.parse(portfolioContext(fileName));
+    obj.__content = marked(obj.__content);
+    return memo.set(fileName.match(/.\/([^.]+).*/)[1], obj);
+  }, new Map());
+
   const entryIndex = entries => () => (
     <Portfolio>
       {[...entries.keys()].map(path => (
@@ -14,21 +29,6 @@ export default (): Array<React$Node> => {
       ))}
     </Portfolio>
   );
-
-  // $FlowFixMe
-  const portfolioContext = require.context(
-    '!markdown-with-front-matter-loader!./../_content/portfolio',
-    false,
-    /.md$/,
-  );
-
-  const entries = portfolioContext
-    .keys()
-    .reduce(
-      (memo, fileName) =>
-        memo.set(fileName.match(/.\/([^.]+).*/)[1], portfolioContext(fileName)),
-      new Map(),
-    );
 
   // eslint-disable-next-line import/first
   return [

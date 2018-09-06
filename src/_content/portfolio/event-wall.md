@@ -1,6 +1,6 @@
 ---
 cover:
-  src: '/images/portfolio/event-wall-1.jpg'
+  src: './event-wall-1.jpg'
   size: '1024x752'
 slug: 'event-wall'
 caption: 'My Event Wall is an open-source art installation used to project
@@ -48,10 +48,10 @@ live-updating display of photos posted to a Facebook wall. It doesn't even
 require a server: the page is static and can be run from a hard drive or
 Dropbox.
 
-![alt text][one]
-![alt text][two]
-![alt text][three]
-![alt text][four]
+![Masonry View](./../../images/portfolio/event-wall-1.jpg)
+![Polaroid View](./../../images/portfolio/event-wall-2.jpg)
+![A photo from our reception](./../../images/portfolio/event-wall-3.jpg)
+![A photo from our reception](./../../images/portfolio/event-wall-4.jpg)
 
 # Colophon
 
@@ -66,8 +66,3 @@ The second version removed all of those dependencies, opting instead for a
 polling call to a Facebook GraphQL URL. The creator need only issue themselves
 a long-access token and specify the Facebook ID of the Event they want to
 display.
-
-[one]: /images/portfolio/event-wall-1.jpg 'Masonry View'
-[two]: /images/portfolio/event-wall-2.jpg 'Polaroid View'
-[three]: /images/portfolio/event-wall-3.jpg 'A photo from our reception'
-[four]: /images/portfolio/event-wall-4.jpg 'A photo from our reception'

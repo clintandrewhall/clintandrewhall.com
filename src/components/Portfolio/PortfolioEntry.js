@@ -14,6 +14,11 @@ type Props = {
   entry: PortfolioItemType,
 };
 
+const pathContext = require.context(
+  'responsive-loader!./../../images/portfolio',
+  true,
+);
+
 export default (props: Props) => {
   const { entry } = props;
   const { title, tags, timestamp } = entry;
@@ -28,13 +33,18 @@ export default (props: Props) => {
     </li>
   ));
 
+  const responsiveImage = pathContext(entry.cover.src);
+
   return (
     <div className={styles.root}>
       <Header />
       <article>
         <header
           className={styles.header}
-          style={{ backgroundImage: 'url(' + entry.cover.src + ')' }}
+          style={{
+            backgroundSize: 'cover',
+            backgroundImage: 'url("' + responsiveImage + '")',
+          }}
         >
           <div className={styles.headerContent}>
             <h1 className={styles.title}>{title}</h1>

@@ -1,5 +1,10 @@
 {
-  "extends": ["plugin:prettier/recommended"],
+  "extends": [
+    "prettier",
+    "prettier/flowtype",
+    "prettier/react",
+    "prettier/standard"
+  ],
   "plugins": ["flowtype"],
   "parser": "babel-eslint"
 }

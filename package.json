@@ -14,14 +14,23 @@
     "eslint-config-prettier": "^3.0.1",
     "eslint-plugin-flowtype": "^2.50.0",
     "eslint-plugin-prettier": "^2.6.2",
+    "eslint-plugin-react": "^7.11.1",
+    "eslint-plugin-standard": "^4.0.0",
+    "file-loader": "^1.1.11",
     "flow-bin": "^0.79.1",
+    "hackmyresume": "^1.9.0-beta",
+    "handlebars-helpers": "^0.10.0",
     "husky": "^0.14.3",
+    "jimp": "^0.4.0",
     "lint-staged": "^7.2.2",
+    "markdown-image-loader": "^1.0.5",
     "node-sass": "^4.9.3",
     "nodemon": "^1.18.3",
+    "prettier": "^1.14.2",
     "react-app-rewire-css-modules": "codebandits/react-app-rewire-css-modules",
     "react-app-rewired": "^1.5.2",
     "react-scripts": "^1.1.5",
+    "responsive-loader": "^1.1.0",
     "sass-loader": "^6.0.7"
   },
   "dependencies": {
@@ -31,16 +40,13 @@
     "fbemitter": "^2.1.1",
     "flickity": "^2.1.2",
     "github-markdown-css": "^2.10.0",
-    "hackmyresume": "^1.9.0-beta",
-    "handlebars-helpers": "^0.10.0",
     "helper-markdown": "^1.0.0",
     "markdown-with-front-matter-loader": "^0.1.0",
     "masonry-layout": "^4.2.2",
     "moment": "^2.22.2",
+    "multi-loader": "^0.1.0",
     "numeral": "^2.0.6",
-    "pace-js": "^1.0.2",
     "photoswipe": "^4.1.2",
-    "prettier": "^1.14.2",
     "ramda": "^0.25.0",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
@@ -53,7 +59,8 @@
     "react-waypoint": "^8.0.3",
     "rellax": "^1.6.2",
     "request": "^2.88.0",
-    "smoothscroll": "^0.4.0"
+    "smoothscroll": "^0.4.0",
+    "webp-loader": "^0.4.0"
   },
   "scripts": {
     "prettier": "prettier \"**/*.{md,scss,yaml,yml}\"",
@@ -88,5 +95,8 @@
       "eslint --fix --ignore-pattern '/public/'",
       "git add"
     ]
+  },
+  "peerDependencies": {
+    "webpack": "3.12.0"
   }
 }
