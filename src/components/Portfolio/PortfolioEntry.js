@@ -14,10 +14,7 @@ type Props = {
   entry: PortfolioItemType,
 };
 
-const pathContext = require.context(
-  'responsive-loader!./../../images/portfolio',
-  true,
-);
+const pathContext = require.context('./../../images/portfolio', true);
 
 export default (props: Props) => {
   const { entry } = props;

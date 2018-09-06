@@ -23,10 +23,7 @@ type Props = {
   item: PortfolioItemType,
 };
 
-const pathContext = require.context(
-  'responsive-loader!./../../images/portfolio',
-  true,
-);
+const pathContext = require.context('./../../images/portfolio', true);
 
 const PortfolioItem = (props: Props) => {
   const { item } = props;

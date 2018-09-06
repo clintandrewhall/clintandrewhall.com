@@ -1,5 +1,4 @@
 const path = require('path');
-const multi = require('multi-loader');
 
 const ruleChildren = loader =>
   loader.use ||
@@ -33,10 +32,7 @@ const addBeforeRule = (rulesSource, ruleMatcher, value) => {
 module.exports = function(config, env) {
   const imageLoader = {
     test: /\.(jpe?g|png)$/i,
-    loader: multi(
-      'file-loader?name=[name].[ext].webp!webp-loader?{quality: 95}',
-      'responsive-loader',
-    ),
+    loader: require.resolve('responsive-loader'),
   };
 
   addBeforeRule(config.module.rules, fileLoaderMatcher, imageLoader);
