@@ -6,9 +6,9 @@ module.exports = function(config, env) {
   config = compose(
     rewireCssModules,
     rewireResponsiveLoader,
-  );
+  )(config, env);
 
-  config.module.rules = config.module.rules.concat([
+  config.module.rules = (config.module.rules || []).concat([
     {
       test: /\.(md|markdown)$/i,
       loader: 'markdown-image-loader',
