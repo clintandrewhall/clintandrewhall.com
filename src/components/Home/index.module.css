@@ -1,5 +1,5 @@
 .background {
-  background: url('./../../images/hero-two.jpg?size=1024') no-repeat;
+  background: url('./../../images/hero-two.jpg') no-repeat;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -17,6 +17,12 @@
 
 :global(.loaded) .rellax {
   display: block;
+}
+
+@media only screen and (max-width: 1200px) {
+  .background {
+    background-image: url(./../../images/hero-two.jpg?size=1200);
+  }
 }
 
 @media only screen and (max-width: 800px) {

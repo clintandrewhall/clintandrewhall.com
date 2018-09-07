@@ -3,7 +3,7 @@
   "version": "0.1.0",
   "private": true,
   "license": "None; private",
-  "homepage": "https://beta.clintandrewhall.com",
+  "homepage": "https://www.clintandrewhall.com",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "^9.0.0",
