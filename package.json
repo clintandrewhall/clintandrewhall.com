@@ -63,7 +63,7 @@
     "smoothscroll": "^0.4.0"
   },
   "scripts": {
-    "prettier": "prettier \"**/*.{md,scss,yaml,yml}\"",
+    "prettier": "prettier \"**/*.{css,js,md,scss,yaml,yml}\"",
     "check:flow": "flow",
     "check:other": "yarn prettier --list-different",
     "check:js": "eslint --ignore-path .gitignore --ignore-path .prettierignore --ignore-pattern '/public/' \"**/*.{js,jsx}\"",
@@ -84,15 +84,15 @@
     "eject": "react-scripts eject",
     "start": "node server",
     "test": "react-app-rewired test --env=jsdom",
-    "precommit": "lint-staged && yarn generate"
+    "precommit": "yarn generate && lint-staged && git add ."
   },
   "lint-staged": {
-    "*.{md,scss,yaml,yml}": [
-      "prettier --write",
+    "*.{js,jsx}": [
+      "eslint --ignore-path .gitignore --ignore-path .prettierignore --ignore-pattern '/public/' --fix",
       "git add"
     ],
-    "*.{js,jsx}": [
-      "eslint --fix --ignore-pattern '/public/'",
+    "**/*.{css,js,md,scss,yaml,yml}": [
+      "prettier --write",
       "git add"
     ]
   }
