@@ -1,4 +1,5 @@
 const path = require('path');
+const cloneDeep = require('lodash.clonedeep');
 
 const ruleChildren = loader =>
   loader.use ||
@@ -20,22 +21,28 @@ const findIndexAndRules = (rulesSource, ruleMatcher) => {
   return result;
 };
 
-const createLoaderMatcher = loader => rule =>
-  rule.loader && rule.loader.indexOf(`${path.sep}${loader}${path.sep}`) !== -1;
-const fileLoaderMatcher = createLoaderMatcher('file-loader');
+const findRule = (rulesSource, ruleMatcher) => {
+  const { index, rules } = findIndexAndRules(rulesSource, ruleMatcher);
+  return rules[index];
+};
 
 const addBeforeRule = (rulesSource, ruleMatcher, value) => {
   const { index, rules } = findIndexAndRules(rulesSource, ruleMatcher);
   rules.splice(index, 0, value);
 };
 
-module.exports = function(config, env) {
-  const imageLoader = {
-    test: /\.(jpe?g|png)$/i,
-    loader: require.resolve('responsive-loader'),
-  };
+const imageRuleMatcher = rule =>
+  rule.test &&
+  String(rule.test) === String([/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/]);
 
-  addBeforeRule(config.module.rules, fileLoaderMatcher, imageLoader);
+module.exports = function(config, env) {
+  const imageRule = findRule(config.module.rules, imageRuleMatcher);
+  const responsiveRule = cloneDeep(imageRule);
+
+  responsiveRule.test = /\.(jpe?g|png)$/i;
+  responsiveRule.options.fallback = 'responsive-loader';
+
+  addBeforeRule(config.module.rules, imageRuleMatcher, responsiveRule);
 
   return config;
 };

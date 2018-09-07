@@ -1,11 +1,19 @@
-const { compose, injectBabelPlugin } = require('react-app-rewired');
+const { compose } = require('react-app-rewired');
 const rewireCssModules = require('react-app-rewire-css-modules');
 const rewireResponsiveLoader = require('./rewire-responsive-loader');
 
 module.exports = function(config, env) {
-  const rewires = compose(
+  config = compose(
     rewireCssModules,
     rewireResponsiveLoader,
   );
-  return rewires(config, env);
+
+  config.module.rules = config.module.rules.concat([
+    {
+      test: /\.(md|markdown)$/i,
+      loader: 'markdown-image-loader',
+    },
+  ]);
+
+  return config;
 };

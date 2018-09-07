@@ -1,5 +1,5 @@
 .background {
-  background: url(../../images/hero-two.jpg) no-repeat;
+  background: url('./../../images/hero-two.jpg?size=1024') no-repeat;
   height: 100%;
   width: 100%;
   position: absolute;
@@ -17,4 +17,22 @@
 
 :global(.loaded) .rellax {
   display: block;
+}
+
+@media only screen and (max-width: 800px) {
+  .background {
+    background-image: url(./../../images/hero-two.jpg?size=800);
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .background {
+    background-image: url(./../../images/hero-two.jpg?size=600);
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .background {
+    background-image: url(./../../images/hero-two.jpg?size=400);
+  }
 }

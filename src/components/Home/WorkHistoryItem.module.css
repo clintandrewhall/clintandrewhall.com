@@ -5,7 +5,7 @@
 }
 
 .bullet::before {
-  content: "";
+  content: '';
   display: block;
   height: 24px;
   width: 24px;
@@ -24,7 +24,7 @@
 
 .bullet::after {
   background: #e9e9e9;
-  content: "";
+  content: '';
   display: block;
   height: 40px;
   width: 40px;
@@ -36,12 +36,14 @@
 }
 
 .cerner::before {
-  background: url(/images/cerner.png) no-repeat center center;
+  background: url(./../../images/companies/cerner.png?size=24) no-repeat center
+    center;
 }
 
 .facebook::before {
   border-radius: 50%;
-  background: url(/images/fb.png) no-repeat center center;
+  background: url(./../../images/companies/fb.png?size=24) no-repeat center
+    center;
 }
 
 .header .timeframe {
@@ -51,7 +53,7 @@
   letter-spacing: 0.15rem;
   color: rgba(0, 0, 0, 0.5);
   margin-bottom: 0.9rem;
-  font-family: "montserrat-bold", sans-serif;
+  font-family: 'montserrat-bold', sans-serif;
 }
 
 .itemTitle {

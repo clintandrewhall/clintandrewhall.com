@@ -8,7 +8,7 @@
  * Website: http://themes.3rdwavemedia.com/
 */
 body {
-  font-family: "Roboto", sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: #545e6c;
   background: linear-gradient(180deg, #0d0a0b 100%, rgba(0, 0, 0, 0.8) 0);
   font-size: 14px;
@@ -272,7 +272,9 @@ p {
   padding: 15px;
 }
 
-.footer a { text-decoration: underline; }
+.footer a {
+  text-decoration: underline;
+}
 
 /** Customizations */
 .hidden {
@@ -296,7 +298,7 @@ p {
 .contact-info {
   padding-left: 26px;
   position: relative;
-  margin-bottom: .5rem;
+  margin-bottom: 0.5rem;
 }
 
 .format-icon,
@@ -371,7 +373,7 @@ p {
 
 .testimonials-section .item::before,
 .experiences-section .item::before {
-  content: "";
+  content: '';
   display: block;
   width: 1px;
   background: rgba(0, 0, 0, 0.1);
@@ -383,7 +385,7 @@ p {
 
 .experiences-section .item .meta::before {
   display: block;
-  content: "";
+  content: '';
   background: #f1f1f1;
   height: 30px;
   width: 30px;
@@ -394,27 +396,27 @@ p {
 }
 
 .experiences-section .item.facebook .meta::before {
-  background: url("../images/fb.png") no-repeat center center;
+  background: url('../images/logos/fb.png') no-repeat center center;
 }
 
 .experiences-section .item.cerner .meta::before {
-  background: url("../images/cerner.png") no-repeat center center;
+  background: url('../images/logos/cerner.png') no-repeat center center;
 }
 
 .experiences-section .item.sprint .meta::before {
-  background: url("../images/sprint.png") no-repeat center center;
+  background: url('../images/logos/sprint.png') no-repeat center center;
 }
 
 .experiences-section .item.accenture .meta::before {
-  background: url("../images/accenture.png") no-repeat center center;
+  background: url('../images/logos/accenture.png') no-repeat center center;
 }
 
 .experiences-section .item.sag .meta::before {
-  background: url("../images/sag.png") no-repeat center center;
+  background: url('../images/logos/sag.png') no-repeat center center;
 }
 
 .experiences-section .item.symbol .meta::before {
-  background: url("../images/symbol.png") no-repeat center center;
+  background: url('../images/logos/symbol.png') no-repeat center center;
 }
 
 .main-wrapper .testimonials-section .upper-row {
@@ -423,7 +425,7 @@ p {
 
 img.avatar {
   display: block;
-  content: "";
+  content: '';
   background: #f1f1f1;
   height: 30px;
   width: 30px;
