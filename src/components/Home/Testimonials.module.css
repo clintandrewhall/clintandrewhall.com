@@ -1,8 +1,9 @@
 .root {
   background-color: #0d0a0b;
-  background-image: url('./../../images/testimonial-bg.jpg?size=1140');
+  background-image: url('./../../images/testimonial-bg.jpg');
   background-repeat: no-repeat;
-  background-position: center, center;
+  background-position: top, center;
+  background-size: cover;
   clear: both;
   padding-top: 9.6rem;
   padding-bottom: 10.2rem;
@@ -131,6 +132,9 @@
 }
 
 @media only screen and (max-width: 1200px) {
+  .root {
+    background-image: url('./../../images/testimonial-bg.jpg?size=1200');
+  }
   .heading {
     font-size: 3.8rem;
   }
