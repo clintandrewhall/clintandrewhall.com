@@ -5,10 +5,10 @@ import Social from './Social.js';
 
 import styles from './Hero.module.css';
 
-class Hero extends React.PureComponent<{}> {
+class Hero extends React.PureComponent<{ heroRef: any }> {
   render() {
     return (
-      <section id="home" className={styles.root}>
+      <section id="home" className={styles.root} ref={this.props.heroRef}>
         <div className={styles.overlay} />
         <div className={styles.shadowOverlay} />
         <div className={styles.content}>

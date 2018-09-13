@@ -12,6 +12,7 @@ import Portfolio from './Portfolio';
 import Medium from './Medium';
 import Work from './Work';
 import Footer from './../core/Footer';
+import GithubCorner from './Github/GithubCorner';
 
 import styles from './index.module.css';
 
@@ -49,13 +50,14 @@ class Home extends React.Component<{}, State> {
           <div className={styles.background} />
         </div>
         <Header home={true} triggerHeight={triggerHeight} />
-        <Hero ref={this.heroRef} />
+        <Hero heroRef={this.heroRef} />
         <About />
         <Portfolio />
         <Work />
         <Medium />
         <Footer />
         <ScrollToTopOnMount />
+        <GithubCorner />
       </div>
     );
   }
