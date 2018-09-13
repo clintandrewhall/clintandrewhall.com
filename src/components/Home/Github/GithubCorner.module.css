@@ -34,6 +34,13 @@
   }
 }
 
+@media (max-width: 800px) {
+  .svgRoot {
+    height: 58px;
+    width: 58px;
+  }
+}
+
 @media (max-width: 500px) {
   .root:hover .octoArm {
     animation: none;

@@ -70,7 +70,7 @@
 .headerMenuToggle {
   display: none;
   position: absolute;
-  right: 29px;
+  right: 40px;
   top: 18px;
   height: 42px;
   width: 42px;
@@ -82,6 +82,7 @@
   color: rgba(255, 255, 255, 0.5);
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+  z-index: 1001;
 }
 
 .headerMenuToggle:hover,

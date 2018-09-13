@@ -12,7 +12,6 @@ import Portfolio from './Portfolio';
 import Medium from './Medium';
 import Work from './Work';
 import Footer from './../core/Footer';
-import GithubCorner from './Github/GithubCorner';
 
 import styles from './index.module.css';
 
@@ -57,7 +56,6 @@ class Home extends React.Component<{}, State> {
         <Medium />
         <Footer />
         <ScrollToTopOnMount />
-        <GithubCorner />
       </div>
     );
   }

@@ -7,6 +7,7 @@ import { SlideToggle } from 'react-slide-toggle';
 import { Link } from 'react-router-dom';
 
 import HeaderLink from './HeaderLink.js';
+import GithubCorner from './../Home/Github/GithubCorner';
 import styles from './Header.module.css';
 import linkStyles from './HeaderLink.module.css';
 
@@ -175,6 +176,7 @@ class Header extends React.Component<Props, State> {
             </div>
           )}
         />
+        <GithubCorner />
       </header>
     );
   }
