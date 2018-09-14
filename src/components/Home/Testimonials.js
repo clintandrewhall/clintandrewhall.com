@@ -10,20 +10,13 @@ import data from './../../_content/resume.json';
 import 'flickity/css/flickity.css';
 
 const options = {
-  wrapAround: true,
+  wrapAround: false,
   pageDots: false,
   cellAlign: 'left',
 };
 
 class Testimonials extends React.Component<any> {
   _flkty: any;
-
-  // ugly
-  componentDidMount() {
-    setTimeout(() => {
-      this._flkty.reposition();
-    }, 4000);
-  }
 
   render() {
     const { testimonials } = (data: FreshResume);
@@ -37,7 +30,7 @@ class Testimonials extends React.Component<any> {
         <div className={styles.overlay} />
         <div className={styles.header}>
           <div className={styles.headerContent}>
-            <h2 className={styles.heading}>What People Say.</h2>
+            <h2 className={styles.heading}>What People Say</h2>
             <h3 className={styles.lead}>
               I've worked with some remarkable people.
             </h3>

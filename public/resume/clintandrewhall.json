@@ -197,12 +197,16 @@
   ],
   "references": [
     {
-      "name": "Freddy Gottesman",
-      "reference": "Clint is a motivated and creative engineer with exceptional product sense. In my time working with him I was impressed by his ability to identify a user problem, design a solution and then implement the code to make it happen."
+      "name": "Erik Vorhes",
+      "reference": "Clint is one of the best engineers I’ve worked with. He is especially passionate about making products available to as many people as possible — not only in terms of pushing for accessibility best practices and for inclusive design, but also in making sure to make things available to people whose devices aren’t the latest and greatest devices and whose internet connections are suboptimal. Clint is capable of building things quickly and at a high standard of excellence while also demonstrating compassion for the people who use the things he builds."
     },
     {
       "name": "Patrick Keenan",
       "reference": "Clint is a powerhouse of code and collaboration. He single handedly maintained and updated the product on web, refactoring when appropriate. He was proactive in working with design and also brought good questions to help round out the approach. Even in a remote office, it felt like he was always ready to help out."
+    },
+    {
+      "name": "Freddy Gottesman",
+      "reference": "Clint is a motivated and creative engineer with exceptional product sense. In my time working with him I was impressed by his ability to identify a user problem, design a solution and then implement the code to make it happen."
     },
     {
       "name": "Jacob McDaniel",
