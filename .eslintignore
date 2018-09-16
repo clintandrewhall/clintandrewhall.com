@@ -1,1 +1,3 @@
-**/public/js/*.js
+public/js
+node_modules
+build/
