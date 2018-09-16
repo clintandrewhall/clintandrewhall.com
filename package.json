@@ -21,7 +21,7 @@
     "flow-bin": "^0.80.0",
     "hackmyresume": "^1.9.0-beta",
     "handlebars-helpers": "^0.10.0",
-    "husky": "^0.14.3",
+    "husky": "^1.0.0-rc.14",
     "jimp": "^0.4.0",
     "lint-staged": "^7.2.2",
     "markdown-image-loader": "^1.0.5",
@@ -89,7 +89,7 @@
   },
   "husky": {
     "hooks": {
-      "pre-commit": "generate && pretty-quick --staged"
+      "pre-commit": "yarn generate && pretty-quick --staged && git add ."
     }
   },
   "engines": {
