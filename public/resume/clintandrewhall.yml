@@ -86,8 +86,8 @@ employment:
       key: facebook
       position: 'User Interface Engineer'
       summary: "I joined Facebook in 2012 as a User Interface Engineer (UIE) on the Mobile Core Web team.  I then joined the Accessibility team to help make Facebook more useful to everyone on the web.\n\nAfter several hackathons involving Events, I joined the team full time to rewrite the web experiences on both the mobile and main website.\n\nAfterwards, I spent some time with the Platform team, reworking a number of different web flows, like OAuth, and embeddable components like Share, Hashtags and Topics."
-      start: '2013-08-01'
-      end: '2015-04-01'
+      start: '2012-01-01'
+      end: '2013-08-01'
       keywords:
         - XHP
         - Accessibility
@@ -103,7 +103,7 @@ employment:
     -
       employer: 'Cerner Corporation'
       key: cerner
-      summary: 'As Cerner''s first Web Evanglist, I was responsible for advancing web best-practices to teams, both existing and emerging. I basically served as ad-hoc advisor with respect to semantics, accessibility, web agnostics and the responsible use of CSS and JavaScript.'
+      summary: 'As Cerner''s first Web Evangelist, I was responsible for advancing web best-practices to teams, both existing and emerging. I basically served as ad-hoc advisor with respect to semantics, accessibility, web agnostics and the responsible use of CSS and JavaScript.'
       position: 'Web Evangelist'
       start: '2009-10-01'
       end: '2012-01-01'

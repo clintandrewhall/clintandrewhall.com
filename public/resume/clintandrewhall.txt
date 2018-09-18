@@ -37,7 +37,7 @@ While there, I worked on the Protect and Care team developing a new Messaging In
 - New "How-to" panels for the Help Center.
 - New Platform Share Dialog for mobile and desktop in XHP.
 
-User Interface Engineer, Facebook HQ (2013-08 — 2015-04)
+User Interface Engineer, Facebook HQ (2012-01 — 2013-08)
 I joined Facebook in 2012 as a User Interface Engineer (UIE) on the Mobile Core Web team.  I then joined the Accessibility team to help make Facebook more useful to everyone on the web.
 
 After several hackathons involving Events, I joined the team full time to rewrite the web experiences on both the mobile and main website.
@@ -50,7 +50,7 @@ Afterwards, I spent some time with the Platform team, reworking a number of diff
 - New core components for mobile web for product teams.
 
 Web Evangelist, Cerner Corporation (2009-10 — 2012-01)
-As Cerner's first Web Evanglist, I was responsible for advancing web best-practices to teams, both existing and emerging. I basically served as ad-hoc advisor with respect to semantics, accessibility, web agnostics and the responsible use of CSS and JavaScript.
+As Cerner's first Web Evangelist, I was responsible for advancing web best-practices to teams, both existing and emerging. I basically served as ad-hoc advisor with respect to semantics, accessibility, web agnostics and the responsible use of CSS and JavaScript.
 - New OpenID SDK for the iPhone.
 - Redesigned a semantic search servive to use JSON-P
 - "Proscenium", an experimental technique of compiling templates in JS libaries for isomorphic rendering.
