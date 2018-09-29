@@ -31,8 +31,8 @@ const Work = () => {
     return null;
   }
 
-  const blocks = history.map((item, index) => (
-    <Item key={'item' + index} item={item} />
+  const blocks = history.map(item => (
+    <Item key={`${item.start}`} item={item} />
   ));
 
   return (
@@ -43,7 +43,7 @@ const Work = () => {
             <h2 className={styles.title}>Career</h2>
             <h3 className={styles.subtitle}>Read About My Experience</h3>
             <p className={styles.lead}>
-              These are a few roles I've held recently.
+              These are a few roles I&apos;ve held recently.
             </p>
           </div>
         </div>

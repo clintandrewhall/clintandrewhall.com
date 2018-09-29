@@ -14,12 +14,33 @@ html {
   line-height: 1.15;
   -ms-text-size-adjust: 100%;
   -webkit-text-size-adjust: 100%;
+  font-size: 62.5%;
+  box-sizing: border-box;
 }
 
 body {
   margin: 0;
   padding: 0;
   font-family: sans-serif;
+  font-weight: normal;
+  line-height: 1;
+  word-wrap: break-word;
+  text-rendering: optimizeLegibility;
+  -webkit-overflow-scrolling: touch;
+  -webkit-text-size-adjust: none;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body,
+input,
+button {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
 }
 
 article,
@@ -53,13 +74,15 @@ hr {
 }
 
 pre {
-  font-family: monospace, monospace;
+  font-family: monospace;
   font-size: 1em;
 }
 
 a {
   background-color: transparent;
   -webkit-text-decoration-skip: objects;
+  text-decoration: none;
+  line-height: inherit;
 }
 
 a:active,
@@ -75,18 +98,14 @@ abbr[title] {
 
 b,
 strong {
-  font-weight: inherit;
-}
-
-b,
-strong {
-  font-weight: bolder;
+  font-weight: bold;
+  line-height: inherit;
 }
 
 code,
 kbd,
 samp {
-  font-family: monospace, monospace;
+  font-family: monospace;
   font-size: 1em;
 }
 
@@ -100,7 +119,8 @@ mark {
 }
 
 small {
-  font-size: 80%;
+  font-size: 60%;
+  line-height: inherit;
 }
 
 sub,
@@ -251,41 +271,6 @@ template {
   display: none;
 }
 
-/* ===================================================================
- * # basic/base setup styles
- * ------------------------------------------------------------------- */
-
-html {
-  font-size: 62.5%;
-  box-sizing: border-box;
-}
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit;
-}
-
-body {
-  font-weight: normal;
-  line-height: 1;
-  word-wrap: break-word;
-  text-rendering: optimizeLegibility;
-  -webkit-overflow-scrolling: touch;
-  -webkit-text-size-adjust: none;
-}
-
-body,
-input,
-button {
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-}
-
-/* -------------------------------------------------------------------
- * ## Media
- * ------------------------------------------------------------------- */
-
 img,
 video {
   max-width: 100%;
@@ -339,17 +324,6 @@ i {
   line-height: inherit;
 }
 
-strong,
-b {
-  font-weight: bold;
-  line-height: inherit;
-}
-
-small {
-  font-size: 60%;
-  line-height: inherit;
-}
-
 ol,
 ul {
   list-style: none;
@@ -359,26 +333,8 @@ li {
   display: block;
 }
 
-/* -------------------------------------------------------------------
- * ## links
- * ------------------------------------------------------------------- */
-
-a {
-  text-decoration: none;
-  line-height: inherit;
-}
-
 a img {
   border: none;
-}
-
-/* -------------------------------------------------------------------
- * ## inputs
- * ------------------------------------------------------------------- */
-
-fieldset {
-  margin: 0;
-  padding: 0;
 }
 
 input[type='email'],

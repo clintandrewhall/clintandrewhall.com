@@ -1,14 +1,15 @@
 // @flow
 
 import React from 'react';
-import styles from './Testimonial.module.css';
 import cx from 'classnames';
+import styles from './Testimonial.module.css';
 
 type Props = {
   className?: ?string,
   testmonial: Testimonial,
 };
 
+// $FlowFixMe Webpack require.context not flow-ified
 const pathContext = require.context(
   'responsive-loader?size=66!./../..',
   true,
@@ -18,7 +19,7 @@ const pathContext = require.context(
 const TestimonialComponent = (props: Props) => {
   const { className, testmonial } = props;
   const { name, imageSrc, title, connection, quote } = testmonial;
-  const responsiveImage = pathContext('.' + imageSrc);
+  const responsiveImage = pathContext(`.${imageSrc}`);
 
   return (
     <div className={className ? cx([styles.root, className]) : styles.root}>

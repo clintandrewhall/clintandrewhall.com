@@ -2,12 +2,11 @@
 
 import React from 'react';
 import Flickity from 'react-flickity-component';
+import 'flickity/css/flickity.css';
 
 import TestimonialComponent from './Testimonial';
 import styles from './Testimonials.module.css';
 import data from './../../_content/resume.json';
-
-import 'flickity/css/flickity.css';
 
 const options = {
   wrapAround: false,
@@ -21,8 +20,11 @@ class Testimonials extends React.Component<any> {
   render() {
     const { testimonials } = (data: FreshResume);
 
-    const items = testimonials.map((testimonial: Testimonial, index) => (
-      <TestimonialComponent key={index} testmonial={testimonial} />
+    const items = testimonials.map((testimonial: Testimonial) => (
+      <TestimonialComponent
+        key={testimonial.timestamp}
+        testmonial={testimonial}
+      />
     ));
 
     return (
@@ -32,16 +34,17 @@ class Testimonials extends React.Component<any> {
           <div className={styles.headerContent}>
             <h2 className={styles.heading}>What People Say</h2>
             <h3 className={styles.lead}>
-              I've worked with some remarkable people.
+              I&apos;ve worked with some remarkable people.
             </h3>
           </div>
         </div>
         <div className={styles.content}>
           <Flickity
-            flickityRef={c => (this._flkty = c)}
+            flickityRef={c => {
+              this._flkty = c;
+            }}
             className={styles.slider}
-            options={options}
-          >
+            options={options}>
             {items}
           </Flickity>
         </div>
@@ -50,8 +53,7 @@ class Testimonials extends React.Component<any> {
             className={styles.button}
             href="https://www.linkedin.com/in/clinthall"
             target="_blank"
-            rel="noopener noreferrer"
-          >
+            rel="noopener noreferrer">
             Visit my LinkedIn Profile
           </a>
         </div>

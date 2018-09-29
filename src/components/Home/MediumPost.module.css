@@ -47,10 +47,14 @@
   color: #862121;
 }
 
+.tags a {
+  color: #000;
+}
+
 .date a:hover,
 .date a:focus,
 .date a:active {
-  color: #000000;
+  color: #000;
 }
 
 .tags {
@@ -58,12 +62,8 @@
   font-size: 1.3rem;
   text-transform: uppercase;
   letter-spacing: 0.2rem;
-  color: #000000;
+  color: #000;
   margin-top: -0.9rem;
-}
-
-.tags a {
-  color: #000000;
 }
 
 .tags a:hover,
@@ -84,6 +84,7 @@
   .root:nth-child(2n + 1) {
     padding-right: 40px;
   }
+
   .root:nth-child(2n + 2) {
     padding-left: 40px;
   }
@@ -99,6 +100,7 @@
   .root:nth-child(n) {
     padding: 0;
   }
+
   .heading {
     font-size: 2.7rem;
   }

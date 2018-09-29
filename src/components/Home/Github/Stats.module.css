@@ -85,7 +85,7 @@
 
 .column:hover,
 .columnHighlight {
-  background: #111111; /*url('../images/count-bg.jpg');*/
+  background: #111;
   background-size: 175px 175px;
   position: relative;
 }
@@ -106,18 +106,18 @@
   );
 }
 
-.column:hover .count,
-.columnHighlight .count {
-  color: #ffffff;
+.columnHighlight .count,
+.column:hover .count {
+  color: #fff;
 }
 
-.column:hover .count::after,
-.columnHighlight .count::after {
+.columnHighlight .count::after,
+.column:hover .count::after {
   background-color: #862121;
 }
 
-.column:hover .title,
-.columnHighlight .title {
+.columnHighlight .title,
+.column:hover .title {
   color: rgba(255, 255, 255, 0.4);
 }
 
@@ -130,6 +130,7 @@
   .count {
     font-size: 2.3rem;
   }
+
   .title {
     font-size: 1.2rem;
   }
@@ -139,6 +140,7 @@
   .count {
     font-size: 2rem;
   }
+
   .title {
     font-size: 1.4rem;
   }
@@ -148,14 +150,13 @@
   .count {
     font-size: 2.8rem;
   }
+
   .title {
     font-size: 1.8rem;
   }
 }
 
 @media only screen and (max-width: 600px) {
-  .stats {
-  }
   .column {
     padding: 3rem;
   }

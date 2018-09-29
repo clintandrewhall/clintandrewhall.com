@@ -22,12 +22,8 @@ const Medium = () => {
     );
 
   const items = [...entries.values()]
-    .sort((a, b) => {
-      return b.timestamp - a.timestamp;
-    })
-    .map((entry, index) => (
-      <MediumPost post={entry} key={entry.timestamp + '_' + index} />
-    ));
+    .sort((a, b) => b.timestamp - a.timestamp)
+    .map(entry => <MediumPost post={entry} key={`${entry.timestamp}`} />);
 
   return (
     <section id="medium" className={styles.root}>

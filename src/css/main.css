@@ -1,13 +1,5 @@
-/* ===================================================================
- * # webfonts and iconfonts
- * ------------------------------------------------------------------- */
-
 @import url('iconic/css/iconmonstr-iconic-font.min.css');
 @import url('fonts.css');
-
-/* ===================================================================
- * # base style overrides
- * ------------------------------------------------------------------- */
 
 html {
   font-size: 10px;
@@ -34,14 +26,15 @@ body {
   padding: 0;
 }
 
-/* -------------------------------------------------------------------
- * ## links
- * ------------------------------------------------------------------- */
-
 a {
   color: #862121;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
+}
+
+blockquote cite a {
+  color: #6c6c6c;
+  border: none;
 }
 
 a:hover,
@@ -54,9 +47,10 @@ a:focus {
   outline: none;
 }
 
-/* ===================================================================
- * # typography & general theme styles
- * ------------------------------------------------------------------- */
+blockquote cite a:visited {
+  color: #6c6c6c;
+  border: none;
+}
 
 h1,
 h2,
@@ -218,24 +212,16 @@ blockquote {
   position: relative;
 }
 
-blockquote:before {
+blockquote::before {
   content: '\201C';
   font-size: 10rem;
-  line-height: 0px;
+  line-height: 0;
   margin: 0;
   color: rgba(0, 0, 0, 0.15);
   font-family: arial, sans-serif;
   position: absolute;
   top: 3.6rem;
   left: 0;
-}
-
-blockquote p {
-  font-family: 'montserrat-regular', sans-serif;
-  padding: 0;
-  font-size: 2.1rem;
-  line-height: 1.857;
-  color: #0d0a0b;
 }
 
 blockquote cite {
@@ -246,14 +232,8 @@ blockquote cite {
   line-height: 1.5;
 }
 
-blockquote cite:before {
+blockquote cite::before {
   content: '\2014 \0020';
-}
-
-blockquote cite a,
-blockquote cite a:visited {
-  color: #6c6c6c;
-  border: none;
 }
 
 abbr {
@@ -313,7 +293,7 @@ dfn[title] {
 
 mark {
   background: #ffd900;
-  color: #000000;
+  color: #000;
 }
 
 hr {
@@ -323,10 +303,6 @@ hr {
   margin: 2.4rem 0 1.5rem;
   height: 0;
 }
-
-/* -------------------------------------------------------------------
- * ## Lists
- * ------------------------------------------------------------------- */
 
 ol {
   list-style: decimal;
@@ -345,17 +321,6 @@ ul {
   margin-left: 1.7rem;
 }
 
-ul li {
-  padding-left: 0.4rem;
-}
-
-ul ul,
-ul ol,
-ol ol,
-ol ul {
-  margin: 0.6rem 0 0.6rem 1.7rem;
-}
-
 dt {
   margin: 0;
   color: #862121;
@@ -364,10 +329,6 @@ dt {
 dd {
   margin: 0 0 0 2rem;
 }
-
-/* -------------------------------------------------------------------
- * ## responsive video container
- * ------------------------------------------------------------------- */
 
 .video-container {
   position: relative;
@@ -387,10 +348,6 @@ dd {
   height: 100%;
 }
 
-/* -------------------------------------------------------------------
- * ## floated image
- * ------------------------------------------------------------------- */
-
 img.pull-right {
   margin: 1.5rem 0 0 3rem;
 }
@@ -398,10 +355,6 @@ img.pull-right {
 img.pull-left {
   margin: 1.5rem 3rem 0 0;
 }
-
-/* -------------------------------------------------------------------
- * ## tables
- * ------------------------------------------------------------------- */
 
 table {
   border-width: 0;
@@ -441,15 +394,12 @@ td:last-child {
   -webkit-overflow-scrolling: touch;
 }
 
-/* -------------------------------------------------------------------
- * ## Spacing
- * ------------------------------------------------------------------- */
-
 button {
   margin-bottom: 1.2rem;
 }
 
 fieldset {
+  border: none;
   margin-bottom: 1.5rem;
 }
 
@@ -468,9 +418,24 @@ form {
   margin-bottom: 3rem;
 }
 
-/* ===================================================================
- * preloader
- * ------------------------------------------------------------------- */
+ul li {
+  padding-left: 0.4rem;
+}
+
+ul ul,
+ul ol,
+ol ol,
+ol ul {
+  margin: 0.6rem 0 0.6rem 1.7rem;
+}
+
+blockquote p {
+  font-family: 'montserrat-regular', sans-serif;
+  padding: 0;
+  font-size: 2.1rem;
+  line-height: 1.857;
+  color: #0d0a0b;
+}
 
 #preloader {
   position: fixed;
@@ -508,6 +473,7 @@ form {
   0% {
     -webkit-transform: scale(0);
   }
+
   100% {
     -webkit-transform: scale(1);
     opacity: 0;
@@ -519,19 +485,12 @@ form {
     -webkit-transform: scale(0);
     transform: scale(0);
   }
+
   100% {
     -webkit-transform: scale(1);
     transform: scale(1);
     opacity: 0;
   }
-}
-
-/* ===================================================================
- * # forms
- * ------------------------------------------------------------------- */
-
-fieldset {
-  border: none;
 }
 
 input[type='email'],
@@ -548,7 +507,7 @@ select {
   padding: 1.5rem 0;
   border: 0;
   outline: none;
-  color: #333333;
+  color: #333;
   font-family: 'montserrat-regular', sans-serif;
   font-size: 1.5rem;
   line-height: 3rem;
@@ -560,7 +519,6 @@ select {
 }
 
 /* IE9 and below */
-
 .oldie .ss-custom-select::after {
   display: none;
 }
@@ -578,7 +536,7 @@ input[type='url']:focus,
 input[type='password']:focus,
 textarea:focus,
 select:focus {
-  color: #000000;
+  color: #000;
   border-bottom: 2px solid black;
 }
 
@@ -611,22 +569,20 @@ label > input[type='radio'] {
   top: 0.15rem;
 }
 
-/* -------------------------------------------------------------------
- * ## style placeholder text
- * ------------------------------------------------------------------- */
-
 ::-webkit-input-placeholder {
   color: #6c6c6c;
 }
 
-:-moz-placeholder {
-  color: #6c6c6c;
-  /* Firefox 18- */
-}
-
 ::-moz-placeholder {
   color: #6c6c6c;
+
   /* Firefox 19+ */
+}
+
+:-moz-placeholder {
+  color: #6c6c6c;
+
+  /* Firefox 18- */
 }
 
 :-ms-input-placeholder {
@@ -637,10 +593,6 @@ label > input[type='radio'] {
   color: #6c6c6c !important;
 }
 
-/* ===================================================================
- * # common and reusable theme styles
- * ------------------------------------------------------------------- */
-
 .wide {
   max-width: 1400px;
 }
@@ -648,10 +600,6 @@ label > input[type='radio'] {
 .narrow {
   max-width: 800px;
 }
-
-/* -------------------------------------------------------------------
- * ## Change Autocomplete styles in Chrome
- * ------------------------------------------------------------------- */
 
 input:-webkit-autofill,
 input:-webkit-autofill:hover,
@@ -673,6 +621,7 @@ select:-webkit-autofill:focus {
     -ms-transform: translate3d(0, -30px, 0);
     transform: translate3d(0, -30px, 0);
   }
+
   50% {
     -webkit-transform: translate3d(0, -4px, 0);
     -ms-transform: translate3d(0, -4px, 0);
@@ -687,6 +636,7 @@ select:-webkit-autofill:focus {
     -ms-transform: translate3d(0, -30px, 0);
     transform: translate3d(0, -30px, 0);
   }
+
   50% {
     -webkit-transform: translate3d(0, -4px, 0);
     -ms-transform: translate3d(0, -4px, 0);
@@ -695,7 +645,6 @@ select:-webkit-autofill:focus {
 }
 
 /* fade in */
-
 @-webkit-keyframes fadeIn {
   from {
     opacity: 0;
@@ -703,6 +652,7 @@ select:-webkit-autofill:focus {
     -ms-transform: translate3d(0, -150%, 0);
     transform: translate3d(0, -150%, 0);
   }
+
   to {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
@@ -718,6 +668,7 @@ select:-webkit-autofill:focus {
     -ms-transform: translate3d(0, -150%, 0);
     transform: translate3d(0, -150%, 0);
   }
+
   to {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
@@ -727,11 +678,11 @@ select:-webkit-autofill:focus {
 }
 
 /* fade out */
-
 @-webkit-keyframes fadeOut {
   from {
     opacity: 1;
   }
+
   to {
     opacity: 0;
     -webkit-transform: translate3d(0, -150%, 0);
@@ -744,6 +695,7 @@ select:-webkit-autofill:focus {
   from {
     opacity: 1;
   }
+
   to {
     opacity: 0;
     -webkit-transform: translate3d(0, -150%, 0);
@@ -756,6 +708,7 @@ select:-webkit-autofill:focus {
   .grid-sizer {
     width: 100%;
   }
+
   button.flickity-button {
     top: 7.5rem;
   }

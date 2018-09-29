@@ -9,7 +9,7 @@ const writePath = './src/_content/posts/';
 const TAG_BASE = 'https://medium.com/tag/';
 const IMG_BASE = 'https://cdn-images-1.medium.com/freeze/fit/t/800/350/';
 
-type Post = {
+type PostType = {
   coverSrc: string,
   href: string,
   latestTimestamp: number,
@@ -21,7 +21,7 @@ type Post = {
   title: string,
 };
 
-const Template = (post: Post) => {
+const Template = (post: PostType) => {
   const {
     coverSrc,
     href,
@@ -39,8 +39,8 @@ const Template = (post: Post) => {
   if (tags && tags.length > 0) {
     tagOutput = 'Tags: ';
     tags.forEach(tag => {
-      tagOutput += '[' + tag.name + '](' + TAG_BASE + tag.slug + '), ';
-      jsOutput += '  - ' + tag.name + '\n';
+      tagOutput += `[${tag.name}](${TAG_BASE}${tag.slug}), `;
+      jsOutput += `  - ${tag.name}\n`;
     });
   }
 
@@ -64,7 +64,7 @@ ${tagOutput}
 `;
 };
 
-(async function() {
+(async () => {
   const postsRequest = await fetch(
     `${BASE_URL}/@${username}/latest?format=json`,
   );
@@ -76,11 +76,13 @@ ${tagOutput}
   const { success, payload } = data;
 
   if (!payload || !success) {
+    // eslint-disable-next-line no-console
     console.log('no payload');
     return;
   }
 
-  let { posts, references } = payload;
+  const { references } = payload;
+  let { posts } = payload;
 
   if (!posts && references) {
     const { Post } = references;
@@ -126,13 +128,15 @@ ${tagOutput}
   });
 
   if (posts.length <= 0) {
+    // eslint-disable-next-line no-console
     console.log('no posts');
     return;
   }
 
   const writes = posts.map(post =>
-    fs.writeFile(writePath + post.timestamp + '.md', Template(post), () => {
-      console.log('wrote: ' + post.timestamp);
+    fs.writeFile(`${writePath + post.timestamp}.md`, Template(post), () => {
+      // eslint-disable-next-line no-console
+      console.log(`wrote: ${post.timestamp}`);
     }),
   );
 

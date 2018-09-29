@@ -1,10 +1,11 @@
 // @flow
 
 import React from 'react';
-import styles from './WorkHistoryItem.module.css';
 import cx from 'classnames';
 import moment from 'moment';
 import Markdown from 'react-markdown';
+
+import styles from './WorkHistoryItem.module.css';
 
 type WorkHistory = {
   employer: string,
@@ -18,7 +19,7 @@ type WorkHistory = {
 };
 
 type Props = {
-  className?: ?string,
+  className?: string,
   item: WorkHistory,
 };
 

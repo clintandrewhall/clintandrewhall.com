@@ -23,6 +23,12 @@ input[type='button'] {
   border: 0.3rem solid #c5c5c5;
 }
 
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
 .button:hover,
 button:hover,
 input[type='submit']:hover,
@@ -35,12 +41,9 @@ input[type='reset']:focus,
 input[type='button']:focus {
   background-color: #b8b8b8;
   border-color: #b8b8b8;
-  color: #000000;
+  color: #000;
   outline: 0;
 }
-
-/* button primary
- * ------------------------------------------------- */
 
 .button.primary,
 button.primary,
@@ -49,7 +52,7 @@ input[type='reset'].primary,
 input[type='button'].primary {
   background: #0d0a0b;
   border-color: #0d0a0b;
-  color: #ffffff;
+  color: #fff;
 }
 
 .button.primary:hover,
@@ -65,9 +68,6 @@ input[type='button'].primary:focus {
   background: #862121;
   border-color: #862121;
 }
-
-/* button modifiers
- * ------------------------------------------------- */
 
 .button.fullWidth,
 button.fullWidth {
@@ -90,8 +90,8 @@ button.large {
 .stroke,
 button.stroke {
   background: transparent;
-  border: 0.3rem solid #000000;
-  color: #000000;
+  border: 0.3rem solid #000;
+  color: #000;
 }
 
 .stroke:hover,
@@ -105,10 +105,4 @@ button.pill {
   padding-left: 3rem;
   padding-right: 3rem;
   border-radius: 1000px;
-}
-
-button::-moz-focus-inner,
-input::-moz-focus-inner {
-  border: 0;
-  padding: 0;
 }

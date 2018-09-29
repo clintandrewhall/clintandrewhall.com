@@ -1,5 +1,5 @@
 .root {
-  composes: section from "./../core/Section.module.css";
+  composes: section from './../core/Section.module.css';
   padding-top: 15rem;
   padding-bottom: 15.6rem;
   background-color: #f1f1f1;
@@ -7,23 +7,23 @@
 }
 
 .intro {
-  composes: intro from "./../core/Section.module.css";
+  composes: intro from './../core/Section.module.css';
 }
 
 .introContent {
-  composes: introContent from "./../core/Section.module.css";
+  composes: introContent from './../core/Section.module.css';
 }
 
 .title {
-  composes: title from "./../core/Section.module.css";
+  composes: title from './../core/Section.module.css';
 }
 
 .subtitle {
-  composes: subtitle from "./../core/Section.module.css";
+  composes: subtitle from './../core/Section.module.css';
 }
 
 .lead {
-  composes: lead from "./../core/Section.module.css";
+  composes: lead from './../core/Section.module.css';
 }
 
 .portfolio {
@@ -43,8 +43,8 @@
   composes: masonry from global;
 }
 
-.masonry:after {
-  content: "";
+.masonry::after {
+  content: '';
   display: table;
   clear: both;
 }
@@ -54,21 +54,21 @@
 }
 
 .buttonRow {
-  composes: col-four from global;
+  composes: col-eight from global;
   float: none;
   margin: 0 auto;
   padding: 0 25px;
 }
 
 .buttonRow::before {
-  content: "";
+  content: '';
   display: table;
   clear: both;
 }
 
 .button {
-  composes: button from "./../core/Buttons.module.css";
-  composes: primary from "./../core/Buttons.module.css";
+  composes: button from './../core/Buttons.module.css';
+  composes: primary from './../core/Buttons.module.css';
   display: block;
   margin: 4rem auto 0 auto;
 }
@@ -82,6 +82,7 @@
   .portfolio {
     width: 1400px;
   }
+
   .masonry .grid-sizer {
     width: 350px;
   }
@@ -91,6 +92,7 @@
   .portfolio {
     width: 1200px;
   }
+
   .masonry .grid-sizer {
     width: 400px;
   }
@@ -100,6 +102,7 @@
   .portfolio {
     width: 999px;
   }
+
   .masonry .grid-sizer {
     width: 333px;
   }
@@ -110,6 +113,7 @@
     width: 90%;
     max-width: 800px;
   }
+
   .masonry .grid-sizer {
     width: 50%;
   }
@@ -119,6 +123,7 @@
   .portfolio {
     padding: 0;
   }
+
   .masonry .grid-sizer {
     width: 100%;
   }

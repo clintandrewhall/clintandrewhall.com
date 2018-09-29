@@ -78,6 +78,14 @@
   z-index: 2;
 }
 
+.prev {
+  left: 4.5rem;
+}
+
+.next {
+  right: 4.5rem;
+}
+
 .prev :global(.im),
 .next :global(.im) {
   font-size: 1.2rem;
@@ -96,21 +104,13 @@
   background-color: transparent;
 }
 
-.prev {
-  left: 4.5rem;
-}
-
-.next {
-  right: 4.5rem;
-}
-
 .buttonRow {
-  composes: col-four from global;
+  composes: col-eight from global;
   position: relative;
   z-index: 1;
   margin: 0 auto;
   float: none;
-  padding: 0 25px;
+  padding: 50px 25px 0 25px;
 }
 
 .button {
@@ -135,6 +135,7 @@
   .root {
     background-image: url('./../../images/testimonial-bg.jpg?size=1200');
   }
+
   .heading {
     font-size: 3.8rem;
   }
@@ -144,6 +145,7 @@
   .root {
     background-image: url('./../../images/testimonial-bg.jpg?size=800');
   }
+
   .heading {
     font-size: 3rem;
   }
@@ -153,22 +155,28 @@
   .root {
     background-image: url('./../../images/testimonial-bg.jpg?size=600');
   }
+
   .content {
     margin-top: 3rem;
   }
+
   .header {
     padding: 0;
   }
+
   .heading {
     font-size: 2.7rem;
   }
+
   .prev,
   .next {
     top: 5.1rem;
   }
+
   .prev {
     left: 1rem;
   }
+
   .next {
     right: 1rem;
   }

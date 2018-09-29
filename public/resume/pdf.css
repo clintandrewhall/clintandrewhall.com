@@ -27,6 +27,13 @@ a {
   margin-bottom: 1em;
 }
 
+.profiles-container dd {
+  text-align: left;
+  margin: 0;
+  padding: 0;
+  font-weight: bold;
+}
+
 .contact-container .contact-list {
   line-height: 1.5em;
   margin: 0.5em 0;
@@ -55,13 +62,6 @@ a {
   position: static;
   margin-right: 4px;
   width: 6em;
-}
-
-.profiles-container dd {
-  text-align: left;
-  margin: 0;
-  padding: 0;
-  font-weight: bold;
 }
 
 .profiles-container dt::after {

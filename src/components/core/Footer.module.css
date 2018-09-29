@@ -7,14 +7,33 @@
   color: rgba(255, 255, 255, 0.2);
 }
 
-.root a,
+.root a {
+  color: #862121;
+}
+
+.goTop a,
+.goTop a:visited {
+  text-decoration: none;
+  border: 0 none;
+  display: block;
+  height: 60px;
+  width: 60px;
+  line-height: 60px;
+  text-align: center;
+  background: black;
+  color: rgba(255, 255, 255, 0.6);
+  text-transform: uppercase;
+  -webkit-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
+}
+
 .root a:visited {
   color: #862121;
 }
 
 .root a:hover,
 .root a:focus {
-  color: #ffffff;
+  color: #fff;
 }
 
 .top {
@@ -44,7 +63,7 @@
   letter-spacing: 0.3rem;
 }
 
-.social:after {
+.social::after {
   content: '';
   display: table;
   clear: both;
@@ -74,8 +93,13 @@
   margin-left: 0.6rem;
 }
 
+.goTop a:hover,
+.goTop a:focus {
+  color: #fff;
+}
+
 .root .social li a {
-  color: #ffffff;
+  color: #fff;
 }
 
 .social li:last-child {
@@ -115,51 +139,34 @@
   display: none;
 }
 
-.goTop a,
-.goTop a:visited {
-  text-decoration: none;
-  border: 0 none;
-  display: block;
-  height: 60px;
-  width: 60px;
-  line-height: 60px;
-  text-align: center;
-  background: black;
-  color: rgba(255, 255, 255, 0.6);
-  text-align: center;
-  text-transform: uppercase;
-  -webkit-transition: all 0.3s ease-in-out;
-  transition: all 0.3s ease-in-out;
-}
-
 .goTop a i,
 .goTop a:visited i {
   font-size: 12px;
   line-height: inherit;
 }
 
-.goTop a:hover,
-.goTop a:focus {
-  color: #ffffff;
-}
-
 @media only screen and (max-width: 600px) {
   .social li {
     margin-right: 1.8rem;
   }
+
   .social li span,
   .social li::after {
     display: none;
   }
+
   .social li i {
     font-size: 2.4rem;
   }
+
   .bottom {
     padding-bottom: 0.6rem;
   }
+
   .bottom .copyright span {
     display: block;
   }
+
   .bottom .copyright span::after {
     display: none;
   }
@@ -169,9 +176,11 @@
   .logoLink {
     width: 100px;
   }
+
   .social li {
     margin-right: 1.2rem;
   }
+
   .social li i {
     font-size: 2.2rem;
   }

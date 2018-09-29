@@ -1,10 +1,10 @@
 // @flow
-import React from 'react';
 import { Route, Link } from 'react-router-dom';
 import classnames from 'classnames';
+import React from 'react';
+import type { ContextRouter as LinkProps } from 'react-router-dom';
 
 import styles from './HeaderLink.module.css';
-import type { ContextRouter as LinkProps } from 'react-router-dom';
 
 type Props = {
   exact: boolean,
@@ -20,8 +20,9 @@ const HeaderLink = (props: Props) => {
     <Route
       path={to}
       exact={exact}
-      children={(props: LinkProps) => {
-        const { location } = props;
+      // eslint-disable-next-line react/no-children-prop
+      children={(childProps: LinkProps) => {
+        const { location } = childProps;
         // $FlowFixMe
         const { hash, pathname } = location;
 
@@ -38,8 +39,7 @@ const HeaderLink = (props: Props) => {
           <li
             className={classnames(styles.headerLink, {
               [`${styles.current}`]: selected,
-            })}
-          >
+            })}>
             <Link to={to} title={label} onClick={onClick}>
               {label}
             </Link>

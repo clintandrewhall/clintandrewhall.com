@@ -1,3 +1,6 @@
-public/js
+assets
+build
+flow-typed
 node_modules
-build/
+public/js
+src/content

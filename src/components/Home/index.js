@@ -1,7 +1,6 @@
 // @flow
 
 import React from 'react';
-import ReactDOM from 'react-dom';
 import Rellax from 'rellax';
 
 import ScrollToTopOnMount from '../core/ScrollToTopOnMount';
@@ -20,8 +19,6 @@ type State = {
 };
 
 class Home extends React.Component<{}, State> {
-  heroRef = React.createRef();
-
   state: State = {
     triggerHeight: 0,
   };
@@ -30,16 +27,17 @@ class Home extends React.Component<{}, State> {
     document.title = 'Clint Andrew Hall';
     window.addEventListener('fade-finished', () => {
       if (this.heroRef) {
-        const node = ReactDOM.findDOMNode(this.heroRef.current);
-        if (node instanceof HTMLElement) {
-          this.setState({ triggerHeight: node.offsetHeight });
+        if (this.heroRef instanceof HTMLElement) {
+          this.setState({ triggerHeight: this.heroRef.offsetHeight });
         }
       }
     });
-    new Rellax('.rellax', {
+    Rellax('.rellax', {
       speed: -6,
     });
   }
+
+  heroRef = React.createRef();
 
   render() {
     const { triggerHeight } = this.state;
@@ -48,8 +46,12 @@ class Home extends React.Component<{}, State> {
         <div className={styles.rellax}>
           <div className={styles.background} />
         </div>
-        <Header home={true} triggerHeight={triggerHeight} />
-        <Hero heroRef={this.heroRef} />
+        <Header home triggerHeight={triggerHeight} />
+        <Hero
+          heroRef={node => {
+            this.heroRef = node;
+          }}
+        />
         <About />
         <Portfolio />
         <Work />
