@@ -23,6 +23,7 @@ type Props = {
   item: PortfolioItemType,
 };
 
+// $FlowFixMe Webpack require.context not flow-ified
 const pathContext = require.context('./../../images/portfolio', true);
 
 const PortfolioItem = (props: Props) => {
@@ -33,9 +34,8 @@ const PortfolioItem = (props: Props) => {
   const subtitle = tags.map((tag, index) => (
     <Link
       className={styles.slugLink}
-      to={'/portfolio/' + tag.slug}
-      key={tag.slug}
-    >
+      to={`/portfolio/${tag.slug}`}
+      key={tag.slug}>
       {tag.name + (index < tags.length - 1 ? ', ' : '')}
     </Link>
   ));
@@ -58,7 +58,7 @@ const PortfolioItem = (props: Props) => {
         <div className={styles.thumb}>
           <div
             className={styles.thumbArea}
-            style={{ backgroundImage: 'url(' + responsiveImage + ')' }}
+            style={{ backgroundImage: `url(${responsiveImage})` }}
           />
           <span className={styles.shadow} />
         </div>
@@ -69,10 +69,9 @@ const PortfolioItem = (props: Props) => {
         <p className={styles.caption}>
           {caption}
           <Link
-            to={'/portfolio/' + slug}
+            to={`/portfolio/${slug}`}
             title={title}
-            className={styles.details}
-          >
+            className={styles.details}>
             View Details
           </Link>
         </p>

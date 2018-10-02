@@ -12,10 +12,12 @@ I'm a regular consumer and occasional contributor to open source projects and cl
 
 I look for opportunities where I can make strong, direct and meaningful contributions to a team, to users and to the web. I'm comfortable functioning as both designer and engineer, advising on both the technical and aesthetic.  I'm affable and good-natured, yet results-driven and competitive.  I have extensive experience working remotely, particularly during my time at Facebook.
 
-> I'm currently enjoying some time off, working on a number of personal projects, but I'm open to inquiries about positions that allow for working remotely.
-
 
 ## EMPLOYMENT
+
+### *Principal Software Engineer*, Elastic (2018-10 — Present)
+
+I most recently accepted an offer to work at Elastic on their Kibana product, specifically Canvas.
 
 ### *User Interface Engineer*, Facebook NYC (2015-04 — 2018-06)
 

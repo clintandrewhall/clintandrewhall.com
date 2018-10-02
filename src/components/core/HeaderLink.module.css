@@ -7,7 +7,7 @@
 .headerLink a {
   display: block;
   line-height: 72px;
-  color: #ffffff;
+  color: #fff;
 }
 
 .headerLink.current a {

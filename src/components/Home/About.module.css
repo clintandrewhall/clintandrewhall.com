@@ -2,7 +2,7 @@
   composes: target-section from global;
   padding-top: 15rem;
   padding-bottom: 9rem;
-  background-color: #ffffff;
+  background-color: #fff;
   position: relative;
 }
 
@@ -69,13 +69,8 @@
   .left {
     padding-right: 0;
   }
+
   .right {
     padding-left: 0;
   }
-}
-
-@media only screen and (max-width: 600px) {
-}
-
-@media only screen and (max-width: 400px) {
 }

@@ -16,14 +16,14 @@ declare module 'react-helmet' {
     onChangeClientState?: (
       newState?: Object,
       addedTags?: Object,
-      removeTags?: Object,
+      removeTags?: Object
     ) => any,
     script?: Array<Object>,
     style?: Array<Object>,
     title?: string,
     titleAttributes?: Object,
     titleTemplate?: string,
-  };
+  }
 
   declare interface TagMethods {
     toString(): string;
@@ -32,12 +32,12 @@ declare module 'react-helmet' {
 
   declare interface AttributeTagMethods {
     toString(): string;
-    toComponent(): { [string]: * };
+    toComponent(): {[string]: *};
   }
 
   declare interface StateOnServer {
     base: TagMethods;
-    bodyAttributes: AttributeTagMethods;
+    bodyAttributes: AttributeTagMethods,
     htmlAttributes: AttributeTagMethods;
     link: TagMethods;
     meta: TagMethods;
@@ -53,6 +53,7 @@ declare module 'react-helmet' {
     static canUseDom(canUseDOM: boolean): void;
   }
 
-  declare export default typeof Helmet;
-  declare export var Helmet: typeof Helmet;
+  declare export default typeof Helmet
+  declare export var Helmet: typeof Helmet
 }
+

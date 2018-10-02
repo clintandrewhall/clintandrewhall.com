@@ -6,28 +6,28 @@ import numeral from 'numeral';
 import languageColors from './github-language-colors';
 import styles from './LOC.module.css';
 
-type LOCType = { name: string, loc: number };
+export type LOCType = { name: string, loc: number };
 
 export type Props = {
   loc: ?Array<LOCType>,
 };
 
 const LOC = (props: Props) => {
-  const { loc } = props;
+  const lines = props.loc;
 
-  if (!loc) {
+  if (!lines) {
     return null;
   }
 
   let total = 0;
   let other = 0;
 
-  loc.forEach((language: LOC) => {
+  lines.forEach((language: LOCType) => {
     total += language.loc;
   });
 
-  let items = loc
-    .map((language: LOC, index: number) => {
+  const items = lines
+    .map((language: LOCType) => {
       const { name, loc } = language;
       const percent = (loc / total) * 100;
 
@@ -39,12 +39,12 @@ const LOC = (props: Props) => {
       const color = languageColors[name] || 'inherit';
 
       return (
-        <li className={styles.language} key={'lang_' + index} style={{ color }}>
+        <li className={styles.language} key={`lang_${name}`} style={{ color }}>
           <div
             className={styles.progress}
             style={{
               background: color,
-              width: percent + '%',
+              width: `${percent}%`,
             }}
           />
           <span className={styles.loc}>{numeral(loc).format('0a')}</span>
@@ -61,7 +61,7 @@ const LOC = (props: Props) => {
         <div
           className={styles.progress}
           style={{
-            width: percent + '%',
+            width: `${percent}%`,
           }}
         />
         <span className={styles.loc}>{numeral(other).format('0a')}</span>

@@ -3,25 +3,24 @@
 import React from 'react';
 import { BrowserRouter as Router, Route } from 'react-router-dom';
 
-// import { Link } from 'react-router-dom';
-
 import Home from './components/Home';
 import routes from './routes';
 
 function fade(element: HTMLElement, callback: ?Function = null): void {
   let opacity = parseFloat(element.style.opacity);
+  opacity -= 0.1;
 
-  if ((opacity -= 0.1) < 0) {
+  if (opacity < 0) {
     element.style.display = 'none';
     callback && callback();
   } else {
     setTimeout(() => fade(element, callback), 40);
   }
 
-  element.style.opacity = opacity + '';
+  element.style.opacity = `${opacity}`;
 }
 
-window.addEventListener('load', function() {
+window.addEventListener('load', () => {
   const html = document.getElementsByTagName('html')[0];
   const loader = document.getElementById('loader');
   const preloader = document.getElementById('preloader');
@@ -37,26 +36,22 @@ window.addEventListener('load', function() {
       html.classList.remove('preload');
       html.classList.add('loaded');
       fade(preloader);
-      var event = new Event('fade-finished');
+      const event = new Event('fade-finished');
       window.dispatchEvent(event);
     });
   }
 });
 
-class App extends React.PureComponent<void> {
-  render() {
-    return (
-      <Router>
-        <div style={{ height: '100%' }}>
-          <Route path="/" component={Home} exact={true} />
-          {routes()}
-          <div id="preloader">
-            <div id="loader" />
-          </div>
-        </div>
-      </Router>
-    );
-  }
-}
+const App = () => (
+  <Router>
+    <div style={{ height: '100%' }}>
+      <Route path="/" component={Home} exact />
+      {routes()}
+      <div id="preloader">
+        <div id="loader" />
+      </div>
+    </div>
+  </Router>
+);
 
 export default App;

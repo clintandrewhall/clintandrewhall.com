@@ -19,18 +19,10 @@
 .sticky {
   position: fixed;
   top: 0;
-  background-color: #000000 !important;
+  background-color: #000 !important;
   opacity: 0;
   visibility: hidden;
   z-index: 600;
-}
-
-.sticky .headerLogo a {
-  margin: 0;
-}
-
-.sticky .headerNavWrap {
-  top: 0;
 }
 
 .sticky.scrolling {
@@ -87,7 +79,7 @@
 
 .headerMenuToggle:hover,
 .headerMenuToggle:focus {
-  color: #ffffff;
+  color: #fff;
 }
 
 .headerMenuToggle span {
@@ -103,7 +95,7 @@
   background-color: white;
   -webkit-transition: all 0.5s ease-in-out;
   transition: all 0.5s ease-in-out;
-  font: 0/0 a;
+  font: 0/0 monospace;
   text-shadow: none;
   color: transparent;
 }
@@ -188,7 +180,15 @@
 .headerNav li a {
   display: block;
   line-height: 72px;
-  color: #ffffff;
+  color: #fff;
+}
+
+.sticky .headerLogo a {
+  margin: 0;
+}
+
+.sticky .headerNavWrap {
+  top: 0;
 }
 
 .headerNav li.current a {
@@ -205,30 +205,35 @@
   .headerLogo {
     left: 40px;
   }
+
   .headerNavWrap {
     height: auto;
     width: 100%;
     right: auto;
     top: 0;
     left: 0;
-    background-color: #000000;
+    background-color: #000;
   }
+
   .headerNavWrap .headerNav {
     display: block;
     height: auto;
     margin: 120px 40px 4.2rem 40px;
     border-top: 1px solid rgba(255, 255, 255, 0.07);
   }
+
   .headerNavWrap .headerNav li {
     display: block;
     margin: 0;
     padding: 0;
     border-bottom: 1px dotted rgba(255, 255, 255, 0.07);
   }
+
   .headerNavWrap .headerNav li a {
     padding: 18px 0;
     line-height: 18px;
   }
+
   .headerMenuToggle {
     display: block;
   }

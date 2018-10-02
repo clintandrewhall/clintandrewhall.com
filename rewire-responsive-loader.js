@@ -1,4 +1,3 @@
-const path = require('path');
 const cloneDeep = require('lodash.clonedeep');
 
 const ruleChildren = loader =>
@@ -35,7 +34,7 @@ const imageRuleMatcher = rule =>
   rule.test &&
   String(rule.test) === String([/\.bmp$/, /\.gif$/, /\.jpe?g$/, /\.png$/]);
 
-module.exports = function(config, env) {
+module.exports = function(config) {
   const imageRule = findRule(config.module.rules, imageRuleMatcher);
   const responsiveRule = cloneDeep(imageRule);
 

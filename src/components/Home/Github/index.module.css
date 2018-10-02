@@ -67,7 +67,7 @@
 
 .recentlyActive {
   font-size: 11px;
-  color: #999999;
+  color: #999;
   padding-left: 37px;
 }
 
@@ -78,7 +78,6 @@
   border-radius: 1px;
   display: inline-block;
   vertical-align: middle;
-  display: none;
 }
 
 .recentText {

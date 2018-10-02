@@ -30,7 +30,7 @@
   width: 100%;
   height: 100%;
   opacity: 0.3;
-  background-color: #111111;
+  background-color: #111;
 }
 
 .no-js .home {
@@ -181,6 +181,7 @@
     -ms-transform: translate3d(0, -50%, 0);
     transform: translate3d(0, -50%, 0);
   }
+
   to {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
@@ -196,6 +197,7 @@
     -ms-transform: translate3d(0, -50%, 0);
     transform: translate3d(0, -50%, 0);
   }
+
   to {
     opacity: 1;
     -webkit-transform: translate3d(0, 0, 0);
@@ -213,6 +215,7 @@
   .intro {
     font-size: 4.5rem;
   }
+
   .main {
     max-width: 1000px;
   }
@@ -222,9 +225,11 @@
   .intro {
     font-size: 4.325rem;
   }
+
   .content br {
     display: none;
   }
+
   .main {
     max-width: 800px;
   }
@@ -234,14 +239,17 @@
   .intro {
     font-size: 4.15rem;
   }
+
   .main {
     padding-right: 40px;
     max-width: 680px;
   }
+
   .buttons {
     position: static;
     text-align: left;
   }
+
   .buttons .button {
     display: inline-block;
     margin-right: 0.9rem;
@@ -254,12 +262,15 @@
     padding-left: 50px;
     margin-left: -10px;
   }
+
   .intro::before {
     width: 40px;
   }
+
   .intro {
     font-size: 3.4rem;
   }
+
   .main {
     max-width: 500px;
   }
@@ -269,19 +280,24 @@
   .content {
     padding-bottom: 15rem;
   }
+
   .intro {
     font-size: 3.6rem;
   }
+
   .main {
     max-width: 380px;
     padding: 0;
   }
+
   .scroll {
     bottom: -6rem;
   }
+
   .social {
     padding-bottom: 10.8rem;
   }
+
   .social::after {
     height: 10.2rem;
   }
@@ -291,12 +307,15 @@
   .home {
     min-height: 654px;
   }
+
   .hello {
     font-size: 1.5rem;
   }
+
   .intro {
     font-size: 3.3rem;
   }
+
   .main {
     max-width: none;
     width: 85%;
@@ -308,17 +327,21 @@
   .content {
     vertical-align: middle;
   }
+
   .intro {
     font-size: 3rem;
   }
+
   .main {
     width: auto;
     margin-left: 25px;
     margin-right: 25px;
   }
+
   .buttons .button {
     width: 100%;
   }
+
   .social {
     display: none;
   }

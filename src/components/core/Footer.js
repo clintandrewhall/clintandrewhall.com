@@ -9,7 +9,7 @@ const Footer = () => {
   const items = social.map(item => (
     <li key={item.network}>
       <a href={item.url} rel="noopener noreferrer" target="_blank">
-        <i className={'im im-' + item.network} aria-hidden="true" />
+        <i className={`im im-${item.network}`} aria-hidden="true" />
         <span>{item.label}</span>
       </a>
     </li>

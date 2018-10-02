@@ -19,8 +19,8 @@ const About = () => {
           <h3 className={styles.subtitle}>I Live for Experiences</h3>
           <p className={styles.lead}>
             I craft them for desktop and mobile browsers, professionally and in
-            my spare time. I'm incredibly fortunate that my passion became my
-            career.
+            my spare time. I&apos;m incredibly fortunate that my passion became
+            my career.
           </p>
           <p className={styles.lead}>
             I pursue them, too. I enjoy conferences like{' '}
@@ -55,7 +55,7 @@ const About = () => {
             <a href="https://www.instagram.com/p/BMhqanBBoGD/" rel="external">
               VR
             </a>
-            . If I'm not{' '}
+            . If I&apos;m not{' '}
             <a href="https://www.instagram.com/p/BGLyaiZFmFg" rel="external">
               traveling the world
             </a>{' '}
@@ -82,9 +82,9 @@ const About = () => {
             .
           </p>
           <p className={styles.lead}>
-            I've worked for Facebook, Cerner, Sprint and Accenture, and I've
-            lived in Kansas City, New York, Vancouver and San Francisco. I've
-            visited 39 countries, (and counting).
+            I&apos;ve worked for Facebook, Cerner, Sprint and Accenture, and
+            I&apos;ve lived in Kansas City, New York, Vancouver and San
+            Francisco. I&apos;ve visited 39 countries, (and counting).
           </p>
         </div>
       </div>

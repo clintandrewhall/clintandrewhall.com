@@ -1,5 +1,5 @@
 .social {
-  font-family: "montserrat-regular", sans-serif;
+  font-family: 'montserrat-regular', sans-serif;
   list-style: none;
   margin: 3rem 0 0 0;
   position: absolute;
@@ -8,7 +8,7 @@
 
 .social::after {
   display: block;
-  content: "";
+  content: '';
   height: 17.4rem;
   width: 1px;
   background-color: rgba(255, 255, 255, 0.08);
@@ -20,6 +20,12 @@
 .socialLink {
   color: white;
   transition: all 0.5s ease-in-out;
+}
+
+.socialLink:active,
+.socialLink:hover,
+.socialLink:visited .socialLink:focus {
+  color: white;
 }
 
 .socialItem {
@@ -74,12 +80,6 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .social {
-  }
-
-  .socialItem {
-  }
-
   .social span {
     display: none;
     visibility: hidden;

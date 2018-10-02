@@ -14,13 +14,14 @@ type Props = {
   entry: PortfolioItemType,
 };
 
+// $FlowFixMe Webpack require.context not flow-ified
 const pathContext = require.context('./../../images/portfolio', true);
 
-export default (props: Props) => {
+const PortfolioEntry = (props: Props) => {
   const { entry } = props;
   const { title, tags, timestamp } = entry;
 
-  document.title = 'Clint Andrew Hall - Portfolio - ' + title;
+  document.title = `Clint Andrew Hall - Portfolio - ${title}`;
 
   const date = moment(timestamp * 1000).format('MMMM Do YYYY');
 
@@ -40,9 +41,8 @@ export default (props: Props) => {
           className={styles.header}
           style={{
             backgroundSize: 'cover',
-            backgroundImage: 'url("' + responsiveImage + '")',
-          }}
-        >
+            backgroundImage: `url("${responsiveImage}")`,
+          }}>
           <div className={styles.headerContent}>
             <h1 className={styles.title}>{title}</h1>
             <h2 className={styles.caption}>{entry.caption}</h2>
@@ -59,3 +59,5 @@ export default (props: Props) => {
     </div>
   );
 };
+
+export default PortfolioEntry;

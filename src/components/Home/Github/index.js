@@ -9,6 +9,8 @@ import LOC from './LOC.js';
 
 import backup from './../../../_content/github';
 
+import type { LOCType } from './LOC.js';
+
 type Props = {};
 type State = {
   user: ?Object,
@@ -17,21 +19,18 @@ type State = {
   loc: ?Array<Object>,
 };
 
+const githubBackup = (backup: GitHub);
 const username = 'clintandrewhall';
-const userAPI = 'https://api.github.com/users/' + username;
-const reposAPI = 'https://api.github.com/users/' + username + '/repos';
+const userAPI = `https://api.github.com/users/${username}`;
+const reposAPI = `https://api.github.com/users/${username}/repos`;
 
 const values = <T>(obj: { [string]: T }): Array<T> =>
   Object.keys(obj).map(k => obj[k]);
 
-// const url = 'https://www.github.com/' + username;
-// var gistsURL = 'https://gist.github.com/' + username;
-// var reposURL = 'https://github.com/' + username + '?tab=repositories';
-
 class GithubCard extends React.Component<Props, State> {
   state = {
-    user: backup.user,
-    loc: backup.loc,
+    user: githubBackup.user,
+    loc: githubBackup.loc,
     live: false,
     loaded: false,
   };
@@ -56,28 +55,28 @@ class GithubCard extends React.Component<Props, State> {
         repoReponses.map(result => result.json()),
       );
 
-      let entries = {};
+      const entries = {};
 
       repos.forEach((repo: Object, index: number) => {
         Object.entries(languages[index]).forEach(entry => {
           const name = entry[0];
           const loc = entry[1];
-          let item = entries[name] || { name, loc: 0 };
+          const item = entries[name] || { name, loc: 0 };
           item.loc += parseInt(loc, 10) || 0;
           entries[name] = item;
         });
       });
 
-      // FIXME: Using 'Object' is a bug; should be LOCType, but I'm getting a
-      // Flow error.
-      const loc = values(entries).sort(function(a: Object, b: Object) {
-        return b.loc - a.loc;
-      });
+      const loc = values(entries).sort(
+        (a: LOCType, b: LOCType) => b.loc - a.loc,
+      );
 
+      // eslint-disable-next-line react/no-did-mount-set-state
       await this.setState({ user, loc, live: true, loaded });
       return;
     }
 
+    // eslint-disable-next-line react/no-did-mount-set-state
     await this.setState({ loaded });
   }
 
@@ -102,8 +101,7 @@ class GithubCard extends React.Component<Props, State> {
             <a
               href="https://www.github.com/clintandrewhall"
               rel="noopener noreferrer"
-              target="_blank"
-            >
+              target="_blank">
               Github account
             </a>
             .

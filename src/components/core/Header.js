@@ -25,10 +25,24 @@ type State = {
 const OFFSET_LIMIT = -1;
 const SCROLLING_LIMIT = -1;
 
-class Header extends React.Component<Props, State> {
-  toggleButton = React.createRef();
-  _scrollHandler = null;
+function handleClick(
+  isHome: boolean,
+  to: string,
+  toggleState: string,
+  onToggle: Function,
+) {
+  if (!isHome) {
+    return false;
+  }
+  const element = document.getElementById(to);
+  if (element) {
+    smoothscroll(element);
+  }
+  toggleState === 'EXPANDED' && onToggle();
+  return false;
+}
 
+class Header extends React.Component<Props, State> {
   static defaultProps = {
     home: false,
     triggerHeight: 100,
@@ -49,6 +63,9 @@ class Header extends React.Component<Props, State> {
     window.removeEventListener('scroll', this._scrollHandler);
     this._scrollHandler = null;
   }
+
+  _scrollHandler = null;
+  toggleButton = React.createRef();
 
   _handleScroll() {
     const loc = window.scrollY;
@@ -73,23 +90,6 @@ class Header extends React.Component<Props, State> {
     }
   }
 
-  _handleClick(
-    isHome: boolean,
-    to: string,
-    toggleState: string,
-    onToggle: Function,
-  ) {
-    if (!isHome) {
-      return;
-    }
-    const element = document.getElementById(to);
-    if (element) {
-      smoothscroll(element);
-    }
-    toggleState === 'EXPANDED' && onToggle();
-    return false;
-  }
-
   render() {
     const { home } = this.props;
     const { offset, scrolling, sticky } = this.state;
@@ -100,22 +100,16 @@ class Header extends React.Component<Props, State> {
           [styles.offset]: offset,
           [styles.scrolling]: scrolling,
           [styles.sticky]: sticky,
-        })}
-      >
+        })}>
         <div className={styles.headerLogo}>
           <Link to={'/'}>
             <img src="/images/logo.png" alt="Home" />
           </Link>
         </div>
         <SlideToggle
-          collapsed={true}
+          collapsed
           duration={1000}
-          render={({
-            onToggle,
-            setCollapsibleElement,
-            toggleState,
-            isMoving,
-          }) => (
+          render={({ onToggle, setCollapsibleElement, toggleState }) => (
             <div>
               <nav className={styles.headerNavWrap} ref={setCollapsibleElement}>
                 <ul className={styles.headerNav}>
@@ -123,40 +117,36 @@ class Header extends React.Component<Props, State> {
                     to={home ? '#' : '/'}
                     label="Home"
                     onClick={() =>
-                      this._handleClick(home, 'home', toggleState, onToggle)
+                      handleClick(home, 'home', toggleState, onToggle)
                     }
                   />
                   <HeaderLink
                     to={home ? '#about' : '/#about'}
                     label="About"
                     onClick={() =>
-                      this._handleClick(home, 'about', toggleState, onToggle)
+                      handleClick(home, 'about', toggleState, onToggle)
                     }
                   />
                   <HeaderLink
                     to={home ? '#portfolio' : '/portfolio'}
                     label="Portfolio"
                     onClick={() =>
-                      this._handleClick(
-                        home,
-                        'portfolio',
-                        toggleState,
-                        onToggle,
-                      )
+                      handleClick(home, 'portfolio', toggleState, onToggle)
                     }
                   />
                   <HeaderLink
                     to={home ? '#career' : '/#career'}
                     label="Career"
                     onClick={() =>
-                      this._handleClick(home, 'career', toggleState, onToggle)
+                      handleClick(home, 'career', toggleState, onToggle)
                     }
                   />
                   <HeaderLink
                     to={home ? '#medium' : '/#medium'}
                     label="Medium"
+                    role="link"
                     onClick={() =>
-                      this._handleClick(home, 'medium', toggleState, onToggle)
+                      handleClick(home, 'medium', toggleState, onToggle)
                     }
                   />
                   <li className={linkStyles.headerLink}>
@@ -169,8 +159,9 @@ class Header extends React.Component<Props, State> {
                   [styles.headerMenuToggle]: true,
                   [styles.isClicked]: toggleState !== 'COLLAPSED',
                 })}
-                onClick={() => onToggle()}
-              >
+                role="button"
+                tabIndex="0"
+                onClick={() => onToggle()}>
                 <span>Menu</span>
               </a>
             </div>

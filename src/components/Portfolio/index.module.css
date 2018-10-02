@@ -4,7 +4,7 @@
 
 .header {
   composes: header from './PortfolioEntry.module.css';
-  background-image: url('/images/testimonial-bg.jpg');
+  background-image: url('./../../images/testimonial-bg.jpg');
 }
 
 .headerContent {

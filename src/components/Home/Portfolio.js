@@ -24,12 +24,8 @@ const Portfolio = () => {
     );
 
   const items = [...entries.values()]
-    .sort((a, b) => {
-      return b.timestamp - a.timestamp;
-    })
-    .map((entry, index) => (
-      <PortfolioItem item={entry} key={entry.timestamp + '_' + index} />
-    ));
+    .sort((a, b) => b.timestamp - a.timestamp)
+    .map(entry => <PortfolioItem item={entry} key={`${entry.title}`} />);
 
   return [
     <section className={styles.root} id="portfolio" key="root">
@@ -38,7 +34,7 @@ const Portfolio = () => {
           <h2 className={styles.title}>Portfolio</h2>
           <h3 className={styles.subtitle}>Explore My Projects</h3>
           <p className={styles.lead}>
-            Here are a few of the things I've worked on in my spare time.
+            Here are a few of the things I&apos;ve worked on in my spare time.
           </p>
         </div>
       </div>
@@ -49,8 +45,7 @@ const Portfolio = () => {
         <Link
           to="/portfolio"
           title="View my portfolio"
-          className={styles.button}
-        >
+          className={styles.button}>
           View my portfolio
         </Link>
       </div>

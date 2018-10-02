@@ -8,7 +8,7 @@
 }
 
 .root::before {
-  content: "";
+  content: '';
   display: block;
   width: 1px;
   height: 3rem;
@@ -37,7 +37,7 @@
 
 .title,
 .connection {
-  font-family: "montserrat-regular", sans-serif;
+  font-family: 'montserrat-regular', sans-serif;
   font-size: 1.3rem;
   color: rgb(95, 95, 95);
   text-transform: none;
@@ -46,7 +46,7 @@
 
 .name {
   composes: h06 from global;
-  margin: 0rem;
+  margin: 0;
   color: #fff;
 }
 
@@ -63,6 +63,7 @@
   .root {
     padding-left: 11rem;
   }
+
   .avatar {
     width: 6rem;
     height: 6rem;
@@ -75,9 +76,11 @@
     text-align: justify;
     width: 100%;
   }
+
   .root::before {
     left: 50%;
   }
+
   .avatar {
     left: 50%;
     margin-left: -3rem;

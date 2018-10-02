@@ -2,7 +2,7 @@
   composes: target-section from global;
   padding-top: 15rem;
   padding-bottom: 9rem;
-  background-color: #ffffff;
+  background-color: #fff;
   position: relative;
 }
 
@@ -58,9 +58,11 @@
   .title {
     font-size: 1.8rem;
   }
+
   .subtitle {
     font-size: 4.2rem;
   }
+
   .lead {
     font-size: 1.8rem;
   }
@@ -70,6 +72,7 @@
   .title {
     font-size: 1.7rem;
   }
+
   .subtitle {
     font-size: 3.6rem;
   }
@@ -79,6 +82,7 @@
   .title {
     font-size: 1.6rem;
   }
+
   .subtitle {
     font-size: 3.3rem;
   }

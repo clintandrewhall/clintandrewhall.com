@@ -13,9 +13,8 @@ const Social = () => {
         className={styles.socialLink}
         href={item.url}
         rel="noopener noreferrer"
-        target="_blank"
-      >
-        <i className={'im im-' + item.network} aria-hidden="true" />
+        target="_blank">
+        <i className={`im im-${item.network}`} aria-hidden="true" />
         <span>{item.label}</span>
       </a>
     </li>

@@ -12,7 +12,7 @@ type Props = {
   children: Array<React$Element<any>>,
 };
 
-export default (props: Props) => {
+const Portfolio = (props: Props) => {
   document.title = 'Clint Andrew Hall - Portfolio';
 
   return (
@@ -23,7 +23,7 @@ export default (props: Props) => {
           <div className={styles.headerContent}>
             <h1 className={styles.title}>My Portfolio</h1>
             <h2 className={styles.caption}>
-              A collection of things I've worked on in my spare time.
+              A collection of things I&apos;ve worked on in my spare time.
             </h2>
           </div>
         </header>
@@ -36,3 +36,5 @@ export default (props: Props) => {
     </div>
   );
 };
+
+export default Portfolio;
