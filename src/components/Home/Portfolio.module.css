@@ -54,7 +54,7 @@
 }
 
 .buttonRow {
-  composes: col-eight from global;
+  composes: col-six from global;
   float: none;
   margin: 0 auto;
   padding: 0 25px;

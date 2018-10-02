@@ -40,6 +40,12 @@
     center;
 }
 
+.elastic::before {
+  border-radius: 50%;
+  background: url(./../../images/companies/elastic.png?size=24) no-repeat center
+    center;
+}
+
 .facebook::before {
   border-radius: 50%;
   background: url(./../../images/companies/fb.png?size=24) no-repeat center

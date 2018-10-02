@@ -22,6 +22,12 @@
   transition: all 0.5s ease-in-out;
 }
 
+.socialLink:active,
+.socialLink:hover,
+.socialLink:visited .socialLink:focus {
+  color: white;
+}
+
 .socialItem {
   position: relative;
   display: inline-block;

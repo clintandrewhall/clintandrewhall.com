@@ -7,6 +7,8 @@ import styles from './GithubCorner.module.css';
 const GithubCorner = () => (
   <a
     href="https://github.com/clintandrewhall/clintandrewhall.com"
+    target="_blank"
+    rel="noopener noreferrer"
     className={styles.root}
     aria-label="View source on Github">
     <svg

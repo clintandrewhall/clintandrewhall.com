@@ -8,7 +8,7 @@
     <header class="meta">
       <div class="upper-row">
         <h3 class="job-title">{{ position }}</h3>
-        <p class="time">{{moment start format="MMMM YYYY"}} — {{moment end format="MMMM YYYY"}}</p>
+        <p class="time">{{moment start format="MMMM YYYY"}} — {{#if end}}{{moment end format="MMMM YYYY"}}{{else}}Present{{/if}}</p>
       </div>
       <div class="company">{{ employer }}</div>
     </header>

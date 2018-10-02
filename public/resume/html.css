@@ -230,6 +230,10 @@ img.avatar {
   top: 0;
 }
 
+.experiences-section .item.elastic .meta::before {
+  background: url('../images/logos/elastic.png') no-repeat center center;
+}
+
 .experiences-section .item.facebook .meta::before {
   background: url('../images/logos/fb.png') no-repeat center center;
 }
