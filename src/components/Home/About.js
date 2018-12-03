@@ -82,11 +82,15 @@ const About = () => {
             .
           </p>
           <p className={styles.lead}>
-            I currently work at <a href="https://elastic.co">Elastic</a> on the 
-            <a href="https://www.elastic.co/products/kibana">Kibana</a> team, from 
-            my home in Kansas City, MO. Prior, I worked for Facebook, Cerner, 
-            Sprint and Accenture, and lived in New York, Vancouver and San Francisco. 
-            So far we&apos;ve visited 40 countries, (and counting).
+            I currently work on{' '}
+            <a href="https://www.elastic.co/products/kibana">Kibana</a>{' '}
+            at <a href="https://elastic.co">Elastic</a>, from my home in 
+            Kansas City, MO.
+          </p>
+          <p className={styles.lead}>
+            In the past, I've worked for Facebook, Cerner, Sprint and Accenture, and lived 
+            in New York, Vancouver and San Francisco. So far we&apos;ve visited 40 
+            countries, (and counting).
           </p>
         </div>
       </div>
