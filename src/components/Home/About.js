@@ -83,14 +83,14 @@ const About = () => {
           </p>
           <p className={styles.lead}>
             I currently work on{' '}
-            <a href="https://www.elastic.co/products/kibana">Kibana</a>{' '}
-            at <a href="https://elastic.co">Elastic</a>, from my home in 
-            Kansas City, MO.
+            <a href="https://www.elastic.co/products/kibana">Kibana</a> at{' '}
+            <a href="https://elastic.co">Elastic</a>, from my home in Kansas
+            City, MO.
           </p>
           <p className={styles.lead}>
-            In the past, I've worked for Facebook, Cerner, Sprint and Accenture, and lived 
-            in New York, Vancouver and San Francisco. So far we&apos;ve visited 40 
-            countries, (and counting).
+            In the past, I&apos;ve worked for Facebook, Cerner, Sprint and
+            Accenture, and lived in New York, Vancouver and San Francisco. So
+            far we&apos;ve visited 40 countries, (and counting).
           </p>
         </div>
       </div>
