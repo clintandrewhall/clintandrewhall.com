@@ -1,6 +1,25 @@
 {
   "root": "build/",
   "routes": {
-    "/**": "index.html"
-  }
+    "/": "index.html",
+    "/portfolio": "index.html",
+    "/portfolio/**": "index.html",
+    "/resume": "resume/clintandrewhall.html",
+    "/sitemap.xml": "sitemap.xml"
+  },
+  "headers": {
+    "/*.js": {
+      "Cache-Control": "public, max-age=512000"
+    },
+    "/*.css": {
+      "Cache-Control": "public, max-age=512000"
+    },
+    "/static/**": {
+      "Cache-Control": "public, max-age=512000"
+    },
+    "/resume/**": {
+      "Cache-Control": "no-store, no-cache"
+    }
+  },
+  "https_only": true
 }
