@@ -1,9 +1,7 @@
 {
   "root": "build/",
   "routes": {
-    "/": "index.html",
-    "/portfolio": "index.html",
-    "/portfolio/**": "index.html",
+    "/**": "index.html",
     "/resume": "resume/clintandrewhall.html",
     "/sitemap.xml": "sitemap.xml"
   },
