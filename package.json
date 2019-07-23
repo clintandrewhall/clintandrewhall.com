@@ -2,8 +2,7 @@
   "name": "clintandrewhall.com",
   "version": "0.1.0",
   "private": true,
-  "license": "None; private",
-  "homepage": "https://www.clintandrewhall.com",
+  "license": "UNLICENSED",
   "devDependencies": {
     "babel-cli": "^6.26.0",
     "babel-eslint": "10.0.1",
@@ -38,6 +37,7 @@
     "react-app-rewire-css-modules": "codebandits/react-app-rewire-css-modules",
     "react-app-rewired": "^1.6.2",
     "react-scripts": "^1.1.5",
+    "react-snap": "^1.23.0",
     "responsive-loader": "^1.1.0",
     "sass-loader": "^6.0.7",
     "stylelint": "^9.5.0",
@@ -95,7 +95,8 @@
     "build": "yarn build:medium && yarn build:github && yarn build:site",
     "eject": "react-scripts eject",
     "start": "node server",
-    "test": "react-app-rewired test --env=jsdom"
+    "test": "react-app-rewired test --env=jsdom",
+    "postbuild": "react-snap"
   },
   "husky": {
     "hooks": {
@@ -104,8 +105,6 @@
   },
   "reactSnap": {
     "cacheAjaxRequests": true,
-    "inlineCss": true,
-    "http2PushManifest": true,
     "puppeteerArgs": [
       "--no-sandbox",
       "--disable-setuid-sandbox"
