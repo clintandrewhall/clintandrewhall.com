@@ -95,11 +95,11 @@
     "build:medium": "babel-node --presets babel-preset-env --plugins babel-plugin-transform-flow-strip-types -- ./data/medium",
     "build:site": "react-app-rewired build",
     "build:sitemap": "react-snapshot-sitemap --output-domain https://clintandrewhall.com",
-    "build:snapshots": "react-snap",
-    "build": "yarn build:medium && yarn build:github && yarn build:site && yarn build:snapshots",
+    "build": "yarn build:medium && yarn build:github && yarn build:site",
     "eject": "react-scripts eject",
     "start": "node server",
-    "test": "react-app-rewired test --env=jsdom"
+    "test": "react-app-rewired test --env=jsdom",
+    "postbuild": "react-snap"
   },
   "husky": {
     "hooks": {
