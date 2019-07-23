@@ -1,5 +1,5 @@
 import React from 'react';
-import { render } from 'react-snapshot';
+import { hydrate, render } from 'react-dom';
 
 import './css/base.css';
 import './css/fonts.css';
@@ -9,5 +9,12 @@ import App from './App';
 
 import { unregister } from './registerServiceWorker';
 
-render(<App />, document.getElementById('root'));
+const rootElement = document.getElementById('root');
+
+if (rootElement.hasChildNodes()) {
+  hydrate(<App />, rootElement);
+} else {
+  render(<App />, rootElement);
+}
+
 unregister();

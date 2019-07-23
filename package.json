@@ -38,6 +38,7 @@
     "react-app-rewire-css-modules": "codebandits/react-app-rewire-css-modules",
     "react-app-rewired": "^1.6.2",
     "react-scripts": "^1.1.5",
+    "react-snap": "^1.23.0",
     "react-snapshot-sitemap": "^0.1.0",
     "responsive-loader": "^1.1.0",
     "sass-loader": "^6.0.7",
@@ -94,8 +95,8 @@
     "build:medium": "babel-node --presets babel-preset-env --plugins babel-plugin-transform-flow-strip-types -- ./data/medium",
     "build:site": "react-app-rewired build",
     "build:sitemap": "react-snapshot-sitemap --output-domain https://clintandrewhall.com",
-    "build:snapshots": "react-snapshot",
-    "build": "yarn build:medium && yarn build:github && yarn build:site && yarn build:snapshots && yarn build:sitemap",
+    "build:snapshots": "react-snap",
+    "build": "yarn build:medium && yarn build:github && yarn build:site && yarn build:snapshots",
     "eject": "react-scripts eject",
     "start": "node server",
     "test": "react-app-rewired test --env=jsdom"
