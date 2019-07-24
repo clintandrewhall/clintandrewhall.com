@@ -1,0 +1,391 @@
+<!doctype html>
+<!--[if lt IE 9 ]><html class="no-js oldie" lang="en"> <![endif]-->
+<!--[if IE 9 ]><html class="no-js oldie ie9" lang="en"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html class="no-js" lang="en">
+<!--<![endif]-->
+
+<head>
+  <meta charset="utf-8">
+  <meta name="Description" content="Second-hand Wishlist for Clint and Liv" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <meta name="theme-color" content="#000000" />
+  <link rel="manifest" href="/manifest.json" />
+  <link rel="shortcut icon" href="/favicon.ico?v3" />
+  <script src="/js/modernizr.js"></script>
+  <meta property="og:locale" content="en_US" />
+  <meta property="og:site_name" content="Second-hand Wishlist for Clint and Liv" />
+  <meta property="og:title" content="Second-hand Wishlist for Clint and Liv" />
+  <meta property="og:url" content="" />
+  <meta property="og:type" content="website" />
+  <meta property="og:description" content="Clint and Liv would love second-hand books for their daughter!" />
+  <meta property="og:image" content="/images/image.jpg" />
+  <meta itemprop="name" content="Baby Cliv Second-hand Wishlist for Clint and Liv" />
+  <meta itemprop="headline" content="Clint and Liv would love second-hand books for their daughter!" />
+  <meta itemprop="description" content="Clint and Liv would love second-hand books for their daughter!" />
+  <meta itemprop="image" content="/images/books.jpg" />
+  <meta name="twitter:title" content="Wishlist for Clint and Liv's Daughter: Second-hand books!" />
+  <meta name="twitter:url" content="" />
+  <meta name="twitter:description" content="Wishlist for Clint and Liv's Daughter: Second-hand books!" />
+  <meta name="twitter:image" content="/images/books.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/pure-min.css" integrity="sha384-"
+    crossorigin="anonymous">
+  <!--[if lte IE 8]>
+        <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-old-ie-min.css">
+    <![endif]-->
+  <!--[if gt IE 8]><!-->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/grids-responsive-min.css">
+  <!--<![endif]-->
+  <style type="text/css">
+    * {
+      -webkit-box-sizing: border-box;
+      -moz-box-sizing: border-box;
+      box-sizing: border-box;
+    }
+
+    a {
+      text-decoration: none;
+      color: rgb(61, 146, 201);
+    }
+
+    a:hover,
+    a:focus {
+      text-decoration: underline;
+    }
+
+    h3 {
+      font-weight: 100;
+    }
+
+    /* LAYOUT CSS */
+    .pure-img-responsive {
+      max-width: 100%;
+      height: auto;
+    }
+
+    #layout {
+      padding: 0;
+    }
+
+    .header {
+      text-align: center;
+      top: auto;
+      margin: 3em auto;
+    }
+
+    .sidebar {
+      background: rgb(61, 79, 93);
+      color: #fff;
+    }
+
+    .brand-title,
+    .brand-tagline {
+      margin: 0;
+    }
+
+    .brand-title {
+      text-transform: uppercase;
+    }
+
+    .brand-tagline {
+      font-weight: 300;
+      color: rgb(176, 202, 219);
+    }
+
+    .nav-list {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    .nav-item {
+      display: inline-block;
+      *display: inline;
+      zoom: 1;
+    }
+
+    .nav-item a {
+      background: transparent;
+      border: 2px solid rgb(176, 202, 219);
+      color: #fff;
+      margin-top: 1em;
+      letter-spacing: 0.05em;
+      text-transform: uppercase;
+      font-size: 85%;
+    }
+
+    .nav-item a:hover,
+    .nav-item a:focus {
+      border: 2px solid rgb(61, 146, 201);
+      text-decoration: none;
+    }
+
+    .content-subhead {
+      text-transform: uppercase;
+      color: #aaa;
+      border-bottom: 1px solid #eee;
+      padding: 0.4em 0;
+      font-size: 80%;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      clear: both;
+    }
+
+    .posts .content-subhead {
+      padding-top: 3em;
+    }
+
+    .content {
+      padding: 2em 1em 0;
+    }
+
+    .post-title {
+      font-size: 2em;
+      color: #222;
+      margin-bottom: 0.2em;
+    }
+
+    .post-avatar {
+      border-radius: 50px;
+      float: right;
+      margin-left: 1em;
+    }
+
+    .post-description {
+      font-family: Georgia, "Cambria", serif;
+      color: #444;
+      line-height: 1.8em;
+    }
+
+    .post-meta {
+      color: #999;
+      font-size: 90%;
+      margin: 0;
+    }
+
+    .post-category {
+      margin: 0 0.1em;
+      padding: 0.3em 1em;
+      color: #fff;
+      background: #999;
+      font-size: 80%;
+    }
+
+    .post-category-design {
+      background: #5aba59;
+    }
+
+    .post-category-pure {
+      background: #4d85d1;
+    }
+
+    .post-category-yui {
+      background: #8156a7;
+    }
+
+    .post-category-js {
+      background: #df2d4f;
+    }
+
+    .post-images {
+      margin: 0 2em 0 0;
+      width: 30%;
+      float: left;
+    }
+
+    .post-images>.pure-u-1 {
+      width: auto;
+    }
+
+    .post-image-meta {
+      margin-top: -3.5em;
+      margin-left: 1em;
+      color: #fff;
+      text-shadow: 0 1px 1px #333;
+    }
+
+    .footer {
+      padding: 1em 0;
+    }
+
+    .footer a {
+      color: #ccc;
+      font-size: 80%;
+    }
+
+    .footer .pure-menu a:hover,
+    .footer .pure-menu a:focus {
+      background: none;
+    }
+
+    @media (min-width: 48em) {
+      .content {
+        padding: 2em 3em 0;
+        margin-left: 25%;
+      }
+
+      .header {
+        margin: 80% 2em 0;
+        text-align: right;
+      }
+
+      .sidebar {
+        position: fixed;
+        top: 0;
+        bottom: 0;
+      }
+
+      .footer {
+        text-align: center;
+      }
+    }
+  </style>
+  <title>Second-hand Wishlist...!</title>
+</head>
+
+<body id="top">
+  <div id="layout" class="pure-g">
+    <div class="sidebar pure-u-1 pure-u-md-1-4">
+      <div class="header">
+        <h1 class="brand-title">Second-hand Wishlist</h1>
+        <h2 class="brand-tagline">Not everything should be new!</h2>
+        <nav class="nav">
+          <ul class="nav-list">
+            <li class="nav-item">
+              <a class="pure-button" href="#readplay">Read & Play</a>
+            </li>
+            <li class="nav-item">
+              <a class="pure-button" href="#wear">Wear</a>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+    <div class="content pure-u-1 pure-u-md-3-4">
+      <div>
+        <div class="posts">
+          <h1 id="about" class="content-subhead">About This List</h1>
+          <section class="post">
+            <header class="post-header">
+              <h2 class="post-title">Introducing Our Second-hand Registry List</h2>
+            </header>
+            <div class="post-description">
+              <p>
+                There are so many things we need to welcome our daughter to the world, but there are so many things
+                that need not be new...! This is a list of items we would prefer be gifted to us second-hand...
+                well-loved or never used, from your basement or from a thrift store.
+              </p>
+              <p>
+                Rest assured, we'll be passing the love on to another child, (either ours or someone else's). ❤️
+              </p>
+            </div>
+          </section>
+        </div>
+        <div class="posts">
+          <h1 id="readplay" class="content-subhead">Things to Read & Play</h1>
+          <section class="post">
+            <header class="post-header">
+              <h2 class="post-title">Books</h2>
+            </header>
+            <div class="post-description">
+              <div class="post-images pure-g">
+                <div class="pure-u-1 pure-u-md-1-2">
+                  <img alt="Books!" class="pure-img-responsive" src="../images/books.jpg">
+                  <div class="post-image-meta">
+                    <h3>Children's Books</h3>
+                  </div>
+                </div>
+              </div>
+              <div style="margin-left: 30%;">
+                <p>
+                  We both adore books, and they're sure our daughter will love them, too! It would be
+                  awesome for people to find or bring any second-hand books that they think she'll adore. Books that
+                  give Clint a chance to use funny voices are an obvious added bonus...!
+                </p>
+                <dl style="visibility: hidden;">
+                  <dt>Price</dt>
+                  <dd>$0.00</dd>
+                </dl>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+      <div class="posts">
+        <h1 id="wear" class="content-subhead">Things to Wear</h1>
+        <section class="post">
+          <header class="post-header">
+            <h2 class="post-title">Clothing</h2>
+          </header>
+          <div class="post-description">
+            <div class="post-images pure-g">
+              <div class="pure-u-1 pure-u-md-1-2">
+                <img alt="Clothes!" class="pure-img-responsive" src="../images/clothes.jpg">
+                <div class="post-image-meta">
+                  <h3>Gender-neutral Clothing</h3>
+                </div>
+              </div>
+            </div>
+            <div style="margin-left: 30%;">
+              <p>
+                We're having a girl, but we're keeping it neutral! Please send us your favorite outfits, clothes
+                you wish you'd found time to try, or anything you see that you think would be fabulous.
+              </p>
+              <p>
+                Based on many, many recommendations, here's a list of items... but don't feel constrained! Anything
+                and everything will be passed on!
+              </p>
+              <p>
+                <ul>
+                  <li>Undershirts or onesies (mix of short-sleeve and long-sleeve)</li>
+                  <li>Nightgowns</li>
+                  <li>One-piece stretchy sleepers (any with zippers?)</li>
+                  <li>Pairs of pants</li>
+                  <li>Newborn hats</li>
+                  <li>Socks or booties, to wear with nightgowns and outfits</li>
+                  <li>Scratch mittens, to keep baby from scratching his face</li>
+                  <li>Cardigans or jackets</li>
+                  <li>Outfits for dressing up</li>
+                </ul>
+              </p>
+              <dl style="visibility: hidden;">
+                <dt>Price</dt>
+                <dd>$0.00</dd>
+              </dl>
+            </div>
+          </div>
+        </section>
+        <section class="post">
+          <header class="post-header">
+            <h2 class="post-title">Swaddles</h2>
+          </header>
+          <div class="post-description">
+            <div class="post-images pure-g">
+              <div class="pure-u-1 pure-u-md-1-2">
+                <img alt="Clothes!" class="pure-img-responsive" src="../images/swaddle.png">
+                <div class="post-image-meta">
+                  <h3>Swaddles</h3>
+                </div>
+              </div>
+            </div>
+            <div style="margin-left: 30%;">
+              <p>
+                Swaddles are a must... but it's been said that the parents don't choose the swaddle, the
+                newborn does! A few to try to find the right fit would be a great help!
+              </p>
+              <dl style="visibility: hidden;">
+                <dt>Price</dt>
+                <dd>$0.00</dd>
+              </dl>
+            </div>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+  </div>
+</body>
+
+</html>
