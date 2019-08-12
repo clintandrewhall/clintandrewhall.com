@@ -6,10 +6,9 @@ import octocat from './octocat-spinner-128.gif';
 import styles from './index.module.css';
 import Stats from './Stats.js';
 import LOC from './LOC.js';
+import { getGithubData } from '../../../common/github';
 
 import backup from './../../../_content/github';
-
-import type { LOCType } from './LOC.js';
 
 type Props = {};
 type State = {
@@ -20,12 +19,6 @@ type State = {
 };
 
 const githubBackup = (backup: GitHub);
-const username = 'clintandrewhall';
-const userAPI = `https://api.github.com/users/${username}`;
-const reposAPI = `https://api.github.com/users/${username}/repos`;
-
-const values = <T>(obj: { [string]: T }): Array<T> =>
-  Object.keys(obj).map(k => obj[k]);
 
 class GithubCard extends React.Component<Props, State> {
   state = {
@@ -36,41 +29,11 @@ class GithubCard extends React.Component<Props, State> {
   };
 
   async componentDidMount() {
-    const responses = await Promise.all([fetch(userAPI), fetch(reposAPI)]);
     const loaded = true;
+    const results = await getGithubData();
 
-    if (responses[0].ok && responses[1].ok) {
-      const jsons = await Promise.all(
-        responses.map(response => response.json()),
-      );
-
-      const user = jsons[0];
-      const repos = jsons[1];
-
-      const repoReponses = await Promise.all(
-        repos.map((repo: Object) => fetch(repo.languages_url)),
-      );
-
-      const languages = await Promise.all(
-        repoReponses.map(result => result.json()),
-      );
-
-      const entries = {};
-
-      repos.forEach((repo: Object, index: number) => {
-        Object.entries(languages[index]).forEach(entry => {
-          const name = entry[0];
-          const loc = entry[1];
-          const item = entries[name] || { name, loc: 0 };
-          item.loc += parseInt(loc, 10) || 0;
-          entries[name] = item;
-        });
-      });
-
-      const loc = values(entries).sort(
-        (a: LOCType, b: LOCType) => b.loc - a.loc,
-      );
-
+    if (results) {
+      const { user, loc } = results;
       // eslint-disable-next-line react/no-did-mount-set-state
       await this.setState({ user, loc, live: true, loaded });
       return;
