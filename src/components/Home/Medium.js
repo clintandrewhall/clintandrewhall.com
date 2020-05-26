@@ -2,29 +2,9 @@
 
 import React from 'react';
 
-import MediumPost from './MediumPost';
 import styles from './Medium.module.css';
 
 const Medium = () => {
-  // $FlowFixMe
-  const portfolioContext = require.context(
-    '!markdown-with-front-matter-loader!./../../_content/posts',
-    false,
-    /.md$/,
-  );
-
-  const entries = portfolioContext
-    .keys()
-    .reduce(
-      (memo, fileName) =>
-        memo.set(fileName.match(/.\/([^.]+).*/)[1], portfolioContext(fileName)),
-      new Map(),
-    );
-
-  const items = [...entries.values()]
-    .sort((a, b) => b.timestamp - a.timestamp)
-    .map(entry => <MediumPost post={entry} key={`${entry.timestamp}`} />);
-
   return (
     <section id="medium" className={styles.root}>
       <div className={styles.header}>
@@ -39,7 +19,17 @@ const Medium = () => {
       </div>
       <div className={styles.content}>
         <div className={styles.area}>
-          <div className={styles.list}>{items}</div>
+          <p>
+            I used to list my posts here, but Medium recently put a CAPTCHA in
+            front of their public HTTP endpoint, and they haven&apos;t supplied
+            a replacement in{' '}
+            <a href="https://github.com/Medium/medium-api-docs">their API</a>.
+            🤕
+          </p>
+          <p>
+            In the meantime, check out my posts{' '}
+            <a href="https://medium.com/@clintandrewhall">here</a>.
+          </p>
         </div>
       </div>
     </section>
