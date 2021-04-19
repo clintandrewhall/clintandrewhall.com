@@ -1,18 +1,28 @@
-import { StrictMode } from 'react';
-import ReactDOM from 'react-dom';
+import { hydrate, render } from 'react-dom';
+// import ReactDOM from 'react-dom';
+
 import './css/base.css';
 import './css/fonts.css';
 import './css/grid.css';
 import './css/main.css';
+
 import { App } from './App';
 import reportWebVitals from './reportWebVitals';
 
-ReactDOM.render(
-  <StrictMode>
-    <App />
-  </StrictMode>,
-  document.getElementById('root'),
-);
+// ReactDOM.render(
+//   <StrictMode>
+//     <App />
+//   </StrictMode>,
+//   document.getElementById('root'),
+// );
+
+const rootElement = document.getElementById('root');
+
+if (rootElement?.hasChildNodes()) {
+  hydrate(<App />, rootElement);
+} else {
+  render(<App />, rootElement);
+}
 
 // If you want to start measuring performance in your app, pass a function
 // to log results (for example: reportWebVitals(console.log))

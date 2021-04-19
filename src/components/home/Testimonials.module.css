@@ -41,7 +41,7 @@
 }
 
 .lead {
-  composes: lead from './..//Section.module.css';
+  composes: lead from './../Section.module.css';
   color: #fff;
   margin-top: 0;
 }
@@ -107,8 +107,8 @@
 }
 
 .button {
-  composes: button from './..//Buttons.module.css';
-  composes: stroke from './..//Buttons.module.css';
+  composes: button from './../Buttons.module.css';
+  composes: stroke from './../Buttons.module.css';
   display: block;
   border-color: #fff;
   color: #fff;

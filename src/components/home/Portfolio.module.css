@@ -1,5 +1,5 @@
 .root {
-  composes: section from './..//Section.module.css';
+  composes: section from './../Section.module.css';
   padding-top: 15rem;
   padding-bottom: 15.6rem;
   background-color: #f1f1f1;
