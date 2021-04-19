@@ -86,12 +86,13 @@
     "lint": "yarn eslint && yarn stylelint",
     "generate:resume": "hackmyresume build ./src/_content/resume.json TO ./public/resume/clintandrewhall.all -t ./src/resume",
     "generate:github": "babel-node --extensions .ts --presets @babel/preset-env,@babel/preset-typescript ./data/github",
+    "generate:sitemap": "react-snap-sitemap --base-url='https://www.clintandrewhall.com/'",
     "develop:resume": "nodemon --exec \"clear && yarn run generate:resume\" -e json,hbs,css,html -w ./src/resume -w ./src/_content/resume",
     "develop:site": "react-scripts start",
     "start": "node server",
     "test": "react-scripts test",
     "build": "yarn generate:github && react-scripts build",
-    "postbuild": "react-snap && react-snap-sitemap --base-url='https://www.clintandrewhall.com/'",
+    "postbuild": "react-snap",
     "eject": "react-scripts eject"
   },
   "husky": {
