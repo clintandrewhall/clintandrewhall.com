@@ -1,12 +1,12 @@
 .root {
-  composes: section from './../core/Section.module.css';
+  composes: section from './..//Section.module.css';
   background-color: #f1f1f1;
   position: relative;
 }
 
 .header {
   composes: row narrow has-bottom-sep from global;
-  composes: intro from './../core/Section.module.css';
+  composes: intro from './..//Section.module.css';
 }
 
 .headerContent {
@@ -14,15 +14,15 @@
 }
 
 .title {
-  composes: title from './../core/Section.module.css';
+  composes: title from './..//Section.module.css';
 }
 
 .subtitle {
-  composes: subtitle from './../core/Section.module.css';
+  composes: subtitle from './..//Section.module.css';
 }
 
 .lead {
-  composes: lead from './../core/Section.module.css';
+  composes: lead from './..//Section.module.css';
 }
 
 .content {

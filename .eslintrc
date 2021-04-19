@@ -1,42 +1,38 @@
 {
   "extends": [
-    "last",
-    "prettier/react",
-    "plugin:react/recommended",
-    "plugin:flowtype/recommended"
+    "plugin:@typescript-eslint/recommended",
+    "plugin:jest/recommended",
+    "plugin:prettier/recommended"
   ],
-  "plugins": ["react", "prettier", "flowtype"],
-  "parser": "babel-eslint",
+  "plugins": ["@typescript-eslint", "jest", "simple-import-sort"],
   "env": {
-    "es6": true,
-    "jest": true,
     "browser": true,
-    "node": true
+    "es6": true,
+    "jest": true
+  },
+  "globals": {
+    "Atomics": "readonly",
+    "SharedArrayBuffer": "readonly"
+  },
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": 2018,
+    "sourceType": "module",
+    "project": "./tsconfig.json"
   },
   "rules": {
+    "linebreak-style": "off",
     "prettier/prettier": [
       "error",
       {
-        "jsxBracketSameLine": true,
-        "printWidth": 80,
-        "semi": true,
-        "singleQuote": true,
-        "tabWidth": 2,
-        "trailingComma": "all",
-        "useTabs": false
+        "endOfLine": "auto"
       }
     ],
-    "flowtype/boolean-style": 0,
-    "flowtype/generic-spacing": 0,
-    "flowtype/space-after-type-colon": 0,
-    "flowtype/space-before-generic-bracket": 0,
-    "flowtype/space-before-type-colon": 0,
-    "flowtype/union-intersection-spacing": 0
-  },
-  "settings": {
-    "react": {
-      "version": "16.5",
-      "flowVersion": "0.80"
-    }
+    "@typescript-eslint/explicit-module-boundary-types": "off",
+    "@typescript-eslint/no-explicit-any": "off",
+    "no-console": "warn"
   }
 }
