@@ -7,6 +7,7 @@
   "devDependencies": {
     "@babel/core": "^7.13.15",
     "@babel/node": "^7.13.13",
+    "@babel/preset-typescript": "^7.13.0",
     "@testing-library/dom": "^7.30.3",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -42,6 +43,7 @@
     "prettier": "^2.2.1",
     "pretty-quick": "^3.1.0",
     "react-snap": "^1.23.0",
+    "react-snapshot-sitemap": "^0.1.0",
     "stylelint": "^13.12.0",
     "stylelint-config-css-modules": "^2.2.0",
     "stylelint-config-prettier": "^8.0.2",
@@ -83,7 +85,7 @@
     "format": "yarn prettier:fix && yarn eslint:fix && yarn stylelint:fix",
     "lint": "yarn eslint && yarn stylelint",
     "generate:resume": "hackmyresume build ./src/_content/resume.json TO ./public/resume/clintandrewhall.all -t ./src/resume",
-    "generate:github": "NODE_ENV=development babel-node --extensions .ts --presets babel-preset-react-app -- ./data/github",
+    "generate:github": "babel-node --extensions .ts --presets @babel/preset-env,@babel/preset-typescript ./data/github",
     "develop:resume": "nodemon --exec \"clear && yarn run generate:resume\" -e json,hbs,css,html -w ./src/resume -w ./src/_content/resume",
     "start": "react-scripts start",
     "test": "react-scripts test",
@@ -107,5 +109,17 @@
   "engines": {
     "yarn": ">=1.9.4",
     "node": "14.x"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
