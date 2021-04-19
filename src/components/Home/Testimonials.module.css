@@ -41,7 +41,7 @@
 }
 
 .lead {
-  composes: lead from './../core/Section.module.css';
+  composes: lead from './..//Section.module.css';
   color: #fff;
   margin-top: 0;
 }
@@ -61,47 +61,40 @@
   outline: none;
 }
 
-.prev,
-.next {
-  position: absolute;
-  top: -10.2rem;
-  color: white;
+.content :global(.swiper-button-prev),
+.content :global(.swiper-button-next) {
+  color: #333;
   border-radius: 100%;
-  padding-right: 0;
-  padding-left: 0;
-  background-color: rgba(255, 255, 255, 0.15);
+  background-color: rgba(255, 255, 255, 0.75);
   border: none;
   box-shadow: 0 0 0 5px rgba(255, 255, 255, 0);
   cursor: pointer;
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   z-index: 2;
+  width: 40px;
+  height: 40px;
 }
 
-.prev {
-  left: 4.5rem;
+.content :global(.swiper-button-next) {
+  right: 0;
 }
 
-.next {
-  right: 4.5rem;
+.content :global(.swiper-button-prev) {
+  left: 0;
 }
 
-.prev :global(.im),
-.next :global(.im) {
-  font-size: 1.2rem;
-  height: 4.5rem;
-  width: 4.5rem;
-  line-height: 4.5rem;
-  text-align: center;
+.content :global(.swiper-button-prev)::after,
+.content :global(.swiper-button-next)::after {
+  font-size: 18px;
+  font-weight: bold;
 }
 
-.prev:hover,
-.prev:focus,
-.next:hover,
-.next:focus {
-  color: white;
-  box-shadow: 0 0 0 5px white;
-  background-color: transparent;
+.content :global(.swiper-button-prev):hover,
+.content :global(.swiper-button-prev):focus,
+.content :global(.swiper-button-next):hover,
+.content :global(.swiper-button-next):focus {
+  background-color: rgba(255, 255, 255, 1);
 }
 
 .buttonRow {
@@ -114,8 +107,8 @@
 }
 
 .button {
-  composes: button from './../core/Buttons.module.css';
-  composes: stroke from './../core/Buttons.module.css';
+  composes: button from './..//Buttons.module.css';
+  composes: stroke from './..//Buttons.module.css';
   display: block;
   border-color: #fff;
   color: #fff;

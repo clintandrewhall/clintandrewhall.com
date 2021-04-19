@@ -7,27 +7,27 @@
 }
 
 .root {
-  composes: section from './../core/Section.module.css';
+  composes: section from './..//Section.module.css';
 }
 
 .intro {
-  composes: intro from './../core/Section.module.css';
+  composes: intro from './..//Section.module.css';
 }
 
 .introContent {
-  composes: introContent from './../core/Section.module.css';
+  composes: introcontent from './..//Section.module.css';
 }
 
 .title {
-  composes: title from './../core/Section.module.css';
+  composes: title from './..//Section.module.css';
 }
 
 .subtitle {
-  composes: subtitle from './../core/Section.module.css';
+  composes: subtitle from './..//Section.module.css';
 }
 
 .lead {
-  composes: lead from './../core/Section.module.css';
+  composes: lead from './..//Section.module.css';
   font-family: 'librebaskerville-regular', serif;
 }
 

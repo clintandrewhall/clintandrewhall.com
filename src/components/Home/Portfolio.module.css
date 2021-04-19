@@ -1,5 +1,5 @@
 .root {
-  composes: section from './../core/Section.module.css';
+  composes: section from './..//Section.module.css';
   padding-top: 15rem;
   padding-bottom: 15.6rem;
   background-color: #f1f1f1;
@@ -7,23 +7,23 @@
 }
 
 .intro {
-  composes: intro from './../core/Section.module.css';
+  composes: intro from './../Section.module.css';
 }
 
 .introContent {
-  composes: introContent from './../core/Section.module.css';
+  composes: introcontent from './../Section.module.css';
 }
 
 .title {
-  composes: title from './../core/Section.module.css';
+  composes: title from './../Section.module.css';
 }
 
 .subtitle {
-  composes: subtitle from './../core/Section.module.css';
+  composes: subtitle from './../Section.module.css';
 }
 
 .lead {
-  composes: lead from './../core/Section.module.css';
+  composes: lead from './../Section.module.css';
 }
 
 .portfolio {
@@ -67,8 +67,8 @@
 }
 
 .button {
-  composes: button from './../core/Buttons.module.css';
-  composes: primary from './../core/Buttons.module.css';
+  composes: button from './../Buttons.module.css';
+  composes: primary from './../Buttons.module.css';
   display: block;
   margin: 4rem auto 0 auto;
 }
