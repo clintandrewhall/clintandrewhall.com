@@ -92,7 +92,7 @@
     "start": "node server",
     "test": "react-scripts test",
     "build": "yarn generate:github && react-scripts build",
-    "postbuild": "react-snap",
+    "postbuild": "react-snap && yarn generate:sitemap",
     "eject": "react-scripts eject"
   },
   "husky": {
@@ -101,6 +101,7 @@
     }
   },
   "reactSnap": {
+    "fixWebpackChunksIssue": "CRA2",
     "cacheAjaxRequests": true,
     "puppeteerArgs": [
       "--no-sandbox",
