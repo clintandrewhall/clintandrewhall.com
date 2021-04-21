@@ -17,8 +17,26 @@ I look for opportunities where I can make strong, direct and meaningful contribu
 
 EMPLOYMENT ---------------------------------------------------------------------
 
-Principal Software Engineer, Elastic (2018-10 — Present)
-I most recently accepted an offer to work at Elastic on their Kibana product, specifically Canvas.
+Area Lead, Presentation Team - Kibana, Elastic (2020-10 — Present)
+Most recently, the Kibana organization reorganized and created a new team: Presentation.  This team is responsible for [Canvas](https://www.elastic.co/what-is/kibana-canvas), [Dashboard](https://www.elastic.co/kibana/kibana-dashboard), and any other product considered a "presentation container".  I've been named the Area Lead for this new team.
+
+
+- [kibana/51318](https://github.com/elastic/kibana/issues/51318): Coordinated completion of "Time to Visualize".
+- [kibana/88112](https://github.com/elastic/kibana/pull/88112): Plugin Services abstraction and shared component library.
+- [kibana/95435](https://github.com/elastic/kibana/pull/95435): "Labs" service for enabling experimental projects.
+
+Area Lead, Canvas - Kibana, Elastic (2018-12 — 2020-10)
+Soon after I began working at Elastic, I was named the new Area Lead for [Canvas](https://www.elastic.co/what-is/kibana-canvas).  I was responsible for overseeing and coordinating our technical efforts, representing the team across the org,, and contributing significant enhancements.
+
+This role was my first as an official Engineering Lead.  During my tenure I coordinated projects for 1 major and 9 minor releases, including the General Availability (GA) release of Canvas from beta.  I introduced a number of technologies and architecture approaches that stabilized and enhanced the plugin, and oversaw migration of bespoke technology to the Kibana ecosystem, (e.g. [`expressions`](https://www.elastic.co/guide/en/kibana/current/kibana-expressions-plugin.html)).
+- [kibana/31734](https://github.com/elastic/kibana/pull/31734): Significant React performance investigation.
+- [kibana/35087](https://github.com/elastic/kibana/pull/35087): Introduced Typescript.
+- [kibana/36252](https://github.com/elastic/kibana/pull/36252): Introduced internationalization architecture.
+- [kibana/38850](https://github.com/elastic/kibana/pull/38850): Introduced [Storybook](https://storybook.js.org) for rapid development and testing.
+- [kibana/46278](https://github.com/elastic/kibana/pull/46278): Built novel means of embedding Canvas Workpads.
+
+Principal Software Engineer - Kibana, Elastic (2018-10 — 2018-12)
+In October of 2018, I accepted a role with [Elastic](https://www.elastic.co) to work on [Kibana](https://www.elastic.co/kibana), specifically a new, ground-breaking beta plugin called [Canvas](https://www.elastic.co/what-is/kibana-canvas).
 
 User Interface Engineer, Facebook NYC (2015-04 — 2018-06)
 When I first moved to the NYC Facebook office, I joined the Composer team for a "hack-a-quarter", converting the Composer to React, and then worked on the Share Dialog.

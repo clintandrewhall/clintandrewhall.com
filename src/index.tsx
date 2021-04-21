@@ -1,5 +1,5 @@
+import { StrictMode } from 'react';
 import { hydrate, render } from 'react-dom';
-// import ReactDOM from 'react-dom';
 
 import './css/base.css';
 import './css/fonts.css';
@@ -9,19 +9,22 @@ import './css/main.css';
 import { App } from './App';
 import reportWebVitals from './reportWebVitals';
 
-// ReactDOM.render(
-//   <StrictMode>
-//     <App />
-//   </StrictMode>,
-//   document.getElementById('root'),
-// );
-
 const rootElement = document.getElementById('root');
 
 if (rootElement?.hasChildNodes()) {
-  hydrate(<App />, rootElement);
+  hydrate(
+    <StrictMode>
+      <App />
+    </StrictMode>,
+    rootElement,
+  );
 } else {
-  render(<App />, rootElement);
+  render(
+    <StrictMode>
+      <App />
+    </StrictMode>,
+    rootElement,
+  );
 }
 
 // If you want to start measuring performance in your app, pass a function

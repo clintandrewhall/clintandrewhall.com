@@ -2,11 +2,11 @@
   "name": "Clint Andrew Hall",
   "meta": {
     "format": "FRESH@0.6.0",
-    "version": "0.1.0"
+    "version": "0.2.0"
   },
   "info": {
-    "label": "User Interface Engineer",
-    "brief": "I'm a User Interface Engineer and Web Evangelist.  I work to make the web beautiful, both on its surface and beneath.\n\nI'm a demonstrated expert in HTML, CSS and JavaScript, React/Flux/Relay, and more.  I specialize in techniques promoting web agnostics, semantics, and accessibility.  I'm comfortable with varying levels of skill in any web stack, having written and maintained code in JS, PHP, Java and Ruby-on-Rails.  I currently prefer Node+React or React Native for most of my projects.\n\nI'm a regular consumer and occasional contributor to open source projects and client APIs.  If I have a suggestion for a website or application, I prefer to demonstrate the idea using an API rather than just describe it-- Code Wins Arguments.\n\nI look for opportunities where I can make strong, direct and meaningful contributions to a team, to users and to the web. I'm comfortable functioning as both designer and engineer, advising on both the technical and aesthetic.  I'm affable and good-natured, yet results-driven and competitive.  I have extensive experience working remotely, particularly during my time at Facebook.",
+    "label": "User Interface Engineer and Lead",
+    "brief": "I'm a Engineering Lead and User Interface Engineer.  I work to make the web beautiful, both on its surface and beneath.\n\nI'm a demonstrated expert in HTML, CSS and JavaScript, React/Flux/Relay, and more.  I specialize in techniques promoting web agnostics, semantics, and accessibility.  I'm comfortable with varying levels of skill in any web stack, having written and maintained code in JS, PHP, Java and Ruby-on-Rails.  I currently prefer Node+React or React Native for most of my projects.\n\nI'm a regular consumer and occasional contributor to open source projects and client APIs.  If I have a suggestion for a website or application, I prefer to demonstrate the idea using an API rather than just describe it-- Code Wins Arguments.\n\nI look for opportunities where I can make strong, direct and meaningful contributions to a team, to users and to the web. I'm comfortable functioning as both designer and engineer, advising on both the technical and aesthetic.  I'm affable and good-natured, yet results-driven and competitive.  I have extensive experience working remotely, particularly during my time at Facebook and Elastic.",
     "image": "https://www.gravatar.com/avatar/302764dcbe429cbf873064a2b8653da4.jpg?s=200"
   },
   "contact": {
@@ -58,10 +58,58 @@
       {
         "employer": "Elastic",
         "key": "elastic",
-        "position": "Principal Software Engineer",
-        "summary": "I most recently accepted an offer to work at Elastic on their Kibana product, specifically Canvas.",
+        "position": "Area Lead, Presentation Team - Kibana",
+        "summary": "Most recently, the Kibana organization reorganized and created a new team: Presentation.  This team is responsible for [Canvas](https://www.elastic.co/what-is/kibana-canvas), [Dashboard](https://www.elastic.co/kibana/kibana-dashboard), and any other product considered a \"presentation container\".  I've been named the Area Lead for this new team.\n\n",
+        "start": "2020-10-12",
+        "keywords": [
+          "Lead",
+          "React",
+          "HTML",
+          "JS",
+          "CSS"
+        ],
+        "highlights": [
+          "[kibana/51318](https://github.com/elastic/kibana/issues/51318): Coordinated completion of \"Time to Visualize\".",
+          "[kibana/88112](https://github.com/elastic/kibana/pull/88112): Plugin Services abstraction and shared component library.",
+          "[kibana/95435](https://github.com/elastic/kibana/pull/95435): \"Labs\" service for enabling experimental projects."
+        ]
+      },
+      {
+        "employer": "Elastic",
+        "key": "elastic",
+        "position": "Area Lead, Canvas - Kibana",
+        "summary": "Soon after I began working at Elastic, I was named the new Area Lead for [Canvas](https://www.elastic.co/what-is/kibana-canvas).  I was responsible for overseeing and coordinating our technical efforts, representing the team across the org, and contributing significant enhancements.\n\nThis role was my first as an official Engineering Lead.  During my tenure I coordinated projects for 1 major and 9 minor releases, including the General Availability (GA) release of Canvas from beta.  I introduced a number of technologies and architecture approaches that stabilized and enhanced the plugin, and oversaw migration of bespoke technology to the Kibana ecosystem, (e.g. [`expressions`](https://www.elastic.co/guide/en/kibana/current/kibana-expressions-plugin.html)).",
+        "start": "2018-12-06",
+        "end": "2020-10-12",
+        "keywords": [
+          "Lead",
+          "React",
+          "HTML",
+          "JS",
+          "CSS"
+        ],
+        "highlights": [
+          "[kibana/31734](https://github.com/elastic/kibana/pull/31734): Significant React performance investigation.",
+          "[kibana/35087](https://github.com/elastic/kibana/pull/35087): Introduced Typescript.",
+          "[kibana/36252](https://github.com/elastic/kibana/pull/36252): Introduced internationalization architecture.",
+          "[kibana/38850](https://github.com/elastic/kibana/pull/38850): Introduced [Storybook](https://storybook.js.org) for rapid development and testing.",
+          "[kibana/46278](https://github.com/elastic/kibana/pull/46278): Built novel means of embedding Canvas Workpads."
+        ]
+      },
+      {
+        "employer": "Elastic",
+        "key": "elastic",
+        "position": "Principal Software Engineer - Kibana",
+        "summary": "In October of 2018, I accepted a role with [Elastic](https://www.elastic.co) to work on [Kibana](https://www.elastic.co/kibana), specifically a new, ground-breaking beta plugin called [Canvas](https://www.elastic.co/what-is/kibana-canvas).",
         "start": "2018-10-01",
-        "keywords": ["React", "HTML", "JS", "CSS"],
+        "end": "2018-12-06",
+        "keywords": [
+          "React",
+          "HTML",
+          "JS",
+          "CSS"
+        ],
+        "hideFromSite": true,
         "highlights": []
       },
       {
@@ -71,7 +119,15 @@
         "summary": "When I first moved to the NYC Facebook office, I joined the Composer team for a \"hack-a-quarter\", converting the Composer to React, and then worked on the Share Dialog.\n\nEventually Events found themselves with a large number of React and Relay projects, so I rejoined my former team remotely. I built the new Events Dashboard and Permalink, and implemented many \"under the hood\" improvements.",
         "start": "2015-04-01",
         "end": "2018-06-01",
-        "keywords": ["React", "Flux", "Relay", "XHP", "HTML", "JS", "CSS"],
+        "keywords": [
+          "React",
+          "Flux",
+          "Relay",
+          "XHP",
+          "HTML",
+          "JS",
+          "CSS"
+        ],
         "highlights": [
           "New Events Dashboard for desktop in Relay.",
           "New Events Dashboard for the mobile site in XHP.",
@@ -87,7 +143,12 @@
         "summary": "In 2013 I joined the Vancouver office with an amazing cadre of engineers from all over the world. With a Canadian fiance, it made sense for me to bring Facebook experience (and culture) to a group of \"n00bs\".\n\nWhile there, I worked on the Protect and Care team developing a new Messaging Inbox built in React. I also implemented the Open Graph Share dialog for FB Platform in XHP.",
         "start": "2013-08-01",
         "end": "2015-04-01",
-        "keywords": ["XHP", "HTML", "JS", "CSS"],
+        "keywords": [
+          "XHP",
+          "HTML",
+          "JS",
+          "CSS"
+        ],
         "highlights": [
           "New Help Center Inbox for desktop in React.",
           "New \"How-to\" panels for the Help Center.",
@@ -101,7 +162,13 @@
         "summary": "I joined Facebook in 2012 as a User Interface Engineer (UIE) on the Mobile Core Web team.  I then joined the Accessibility team to help make Facebook more useful to everyone on the web.\n\nAfter several hackathons involving Events, I joined the team full time to rewrite the web experiences on both the mobile and main website.\n\nAfterwards, I spent some time with the Platform team, reworking a number of different web flows, like OAuth, and embeddable components like Share, Hashtags and Topics.",
         "start": "2012-01-01",
         "end": "2013-08-01",
-        "keywords": ["XHP", "Accessibility", "HTML", "JS", "CSS"],
+        "keywords": [
+          "XHP",
+          "Accessibility",
+          "HTML",
+          "JS",
+          "CSS"
+        ],
         "highlights": [
           "New OAuth flow dialogs for developers using Facebook.",
           "New Share, Hashtags and Topics plugins for developers.",

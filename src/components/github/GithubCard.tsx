@@ -10,7 +10,7 @@ import githubBackup from './../../_content/github';
 
 export const GithubCard = () => {
   const [user, setUser] = useState(githubBackup.user);
-  const [loc, setLOC] = useState(githubBackup.loc);
+  const [loc, setLOC] = useState(githubBackup.loc as LinesOfCode[]);
   const [isLive, setIsLive] = useState(false);
   const [isLoaded, setIsLoaded] = useState(false);
 

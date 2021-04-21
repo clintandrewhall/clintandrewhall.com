@@ -586,7 +586,7 @@
         </w:tabs>
       </w:pPr>
       <w:r wsp:rsidR="00C146CA" wsp:rsidRPr="00C146CA">
-        <w:t>Principal Software Engineer, </w:t>
+        <w:t>Area Lead, Presentation Team - Kibana, </w:t>
       </w:r>
       
         <w:r wsp:rsidR="009452CA" wsp:rsidRPr="00606071">
@@ -600,7 +600,7 @@
         <w:rPr>
           <w:rStyle w:val="FromTo"/>
         </w:rPr>
-        <w:t>Oct 2018 — Present</w:t>
+        <w:t>Oct 2020 — Present</w:t>
       </w:r>
     </w:p>
     <w:p wsp:rsidR="00C146CA" wsp:rsidRPr="000A3AF0" wsp:rsidRDefault="00C146CA" wsp:rsidP="00C146CA">
@@ -609,7 +609,205 @@
           <w:sz-cs w:val="20"/>
         </w:rPr>
       </w:pPr>
-      <w:r><w:rPr></w:rPr><w:t>I most recently accepted an offer to work at Elastic on their Kibana product, specifically Canvas.</w:t></w:r>
+      <w:r><w:rPr></w:rPr><w:t>Most recently, the Kibana organization reorganized and created a new team: Presentation.  This team is responsible for </w:t></w:r><w:hlink w:dest="https://www.elastic.co/what-is/kibana-canvas"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>Canvas</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>, </w:t></w:r><w:hlink w:dest="https://www.elastic.co/kibana/kibana-dashboard"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>Dashboard</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>, and any other product considered a &amp;quot;presentation container&amp;quot;.  I&amp;apos;ve been named the Area Lead for this new team.</w:t></w:r>
+    </w:p>
+
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:listPr>
+          <w:ilvl w:val="0"/>
+          <w:ilfo w:val="1"/>
+          <wx:t wx:val="•"/>
+          <wx:font wx:val="Calibri"/>
+        </w:listPr>
+        <w:rPr>
+          <w:sz-cs w:val="20"/>
+        </w:rPr>
+      </w:pPr>
+      <w:hlink w:dest="https://github.com/elastic/kibana/issues/51318"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>kibana/51318</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>: Coordinated completion of &amp;quot;Time to Visualize&amp;quot;.</w:t></w:r>
+    </w:p>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:listPr>
+          <w:ilvl w:val="0"/>
+          <w:ilfo w:val="1"/>
+          <wx:t wx:val="•"/>
+          <wx:font wx:val="Calibri"/>
+        </w:listPr>
+        <w:rPr>
+          <w:sz-cs w:val="20"/>
+        </w:rPr>
+      </w:pPr>
+      <w:hlink w:dest="https://github.com/elastic/kibana/pull/88112"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>kibana/88112</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>: Plugin Services abstraction and shared component library.</w:t></w:r>
+    </w:p>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:listPr>
+          <w:ilvl w:val="0"/>
+          <w:ilfo w:val="1"/>
+          <wx:t wx:val="•"/>
+          <wx:font wx:val="Calibri"/>
+        </w:listPr>
+        <w:rPr>
+          <w:sz-cs w:val="20"/>
+        </w:rPr>
+      </w:pPr>
+      <w:hlink w:dest="https://github.com/elastic/kibana/pull/95435"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>kibana/95435</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>: &amp;quot;Labs&amp;quot; service for enabling experimental projects.</w:t></w:r>
+    </w:p>
+
+  </wx:sub-section>
+
+
+  <wx:sub-section>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRPr="00C146CA" wsp:rsidRDefault="00606071" wsp:rsidP="00E578D4">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+        <w:tabs>
+          <w:tab w:val="right" w:pos="9360"/>
+        </w:tabs>
+      </w:pPr>
+      <w:r wsp:rsidR="00C146CA" wsp:rsidRPr="00C146CA">
+        <w:t>Area Lead, Canvas - Kibana, </w:t>
+      </w:r>
+      
+        <w:r wsp:rsidR="009452CA" wsp:rsidRPr="00606071">
+          <w:t>Elastic</w:t>
+        </w:r>
+      
+      <w:r wsp:rsidR="00EA0B64">
+        <w:tab/>
+      </w:r>
+      <w:r wsp:rsidR="00C146CA" wsp:rsidRPr="00C146CA">
+        <w:rPr>
+          <w:rStyle w:val="FromTo"/>
+        </w:rPr>
+        <w:t>Dec 2018 — Oct 2020</w:t>
+      </w:r>
+    </w:p>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRPr="000A3AF0" wsp:rsidRDefault="00C146CA" wsp:rsidP="00C146CA">
+      <w:pPr>
+        <w:rPr>
+          <w:sz-cs w:val="20"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r><w:rPr></w:rPr><w:t>Soon after I began working at Elastic, I was named the new Area Lead for </w:t></w:r><w:hlink w:dest="https://www.elastic.co/what-is/kibana-canvas"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>Canvas</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>.  I was responsible for overseeing and coordinating our technical efforts, representing the team across the org,, and contributing significant enhancements.</w:t></w:r></w:p><w:p><w:r><w:rPr></w:rPr><w:t>This role was my first as an official Engineering Lead.  During my tenure I coordinated projects for 1 major and 9 minor releases, including the General Availability (GA) release of Canvas from beta.  I introduced a number of technologies and architecture approaches that stabilized and enhanced the plugin, and oversaw migration of bespoke technology to the Kibana ecosystem, (e.g. </w:t></w:r><w:hlink w:dest="https://www.elastic.co/guide/en/kibana/current/kibana-expressions-plugin.html"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>expressions</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>).</w:t></w:r>
+    </w:p>
+
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:listPr>
+          <w:ilvl w:val="0"/>
+          <w:ilfo w:val="1"/>
+          <wx:t wx:val="•"/>
+          <wx:font wx:val="Calibri"/>
+        </w:listPr>
+        <w:rPr>
+          <w:sz-cs w:val="20"/>
+        </w:rPr>
+      </w:pPr>
+      <w:hlink w:dest="https://github.com/elastic/kibana/pull/31734"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>kibana/31734</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>: Significant React performance investigation.</w:t></w:r>
+    </w:p>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:listPr>
+          <w:ilvl w:val="0"/>
+          <w:ilfo w:val="1"/>
+          <wx:t wx:val="•"/>
+          <wx:font wx:val="Calibri"/>
+        </w:listPr>
+        <w:rPr>
+          <w:sz-cs w:val="20"/>
+        </w:rPr>
+      </w:pPr>
+      <w:hlink w:dest="https://github.com/elastic/kibana/pull/35087"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>kibana/35087</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>: Introduced Typescript.</w:t></w:r>
+    </w:p>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:listPr>
+          <w:ilvl w:val="0"/>
+          <w:ilfo w:val="1"/>
+          <wx:t wx:val="•"/>
+          <wx:font wx:val="Calibri"/>
+        </w:listPr>
+        <w:rPr>
+          <w:sz-cs w:val="20"/>
+        </w:rPr>
+      </w:pPr>
+      <w:hlink w:dest="https://github.com/elastic/kibana/pull/36252"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>kibana/36252</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>: Introduced internationalization architecture.</w:t></w:r>
+    </w:p>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:listPr>
+          <w:ilvl w:val="0"/>
+          <w:ilfo w:val="1"/>
+          <wx:t wx:val="•"/>
+          <wx:font wx:val="Calibri"/>
+        </w:listPr>
+        <w:rPr>
+          <w:sz-cs w:val="20"/>
+        </w:rPr>
+      </w:pPr>
+      <w:hlink w:dest="https://github.com/elastic/kibana/pull/38850"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>kibana/38850</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>: Introduced </w:t></w:r><w:hlink w:dest="https://storybook.js.org"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>Storybook</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t> for rapid development and testing.</w:t></w:r>
+    </w:p>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:listPr>
+          <w:ilvl w:val="0"/>
+          <w:ilfo w:val="1"/>
+          <wx:t wx:val="•"/>
+          <wx:font wx:val="Calibri"/>
+        </w:listPr>
+        <w:rPr>
+          <w:sz-cs w:val="20"/>
+        </w:rPr>
+      </w:pPr>
+      <w:hlink w:dest="https://github.com/elastic/kibana/pull/46278"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>kibana/46278</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>: Built novel means of embedding Canvas Workpads.</w:t></w:r>
+    </w:p>
+
+  </wx:sub-section>
+
+
+  <wx:sub-section>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRPr="00C146CA" wsp:rsidRDefault="00606071" wsp:rsidP="00E578D4">
+      <w:pPr>
+        <w:pStyle w:val="Heading2"/>
+        <w:tabs>
+          <w:tab w:val="right" w:pos="9360"/>
+        </w:tabs>
+      </w:pPr>
+      <w:r wsp:rsidR="00C146CA" wsp:rsidRPr="00C146CA">
+        <w:t>Principal Software Engineer - Kibana, </w:t>
+      </w:r>
+      
+        <w:r wsp:rsidR="009452CA" wsp:rsidRPr="00606071">
+          <w:t>Elastic</w:t>
+        </w:r>
+      
+      <w:r wsp:rsidR="00EA0B64">
+        <w:tab/>
+      </w:r>
+      <w:r wsp:rsidR="00C146CA" wsp:rsidRPr="00C146CA">
+        <w:rPr>
+          <w:rStyle w:val="FromTo"/>
+        </w:rPr>
+        <w:t>Oct 2018 — Dec 2018</w:t>
+      </w:r>
+    </w:p>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRPr="000A3AF0" wsp:rsidRDefault="00C146CA" wsp:rsidP="00C146CA">
+      <w:pPr>
+        <w:rPr>
+          <w:sz-cs w:val="20"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r><w:rPr></w:rPr><w:t>In October of 2018, I accepted a role with </w:t></w:r><w:hlink w:dest="https://www.elastic.co"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>Elastic</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t> to work on </w:t></w:r><w:hlink w:dest="https://www.elastic.co/kibana"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>Kibana</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>, specifically a new, ground-breaking beta plugin called </w:t></w:r><w:hlink w:dest="https://www.elastic.co/what-is/kibana-canvas"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>Canvas</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>.</w:t></w:r>
     </w:p>
 
 

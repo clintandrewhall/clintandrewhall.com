@@ -14,7 +14,7 @@ SwiperCore.use([Navigation]);
 export const Testimonials = () => {
   const { testimonials } = resume;
 
-  const items = testimonials.map((testimonial: Testimonial) => (
+  const items = testimonials.map((testimonial) => (
     <SwiperSlide key={testimonial.timestamp}>
       <Testimonial testmonial={testimonial} />
     </SwiperSlide>
