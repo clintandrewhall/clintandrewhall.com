@@ -9713,11 +9713,6 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
-markdown-image-loader@^2.0.1:
-  version "2.0.1"
-  resolved "https://registry.yarnpkg.com/markdown-image-loader/-/markdown-image-loader-2.0.1.tgz#3d4506d3f0e836987408e3b08fe7808add15a736"
-  integrity sha512-I1d4xxRY53t5o5LOkJ24dKeLuUQ5MCHxCp54kdX2+IhrYbgfr0yAwGbXH3B5aD1yT7M7muq7nh6nZMaClkgyEw==
-
 markdown-with-front-matter-loader@^0.1.0:
   version "0.1.0"
   resolved "https://registry.yarnpkg.com/markdown-with-front-matter-loader/-/markdown-with-front-matter-loader-0.1.0.tgz#5c1d6d0f239879b2972d14f854f1fb59c132c870"

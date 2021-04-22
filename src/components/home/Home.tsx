@@ -12,7 +12,7 @@ import { Footer } from '../Footer';
 
 import styles from './index.module.css';
 
-const SCROLL_DEBOUNCE = 66;
+const SCROLL_DEBOUNCE = 30;
 
 export const Home = () => {
   const [triggerHeight, setTriggerHeight] = useState(0);

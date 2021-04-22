@@ -48,10 +48,10 @@ live-updating display of photos posted to a Facebook wall. It doesn't even
 require a server: the page is static and can be run from a hard drive or
 Dropbox.
 
-![Masonry View](./../../images/portfolio/event-wall-1.jpg)
-![Polaroid View](./../../images/portfolio/event-wall-2.jpg)
-![A photo from our reception](./../../images/portfolio/event-wall-3.jpg)
-![A photo from our reception](./../../images/portfolio/event-wall-4.jpg)
+![Masonry View](/images/portfolio/event-wall-1.jpg)
+![Polaroid View](/images/portfolio/event-wall-2.jpg)
+![A photo from our reception](/images/portfolio/event-wall-3.jpg)
+![A photo from our reception](/images/portfolio/event-wall-4.jpg)
 
 # Colophon
 

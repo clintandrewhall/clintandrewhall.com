@@ -51,9 +51,9 @@ into "trips", making it easy to list and recall the places you’ve been.
 The code is now [open-source](https://github.com/clintandrewhall/backstrok.es)
 on [my Github](https://github.com/clintandrewhall).  I update it as I have time.
 
-![Backstrokes Results View](./../../images/portfolio/backstrokes-1.jpg)
-![Custom Parameters](./../../images/portfolio/backstrokes-2.jpg)
-![Backstrokes Home](./../../images/portfolio/backstrokes-3.jpg)
+![Backstrokes Results View](/images/portfolio/backstrokes-1.jpg)
+![Custom Parameters](/images/portfolio/backstrokes-2.jpg)
+![Backstrokes Home](/images/portfolio/backstrokes-3.jpg)
 
 # Colophon
 

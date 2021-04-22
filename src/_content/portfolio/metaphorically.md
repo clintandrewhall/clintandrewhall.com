@@ -20,7 +20,7 @@ about it, so I decided to
 notes](https://medium.com/@clintandrewhall/neither-sorcerers-nor-alchemists-80b7cd66ce15)
 from my previous writings.
 
-[![My TEDx Audition](./../../images/portfolio/metaphorically-4.jpg)](https://youtu.be/27t9pvCVef4?t=29s 'My TEDx Audition')
+[![My TEDx Audition](/images/portfolio/metaphorically-4.jpg)](https://youtu.be/27t9pvCVef4?t=29s 'My TEDx Audition')
 
 I argued that because software engineers, (and, moreso, salespeople), offer
 their wares in "magical" terms, it's becoming more and more impossible for
@@ -45,8 +45,8 @@ all over the world to explain obtuse technological concepts to anyone interested
 in knowing how they work. I then prepared and gave my talk at
 TEDxRenfrewCollingwood.
 
-[![My TEDx Talk: Metaphorically](./../../images/portfolio/metaphorically-5.jpg)](https://youtu.be/IwjLylj6GpI?t=29s 'My TEDx Talk: Metaphorically')
+[![My TEDx Talk: Metaphorically](/images/portfolio/metaphorically-5.jpg)](https://youtu.be/IwjLylj6GpI?t=29s 'My TEDx Talk: Metaphorically')
 
-![A screenshot from the site](./../../images/portfolio/metaphorically-1.jpg)
-![A screenshot from the site](./../../images/portfolio/metaphorically-2.jpg)
-![Metaphorically on Facebook](./../../images/portfolio/metaphorically-3.jpg)
+![A screenshot from the site](/images/portfolio/metaphorically-1.jpg)
+![A screenshot from the site](/images/portfolio/metaphorically-2.jpg)
+![Metaphorically on Facebook](/images/portfolio/metaphorically-3.jpg)

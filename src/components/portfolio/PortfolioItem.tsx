@@ -20,7 +20,7 @@ type Props = {
   item: PortfolioItemType;
 };
 
-const pathContext = require.context('./../../images/portfolio', true);
+const pathContext = require.context('./../../../public/images/portfolio', true);
 
 export const PortfolioItem = (props: Props) => {
   const { item } = props;

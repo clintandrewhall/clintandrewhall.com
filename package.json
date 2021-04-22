@@ -54,7 +54,6 @@
   "dependencies": {
     "classnames": "^2.3.1",
     "jimp": "^0.16.1",
-    "markdown-image-loader": "^2.0.1",
     "markdown-with-front-matter-loader": "^0.1.0",
     "marked": "^2.0.3",
     "moment": "^2.29.1",
