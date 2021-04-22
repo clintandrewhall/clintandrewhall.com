@@ -185,8 +185,12 @@ img.avatar {
   margin-left: 42px;
 }
 
+.sidebar-wrapper a {
+  color: #fff;
+}
 
-.experiences-section .details a, .experiences-section .highlights-list a {
+.experiences-section .details a,
+.experiences-section .highlights-list a {
   text-decoration: 1px underline dotted;
 }
 
@@ -262,10 +266,6 @@ img.avatar {
 
 .experiences-section .item.symbol .meta::before {
   background: url('../images/logos/symbol.png') no-repeat center center;
-}
-
-.sidebar-wrapper a {
-  color: #fff;
 }
 
 .sidebar-wrapper .profile-container {

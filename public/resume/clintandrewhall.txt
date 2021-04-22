@@ -5,13 +5,13 @@ Web: https://www.clintandrewhall.com
 ================================================================================
 
 
-I'm a User Interface Engineer and Web Evangelist.  I work to make the web beautiful, both on its surface and beneath.
+I'm a Engineering Lead and User Interface Engineer.  I work to make the web beautiful, both on its surface and beneath.
 
 I'm a demonstrated expert in HTML, CSS and JavaScript, React/Flux/Relay, and more.  I specialize in techniques promoting web agnostics, semantics, and accessibility.  I'm comfortable with varying levels of skill in any web stack, having written and maintained code in JS, PHP, Java and Ruby-on-Rails.  I currently prefer Node+React or React Native for most of my projects.
 
 I'm a regular consumer and occasional contributor to open source projects and client APIs.  If I have a suggestion for a website or application, I prefer to demonstrate the idea using an API rather than just describe it-- Code Wins Arguments.
 
-I look for opportunities where I can make strong, direct and meaningful contributions to a team, to users and to the web. I'm comfortable functioning as both designer and engineer, advising on both the technical and aesthetic.  I'm affable and good-natured, yet results-driven and competitive.  I have extensive experience working remotely, particularly during my time at Facebook.
+I look for opportunities where I can make strong, direct and meaningful contributions to a team, to users and to the web. I'm comfortable functioning as both designer and engineer, advising on both the technical and aesthetic.  I'm affable and good-natured, yet results-driven and competitive.  I have extensive experience working remotely, particularly during my time at Facebook and Elastic.
 
 
 
@@ -26,7 +26,7 @@ Most recently, the Kibana organization reorganized and created a new team: Prese
 - [kibana/95435](https://github.com/elastic/kibana/pull/95435): "Labs" service for enabling experimental projects.
 
 Area Lead, Canvas - Kibana, Elastic (2018-12 — 2020-10)
-Soon after I began working at Elastic, I was named the new Area Lead for [Canvas](https://www.elastic.co/what-is/kibana-canvas).  I was responsible for overseeing and coordinating our technical efforts, representing the team across the org,, and contributing significant enhancements.
+Soon after I began working at Elastic, I was named the new Area Lead for [Canvas](https://www.elastic.co/what-is/kibana-canvas).  I was responsible for overseeing and coordinating our technical efforts, representing the team across the org, and contributing significant enhancements.
 
 This role was my first as an official Engineering Lead.  During my tenure I coordinated projects for 1 major and 9 minor releases, including the General Availability (GA) release of Canvas from beta.  I introduced a number of technologies and architecture approaches that stabilized and enhanced the plugin, and oversaw migration of bespoke technology to the Kibana ecosystem, (e.g. [`expressions`](https://www.elastic.co/guide/en/kibana/current/kibana-expressions-plugin.html)).
 - [kibana/31734](https://github.com/elastic/kibana/pull/31734): Significant React performance investigation.
