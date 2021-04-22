@@ -18,7 +18,8 @@ const writePath = './src/_content/github/';
     `${writePath}index.js`,
     `
     export const code = ${JSON.stringify(result)};
-    export default code;`,
+    export default code;
+    `,
     () => {
       // eslint-disable-next-line no-console
       console.log('wrote github');

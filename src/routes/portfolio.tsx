@@ -28,14 +28,18 @@ export const routes = () => {
     }
 
     return memo;
-  }, {} as Record<string, Front>);
+  }, {} as Record<string, PortfolioItemType>);
 
   function getPortfolio() {
     return (
       <Portfolio>
-        {[...Object.keys(entries)].map((path) => {
-          return <PortfolioItem item={entries[path]} key={path} />;
-        })}
+        {[...Object.keys(entries)]
+          .sort((a, b) =>
+            entries[a].timestamp < entries[b].timestamp ? 1 : -1,
+          )
+          .map((path) => {
+            return <PortfolioItem item={entries[path]} key={path} />;
+          })}
       </Portfolio>
     );
   }
