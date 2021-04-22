@@ -4,24 +4,16 @@ import Markdown from 'react-markdown';
 
 import styles from './WorkHistoryItem.module.css';
 
-type WorkHistory = {
-  employer: string;
-  key: string;
-  position: string;
-  summary: string;
-  start: string;
-  end?: string;
-  keywords: Array<string>;
-  highlights: Array<string>;
-};
-
 type Props = {
   className?: string;
-  item: WorkHistory;
+  item: EmploymentHistory;
 };
 
-export const WorkHistoryItem = (props: Props) => {
-  const { className, item } = props;
+export const WorkHistoryItem = ({ className, item }: Props) => {
+  if (item.hideFromSite) {
+    return null;
+  }
+
   const { employer, key, position, summary, start, end } = item;
 
   const startDate = moment(start).format('MMMM YYYY');

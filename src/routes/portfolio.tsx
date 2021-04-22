@@ -1,6 +1,5 @@
 import { Route } from 'react-router-dom';
 import marked from 'marked';
-import { loadFront } from 'yaml-front-matter';
 import {
   Portfolio,
   PortfolioEntry,
@@ -14,12 +13,13 @@ interface Front extends PortfolioItemType {
 
 export const routes = () => {
   const portfolioContext = require.context(
-    '!markdown-image-loader!./../_content/portfolio',
+    '!markdown-with-front-matter-loader!./../_content/portfolio',
     false,
     /.md$/,
   );
+
   const entries = portfolioContext.keys().reduce((memo, fileName) => {
-    const obj = loadFront(portfolioContext(fileName));
+    const obj = portfolioContext(fileName);
     const entry = { ...obj, __content: marked(obj.__content) } as Front;
     const match = fileName.match(/.\/([^.]+).*/);
 

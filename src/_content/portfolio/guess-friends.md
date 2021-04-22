@@ -31,10 +31,10 @@ hashing out what we would build, we decided on a classic childhood game that had
 yet to be recreated in the social media space: [Guess
 Who](http://www.hasbro.com/games/en_US/guess-who/).
 
-![Welcome Screen](./../../images/portfolio/guess-friends-1.jpg)
-![Game Board](./../../images/portfolio/guess-friends-2.jpg)
-![Lobby](./../../images/portfolio/guess-friends-3.jpg)
-![Node Knockout Project Page](./../../images/portfolio/guess-friends-4.jpg)
+![Welcome Screen](/images/portfolio/guess-friends-1.jpg)
+![Game Board](/images/portfolio/guess-friends-2.jpg)
+![Lobby](/images/portfolio/guess-friends-3.jpg)
+![Node Knockout Project Page](/images/portfolio/guess-friends-4.jpg)
 
 # Implementation
 

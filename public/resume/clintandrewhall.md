@@ -4,20 +4,38 @@ Email: resume@clintandrewhall.com
 
 Web: https://www.clintandrewhall.com
 
-I'm a User Interface Engineer and Web Evangelist.  I work to make the web beautiful, both on its surface and beneath.
+I'm an Engineering Lead and User Interface Engineer.  I work to make the web beautiful, both on its surface and beneath.
 
-I'm a demonstrated expert in HTML, CSS and JavaScript, React/Flux/Relay, and more.  I specialize in techniques promoting web agnostics, semantics, and accessibility.  I'm comfortable with varying levels of skill in any web stack, having written and maintained code in JS, PHP, Java and Ruby-on-Rails.  I currently prefer Node+React or React Native for most of my projects.
+I'm a demonstrated expert in HTML, CSS and JavaScript, React/Flux/Relay, and more.  I specialize in techniques promoting web agnostics, semantics, and accessibility.  I'm comfortable with varying levels of skill in any web full stack, having written and maintained production code in JS, PHP, Java and Ruby-on-Rails.  I currently prefer React+Node or React Native for most of my personal projects.
 
 I'm a regular consumer and occasional contributor to open source projects and client APIs.  If I have a suggestion for a website or application, I prefer to demonstrate the idea using an API rather than just describe it-- Code Wins Arguments.
 
-I look for opportunities where I can make strong, direct and meaningful contributions to a team, to users and to the web. I'm comfortable functioning as both designer and engineer, advising on both the technical and aesthetic.  I'm affable and good-natured, yet results-driven and competitive.  I have extensive experience working remotely, particularly during my time at Facebook.
+I look for opportunities where I can make strong, direct and meaningful contributions to a team, to users and to the web. I'm comfortable functioning as both designer and engineer, advising on both the technical and aesthetic.  I'm affable and good-natured, yet results-driven and competitive.  I have extensive experience working remotely, particularly during my time at Facebook and Elastic.
 
 
 ## EMPLOYMENT
 
-### *Principal Software Engineer*, Elastic (2018-10 — Present)
+### *Area Lead, Presentation Team - Kibana*, Elastic (2020-10 — Present)
 
-I most recently accepted an offer to work at Elastic on their Kibana product, specifically Canvas.
+Recently the Kibana organization created a new team: Presentation.  This team is responsible for [Canvas](https://www.elastic.co/what-is/kibana-canvas), [Dashboard](https://www.elastic.co/kibana/kibana-dashboard), and any other product considered a "presentation container".  I'm the Area Lead for this new team, continuing my work with Canvas, but now coordinating efforts between the products.
+  - [kibana/51318](https://github.com/elastic/kibana/issues/51318): Coordinated completion of "Time to Visualize".
+  - [kibana/88112](https://github.com/elastic/kibana/pull/88112): Plugin Services abstraction and shared component library.
+  - [kibana/95435](https://github.com/elastic/kibana/pull/95435): "Labs" service for enabling experimental projects.
+
+### *Area Lead, Canvas - Kibana*, Elastic (2018-12 — 2020-10)
+
+Soon after I began working at Elastic, I was named the new Area Lead for [Canvas](https://www.elastic.co/what-is/kibana-canvas).  I was responsible for overseeing and coordinating our technical efforts, representing the team across the org, and contributing significant or moonshot enhancements.
+
+During my tenure I directed project efforts for 1 major and 9 minor releases, including the General Availability (GA) release of Canvas from beta.  I introduced a number of technologies and architecture approaches that stabilized and enhanced the plugin, and oversaw migration of valuable bespoke technology to the Kibana ecosystem, (e.g. [`expressions`](https://www.elastic.co/guide/en/kibana/current/kibana-expressions-plugin.html)).
+  - [kibana/31734](https://github.com/elastic/kibana/pull/31734): Significant React performance investigation.
+  - [kibana/35087](https://github.com/elastic/kibana/pull/35087): Introduced Typescript.
+  - [kibana/36252](https://github.com/elastic/kibana/pull/36252): Introduced internationalization architecture.
+  - [kibana/38850](https://github.com/elastic/kibana/pull/38850): Introduced [Storybook](https://storybook.js.org) for rapid development and testing.
+  - [kibana/46278](https://github.com/elastic/kibana/pull/46278): Built novel means of embedding Canvas Workpads.
+
+### *Principal Software Engineer - Kibana*, Elastic (2018-10 — 2018-12)
+
+In October of 2018, I accepted a role with [Elastic](https://www.elastic.co) to work on [Kibana](https://www.elastic.co/kibana), specifically a new, ground-breaking beta plugin called [Canvas](https://www.elastic.co/what-is/kibana-canvas).
 
 ### *User Interface Engineer*, Facebook NYC (2015-04 — 2018-06)
 
@@ -28,7 +46,7 @@ Eventually Events found themselves with a large number of React and Relay projec
   - New Events Dashboard for the mobile site in XHP.
   - New Events Permalink for all web surfaces in XHP.
   - New React + Flux Composer, and the new Share Dialog using that component.
-  - New 'Minutiae' controls, the structured data (Photos, Activity, Tags) found in Composer.
+  - New 'Minutiae' controls-- the structured data (Photos, Activity, Tags) found in Composer.
 
 ### *User Interface Engineer*, Facebook Vancouver (2013-08 — 2015-04)
 

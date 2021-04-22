@@ -23,7 +23,11 @@ const sections = [
 
 type Section = typeof sections[number];
 
-export const Header = ({ home = false, triggerHeight = 100 }) => {
+export const Header = ({
+  home = false,
+  triggerHeight = 100,
+  selectedId = '',
+}) => {
   const [isOffset, setIsOffset] = useState(false);
   const [isScrolling, setIsScrolling] = useState(false);
   const [isSticky, setIsSticky] = useState(false);
@@ -72,26 +76,31 @@ export const Header = ({ home = false, triggerHeight = 100 }) => {
               <HeaderLink
                 to={home ? '#' : '/'}
                 label="Home"
+                selected={selectedId === ''}
                 onClick={() => clickHandler('home')}
               />
               <HeaderLink
                 to={home ? '#about' : '/#about'}
                 label="About"
+                selected={selectedId === 'about'}
                 onClick={() => clickHandler('about')}
               />
               <HeaderLink
                 to={home ? '#portfolio' : '/portfolio'}
                 label="Portfolio"
+                selected={selectedId === 'portfolio'}
                 onClick={() => clickHandler('portfolio')}
               />
               <HeaderLink
                 to={home ? '#career' : '/#career'}
                 label="Career"
+                selected={selectedId === 'career'}
                 onClick={() => clickHandler('career')}
               />
               <HeaderLink
                 to={home ? '#medium' : '/#medium'}
                 label="Medium"
+                selected={selectedId === 'medium'}
                 onClick={() => clickHandler('medium')}
               />
               <li className={linkStyles.headerLink}>

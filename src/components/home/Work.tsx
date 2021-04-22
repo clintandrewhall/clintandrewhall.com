@@ -13,9 +13,9 @@ export const Work = () => {
     return null;
   }
 
-  const blocks = history.map((item) => (
-    <WorkHistoryItem key={`${item.start}`} item={item} />
-  ));
+  const blocks = history
+    .filter((item) => !item.hideFromSite)
+    .map((item) => <WorkHistoryItem key={`${item.start}`} item={item} />);
 
   return (
     <section className={styles.root} id="career" key="root">

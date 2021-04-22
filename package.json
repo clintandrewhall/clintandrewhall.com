@@ -54,7 +54,6 @@
   "dependencies": {
     "classnames": "^2.3.1",
     "jimp": "^0.16.1",
-    "markdown-image-loader": "^2.0.1",
     "markdown-with-front-matter-loader": "^0.1.0",
     "marked": "^2.0.3",
     "moment": "^2.29.1",
@@ -87,18 +86,13 @@
     "generate:resume": "hackmyresume build ./src/_content/resume.json TO ./public/resume/clintandrewhall.all -t ./src/resume",
     "generate:github": "babel-node --extensions .ts --presets @babel/preset-env,@babel/preset-typescript ./data/github",
     "generate:sitemap": "react-snap-sitemap --base-url='https://www.clintandrewhall.com/'",
-    "develop:resume": "nodemon --exec \"clear && yarn run generate:resume\" -e json,hbs,css,html -w ./src/resume -w ./src/_content/resume",
-    "develop:site": "react-scripts start",
+    "start:resume": "nodemon --exec \"clear && yarn run generate:resume\" -e json,hbs,css,html --watch ./src/resume --watch ./src/_content",
+    "start:site": "react-scripts start",
     "start": "node server",
     "test": "react-scripts test",
     "build": "yarn generate:github && react-scripts build",
     "postbuild": "react-snap && yarn generate:sitemap",
     "eject": "react-scripts eject"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn generate:resume && yarn format && git add ."
-    }
   },
   "reactSnap": {
     "fixWebpackChunksIssue": "CRA2",

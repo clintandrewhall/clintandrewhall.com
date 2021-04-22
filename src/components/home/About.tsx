@@ -75,10 +75,13 @@ export const About = () => (
           .
         </p>
         <p className={styles.lead}>
-          I currently work on{' '}
-          <a href="https://www.elastic.co/products/kibana">Kibana</a> at{' '}
-          <a href="https://elastic.co">Elastic</a>, from my home in Kansas City,
-          MO.
+          I'm currently the Area Lead for the{' '}
+          <a href="https://github.com/orgs/elastic/teams/kibana-presentation">
+            Presentation Team
+          </a>{' '}
+          within <a href="https://www.elastic.co/products/kibana">Kibana</a> at{' '}
+          <a href="https://elastic.co">Elastic</a>, working from my home in
+          Kansas City, MO.
         </p>
         <p className={styles.lead}>
           In the past, I&apos;ve worked for Facebook, Cerner, Sprint and

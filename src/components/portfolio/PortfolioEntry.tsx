@@ -12,7 +12,7 @@ type Props = {
   entry: PortfolioItemType;
 };
 
-const pathContext = require.context('./../../images/portfolio', true);
+const pathContext = require.context('./../../../public/images/portfolio', true);
 
 export const PortfolioEntry = ({ entry }: Props) => {
   const { title, tags, timestamp } = entry;

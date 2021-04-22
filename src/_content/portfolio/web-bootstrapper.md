@@ -55,8 +55,8 @@ at the [Ajax
 Experience](http://ajaxexperience.techtarget.com/conference/index.html) in
 Boston.
 
-![Bootstrap the Web](./../../images/portfolio/bootstrapper-1.png)
-![How the Bootstrapper Works](./../../images/portfolio/bootstrapper-2.jpg)
-![Such a Broad Landscape](./../../images/portfolio/bootstrapper-3.jpg)
-![Ajax Experience 2009](./../../images/portfolio/bootstrapper-4.png)
-![Demo of 12 skins on one site](./../../images/portfolio/bootstrapper-5.png)
+![Bootstrap the Web](/images/portfolio/bootstrapper-1.png)
+![How the Bootstrapper Works](/images/portfolio/bootstrapper-2.jpg)
+![Such a Broad Landscape](/images/portfolio/bootstrapper-3.jpg)
+![Ajax Experience 2009](/images/portfolio/bootstrapper-4.png)
+![Demo of 12 skins on one site](/images/portfolio/bootstrapper-5.png)

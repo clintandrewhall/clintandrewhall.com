@@ -28,8 +28,8 @@ repository for Node. It is currently
 [Foursquare Developer site](http://developer.foursquare.com/) as the only
 library for using Foursquare within Node.
 
-![Two](./../../images/portfolio/node-foursquare-2.jpg)
-![Three](./../../images/portfolio/node-foursquare-3.jpg)
+![Two](/images/portfolio/node-foursquare-2.jpg)
+![Three](/images/portfolio/node-foursquare-3.jpg)
 
 # Implementation
 

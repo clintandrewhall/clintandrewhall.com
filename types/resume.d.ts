@@ -20,9 +20,10 @@ declare type EmploymentHistory = {
   position: string;
   summary: string;
   start: string;
-  end: string;
+  end?: string;
   keywords: any[];
   highlights: any[];
+  hideFromSite?: boolean;
 };
 
 declare type EducationHistory = {
