@@ -609,7 +609,7 @@
           <w:sz-cs w:val="20"/>
         </w:rPr>
       </w:pPr>
-      <w:r><w:rPr></w:rPr><w:t>Most recently, the Kibana organization reorganized and created a new team: Presentation.  This team is responsible for </w:t></w:r><w:hlink w:dest="https://www.elastic.co/what-is/kibana-canvas"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>Canvas</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>, </w:t></w:r><w:hlink w:dest="https://www.elastic.co/kibana/kibana-dashboard"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>Dashboard</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>, and any other product considered a &amp;quot;presentation container&amp;quot;.  I&amp;apos;ve been named the Area Lead for this new team.</w:t></w:r>
+      <w:r><w:rPr></w:rPr><w:t>Recently the Kibana organization created a new team: Presentation.  This team is responsible for </w:t></w:r><w:hlink w:dest="https://www.elastic.co/what-is/kibana-canvas"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>Canvas</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>, </w:t></w:r><w:hlink w:dest="https://www.elastic.co/kibana/kibana-dashboard"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>Dashboard</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>, and any other product considered a &amp;quot;presentation container&amp;quot;.  I&amp;apos;m the Area Lead for this new team, continuing my work with Canvas, but now coordinating efforts between the products.</w:t></w:r>
     </w:p>
 
     <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
@@ -693,7 +693,7 @@
           <w:sz-cs w:val="20"/>
         </w:rPr>
       </w:pPr>
-      <w:r><w:rPr></w:rPr><w:t>Soon after I began working at Elastic, I was named the new Area Lead for </w:t></w:r><w:hlink w:dest="https://www.elastic.co/what-is/kibana-canvas"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>Canvas</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>.  I was responsible for overseeing and coordinating our technical efforts, representing the team across the org, and contributing significant enhancements.</w:t></w:r></w:p><w:p><w:r><w:rPr></w:rPr><w:t>This role was my first as an official Engineering Lead.  During my tenure I coordinated projects for 1 major and 9 minor releases, including the General Availability (GA) release of Canvas from beta.  I introduced a number of technologies and architecture approaches that stabilized and enhanced the plugin, and oversaw migration of bespoke technology to the Kibana ecosystem, (e.g. </w:t></w:r><w:hlink w:dest="https://www.elastic.co/guide/en/kibana/current/kibana-expressions-plugin.html"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>expressions</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>).</w:t></w:r>
+      <w:r><w:rPr></w:rPr><w:t>Soon after I began working at Elastic, I was named the new Area Lead for </w:t></w:r><w:hlink w:dest="https://www.elastic.co/what-is/kibana-canvas"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>Canvas</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>.  I was responsible for overseeing and coordinating our technical efforts, representing the team across the org, and contributing significant or moonshot enhancements.</w:t></w:r></w:p><w:p><w:r><w:rPr></w:rPr><w:t>During my tenure I directed project efforts for 1 major and 9 minor releases, including the General Availability (GA) release of Canvas from beta.  I introduced a number of technologies and architecture approaches that stabilized and enhanced the plugin, and oversaw migration of valuable bespoke technology to the Kibana ecosystem, (e.g. </w:t></w:r><w:hlink w:dest="https://www.elastic.co/guide/en/kibana/current/kibana-expressions-plugin.html"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>expressions</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>).</w:t></w:r>
     </w:p>
 
     <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
@@ -922,7 +922,7 @@
           <w:sz-cs w:val="20"/>
         </w:rPr>
       </w:pPr>
-      <w:r><w:rPr></w:rPr><w:t>New &amp;apos;Minutiae&amp;apos; controls, the structured data (Photos, Activity, Tags) found in Composer.</w:t></w:r>
+      <w:r><w:rPr></w:rPr><w:t>New &amp;apos;Minutiae&amp;apos; controls-- the structured data (Photos, Activity, Tags) found in Composer.</w:t></w:r>
     </w:p>
 
   </wx:sub-section>
