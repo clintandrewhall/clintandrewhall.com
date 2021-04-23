@@ -2,7 +2,7 @@ import { Testimonials } from './Testimonials';
 import { WorkHistoryItem } from './WorkHistoryItem';
 
 import styles from './Work.module.css';
-import resume from '../../_content/resume.json';
+import resume from '../../content/resume.json';
 
 export const Work = () => {
   const resumeSource = resume;

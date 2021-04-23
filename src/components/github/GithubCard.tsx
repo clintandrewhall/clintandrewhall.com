@@ -4,25 +4,21 @@ import octocat from './octocat-spinner-128.gif';
 import styles from './GithubCard.module.css';
 import { Stats } from './Stats';
 import { LOC } from './LOC';
-import { getGithubData } from '../../common/github';
-
-import githubBackup from './../../_content/github';
 
 export const GithubCard = () => {
-  const [user, setUser] = useState(githubBackup.user);
-  const [loc, setLOC] = useState(githubBackup.loc as LinesOfCode[]);
-  const [isLive, setIsLive] = useState(false);
+  const [user, setUser] = useState(null);
+  const [loc, setLOC] = useState(null);
   const [isLoaded, setIsLoaded] = useState(false);
 
   useEffect(() => {
     (async () => {
-      const results = await getGithubData();
+      const response = await fetch('./data/github');
+      const results = await response.json();
 
       if (results) {
         const { user, loc } = results;
         setUser(user);
         setLOC(loc);
-        setIsLive(true);
       }
 
       setIsLoaded(true);
@@ -41,9 +37,8 @@ export const GithubCard = () => {
     <div className={styles.gh}>
       <div className={styles.card}>
         <p>
-          These lines-of-code counts and repository information{' '}
-          {isLive ? 'are' : 'were'} gathered
-          {isLive ? ' live, ' : ''} directly from my{' '}
+          These lines-of-code counts and repository information are gathered
+          directly from my{' '}
           <a
             href="https://www.github.com/clintandrewhall"
             rel="noopener noreferrer"

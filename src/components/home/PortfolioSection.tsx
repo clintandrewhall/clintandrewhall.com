@@ -6,7 +6,7 @@ import styles from './Portfolio.module.css';
 
 export const PortfolioSection = () => {
   const portfolioContext = require.context(
-    '!markdown-with-front-matter-loader!./../../_content/portfolio',
+    '!markdown-with-front-matter-loader!./../../content/portfolio',
     false,
     /.md$/,
   );

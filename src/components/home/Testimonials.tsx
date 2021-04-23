@@ -6,7 +6,7 @@ import 'swiper/swiper.scss';
 import 'swiper/components/navigation/navigation.scss';
 
 import styles from './Testimonials.module.css';
-import resume from '../../_content/resume.json';
+import resume from '../../content/resume.json';
 
 // install Swiper modules
 SwiperCore.use([Navigation]);

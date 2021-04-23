@@ -1,6 +1,6 @@
 import Markdown from 'react-markdown';
 
-import resume from '../../_content/resume.json';
+import resume from '../../content/resume.json';
 import { GithubCard } from '../github';
 import styles from './About.module.css';
 

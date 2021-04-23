@@ -4,7 +4,7 @@ import { languageColors } from './github-language-colors';
 import styles from './LOC.module.css';
 
 export type Props = {
-  loc: LinesOfCode[];
+  loc: LinesOfCode[] | null;
 };
 
 export const LOC = ({ loc }: Props) => {

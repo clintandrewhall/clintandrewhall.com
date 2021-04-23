@@ -75,11 +75,17 @@
   -webkit-transition: all 0.3s ease-in-out;
   transition: all 0.3s ease-in-out;
   z-index: 1001;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
 }
 
 .headerMenuToggle:hover,
 .headerMenuToggle:focus {
   color: #fff;
+  background: transparent;
+  border: none;
 }
 
 .headerMenuToggle span {
@@ -121,7 +127,7 @@
 }
 
 .header.sticky .headerMenuToggle {
-  top: 12px;
+  top: 16px;
 }
 
 .headerMenuToggle.isClicked span {
@@ -207,18 +213,23 @@
   }
 
   .headerNavWrap {
-    height: auto;
+    height: 0;
     width: 100%;
     right: auto;
     top: 0;
     left: 0;
     background-color: #000;
+    transition: height 0.5s ease-out;
+  }
+
+  .headerNavWrap.headerNavOpen {
+    height: 425px;
   }
 
   .headerNavWrap .headerNav {
     display: block;
     height: auto;
-    margin: 120px 40px 4.2rem 40px;
+    margin: 80px 40px 4.2rem 40px;
     border-top: 1px solid rgba(255, 255, 255, 0.07);
   }
 
