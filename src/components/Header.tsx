@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
 import classNames from 'classnames';
-import { Collapse } from 'react-collapse';
 import { Link } from 'react-router-dom';
 import { scroller } from 'react-scroll';
 
@@ -39,6 +38,7 @@ export const Header = ({
     }
 
     scroller.scrollTo(to, { smooth: true });
+    setIsOpened(false);
   };
 
   const scrollHandler = () => {
@@ -69,56 +69,58 @@ export const Header = ({
           <img src="/images/logo.png" alt="Home" />
         </Link>
       </div>
-      <Collapse isOpened={isOpened}>
-        <div>
-          <nav className={styles.headerNavWrap}>
-            <ul className={styles.headerNav}>
-              <HeaderLink
-                to={home ? '#' : '/'}
-                label="Home"
-                selected={selectedId === ''}
-                onClick={() => clickHandler('home')}
-              />
-              <HeaderLink
-                to={home ? '#about' : '/#about'}
-                label="About"
-                selected={selectedId === 'about'}
-                onClick={() => clickHandler('about')}
-              />
-              <HeaderLink
-                to={home ? '#portfolio' : '/portfolio'}
-                label="Portfolio"
-                selected={selectedId === 'portfolio'}
-                onClick={() => clickHandler('portfolio')}
-              />
-              <HeaderLink
-                to={home ? '#career' : '/#career'}
-                label="Career"
-                selected={selectedId === 'career'}
-                onClick={() => clickHandler('career')}
-              />
-              <HeaderLink
-                to={home ? '#medium' : '/#medium'}
-                label="Medium"
-                selected={selectedId === 'medium'}
-                onClick={() => clickHandler('medium')}
-              />
-              <li className={linkStyles.headerLink}>
-                <a href="/resume">Resume</a>
-              </li>
-            </ul>
-          </nav>
-          <button
-            className={classNames({
-              [styles.headerMenuToggle]: true,
-              [styles.isClicked]: isOpened,
-            })}
-            tabIndex={0}
-            onClick={() => setIsOpened(!isOpened)}>
-            <span>Menu</span>
-          </button>
-        </div>
-      </Collapse>
+      <div>
+        <nav
+          className={classNames({
+            [styles.headerNavWrap]: true,
+            [styles.headerNavOpen]: isOpened,
+          })}>
+          <ul className={styles.headerNav}>
+            <HeaderLink
+              to={home ? '#' : '/'}
+              label="Home"
+              selected={selectedId === ''}
+              onClick={() => clickHandler('home')}
+            />
+            <HeaderLink
+              to={home ? '#about' : '/#about'}
+              label="About"
+              selected={selectedId === 'about'}
+              onClick={() => clickHandler('about')}
+            />
+            <HeaderLink
+              to={home ? '#portfolio' : '/portfolio'}
+              label="Portfolio"
+              selected={selectedId === 'portfolio'}
+              onClick={() => clickHandler('portfolio')}
+            />
+            <HeaderLink
+              to={home ? '#career' : '/#career'}
+              label="Career"
+              selected={selectedId === 'career'}
+              onClick={() => clickHandler('career')}
+            />
+            <HeaderLink
+              to={home ? '#medium' : '/#medium'}
+              label="Medium"
+              selected={selectedId === 'medium'}
+              onClick={() => clickHandler('medium')}
+            />
+            <li className={linkStyles.headerLink}>
+              <a href="/resume">Resume</a>
+            </li>
+          </ul>
+        </nav>
+        <button
+          className={classNames({
+            [styles.headerMenuToggle]: true,
+            [styles.isClicked]: isOpened,
+          })}
+          tabIndex={0}
+          onClick={() => setIsOpened(!isOpened)}>
+          <span>Menu</span>
+        </button>
+      </div>
       <GithubCorner />
     </header>
   );

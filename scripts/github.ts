@@ -1,3 +1,9 @@
+import { config } from 'dotenv';
+import fs from 'fs';
+
+config();
+const writePath = './build';
+
 import fetch from 'node-fetch';
 import { Response } from 'node-fetch';
 
@@ -73,3 +79,18 @@ export const getGithubData = async (token?: string) => {
 
   return { user, loc };
 };
+
+(async function get() {
+  const result = await getGithubData(process.env.GITHUB_TOKEN);
+
+  if (!result) {
+    // eslint-disable-next-line
+    console.log('Github retrieval failed; aborting');
+    return;
+  }
+
+  fs.writeFile(`${writePath}/github.json`, JSON.stringify(result), () => {
+    // eslint-disable-next-line no-console
+    console.log('wrote github');
+  });
+})();

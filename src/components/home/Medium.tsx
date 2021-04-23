@@ -1,6 +1,23 @@
 import styles from './Medium.module.css';
+import { useFetch } from '../useFetch';
+import { MediumItem } from './MediumItem';
 
 export const Medium = () => {
+  const { error, response } = useFetch<MediumResponse>('/data/medium');
+
+  if (error || response === null) {
+    return null;
+  }
+
+  if (!response) {
+    return null;
+  }
+
+  const items = response.posts
+    .slice(0, 4)
+    .sort((a, b) => b.timestamp - a.timestamp)
+    .map((entry) => <MediumItem post={entry} key={`${entry.timestamp}`} />);
+
   return (
     <section id="medium" className={styles.root}>
       <div className={styles.header}>
@@ -15,17 +32,7 @@ export const Medium = () => {
       </div>
       <div className={styles.content}>
         <div className={styles.area}>
-          <p>
-            I used to list my posts here, but Medium recently put a CAPTCHA in
-            front of their public HTTP endpoint, and they haven&apos;t supplied
-            a replacement in{' '}
-            <a href="https://github.com/Medium/medium-api-docs">their API</a>.
-            🤕
-          </p>
-          <p>
-            In the meantime, check out my posts{' '}
-            <a href="https://medium.com/@clintandrewhall">here</a>.
-          </p>
+          <div className={styles.list}>{items}</div>
         </div>
       </div>
     </section>

@@ -1,4 +1,4 @@
-import resume from '../_content/resume.json';
+import resume from '../content/resume.json';
 import styles from './Footer.module.css';
 
 export const Footer = () => {

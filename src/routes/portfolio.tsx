@@ -13,7 +13,7 @@ interface Front extends PortfolioItemType {
 
 export const routes = () => {
   const portfolioContext = require.context(
-    '!markdown-with-front-matter-loader!./../_content/portfolio',
+    '!markdown-with-front-matter-loader!./../content/portfolio',
     false,
     /.md$/,
   );
