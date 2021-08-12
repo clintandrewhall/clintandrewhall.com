@@ -43,7 +43,7 @@ export const Testimonials = () => {
       <div className={styles.buttonRow}>
         <a
           className={styles.button}
-          href="https://www.linkedin.com/in/clinthall"
+          href="https://www.linkedin.com/in/clintandrewhall"
           target="_blank"
           rel="noopener noreferrer">
           Visit my LinkedIn Profile
