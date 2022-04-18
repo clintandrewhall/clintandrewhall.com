@@ -1,5 +1,5 @@
 import { Route } from 'react-router-dom';
-import marked from 'marked';
+import { marked } from 'marked';
 import {
   Portfolio,
   PortfolioEntry,
