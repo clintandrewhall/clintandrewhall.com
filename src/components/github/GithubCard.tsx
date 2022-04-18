@@ -12,7 +12,7 @@ export const GithubCard = () => {
 
   useEffect(() => {
     (async () => {
-      const response = await fetch('./data/github');
+      const response = await fetch('/github.json');
       const results = await response.json();
 
       if (results) {

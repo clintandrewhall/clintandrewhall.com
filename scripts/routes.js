@@ -3,26 +3,19 @@ const appRoot = require('app-root-path');
 const rateLimit = require('express-rate-limit');
 
 const addApiRoutes = (app) => {
-  const limiter = rateLimit({
-    windowMs: 10 * 60 * 1000, // 10 minutes
-    max: 100, // limit each IP to 100 requests per windowMs
-  });
-
-  app.use('/data/', limiter);
-
-  app.get('/data/github', (_req, res) => {
+  app.get('/github.json', (_req, res) => {
     res.sendFile(appRoot.resolve('build') + '/github.json');
   });
 
-  app.get('/data/medium', (_req, res) => {
+  app.get('/medium.json', (_req, res) => {
     res.sendFile(appRoot.resolve('build') + '/medium.json');
   });
 };
 
-const addStaticRoutes = (app) => {
+const addStaticRoutes = (app, snap = false) => {
   const limiter = rateLimit({
     windowMs: 10 * 1000, // 10 seconds
-    max: 100, // limit each IP to 100 requests per windowMs
+    max: snap ? 1000 : 100, // limit each IP to 100 requests per windowMs
   });
 
   app.use('/', limiter);
@@ -32,22 +25,22 @@ const addStaticRoutes = (app) => {
   });
 };
 
-const addResumeRoutes = (app) => {
+const addResumeRoutes = (app, snap = false) => {
   const limiter = rateLimit({
     windowMs: 10 * 60 * 1000, // 10 minutes
-    max: 100, // limit each IP to 100 requests per windowMs
+    max: snap ? 1000 : 100, // limit each IP to 100 requests per windowMs
   });
 
   app.use('/resume', limiter);
   app.get('/resume', (_req, res) => {
-    res.sendFile(appRoot.resolve('build', 'resume', 'clintandrewhall.html'));
+    res.sendFile(appRoot.resolve('build', 'resume', 'index.html'));
   });
 };
 
-const addAllRoutes = (app) => {
+const addAllRoutes = (app, snap = false) => {
   addApiRoutes(app);
-  addResumeRoutes(app);
-  addStaticRoutes(app);
+  addResumeRoutes(app, snap);
+  addStaticRoutes(app, snap);
 };
 
 module.exports = {

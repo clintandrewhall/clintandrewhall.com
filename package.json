@@ -4,7 +4,7 @@
   "private": true,
   "license": "UNLICENSED",
   "homepage": "https://www.clintandrewhall.com",
-  "proxy": "http://localhost:5000",
+  "proxy": "http://localhost:5001",
   "devDependencies": {
     "@babel/core": "^7.13.15",
     "@babel/node": "^7.13.13",
@@ -59,6 +59,7 @@
   "dependencies": {
     "classnames": "^2.3.1",
     "express-rate-limit": "^5.2.6",
+    "gh-pages": "^3.2.3",
     "jimp": "^0.16.1",
     "markdown-with-front-matter-loader": "^0.1.0",
     "marked": "^4.0.10",
@@ -87,7 +88,7 @@
     "stylelint:fix": "stylelint src --fix",
     "format": "yarn prettier:fix && yarn eslint:fix && yarn stylelint:fix",
     "lint": "yarn eslint && yarn stylelint",
-    "generate:resume": "hackmyresume build ./src/content/resume.json TO ./public/resume/clintandrewhall.all -t ./src/resume && rm ./public/resume/clintandrewhall.p*.html && rm ./public/resume/*.css",
+    "generate:resume": "hackmyresume build ./src/content/resume.json TO ./public/resume/clintandrewhall.all -t ./src/resume && rm ./public/resume/clintandrewhall.p*.html && rm ./public/resume/*.css && mv ./public/resume/clintandrewhall.html ./public/resume/index.html",
     "generate:github": "babel-node --extensions .ts --presets @babel/preset-env,@babel/preset-typescript ./scripts/github",
     "generate:medium": "babel-node --extensions .ts --presets @babel/preset-env,@babel/preset-typescript ./scripts/medium",
     "generate:sitemap": "react-snap-sitemap --base-url='https://www.clintandrewhall.com/'",
@@ -97,7 +98,9 @@
     "test": "react-scripts test",
     "build": "react-scripts build && yarn generate:github && yarn generate:medium",
     "postbuild": "node scripts/snap && yarn generate:sitemap",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn build",
+    "deploy": "gh-pages -d build -r https://github.com/clintandrewhall/clintandrewhall.github.io"
   },
   "reactSnap": {
     "fixWebpackChunksIssue": "CRA2",
@@ -110,7 +113,7 @@
   },
   "engines": {
     "yarn": ">=1.9.4",
-    "node": "14.x"
+    "node": "16.x"
   },
   "browserslist": {
     "production": [
