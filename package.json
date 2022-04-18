@@ -43,6 +43,7 @@
     "hackmyresume": "^1.9.0-beta",
     "handlebars-helpers": "^0.10.0",
     "husky": "^6.0.0",
+    "lint-staged": ">=10",
     "node-fetch": "^2.6.7",
     "nodemon": "^2.0.7",
     "prettier": "^2.2.1",
@@ -126,5 +127,10 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "lint-staged": {
+    "*.js": "eslint --cache --fix",
+    "*.css": "stylelint --fix",
+    "**/*.ts?(x)": "tsc --noEmit"
   }
 }

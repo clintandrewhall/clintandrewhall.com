@@ -17,12 +17,12 @@ I look for opportunities where I can make strong, direct and meaningful contribu
 
 EMPLOYMENT ---------------------------------------------------------------------
 
-Tech Lead, Shared UX - Application Experience, Elastic (2021-12 — Present)
+Tech Lead, Shared UX, Elastic (2021-12 — Present)
 I'm the Tech Lead for Shared User Experience (UX) for the Application Experience organization at Elastic.  The team was conceived by myself and other leaders to bridge the gap between design and the myriad of solutions that comprise our Application Experience organization.  Our mission is to make consistency across our solutions a product.  My role is leading the team through a technology lens, coordinating projects, and consulting with other tech leaders across Elastic.
 
 My team is responsible for creating, maintaining and supporting shared UX infrastructure, like components, hooks and services.  We also promote patterns from our design organizations, fostering adoption through evangelism and codifying them in our infrastructure.  We're also responsible for unique UX solutions, driving our projects across organizations, and consulting with teams to deliver consistent experiences.
 
-Area Lead, Presentation Team - Kibana, Elastic (2020-10 — 2021-12)
+Area Lead, Presentation Team, Elastic (2020-10 — 2021-12)
 The Kibana organization created a new team-- Presentation-- responsible for [Canvas](https://www.elastic.co/what-is/kibana-canvas), [Dashboard](https://www.elastic.co/kibana/kibana-dashboard), and any other product considered a "presentation container".  I became the Area Lead for this new team, coordinating efforts between these products and the rest of Kibana.  I continued my previous responsibilites, this time on a larger scale: overseeing and coordinating technical efforts, representing the team across the org, and contributing significant or moonshot enhancements.
 - [kibana/51318](https://github.com/elastic/kibana/issues/51318): Coordinated completion of "Time to Visualize".
 - [kibana/88112](https://github.com/elastic/kibana/pull/88112): Plugin Services abstraction and shared component library.
@@ -30,7 +30,7 @@ The Kibana organization created a new team-- Presentation-- responsible for [Can
 - [kibana/102446](https://github.com/elastic/kibana/pull/102446): New Canvas Homepage
 - [kibana/103202](https://github.com/elastic/kibana/pull/103202): Convert Canvas to use Service Abstractions API
 
-Area Lead, Canvas - Kibana, Elastic (2018-10 — 2020-10)
+Area Lead, Canvas, Elastic (2018-10 — 2020-10)
 In October of 2018, I accepted a role with [Elastic](https://www.elastic.co) to work on [Kibana](https://www.elastic.co/kibana), specifically a new, ground-breaking beta plugin called [Canvas](https://www.elastic.co/what-is/kibana-canvas).  Soon after, I was named the new Area Lead.  I was responsible for overseeing and coordinating our technical efforts, representing the team across the org, and contributing significant or moonshot enhancements.
 
 During my tenure I directed project efforts for 1 major and 9 minor releases, including the General Availability (GA) release of Canvas from beta.  I introduced a number of technologies and architecture approaches that stabilized and enhanced the plugin, and oversaw migration of valuable bespoke technology to the Kibana ecosystem, (e.g. [`expressions`](https://www.elastic.co/guide/en/kibana/current/kibana-expressions-plugin.html)).
