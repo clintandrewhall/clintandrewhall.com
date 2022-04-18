@@ -22,7 +22,7 @@ declare type EmploymentHistory = {
   start: string;
   end?: string;
   keywords: any[];
-  highlights: any[];
+  highlights?: any[];
   hideFromSite?: boolean;
 };
 
