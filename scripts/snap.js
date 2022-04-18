@@ -20,7 +20,7 @@ let general = {
 const startServer = (options) => {
   const sourceDir = path.normalize(`${process.cwd()}/${options.source}`);
   const app = express();
-  addAllRoutes(app);
+  addAllRoutes(app, true);
   app.use(fallback('200.html', { root: sourceDir }));
 
   const server = http.createServer(app);

@@ -3,7 +3,7 @@ import { useFetch } from '../useFetch';
 import { MediumItem } from './MediumItem';
 
 export const Medium = () => {
-  const { error, response } = useFetch<MediumResponse>('/data/medium');
+  const { error, response } = useFetch<MediumResponse>('/medium.json');
 
   if (error || response === null) {
     return null;
