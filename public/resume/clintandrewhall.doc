@@ -609,9 +609,69 @@
           <w:sz-cs w:val="20"/>
         </w:rPr>
       </w:pPr>
-      <w:r><w:rPr></w:rPr><w:t>I&amp;apos;m the Tech Lead for Shared User Experience (UX) for the Application Experience organization at Elastic.  The team was conceived by myself and other leaders to bridge the gap between design and the myriad of solutions that comprise our Application Experience organization.  Our mission is to make consistency across our solutions a product.  My role is leading the team through a technology lens, coordinating projects, and consulting with other tech leaders across Elastic.</w:t></w:r></w:p><w:p><w:r><w:rPr></w:rPr><w:t>My team is responsible for creating, maintaining and supporting shared UX infrastructure, like components, hooks and services.  We also promote patterns from our design organizations, fostering adoption through evangelism and codifying them in our infrastructure.  We&amp;apos;re also responsible for unique UX solutions, driving our projects across organizations, and consulting with teams to deliver consistent experiences.</w:t></w:r>
+      <w:r><w:rPr></w:rPr><w:t>I&amp;apos;m the Tech Lead for Shared User Experience (UX) for the Application Experience organization at Elastic.  The team was conceived by me and other leaders to bridge the gap between design and the myriad of solutions that comprise the Application Experience organization.  Our mission is to make consistency across our solutions a product.  My role is leading the team through a technology lens, coordinating projects, and consulting with other tech leaders across Elastic.</w:t></w:r></w:p><w:p><w:r><w:rPr></w:rPr><w:t>My team is responsible for creating, maintaining and supporting shared UX infrastructure, like components, hooks and services.  We also promote patterns from our design organizations, fostering adoption through evangelism and codifying them in our infrastructure.  We&amp;apos;re also responsible for unique UX solutions, driving our projects across organizations, and consulting with teams to deliver consistent experiences.</w:t></w:r>
     </w:p>
 
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:listPr>
+          <w:ilvl w:val="0"/>
+          <w:ilfo w:val="1"/>
+          <wx:t wx:val="•"/>
+          <wx:font wx:val="Calibri"/>
+        </w:listPr>
+        <w:rPr>
+          <w:sz-cs w:val="20"/>
+        </w:rPr>
+      </w:pPr>
+      <w:hlink w:dest="https://github.com/elastic/kibana/pull/130355"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>kibana/130355</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t> - Create multi-package strategy for components</w:t></w:r>
+    </w:p>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:listPr>
+          <w:ilvl w:val="0"/>
+          <w:ilfo w:val="1"/>
+          <wx:t wx:val="•"/>
+          <wx:font wx:val="Calibri"/>
+        </w:listPr>
+        <w:rPr>
+          <w:sz-cs w:val="20"/>
+        </w:rPr>
+      </w:pPr>
+      <w:hlink w:dest="https://github.com/elastic/kibana/pull/127546"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>kibana/127546</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t> - Create Package-based Architecture for Shared UX</w:t></w:r>
+    </w:p>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:listPr>
+          <w:ilvl w:val="0"/>
+          <w:ilfo w:val="1"/>
+          <wx:t wx:val="•"/>
+          <wx:font wx:val="Calibri"/>
+        </w:listPr>
+        <w:rPr>
+          <w:sz-cs w:val="20"/>
+        </w:rPr>
+      </w:pPr>
+      <w:hlink w:dest="https://github.com/elastic/kibana/pull/123772"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>kibana/123772</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t> - Create Customer Chat component for Kibana in Cloud</w:t></w:r>
+    </w:p>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:listPr>
+          <w:ilvl w:val="0"/>
+          <w:ilfo w:val="1"/>
+          <wx:t wx:val="•"/>
+          <wx:font wx:val="Calibri"/>
+        </w:listPr>
+        <w:rPr>
+          <w:sz-cs w:val="20"/>
+        </w:rPr>
+      </w:pPr>
+      <w:r><w:rPr></w:rPr><w:t>Pitch and develop team mission, strategy, and roadmap</w:t></w:r>
+    </w:p>
 
   </wx:sub-section>
 
@@ -664,37 +724,7 @@
           <w:sz-cs w:val="20"/>
         </w:rPr>
       </w:pPr>
-      <w:hlink w:dest="https://github.com/elastic/kibana/issues/51318"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>kibana/51318</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>: Coordinated completion of &amp;quot;Time to Visualize&amp;quot;.</w:t></w:r>
-    </w:p>
-    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:listPr>
-          <w:ilvl w:val="0"/>
-          <w:ilfo w:val="1"/>
-          <wx:t wx:val="•"/>
-          <wx:font wx:val="Calibri"/>
-        </w:listPr>
-        <w:rPr>
-          <w:sz-cs w:val="20"/>
-        </w:rPr>
-      </w:pPr>
-      <w:hlink w:dest="https://github.com/elastic/kibana/pull/88112"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>kibana/88112</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>: Plugin Services abstraction and shared component library.</w:t></w:r>
-    </w:p>
-    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:listPr>
-          <w:ilvl w:val="0"/>
-          <w:ilfo w:val="1"/>
-          <wx:t wx:val="•"/>
-          <wx:font wx:val="Calibri"/>
-        </w:listPr>
-        <w:rPr>
-          <w:sz-cs w:val="20"/>
-        </w:rPr>
-      </w:pPr>
-      <w:hlink w:dest="https://github.com/elastic/kibana/pull/95435"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>kibana/95435</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>: &amp;quot;Labs&amp;quot; service for enabling experimental projects.</w:t></w:r>
+      <w:hlink w:dest="https://github.com/elastic/kibana/pull/103202"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>kibana/103202</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>: Convert Canvas to use Service Abstractions API</w:t></w:r>
     </w:p>
     <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
       <w:pPr>
@@ -724,7 +754,37 @@
           <w:sz-cs w:val="20"/>
         </w:rPr>
       </w:pPr>
-      <w:hlink w:dest="https://github.com/elastic/kibana/pull/103202"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>kibana/103202</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>: Convert Canvas to use Service Abstractions API</w:t></w:r>
+      <w:hlink w:dest="https://github.com/elastic/kibana/pull/95435"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>kibana/95435</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>: &amp;quot;Labs&amp;quot; service for enabling experimental projects.</w:t></w:r>
+    </w:p>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:listPr>
+          <w:ilvl w:val="0"/>
+          <w:ilfo w:val="1"/>
+          <wx:t wx:val="•"/>
+          <wx:font wx:val="Calibri"/>
+        </w:listPr>
+        <w:rPr>
+          <w:sz-cs w:val="20"/>
+        </w:rPr>
+      </w:pPr>
+      <w:hlink w:dest="https://github.com/elastic/kibana/pull/88112"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>kibana/88112</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>: Plugin Services abstraction and shared component library.</w:t></w:r>
+    </w:p>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:listPr>
+          <w:ilvl w:val="0"/>
+          <w:ilfo w:val="1"/>
+          <wx:t wx:val="•"/>
+          <wx:font wx:val="Calibri"/>
+        </w:listPr>
+        <w:rPr>
+          <w:sz-cs w:val="20"/>
+        </w:rPr>
+      </w:pPr>
+      <w:hlink w:dest="https://github.com/elastic/kibana/issues/51318"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>kibana/51318</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>: Coordinated completion of &amp;quot;Time to Visualize&amp;quot;.</w:t></w:r>
     </w:p>
 
   </wx:sub-section>
@@ -778,37 +838,7 @@
           <w:sz-cs w:val="20"/>
         </w:rPr>
       </w:pPr>
-      <w:hlink w:dest="https://github.com/elastic/kibana/pull/31734"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>kibana/31734</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>: Significant React performance investigation.</w:t></w:r>
-    </w:p>
-    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:listPr>
-          <w:ilvl w:val="0"/>
-          <w:ilfo w:val="1"/>
-          <wx:t wx:val="•"/>
-          <wx:font wx:val="Calibri"/>
-        </w:listPr>
-        <w:rPr>
-          <w:sz-cs w:val="20"/>
-        </w:rPr>
-      </w:pPr>
-      <w:hlink w:dest="https://github.com/elastic/kibana/pull/35087"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>kibana/35087</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>: Introduced Typescript.</w:t></w:r>
-    </w:p>
-    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
-      <w:pPr>
-        <w:pStyle w:val="ListParagraph"/>
-        <w:listPr>
-          <w:ilvl w:val="0"/>
-          <w:ilfo w:val="1"/>
-          <wx:t wx:val="•"/>
-          <wx:font wx:val="Calibri"/>
-        </w:listPr>
-        <w:rPr>
-          <w:sz-cs w:val="20"/>
-        </w:rPr>
-      </w:pPr>
-      <w:hlink w:dest="https://github.com/elastic/kibana/pull/36252"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>kibana/36252</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>: Introduced internationalization architecture.</w:t></w:r>
+      <w:hlink w:dest="https://github.com/elastic/kibana/pull/46278"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>kibana/46278</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>: Built novel means of embedding Canvas Workpads.</w:t></w:r>
     </w:p>
     <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
       <w:pPr>
@@ -838,7 +868,37 @@
           <w:sz-cs w:val="20"/>
         </w:rPr>
       </w:pPr>
-      <w:hlink w:dest="https://github.com/elastic/kibana/pull/46278"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>kibana/46278</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>: Built novel means of embedding Canvas Workpads.</w:t></w:r>
+      <w:hlink w:dest="https://github.com/elastic/kibana/pull/36252"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>kibana/36252</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>: Introduced internationalization architecture.</w:t></w:r>
+    </w:p>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:listPr>
+          <w:ilvl w:val="0"/>
+          <w:ilfo w:val="1"/>
+          <wx:t wx:val="•"/>
+          <wx:font wx:val="Calibri"/>
+        </w:listPr>
+        <w:rPr>
+          <w:sz-cs w:val="20"/>
+        </w:rPr>
+      </w:pPr>
+      <w:hlink w:dest="https://github.com/elastic/kibana/pull/35087"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>kibana/35087</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>: Introduced Typescript.</w:t></w:r>
+    </w:p>
+    <w:p wsp:rsidR="00C146CA" wsp:rsidRDefault="009452CA" wsp:rsidP="00C146CA">
+      <w:pPr>
+        <w:pStyle w:val="ListParagraph"/>
+        <w:listPr>
+          <w:ilvl w:val="0"/>
+          <w:ilfo w:val="1"/>
+          <wx:t wx:val="•"/>
+          <wx:font wx:val="Calibri"/>
+        </w:listPr>
+        <w:rPr>
+          <w:sz-cs w:val="20"/>
+        </w:rPr>
+      </w:pPr>
+      <w:hlink w:dest="https://github.com/elastic/kibana/pull/31734"><w:r><w:rPr><w:rStyle w:val="Hyperlink"/></w:rPr><w:t>kibana/31734</w:t></w:r></w:hlink><w:r><w:rPr></w:rPr><w:t>: Significant React performance investigation.</w:t></w:r>
     </w:p>
 
   </wx:sub-section>
