@@ -13,8 +13,8 @@ export const Hero = forwardRef<HTMLElement>((_props, ref) => (
         <h2 className={styles.greeting}>Hello There...!</h2>
         <h1 className={styles.intro}>
           I&apos;m Clint Andrew Hall. <br />
-          I&apos;m a User Interface Engineer <br />
-          and Socially Adept Geek.
+          I&apos;m a Technical Lead <br />
+          and User Interface Engineer.
         </h1>
         <div className={styles.buttons}>
           <a href="#portfolio" className={styles.button}>
