@@ -1,0 +1,36 @@
+.root {
+  font-family: montserrat-bold, sans-serif;
+  display: inline-block;
+  padding-left: 0;
+  line-height: 72px;
+  margin-right: 2rem;
+}
+
+.link {
+  display: block;
+  line-height: 72px;
+  color: #fff;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: .25rem;
+  font-weight: 400;
+  transition: color .3s ease-in-out;
+}
+
+.link:hover,
+.root.current .link{
+  color: #af2b2b;
+}
+
+@media only screen and (max-width: 800px) {
+  .root {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px dotted hsla(0, 0%, 100%, .07);
+  }
+
+  .link {
+    line-height: 54px;
+  }
+}

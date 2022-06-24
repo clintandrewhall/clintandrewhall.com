@@ -1,0 +1,220 @@
+.root {
+  width: 100%;
+  height: 72px;
+  background-color: transparent;
+  font-family: librebaskerville-regular, serif;
+  position: relative;
+}
+
+.header {
+  background-color: #000;
+  height: 72px;
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  font-family: librebaskerville-regular, serif;
+  transition: all 1s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px 0 40px;
+  z-index: 600;
+}
+
+.headerLogo {
+  display: inline-block;
+  flex: 1;
+  flex-grow: 0;
+  position: relative;
+  z-index: 100;
+}
+
+.headerLogo a {
+  display: block;
+  padding: 0;
+  outline: 0;
+  border: none;
+  width: 80px;
+  height: 27px;
+  line-height: 27px;
+  transition: all 0.3s ease-in-out;
+}
+
+.headerLogo img {
+  max-width: 100%;
+  height: auto;
+}
+
+.headerNav {
+  font-family: montserrat-bold, sans-serif;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.25rem;
+}
+
+.headerNavList {
+  display: inline-block;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  height: 72px;
+}
+
+.sticky .headerLogo a {
+  margin: 0;
+}
+
+.sticky .headerNav {
+  top: 0;
+}
+
+/* -------------------------------------------------------------------
+ * ## mobile menu toggle - (_site-layout.css)
+ * ------------------------------------------------------------------- */
+
+.headerMenuToggle {
+  display: none;
+  position: absolute;
+  right: 40px;
+  top: 18px;
+  height: 42px;
+  width: 42px;
+  line-height: 42px;
+  font-family: montserrat-regular, sans-serif;
+  font-size: 1.4rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  color: rgb(255 255 255 / 50%);
+  transition: all 0.3s ease-in-out;
+  z-index: 1001;
+  margin: 0;
+  padding: 0;
+  background: transparent;
+  border: none;
+}
+
+.headerMenuToggle:hover,
+.headerMenuToggle:focus {
+  color: #fff;
+  background: transparent;
+  border: none;
+}
+
+.headerMenuToggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  margin-top: -1px;
+  position: absolute;
+  left: 9px;
+  top: 50%;
+  right: auto;
+  bottom: auto;
+  background-color: white;
+  transition: all 0.5s ease-in-out;
+  font: 0/0 monospace;
+  text-shadow: none;
+  color: transparent;
+}
+
+.headerMenuToggle span::before,
+.headerMenuToggle span::after {
+  content: '';
+  width: 100%;
+  height: 100%;
+  background-color: inherit;
+  position: absolute;
+  left: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.headerMenuToggle span::before {
+  top: -9px;
+}
+
+.headerMenuToggle span::after {
+  bottom: -9px;
+}
+
+.headerMenuToggle.isClicked span {
+  background-color: rgb(255 255 255 / 0%);
+  transition: all 0.1s ease-in-out;
+}
+
+.headerMenuToggle.isClicked span::before,
+.headerMenuToggle.isClicked span::after {
+  background-color: white;
+}
+
+.headerMenuToggle.isClicked span::before {
+  top: 0;
+  transform: rotate(135deg);
+}
+
+.headerMenuToggle.isClicked span::after {
+  bottom: 0;
+  transform: rotate(225deg);
+}
+
+
+/* -------------------------------------------------------------------
+ * responsive:
+ * header
+ * ------------------------------------------------------------------- */
+
+@media only screen and (max-width: 800px) {
+
+  .header {
+    padding-left: 40px;
+  }
+
+  .headerNav {
+    height: 0;
+    width: 100%;
+    right: auto;
+    top: 0;
+    left: 0;
+    background-color: #000;
+    transition: height 0.5s ease-out;
+    position: absolute;
+    overflow: hidden;
+  }
+
+  .headerNav.headerNavOpen {
+    height: 609px;
+  }
+
+  .headerNavList {
+    display: block;
+    height: auto;
+    margin: 80px 40px 4.2rem;
+    border-top: 1px solid rgb(255 255 255 / 7%);
+  }
+
+  .headerNavItem {
+    display: block;
+    margin: 0;
+    padding: 0;
+    border-bottom: 1px dotted rgb(255 255 255 / 7%);
+  }
+
+  .headerNavLink {
+    padding: 1.8rem 0;
+    line-height: 1.8rem;
+  }
+
+  .headerMenuToggle {
+    display: block;
+  }
+}
+
+/* -------------------------------------------------------------------
+ * make sure the menu is visible on larger screens
+ * ------------------------------------------------------------------- */
+
+@media only screen and (min-width: 801px) {
+  .headerNav {
+    display: block !important;
+  }
+}

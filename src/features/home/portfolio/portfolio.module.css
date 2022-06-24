@@ -1,0 +1,104 @@
+.root {
+  composes: section from '../section.module.css';
+  padding-top: 15rem;
+  padding-bottom: 15.6rem;
+  background-color: #f1f1f1;
+  position: relative;
+}
+
+.intro {
+  composes: intro from '../section.module.css';
+}
+
+.introContent {
+  composes: introcontent from '../section.module.css';
+}
+
+.title {
+  composes: h2 from '../../../css/typography.module.css';
+  composes: title from '../section.module.css';
+}
+
+.subtitle {
+  composes: h3 from '../../../css/typography.module.css';
+  composes: subtitle from '../section.module.css';
+}
+
+.lead {
+  composes: lead from '../section.module.css';
+}
+
+.portfolio {
+  composes: row from '../../../css/grid.module.css';
+  margin-top: 4.8rem;
+  max-width: none;
+  width: 1600px;
+}
+
+.content {
+  display: inline-block;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.buttonRow {
+  composes: col-six from '../../../css/grid.module.css';
+  float: none;
+  margin: 0 auto;
+  padding: 0 25px;
+}
+
+.buttonRow::before {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.button {
+  composes: button from '../../../css/buttons.module.css';
+  composes: primary from '../../../css/buttons.module.css';
+  display: block;
+  margin: 4rem auto 0;
+}
+
+/* -------------------------------------------------------------------
+ * responsive:
+ * works
+ * ------------------------------------------------------------------- */
+
+@media only screen and (max-width: 1700px) {
+  .portfolio {
+    width: 1400px;
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  .portfolio {
+    width: 1200px;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .portfolio {
+    width: 999px;
+  }
+}
+
+@media only screen and (max-width: 1099px) {
+  .portfolio {
+    width: 90%;
+    max-width: 800px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .portfolio {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .portfolio {
+    width: auto;
+  }
+}

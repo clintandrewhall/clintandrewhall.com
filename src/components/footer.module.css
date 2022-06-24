@@ -1,0 +1,167 @@
+.root {
+  background: #000;
+  font-family: montserrat-regular, sans-serif;
+  font-size: 14px;
+  padding: 6.6rem 0 4.2rem;
+  text-align: center;
+  color: rgb(255 255 255 / 20%);
+}
+
+.root a {
+  color: #862121;
+}
+
+.root a:visited {
+  color: #862121;
+}
+
+.root a:hover,
+.root a:focus {
+  color: #fff;
+}
+
+.top {
+  width: 94%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.top:after,
+.social::after {
+  content: '';
+  display: table;
+  clear: both;
+}
+
+.topContent {
+  composes: col-full from '../css/grid.module.css';
+}
+
+.logo {
+  display: inline-block;
+}
+
+.logo img {
+  max-width: 100%;
+  height: auto;
+}
+
+.logoLink {
+  display: block;
+  width: 130px;
+}
+
+.social {
+  list-style: none;
+  margin-top: 1rem 0 0 3rem;
+  font-family: montserrat-regular, sans-serif;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: .3rem;
+}
+
+.socialItem {
+  display: inline-block;
+  padding-left: 0;
+  margin-right: 0.9rem;
+  line-height: 3.9rem;
+  vertical-align: middle;
+}
+
+.socialItem::after {
+  content: '|';
+  color: rgb(255 255 255 / 15%);
+  padding-left: 0.9rem;
+}
+
+.socialItemLink {
+  text-decoration: none;
+}
+
+.socialItemLogo {
+  font-size: 1.7rem;
+  line-height: 3rem;
+  vertical-align: middle;
+}
+
+.socialItemLabel {
+  margin-left: 0.6rem;
+}
+
+.root .socialItemLink,
+.root .socialItemLink:hover,
+.root .socialItemLink:focus,
+.root .socialItemLink:visited {
+  text-decoration: none;
+  color: #fff;
+}
+
+.socialItem:last-child {
+  margin-right: 0;
+}
+
+.socialItem:last-child::after {
+  display: none;
+}
+
+.bottom {
+  composes: row from '../css/grid.module.css';
+  margin-top: 7.2rem;
+  text-align: center;
+}
+
+.bottom .copyright span {
+  display: inline-block;
+}
+
+.bottom .copyright span::after {
+  content: '|';
+  display: inline-block;
+  padding: 0 1rem 0 1.2rem;
+  color: rgb(255 255 255 / 10%);
+}
+
+.bottom .copyright span:last-child::after {
+  display: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .social li {
+    margin-right: 1.8rem;
+  }
+
+  .social li span,
+  .social li::after {
+    display: none;
+  }
+
+  .social li i {
+    font-size: 2.4rem;
+  }
+
+  .bottom {
+    padding-bottom: 0.6rem;
+  }
+
+  .bottom .copyright span {
+    display: block;
+  }
+
+  .bottom .copyright span::after {
+    display: none;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .logoLink {
+    width: 100px;
+  }
+
+  .social li {
+    margin-right: 1.2rem;
+  }
+
+  .social li i {
+    font-size: 2.2rem;
+  }
+}

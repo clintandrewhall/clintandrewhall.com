@@ -1,0 +1,49 @@
+.root {
+  padding: 30px 30px 15px 30px;
+}
+
+.hidden {
+  position: absolute;
+  visibility: hidden;
+}
+
+.contactList li {
+  margin-bottom: 15px;
+}
+
+.contactList li:last-child {
+  margin-bottom: 0;
+}
+
+.contactInfo {
+  padding-left: 26px;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.contactIcon {
+  left: 0;
+  position: absolute;
+  top: 1px;
+}
+
+.websiteIcon {
+  composes: fas fa-globe from global;
+  composes: contactIcon;
+}
+
+.emailIcon {
+  composes: fas fa-envelope from global;
+  composes: contactIcon;
+}
+
+.locationIcon {
+  composes: fas fa-globe-americas from global;
+  composes: contactIcon;
+}
+
+.root :global .svg-inline--fa {
+  margin-right: 5px;
+  font-size: 18px;
+  vertical-align: middle;
+}

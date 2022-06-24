@@ -1,0 +1,178 @@
+.root {
+  background-color: #0d0a0b;
+  background-image: url('../../../images/testimonial-bg.jpg');
+  background-repeat: no-repeat;
+  background-position: top, center;
+  background-size: cover;
+  clear: both;
+  padding-top: 9.6rem;
+  padding-bottom: 10.2rem;
+  color: rgb(255 255 255 / 50%);
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 100%;
+  opacity: 0.9;
+  background: linear-gradient(to bottom, #0d0a0b 100%, rgb(0 0 0 / 80%) 100%);
+}
+
+.header {
+  composes: row from '../../../css/grid.module.css';
+  text-align: center;
+  padding: 0 14rem;
+  position: relative;
+}
+
+.headerContent {
+  composes: col-full from '../../../css/grid.module.css';
+}
+
+.heading {
+  composes: h2 from '../../../css/typography.module.css';
+  font-family: librebaskerville-bold, serif;
+  font-size: 4.2rem;
+  margin-top: 0;
+  color: #fff;
+}
+
+.lead {
+  composes: h3 from '../../../css/typography.module.css';
+  composes: lead from '../section.module.css';
+  color: #fff;
+  margin-top: 0;
+}
+
+.content {
+  composes: row from '../../../css/grid.module.css';
+  border-top: 1px solid rgb(255 255 255 / 10%);
+  position: relative;
+}
+
+.slider {
+  composes: col-full from '../../../css/grid.module.css';
+  position: relative;
+}
+
+.root :global(.slick-slide) {
+  outline: none;
+}
+
+.content :global(.swiper-button-prev),
+.content :global(.swiper-button-next) {
+  color: #333;
+  border-radius: 100%;
+  background-color: rgb(255 255 255 / 75%);
+  border: none;
+  box-shadow: 0 0 0 5px rgb(255 255 255 / 0%);
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  z-index: 2;
+  width: 40px;
+  height: 40px;
+}
+
+.content :global(.swiper-button-next) {
+  right: 0;
+}
+
+.content :global(.swiper-button-prev) {
+  left: 0;
+}
+
+.content :global(.swiper-button-prev)::after,
+.content :global(.swiper-button-next)::after {
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.content :global(.swiper-button-prev):hover,
+.content :global(.swiper-button-prev):focus,
+.content :global(.swiper-button-next):hover,
+.content :global(.swiper-button-next):focus {
+  background-color: rgb(255 255 255 / 100%);
+}
+
+.buttonRow {
+  composes: col-six from '../../../css/grid.module.css';
+  position: relative;
+  z-index: 1;
+  margin: 0 auto;
+  float: none;
+  padding: 50px 25px 0;
+}
+
+.button {
+  composes: button stroke from '../../../css/buttons.module.css';
+}
+
+a.button {
+  display: block;
+  border-color: #fff;
+  color: #fff;
+  letter-spacing: 0.25rem;
+  transition: all 0.5s ease-in-out;
+}
+
+a.button:hover,
+a.button:focus {
+  background: #fff;
+  border-color: #fff;
+  color: #000;
+}
+
+@media only screen and (max-width: 1200px) {
+  .root {
+    background-image: url('../../../images/testimonial-bg.jpg?size=1200');
+  }
+
+  .heading {
+    font-size: 3.8rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .root {
+    background-image: url('../../../images/testimonial-bg.jpg?size=800');
+  }
+
+  .heading {
+    font-size: 3rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .root {
+    background-image: url('../../../images/testimonial-bg.jpg?size=600');
+  }
+
+  .content {
+    margin-top: 3rem;
+  }
+
+  .header {
+    padding: 0;
+  }
+
+  .heading {
+    font-size: 2.7rem;
+  }
+
+  .prev,
+  .next {
+    top: 5.1rem;
+  }
+
+  .prev {
+    left: 1rem;
+  }
+
+  .next {
+    right: 1rem;
+  }
+}

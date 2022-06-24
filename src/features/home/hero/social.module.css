@@ -1,0 +1,87 @@
+.social {
+  font-family: montserrat-regular, sans-serif;
+  list-style: none;
+  margin: 3rem 0 0;
+  position: absolute;
+  right: 0;
+}
+
+.social::after {
+  display: block;
+  content: '';
+  height: 17.4rem;
+  width: 1px;
+  background-color: rgb(255 255 255 / 8%);
+  position: absolute;
+  bottom: 0;
+  right: 0.75rem;
+}
+
+a.socialLink {
+  color: white;
+  transition: all 0.5s ease-in-out;
+}
+
+a.socialLink:active,
+a.socialLink:hover,
+a.socialLink:visited .socialLink:focus {
+  color: white;
+}
+
+.socialItem {
+  position: relative;
+  display: inline-block;
+  padding: 0;
+}
+
+.social i,
+.social span {
+  display: block;
+  line-height: 3.6rem;
+  transition: all 0.5s ease-in-out;
+}
+
+.social i {
+  font-size: 3.6rem;
+  transform: scale(0.7);
+  margin: 0 0 0 2rem;
+}
+
+.social span {
+  color: #fff;
+  font-size: 1.8rem;
+  opacity: 0;
+  visibility: hidden;
+  transform: scale(0);
+  transform-origin: 0 50%;
+  position: absolute;
+  font-weight: normal;
+}
+
+.social li:hover span {
+  opacity: 1;
+  visibility: visible;
+  transform: scale(1);
+}
+
+.social li:hover i {
+  transform: scale(1);
+  color: #fff;
+}
+
+@media only screen and (max-width: 1000px) {
+  .social {
+    position: static;
+  }
+
+  .socialItem i {
+    margin: 0 2rem 0 0;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .social span {
+    display: none;
+    visibility: hidden;
+  }
+}
