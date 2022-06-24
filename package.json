@@ -10,6 +10,15 @@
     "@babel/node": "^7.13.13",
     "@babel/preset-typescript": "^7.13.0",
     "@fudohq/react-snap-sitemap": "^0.1.5",
+    "@storybook/addon-actions": "^6.5.3",
+    "@storybook/addon-essentials": "^6.5.3",
+    "@storybook/addon-interactions": "^6.5.3",
+    "@storybook/addon-links": "^6.5.3",
+    "@storybook/node-logger": "^6.5.3",
+    "@storybook/preset-create-react-app": "^3.2.0",
+    "@storybook/react": "^6.5.3",
+    "@storybook/testing-library": "^0.0.11",
+    "@supastuff/json-resume-types": "^1.0.0",
     "@testing-library/dom": "^7.30.3",
     "@testing-library/jest-dom": "^5.11.4",
     "@testing-library/react": "^11.1.0",
@@ -22,7 +31,6 @@
     "@types/numeral": "^2.0.1",
     "@types/react": "^17.0.0",
     "@types/react-dom": "^17.0.0",
-    "@types/react-router-dom": "^5.1.7",
     "@types/react-scroll": "^1.8.2",
     "@types/rellax": "^1.7.3",
     "@types/webpack-env": "^1.16.0",
@@ -40,8 +48,6 @@
     "eslint-plugin-simple-import-sort": "^7.0.0",
     "express": "^4.17.1",
     "express-history-api-fallback": "^2.2.1",
-    "hackmyresume": "^1.9.0-beta",
-    "handlebars-helpers": "^0.10.0",
     "husky": "^6.0.0",
     "lint-staged": ">=10",
     "node-fetch": "^2.6.7",
@@ -49,11 +55,14 @@
     "prettier": "^2.2.1",
     "pretty-quick": "^3.1.0",
     "react-snap": "^1.23.0",
+    "resume-schema": "^1.0.0",
+    "resumed": "^1.0.3",
     "rss-parser": "^3.12.0",
-    "stylelint": "^13.12.0",
-    "stylelint-config-css-modules": "^2.2.0",
-    "stylelint-config-prettier": "^8.0.2",
-    "stylelint-config-standard": "^21.0.0",
+    "storybook-addon-mock": "^2.4.0",
+    "stylelint": "^14.8.0",
+    "stylelint-config-css-modules": "^4.1.0",
+    "stylelint-config-prettier": "^9.0.3",
+    "stylelint-config-standard": "^25.0.0",
     "ts-node": "^9.1.1",
     "typescript-plugin-css-modules": "^3.2.0"
   },
@@ -69,39 +78,42 @@
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-markdown": "^6.0.0",
-    "react-router-dom": "^5.2.0",
+    "react-router-dom": "^6.3.0",
     "react-scripts": "4.0.3",
     "react-scroll": "^1.8.2",
+    "react-use": "^17.3.2",
     "rellax": "^1.12.1",
     "responsive-loader": "^2.3.0",
     "swiper": "^6.5.7",
+    "tsc-files": "^1.1.3",
     "tslib": "^2.3.1",
     "typescript": "^4.1.2",
     "web-vitals": "^1.0.1",
     "yaml-front-matter": "^4.1.1"
   },
   "scripts": {
-    "eslint": "eslint .",
-    "eslint:fix": "eslint . --fix",
-    "prettier:fix": "pretty-quick",
-    "prettier:staged": "pretty-quick --staged",
-    "stylelint": "stylelint src",
-    "stylelint:fix": "stylelint src --fix",
-    "format": "yarn prettier:fix && yarn eslint:fix && yarn stylelint:fix",
-    "lint": "yarn eslint && yarn stylelint",
-    "generate:resume": "hackmyresume build ./src/content/resume.json TO ./public/resume/clintandrewhall.all -t ./src/resume && rm ./public/resume/clintandrewhall.p*.html && rm ./public/resume/*.css && mv ./public/resume/clintandrewhall.html ./public/resume/index.html",
+    "lint:es": "eslint .",
+    "lint:es:fix": "eslint . --fix",
+    "lint:prettier": "pretty-quick --staged",
+    "lint:prettier:fix": "pretty-quick",
+    "lint:style": "stylelint src",
+    "lint:style:fix": "stylelint src --fix",
+    "lint": "yarn lint:prettier &&yarn lint:es && yarn lint:style",
+    "lint:fix": "yarn lint:prettier:fix && yarn lint:es:fix && yarn lint:style:fix",
+    "generate:resume": "",
     "generate:github": "babel-node --extensions .ts --presets @babel/preset-env,@babel/preset-typescript ./scripts/github",
     "generate:medium": "babel-node --extensions .ts --presets @babel/preset-env,@babel/preset-typescript ./scripts/medium",
     "generate:sitemap": "react-snap-sitemap --base-url='https://www.clintandrewhall.com/'",
-    "start:resume": "nodemon --exec \"clear && yarn run generate:resume\" -e json,hbs,css,html --watch ./src/resume --watch ./src/content",
-    "start:site": "concurrently \"yarn react-scripts start\" \"node scripts/dev\"",
-    "start": "node scripts/server",
+    "start:resume": "",
+    "start": "concurrently \"yarn react-scripts start\" \"node scripts/dev\"",
     "test": "react-scripts test",
     "build": "react-scripts build && yarn generate:github && yarn generate:medium",
     "postbuild": "node scripts/snap && yarn generate:sitemap",
     "eject": "react-scripts eject",
     "predeploy": "yarn build",
-    "deploy": "gh-pages -d build -r https://github.com/clintandrewhall/clintandrewhall.github.io"
+    "deploy": "gh-pages -d build -r https://github.com/clintandrewhall/clintandrewhall.github.io",
+    "storybook": "start-storybook -p 6006 -s public",
+    "build-storybook": "build-storybook -s public"
   },
   "reactSnap": {
     "fixWebpackChunksIssue": "CRA2",
@@ -131,6 +143,18 @@
   "lint-staged": {
     "*.js": "eslint --cache --fix",
     "*.css": "stylelint --fix",
-    "**/*.ts?(x)": "tsc --noEmit"
+    "**/*.ts?(x)": "tsc-files --noEmit types/github.d.ts types/global.d.ts types/medium.d.ts types/resume.d.ts"
+  },
+  "eslintConfig": {
+    "overrides": [
+      {
+        "files": [
+          "**/*.stories.*"
+        ],
+        "rules": {
+          "import/no-anonymous-default-export": "off"
+        }
+      }
+    ]
   }
 }

@@ -1,0 +1,61 @@
+.root {
+  padding: 15px 30px;
+}
+
+.title {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.item {
+  padding-left: 26px;
+  position: relative;
+  margin-bottom: 0.5rem;
+}
+
+.icon {
+  left: 0;
+  position: absolute;
+  top: 1px;
+}
+
+.text {
+  composes: fas fa-file-alt from global;
+  composes: icon;
+}
+
+.pdf {
+  composes: fas fa-file-pdf from global;
+  composes: icon;
+}
+
+.doc {
+  composes: fas fa-file-word from global;
+  composes: icon;
+}
+
+.json {
+  composes: fab fa-js-square from global;
+  composes: icon;
+}
+
+.md {
+  composes: fab fa-markdown from global;
+  composes: icon;
+  margin-left: -4px;
+}
+
+.yml {
+  composes: fas fa-file-code from global;
+  composes: icon;
+}
+
+.root :global .svg-inline--fa {
+  margin-right: 5px;
+  font-size: 18px;
+  vertical-align: middle;
+}

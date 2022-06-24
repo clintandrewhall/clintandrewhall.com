@@ -1,0 +1,29 @@
+.root {
+  composes: root from './entry.module.css';
+}
+
+.header {
+  composes: header from './entry.module.css';
+  background-image: url('../../../images/testimonial-bg.jpg');
+}
+
+.headerContent {
+  composes: headercontent from './entry.module.css';
+}
+
+.title {
+  composes: title from './entry.module.css';
+}
+
+.caption {
+  composes: caption from './entry.module.css';
+}
+
+.portfolio {
+  composes: portfolio from '../../home/components/portfolio.module.css';
+  margin-bottom: 4.8rem;
+}
+
+.content {
+  composes: content from '../../home/components/portfolio.module.css';
+}

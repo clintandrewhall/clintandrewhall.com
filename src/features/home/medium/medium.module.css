@@ -1,0 +1,54 @@
+.root {
+  composes: section from '../section.module.css';
+  background-color: #f1f1f1;
+  position: relative;
+}
+
+.header {
+  composes: row from '../../../css/grid.module.css';
+  composes: intro from '../section.module.css';
+  max-width: 800px;
+}
+
+.headerContent {
+  composes: col-full from '../../../css/grid.module.css';
+}
+
+.title {
+  composes: h2 from '../../../css/typography.module.css';
+  composes: title from '../section.module.css';
+}
+
+.subtitle {
+  composes: h3 from '../../../css/typography.module.css';
+  composes: subtitle from '../section.module.css';
+}
+
+.lead {
+  composes: lead from '../section.module.css';
+}
+
+.content {
+  composes: row from '../../../css/grid.module.css';
+  max-width: 1000px;
+}
+
+.area {
+  composes: col-full from '../../../css/grid.module.css';
+}
+
+.list {
+  composes: block-1-2 block-tab-full from '../../../css/grid.module.css';
+}
+
+@media only screen and (max-width: 1200px) {
+  .content {
+    max-width: 900px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .content {
+    max-width: 800px;
+  }
+}

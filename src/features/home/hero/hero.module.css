@@ -1,0 +1,331 @@
+.root {
+  composes: target-section from global;
+  width: 100%;
+  height: 100%;
+  min-height: 786px;
+  background-color: transparent;
+  position: relative;
+  display: table;
+}
+
+.shadowOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.6;
+  background: linear-gradient(to bottom,
+      transparent 0%,
+      rgb(0 0 0 / 80%) 100%);
+}
+
+.overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.3;
+  background-color: #111;
+}
+
+:global(.no-js) .home {
+  background: #0d0a0b;
+}
+
+.content {
+  display: table-cell;
+  width: 100%;
+  height: 100%;
+  vertical-align: bottom;
+  padding-bottom: 19.2rem;
+  position: relative;
+}
+
+.greeting {
+  composes: h3 from '../../../css/typography.module.css';
+  text-shadow: 1px 1px 1px rgb(0 0 0 / 50%);
+  font-family: montserrat-bold, sans-serif;
+  font-size: 1.8rem;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 0.5rem;
+  position: relative;
+  padding-left: 80px;
+  margin-left: -30px;
+  margin-bottom: 1rem;
+}
+
+.greeting::before {
+  display: block;
+  content: '';
+  width: 60px;
+  height: 2px;
+  background-color: #fff;
+  margin-top: -1.5px;
+  position: absolute;
+  left: 0;
+  top: 50%;
+}
+
+.intro {
+  composes: h1 from '../../../css/typography.module.css';
+  text-shadow: 2px 2px 2px rgb(0 0 0 / 50%);
+  font-family: librebaskerville-bold, serif;
+  color: #fff;
+  font-size: 6rem;
+  line-height: 1.35;
+  margin-top: 0;
+}
+
+.main {
+  composes: row from '../../../css/grid.module.css';
+  padding-right: 300px;
+  position: relative;
+}
+
+.buttons {
+  position: absolute;
+  right: 0;
+  bottom: 2.1rem;
+  text-align: center;
+}
+
+.button {
+  composes: button stroke from '../../../css/buttons.module.css';
+}
+
+a.button {
+  display: block;
+  width: 210px;
+  border-color: #fff;
+  color: #fff;
+  margin: 1.5rem 0 0;
+  letter-spacing: 0.25rem;
+  transition: all 0.5s ease-in-out;
+}
+
+a.button:hover,
+a.button:focus {
+  background: #fff;
+  border-color: #fff;
+  color: #000;
+}
+
+.scroll {
+  position: absolute;
+  left: 0.6rem;
+  bottom: -13.2rem;
+}
+
+a.scrollLink {
+  font-family: montserrat-semibold, sans-serif;
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.3rem;
+  color: #fff;
+  position: relative;
+  display: inline-block;
+  line-height: 3rem;
+  padding-right: 2rem;
+}
+
+a.scrollLink::after {
+  border-bottom: 2px solid #922424;
+  border-right: 2px solid #922424;
+  content: '';
+  display: block;
+  height: 8px;
+  width: 8px;
+  margin-top: -7px;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  top: 50%;
+  transform-origin: 66% 66%;
+  transform: rotate(45deg);
+  transition: all 0.15s ease-in-out;
+}
+
+/* animate .main
+ * ------------------------------------------------------------------- */
+
+:global(html.preload) .main {
+  opacity: 0;
+}
+
+:global(html.loaded) .main {
+  animation-duration: 1s;
+  animation-name: fadein;
+  animation-name: fadeIn;
+}
+
+:global(html.no-csstransitions) .main {
+  opacity: 1;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -50%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translate3d(0, -50%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+}
+
+/* -------------------------------------------------------------------
+ * responsive:
+ * home
+ * ------------------------------------------------------------------- */
+
+@media only screen and (max-width: 1500px) {
+  .intro {
+    font-size: 4.5rem;
+  }
+
+  .main {
+    max-width: 1000px;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .intro {
+    font-size: 4.325rem;
+  }
+
+  .content br {
+    display: none;
+  }
+
+  .main {
+    max-width: 800px;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .intro {
+    font-size: 4.15rem;
+  }
+
+  .main {
+    padding-right: 40px;
+    max-width: 680px;
+  }
+
+  .buttons {
+    position: static;
+    text-align: left;
+  }
+
+  .buttons .button {
+    display: inline-block;
+    margin-right: 0.9rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .hello {
+    font-size: 1.6rem;
+    padding-left: 50px;
+    margin-left: -10px;
+  }
+
+  .intro::before {
+    width: 40px;
+  }
+
+  .intro {
+    font-size: 3.4rem;
+  }
+
+  .main {
+    max-width: 500px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .content {
+    padding-bottom: 15rem;
+  }
+
+  .intro {
+    font-size: 3.6rem;
+  }
+
+  .main {
+    max-width: 380px;
+    padding: 0;
+  }
+
+  .scroll {
+    bottom: -6rem;
+  }
+
+  .social {
+    padding-bottom: 10.8rem;
+  }
+
+  .social::after {
+    height: 10.2rem;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .home {
+    min-height: 654px;
+  }
+
+  .hello {
+    font-size: 1.5rem;
+  }
+
+  .intro {
+    font-size: 3.3rem;
+  }
+
+  .main {
+    max-width: none;
+    width: 85%;
+    margin-top: 150px;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .content {
+    vertical-align: middle;
+  }
+
+  .intro {
+    font-size: 3rem;
+  }
+
+  .main {
+    width: auto;
+    margin-left: 25px;
+    margin-right: 25px;
+  }
+
+  .buttons .button {
+    width: 100%;
+  }
+
+  .social {
+    display: none;
+  }
+}

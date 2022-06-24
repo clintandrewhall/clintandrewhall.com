@@ -1,0 +1,107 @@
+.root {
+  composes: col-block from '../../../css/grid.module.css';
+  margin-bottom: 7.2rem;
+}
+
+.root:nth-child(2n + 1) {
+  padding-right: 50px;
+}
+
+.root:nth-child(2n + 2) {
+  padding-left: 50px;
+}
+
+.heading {
+  composes: h2 from '../../../css/typography.module.css';
+  font-size: 3rem;
+  line-height: 1.2;
+  margin-top: 0.3rem;
+  margin-bottom: 2.1rem;
+  padding-bottom: 2.4rem;
+  color: #0d0a0b;
+  position: relative;
+}
+
+.heading a {
+  color: #0d0a0b;
+}
+
+.heading::after {
+  display: block;
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 1px;
+  width: 80px;
+  background-color: rgb(0 0 0 / 15%);
+}
+
+.date {
+  font-family: montserrat-regular, sans-serif;
+  font-size: 1.5rem;
+  color: #862121;
+}
+
+.date a {
+  color: #862121;
+}
+
+.tags a {
+  color: #000;
+}
+
+.date a:hover,
+.date a:focus,
+.date a:active {
+  color: #000;
+}
+
+.tags {
+  font-family: montserrat-medium, sans-serif;
+  font-size: 1.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.2rem;
+  color: #000;
+  margin-top: -0.9rem;
+}
+
+.tags a:hover,
+.tags a:focus,
+.tags a:active {
+  color: #862121;
+}
+
+.tags a::after {
+  content: ', ';
+}
+
+.tags a:last-child::after {
+  display: none;
+}
+
+@media only screen and (max-width: 1200px) {
+  .root:nth-child(2n + 1) {
+    padding-right: 40px;
+  }
+
+  .root:nth-child(2n + 2) {
+    padding-left: 40px;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .root:nth-child(n) {
+    padding: 0 15px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .root:nth-child(n) {
+    padding: 0;
+  }
+
+  .heading {
+    font-size: 2.7rem;
+  }
+}
