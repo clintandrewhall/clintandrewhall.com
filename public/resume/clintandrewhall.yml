@@ -48,7 +48,7 @@ employment:
       employer: Elastic
       key: elastic
       position: 'Tech Lead, Shared UX'
-      summary: "I'm the Tech Lead for Shared User Experience (UX) for the Application Experience organization at Elastic.  The team was conceived by me and other leaders to bridge the gap between design and the myriad of solutions that comprise the Application Experience organization.  Our mission is to make consistency across our solutions a product.  My role is leading the team through a technology lens, coordinating projects, and consulting with other tech leaders across Elastic.\n\nMy team is responsible for creating, maintaining and supporting shared UX infrastructure, like components, hooks and services.  We also promote patterns from our design organizations, fostering adoption through evangelism and codifying them in our infrastructure.  We're also responsible for unique UX solutions, driving our projects across organizations, and consulting with teams to deliver consistent experiences."
+      summary: "I'm the Tech Lead for Shared User Experience (Shared UX) for the Application Experience organization at Elastic.  The team was conceived by myself and other leaders to bridge the gap between design and the myriad of solutions that comprise the Application Experience organization.  Our mission is to make consistency across our solutions a product.  My role is leading the team through a technology lens, coordinating projects, and consulting with other tech leaders across Elastic.\n\nMy team is responsible for creating, maintaining and supporting Shared UX infrastructure, like components, hooks and services.  We also promote patterns from our design organizations, fostering adoption through evangelism and codifying them in our infrastructure.  We're also responsible for unique UX solutions, driving our projects across organizations, and consulting with teams to deliver consistent experiences."
       start: '2021-12-15'
       keywords:
         - Lead
@@ -313,13 +313,27 @@ recognition:
     summary: 'Created "Shakey''s Place", a website about Shakespeare featuring a 3D Globe Theatre. Placed Second in Arts and Literature category totaling $48,000 in scholarships. Team Leader, designed interface and 3D graphics, programmed Perl 5 scripts, designed HTML layout.'
 testimonials:
   -
+    name: 'Raya Fratkina'
+    imageSrc: /images/linkedin/raya.jpg
+    title: 'Team Lead, Kibana Applications at Elastic'
+    connection: 'Raya managed Clint directly'
+    timestamp: 1650999316
+    quote: 'Clint combines technical excellence with a feel for UX and ability to lead a team of engineers to deliver consistent business outcomes. It has been amazing working with him and watching him build and grow his team. Love his empathy and focus on outcomes and moving the product forward incrementally.'
+  -
+    name: 'Jim Goodwin'
+    imageSrc: /images/linkedin/jim.jpg
+    title: 'Vice President of Engineering at Elastic'
+    connection: 'Jim managed Clint directly'
+    timestamp: 1650917334
+    quote: 'From the moment I interviewed Clint I knew he was going to be a great addition to the team. Throughout my time working with Clint he came up with creative and useful solutions. He encouraged and supported more junior members of the team. He solved complex problems under pressure with good humor and a cool head. His knowledge was impressive and always growing, he would find new technology, study it and share it and often solve a problem in the codebase with it. He''s also a kind, smart and fun person to work with. If the opportunity arose I''d hire him again.'
+  -
     name: 'Erik Vorhes'
     imageSrc: /images/linkedin/erik.jpg
     flavor: professional
     title: 'Lead Software Engineer at Chegg'
     connection: 'Clint worked with Erik in different groups at Facebook'
     timestamp: 1536902621
-    quote: 'Clint is one of the best engineers I’ve worked with. He is especially passionate about making products available to as many people as possible — not only in terms of pushing for accessibility best practices and for inclusive design, but also in making sure to make things available to people whose devices aren’t the latest and greatest devices and whose internet connections are suboptimal. Clint is capable of building things quickly and at a high standard of excellence while also demonstrating compassion for the people who use the things he builds.'
+    quote: 'Clint is one of the best engineers I''ve worked with. He is especially passionate about making products available to as many people as possible — not only in terms of pushing for accessibility best practices and for inclusive design, but also in making sure to make things available to people whose devices aren''t the latest and greatest devices and whose internet connections are suboptimal. Clint is capable of building things quickly and at a high standard of excellence while also demonstrating compassion for the people who use the things he builds.'
   -
     name: 'Patrick Keenan'
     imageSrc: /images/linkedin/patrick.jpg

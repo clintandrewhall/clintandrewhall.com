@@ -17,9 +17,9 @@ I look for opportunities where I can make strong, direct and meaningful contribu
 
 ### *Tech Lead, Shared UX*, Elastic (2021-12 — Present)
 
-I'm the Tech Lead for Shared User Experience (UX) for the Application Experience organization at Elastic.  The team was conceived by me and other leaders to bridge the gap between design and the myriad of solutions that comprise the Application Experience organization.  Our mission is to make consistency across our solutions a product.  My role is leading the team through a technology lens, coordinating projects, and consulting with other tech leaders across Elastic.
+I'm the Tech Lead for Shared User Experience (Shared UX) for the Application Experience organization at Elastic.  The team was conceived by myself and other leaders to bridge the gap between design and the myriad of solutions that comprise the Application Experience organization.  Our mission is to make consistency across our solutions a product.  My role is leading the team through a technology lens, coordinating projects, and consulting with other tech leaders across Elastic.
 
-My team is responsible for creating, maintaining and supporting shared UX infrastructure, like components, hooks and services.  We also promote patterns from our design organizations, fostering adoption through evangelism and codifying them in our infrastructure.  We're also responsible for unique UX solutions, driving our projects across organizations, and consulting with teams to deliver consistent experiences.
+My team is responsible for creating, maintaining and supporting Shared UX infrastructure, like components, hooks and services.  We also promote patterns from our design organizations, fostering adoption through evangelism and codifying them in our infrastructure.  We're also responsible for unique UX solutions, driving our projects across organizations, and consulting with teams to deliver consistent experiences.
   - [kibana/130355](https://github.com/elastic/kibana/pull/130355) - Create multi-package strategy for components
   - [kibana/127546](https://github.com/elastic/kibana/pull/127546) - Create Package-based Architecture for Shared UX
   - [kibana/123772](https://github.com/elastic/kibana/pull/123772) - Create Customer Chat component for Kibana in Cloud
