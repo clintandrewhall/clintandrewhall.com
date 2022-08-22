@@ -10,11 +10,11 @@ import linkStyles from './header_link.module.css';
 import { sections, Section } from '../lib';
 
 export interface Props {
-  selectedId: Section | '';
-  navigation: Navigation;
+  selectedId?: Section | '';
+  navigation?: Navigation;
 }
 
-export const Header = ({ selectedId, navigation }: Props) => {
+export const Header = ({ selectedId = '', navigation = 'local' }: Props) => {
   const [isOpened, setIsOpened] = useState(false);
   const headerRef = useRef<HTMLDivElement>(null);
 

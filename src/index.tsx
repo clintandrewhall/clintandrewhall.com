@@ -1,5 +1,6 @@
 import { StrictMode } from 'react';
-import { hydrate, render } from 'react-dom';
+import { hydrate } from 'react-dom';
+import { createRoot } from 'react-dom/client';
 
 import { App } from './App';
 import { reportWebVitals, sendToAnalytics } from './reportWebVitals';
@@ -13,12 +14,11 @@ if (rootElement?.hasChildNodes()) {
     </StrictMode>,
     rootElement,
   );
-} else {
-  render(
+} else if (rootElement) {
+  createRoot(rootElement).render(
     <StrictMode>
       <App />
     </StrictMode>,
-    rootElement,
   );
 }
 

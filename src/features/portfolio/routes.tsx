@@ -1,29 +1,30 @@
+import { FC } from 'react';
 import { Route } from 'react-router-dom';
-import { marked } from 'marked';
 import { Portfolio, PortfolioEntry, PortfolioBlock } from './components';
 
 interface Front extends PortfolioEntry {
-  __content: string;
+  react?: FC;
 }
 
 export const getRoutes = () => {
   const portfolioContext = require.context(
-    '!markdown-with-front-matter-loader!../../content/portfolio',
-    false,
+    '../../content/portfolio',
+    true,
     /.md$/,
   );
 
   const entries = portfolioContext.keys().reduce((memo, fileName) => {
     const obj = portfolioContext(fileName);
-    const entry = { ...obj, __content: marked(obj.__content) } as Front;
-    const match = fileName.match(/.\/([^.]+).*/);
 
-    if (match) {
-      memo[match[1]] = entry;
+    if (obj && obj.attributes && obj.react) {
+      const match = fileName.match(/.\/([^.]+).*/);
+
+      if (match) {
+        memo[match[1]] = { ...obj.attributes, react: obj.react } as Front;
+      }
     }
-
     return memo;
-  }, {} as Record<string, PortfolioEntry>);
+  }, {} as Record<string, Front>);
 
   function getPortfolio() {
     return (
@@ -40,19 +41,14 @@ export const getRoutes = () => {
   }
 
   return [
-    <Route
-      key="index"
-      path="/portfolio"
-      exact={true}
-      component={getPortfolio}
-    />,
+    <Route key="index" path="/portfolio" element={getPortfolio()} />,
     ...Object.keys(entries).map((path) => {
       const entry = entries[path];
       return (
         <Route
           key={path}
           path={'/portfolio/' + entry?.slug}
-          component={() => <PortfolioEntry entry={entry} />}
+          element={<PortfolioEntry entry={entry} />}
         />
       );
     }),

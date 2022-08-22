@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStoryObj, ComponentMeta } from '@storybook/react';
 import { MemoryRouter } from 'react-router-dom';
 
 import resume from '../content/resume.json';
@@ -9,9 +9,6 @@ import { Page } from './page';
 export default {
   title: 'components/Footer',
   component: Component,
-  parameters: {
-    layout: 'fullscreen',
-  },
   decorators: [
     (story) => (
       <MemoryRouter>
@@ -21,6 +18,6 @@ export default {
   ],
 } as ComponentMeta<typeof Component>;
 
-export const Footer: ComponentStory<typeof Component> = () => (
-  <Component profiles={resume.basics.profiles} />
-);
+export const Footer: ComponentStoryObj<typeof Component> = {
+  render: () => <Component profiles={resume.basics.profiles} />,
+};

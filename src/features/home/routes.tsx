@@ -1,7 +1,20 @@
 import { Route } from 'react-router-dom';
 
-import { Home } from './components';
+import { Home } from './home';
+
+// TODO: async import
+import resume from '../../content/resume.json';
+import { ResumeProvider } from '../../hooks';
 
 export const getRoutes = () => {
-  return <Route path="/" component={() => <Home />} exact />;
+  return (
+    <Route
+      path="/"
+      element={
+        <ResumeProvider resume={resume}>
+          <Home />
+        </ResumeProvider>
+      }
+    />
+  );
 };

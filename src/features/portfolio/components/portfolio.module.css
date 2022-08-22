@@ -20,10 +20,10 @@
 }
 
 .portfolio {
-  composes: portfolio from '../../home/components/portfolio.module.css';
+  composes: portfolio from '../../home/portfolio/portfolio.module.css';
   margin-bottom: 4.8rem;
 }
 
 .content {
-  composes: content from '../../home/components/portfolio.module.css';
+  composes: content from '../../home/portfolio/portfolio.module.css';
 }

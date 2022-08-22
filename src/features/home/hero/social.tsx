@@ -1,10 +1,9 @@
+import { useProfiles } from '../../../hooks';
+
 import styles from './social.module.css';
 
-export interface Props {
-  profiles: Profile[];
-}
-
-export const Social = ({ profiles }: Props) => {
+export const Social = () => {
+  const profiles = useProfiles();
   const items = profiles.map((profile) => (
     <li className={styles.socialItem} key={profile.network}>
       <a

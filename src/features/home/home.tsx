@@ -10,15 +10,10 @@ import { Portfolio } from './portfolio';
 import { Medium } from './medium';
 import { Career } from './career';
 
-import styles from './home.module.css';
-
-// TODO: async import
-import resume from '../../content/resume.json';
 import { usePageLoad } from '../../hooks';
 import type { Section } from '../../lib';
 
-const { basics, work: works, references } = resume;
-const { profiles, label, summary } = basics;
+import styles from './home.module.css';
 
 const SCROLL_DEBOUNCE = 30;
 
@@ -96,12 +91,12 @@ export const Home = () => {
           <div className={styles.background} />
         </div>
         <Header navigation="local" selectedId={place} />
-        <Hero ref={heroRef} {...{ label, profiles }} />
-        <About {...{ summary }} />
+        <Hero ref={heroRef} />
+        <About />
         <Portfolio />
-        <Career {...{ works, references }} />
+        <Career />
         <Medium />
-        <Footer {...{ profiles }} />
+        <Footer />
       </div>
     </Page>
   );

@@ -1,14 +1,14 @@
-import { FC } from 'react';
+import { PropsWithChildren } from 'react';
 
 import styles from './sidebar.module.css';
 
-export interface Props {
+export interface Props extends PropsWithChildren {
   name: string;
   label: string;
   image: string;
 }
 
-export const Sidebar: FC<Props> = ({ children, name, label, image }) => {
+export const Sidebar = ({ children, name, label, image }: Props) => {
   return (
     <div className={styles.root}>
       <header className={styles.profileContainer}>

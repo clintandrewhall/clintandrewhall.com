@@ -1,10 +1,10 @@
 import styles from './footer.module.css';
 
 export interface Props {
-  profiles: Profile[];
+  profiles?: Profile[];
 }
 
-export const Footer = ({ profiles }: Props) => {
+export const Footer = ({ profiles = [] }: Props) => {
   const year = new Date().getFullYear();
   const items = profiles.map((profile) => (
     <li key={profile.network} className={styles.socialItem}>

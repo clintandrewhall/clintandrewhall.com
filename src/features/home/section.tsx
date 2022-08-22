@@ -1,11 +1,11 @@
-import { FC } from 'react';
+import { PropsWithChildren } from 'react';
 import type { Section as SectionType } from '../../lib';
 
 import styles from './section.module.css';
 
 type HomeSection = Exclude<SectionType, '' | 'home'>;
 
-interface Props {
+interface Props extends PropsWithChildren {
   section: HomeSection;
 }
 
@@ -37,8 +37,7 @@ const info: Record<HomeSection, SectionInfo> = {
   medium: {
     title: 'Medium',
     subtitle: 'My Drips to The Firehose',
-    lead:
-      'Sometimes I like to post notes or thoughts. Opinions are always my own.',
+    lead: 'Sometimes I like to post notes or thoughts. Opinions are always my own.',
     backgroundColor: '#fff',
   },
   testimonials: {
@@ -49,7 +48,7 @@ const info: Record<HomeSection, SectionInfo> = {
   },
 };
 
-export const Section: FC<Props> = ({ children, section }) => {
+export const Section = ({ children, section }: Props) => {
   const { title, subtitle, lead, backgroundColor } = info[section];
   return (
     <section

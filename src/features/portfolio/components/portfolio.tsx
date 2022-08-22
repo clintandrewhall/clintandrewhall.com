@@ -1,11 +1,11 @@
-import { FC, useEffect } from 'react';
+import { PropsWithChildren, useEffect } from 'react';
 import { scroller } from 'react-scroll';
 
 import { Header, Footer } from '../../../components';
 
 import styles from './portfolio.module.css';
 
-export const Portfolio: FC = ({ children }) => {
+export const Portfolio = ({ children }: PropsWithChildren) => {
   document.title = 'Clint Andrew Hall - Portfolio';
   useEffect(() => scroller.scrollTo('top', {}), []);
 

@@ -1,21 +1,21 @@
-import SwiperCore, { Navigation } from 'swiper';
+// Core modules imports are same as usual
+import { Navigation } from 'swiper';
+// Direct React component imports
 import { Swiper, SwiperSlide } from 'swiper/react';
 
-import 'swiper/swiper.scss';
-import 'swiper/components/navigation/navigation.scss';
+// Styles must use direct files imports
+import 'swiper/scss';
+import 'swiper/scss/navigation';
+import 'swiper/scss/pagination';
 
 import { Testimonial } from './testimonial';
 
 import styles from './testimonials.module.css';
+import { useReferences } from '../../../hooks';
 
-// install Swiper modules
-SwiperCore.use([Navigation]);
+export const Testimonials = () => {
+  const references = useReferences();
 
-export interface Props {
-  references: Reference[];
-}
-
-export const Testimonials = ({ references }: Props) => {
   const items = references.map((testimonial) => (
     <SwiperSlide key={testimonial.timestamp}>
       <Testimonial testmonial={testimonial} />
@@ -38,6 +38,7 @@ export const Testimonials = ({ references }: Props) => {
           slidesPerView={2}
           spaceBetween={10}
           navigation
+          modules={[Navigation]}
           pagination={{ clickable: true }}>
           {items}
         </Swiper>

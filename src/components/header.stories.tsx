@@ -1,4 +1,4 @@
-import { ComponentStory, ComponentMeta } from '@storybook/react';
+import { ComponentStoryObj, ComponentMeta } from '@storybook/react';
 import { MemoryRouter } from 'react-router-dom';
 
 import { sections } from '../lib';
@@ -41,9 +41,6 @@ export default {
   ],
 } as ComponentMeta<typeof Component>;
 
-const Template: ComponentStory<typeof Component> = (args) => (
-  <Component {...args} />
-);
-
-export const Header = Template.bind({});
-Header.args = {};
+export const Header: ComponentStoryObj<typeof Component> = {
+  render: (args) => <Component {...args} />,
+};

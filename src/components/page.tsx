@@ -1,10 +1,10 @@
-import { FC } from 'react';
+import { PropsWithChildren } from 'react';
 
 import { usePageLoad } from '../hooks';
 
 import styles from './page.module.css';
 
-export const Page: FC = ({ children }) => {
+export const Page = ({ children }: PropsWithChildren) => {
   const [_isLoaded, preloaderRef, loaderRef] = usePageLoad();
 
   return (

@@ -1,14 +1,13 @@
 import { Testimonials } from './testimonials';
 import { WorkItem } from './work_item';
 
+import { useWork } from '../../../hooks';
+
 import styles from './career.module.css';
 
-export interface Props {
-  works: Work[];
-  references: Reference[];
-}
+export const Career = () => {
+  const works = useWork();
 
-export const Career = ({ works, references }: Props) => {
   if (works.length <= 0) {
     return null;
   }
@@ -41,7 +40,7 @@ export const Career = ({ works, references }: Props) => {
           </a>
         </div>
       </div>
-      <Testimonials {...{ references }} />
+      <Testimonials />
     </section>
   );
 };
