@@ -68,6 +68,8 @@
           "CSS"
         ],
         "highlights": [
+          "[kibana/138962](https://github.com/elastic/kibana/pull/138962) - Complete package architecture migration",
+          "[kibana/136488](https://github.com/elastic/kibana/pull/136488) - Package architecture + storybook mock",
           "[kibana/130355](https://github.com/elastic/kibana/pull/130355) - Create multi-package strategy for components",
           "[kibana/127546](https://github.com/elastic/kibana/pull/127546) - Create Package-based Architecture for Shared UX",
           "[kibana/123772](https://github.com/elastic/kibana/pull/123772) - Create Customer Chat component for Kibana in Cloud",
