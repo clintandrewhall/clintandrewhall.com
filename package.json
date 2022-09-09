@@ -97,7 +97,7 @@
     "start:site": "concurrently \"yarn react-scripts start\" \"node scripts/dev\"",
     "start": "node scripts/server",
     "test": "react-scripts test",
-    "build": "react-scripts build && yarn generate:github && yarn generate:medium && yarn generate:resume",
+    "build": "yarn generate:github && yarn generate:medium && yarn generate:resume && react-scripts build",
     "postbuild": "node scripts/snap && yarn generate:sitemap",
     "eject": "react-scripts eject",
     "predeploy": "yarn build",
