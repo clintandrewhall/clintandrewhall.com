@@ -34,7 +34,7 @@ export const PortfolioBlock = ({
   const responsiveImage = cover.src ? pathContext(cover.src) : null;
 
   const imageStyle = responsiveImage
-    ? { backgroundImage: `url(${responsiveImage.default})` }
+    ? { backgroundImage: `url(${responsiveImage})` }
     : {};
 
   return (

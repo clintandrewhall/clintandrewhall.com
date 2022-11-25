@@ -29,7 +29,7 @@ export const PortfolioEntry = ({ entry }: Props) => {
     </li>
   ));
 
-  const responsiveImage = pathContext(entry.cover.src).default;
+  const responsiveImage = pathContext(entry.cover.src);
 
   return (
     <Page>
@@ -50,7 +50,7 @@ export const PortfolioEntry = ({ entry }: Props) => {
             </div>
           </header>
           <div className={styles.content}>
-            <div dangerouslySetInnerHTML={{ __html: entry.__content }} />
+            <entry.react />
           </div>
         </article>
         <Footer />

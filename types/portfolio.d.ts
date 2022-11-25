@@ -1,5 +1,5 @@
 declare interface PortfolioEntry {
-  __content: string;
+  react: () => any;
   caption: string;
   cover: {
     src: string;

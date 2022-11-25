@@ -1,10 +1,5 @@
-import { FC } from 'react';
 import { Route } from 'react-router-dom';
 import { Portfolio, PortfolioEntry, PortfolioBlock } from './components';
-
-interface Front extends PortfolioEntry {
-  react?: FC;
-}
 
 export const getRoutes = () => {
   const portfolioContext = require.context(
@@ -20,11 +15,14 @@ export const getRoutes = () => {
       const match = fileName.match(/.\/([^.]+).*/);
 
       if (match) {
-        memo[match[1]] = { ...obj.attributes, react: obj.react } as Front;
+        memo[match[1]] = {
+          ...obj.attributes,
+          react: obj.react,
+        } as PortfolioEntry;
       }
     }
     return memo;
-  }, {} as Record<string, Front>);
+  }, {} as Record<string, PortfolioEntry>);
 
   function getPortfolio() {
     return (

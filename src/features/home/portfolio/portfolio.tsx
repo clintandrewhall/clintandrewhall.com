@@ -1,13 +1,8 @@
-import { FC } from 'react';
 import { Link } from 'react-router-dom';
 
 import { PortfolioBlock } from '../../portfolio';
 
 import styles from './portfolio.module.css';
-
-interface Front extends PortfolioEntry {
-  react?: FC;
-}
 
 export const Portfolio = () => {
   const portfolioContext = require.context(
@@ -23,11 +18,14 @@ export const Portfolio = () => {
       const match = fileName.match(/.\/([^.]+).*/);
 
       if (match) {
-        memo[match[1]] = { ...obj.attributes, react: obj.react } as Front;
+        memo[match[1]] = {
+          ...obj.attributes,
+          react: obj.react,
+        } as PortfolioEntry;
       }
     }
     return memo;
-  }, {} as Record<string, Front>);
+  }, {} as Record<string, PortfolioEntry>);
 
   const items = [...Object.values(entries)]
     .sort((a, b) => b.timestamp - a.timestamp)
