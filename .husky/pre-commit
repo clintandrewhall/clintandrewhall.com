@@ -1,5 +1,5 @@
 #!/bin/sh
 . "$(dirname "$0")/_/husky.sh"
 
-yarn generate:resume && yarn format && git add .
+# yarn generate:resume && yarn format && git add .
 npx lint-staged

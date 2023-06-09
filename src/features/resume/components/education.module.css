@@ -1,0 +1,41 @@
+.root {
+  padding: 15px 30px;
+}
+
+.title {
+  color: #fff;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.item {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.item:last-child {
+  margin-bottom: 0;
+}
+
+.degree {
+  color: #fff;
+  font-size: 14px;
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.institution {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+  margin-bottom: 0;
+  margin-top: 0;
+  font-size: 14px;
+}
+
+.time {
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+}

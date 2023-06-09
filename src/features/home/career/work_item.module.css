@@ -1,0 +1,76 @@
+.root {
+  position: relative;
+  padding: 0 0 2rem 6.5rem;
+  min-height: 28.8rem;
+}
+
+.bullet::before {
+  content: '';
+  display: block;
+  height: 24px;
+  width: 24px;
+  position: absolute;
+  z-index: 2;
+}
+
+.bullet {
+  height: 24px;
+  width: 24px;
+  margin-left: -0.75rem;
+  position: absolute;
+  left: 16px;
+  top: 0.3rem;
+}
+
+.bullet::after {
+  background: #e9e9e9;
+  content: '';
+  display: block;
+  height: 40px;
+  width: 40px;
+  left: -8px;
+  top: -8px;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 1;
+}
+
+.cerner::before {
+  background: url(../../../images/companies/cerner.png?size=24) no-repeat center center;
+}
+
+.elastic::before {
+  border-radius: 50%;
+  background: url(../../../images/companies/elastic.png?size=24) no-repeat center center;
+}
+
+.facebook::before {
+  border-radius: 50%;
+  background: url(../../../images/companies/fb.png?size=24) no-repeat center center;
+}
+
+.header .timeframe {
+  font-size: 1.4rem;
+  line-height: 1.5;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  color: rgb(0 0 0 / 50%);
+  margin-bottom: 0.9rem;
+  font-family: montserrat-bold, sans-serif;
+}
+
+.itemTitle {
+  composes: h3 from '../../../css/typography.module.css';
+  line-height: 1.25;
+  margin: 0 0 0.3rem;
+}
+
+.itemSubtitle {
+  composes: h5 from '../../../css/typography.module.css';
+  margin-top: 0;
+}
+
+.desc p {
+  margin: 0;
+  padding-bottom: 3rem;
+}

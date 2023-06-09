@@ -5,3 +5,6 @@ src/css/iconic
 *.txt
 *.json
 *.gif
+*.ts
+*.tsx
+*.svg

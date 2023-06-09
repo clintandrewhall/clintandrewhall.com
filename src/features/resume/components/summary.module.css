@@ -1,0 +1,37 @@
+.root {
+  margin-bottom: 60px;
+}
+
+.title {
+  text-transform: uppercase;
+  font-size: 20px;
+  font-weight: 500;
+  color: #2e4049;
+  position: relative;
+  margin-top: 0;
+  margin-bottom: 20px;
+  line-height: 32px;
+}
+
+.summary {
+  margin-left: 4px;
+}
+
+.icon {
+  width: 30px;
+  height: 30px;
+  margin-right: 8px;
+  display: inline-block;
+  color: #fff;
+  -webkit-border-radius: 50%;
+  -moz-border-radius: 50%;
+  -ms-border-radius: 50%;
+  -o-border-radius: 50%;
+  border-radius: 50%;
+  -moz-background-clip: padding;
+  -webkit-background-clip: padding-box;
+  background-clip: padding-box;
+  background-color: #2e4049;
+  text-align: center;
+  font-size: 16px;
+}

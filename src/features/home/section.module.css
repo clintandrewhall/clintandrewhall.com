@@ -1,0 +1,97 @@
+.root {
+  composes: target-section from global;
+  padding-top: 15rem;
+  padding-bottom: 9rem;
+  background-color: #fff;
+  position: relative;
+}
+
+.intro {
+  margin: 0 auto;
+  max-width: 800px;
+  position: relative;
+  text-align: center;
+}
+
+.intro::after {
+  content: '';
+  display: block;
+  clear: both;
+}
+
+.introContent {
+  width: 100%;
+  text-align: center;
+}
+
+.title {
+  composes: h3 from '../../css/typography.module.css';
+  font-family: montserrat-semibold, sans-serif;
+  font-size: 2rem;
+  color: #862121;
+  text-transform: uppercase;
+  letter-spacing: 0.15rem;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.subtitle {
+  composes: h1 from '../../css/typography.module.css';
+  font-family: librebaskerville-bold, serif;
+  font-size: 4.8rem;
+  line-height: 1.375;
+  margin-top: 1rem;
+}
+
+.lead {
+  font-family: librebaskerville-regular, serif;
+  font-size: 2rem;
+  line-height: 1.8rem;
+  margin-bottom: 3.6rem;
+  padding-top: 1.5rem;
+  color: #0d0a0b;
+}
+
+.lead::after {
+  content: '';
+  clear: both;
+  display: inline-block;
+  height: 1px;
+  width: 240px;
+  background-color: rgb(0 0 0 / 10%);
+  text-align: center;
+}
+
+@media only screen and (max-width: 800px) {
+  .title {
+    font-size: 1.8rem;
+  }
+
+  .subtitle {
+    font-size: 4.2rem;
+  }
+
+  .lead {
+    font-size: 1.8rem;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .title {
+    font-size: 1.7rem;
+  }
+
+  .subtitle {
+    font-size: 3.6rem;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .title {
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    font-size: 3.3rem;
+  }
+}

@@ -1,0 +1,54 @@
+.root {
+  z-index: 1000;
+  position: absolute;
+  top: 0;
+  border: 0;
+  right: 0;
+}
+
+.svgRoot {
+  fill: #fff;
+  color: #151513;
+}
+
+.octoArm {
+  transform-origin: 130px 106px;
+}
+
+.root:hover .octoArm {
+  animation: octocat-wave 560ms ease-in-out;
+}
+
+@keyframes octocat-wave {
+  0%,
+  100% {
+    transform: rotate(0);
+  }
+
+  20%,
+  60% {
+    transform: rotate(-25deg);
+  }
+
+  40%,
+  80% {
+    transform: rotate(10deg);
+  }
+}
+
+@media (max-width: 800px) {
+  .svgRoot {
+    height: 58px;
+    width: 58px;
+  }
+}
+
+@media (max-width: 500px) {
+  .root .octoArm {
+    animation: octocat-wave 560ms ease-in-out;
+  }
+
+  .root:hover .octoArm {
+    animation: none;
+  }
+}

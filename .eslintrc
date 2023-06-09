@@ -7,14 +7,25 @@
     "ecmaVersion": 2018,
     "sourceType": "module"
   },
-  "extends": ["plugin:prettier/recommended"],
-  "plugins": ["simple-import-sort"],
+  "extends": [
+    "plugin:prettier/recommended"
+  ],
+  "plugins": [
+    "simple-import-sort"
+  ],
   "overrides": [
     // typescript
     {
-      "files": ["*.ts", "*.tsx"],
-      "excludedFiles": ["*.js"],
-      "plugins": ["@typescript-eslint"],
+      "files": [
+        "*.ts",
+        "*.tsx"
+      ],
+      "excludedFiles": [
+        "*.js"
+      ],
+      "plugins": [
+        "@typescript-eslint"
+      ],
       "extends": [
         "plugin:@typescript-eslint/eslint-recommended",
         "plugin:@typescript-eslint/recommended"
@@ -25,7 +36,16 @@
         "@typescript-eslint/interface-name-prefix": 0,
         "@typescript-eslint/no-use-before-define": 0,
         "react/prop-types": 0,
-        "@typescript-eslint/explicit-module-boundary-types": 0
+        "@typescript-eslint/explicit-module-boundary-types": 0,
+        "@typescript-eslint/no-empty-function": 0,
+        "@typescript-eslint/no-unused-vars": [
+          "warn",
+          {
+            "argsIgnorePattern": "^_",
+            "varsIgnorePattern": "^_",
+            "args": "after-used"
+          }
+        ]
       }
     }
   ],
@@ -47,7 +67,15 @@
       }
     ],
     "eol-last": "warn",
-    "no-console": "warn"
+    "no-console": "warn",
+    "no-unused-vars": [
+      "warn",
+      {
+        "argsIgnorePattern": "^_",
+        "varsIgnorePattern": "^_",
+        "args": "after-used"
+      }
+    ]
   },
   "settings": {
     "react": {
