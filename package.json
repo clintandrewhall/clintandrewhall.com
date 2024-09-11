@@ -11,7 +11,8 @@
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build",
     "generate:github": "ts-node ./scripts/github",
-    "generate:medium": "ts-node ./scripts/medium"
+    "generate:medium": "ts-node ./scripts/medium",
+    "chromatic": "npx chromatic --project-token=chpt_0a69331ccacaeaf"
   },
   "dependencies": {
     "@linaria/atomic": "^6.0.0",
@@ -55,6 +56,7 @@
     "@wyw-in-js/babel-preset": "^0.3.0",
     "@wyw-in-js/rollup": "^0.3.0",
     "@wyw-in-js/vite": "^0.3.0",
+    "chromatic": "^11.8.0",
     "eslint": "^8.51.0",
     "eslint-config-prettier": "^9.0.0",
     "eslint-plugin-import": "^2.28.1",

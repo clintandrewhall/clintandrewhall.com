@@ -5545,6 +5545,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"chromatic@npm:^11.8.0":
+  version: 11.8.0
+  resolution: "chromatic@npm:11.8.0"
+  peerDependencies:
+    "@chromatic-com/cypress": ^0.*.* || ^1.0.0
+    "@chromatic-com/playwright": ^0.*.* || ^1.0.0
+  peerDependenciesMeta:
+    "@chromatic-com/cypress":
+      optional: true
+    "@chromatic-com/playwright":
+      optional: true
+  bin:
+    chroma: dist/bin.js
+    chromatic: dist/bin.js
+    chromatic-cli: dist/bin.js
+  checksum: fe9687e3cdbc7196a128b7ffd560fd0ed002db568cd8bc1698e364f65860e3a81116cde0b4f6f56be02c13dfa9e13e11761b89c948e75df698f732887c13e23d
+  languageName: node
+  linkType: hard
+
 "clean-stack@npm:^2.0.0":
   version: 2.2.0
   resolution: "clean-stack@npm:2.2.0"
@@ -5597,6 +5616,7 @@ __metadata:
     "@wyw-in-js/babel-preset": ^0.3.0
     "@wyw-in-js/rollup": ^0.3.0
     "@wyw-in-js/vite": ^0.3.0
+    chromatic: ^11.8.0
     dotenv: ^16.4.5
     eslint: ^8.51.0
     eslint-config-prettier: ^9.0.0
