@@ -1,5 +1,5 @@
-import { buildTheme } from '@lib/css';
-import { VAR_PREFIX_FONT_FACE_SERIF as varPrefix } from '@theme/common';
+import { buildTheme } from '@/lib/css';
+import { VAR_PREFIX_FONT_FACE_SERIF as varPrefix } from '@/theme/common';
 
 const SERIF = ['regular', 'bold', 'italic'] as const;
 export type Serif = (typeof SERIF)[number];

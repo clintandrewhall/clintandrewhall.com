@@ -1,7 +1,6 @@
+import { toProps } from '@/lib/css';
+import { theme } from '@/theme';
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { toProps } from '@lib/css';
-import { theme } from '@theme';
 
 const meta: Meta = {
   title: 'Theme/Icons',

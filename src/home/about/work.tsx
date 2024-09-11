@@ -1,6 +1,5 @@
+import { useResume } from '@/lib/hooks';
 import Markdown from 'react-markdown';
-
-import { useResume } from '@lib/hooks';
 
 import styles from './about.styles';
 

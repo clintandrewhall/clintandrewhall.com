@@ -1,8 +1,7 @@
+import { Section as Component, type SectionProps } from '@/components/layout';
+import type { SectionHeaderProps } from '@/components/layout/section/section_header';
+import { csa } from '@/lib/css';
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { Section as Component, type SectionProps } from '@components/layout';
-import type { SectionHeaderProps } from '@components/layout/section/section_header';
-import { csa } from '@lib/css';
 
 const meta: Meta<typeof Component> = {
   title: 'Components/Layout/Section',

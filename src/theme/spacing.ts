@@ -5,16 +5,15 @@
  *
  */
 
-import { calculateSpaceScale } from 'utopia-core';
-
-import { buildTheme } from '@lib/css';
+import { buildTheme } from '@/lib/css';
 import {
   FONT_SIZE_MAX,
   FONT_SIZE_MIN,
   VAR_PREFIX_SPACING as varPrefix,
   WIDTH_MAX,
   WIDTH_MIN,
-} from '@theme/common';
+} from '@/theme/common';
+import { calculateSpaceScale } from 'utopia-core';
 
 export const UTOPIA_SIZES = [
   'step0',

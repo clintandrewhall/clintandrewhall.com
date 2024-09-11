@@ -1,5 +1,5 @@
-import { buildTheme } from '@lib/css';
-import { VAR_PREFIX_FONT_COLOR as varPrefix } from '@theme/common';
+import { buildTheme } from '@/lib/css';
+import { VAR_PREFIX_FONT_COLOR as varPrefix } from '@/theme/common';
 
 const COLORS = [
   'dark',

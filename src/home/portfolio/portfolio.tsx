@@ -1,5 +1,5 @@
-import { Section } from '@components/layout';
-import { PortfolioGrid } from '@components/portfolio';
+import { Section } from '@/components/layout';
+import { PortfolioGrid } from '@/components/portfolio';
 
 import styles from './portfolio.styles';
 

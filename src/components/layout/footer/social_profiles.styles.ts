@@ -1,6 +1,6 @@
-import { csa, type CSSProps, cx, toProps } from '@lib/css';
-import { theme } from '@theme';
-import type { IconSocial } from '@theme/icons';
+import { csa, type CSSProps, cx, toProps } from '@/lib/css';
+import { theme } from '@/theme';
+import type { IconSocial } from '@/theme/icons';
 
 const { vars, icons, css } = theme;
 

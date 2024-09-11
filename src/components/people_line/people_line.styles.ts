@@ -1,10 +1,9 @@
+import { csa, toProps } from '@/lib/css';
+import { theme } from '@/theme';
 import { css } from '@linaria/core';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
-
-import { csa, toProps } from '@lib/css';
-import { theme } from '@theme';
 
 const { vars } = theme;
 

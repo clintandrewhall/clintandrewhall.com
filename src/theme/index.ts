@@ -1,11 +1,10 @@
+// import 'unfonts.css';
+import { color } from '@/theme/color';
+import { font } from '@/theme/font';
+import { grid } from '@/theme/grid';
+import { icons } from '@/theme/icons';
+import { spacing } from '@/theme/spacing';
 import 'ress';
-import 'unfonts.css';
-
-import { color } from '@theme/color';
-import { font } from '@theme/font';
-import { grid } from '@theme/grid';
-import { icons } from '@theme/icons';
-import { spacing } from '@theme/spacing';
 
 export const theme = {
   vars: {

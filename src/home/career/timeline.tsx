@@ -1,8 +1,7 @@
+import { Section } from '@/components/layout';
+import { Timeline as TimelineComponent } from '@/components/timeline';
+import { useResume } from '@/lib/hooks';
 import Markdown from 'react-markdown';
-
-import { Section } from '@components/layout';
-import { Timeline as TimelineComponent } from '@components/timeline';
-import { useResume } from '@lib/hooks';
 
 import styles from './career.styles';
 

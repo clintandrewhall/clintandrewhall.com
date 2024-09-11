@@ -1,7 +1,6 @@
+import type { TimelineItemProps } from '@/components/timeline';
+import { Timeline as Component, TimelineItem } from '@/components/timeline';
 import type { Meta, StoryObj } from '@storybook/react';
-
-import type { TimelineItemProps } from '@components/timeline';
-import { Timeline as Component, TimelineItem } from '@components/timeline';
 
 const meta: Meta<typeof Component> = {
   title: 'Components/Timeline',

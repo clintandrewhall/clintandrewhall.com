@@ -1,4 +1,4 @@
-import { useResume } from '@lib/hooks';
+import { useResume } from '@/lib/hooks';
 
 import { SiteCredits } from './site_credits';
 import { SiteLogo } from './site_logo';

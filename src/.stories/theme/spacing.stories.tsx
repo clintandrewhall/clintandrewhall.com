@@ -1,9 +1,8 @@
+import { csa, cx } from '@/lib/css';
+import { useDimensions } from '@/lib/hooks';
+import { theme } from '@/theme';
+import { type UtopiaSize } from '@/theme/spacing';
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { csa, cx } from '@lib/css';
-import { useDimensions } from '@lib/hooks';
-import { theme } from '@theme';
-import { type UtopiaSize } from '@theme/spacing';
 
 const meta: Meta = {
   title: 'Theme/Spacing',

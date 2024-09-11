@@ -12,7 +12,7 @@
     "build-storybook": "storybook build",
     "generate:github": "ts-node ./scripts/github",
     "generate:medium": "ts-node ./scripts/medium",
-    "chromatic": "npx chromatic --project-token=chpt_0a69331ccacaeaf"
+    "chromatic": "chromatic"
   },
   "dependencies": {
     "@linaria/atomic": "^6.0.0",
@@ -83,5 +83,5 @@
     "vite-imagetools": "^7.0.4",
     "vite-plugin-markdown": "^2.2.0"
   },
-  "packageManager": "yarn@3.6.4"
+  "packageManager": "yarn@4.4.1"
 }

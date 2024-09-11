@@ -1,5 +1,5 @@
-import { csa, toProps } from '@lib/css';
-import { theme } from '@theme';
+import { csa, toProps } from '@/lib/css';
+import { theme } from '@/theme';
 
 import { BULLET_PADDING, BULLET_SIZE_EQ, TOP_PADDING } from './timeline_item.styles';
 

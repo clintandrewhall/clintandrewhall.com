@@ -1,5 +1,5 @@
-import { csa, cx, toProps } from '@lib/css';
-import { theme } from '@theme';
+import { csa, cx, toProps } from '@/lib/css';
+import { theme } from '@/theme';
 
 const { css, vars } = theme;
 

@@ -23,7 +23,7 @@ export default defineConfig({
         presets: ['@babel/preset-typescript', '@babel/preset-react', '@wyw-in-js'],
       },
       tagResolver: (source, tag) => {
-        if (source === '@lib/css') {
+        if (source === '@/lib/css') {
           if (tag === 'csa') {
             return resolve('node_modules/@linaria/atomic/processors/css');
           }
@@ -43,14 +43,8 @@ export default defineConfig({
     react(),
   ],
   resolve: {
-    alias: [
-      { find: '@content', replacement: resolve(__dirname, './src/content') },
-      { find: '@components', replacement: resolve(__dirname, './src/components') },
-      { find: '@home', replacement: resolve(__dirname, './src/home') },
-      { find: '@lib', replacement: resolve(__dirname, './src/lib') },
-      { find: /@theme\//, replacement: `${resolve(__dirname, './src/theme')}/` },
-      { find: /@theme$/, replacement: resolve(__dirname, './src/theme/index') },
-      { find: '@', replacement: resolve(__dirname, './src') },
-    ],
+    alias: {
+      '@/': `${resolve('src')}/`,
+    },
   },
 });

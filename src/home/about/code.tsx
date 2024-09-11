@@ -1,4 +1,4 @@
-import { GithubStats } from '@components/github';
+import { GithubStats } from '@/components/github';
 
 import styles from './about.styles';
 

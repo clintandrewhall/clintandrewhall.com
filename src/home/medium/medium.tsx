@@ -1,6 +1,5 @@
 import { useEffect, useState } from 'react';
-
-import { Section } from '@components/layout';
+import { Section } from '@/components/layout';
 
 import { Item } from './item';
 
@@ -22,7 +21,7 @@ const Component = () => {
 
   useEffect(() => {
     (async function loadPosts() {
-      const posts = await import('@content/medium.json');
+      const posts = await import('@/content/medium.json');
       setStories(posts);
     })();
   }, [setStories, stories]);

@@ -1,7 +1,7 @@
 /* @link https://utopia.fyi/grid/calculator?c=320,10,1.2,1184,16,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=l,l,2xl,12 */
 
-import { buildTheme } from '@lib/css';
-import { VAR_PREFIX_GRID as varPrefix } from '@theme/common';
+import { buildTheme } from '@/lib/css';
+import { VAR_PREFIX_GRID as varPrefix } from '@/theme/common';
 
 import { spacing } from './spacing';
 

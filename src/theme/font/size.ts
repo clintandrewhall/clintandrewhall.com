@@ -2,9 +2,7 @@
   https://utopia.fyi/type/calculator/?c=320,10,1.2,1240,16,1.25,5,1,&s=0.75%7C0.5%7C0.25,1.5%7C2%7C3%7C4%7C6,s-l&g=m,l,2xl,12
 */
 
-import { calculateTypeScale } from 'utopia-core';
-
-import { buildTheme } from '@lib/css';
+import { buildTheme } from '@/lib/css';
 import {
   FONT_SIZE_MAX,
   FONT_SIZE_MIN,
@@ -13,7 +11,8 @@ import {
   VAR_PREFIX_FONT_SIZE as varPrefix,
   WIDTH_MAX,
   WIDTH_MIN,
-} from '@theme/common';
+} from '@/theme/common';
+import { calculateTypeScale } from 'utopia-core';
 
 const SIZES = ['step5', 'step4', 'step3', 'step2', 'step1', 'step0', 'stepN1'] as const;
 type Size = (typeof SIZES)[number];

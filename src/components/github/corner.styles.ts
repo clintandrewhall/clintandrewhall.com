@@ -1,4 +1,4 @@
-import { csa, cx, toProps } from '@lib/css';
+import { csa, cx, toProps } from '@/lib/css';
 
 const svgRoot = toProps(csa`
   fill: #fff;

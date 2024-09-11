@@ -1,5 +1,5 @@
-import { Section } from '@components/layout';
-import { attributes } from '@content/about.md';
+import { Section } from '@/components/layout';
+import { attributes } from '@/content/about.md';
 
 import { Code } from './code';
 import { Summary } from './summary';

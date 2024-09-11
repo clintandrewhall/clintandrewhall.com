@@ -6,7 +6,7 @@ export interface PersonProps {
   imageKey: string;
 }
 
-import { useAvatar } from '@lib/hooks/use_people';
+import { useAvatar } from '@/lib/hooks/use_people';
 
 import styles from './person.styles';
 

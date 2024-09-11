@@ -23,25 +23,10 @@
     "noFallthroughCasesInSwitch": true,
     "baseUrl": ".",
     "paths": {
-      "@content/*": [
-        "./src/content/*"
-      ],
-      "@components/*": [
-        "./src/components/*"
-      ],
-      "@home": [
-        "./src/home/index"
-      ],
-      "@lib/*": [
-        "./src/lib/*"
-      ],
-      "@theme": [
-        "./src/theme/index"
-      ],
-      "@theme/*": [
-        "./src/theme/*"
+      "@/*": [
+        "./src/*"
       ]
-    },
+    }
   },
   "include": [
     "config/**/*.ts",

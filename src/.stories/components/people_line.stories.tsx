@@ -1,6 +1,5 @@
+import { PeopleLine as Component, Person, type PersonProps } from '@/components/people_line';
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { PeopleLine as Component, Person, type PersonProps } from '@components/people_line';
 
 const meta: Meta<typeof Component> = {
   title: 'Components/People Line',

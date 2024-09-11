@@ -1,8 +1,7 @@
+import { Layout } from '@/components/layout';
+import { cx } from '@/lib/css';
+import { slot, useSlots } from '@/lib/hooks';
 import type { ReactNode } from 'react';
-
-import { Layout } from '@components/layout';
-import { cx } from '@lib/css';
-import { slot, useSlots } from '@lib/hooks';
 
 import { SectionDivider as Divider } from './section_divider';
 import { SectionHeader } from './section_header';

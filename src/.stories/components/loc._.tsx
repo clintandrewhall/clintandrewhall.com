@@ -1,6 +1,5 @@
+import { LOC } from '@/components/github';
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { LOC } from '@components/github/loc';
 
 const meta: Meta<typeof LOC> = {
   title: 'Components/Github/Lines of Code',

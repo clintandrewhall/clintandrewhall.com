@@ -1,6 +1,6 @@
-import { Section } from '@components/layout';
-import { PeopleLine, Person } from '@components/people_line';
-import { useResume } from '@lib/hooks';
+import { Section } from '@/components/layout';
+import { PeopleLine, Person } from '@/components/people_line';
+import { useResume } from '@/lib/hooks';
 
 import styles from './references.styles';
 

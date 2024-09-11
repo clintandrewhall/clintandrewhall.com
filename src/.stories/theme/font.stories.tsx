@@ -1,7 +1,6 @@
+import { csa } from '@/lib/css';
+import { theme } from '@/theme';
 import type { Meta, StoryObj } from '@storybook/react';
-
-import { csa } from '@lib/css';
-import { theme } from '@theme';
 
 const meta: Meta = {
   title: 'Theme/Font',

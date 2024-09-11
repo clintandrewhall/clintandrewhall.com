@@ -1,4 +1,4 @@
-import { loc, user } from '@content/github.json';
+import { loc, user } from '@/content/github.json';
 
 import { LOC } from './loc';
 import { Numbers } from './numbers';
