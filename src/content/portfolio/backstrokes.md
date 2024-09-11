@@ -1,12 +1,10 @@
 ---
+id: 'backstrokes'
+name: 'Backstrok.es'
 caption: "Backstrok.es is a website for discovering where you've been on Foursquare and Swarm."
-cover:
-  src: './backstrokes-1.jpg'
-  size: '600x400'
-slug: 'backstrokes'
+cover: 'backstrokes-1'
 tags: [{ name: 'NodeJS', slug: 'node' }, { name: 'Swarm', slug: 'swarm' }]
 timestamp: 1450224000
-title: 'Backstrok.es'
 website: 'http://www.backstrok.es'
 ---
 

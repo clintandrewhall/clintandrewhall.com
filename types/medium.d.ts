@@ -3,9 +3,6 @@ declare interface MediumPost {
   link: string;
   timestamp: number;
   title: string;
-  summary: string;
-}
-
-declare interface MediumResponse {
-  posts: MediumPost[];
+  imgSrc: string;
+  // summary: string;
 }

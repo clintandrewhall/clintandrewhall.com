@@ -1,1 +1,2 @@
-export { GithubCard } from './GithubCard';
+export { GithubCorner } from './corner';
+export { GithubStats } from './stats';

@@ -1,12 +1,10 @@
 ---
+id: 'web-bootstrapper'
+name: 'Web Bookstrapper'
 caption: 'A method of flexing semantic HTML based on the immutable properties of the device before code is even downloaded.'
-cover:
-  src: './bootstrapper-1.png'
-  size: '1525x1162'
-slug: 'web-bootstrapper'
+cover: 'bootstrapper-1'
 tags: [{ name: 'Cerner', slug: 'cerner' }, { name: 'Web', slug: 'web' }]
 timestamp: 1242432000
-title: 'Web Bookstrapper'
 ---
 
 # Background

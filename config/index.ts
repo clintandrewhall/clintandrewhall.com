@@ -1,0 +1,1 @@
+export { unfontConfig } from './fonts';

@@ -1,7 +1,4 @@
-import numeral from 'numeral';
-
-import { languageColors } from './github-language-colors';
-import styles from './LOC.module.css';
+import { Language } from './loc_language';
 
 export type Props = {
   loc: LinesOfCode[] | null;
@@ -12,66 +9,27 @@ export const LOC = ({ loc }: Props) => {
     return null;
   }
 
-  let overallTotal = 0;
-  let otherTotal = 0;
-
-  loc.forEach((language) => {
-    overallTotal += language.totalLines;
-  });
+  const overallTotal = loc.reduce((acc, item) => acc + item.totalLines, 0);
 
   const items = loc
-    .map((item) => {
-      const { languageName, totalLines } = item;
-      const percent = (totalLines / overallTotal) * 100;
+    .filter((item) => (item.totalLines / overallTotal) * 100 > 1)
+    .map((loc) => <Language {...{ loc, overallTotal }} />);
 
-      if (percent < 1) {
-        otherTotal += totalLines;
-        return null;
-      }
-
-      const color = languageColors[languageName] || 'inherit';
-
-      return (
-        <li
-          className={styles.language}
-          key={`lang_${languageName}`}
-          style={{ color }}>
-          <div
-            className={styles.progress}
-            style={{
-              background: color,
-              width: `${percent}%`,
-            }}
-          />
-          <span className={styles.loc}>{numeral(totalLines).format('0a')}</span>
-          <span className={styles.languageName}>{languageName}</span>
-        </li>
-      );
-    })
-    .slice(0, otherTotal > 0 ? 9 : 10);
+  const otherTotal = loc
+    .filter((item) => (item.totalLines / overallTotal) * 100 <= 1)
+    .reduce((acc, item) => acc + item.totalLines, 0);
 
   if (otherTotal > 0) {
-    const percent = (otherTotal / overallTotal) * 100;
     items.push(
-      <li className={styles.language} key="other">
-        <div
-          className={styles.progress}
-          style={{
-            width: `${percent}%`,
-          }}
-        />
-        <span className={styles.loc}>{numeral(otherTotal).format('0a')}</span>
-        <span className={styles.languageName}>Other</span>
-      </li>,
+      <Language
+        loc={{ languageName: 'Other', totalLines: otherTotal, byProject: {} }}
+        overallTotal={overallTotal}
+      />,
     );
   }
 
   if (items.length > 0) {
-    return (
-      <ul className={styles.languages} key="languages">
-        {items}
-      </ul>
-    );
+    return <>{items}</>;
   }
 
   return null;

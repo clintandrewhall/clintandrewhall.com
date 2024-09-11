@@ -1,11 +1,11 @@
 import { config } from 'dotenv';
-import fs from 'fs';
+import * as fs from 'fs';
 
 config();
-const writePath = './build';
+const writePath = './src/content';
 
+import type { Response } from 'node-fetch';
 import fetch from 'node-fetch';
-import { Response } from 'node-fetch';
 
 const BASE_URL = 'https://api.github.com/users/';
 const username = 'clintandrewhall';
@@ -24,29 +24,22 @@ export const getGithubData = async (token?: string) => {
         },
       }
     : {};
-  const responses = await Promise.all([
-    fetch(userAPI, headers),
-    fetch(reposAPI, headers),
-  ]);
+
+  const responses = await Promise.all([fetch(userAPI, headers), fetch(reposAPI, headers)]);
   const jsons = await Promise.all(responses.map((result) => result.json()));
   const user = jsons[0];
   const repos = jsons[1];
 
   if (repos.message || user.message) {
-    // eslint-disable-next-line no-console
     console.log(repos.message, user.message);
     return;
   }
 
   const repoReponses: Response[] = await Promise.all(
-    repos.map((repo: { languages_url: string }) =>
-      fetch(repo.languages_url, headers),
-    ),
+    repos.map((repo: { languages_url: string }) => fetch(repo.languages_url, headers)),
   );
 
-  const languages = await Promise.all(
-    repoReponses.map((result) => result.json()),
-  );
+  const languages = await Promise.all(repoReponses.map((result) => result.json()));
 
   const entries: Record<string, LinesOfCode> = {};
 
@@ -84,13 +77,11 @@ export const getGithubData = async (token?: string) => {
   const result = await getGithubData(process.env.GITHUB_TOKEN);
 
   if (!result) {
-    // eslint-disable-next-line
     console.log('Github retrieval failed; aborting');
     return;
   }
 
   fs.writeFile(`${writePath}/github.json`, JSON.stringify(result), () => {
-    // eslint-disable-next-line no-console
     console.log('wrote github');
   });
 })();

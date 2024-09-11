@@ -1,4 +1,6 @@
-build
-node_modules
-public/js
-src/content
+node_modules/
+dist/
+env.d.ts
+!.storybook
+!.stories
+!scripts

@@ -1,12 +1,10 @@
 ---
+id: 'node-foursquare'
+name: 'node-foursquare'
 caption: 'I maintain the Foursquare/Swarm library for Node.js.'
-cover:
-  src: './node-foursquare-1.jpg'
-  size: '750x450'
-slug: 'node-foursquare'
+cover: 'node-foursquare-1'
 tags: [{ name: 'NodeJS', slug: 'node' }, { name: 'Swarm', slug: 'swarm' }]
 timestamp: 1513728000
-title: 'node-foursquare'
 website: 'http://www.github.com/clintandrewhall/node-foursquare'
 ---
 

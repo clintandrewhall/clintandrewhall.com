@@ -1,8 +1,9 @@
-import Parser from 'rss-parser';
 import fs from 'fs';
+import { JSDOM } from 'jsdom';
+import Parser from 'rss-parser';
 
 const FEED = 'https://clintandrewhall.medium.com/feed';
-const WRITE_PATH = './build';
+const WRITE_PATH = './src/content';
 
 interface Item {
   'content:encoded': string;
@@ -43,19 +44,24 @@ const parser: Parser<Feed, Item> = new Parser({
 
 (async () => {
   const feed = await parser.parseURL(FEED);
+  console.log(feed.items);
 
   const result = feed.items.map(
-    ({ categories, link, pubDate, title, ...rest }) => {
-      const summary = rest['content:encodedSnippet'];
+    ({ categories, link, pubDate, title, 'content:encoded': content }) => {
+      const dom = new JSDOM(content);
+      const imgSrc = dom.window.document.querySelector('img')?.getAttribute('src');
+
       return {
         categories,
         link: link.split('?')[0],
         timestamp: new Date(pubDate).getTime(),
         title,
-        summary,
+        imgSrc,
       };
     },
   );
+
+  console.log(result);
 
   fs.writeFile(
     `${WRITE_PATH}/medium.json`,

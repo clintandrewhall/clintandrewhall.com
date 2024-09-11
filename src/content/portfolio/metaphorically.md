@@ -1,12 +1,10 @@
 ---
+id: 'metaphorically'
+name: 'Metaphorical.ly'
 caption: 'My TEDx talk detailing an attempt to redefine how people perceive technology.'
-cover:
-  src: './metaphorically-1.jpg'
-  size: '1916x1392'
-slug: 'metaphorically'
+cover: 'metaphorically-1'
 tags: [{ name: 'TEDX', slug: 'tedx' }, { name: 'Web', slug: 'web' }]
 timestamp: 1414195200
-title: 'Metaphorical.ly'
 ---
 
 # Background
