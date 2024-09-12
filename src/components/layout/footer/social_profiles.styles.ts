@@ -12,12 +12,12 @@ const root = toProps(
     justify-content: center;
     
     & a {
-      color: var(${vars.font.color.light});
+      ${css.font.color.light}
       
       &:hover,
       &:active,
       &:focus {
-        color: var(${vars.font.color.light});
+        ${css.font.color.light}
       }
     }
 

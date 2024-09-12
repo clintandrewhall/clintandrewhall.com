@@ -1,12 +1,13 @@
 import { csa, toProps } from '@/lib/css';
 import { theme } from '@/theme';
 
-const { vars, icons } = theme;
+const { vars, icons, css } = theme;
 
 const root = (image: string) =>
   toProps(
     csa`
-      font-size: var(${vars.font.size.step0});
+      ${css.color.border.grid}
+      ${css.font.size.step0}
 
       @media (max-width: 975px) and (min-width: 600px) {
         font-size: var(${vars.font.size.step1});
@@ -19,7 +20,6 @@ const root = (image: string) =>
       background-position: 50% 50%;
       background-repeat: no-repeat;
       background-size: cover;
-      border-color: var(${vars.color.border.grid});
       border-style: solid;
       border-width: 0 1px 1px 0;
       height: 0;
@@ -119,7 +119,7 @@ const title = toProps(
       letter-spacing: calc(var(${vars.font.size.step3}) * .1);
     }
 
-    ${theme.css.font.color.light}
+    ${css.font.color.light}
     margin-bottom: var(${vars.spacing.step0});
     text-transform: uppercase;
   `,
@@ -146,18 +146,18 @@ const caption = toProps(
       top: var(${vars.spacing.step9});
     }
 
-    ${theme.css.font.color.light}
-    ${theme.css.font.sansSerif.regular}
+    ${css.font.color.light}
+    ${css.font.sansSerif.regular}
     position: absolute;
     z-index: 3;
 
     & a {
-      ${theme.css.font.color.light}
+      ${css.font.color.light}
       border: 2px solid var(${vars.color.background.light});
       background: var(${vars.color.background.dark});
       
       &:hover {
-        ${theme.css.font.color.dark}
+        ${css.font.color.dark}
         background: var(${vars.color.background.light});
       }
     }
@@ -180,11 +180,11 @@ const tags = toProps(
     }
 
     & > a {
-      ${theme.css.font.color.dim}
-      ${theme.css.font.sansSerif.light}
+      ${css.font.color.dim}
+      ${css.font.sansSerif.light}
 
       &:hover {
-        ${theme.css.font.color.light}
+        ${css.font.color.light}
       }
     }
   `,
@@ -205,7 +205,7 @@ const details = toProps(
       letter-spacing: calc(var(${vars.font.size.step4}) * .08);
     }
     
-    ${theme.css.font.sansSerif.regular}
+    ${css.font.sansSerif.regular}
     display: block;
     margin-top: var(${vars.spacing.step3});
     padding: var(${vars.spacing.step2});
@@ -238,7 +238,8 @@ const linkIcon = toProps(
 );
 
 const projectLink = toProps(csa`
-    font-size: var(${vars.font.size.step0});
+    ${css.font.color.light}
+    ${css.font.size.step0}
     height: var(${vars.spacing.step9});
     line-height: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0}));
     width: var(${vars.spacing.step9});
@@ -259,20 +260,19 @@ const projectLink = toProps(csa`
 
     border-radius: 50%;
     box-shadow: 0 0 0 1px var(${vars.color.background.light});
-    color: var(${vars.font.color.light});
     display: block;
     text-align: center;
     
     a& {
       background: var(${vars.color.background.dark});
-      color: var(${vars.font.color.light});
+      ${css.font.color.light}
     }
 
     &:hover,
     &:active,
     &:focus {
-      background-color: var(${vars.color.background.light});
-      color: var(${vars.color.background.dark});
+      ${css.color.background.light}
+      ${css.font.color.dark}
     }
   `);
 

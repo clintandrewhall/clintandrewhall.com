@@ -1,16 +1,16 @@
 import { csa, toProps } from '@/lib/css';
 import { theme } from '@/theme';
-import { css } from '@linaria/core';
+import { css as csl } from '@linaria/core';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-const { vars } = theme;
+const { css, vars } = theme;
 
-css`
+csl`
   :global() {
     .swiper .swiper-pagination-bullets.swiper-pagination-horizontal {
-      background-color: rgba(255, 255, 255, 0.25);
+      ${css.color.background.subtle}
       display: inline-block;
       left: 50%;
       transform: translateX(-50%);
@@ -23,7 +23,7 @@ css`
     .swiper-pagination-bullets:before,
     .swiper-pagination-bullets:after {
       content: '';
-      background-color: rgba(255, 255, 255, 0.25);
+      ${css.color.background.subtle}
       top: 0;
       bottom: 0;
       height: 22px;

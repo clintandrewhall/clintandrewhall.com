@@ -26,12 +26,12 @@ export const header = toProps(csa`
 
   & a {
     ${css.font.weight.normal}
-    color: var(${vars.font.color.dark});
+    ${css.font.color.dark}
   }
 `);
 
 export const date = toProps(csa`
-  color: var(${vars.font.color.accent});
+  ${css.font.color.accent}
   line-height: var(${vars.font.size.step2});
 `);
 
@@ -40,7 +40,7 @@ export const title = toProps(csa`
   ${css.font.weight.normal}
   & a {
     ${css.font.weight.normal}
-    color: var(${vars.font.color.dark});
+    ${css.font.color.dark}
   }
   line-height: var(${vars.font.size.step4});
   min-height: calc(var(${vars.font.size.step4}) * 2);
@@ -61,17 +61,17 @@ export const category = toProps(csa`
   
   & a {
     ${css.font.weight.normal}
-    color: var(${vars.font.color.medium});
+    ${css.font.color.medium}
 
     &:hover,
     &:focus,
     &:active {
-      color: var(${vars.font.color.link});
+      ${css.font.color.link}
     }
   } 
 
   &::after {
-    color: var(${vars.font.color.medium});
+    ${css.font.color.medium}
     content: ', ';
   }
 

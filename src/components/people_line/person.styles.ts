@@ -64,13 +64,13 @@ const name = toProps(csa`
   font-size: var(${vars.font.size.stepN1});
   letter-spacing: calc(var(${vars.font.size.step1}) * .1);
   margin-bottom: var(${vars.spacing.step1});
-  color: var(${vars.font.color.light});
+  ${css.font.color.light}
   text-transform: uppercase;
 `);
 
 const title = toProps(csa`
+  ${css.font.color.lightAccent}
   font-size: var(${vars.font.size.stepN1});
-  color: var(${vars.font.color.lightAccent});
   margin-bottom: var(${vars.spacing.step3});
 `);
 

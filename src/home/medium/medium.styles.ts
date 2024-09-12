@@ -1,11 +1,11 @@
 import { csa, toProps } from '@/lib/css';
 import { theme } from '@/theme';
 
-const { vars } = theme;
+const { vars, css } = theme;
 
 const root = toProps(csa`
   grid-area: auto / 2 / auto / span 10;
-  background-color: var(${vars.color.background.subtlest});
+    ${css.color.background.subtlest}
 `);
 
 const content = toProps(csa`

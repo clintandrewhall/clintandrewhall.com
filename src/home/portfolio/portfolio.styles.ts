@@ -1,10 +1,10 @@
 import { csa, toProps } from '@/lib/css';
 import { theme } from '@/theme';
 
-const { vars } = theme;
+const { css } = theme;
 
 const root = toProps(csa`
-  background-color: var(${vars.color.background.subtlest});
+  ${css.color.background.subtlest}
 `);
 
 const header = toProps(csa`
