@@ -1,5 +1,6 @@
-import { GithubStats } from '@/components/github';
 import type { Meta, StoryObj } from '@storybook/react';
+
+import { GithubStats } from '@components/github';
 
 const meta: Meta<typeof GithubStats> = {
   title: 'Components/Github/Stats',

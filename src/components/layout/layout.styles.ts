@@ -1,16 +1,12 @@
-import { css, toProps } from '@/lib/css';
-import { theme } from '@/theme';
+import { css, toProps } from '@lib/css';
+import { theme } from '@theme';
 
-const outer = toProps(
-  css`
-    ${theme.decl.grid.container}
-  `,
-);
+const outer = toProps(css`
+  ${theme.decl.grid.container}
+`);
 
-const inner = toProps(
-  css`
-    ${theme.decl.grid.root}
-  `,
-);
+const inner = toProps(css`
+  ${theme.decl.grid.root}
+`);
 
 export default { outer, inner };

@@ -1,4 +1,4 @@
-import { TimelineItem, type TimelineItemProps } from '@/components/timeline';
+import { TimelineItem, type TimelineItemProps } from '@components/timeline';
 
 import styles from './timeline.styles';
 

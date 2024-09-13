@@ -1,5 +1,5 @@
-import { buildTheme } from '@/lib/css';
-import { VAR_PREFIX_FONT_WEIGHT as varPrefix } from '@/theme/common';
+import { buildTheme } from '@lib/css';
+import { VAR_PREFIX_FONT_WEIGHT as varPrefix } from '@theme/common';
 
 const WEIGHTS = ['extraBold', 'bold', 'semiBold', 'normal', 'light'] as const;
 type Weight = (typeof WEIGHTS)[number];

@@ -1,5 +1,6 @@
-import { languageColors } from '@/lib/github_language_colors';
 import numeral from 'numeral';
+
+import { languageColors } from '@lib/github_language_colors';
 
 import styles from './loc_language.styles';
 

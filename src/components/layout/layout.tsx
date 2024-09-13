@@ -1,5 +1,6 @@
 import React from 'react';
-import { cx } from '@/lib/css';
+
+import { cx } from '@lib/css';
 
 import { Footer } from './footer';
 

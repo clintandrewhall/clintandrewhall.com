@@ -1,5 +1,5 @@
-import { css as css, toProps } from '@/lib/css';
-import { theme } from '@/theme';
+import { css as css, toProps } from '@lib/css';
+import { theme } from '@theme';
 
 const { vars, icons, decl: CSS } = theme;
 
@@ -29,7 +29,7 @@ const root = (image: string) =>
       position: relative;
 
       & {
-        a {  
+        a {
           cursor: pointer;
         }
 
@@ -38,11 +38,11 @@ const root = (image: string) =>
           opacity: 0;
           transition: all 0.3s;
         }
-        
+
         > p {
           top: var(${vars.spacing.step7});
         }
-      
+
         > footer {
           right: var(${vars.spacing.step9});
         }
@@ -50,7 +50,7 @@ const root = (image: string) =>
 
       &::before,
       &::after {
-        content: "";
+        content: '';
         position: absolute;
         top: 0;
         left: 0;
@@ -67,11 +67,7 @@ const root = (image: string) =>
 
       &::after {
         opacity: 0.8;
-        background: linear-gradient(
-          to bottom,
-          transparent 0%,
-          #000 100%
-        );
+        background: linear-gradient(to bottom, transparent 0%, #000 100%);
         z-index: 1;
       }
 
@@ -99,186 +95,176 @@ const root = (image: string) =>
     },
   );
 
-const header = toProps(
-  css`
-    bottom: var(${vars.spacing.step3});
-    left: var(${vars.spacing.step5});
+const header = toProps(css`
+  bottom: var(${vars.spacing.step3});
+  left: var(${vars.spacing.step5});
+  position: absolute;
+  z-index: 3;
+`);
+
+const title = toProps(css`
+  ${CSS.font.size.stepN1};
+  letter-spacing: calc(var(${vars.font.size.step1}) * 0.1);
+
+  @media (max-width: 975px) and (min-width: 600px) {
+    ${CSS.font.size.step0}
+    letter-spacing: calc(var(${vars.font.size.step2}) * 0.1);
+  }
+
+  @media (max-width: 600px) {
+    ${CSS.font.size.step1}
+    letter-spacing: calc(var(${vars.font.size.step3}) * 0.1);
+  }
+
+  ${CSS.font.color.light}
+  margin-bottom: var(${vars.spacing.step0});
+  text-transform: uppercase;
+`);
+
+const caption = toProps(css`
+  left: var(${vars.spacing.step5});
+  line-height: var(${vars.spacing.step5});
+  right: var(${vars.spacing.step5});
+  top: var(${vars.spacing.step5});
+
+  @media (max-width: 975px) and (min-width: 600px) {
+    left: var(${vars.spacing.step6});
+    line-height: var(${vars.spacing.step6});
+    right: var(${vars.spacing.step6});
+    top: var(${vars.spacing.step6});
+  }
+
+  @media (max-width: 600px) {
+    left: var(${vars.spacing.step9});
+    line-height: var(${vars.spacing.step9});
+    right: var(${vars.spacing.step9});
+    top: var(${vars.spacing.step9});
+  }
+
+  ${CSS.font.color.light}
+  ${CSS.font.sansSerif.regular}
     position: absolute;
-    z-index: 3;
-  `,
-);
+  z-index: 3;
 
-const title = toProps(
-  css`
-    ${CSS.font.size.stepN1};
-    letter-spacing: calc(var(${vars.font.size.step1}) * 0.1);
-
-    @media (max-width: 975px) and (min-width: 600px) {
-      ${CSS.font.size.step0}
-      letter-spacing: calc(var(${vars.font.size.step2}) * 0.1);
-    }
-
-    @media (max-width: 600px) {
-      ${CSS.font.size.step1}
-      letter-spacing: calc(var(${vars.font.size.step3}) * 0.1);
-    }
-
+  & a {
     ${CSS.font.color.light}
-    margin-bottom: var(${vars.spacing.step0});
-    text-transform: uppercase;
-  `,
-);
+    border: 2px solid var(${vars.color.background.light});
+    background: var(${vars.color.background.dark});
 
-const caption = toProps(
-  css`
-    left: var(${vars.spacing.step5});
-    line-height: var(${vars.spacing.step5});
-    right: var(${vars.spacing.step5});
-    top: var(${vars.spacing.step5});
-
-    @media (max-width: 975px) and (min-width: 600px) {
-      left: var(${vars.spacing.step6});
-      line-height: var(${vars.spacing.step6});
-      right: var(${vars.spacing.step6});
-      top: var(${vars.spacing.step6});
+    &:hover {
+      ${CSS.font.color.dark}
+      background: var(${vars.color.background.light});
     }
+  }
+`);
 
-    @media (max-width: 600px) {
-      left: var(${vars.spacing.step9});
-      line-height: var(${vars.spacing.step9});
-      right: var(${vars.spacing.step9});
-      top: var(${vars.spacing.step9});
-    }
+const tags = toProps(css`
+  ${CSS.font.size.stepN1};
+  letter-spacing: calc(var(${vars.font.size.step1}) * 0.08);
 
-    ${CSS.font.color.light}
-    ${CSS.font.sansSerif.regular}
-    position: absolute;
-    z-index: 3;
+  @media (max-width: 975px) and (min-width: 600px) {
+    ${CSS.font.size.step0}
+    letter-spacing: calc(var(${vars.font.size.step2}) * 0.08);
+  }
 
-    & a {
+  @media (max-width: 600px) {
+    ${CSS.font.size.step1}
+    letter-spacing: calc(var(${vars.font.size.step3}) * 0.08);
+  }
+
+  & > a {
+    ${CSS.font.color.dim}
+
+    ${CSS.font.sansSerif.light}
+
+      &:hover {
       ${CSS.font.color.light}
-      border: 2px solid var(${vars.color.background.light});
-      background: var(${vars.color.background.dark});
-      
-      &:hover {
-        ${CSS.font.color.dark}
-        background: var(${vars.color.background.light});
-      }
     }
-  `,
-);
+  }
+`);
 
-const tags = toProps(
-  css`
-    ${CSS.font.size.stepN1};
-    letter-spacing: calc(var(${vars.font.size.step1}) * 0.08);
-  
-    @media (max-width: 975px) and (min-width: 600px) {
-      ${CSS.font.size.step0}
-      letter-spacing: calc(var(${vars.font.size.step2}) * 0.08);
-    }
+const details = toProps(css`
+  ${CSS.font.size.stepN1};
+  letter-spacing: calc(var(${vars.font.size.step1}) * 0.08);
 
-    @media (max-width: 600px) {
-      ${CSS.font.size.step1}
-      letter-spacing: calc(var(${vars.font.size.step3}) * 0.08);
-    }
+  @media (max-width: 975px) and (min-width: 600px) {
+    ${CSS.font.size.step0}
+    letter-spacing: calc(var(${vars.font.size.step2}) * 0.08);
+  }
 
-    & > a {
-      ${CSS.font.color.dim}
+  @media (max-width: 600px) {
+    ${CSS.font.size.step1}
+    letter-spacing: calc(var(${vars.font.size.step4}) * 0.08);
+  }
 
-      ${CSS.font.sansSerif.light}
+  ${CSS.font.sansSerif.regular}
+  display: block;
+  margin-top: var(${vars.spacing.step3});
+  padding: var(${vars.spacing.step2});
+  text-align: center;
+  text-transform: uppercase;
+`);
 
-      &:hover {
-        ${CSS.font.color.light}
-      }
-    }
-  `,
-);
-
-const details = toProps(
-  css`
-    ${CSS.font.size.stepN1};
-    letter-spacing: calc(var(${vars.font.size.step1}) * 0.08);
-  
-    @media (max-width: 975px) and (min-width: 600px) {
-      ${CSS.font.size.step0}
-      letter-spacing: calc(var(${vars.font.size.step2}) * 0.08);
-    }
-
-    @media (max-width: 600px) {
-      ${CSS.font.size.step1}
-      letter-spacing: calc(var(${vars.font.size.step4}) * 0.08);
-    }
-    
-    ${CSS.font.sansSerif.regular}
-    display: block;
-    margin-top: var(${vars.spacing.step3});
-    padding: var(${vars.spacing.step2});
-    text-align: center;
-    text-transform: uppercase;
-  `,
-);
-
-const footer = toProps(
-  css`
-    bottom: var(${vars.spacing.step3});
-    position: absolute;
-    right: var(${vars.spacing.step5});
-    z-index: 3;
-  `,
-);
+const footer = toProps(css`
+  bottom: var(${vars.spacing.step3});
+  position: absolute;
+  right: var(${vars.spacing.step5});
+  z-index: 3;
+`);
 
 const linkIcon = toProps(
-  icons.link(
-    css`
-      @media (max-width: 975px) and (min-width: 600px) {
-        ${CSS.font.size.step1}
-      }
+  icons.link(css`
+    @media (max-width: 975px) and (min-width: 600px) {
+      ${CSS.font.size.step1}
+    }
 
-      @media (max-width: 600px) {
-        ${CSS.font.size.step2}
-      }
-    `,
-  ),
+    @media (max-width: 600px) {
+      ${CSS.font.size.step2}
+    }
+  `),
 );
 
 const projectLink = toProps(css`
-    ${CSS.font.color.light}
-    ${CSS.font.size.step0}
+  ${CSS.font.color.light}
+  ${CSS.font.size.step0}
     height: var(${vars.spacing.step9});
-    line-height: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0}));
-    width: var(${vars.spacing.step9});
+  line-height: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0}));
+  width: var(${vars.spacing.step9});
 
-    @media (max-width: 975px) and (min-width: 600px) {
-      ${CSS.font.size.step0}
-      height: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0}));
-      line-height: calc(calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0})) + var(${vars.spacing.step0}));
-      width: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0}));
-    }
+  @media (max-width: 975px) and (min-width: 600px) {
+    ${CSS.font.size.step0}
+    height: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0}));
+    line-height: calc(
+      calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0})) + var(${vars.spacing.step0})
+    );
+    width: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0}));
+  }
 
-    @media (max-width: 600px) {
-      ${CSS.font.size.step0}
-      height: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step2}));
-      line-height: calc(calc(var(${vars.spacing.step9}) + var(${vars.spacing.step2})) + var(${vars.spacing.step0}));
-      width: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step2}));
-    }
+  @media (max-width: 600px) {
+    ${CSS.font.size.step0}
+    height: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step2}));
+    line-height: calc(
+      calc(var(${vars.spacing.step9}) + var(${vars.spacing.step2})) + var(${vars.spacing.step0})
+    );
+    width: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step2}));
+  }
 
-    border-radius: 50%;
-    box-shadow: 0 0 0 1px var(${vars.color.background.light});
-    display: block;
-    text-align: center;
-    
-    a& {
-      background: var(${vars.color.background.dark});
-      ${CSS.font.color.light}
-    }
+  border-radius: 50%;
+  box-shadow: 0 0 0 1px var(${vars.color.background.light});
+  display: block;
+  text-align: center;
 
-    &:hover,
-    &:active,
-    &:focus {
-      ${CSS.color.background.light}
-      ${CSS.font.color.dark}
-    }
-  `);
+  a& {
+    background: var(${vars.color.background.dark});
+    ${CSS.font.color.light}
+  }
+
+  &:hover,
+  &:active,
+  &:focus {
+    ${CSS.color.background.light}
+    ${CSS.font.color.dark}
+  }
+`);
 
 export default { root, caption, footer, header, title, tags, details, projectLink, linkIcon };

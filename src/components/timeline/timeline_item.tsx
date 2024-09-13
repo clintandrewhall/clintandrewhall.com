@@ -1,6 +1,7 @@
-import { useLogo } from '@/lib/hooks/use_logos';
 import moment from 'moment';
 import type { ReactNode } from 'react';
+
+import { useLogo } from '@lib/hooks/use_logos';
 
 import styles from './timeline_item.styles';
 

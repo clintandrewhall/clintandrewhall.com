@@ -1,5 +1,5 @@
-import { css, toProps } from '@/lib/css';
-import { theme } from '@/theme';
+import { css, toProps } from '@lib/css';
+import { theme } from '@theme';
 
 const { decl, vars } = theme;
 
@@ -25,7 +25,7 @@ const title = toProps(css`
   ${decl.font.sansSerif.medium}
   ${decl.font.weight.normal}
   ${decl.font.size.step2}
-  margin-bottom: var(${vars.spacing.step4});    
+  margin-bottom: var(${vars.spacing.step4});
 `);
 
 const content = toProps(css`
@@ -50,7 +50,7 @@ const code = toProps(css`
   @media (max-width: ${BREAKPOINT}px) {
     grid-area: auto / 1 / auto / span 12;
   }
-  
+
   grid-area: auto / 7 / auto / span 6;
 `);
 

@@ -1,4 +1,4 @@
-import { useEntryIds } from '@/lib/hooks/use_portfolio';
+import { useEntryIds } from '@lib/hooks/use_portfolio';
 
 import { PortfolioItem } from './portfolio_item';
 

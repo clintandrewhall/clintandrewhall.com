@@ -1,5 +1,5 @@
-import { css, toProps } from '@/lib/css';
-import { theme } from '@/theme';
+import { css, toProps } from '@lib/css';
+import { theme } from '@theme';
 
 import { BULLET_PADDING, BULLET_SIZE_EQ, TOP_PADDING } from './timeline_item.styles';
 
@@ -19,7 +19,7 @@ const root = toProps(css`
   }
 
   &::before {
-    content: "";
+    content: '';
     display: block;
     width: 1px;
     background: var(${vars.color.background.subtler});
@@ -32,7 +32,7 @@ const root = toProps(css`
 
   @media (min-width: 975px) {
     &::after {
-      content: "";
+      content: '';
       display: block;
       width: 1px;
       background: var(${vars.color.background.subtler});

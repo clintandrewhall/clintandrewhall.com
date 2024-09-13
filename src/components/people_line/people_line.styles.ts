@@ -1,9 +1,10 @@
-import { css, toProps } from '@/lib/css';
-import { theme } from '@/theme';
 import { css as csl } from '@linaria/core';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+
+import { css, toProps } from '@lib/css';
+import { theme } from '@theme';
 
 const { decl, vars } = theme;
 
@@ -71,7 +72,7 @@ export const root = toProps(css`
   padding: 0 var(${vars.spacing.step9});
   position: relative;
 
-  &:before, 
+  &:before,
   &:after {
     position: absolute;
     content: '';
@@ -84,14 +85,18 @@ export const root = toProps(css`
   &:before {
     left: calc(var(${vars.spacing.step8}) * -1);
     background: linear-gradient(
-      to left, var(${vars.color.background.subtle}), var(${vars.color.background.dark})
+      to left,
+      var(${vars.color.background.subtle}),
+      var(${vars.color.background.dark})
     );
   }
 
   &:after {
     right: calc(var(${vars.spacing.step8}) * -1);
     background: linear-gradient(
-      to right, var(${vars.color.background.subtle}), var(${vars.color.background.dark})
+      to right,
+      var(${vars.color.background.subtle}),
+      var(${vars.color.background.dark})
     );
   }
 `);

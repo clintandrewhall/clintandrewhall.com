@@ -13,7 +13,7 @@ type Width = 480 | 1280;
 const IMG_PATH_PREFIX = '/src/content/portfolio/images/';
 
 const jpgModules = import.meta.glob<{ default: OutputMetadata[] }>(
-  '@/content/portfolio/images/*.jpg',
+  '@content/portfolio/images/*.jpg',
   {
     query: { w: '480;1280', as: 'metadata', format: 'webp' },
     eager: true,
@@ -21,7 +21,7 @@ const jpgModules = import.meta.glob<{ default: OutputMetadata[] }>(
 );
 
 const pngModules = import.meta.glob<{ default: OutputMetadata[] }>(
-  '@/content/portfolio/images/*.png',
+  '@content/portfolio/images/*.png',
   {
     query: { w: '480;1280', as: 'metadata', format: 'webp' },
     eager: true,
@@ -55,7 +55,7 @@ export const usePortfolioImage = (id: string | undefined, width: Width) => {
 
 // Portfolio Entries
 const DEFAULT_LIMIT = 6;
-const contents = import.meta.glob<PortfolioEntry>('@/content/portfolio/*.md', { eager: true });
+const contents = import.meta.glob<PortfolioEntry>('@content/portfolio/*.md', { eager: true });
 const entries = Object.values(contents).sort(
   (a, b) => b.attributes.timestamp - a.attributes.timestamp,
 );

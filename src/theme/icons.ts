@@ -1,4 +1,4 @@
-import { css, cx } from '@/lib/css';
+import { css, cx } from '@lib/css';
 
 export const ICONS_SOCIAL = ['github', 'instagram', 'linkedin', 'twitter', 'facebook'] as const;
 export const ICONS = ['link', ...ICONS_SOCIAL] as const;

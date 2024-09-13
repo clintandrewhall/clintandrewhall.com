@@ -1,5 +1,5 @@
-import { css, toProps } from '@/lib/css';
-import { theme } from '@/theme';
+import { css, toProps } from '@lib/css';
+import { theme } from '@theme';
 
 const { decl, vars } = theme;
 
@@ -16,13 +16,14 @@ const link = toProps(css`
 
     display: block;
     text-transform: uppercase;
-    letter-spacing: calc(var(${vars.font.size.stepN1}) * .25);
+    letter-spacing: calc(var(${vars.font.size.stepN1}) * 0.25);
     text-align: center;
     padding: var(${vars.spacing.step4}) var(${vars.spacing.step9});
     line-height: var(${vars.font.size.step3});
   }
 
-  a&:hover, a&:focus {
+  a&:hover,
+  a&:focus {
     ${decl.font.color.light}
     ${decl.color.background.accent}
   }

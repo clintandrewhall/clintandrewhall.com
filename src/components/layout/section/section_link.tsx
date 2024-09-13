@@ -1,4 +1,4 @@
-import { cx } from '@/lib/css';
+import { cx } from '@lib/css';
 
 import styles from './section_link.styles';
 

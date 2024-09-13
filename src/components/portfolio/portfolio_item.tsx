@@ -1,5 +1,6 @@
-import { useEntryMetadata, usePortfolioImage } from '@/lib/hooks/use_portfolio';
 import { Link } from 'react-router-dom';
+
+import { useEntryMetadata, usePortfolioImage } from '@lib/hooks/use_portfolio';
 
 import styles from './portfolio_item.styles';
 

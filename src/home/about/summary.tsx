@@ -1,4 +1,4 @@
-import { ReactComponent } from '@/content/about.md';
+import { ReactComponent } from '@content/about.md';
 
 import styles from './about.styles';
 

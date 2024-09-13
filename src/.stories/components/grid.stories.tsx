@@ -1,9 +1,10 @@
-import { Layout as Component } from '@/components/layout';
-import { css, cx } from '@/lib/css';
-import { useDimensions } from '@/lib/hooks';
-import { theme } from '@/theme';
 import type { Meta, StoryObj } from '@storybook/react';
 import type { ReactNode } from 'react';
+
+import { Layout as Component } from '@components/layout';
+import { css, cx } from '@lib/css';
+import { useDimensions } from '@lib/hooks';
+import { theme } from '@theme';
 
 const meta: Meta = {
   title: 'Components/Layout/Layout',

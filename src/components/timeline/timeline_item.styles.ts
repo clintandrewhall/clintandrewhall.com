@@ -1,5 +1,5 @@
-import { css, toProps } from '@/lib/css';
-import { theme } from '@/theme';
+import { css, toProps } from '@lib/css';
+import { theme } from '@theme';
 
 const { decl, vars } = theme;
 
@@ -24,7 +24,7 @@ const LOGO_VAR = '--timeline-item-logo';
 
 const root = (logo?: string) =>
   toProps(
-    css` 
+    css`
       padding-left: calc(${BULLET_SIZE_EQ} + (var(${vars.grid.gutter}) / 2));
       padding-top: ${TOP_PADDING};
       position: relative;
@@ -42,7 +42,7 @@ const header = toProps(css`
   flex-direction: column;
 
   &::before {
-    content: "";
+    content: '';
     border-radius: 50%;
     display: block;
     height: ${IMAGE_SIZE};
@@ -58,7 +58,7 @@ const header = toProps(css`
 
   &::after {
     background: var(${vars.color.background.subtler});
-    content: "";
+    content: '';
     display: block;
     height: calc(${BULLET_SIZE_EQ});
     width: calc(${BULLET_SIZE_EQ});

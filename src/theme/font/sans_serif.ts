@@ -1,5 +1,5 @@
-import { buildTheme } from '@/lib/css';
-import { VAR_PREFIX_FONT_FACE_SANS as varPrefix } from '@/theme/common';
+import { buildTheme } from '@lib/css';
+import { VAR_PREFIX_FONT_FACE_SANS as varPrefix } from '@theme/common';
 
 const SANS_SERIF = ['regular', 'bold', 'extraBold', 'medium', 'semiBold', 'light'] as const;
 export type SansSerif = (typeof SANS_SERIF)[number];

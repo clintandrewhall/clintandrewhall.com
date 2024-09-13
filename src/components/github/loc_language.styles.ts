@@ -1,5 +1,5 @@
-import { css, toProps } from '@/lib/css';
-import { theme } from '@/theme';
+import { css, toProps } from '@lib/css';
+import { theme } from '@theme';
 
 const { vars, decl } = theme;
 
@@ -12,7 +12,7 @@ const header = toProps(css`
   ${decl.font.sansSerif.extraBold}
   ${decl.font.size.stepN1}
   text-transform: uppercase;
-  letter-spacing: calc(var(${vars.font.size.stepN1}) * .14);
+  letter-spacing: calc(var(${vars.font.size.stepN1}) * 0.14);
   margin-top: var(${vars.spacing.step3});
 `);
 
@@ -78,7 +78,7 @@ const percent = (width: string, background: string) =>
       border-radius: 0 5px 5px 0;
       border-width: 1px;
       border-style: solid;
-  `,
+    `,
     {
       background,
       width,

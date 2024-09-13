@@ -1,10 +1,11 @@
-import { css, cx } from '@/lib/css';
-import { theme } from '@/theme';
 import { css as csl } from '@linaria/core';
 import type { Preview } from '@storybook/react';
 import 'ress';
 import 'unfonts.css';
 import { withRouter } from 'storybook-addon-remix-react-router';
+
+import { css, cx } from '@lib/css';
+import { theme } from '@theme';
 
 const preview: Preview = {
   parameters: {

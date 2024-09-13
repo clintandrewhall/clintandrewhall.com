@@ -1,11 +1,11 @@
-import { css, toProps } from '@/lib/css';
-import { theme } from '@/theme';
+import { css, toProps } from '@lib/css';
+import { theme } from '@theme';
 
 const { vars, decl } = theme;
 
 const root = toProps(css`
   grid-area: auto / 2 / auto / span 10;
-    ${decl.color.background.subtlest}
+  ${decl.color.background.subtlest}
 `);
 
 const content = toProps(css`
@@ -13,7 +13,7 @@ const content = toProps(css`
   gap: var(${vars.spacing.step9});
   grid-template-columns: repeat(2, 1fr);
   grid-area: auto / 2 / auto / span 10;
-  
+
   @media (max-width: 600px) {
     grid-template-columns: repeat(1, auto);
   }

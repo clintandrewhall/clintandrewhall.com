@@ -1,17 +1,18 @@
-import { buildTheme } from '@/lib/css';
-import { VAR_PREFIX_COLOR as varPrefix } from '@/theme/common';
+import { buildTheme } from '@lib/css';
+import { VAR_PREFIX_COLOR as varPrefix } from '@theme/common';
 
-type Color = 'dark' |
-  'light' |
-  'subtle' |
-  'subtler' |
-  'subtlest' |
-  'shade' |
-  'separator' |
-  'outline' |
-  'accent' |
-  'grid';
-  
+type Color =
+  | 'dark'
+  | 'light'
+  | 'subtle'
+  | 'subtler'
+  | 'subtlest'
+  | 'shade'
+  | 'separator'
+  | 'outline'
+  | 'accent'
+  | 'grid';
+
 const themeValues: Record<Color, string> = {
   dark: '#000',
   subtlest: '#F1F1F1',

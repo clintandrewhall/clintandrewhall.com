@@ -1,5 +1,5 @@
-import { css, toProps } from '@/lib/css';
-import { theme } from '@/theme';
+import { css, toProps } from '@lib/css';
+import { theme } from '@theme';
 
 const { decl, vars } = theme;
 
@@ -57,8 +57,8 @@ export const category = toProps(css`
   ${decl.font.size.stepN1}
   display: inline-block;
   margin-right: var(${vars.spacing.step0});
-  letter-spacing: calc(var(${vars.font.size.step0}) * .14);
-  
+  letter-spacing: calc(var(${vars.font.size.step0}) * 0.14);
+
   & a {
     ${decl.font.weight.normal}
     ${decl.font.color.medium}
@@ -68,7 +68,7 @@ export const category = toProps(css`
     &:active {
       ${decl.font.color.link}
     }
-  } 
+  }
 
   &::after {
     ${decl.font.color.medium}
@@ -78,7 +78,7 @@ export const category = toProps(css`
   &:last-child::after {
     display: none;
   }
-  
+
   text-transform: uppercase;
 `);
 

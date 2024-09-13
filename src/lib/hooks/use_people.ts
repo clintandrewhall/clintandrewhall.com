@@ -10,7 +10,7 @@ interface OutputMetadata {
 // to derive the correct key... so it's COPY PASTA TIME
 const IMG_PATH_PREFIX = '/src/content/people/';
 
-const imageModules = import.meta.glob<{ default: OutputMetadata }>('@/content/people/*.jpg', {
+const imageModules = import.meta.glob<{ default: OutputMetadata }>('@content/people/*.jpg', {
   query: { w: '75', as: 'metadata', format: 'webp' },
   eager: true,
 });

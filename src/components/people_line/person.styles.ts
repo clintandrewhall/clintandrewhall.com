@@ -1,12 +1,14 @@
-import { css, toProps } from '@/lib/css';
-import { theme } from '@/theme';
+import { css, toProps } from '@lib/css';
+import { theme } from '@theme';
 
 const { vars, decl } = theme;
 
 const root = toProps(css`
   --person-avatar-size: var(${vars.spacing.avatar});
   --person-avatar-shadow: var(${vars.spacing.step1});
-  --person-padding-left: calc(var(--person-avatar-size) + var(--person-avatar-shadow) + var(${vars.spacing.step6}));
+  --person-padding-left: calc(
+    var(--person-avatar-size) + var(--person-avatar-shadow) + var(${vars.spacing.step6})
+  );
   --person-padding-top: var(${vars.spacing.step9});
 
   position: relative;
@@ -25,7 +27,7 @@ const root = toProps(css`
     width: 1px;
     height: var(--person-padding-top);
     position: absolute;
-    left: calc((var(--person-avatar-size) + (var(--person-avatar-shadow)*2)) / 2);
+    left: calc((var(--person-avatar-size) + (var(--person-avatar-shadow) * 2)) / 2);
     top: 0;
     background-color: var(${vars.color.border.grid});
   }

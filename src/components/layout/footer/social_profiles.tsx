@@ -1,4 +1,4 @@
-import type { IconSocial } from '@/theme/icons';
+import type { IconSocial } from '@theme/icons';
 
 import styles from './social_profiles.styles';
 
