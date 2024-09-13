@@ -10,7 +10,7 @@ const root = toProps(css`
 
 const link = toProps(css`
   a& {
-    ${decl.font.color.light}
+    ${decl.color.font.light}
     ${decl.font.size.stepN1}
     ${decl.color.background.dark}
 
@@ -24,7 +24,7 @@ const link = toProps(css`
 
   a&:hover,
   a&:focus {
-    ${decl.font.color.light}
+    ${decl.color.font.light}
     ${decl.color.background.accent}
   }
 `);

@@ -29,7 +29,7 @@ export const theme = {
       font-variant-ligatures: common-ligatures;
       text-rendering: optimizeLegibility;
       a {
-        ${font.decl.color.link}
+        ${color.decl.font.link}
         font-weight: 600;
         text-decoration: none;
         transition: all .3s ease-in-out;
@@ -37,7 +37,7 @@ export const theme = {
         &:hover,
         &:active,
         &:focus {
-          ${font.decl.color.dark}
+          ${color.decl.font.dark}
         }
       }
     `,

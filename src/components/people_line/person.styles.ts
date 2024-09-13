@@ -35,7 +35,7 @@ const root = toProps(css`
 
 const details = toProps(css`
   ${decl.font.sansSerif.regular};
-  ${decl.font.color.dim};
+  ${decl.color.font.dim};
 
   & > dt {
     visibility: hidden;
@@ -56,7 +56,7 @@ const avatar = toProps(css`
 
 const quote = toProps(css`
   ${decl.font.serif.regular};
-  ${decl.font.color.dim};
+  ${decl.color.font.dim};
   ${decl.font.size.step0};
   line-height: var(${vars.font.size.step3});
   margin-bottom: var(${vars.spacing.step5});
@@ -65,14 +65,14 @@ const quote = toProps(css`
 const name = toProps(css`
   ${decl.font.sansSerif.semiBold};
   ${decl.font.size.stepN1}
-  ${decl.font.color.light}
+  ${decl.color.font.light}
   letter-spacing: calc(var(${vars.font.size.step1}) * .1);
   margin-bottom: var(${vars.spacing.step1});
   text-transform: uppercase;
 `);
 
 const title = toProps(css`
-  ${decl.font.color.lightAccent}
+  ${decl.color.font.lightAccent}
   ${decl.font.size.stepN1}
   margin-bottom: var(${vars.spacing.step3});
 `);

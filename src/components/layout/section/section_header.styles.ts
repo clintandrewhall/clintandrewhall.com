@@ -14,7 +14,7 @@ const name = toProps(
     css`
       ${decl.font.sansSerif.semiBold}
       ${decl.font.size.step1}
-      ${decl.font.color.accent}
+      ${decl.color.font.accent}
       ${decl.font.weight.normal}
       letter-spacing: calc(var(${vars.font.size.step1}) * ${LETTER_SPACING_FACTOR});
       text-transform: uppercase;

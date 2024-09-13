@@ -6,7 +6,7 @@ const { vars, decl } = theme;
 const root = toProps(css`
   ${decl.font.size.stepN1};
   ${decl.color.background.dark}
-  ${decl.font.color.text}
+  ${decl.color.font.text}
     margin-top: var(${vars.spacing.sectionBottom});
   display: flex;
   flex-flow: row wrap;
@@ -23,7 +23,7 @@ const root = toProps(css`
       &:hover,
       &:active,
       &:focus {
-        ${decl.font.color.lightAccent}
+        ${decl.color.font.lightAccent}
       }
     }
 

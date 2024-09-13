@@ -1,7 +1,7 @@
 import { buildTheme } from '@lib/css';
 import { VAR_PREFIX_FONT_COLOR as varPrefix } from '@theme/common';
 
-type Color =
+type FontColor =
   | 'dark'
   | 'light'
   | 'lightAccent'
@@ -12,7 +12,7 @@ type Color =
   | 'accent'
   | 'link';
 
-const themeValues: Record<Color, string> = {
+const themeValues: Record<FontColor, string> = {
   dark: '#0D0A0B',
   shaded: 'rgba(0, 0, 0, .5)',
   medium: 'rgba(0, 0, 0, .4)',
@@ -24,4 +24,4 @@ const themeValues: Record<Color, string> = {
   link: '#862121',
 };
 
-export const color = buildTheme<Color>(themeValues, varPrefix, 'color');
+export const font = buildTheme<FontColor>(themeValues, varPrefix, 'color');

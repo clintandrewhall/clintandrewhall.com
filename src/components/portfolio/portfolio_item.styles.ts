@@ -116,7 +116,7 @@ const title = toProps(css`
     letter-spacing: calc(var(${vars.font.size.step3}) * 0.1);
   }
 
-  ${CSS.font.color.light}
+  ${CSS.color.font.light}
   margin-bottom: var(${vars.spacing.step0});
   text-transform: uppercase;
 `);
@@ -141,18 +141,18 @@ const caption = toProps(css`
     top: var(${vars.spacing.step9});
   }
 
-  ${CSS.font.color.light}
+  ${CSS.color.font.light}
   ${CSS.font.sansSerif.regular}
     position: absolute;
   z-index: 3;
 
   & a {
-    ${CSS.font.color.light}
+    ${CSS.color.font.light}
     border: 2px solid var(${vars.color.background.light});
     background: var(${vars.color.background.dark});
 
     &:hover {
-      ${CSS.font.color.dark}
+      ${CSS.color.font.dark}
       background: var(${vars.color.background.light});
     }
   }
@@ -173,12 +173,12 @@ const tags = toProps(css`
   }
 
   & > a {
-    ${CSS.font.color.dim}
+    ${CSS.color.font.dim}
 
     ${CSS.font.sansSerif.light}
 
       &:hover {
-      ${CSS.font.color.light}
+      ${CSS.color.font.light}
     }
   }
 `);
@@ -225,7 +225,7 @@ const linkIcon = toProps(
 );
 
 const projectLink = toProps(css`
-  ${CSS.font.color.light}
+  ${CSS.color.font.light}
   ${CSS.font.size.step0}
     height: var(${vars.spacing.step9});
   line-height: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0}));
@@ -256,14 +256,14 @@ const projectLink = toProps(css`
 
   a& {
     background: var(${vars.color.background.dark});
-    ${CSS.font.color.light}
+    ${CSS.color.font.light}
   }
 
   &:hover,
   &:active,
   &:focus {
     ${CSS.color.background.light}
-    ${CSS.font.color.dark}
+    ${CSS.color.font.dark}
   }
 `);
 

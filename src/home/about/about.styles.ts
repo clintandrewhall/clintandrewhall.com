@@ -30,7 +30,7 @@ const title = toProps(css`
 
 const content = toProps(css`
   ${decl.font.serif.regular}
-  ${decl.font.color.text}
+  ${decl.color.font.text}
   line-height: var(${vars.spacing.step6});
 
   & p {

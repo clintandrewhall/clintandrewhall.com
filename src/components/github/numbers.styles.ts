@@ -5,7 +5,7 @@ const { vars, decl } = theme;
 
 const root = toProps(css`
   ${decl.color.background.subtlest}
-  ${decl.font.color.dark}
+  ${decl.color.font.dark}
   padding-left: var(${vars.spacing.step5});
   padding-right: var(${vars.spacing.step5});
 `);
@@ -46,7 +46,7 @@ const number = toProps(css`
 `);
 
 const name = toProps(css`
-  ${decl.font.color.medium}
+  ${decl.color.font.medium}
   ${decl.font.sansSerif.medium}
   ${decl.font.size.step0}
   flex: 1;

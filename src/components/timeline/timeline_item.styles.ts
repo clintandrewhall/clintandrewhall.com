@@ -35,7 +35,7 @@ const root = (logo?: string) =>
 
 const header = toProps(css`
   ${decl.font.sansSerif.medium}
-  ${decl.font.color.dark}
+  ${decl.color.font.dark}
   ${decl.font.weight.normal}
 
   display: flex;
@@ -73,7 +73,7 @@ const header = toProps(css`
 const timeframe = toProps(css`
   ${decl.font.sansSerif.medium}
   ${decl.font.size.stepN1}
-  ${decl.font.color.text}
+  ${decl.color.font.text}
 
   letter-spacing: calc(var(${vars.font.size.step0}) * .1);
   text-transform: uppercase;
@@ -104,7 +104,7 @@ const subtitle = toProps(css`
 
 const content = toProps(css`
   ${decl.font.serif.regular}
-  ${decl.font.color.text}
+  ${decl.color.font.text}
   ${decl.font.size.step0}
   ${decl.font.lineHeight.step3}
 

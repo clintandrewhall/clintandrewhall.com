@@ -11,12 +11,12 @@ const root = toProps(css`
   justify-content: center;
 
   & a {
-    ${decl.font.color.light}
+    ${decl.color.font.light}
 
     &:hover,
       &:active,
       &:focus {
-      ${decl.font.color.light}
+      ${decl.color.font.light}
     }
   }
 
@@ -51,7 +51,7 @@ const item = toProps(css`
   &:before {
     content: '|';
     position: absolute;
-    ${decl.font.color.text};
+    ${decl.color.font.text};
     left: -2px;
   }
 

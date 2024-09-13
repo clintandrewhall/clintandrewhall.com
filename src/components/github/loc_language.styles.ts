@@ -38,7 +38,7 @@ const totalLines = (percent: string) =>
     css`
       ${decl.font.sansSerif.regular}
       ${decl.font.size.stepN1}
-      ${decl.font.color.light}
+      ${decl.color.font.light}
       ${decl.color.background.dark}
 
       position: absolute;

@@ -10,7 +10,7 @@ const root = toProps(css`
 `);
 
 const header = toProps(css`
-  ${decl.font.color.light}
+  ${decl.color.font.light}
   grid-area: auto / 2 / auto / span 10;
 `);
 
@@ -21,7 +21,7 @@ const link = toProps(css`
     &:hover,
     &:focus,
     &:active {
-      ${decl.font.color.dark}
+      ${decl.color.font.dark}
       ${decl.color.background.light}
     }
   }
