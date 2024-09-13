@@ -1,23 +1,23 @@
-import { csa, toProps } from '@/lib/css';
+import { css, toProps } from '@/lib/css';
 import { theme } from '@/theme';
 
-const { vars, css } = theme;
+const { vars, decl } = theme;
 
-const root = toProps(csa`
-  ${css.font.sansSerif.regular}
+const root = toProps(css`
+  ${decl.font.sansSerif.regular}
   height: var(${vars.spacing.step9});
 `);
 
-const header = toProps(csa`
-  ${css.font.sansSerif.extraBold}
-  ${css.font.size.stepN1}
+const header = toProps(css`
+  ${decl.font.sansSerif.extraBold}
+  ${decl.font.size.stepN1}
   text-transform: uppercase;
   letter-spacing: calc(var(${vars.font.size.stepN1}) * .14);
   margin-top: var(${vars.spacing.step3});
 `);
 
-const definition = toProps(csa`
-  ${css.color.background.shade}
+const definition = toProps(css`
+  ${decl.color.background.shade}
   position: relative;
   height: var(${vars.spacing.step1});
   margin-top: var(${vars.spacing.step0});
@@ -28,18 +28,18 @@ const definition = toProps(csa`
   }
 `);
 
-const repoCount = toProps(csa`
+const repoCount = toProps(css`
   visibility: hidden;
   position: absolute;
 `);
 
 const totalLines = (percent: string) =>
   toProps(
-    csa`
-      ${css.font.sansSerif.regular}
-      ${css.font.size.stepN1}
-      ${css.font.color.light}
-      ${css.color.background.dark}
+    css`
+      ${decl.font.sansSerif.regular}
+      ${decl.font.size.stepN1}
+      ${decl.font.color.light}
+      ${decl.color.background.dark}
 
       position: absolute;
       display: inline-block;
@@ -69,8 +69,8 @@ const totalLines = (percent: string) =>
 
 const percent = (width: string, background: string) =>
   toProps(
-    csa`
-      ${css.color.border.outline}
+    css`
+      ${decl.color.border.outline}
       position: absolute;
       height: var(${vars.spacing.step1});
       line-height: var(${vars.spacing.step1});

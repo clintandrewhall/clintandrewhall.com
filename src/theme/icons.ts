@@ -1,4 +1,4 @@
-import { csa, cx } from '@/lib/css';
+import { css, cx } from '@/lib/css';
 
 export const ICONS_SOCIAL = ['github', 'instagram', 'linkedin', 'twitter', 'facebook'] as const;
 export const ICONS = ['link', ...ICONS_SOCIAL] as const;
@@ -8,7 +8,7 @@ export type IconSocial = (typeof ICONS_SOCIAL)[number];
 
 export const isIcon = (value: string): value is Icon => ICONS.includes(value as Icon);
 
-const icon = csa`
+const icon = css`
   display: inline-block;
   font-family: 'Iconic';
   font-weight: normal;
@@ -20,32 +20,32 @@ const icon = csa`
 `;
 
 const iconClasses: Record<Icon, string> = {
-  link: csa`
+  link: css`
     &:before {
       content: '\ue04b';
     }
   `,
-  github: csa`
+  github: css`
     &:before {
       content: '\ue0b6';
     }
   `,
-  instagram: csa`
+  instagram: css`
     &:before {
       content: '\ue0b8';
     }
   `,
-  linkedin: csa`
+  linkedin: css`
     &:before {
       content: '\ue0b9';
     }
   `,
-  twitter: csa`
+  twitter: css`
     &:before {
       content: '\ue0a7';
     }
   `,
-  facebook: csa`
+  facebook: css`
     &:before {
       content: '\ue0a5';
     }

@@ -1,11 +1,11 @@
-import { csa, toProps } from '@/lib/css';
+import { css, toProps } from '@/lib/css';
 import { theme } from '@/theme';
 
-const { css, vars } = theme;
+const { decl, vars } = theme;
 
 const root = toProps(
-  csa`
-    ${css.color.background.dark}
+  css`
+    ${decl.color.background.dark}
     padding: var(${vars.spacing.step4}) 0;
   `,
 );

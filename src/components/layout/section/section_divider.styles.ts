@@ -1,9 +1,9 @@
-import { csa, toProps } from '@/lib/css';
+import { css, toProps } from '@/lib/css';
 import { theme } from '@/theme';
 
 const { vars } = theme;
 
-const divider = toProps(csa`
+const divider = toProps(css`
   background-color: var(${vars.color.border.separator});
   height: 1px;
   grid-area: auto/5/auto/span 4;

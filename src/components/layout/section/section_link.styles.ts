@@ -1,18 +1,18 @@
-import { csa, toProps } from '@/lib/css';
+import { css, toProps } from '@/lib/css';
 import { theme } from '@/theme';
 
-const { css, vars } = theme;
+const { decl, vars } = theme;
 
-const root = toProps(csa`
+const root = toProps(css`
   grid-area: auto / 4 / auto / 10;
   margin-top: var(${vars.spacing.step4});
 `);
 
-const link = toProps(csa`
+const link = toProps(css`
   a& {
-    ${css.font.color.light}
-    ${css.font.size.stepN1}
-    ${css.color.background.dark}
+    ${decl.font.color.light}
+    ${decl.font.size.stepN1}
+    ${decl.color.background.dark}
 
     display: block;
     text-transform: uppercase;
@@ -23,8 +23,8 @@ const link = toProps(csa`
   }
 
   a&:hover, a&:focus {
-    ${css.font.color.light}
-    ${css.color.background.accent}
+    ${decl.font.color.light}
+    ${decl.color.background.accent}
   }
 `);
 

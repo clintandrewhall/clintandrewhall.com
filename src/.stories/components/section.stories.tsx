@@ -1,6 +1,6 @@
 import { Section as Component, type SectionProps } from '@/components/layout';
 import type { SectionHeaderProps } from '@/components/layout/section/section_header';
-import { csa } from '@/lib/css';
+import { css } from '@/lib/css';
 import type { Meta, StoryObj } from '@storybook/react';
 
 const meta: Meta<typeof Component> = {
@@ -22,7 +22,7 @@ export const Section: StoryObj<Arguments> = {
   render: (args: Arguments) => {
     return (
       <Component id="storybook">
-        <Component.Header {...args} className={csa`grid-area: auto/1/auto/span 12`} />
+        <Component.Header {...args} className={css`grid-area: auto/1/auto/span 12`} />
         <div style={{ textAlign: 'center' }}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec dui nec ligula bibendum
           fringilla. Nulla facilisi. Donec ut nunc nec nunc facilisis fermentum. Nulla facilisi.

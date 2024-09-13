@@ -1,16 +1,16 @@
-import { csa, toProps } from '@/lib/css';
+import { css, toProps } from '@/lib/css';
 import { theme } from '@/theme';
 
-const { vars, css } = theme;
+const { vars, decl } = theme;
 
-const root = toProps(csa`
-  ${css.color.background.subtlest}
-  ${css.font.color.dark}
+const root = toProps(css`
+  ${decl.color.background.subtlest}
+  ${decl.font.color.dark}
   padding-left: var(${vars.spacing.step5});
   padding-right: var(${vars.spacing.step5});
 `);
 
-const list = toProps(csa`
+const list = toProps(css`
   display: grid;
   gap: var(${vars.spacing.step2});
 
@@ -21,7 +21,7 @@ const list = toProps(csa`
   grid-template-columns: repeat(4, 1fr);
 `);
 
-const item = toProps(csa`
+const item = toProps(css`
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -31,9 +31,9 @@ const item = toProps(csa`
   position: relative;
 `);
 
-const number = toProps(csa`
-  ${css.font.serif.bold}
-  ${css.font.size.step3}
+const number = toProps(css`
+  ${decl.font.serif.bold}
+  ${decl.font.size.step3}
   border-bottom: 1px solid var(${vars.color.border.separator});
   flex: 1;
   margin: 0;
@@ -45,10 +45,10 @@ const number = toProps(csa`
   position: relative;
 `);
 
-const name = toProps(csa`
-  ${css.font.color.medium}
-  ${css.font.sansSerif.medium}
-  ${css.font.size.step0}
+const name = toProps(css`
+  ${decl.font.color.medium}
+  ${decl.font.sansSerif.medium}
+  ${decl.font.size.step0}
   flex: 1;
   padding-bottom: var(${vars.spacing.step4});
   padding-left: var(${vars.spacing.step4});

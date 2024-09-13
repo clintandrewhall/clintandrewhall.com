@@ -1,15 +1,15 @@
-import { csa, toProps } from '@/lib/css';
+import { css, toProps } from '@/lib/css';
 import { theme } from '@/theme';
 
 const outer = toProps(
-  csa`
-    ${theme.css.grid.container}
+  css`
+    ${theme.decl.grid.container}
   `,
 );
 
 const inner = toProps(
-  csa`
-    ${theme.css.grid.root}
+  css`
+    ${theme.decl.grid.root}
   `,
 );
 

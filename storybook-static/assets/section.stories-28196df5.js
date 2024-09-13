@@ -7,7 +7,7 @@ import{j as e}from"./jsx-runtime-d079401a.js";import{S as t}from"./section-925c1
   },
   render: (args: Arguments) => {
     return <Component id="storybook">
-        <Component.Header {...args} className={csa\`grid-area: auto/1/auto/span 12\`} />
+        <Component.Header {...args} className={css\`grid-area: auto/1/auto/span 12\`} />
         <div style={{
         textAlign: 'center'
       }}>

@@ -1,16 +1,16 @@
-import { csa, toProps } from '@/lib/css';
+import { css, toProps } from '@/lib/css';
 import { theme } from '@/theme';
 import { css as csl } from '@linaria/core';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 
-const { css, vars } = theme;
+const { decl, vars } = theme;
 
 csl`
   :global() {
     .swiper .swiper-pagination-bullets.swiper-pagination-horizontal {
-      ${css.color.background.subtle}
+      ${decl.color.background.subtle}
       display: inline-block;
       left: 50%;
       transform: translateX(-50%);
@@ -23,7 +23,7 @@ csl`
     .swiper-pagination-bullets:before,
     .swiper-pagination-bullets:after {
       content: '';
-      ${css.color.background.subtle}
+      ${decl.color.background.subtle}
       top: 0;
       bottom: 0;
       height: 22px;
@@ -43,7 +43,7 @@ csl`
   }
 `;
 
-export const root = toProps(csa`
+export const root = toProps(css`
   --swiper-theme-color: var(${vars.color.background.light});
   --swiper-navigation-size: var(${vars.spacing.step6});
   --swiper-navigation-top-offset: 50%;
@@ -96,7 +96,7 @@ export const root = toProps(csa`
   }
 `);
 
-const swiper = toProps(csa`
+const swiper = toProps(css`
   max-width: var(${vars.grid.maxWidth});
 `);
 

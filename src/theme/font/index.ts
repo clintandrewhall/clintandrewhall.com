@@ -13,13 +13,13 @@ export const font = {
     serif: serif.vars,
     sansSerif: sansSerif.vars,
   },
-  css: {
-    size: size.css,
-    lineHeight: lineHeight.css,
-    color: color.css,
-    weight: weight.css,
-    serif: serif.css,
-    sansSerif: sansSerif.css,
+  decl: {
+    size: size.decl,
+    lineHeight: lineHeight.decl,
+    color: color.decl,
+    weight: weight.decl,
+    serif: serif.decl,
+    sansSerif: sansSerif.decl,
   },
   definitions: {
     ...lineHeight.definitions,

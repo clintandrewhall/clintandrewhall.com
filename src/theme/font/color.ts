@@ -1,19 +1,16 @@
 import { buildTheme } from '@/lib/css';
 import { VAR_PREFIX_FONT_COLOR as varPrefix } from '@/theme/common';
 
-const COLORS = [
-  'dark',
-  'light',
-  'lightAccent',
-  'medium',
-  'shaded',
-  'dim',
-  'text',
-  'accent',
-  'link',
-] as const;
-
-type Color = (typeof COLORS)[number];
+type Color =
+  | 'dark'
+  | 'light'
+  | 'lightAccent'
+  | 'medium'
+  | 'shaded'
+  | 'dim'
+  | 'text'
+  | 'accent'
+  | 'link';
 
 const themeValues: Record<Color, string> = {
   dark: '#0D0A0B',

@@ -1,9 +1,9 @@
-import { csa, toProps } from '@/lib/css';
+import { css, toProps } from '@/lib/css';
 import { theme } from '@/theme';
 
-const { vars, css } = theme;
+const { vars, decl } = theme;
 
-const root = toProps(csa`
+const root = toProps(css`
   --person-avatar-size: var(${vars.spacing.avatar});
   --person-avatar-shadow: var(${vars.spacing.step1});
   --person-padding-left: calc(var(--person-avatar-size) + var(--person-avatar-shadow) + var(${vars.spacing.step6}));
@@ -13,6 +13,7 @@ const root = toProps(csa`
   padding-left: var(--person-padding-left);
   padding-top: var(--person-padding-top);
   padding-right: var(${vars.spacing.step6});
+  margin: 0 0 var(${vars.spacing.step9});
   margin: 0 0 var(${vars.spacing.step9});
 
   & {
@@ -30,9 +31,9 @@ const root = toProps(csa`
   }
 `);
 
-const details = toProps(csa`
-  ${css.font.sansSerif.regular};
-  ${css.font.color.dim};
+const details = toProps(css`
+  ${decl.font.sansSerif.regular};
+  ${decl.font.color.dim};
 
   & > dt {
     visibility: hidden;
@@ -40,7 +41,7 @@ const details = toProps(csa`
   }
 `);
 
-const avatar = toProps(csa`
+const avatar = toProps(css`
   box-shadow: 0 0 0 var(--person-avatar-shadow) var(${vars.color.border.grid});
   border-radius: 100%;
   position: absolute;
@@ -51,31 +52,31 @@ const avatar = toProps(csa`
   width: var(--person-avatar-size);
 `);
 
-const quote = toProps(csa`
-  ${css.font.serif.regular};
-  ${css.font.color.dim};
-  ${css.font.size.step0};
+const quote = toProps(css`
+  ${decl.font.serif.regular};
+  ${decl.font.color.dim};
+  ${decl.font.size.step0};
   line-height: var(${vars.font.size.step3});
   margin-bottom: var(${vars.spacing.step5});
 `);
 
-const name = toProps(csa`
-  font-family: var(${vars.font.sansSerif.semiBold});
-  font-size: var(${vars.font.size.stepN1});
+const name = toProps(css`
+  ${decl.font.sansSerif.semiBold};
+  ${decl.font.size.stepN1}
+  ${decl.font.color.light}
   letter-spacing: calc(var(${vars.font.size.step1}) * .1);
   margin-bottom: var(${vars.spacing.step1});
-  ${css.font.color.light}
   text-transform: uppercase;
 `);
 
-const title = toProps(csa`
-  ${css.font.color.lightAccent}
-  font-size: var(${vars.font.size.stepN1});
+const title = toProps(css`
+  ${decl.font.color.lightAccent}
+  ${decl.font.size.stepN1}
   margin-bottom: var(${vars.spacing.step3});
 `);
 
-const subtitle = toProps(csa`
-  font-size: var(${vars.font.size.stepN1});
+const subtitle = toProps(css`
+  ${decl.font.size.stepN1}
   margin-bottom: var(${vars.spacing.step3});
 `);
 

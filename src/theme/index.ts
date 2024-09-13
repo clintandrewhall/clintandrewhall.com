@@ -13,7 +13,7 @@ export const theme = {
     color: color.vars,
     grid: grid.vars,
   },
-  css: { font: font.css, color: color.css, grid: grid.css },
+  decl: { font: font.decl, color: color.decl, grid: grid.decl },
   definitions: {
     ...font.definitions,
     ...spacing.definitions,
@@ -28,7 +28,7 @@ export const theme = {
       font-variant-ligatures: common-ligatures;
       text-rendering: optimizeLegibility;
       a {
-        ${font.css.color.link}
+        ${font.decl.color.link}
         font-weight: 600;
         text-decoration: none;
         transition: all .3s ease-in-out;
@@ -36,7 +36,7 @@ export const theme = {
         &:hover,
         &:active,
         &:focus {
-          ${font.css.color.dark}
+          ${font.decl.color.dark}
         }
       }
     `,

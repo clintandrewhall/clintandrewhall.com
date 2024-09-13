@@ -24,7 +24,7 @@ export default defineConfig({
       },
       tagResolver: (source, tag) => {
         if (source === '@/lib/css') {
-          if (tag === 'csa') {
+          if (tag === 'css') {
             return resolve('node_modules/@linaria/atomic/processors/css');
           }
 

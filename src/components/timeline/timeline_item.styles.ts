@@ -1,7 +1,7 @@
-import { csa, toProps } from '@/lib/css';
+import { css, toProps } from '@/lib/css';
 import { theme } from '@/theme';
 
-const { css, vars } = theme;
+const { decl, vars } = theme;
 
 export const TOP_PADDING = `var(${vars.spacing.step9})`;
 export const IMAGE_SIZE = `var(${vars.spacing.step5})`;
@@ -24,7 +24,7 @@ const LOGO_VAR = '--timeline-item-logo';
 
 const root = (logo?: string) =>
   toProps(
-    csa` 
+    css` 
       padding-left: calc(${BULLET_SIZE_EQ} + (var(${vars.grid.gutter}) / 2));
       padding-top: ${TOP_PADDING};
       position: relative;
@@ -33,10 +33,10 @@ const root = (logo?: string) =>
     { [LOGO_VAR]: logo ? `url('${logo}')` : 'inherit' },
   );
 
-const header = toProps(csa`
-  ${css.font.sansSerif.medium}
-  ${css.font.color.dark}
-  ${css.font.weight.normal}
+const header = toProps(css`
+  ${decl.font.sansSerif.medium}
+  ${decl.font.color.dark}
+  ${decl.font.weight.normal}
 
   display: flex;
   flex-direction: column;
@@ -70,10 +70,10 @@ const header = toProps(csa`
   }
 `);
 
-const timeframe = toProps(csa`
-  ${css.font.sansSerif.medium}
-  ${css.font.size.stepN1}
-  ${css.font.color.text}
+const timeframe = toProps(css`
+  ${decl.font.sansSerif.medium}
+  ${decl.font.size.stepN1}
+  ${decl.font.color.text}
 
   letter-spacing: calc(var(${vars.font.size.step0}) * .1);
   text-transform: uppercase;
@@ -81,20 +81,20 @@ const timeframe = toProps(csa`
   margin-bottom: var(${vars.spacing.step0});
 `);
 
-const title = toProps(csa`
-  ${css.font.size.step2}
-  ${css.font.lineHeight.step2}
-  ${css.font.weight.normal}
+const title = toProps(css`
+  ${decl.font.size.step2}
+  ${decl.font.lineHeight.step2}
+  ${decl.font.weight.normal}
 
   order: 2;
   margin: 0;
   margin-bottom: var(${vars.spacing.step0});
 `);
 
-const subtitle = toProps(csa`
-  ${css.font.size.stepN1}
-  ${css.font.lineHeight.step1}
-  ${css.font.weight.normal}
+const subtitle = toProps(css`
+  ${decl.font.size.stepN1}
+  ${decl.font.lineHeight.step1}
+  ${decl.font.weight.normal}
 
   order: 3;
   margin: 0;
@@ -102,11 +102,11 @@ const subtitle = toProps(csa`
   margin-bottom: var(${vars.spacing.step4});
 `);
 
-const content = toProps(csa`
-  ${css.font.serif.regular}
-  ${css.font.color.text}
-  ${css.font.size.step0}
-  ${css.font.lineHeight.step3}
+const content = toProps(css`
+  ${decl.font.serif.regular}
+  ${decl.font.color.text}
+  ${decl.font.size.step0}
+  ${decl.font.lineHeight.step3}
 
   p {
     padding-bottom: var(${vars.spacing.step6});

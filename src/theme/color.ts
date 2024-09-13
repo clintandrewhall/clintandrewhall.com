@@ -1,20 +1,17 @@
 import { buildTheme } from '@/lib/css';
 import { VAR_PREFIX_COLOR as varPrefix } from '@/theme/common';
 
-const COLORS = [
-  'dark',
-  'light',
-  'subtle',
-  'subtler',
-  'subtlest',
-  'shade',
-  'separator',
-  'outline',
-  'accent',
-  'grid',
-] as const;
-type Color = (typeof COLORS)[number];
-
+type Color = 'dark' |
+  'light' |
+  'subtle' |
+  'subtler' |
+  'subtlest' |
+  'shade' |
+  'separator' |
+  'outline' |
+  'accent' |
+  'grid';
+  
 const themeValues: Record<Color, string> = {
   dark: '#000',
   subtlest: '#F1F1F1',
@@ -38,6 +35,6 @@ const border = buildTheme<BorderColor>(themeValues, varPrefix, 'border-color');
 
 export const color = {
   vars: { background: background.vars, border: border.vars },
-  css: { background: background.css, border: border.css },
+  decl: { background: background.decl, border: border.decl },
   definitions: { ...background.definitions, ...border.definitions },
 };

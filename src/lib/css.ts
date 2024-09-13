@@ -1,7 +1,6 @@
 import { cx as _cx } from '@linaria/core';
 import type { CSSProperties } from 'react';
-export { css as csa, styled } from '@linaria/atomic';
-export { css } from '@linaria/core';
+export { css, styled } from '@linaria/atomic';
 
 export interface CSSProps {
   className: string;
@@ -87,12 +86,12 @@ export function buildTheme<T extends string, V extends string | number = string>
   );
 
   if (typeof cssProperty === 'string') {
-    const css = names.reduce(
+    const decl = names.reduce(
       (acc, name) => ((acc[name] = `${cssProperty}: var(${vars[name]});`), acc),
       {} as Record<T, string>,
     );
 
-    return { vars, css, definitions };
+    return { vars, decl, definitions };
   }
 
   return { vars, definitions };

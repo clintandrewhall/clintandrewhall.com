@@ -1,10 +1,10 @@
-import { csa, toProps } from '@/lib/css';
+import { css, toProps } from '@/lib/css';
 import { theme } from '@/theme';
 
 const { vars } = theme;
 
 const root = toProps(
-  csa`
+  css`
     padding: var(${vars.spacing.step2}) 0;
     margin: var(${vars.spacing.step5}) 0;
     text-align: center;
@@ -12,7 +12,7 @@ const root = toProps(
 );
 
 const link = toProps(
-  csa`
+  css`
   `,
 );
 

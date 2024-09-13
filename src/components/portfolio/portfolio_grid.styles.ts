@@ -1,12 +1,12 @@
-import { csa, toProps } from '@/lib/css';
+import { css, toProps } from '@/lib/css';
 import { theme } from '@/theme';
 
-const { css } = theme;
+const { decl } = theme;
 
 const root = toProps(
-  csa`
+  css`
       display: grid;
-      ${css.color.border.grid}
+      ${decl.color.border.grid}
       border-style: solid;
       border-width: 1px 0 0 1px;
 

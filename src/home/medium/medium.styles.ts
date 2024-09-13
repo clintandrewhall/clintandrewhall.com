@@ -1,14 +1,14 @@
-import { csa, toProps } from '@/lib/css';
+import { css, toProps } from '@/lib/css';
 import { theme } from '@/theme';
 
-const { vars, css } = theme;
+const { vars, decl } = theme;
 
-const root = toProps(csa`
+const root = toProps(css`
   grid-area: auto / 2 / auto / span 10;
-    ${css.color.background.subtlest}
+    ${decl.color.background.subtlest}
 `);
 
-const content = toProps(csa`
+const content = toProps(css`
   display: grid;
   gap: var(${vars.spacing.step9});
   grid-template-columns: repeat(2, 1fr);
@@ -19,7 +19,7 @@ const content = toProps(csa`
   }
 `);
 
-const link = toProps(csa`
+const link = toProps(css`
   margin-bottom: var(${vars.spacing.sectionBottom});
 `);
 

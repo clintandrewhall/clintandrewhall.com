@@ -1,23 +1,23 @@
-import { csa, type CSSProps, cx, toProps } from '@/lib/css';
+import { css, type CSSProps, cx, toProps } from '@/lib/css';
 import { theme } from '@/theme';
 import type { IconSocial } from '@/theme/icons';
 
-const { vars, icons, css } = theme;
+const { vars, icons, decl } = theme;
 
 const root = toProps(
-  csa`
+  css`
     display: flex;
     list-style: none;
     flex-flow: row wrap;
     justify-content: center;
     
     & a {
-      ${css.font.color.light}
+      ${decl.font.color.light}
       
       &:hover,
       &:active,
       &:focus {
-        ${css.font.color.light}
+        ${decl.font.color.light}
       }
     }
 
@@ -44,9 +44,9 @@ const root = toProps(
 );
 
 const item = toProps(
-  csa`
-    ${css.font.sansSerif.light};
-    ${css.font.size.stepN1};
+  css`
+    ${decl.font.sansSerif.light};
+    ${decl.font.size.stepN1};
     letter-spacing: calc(var(${vars.font.size.stepN1}) * .25);
     padding: var(${vars.spacing.step1}) var(${vars.spacing.step3});
     position: relative;
@@ -54,7 +54,7 @@ const item = toProps(
     &:before {
       content: '|';
       position: absolute;
-      ${css.font.color.text};
+      ${decl.font.color.text};
       left: -2px;
     }
 
@@ -65,7 +65,7 @@ const item = toProps(
 );
 
 const link = toProps(
-  csa`
+  css`
     text-transform: uppercase;
     display: flex;
     align-items: center;
@@ -74,8 +74,8 @@ const link = toProps(
   `,
 );
 
-const logo = csa`
-  ${css.font.size.step0}
+const logo = css`
+  ${decl.font.size.step0}
 
   &:before {
     position: relative;

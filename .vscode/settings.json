@@ -1,0 +1,9 @@
+{
+  "stylelint.validate": [
+    "typescriptreact",
+    "typescript"
+  ],
+  "editor.codeActionsOnSave": {
+    "source.fixAll.stylelint": "never"
+  },
+}

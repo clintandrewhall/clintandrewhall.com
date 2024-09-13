@@ -1,11 +1,11 @@
-import { csa, cx, toProps } from '@/lib/css';
+import { css, cx, toProps } from '@/lib/css';
 
-const svgRoot = toProps(csa`
+const svgRoot = toProps(css`
   fill: #fff;
   color: #151513;
 `);
 
-const root = toProps(csa`
+const root = toProps(css`
   position: fixed;
   top: 0;
   border: 0;
@@ -20,7 +20,7 @@ const root = toProps(csa`
 const octoArm = toProps(
   cx(
     'octoArm',
-    csa`
+    css`
       @keyframes octocat-wave {
         0%,
         100% {

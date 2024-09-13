@@ -47,7 +47,7 @@ const root = `
 export const grid = {
   vars,
   definitions,
-  css: {
+  decl: {
     container,
     root,
   },

@@ -1,30 +1,30 @@
-import { csa, toProps } from '@/lib/css';
+import { css, toProps } from '@/lib/css';
 import { theme } from '@/theme';
 
-const { vars, css } = theme;
+const { vars, decl } = theme;
 
 const root = toProps(
-  csa`
+  css`
     --spacing-sectionTop: calc(var(${vars.spacing.step8}) * 2);
     --spacing-sectionDivider: var(${vars.spacing.step1});
-    ${css.color.background.dark}
+    ${decl.color.background.dark}
   `,
 );
 
-const header = toProps(csa`
-  ${css.font.color.light}
+const header = toProps(css`
+  ${decl.font.color.light}
   grid-area: auto / 2 / auto / span 10;
 `);
 
-const link = toProps(csa`
+const link = toProps(css`
   border: 2px solid var(${vars.color.background.light});
 
   & > a {
     &:hover,
     &:focus,
     &:active {
-      ${css.font.color.dark}
-      ${css.color.background.light}
+      ${decl.font.color.dark}
+      ${decl.color.background.light}
     }
   }`);
 

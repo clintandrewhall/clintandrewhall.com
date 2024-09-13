@@ -1,17 +1,17 @@
-import { csa, toProps } from '@/lib/css';
+import { css, toProps } from '@/lib/css';
 import { theme } from '@/theme';
 
-const { css } = theme;
+const { decl } = theme;
 
-const root = toProps(csa`
-  ${css.color.background.subtlest}
+const root = toProps(css`
+  ${decl.color.background.subtlest}
 `);
 
-const header = toProps(csa`
+const header = toProps(css`
   grid-area: auto / 2 / auto / span 10;
 `);
 
-const content = toProps(csa`
+const content = toProps(css`
   grid-area: auto / 1 / auto / span 12;
 `);
 

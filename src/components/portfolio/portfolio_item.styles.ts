@@ -1,20 +1,22 @@
-import { csa, toProps } from '@/lib/css';
+import { css as css, toProps } from '@/lib/css';
 import { theme } from '@/theme';
 
-const { vars, icons, css } = theme;
+const { vars, icons, decl: CSS } = theme;
 
 const root = (image: string) =>
   toProps(
-    csa`
-      ${css.color.border.grid}
-      ${css.font.size.step0}
+    css`
+      ${CSS.color.border.grid}
+
+      ${CSS.font.size.step0}
+      balag: blag;
 
       @media (max-width: 975px) and (min-width: 600px) {
-        font-size: var(${vars.font.size.step1});
+        ${CSS.font.size.step1}
       }
 
       @media (max-width: 600px) {
-        font-size: var(${vars.font.size.step1});
+        ${CSS.font.size.step1}
       }
 
       background-position: 50% 50%;
@@ -30,6 +32,7 @@ const root = (image: string) =>
         a {  
           cursor: pointer;
         }
+
         > p,
         > footer {
           opacity: 0;
@@ -45,8 +48,9 @@ const root = (image: string) =>
         }
       }
 
-      &:before, &:after {
-        content: '';
+      &::before,
+      &::after {
+        content: "";
         position: absolute;
         top: 0;
         left: 0;
@@ -54,14 +58,14 @@ const root = (image: string) =>
         height: 100%;
       }
 
-      &:before {
+      &::before {
         opacity: 0;
         background: #000;
         z-index: 2;
         transition: opacity 0.3s;
       }
 
-      &:after {
+      &::after {
         opacity: 0.8;
         background: linear-gradient(
           to bottom,
@@ -72,7 +76,7 @@ const root = (image: string) =>
       }
 
       &:hover {
-        &:before {
+        &::before {
           opacity: 0.8;
         }
 
@@ -96,7 +100,7 @@ const root = (image: string) =>
   );
 
 const header = toProps(
-  csa`
+  css`
     bottom: var(${vars.spacing.step3});
     left: var(${vars.spacing.step5});
     position: absolute;
@@ -105,28 +109,28 @@ const header = toProps(
 );
 
 const title = toProps(
-  csa`
-    font-size: var(${vars.font.size.stepN1});
-    letter-spacing: calc(var(${vars.font.size.step1}) * .1);
+  css`
+    ${CSS.font.size.stepN1};
+    letter-spacing: calc(var(${vars.font.size.step1}) * 0.1);
 
     @media (max-width: 975px) and (min-width: 600px) {
-      font-size: var(${vars.font.size.step0});
-      letter-spacing: calc(var(${vars.font.size.step2}) * .1);
+      ${CSS.font.size.step0}
+      letter-spacing: calc(var(${vars.font.size.step2}) * 0.1);
     }
 
     @media (max-width: 600px) {
-      font-size: var(${vars.font.size.step1});
-      letter-spacing: calc(var(${vars.font.size.step3}) * .1);
+      ${CSS.font.size.step1}
+      letter-spacing: calc(var(${vars.font.size.step3}) * 0.1);
     }
 
-    ${css.font.color.light}
+    ${CSS.font.color.light}
     margin-bottom: var(${vars.spacing.step0});
     text-transform: uppercase;
   `,
 );
 
 const caption = toProps(
-  csa`
+  css`
     left: var(${vars.spacing.step5});
     line-height: var(${vars.spacing.step5});
     right: var(${vars.spacing.step5});
@@ -146,18 +150,18 @@ const caption = toProps(
       top: var(${vars.spacing.step9});
     }
 
-    ${css.font.color.light}
-    ${css.font.sansSerif.regular}
+    ${CSS.font.color.light}
+    ${CSS.font.sansSerif.regular}
     position: absolute;
     z-index: 3;
 
     & a {
-      ${css.font.color.light}
+      ${CSS.font.color.light}
       border: 2px solid var(${vars.color.background.light});
       background: var(${vars.color.background.dark});
       
       &:hover {
-        ${css.font.color.dark}
+        ${CSS.font.color.dark}
         background: var(${vars.color.background.light});
       }
     }
@@ -165,47 +169,48 @@ const caption = toProps(
 );
 
 const tags = toProps(
-  csa`
-    font-size: var(${vars.font.size.stepN1});
-    letter-spacing: calc(var(${vars.font.size.step1}) * .08);
+  css`
+    ${CSS.font.size.stepN1};
+    letter-spacing: calc(var(${vars.font.size.step1}) * 0.08);
   
     @media (max-width: 975px) and (min-width: 600px) {
-      font-size: var(${vars.font.size.step0});
-      letter-spacing: calc(var(${vars.font.size.step2}) * .08);
+      ${CSS.font.size.step0}
+      letter-spacing: calc(var(${vars.font.size.step2}) * 0.08);
     }
 
     @media (max-width: 600px) {
-      font-size: var(${vars.font.size.step1});
-      letter-spacing: calc(var(${vars.font.size.step3}) * .08);
+      ${CSS.font.size.step1}
+      letter-spacing: calc(var(${vars.font.size.step3}) * 0.08);
     }
 
     & > a {
-      ${css.font.color.dim}
-      ${css.font.sansSerif.light}
+      ${CSS.font.color.dim}
+
+      ${CSS.font.sansSerif.light}
 
       &:hover {
-        ${css.font.color.light}
+        ${CSS.font.color.light}
       }
     }
   `,
 );
 
 const details = toProps(
-  csa`
-    font-size: var(${vars.font.size.stepN1});
-    letter-spacing: calc(var(${vars.font.size.step1}) * .08);
+  css`
+    ${CSS.font.size.stepN1};
+    letter-spacing: calc(var(${vars.font.size.step1}) * 0.08);
   
     @media (max-width: 975px) and (min-width: 600px) {
-      font-size: var(${vars.font.size.step0});
-      letter-spacing: calc(var(${vars.font.size.step2}) * .08);
+      ${CSS.font.size.step0}
+      letter-spacing: calc(var(${vars.font.size.step2}) * 0.08);
     }
 
     @media (max-width: 600px) {
-      font-size: var(${vars.font.size.step1});
-      letter-spacing: calc(var(${vars.font.size.step4}) * .08);
+      ${CSS.font.size.step1}
+      letter-spacing: calc(var(${vars.font.size.step4}) * 0.08);
     }
     
-    ${css.font.sansSerif.regular}
+    ${CSS.font.sansSerif.regular}
     display: block;
     margin-top: var(${vars.spacing.step3});
     padding: var(${vars.spacing.step2});
@@ -215,7 +220,7 @@ const details = toProps(
 );
 
 const footer = toProps(
-  csa`
+  css`
     bottom: var(${vars.spacing.step3});
     position: absolute;
     right: var(${vars.spacing.step5});
@@ -225,34 +230,34 @@ const footer = toProps(
 
 const linkIcon = toProps(
   icons.link(
-    csa`
+    css`
       @media (max-width: 975px) and (min-width: 600px) {
-        font-size: var(${vars.font.size.step1});
+        ${CSS.font.size.step1}
       }
 
       @media (max-width: 600px) {
-        font-size: var(${vars.font.size.step2});
+        ${CSS.font.size.step2}
       }
     `,
   ),
 );
 
-const projectLink = toProps(csa`
-    ${css.font.color.light}
-    ${css.font.size.step0}
+const projectLink = toProps(css`
+    ${CSS.font.color.light}
+    ${CSS.font.size.step0}
     height: var(${vars.spacing.step9});
     line-height: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0}));
     width: var(${vars.spacing.step9});
 
     @media (max-width: 975px) and (min-width: 600px) {
-      font-size: var(${vars.font.size.step0});
+      ${CSS.font.size.step0}
       height: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0}));
       line-height: calc(calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0})) + var(${vars.spacing.step0}));
       width: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0}));
     }
 
     @media (max-width: 600px) {
-      font-size: var(${vars.font.size.step0});
+      ${CSS.font.size.step0}
       height: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step2}));
       line-height: calc(calc(var(${vars.spacing.step9}) + var(${vars.spacing.step2})) + var(${vars.spacing.step0}));
       width: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step2}));
@@ -265,14 +270,14 @@ const projectLink = toProps(csa`
     
     a& {
       background: var(${vars.color.background.dark});
-      ${css.font.color.light}
+      ${CSS.font.color.light}
     }
 
     &:hover,
     &:active,
     &:focus {
-      ${css.color.background.light}
-      ${css.font.color.dark}
+      ${CSS.color.background.light}
+      ${CSS.font.color.dark}
     }
   `);
 

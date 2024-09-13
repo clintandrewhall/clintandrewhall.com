@@ -1,11 +1,11 @@
-import { csa, toProps } from '@/lib/css';
+import { css, toProps } from '@/lib/css';
 import { theme } from '@/theme';
 
 import { BULLET_PADDING, BULLET_SIZE_EQ, TOP_PADDING } from './timeline_item.styles';
 
 const { vars } = theme;
 
-const root = toProps(csa`
+const root = toProps(css`
   grid-area: auto / 1 / auto / span 12;
   column-gap: var(${vars.grid.gutter});
   margin-top: calc(var(${vars.spacing.step7}) * -1);

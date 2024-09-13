@@ -1,13 +1,13 @@
-import { csa, toProps } from '@/lib/css';
+import { css, toProps } from '@/lib/css';
 import { theme } from '@/theme';
 
-const { vars, css } = theme;
+const { vars, decl } = theme;
 
 const root = toProps(
-  csa`
-    ${css.font.size.stepN1};
-    ${css.color.background.dark}
-    ${css.font.color.text}
+  css`
+    ${decl.font.size.stepN1};
+    ${decl.color.background.dark}
+    ${decl.font.color.text}
     margin-top: var(${vars.spacing.sectionBottom});
     display: flex;
     flex-flow: row wrap;
@@ -24,7 +24,7 @@ const root = toProps(
         &:hover,
         &:active,
         &:focus {
-          ${css.font.color.lightAccent}
+          ${decl.font.color.lightAccent}
         }
       }
       
