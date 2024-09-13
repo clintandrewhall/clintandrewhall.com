@@ -1593,6 +1593,25 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@storybook/core@patch:@storybook/core@npm%3A8.3.0#~/.yarn/patches/@storybook-core-npm-8.3.0-833013f32e.patch":
+  version: 8.3.0
+  resolution: "@storybook/core@patch:@storybook/core@npm%3A8.3.0#~/.yarn/patches/@storybook-core-npm-8.3.0-833013f32e.patch::version=8.3.0&hash=b8652e"
+  dependencies:
+    "@storybook/csf": "npm:^0.1.11"
+    "@types/express": "npm:^4.17.21"
+    browser-assert: "npm:^1.2.1"
+    esbuild: "npm:^0.18.0 || ^0.19.0 || ^0.20.0 || ^0.21.0 || ^0.22.0 || ^0.23.0"
+    esbuild-register: "npm:^3.5.0"
+    express: "npm:^4.19.2"
+    process: "npm:^0.11.10"
+    recast: "npm:^0.23.5"
+    semver: "npm:^7.6.2"
+    util: "npm:^0.12.5"
+    ws: "npm:^8.2.3"
+  checksum: 10/45ba0aa4b3a3c26df66cda1fc7fd9aeb17d4046e2e792e3f33003be3fdc725340e18c3e51323d5f3d44364045e5827c8838e8593b44b29ccfa45127cfdeb6c13
+  languageName: node
+  linkType: hard
+
 "@storybook/csf-plugin@npm:8.3.0":
   version: 8.3.0
   resolution: "@storybook/csf-plugin@npm:8.3.0"
@@ -3388,6 +3407,7 @@ __metadata:
     "@wyw-in-js/rollup": "npm:^0.3.0"
     "@wyw-in-js/vite": "npm:^0.3.0"
     chromatic: "npm:^11.8.0"
+    cross-env: "npm:^7.0.3"
     dotenv: "npm:^16.4.5"
     eslint: "npm:^8.51.0"
     eslint-config-prettier: "npm:^9.1.0"
@@ -3610,7 +3630,19 @@ __metadata:
   languageName: node
   linkType: hard
 
-"cross-spawn@npm:^7.0.0, cross-spawn@npm:^7.0.2":
+"cross-env@npm:^7.0.3":
+  version: 7.0.3
+  resolution: "cross-env@npm:7.0.3"
+  dependencies:
+    cross-spawn: "npm:^7.0.1"
+  bin:
+    cross-env: src/bin/cross-env.js
+    cross-env-shell: src/bin/cross-env-shell.js
+  checksum: 10/e99911f0d31c20e990fd92d6fd001f4b01668a303221227cc5cb42ed155f086351b1b3bd2699b200e527ab13011b032801f8ce638e6f09f854bdf744095e604c
+  languageName: node
+  linkType: hard
+
+"cross-spawn@npm:^7.0.0, cross-spawn@npm:^7.0.1, cross-spawn@npm:^7.0.2":
   version: 7.0.3
   resolution: "cross-spawn@npm:7.0.3"
   dependencies:

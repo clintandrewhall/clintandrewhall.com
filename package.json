@@ -9,7 +9,7 @@
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "lint:styles": "stylelint src/**/*.ts{,x}",
     "preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
+    "storybook": "cross-env BROWSER=\"google chrome\" OPEN_MATCH_HOST_ONLY=true storybook dev -p 6006",
     "build-storybook": "storybook build",
     "generate:github": "ts-node ./scripts/github",
     "generate:medium": "ts-node ./scripts/medium",
@@ -59,6 +59,7 @@
     "@wyw-in-js/rollup": "^0.3.0",
     "@wyw-in-js/vite": "^0.3.0",
     "chromatic": "^11.8.0",
+    "cross-env": "^7.0.3",
     "eslint": "^8.51.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-import": "^2.28.1",
@@ -85,5 +86,8 @@
     "vite-imagetools": "^7.0.4",
     "vite-plugin-markdown": "^2.2.0"
   },
-  "packageManager": "yarn@4.4.1"
+  "packageManager": "yarn@4.4.1",
+  "resolutions": {
+    "@storybook/core@npm:8.3.0": "patch:@storybook/core@npm%3A8.3.0#~/.yarn/patches/@storybook-core-npm-8.3.0-833013f32e.patch"
+  }
 }
