@@ -1,7 +1,7 @@
 {
   "customSyntax": "@linaria/postcss-linaria",
   "rules": {
-    "property-disallowed-list": ["margin", "padding", "background"],
+    "property-disallowed-list": ["margin", "padding", "background", "border"],
     "property-no-unknown": true
   }
 }

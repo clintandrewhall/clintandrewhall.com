@@ -13,7 +13,7 @@ export const LOC = ({ loc }: Props) => {
 
   const items = loc
     .filter((item) => (item.totalLines / overallTotal) * 100 > 1)
-    .map((loc) => <Language {...{ loc, overallTotal }} />);
+    .map((loc) => <Language key={loc.languageName} {...{ loc, overallTotal }} />);
 
   const otherTotal = loc
     .filter((item) => (item.totalLines / overallTotal) * 100 <= 1)
@@ -22,6 +22,7 @@ export const LOC = ({ loc }: Props) => {
   if (otherTotal > 0) {
     items.push(
       <Language
+        key={'Other'}
         loc={{ languageName: 'Other', totalLines: otherTotal, byProject: {} }}
         overallTotal={overallTotal}
       />,

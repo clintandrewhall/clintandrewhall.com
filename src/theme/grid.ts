@@ -38,7 +38,9 @@ const root = `
   display: grid;
   grid-gap: var(${vars.gutter});
   grid-template-columns: repeat(var(${vars.columns}), 1fr);
+`;
 
+const children = `
   & > * {
     grid-area: auto / auto / auto / span var(${vars.columns});
   }
@@ -50,5 +52,6 @@ export const grid = {
   decl: {
     container,
     root,
+    children,
   },
 };

@@ -7,7 +7,7 @@ const root = toProps(css`
   ${decl.font.size.stepN1};
   ${decl.color.background.dark}
   ${decl.color.font.text}
-    margin-top: var(${vars.spacing.sectionBottom});
+  margin-top: var(${vars.spacing.sectionBottom});
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
@@ -16,7 +16,10 @@ const root = toProps(css`
   & > span {
     display: inline-block;
     position: relative;
-    padding: var(${vars.spacing.step0}) var(${vars.spacing.step5});
+    padding-top: var(${vars.spacing.step0});
+    padding-bottom: var(${vars.spacing.step0});
+    padding-left: var(${vars.spacing.step5});
+    padding-right: var(${vars.spacing.step5});
 
     & > a {
       display: inline-block;

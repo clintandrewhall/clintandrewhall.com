@@ -10,7 +10,7 @@ export interface PeopleLineProps {
 
 export const PeopleLine = ({ people }: PeopleLineProps) => {
   const items = Object.entries(people).map((item, key) => (
-    <SwiperSlide {...{ key }}>{item[1]}</SwiperSlide>
+    <SwiperSlide key={key}>{item[1]}</SwiperSlide>
   ));
 
   return (

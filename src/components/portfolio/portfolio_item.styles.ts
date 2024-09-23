@@ -1,22 +1,20 @@
-import { css as css, toProps } from '@lib/css';
+import { css, toProps } from '@lib/css';
 import { theme } from '@theme';
 
-const { vars, icons, decl: CSS } = theme;
+const { vars, icons, decl } = theme;
 
 const root = (image: string) =>
   toProps(
     css`
-      ${CSS.color.border.grid}
-
-      ${CSS.font.size.step0}
-      balag: blag;
+      ${decl.color.border.grid}
+      ${decl.font.size.step0}
 
       @media (max-width: 975px) and (min-width: 600px) {
-        ${CSS.font.size.step1}
+        ${decl.font.size.step1}
       }
 
       @media (max-width: 600px) {
-        ${CSS.font.size.step1}
+        ${decl.font.size.step1}
       }
 
       background-position: 50% 50%;
@@ -60,14 +58,14 @@ const root = (image: string) =>
 
       &::before {
         opacity: 0;
-        background: #000;
+        background-color: #000;
         z-index: 2;
         transition: opacity 0.3s;
       }
 
       &::after {
         opacity: 0.8;
-        background: linear-gradient(to bottom, transparent 0%, #000 100%);
+        background-color: linear-gradient(to bottom, transparent 0%, #000 100%);
         z-index: 1;
       }
 
@@ -103,20 +101,20 @@ const header = toProps(css`
 `);
 
 const title = toProps(css`
-  ${CSS.font.size.stepN1};
+  ${decl.font.size.stepN1};
   letter-spacing: calc(var(${vars.font.size.step1}) * 0.1);
 
   @media (max-width: 975px) and (min-width: 600px) {
-    ${CSS.font.size.step0}
+    ${decl.font.size.step0}
     letter-spacing: calc(var(${vars.font.size.step2}) * 0.1);
   }
 
   @media (max-width: 600px) {
-    ${CSS.font.size.step1}
+    ${decl.font.size.step1}
     letter-spacing: calc(var(${vars.font.size.step3}) * 0.1);
   }
 
-  ${CSS.color.font.light}
+  ${decl.color.font.light}
   margin-bottom: var(${vars.spacing.step0});
   text-transform: uppercase;
 `);
@@ -141,66 +139,71 @@ const caption = toProps(css`
     top: var(${vars.spacing.step9});
   }
 
-  ${CSS.color.font.light}
-  ${CSS.font.sansSerif.regular}
+  ${decl.color.font.light}
+  ${decl.font.sansSerif.regular}
     position: absolute;
   z-index: 3;
 
   & a {
-    ${CSS.color.font.light}
-    border: 2px solid var(${vars.color.background.light});
-    background: var(${vars.color.background.dark});
+    ${decl.color.background.dark}
+    ${decl.color.font.light}
+    border-width: 2px;
+    border-style: solid;
+    border-color: var(${vars.color.background.light});
 
     &:hover {
-      ${CSS.color.font.dark}
-      background: var(${vars.color.background.light});
+      ${decl.color.font.dark}
+      ${decl.color.background.light}
     }
   }
 `);
 
 const tags = toProps(css`
-  ${CSS.font.size.stepN1};
+  ${decl.font.size.stepN1};
   letter-spacing: calc(var(${vars.font.size.step1}) * 0.08);
 
   @media (max-width: 975px) and (min-width: 600px) {
-    ${CSS.font.size.step0}
+    ${decl.font.size.step0}
     letter-spacing: calc(var(${vars.font.size.step2}) * 0.08);
   }
 
   @media (max-width: 600px) {
-    ${CSS.font.size.step1}
+    ${decl.font.size.step1}
     letter-spacing: calc(var(${vars.font.size.step3}) * 0.08);
   }
 
   & > a {
-    ${CSS.color.font.dim}
+    ${decl.color.font.dim}
 
-    ${CSS.font.sansSerif.light}
+    ${decl.font.sansSerif.light}
 
       &:hover {
-      ${CSS.color.font.light}
+      ${decl.color.font.light}
     }
   }
 `);
 
 const details = toProps(css`
-  ${CSS.font.size.stepN1};
+  ${decl.font.size.stepN1};
   letter-spacing: calc(var(${vars.font.size.step1}) * 0.08);
 
   @media (max-width: 975px) and (min-width: 600px) {
-    ${CSS.font.size.step0}
+    ${decl.font.size.step0}
     letter-spacing: calc(var(${vars.font.size.step2}) * 0.08);
   }
 
   @media (max-width: 600px) {
-    ${CSS.font.size.step1}
+    ${decl.font.size.step1}
     letter-spacing: calc(var(${vars.font.size.step4}) * 0.08);
   }
 
-  ${CSS.font.sansSerif.regular}
+  ${decl.font.sansSerif.regular}
   display: block;
   margin-top: var(${vars.spacing.step3});
-  padding: var(${vars.spacing.step2});
+  padding-bottom: var(${vars.spacing.step2});
+  padding-top: var(${vars.spacing.step2});
+  padding-left: var(${vars.spacing.step2});
+  padding-right: var(${vars.spacing.step2});
   text-align: center;
   text-transform: uppercase;
 `);
@@ -215,24 +218,24 @@ const footer = toProps(css`
 const linkIcon = toProps(
   icons.link(css`
     @media (max-width: 975px) and (min-width: 600px) {
-      ${CSS.font.size.step1}
+      ${decl.font.size.step1}
     }
 
     @media (max-width: 600px) {
-      ${CSS.font.size.step2}
+      ${decl.font.size.step2}
     }
   `),
 );
 
 const projectLink = toProps(css`
-  ${CSS.color.font.light}
-  ${CSS.font.size.step0}
+  ${decl.color.font.light}
+  ${decl.font.size.step0}
     height: var(${vars.spacing.step9});
   line-height: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0}));
   width: var(${vars.spacing.step9});
 
   @media (max-width: 975px) and (min-width: 600px) {
-    ${CSS.font.size.step0}
+    ${decl.font.size.step0}
     height: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0}));
     line-height: calc(
       calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0})) + var(${vars.spacing.step0})
@@ -241,7 +244,7 @@ const projectLink = toProps(css`
   }
 
   @media (max-width: 600px) {
-    ${CSS.font.size.step0}
+    ${decl.font.size.step0}
     height: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step2}));
     line-height: calc(
       calc(var(${vars.spacing.step9}) + var(${vars.spacing.step2})) + var(${vars.spacing.step0})
@@ -255,15 +258,15 @@ const projectLink = toProps(css`
   text-align: center;
 
   a& {
-    background: var(${vars.color.background.dark});
-    ${CSS.color.font.light}
+    ${decl.color.background.dark}
+    ${decl.color.font.light}
   }
 
   &:hover,
   &:active,
   &:focus {
-    ${CSS.color.background.light}
-    ${CSS.color.font.dark}
+    ${decl.color.background.light}
+    ${decl.color.font.dark}
   }
 `);
 

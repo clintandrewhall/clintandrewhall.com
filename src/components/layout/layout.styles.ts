@@ -7,6 +7,7 @@ const outer = toProps(css`
 
 const inner = toProps(css`
   ${theme.decl.grid.root}
+  ${theme.decl.grid.children}
 `);
 
 export default { outer, inner };

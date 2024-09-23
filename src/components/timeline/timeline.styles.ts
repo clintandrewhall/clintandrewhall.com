@@ -15,14 +15,14 @@ const root = toProps(css`
 
   @media (max-width: 975px) {
     column-count: 1;
-    column-width: 100%;
+    column-width: revert;
   }
 
   &::before {
     content: '';
     display: block;
     width: 1px;
-    background: var(${vars.color.background.subtler});
+    background-color: var(${vars.color.background.subtler});
     position: absolute;
     left: calc((${BULLET_SIZE_EQ}) / 2);
     top: calc(${TOP_PADDING} + 20px);
@@ -35,7 +35,7 @@ const root = toProps(css`
       content: '';
       display: block;
       width: 1px;
-      background: var(${vars.color.background.subtler});
+      background-color: var(${vars.color.background.subtler});
       position: absolute;
       left: calc(50% + (${BULLET_PADDING} * 2) + ((${BULLET_SIZE_EQ}) / 2));
       top: ${TOP_PADDING};

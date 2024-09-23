@@ -45,7 +45,10 @@ const totalLines = (percent: string) =>
       display: inline-block;
       border-radius: 3px;
       line-height: var(${vars.spacing.step5});
-      padding: 0 var(${vars.spacing.step1});
+      padding-top: 0;
+      padding-bottom: 0;
+      padding-left: var(${vars.spacing.step1});
+      padding-right: var(${vars.spacing.step1});
       top: calc(((var(${vars.spacing.step5}) - var(${vars.spacing.step1})) / 2) * -1);
       margin-left: var(${vars.spacing.step2});
 

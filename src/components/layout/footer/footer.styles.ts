@@ -5,7 +5,12 @@ const { decl, vars } = theme;
 
 const root = toProps(css`
   ${decl.color.background.dark}
-  padding: var(${vars.spacing.step4}) 0;
+  padding-top: var(${vars.spacing.step4});
+  padding-bottom: var(${vars.spacing.step4});
 `);
 
-export default { root };
+const social = toProps(css`
+  justify-content: center;
+`);
+
+export default { root, social };

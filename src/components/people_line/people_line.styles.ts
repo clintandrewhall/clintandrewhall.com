@@ -8,8 +8,13 @@ import { theme } from '@theme';
 
 const { decl, vars } = theme;
 
+/* eslint-disable-next-line @typescript-eslint/no-unused-expressions */
 csl`
   :global() {
+    .swiper {
+      border-top: 1px solid var(${vars.color.background.subtle});
+    }
+
     .swiper .swiper-pagination-bullets.swiper-pagination-horizontal {
       ${decl.color.background.subtle}
       display: inline-block;
@@ -68,8 +73,10 @@ export const root = toProps(css`
   --swiper-pagination-bullet-horizontal-gap: 4px;
   --swiper-pagination-bullet-vertical-gap: 6px;
 
-  border-top: 1px solid var(${vars.color.background.subtle});
-  padding: 0 var(${vars.spacing.step9});
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: var(${vars.spacing.step9});
+  padding-right: var(${vars.spacing.step9});
   position: relative;
 
   &:before,
@@ -77,14 +84,14 @@ export const root = toProps(css`
     position: absolute;
     content: '';
     display: block;
-    top: -1px;
-    width: var(${vars.spacing.step8});
+    width: var(${vars.spacing.step9});
     height: 1px;
+    top: 0;
   }
 
   &:before {
-    left: calc(var(${vars.spacing.step8}) * -1);
-    background: linear-gradient(
+    left: 0;
+    background-image: linear-gradient(
       to left,
       var(${vars.color.background.subtle}),
       var(${vars.color.background.dark})
@@ -92,8 +99,8 @@ export const root = toProps(css`
   }
 
   &:after {
-    right: calc(var(${vars.spacing.step8}) * -1);
-    background: linear-gradient(
+    right: 0;
+    background-image: linear-gradient(
       to right,
       var(${vars.color.background.subtle}),
       var(${vars.color.background.dark})

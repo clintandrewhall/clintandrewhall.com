@@ -18,7 +18,10 @@ const link = toProps(css`
     text-transform: uppercase;
     letter-spacing: calc(var(${vars.font.size.stepN1}) * 0.25);
     text-align: center;
-    padding: var(${vars.spacing.step4}) var(${vars.spacing.step9});
+    padding-top: var(${vars.spacing.step4});
+    padding-bottom: var(${vars.spacing.step4});
+    padding-left: var(${vars.spacing.step9});
+    padding-right: var(${vars.spacing.step9});
     line-height: var(${vars.font.size.step3});
   }
 

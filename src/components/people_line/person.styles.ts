@@ -15,11 +15,10 @@ const root = toProps(css`
   padding-left: var(--person-padding-left);
   padding-top: var(--person-padding-top);
   padding-right: var(${vars.spacing.step6});
-  margin: 0 0 var(${vars.spacing.step9});
-  margin: 0 0 var(${vars.spacing.step9});
-
-  & {
-  }
+  margin-top: 0;
+  margin-right: 0;
+  margin-bottom: var(${vars.spacing.step9});
+  margin-left: 0 0 var(${vars.spacing.step9});
 
   &:before {
     content: '';

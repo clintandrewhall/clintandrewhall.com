@@ -5,7 +5,7 @@ import styles from './site_logo.styles';
 
 export const SiteLogo = () => (
   <p {...styles.root}>
-    <a href="/" {...styles.link}>
+    <a href="/">
       <img src={logo} alt="Logo" />
     </a>
   </p>
