@@ -14,21 +14,21 @@ const list = toProps(css`
   display: grid;
   gap: var(${vars.spacing.step2});
 
+  grid-template-columns: repeat(4, 1fr);
+
   @media (max-width: 975px) and (min-width: 600px), (max-width: 400px) {
     grid-template-columns: repeat(2, 1fr);
   }
-
-  grid-template-columns: repeat(4, 1fr);
 `);
 
 const item = toProps(css`
+  align-items: center;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
   flex-grow: 1;
+  justify-content: center;
   position: relative;
+  text-align: center;
 `);
 
 const number = toProps(css`
@@ -36,7 +36,6 @@ const number = toProps(css`
   ${decl.font.size.step3}
   border-bottom: 1px solid var(${vars.color.border.separator});
   flex: 1;
-  margin: 0;
   order: -1;
   padding-bottom: var(${vars.spacing.step1});
   padding-left: var(${vars.spacing.step4});

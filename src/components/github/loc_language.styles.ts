@@ -11,26 +11,26 @@ const root = toProps(css`
 const header = toProps(css`
   ${decl.font.sansSerif.extraBold}
   ${decl.font.size.stepN1}
-  text-transform: uppercase;
   letter-spacing: calc(var(${vars.font.size.stepN1}) * 0.14);
   margin-top: var(${vars.spacing.step3});
+  text-transform: uppercase;
 `);
 
 const definition = toProps(css`
   ${decl.color.background.shade}
-  position: relative;
   height: var(${vars.spacing.step1});
   margin-top: var(${vars.spacing.step0});
+  position: relative;
 
   & dt {
-    visibility: hidden;
     position: absolute;
+    visibility: hidden;
   }
 `);
 
 const repoCount = toProps(css`
-  visibility: hidden;
   position: absolute;
+  visibility: hidden;
 `);
 
 const totalLines = (percent: string) =>
@@ -40,28 +40,28 @@ const totalLines = (percent: string) =>
       ${decl.font.size.stepN1}
       ${decl.color.font.light}
       ${decl.color.background.dark}
-
-      position: absolute;
-      display: inline-block;
       border-radius: 3px;
+      display: inline-block;
       line-height: var(${vars.spacing.step5});
-      padding-top: 0;
+      margin-left: var(${vars.spacing.step2});
       padding-bottom: 0;
       padding-left: var(${vars.spacing.step1});
       padding-right: var(${vars.spacing.step1});
+      padding-top: 0;
+
+      position: absolute;
       top: calc(((var(${vars.spacing.step5}) - var(${vars.spacing.step1})) / 2) * -1);
-      margin-left: var(${vars.spacing.step2});
 
       &::after {
+        border-bottom: 5px solid transparent;
+        border-right: 5px solid #000;
+        border-top: 5px solid transparent;
+        content: '';
+        left: 0;
+        margin-left: -5px;
+        margin-top: -5px;
         position: absolute;
         top: 50%;
-        left: 0;
-        margin-top: -5px;
-        margin-left: -5px;
-        border-bottom: 5px solid transparent;
-        border-top: 5px solid transparent;
-        border-right: 5px solid #000;
-        content: '';
         z-index: 1;
       }
     `,
@@ -74,13 +74,13 @@ const percent = (width: string, background: string) =>
   toProps(
     css`
       ${decl.color.border.outline}
-      position: absolute;
+      border-radius: 0 5px 5px 0;
+      border-style: solid;
+      border-width: 1px;
       height: var(${vars.spacing.step1});
       line-height: var(${vars.spacing.step1});
+      position: absolute;
       text-indent: -10000px;
-      border-radius: 0 5px 5px 0;
-      border-width: 1px;
-      border-style: solid;
     `,
     {
       background,

@@ -11,12 +11,12 @@ export const isIcon = (value: string): value is Icon => ICONS.includes(value as 
 const icon = css`
   display: inline-block;
   font-family: 'Iconic';
-  font-weight: normal;
-  font-style: normal;
-  font-variant: normal;
-  text-rendering: auto;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  text-rendering: auto;
 `;
 
 const iconClasses: Record<Icon, string> = {

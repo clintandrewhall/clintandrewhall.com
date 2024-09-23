@@ -9,14 +9,6 @@ const root = (image: string) =>
       ${decl.color.border.grid}
       ${decl.font.size.step0}
 
-      @media (max-width: 975px) and (min-width: 600px) {
-        ${decl.font.size.step1}
-      }
-
-      @media (max-width: 600px) {
-        ${decl.font.size.step1}
-      }
-
       background-position: 50% 50%;
       background-repeat: no-repeat;
       background-size: cover;
@@ -46,31 +38,31 @@ const root = (image: string) =>
         }
       }
 
-      &::before,
-      &::after {
+      &:before,
+      &:after {
         content: '';
+        height: 100%;
+        left: 0;
         position: absolute;
         top: 0;
-        left: 0;
         width: 100%;
-        height: 100%;
       }
 
-      &::before {
-        opacity: 0;
+      &:before {
         background-color: #000;
-        z-index: 2;
+        opacity: 0;
         transition: opacity 0.3s;
+        z-index: 2;
       }
 
-      &::after {
+      &:after {
+        background-image: linear-gradient(to bottom, transparent 0%, #000 100%);
         opacity: 0.8;
-        background-color: linear-gradient(to bottom, transparent 0%, #000 100%);
         z-index: 1;
       }
 
       &:hover {
-        &::before {
+        &:before {
           opacity: 0.8;
         }
 
@@ -87,6 +79,14 @@ const root = (image: string) =>
           right: var(${vars.spacing.step5});
         }
       }
+
+      @media (max-width: 975px) and (min-width: 600px) {
+        ${decl.font.size.step1}
+      }
+
+      @media (max-width: 600px) {
+        ${decl.font.size.step1}
+      }
     `,
     {
       backgroundImage: `url(${image})`,
@@ -101,8 +101,12 @@ const header = toProps(css`
 `);
 
 const title = toProps(css`
-  ${decl.font.size.stepN1};
+  ${decl.font.size.stepN1}
+  ${decl.color.font.light}
+
   letter-spacing: calc(var(${vars.font.size.step1}) * 0.1);
+  margin-bottom: var(${vars.spacing.step0});
+  text-transform: uppercase;
 
   @media (max-width: 975px) and (min-width: 600px) {
     ${decl.font.size.step0}
@@ -113,17 +117,32 @@ const title = toProps(css`
     ${decl.font.size.step1}
     letter-spacing: calc(var(${vars.font.size.step3}) * 0.1);
   }
-
-  ${decl.color.font.light}
-  margin-bottom: var(${vars.spacing.step0});
-  text-transform: uppercase;
 `);
 
 const caption = toProps(css`
+  ${decl.color.font.light}
+  ${decl.font.sansSerif.regular}
+
   left: var(${vars.spacing.step5});
   line-height: var(${vars.spacing.step5});
+  position: absolute;
   right: var(${vars.spacing.step5});
   top: var(${vars.spacing.step5});
+  z-index: 3;
+
+  & a {
+    ${decl.color.background.dark}
+    ${decl.color.font.light}
+
+    border-color: var(${vars.color.background.light});
+    border-style: solid;
+    border-width: 2px;
+
+    &:hover {
+      ${decl.color.font.dark}
+      ${decl.color.background.light}
+    }
+  }
 
   @media (max-width: 975px) and (min-width: 600px) {
     left: var(${vars.spacing.step6});
@@ -138,74 +157,60 @@ const caption = toProps(css`
     right: var(${vars.spacing.step9});
     top: var(${vars.spacing.step9});
   }
-
-  ${decl.color.font.light}
-  ${decl.font.sansSerif.regular}
-    position: absolute;
-  z-index: 3;
-
-  & a {
-    ${decl.color.background.dark}
-    ${decl.color.font.light}
-    border-width: 2px;
-    border-style: solid;
-    border-color: var(${vars.color.background.light});
-
-    &:hover {
-      ${decl.color.font.dark}
-      ${decl.color.background.light}
-    }
-  }
 `);
 
 const tags = toProps(css`
   ${decl.font.size.stepN1};
+
   letter-spacing: calc(var(${vars.font.size.step1}) * 0.08);
+
+  & > a {
+    ${decl.color.font.dim}
+    ${decl.font.sansSerif.light}
+
+    &:hover {
+      ${decl.color.font.light}
+    }
+  }
 
   @media (max-width: 975px) and (min-width: 600px) {
     ${decl.font.size.step0}
+
     letter-spacing: calc(var(${vars.font.size.step2}) * 0.08);
   }
 
   @media (max-width: 600px) {
     ${decl.font.size.step1}
+
     letter-spacing: calc(var(${vars.font.size.step3}) * 0.08);
-  }
-
-  & > a {
-    ${decl.color.font.dim}
-
-    ${decl.font.sansSerif.light}
-
-      &:hover {
-      ${decl.color.font.light}
-    }
   }
 `);
 
 const details = toProps(css`
-  ${decl.font.size.stepN1};
+  ${decl.font.size.stepN1}
+  ${decl.font.sansSerif.regular}
+
+  display: block;
   letter-spacing: calc(var(${vars.font.size.step1}) * 0.08);
+  margin-top: var(${vars.spacing.step3});
+  padding-bottom: var(${vars.spacing.step2});
+  padding-left: var(${vars.spacing.step2});
+  padding-right: var(${vars.spacing.step2});
+  padding-top: var(${vars.spacing.step2});
+  text-align: center;
+  text-transform: uppercase;
 
   @media (max-width: 975px) and (min-width: 600px) {
     ${decl.font.size.step0}
+
     letter-spacing: calc(var(${vars.font.size.step2}) * 0.08);
   }
 
   @media (max-width: 600px) {
     ${decl.font.size.step1}
+
     letter-spacing: calc(var(${vars.font.size.step4}) * 0.08);
   }
-
-  ${decl.font.sansSerif.regular}
-  display: block;
-  margin-top: var(${vars.spacing.step3});
-  padding-bottom: var(${vars.spacing.step2});
-  padding-top: var(${vars.spacing.step2});
-  padding-left: var(${vars.spacing.step2});
-  padding-right: var(${vars.spacing.step2});
-  text-align: center;
-  text-transform: uppercase;
 `);
 
 const footer = toProps(css`
@@ -230,32 +235,14 @@ const linkIcon = toProps(
 const projectLink = toProps(css`
   ${decl.color.font.light}
   ${decl.font.size.step0}
-    height: var(${vars.spacing.step9});
-  line-height: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0}));
-  width: var(${vars.spacing.step9});
-
-  @media (max-width: 975px) and (min-width: 600px) {
-    ${decl.font.size.step0}
-    height: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0}));
-    line-height: calc(
-      calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0})) + var(${vars.spacing.step0})
-    );
-    width: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0}));
-  }
-
-  @media (max-width: 600px) {
-    ${decl.font.size.step0}
-    height: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step2}));
-    line-height: calc(
-      calc(var(${vars.spacing.step9}) + var(${vars.spacing.step2})) + var(${vars.spacing.step0})
-    );
-    width: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step2}));
-  }
 
   border-radius: 50%;
   box-shadow: 0 0 0 1px var(${vars.color.background.light});
   display: block;
+  height: var(${vars.spacing.step9});
+  line-height: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0}));
   text-align: center;
+  width: var(${vars.spacing.step9});
 
   a& {
     ${decl.color.background.dark}
@@ -267,6 +254,28 @@ const projectLink = toProps(css`
   &:focus {
     ${decl.color.background.light}
     ${decl.color.font.dark}
+  }
+
+  @media (max-width: 975px) and (min-width: 600px) {
+    ${decl.font.size.step0}
+
+    height: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0}));
+    line-height: calc(
+      calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0})) +
+        var(/* ${decl.color.font.light}:11 */)
+    );
+    width: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0}));
+  }
+
+  @media (max-width: 600px) {
+    ${decl.font.size.step0}
+
+    height: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step2}));
+    line-height: calc(
+      calc(var(${vars.spacing.step9}) + var(${vars.spacing.step2})) +
+        var(/* ${decl.color.font.light}:19 */)
+    );
+    width: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step2}));
   }
 `);
 

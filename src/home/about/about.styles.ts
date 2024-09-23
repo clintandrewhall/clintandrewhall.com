@@ -13,8 +13,8 @@ const summary = toProps(css`
   ${decl.font.serif.regular}
   ${decl.font.size.step1}
   grid-area: auto / 2 / auto / span 10;
-  text-align: center;
   line-height: var(${vars.spacing.step8});
+  text-align: center;
 
   & p {
     margin-bottom: var(${vars.spacing.step4});
@@ -39,19 +39,17 @@ const content = toProps(css`
 `);
 
 const work = toProps(css`
+  grid-area: auto / 1 / auto / span 6;
   @media (max-width: ${BREAKPOINT}px) {
     grid-area: auto / 1 / auto / span 12;
   }
-
-  grid-area: auto / 1 / auto / span 6;
 `);
 
 const code = toProps(css`
+  grid-area: auto / 7 / auto / span 6;
   @media (max-width: ${BREAKPOINT}px) {
     grid-area: auto / 1 / auto / span 12;
   }
-
-  grid-area: auto / 7 / auto / span 6;
 `);
 
 export default { content, header, title, work, code, summary };

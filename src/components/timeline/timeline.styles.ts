@@ -6,40 +6,40 @@ import { BULLET_PADDING, BULLET_SIZE_EQ, TOP_PADDING } from './timeline_item.sty
 const { vars } = theme;
 
 const root = toProps(css`
-  grid-area: auto / 1 / auto / span 12;
-  column-gap: var(${vars.grid.gutter});
-  margin-top: calc(var(${vars.spacing.step7}) * -1);
-  column-width: calc(50% - var(${vars.grid.gutter}) / 2);
+
   column-count: 2;
+  column-gap: var(${vars.grid.gutter});
+  column-width: calc(50% - var(${vars.grid.gutter}) / 2);  grid-area: auto / 1 / auto / span 12;
+  margin-top: calc(var(${vars.spacing.step7}) * -1);
   position: relative;
+
+  &::before {
+    background-color: var(${vars.color.background.subtler});
+    bottom: 0;
+    content: '';
+    display: block;
+    left: calc((${BULLET_SIZE_EQ}) / 2);
+    position: absolute;
+    top: calc(${TOP_PADDING} + 20px);
+    width: 1px;
+    z-index: 0;
+  }
 
   @media (max-width: 975px) {
     column-count: 1;
     column-width: revert;
   }
 
-  &::before {
-    content: '';
-    display: block;
-    width: 1px;
-    background-color: var(${vars.color.background.subtler});
-    position: absolute;
-    left: calc((${BULLET_SIZE_EQ}) / 2);
-    top: calc(${TOP_PADDING} + 20px);
-    bottom: 0;
-    z-index: 0;
-  }
-
   @media (min-width: 975px) {
     &::after {
+      background-color: var(${vars.color.background.subtler});
+      bottom: 0;
       content: '';
       display: block;
-      width: 1px;
-      background-color: var(${vars.color.background.subtler});
-      position: absolute;
       left: calc(50% + (${BULLET_PADDING} * 2) + ((${BULLET_SIZE_EQ}) / 2));
+      position: absolute;
       top: ${TOP_PADDING};
-      bottom: 0;
+      width: 1px;
       z-index: 0;
     }
   }

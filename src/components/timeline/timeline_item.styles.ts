@@ -25,10 +25,10 @@ const LOGO_VAR = '--timeline-item-logo';
 const root = (logo?: string) =>
   toProps(
     css`
+      break-inside: avoid;
       padding-left: calc(${BULLET_SIZE_EQ} + (var(${vars.grid.gutter}) / 2));
       padding-top: ${TOP_PADDING};
       position: relative;
-      break-inside: avoid;
     `,
     { [LOGO_VAR]: logo ? `url('${logo}')` : 'inherit' },
   );
@@ -42,30 +42,30 @@ const header = toProps(css`
   flex-direction: column;
 
   &::before {
-    content: '';
+    background-image: var(--timeline-item-logo);
+    background-position: center;
+    background-size: ${IMAGE_SIZE};
     border-radius: 50%;
+    content: '';
     display: block;
     height: ${IMAGE_SIZE};
-    width: ${IMAGE_SIZE};
-    position: absolute;
-    z-index: 2;
     left: ${BULLET_PADDING};
-    background-image: var(--timeline-item-logo);
-    background-size: ${IMAGE_SIZE};
-    background-position: center;
+    position: absolute;
     top: calc(${BULLET_TOP_EQ});
+    width: ${IMAGE_SIZE};
+    z-index: 2;
   }
 
   &::after {
-    background: var(${vars.color.background.subtler});
+    background-color: var(${vars.color.background.subtler});
+    border-radius: 50%;
     content: '';
     display: block;
     height: calc(${BULLET_SIZE_EQ});
-    width: calc(${BULLET_SIZE_EQ});
     left: 0;
-    top: calc((${BULLET_TOP_EQ}) - ${BULLET_PADDING});
-    border-radius: 50%;
     position: absolute;
+    top: calc((${BULLET_TOP_EQ}) - ${BULLET_PADDING});
+    width: calc(${BULLET_SIZE_EQ});
     z-index: 1;
   }
 `);
@@ -76,30 +76,33 @@ const timeframe = toProps(css`
   ${decl.color.font.text}
 
   letter-spacing: calc(var(${vars.font.size.step0}) * .1);
-  text-transform: uppercase;
-  order: 1;
   margin-bottom: var(${vars.spacing.step0});
+  order: 1;
+  text-transform: uppercase;
 `);
 
 const title = toProps(css`
   ${decl.font.size.step2}
+  margin-bottom: var(${vars.spacing.step0});
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: 0;
   ${decl.font.lineHeight.step2}
   ${decl.font.weight.normal}
 
   order: 2;
-  margin: 0;
-  margin-bottom: var(${vars.spacing.step0});
 `);
 
 const subtitle = toProps(css`
   ${decl.font.size.stepN1}
+  margin-bottom: var(${vars.spacing.step4});
+  margin-left: 0;
+  margin-right: 0;
+  margin-top: var(${vars.spacing.step0});
   ${decl.font.lineHeight.step1}
   ${decl.font.weight.normal}
 
   order: 3;
-  margin: 0;
-  margin-top: var(${vars.spacing.step0});
-  margin-bottom: var(${vars.spacing.step4});
 `);
 
 const content = toProps(css`

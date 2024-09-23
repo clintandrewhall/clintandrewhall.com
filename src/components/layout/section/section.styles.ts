@@ -6,8 +6,8 @@ const { vars } = theme;
 const root = (style?: React.CSSProperties) =>
   toProps(
     css`
-      padding-top: var(${vars.spacing.sectionTop});
       padding-bottom: var(${vars.spacing.sectionBottom});
+      padding-top: var(${vars.spacing.sectionTop});
     `,
     style,
   );

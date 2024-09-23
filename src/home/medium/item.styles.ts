@@ -8,20 +8,22 @@ export const root = (image?: string) =>
     css`
       ${decl.font.sansSerif.medium}
       ${decl.font.weight.normal}
-      margin-bottom: var(${vars.spacing.step5});
-      direction: ltr;
+
       background-position: 50% 50%;
       background-repeat: no-repeat;
       background-size: cover;
+      direction: ltr;
+      margin-bottom: var(${vars.spacing.step5});
     `,
     { backgroundImage: image ? `url(${image})` : 'none' },
   );
 
 export const header = toProps(css`
   ${decl.font.size.step0}
-  margin-bottom: var(${vars.spacing.step2});
+
   display: flex;
   flex-direction: column-reverse;
+  margin-bottom: var(${vars.spacing.step2});
   position: relative;
 
   & a {
@@ -32,32 +34,38 @@ export const header = toProps(css`
 
 export const date = toProps(css`
   ${decl.color.font.accent}
+
   line-height: var(${vars.font.size.step2});
 `);
 
 export const title = toProps(css`
-  ${decl.font.size.step3}
   ${decl.font.weight.normal}
+  ${decl.font.size.step3}
+
+  line-height: var(${vars.font.size.step4});
+  min-height: calc(var(${vars.font.size.step4}) * 2);
+
   & a {
     ${decl.font.weight.normal}
     ${decl.color.font.dark}
   }
-  line-height: var(${vars.font.size.step4});
-  min-height: calc(var(${vars.font.size.step4}) * 2);
 `);
 
 export const list = toProps(css`
-  list-style: none;
-  display: block;
   border-top: 1px solid var(${vars.color.border.separator});
+  display: block;
+  list-style: none;
   padding-top: var(${vars.spacing.step2});
 `);
 
 export const category = toProps(css`
   ${decl.font.size.stepN1}
+
   display: inline-block;
-  margin-right: var(${vars.spacing.step0});
   letter-spacing: calc(var(${vars.font.size.step0}) * 0.14);
+  margin-right: var(${vars.spacing.step0});
+
+  text-transform: uppercase;
 
   & a {
     ${decl.font.weight.normal}
@@ -78,8 +86,6 @@ export const category = toProps(css`
   &:last-child::after {
     display: none;
   }
-
-  text-transform: uppercase;
 `);
 
 export default { header, root, title, list, category, date };

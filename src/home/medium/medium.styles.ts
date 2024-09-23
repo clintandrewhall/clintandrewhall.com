@@ -4,15 +4,15 @@ import { theme } from '@theme';
 const { vars, decl } = theme;
 
 const root = toProps(css`
-  grid-area: auto / 2 / auto / span 10;
   ${decl.color.background.subtlest}
+  grid-area: auto / 2 / auto / span 10;
 `);
 
 const content = toProps(css`
   display: grid;
   gap: var(${vars.spacing.step9});
-  grid-template-columns: repeat(2, 1fr);
   grid-area: auto / 2 / auto / span 10;
+  grid-template-columns: repeat(2, 1fr);
 
   @media (max-width: 600px) {
     grid-template-columns: repeat(1, auto);

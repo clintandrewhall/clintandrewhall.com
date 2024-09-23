@@ -2,6 +2,16 @@
   "customSyntax": "@linaria/postcss-linaria",
   "rules": {
     "property-disallowed-list": ["margin", "padding", "background", "border"],
-    "property-no-unknown": true
-  }
+    "property-no-unknown": true,
+    "order/properties-alphabetical-order": true,
+    "order/order": [
+      "dollar-variables",
+      "custom-properties",
+      "at-variables",
+      "declarations",
+      "rules",
+      "at-rules"
+    ]
+  },
+  "plugins": ["stylelint-order"]
 }

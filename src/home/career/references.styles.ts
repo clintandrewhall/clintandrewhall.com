@@ -15,7 +15,10 @@ const header = toProps(css`
 `);
 
 const link = toProps(css`
-  border: 2px solid var(${vars.color.background.light});
+  ${decl.color.border.light}
+
+  border-style: solid;
+  border-width: 2px;
 
   & > a {
     &:hover,

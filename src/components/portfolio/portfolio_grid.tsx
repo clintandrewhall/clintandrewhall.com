@@ -1,17 +1,11 @@
-import { useEntryIds } from '@lib/hooks/use_portfolio';
-
-import { PortfolioItem } from './portfolio_item';
+import type { ReactNode } from 'react';
 
 import styles from './portfolio_grid.styles';
 
-export const PortfolioGrid = () => {
-  const ids = useEntryIds();
+export interface PortfolioGridProps {
+  children: ReactNode;
+}
 
-  return (
-    <div {...styles.root}>
-      {ids.map((id) => (
-        <PortfolioItem id={id} key={id} />
-      ))}
-    </div>
-  );
+export const PortfolioGrid = ({ children }: PortfolioGridProps) => {
+  return <div {...styles.root}>{children}</div>;
 };

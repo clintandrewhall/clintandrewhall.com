@@ -55,7 +55,6 @@ export const root = toProps(css`
   --swiper-navigation-top-offset: 50%;
   --swiper-navigation-sides-offset: 0;
   --swiper-navigation-color: var(--swiper-theme-color);
-
   --swiper-pagination-color: var(--swiper-theme-color);
   --swiper-pagination-left: auto;
   --swiper-pagination-right: auto;
@@ -73,38 +72,38 @@ export const root = toProps(css`
   --swiper-pagination-bullet-horizontal-gap: 4px;
   --swiper-pagination-bullet-vertical-gap: 6px;
 
-  padding-top: 0;
   padding-bottom: 0;
   padding-left: var(${vars.spacing.step9});
   padding-right: var(${vars.spacing.step9});
+  padding-top: 0;
   position: relative;
 
   &:before,
   &:after {
-    position: absolute;
     content: '';
     display: block;
-    width: var(${vars.spacing.step9});
     height: 1px;
+    position: absolute;
     top: 0;
+    width: var(${vars.spacing.step9});
   }
 
   &:before {
-    left: 0;
     background-image: linear-gradient(
       to left,
       var(${vars.color.background.subtle}),
       var(${vars.color.background.dark})
     );
+    left: 0;
   }
 
   &:after {
-    right: 0;
     background-image: linear-gradient(
       to right,
       var(${vars.color.background.subtle}),
       var(${vars.color.background.dark})
     );
+    right: 0;
   }
 `);
 

@@ -87,6 +87,7 @@
     "rss-parser": "^3.13.0",
     "storybook": "^8.2.8",
     "stylelint": "^16.9.0",
+    "stylelint-order": "^6.0.4",
     "tsx": "^4.17.0",
     "typescript": "^5.0.2",
     "unplugin-fonts": "^1.0.3",

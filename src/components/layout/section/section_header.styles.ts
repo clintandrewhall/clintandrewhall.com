@@ -17,8 +17,8 @@ const name = toProps(
       ${decl.color.font.accent}
       ${decl.font.weight.normal}
       letter-spacing: calc(var(${vars.font.size.step1}) * ${LETTER_SPACING_FACTOR});
-      text-transform: uppercase;
       margin-bottom: var(${vars.spacing.step2});
+      text-transform: uppercase;
     `,
     'sectionHeader',
   ),
@@ -61,9 +61,9 @@ const root = toProps(css`
       display: inline-block;
       height: 1px;
       left: 25%;
+      position: absolute;
       text-align: center;
       width: 50%;
-      position: absolute;
     }
   }
 `);

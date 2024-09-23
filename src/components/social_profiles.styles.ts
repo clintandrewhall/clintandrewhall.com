@@ -6,8 +6,8 @@ const { vars, icons, decl } = theme;
 
 const root = toProps(css`
   display: flex;
-  list-style: none;
   flex-flow: row wrap;
+  list-style: none;
 
   & a {
     ${decl.color.font.light}
@@ -25,16 +25,16 @@ const item = ({ showDivider = true, showLabel = true }) => {
     ${decl.font.sansSerif.light};
     ${decl.font.size.stepN1};
     letter-spacing: calc(var(${vars.font.size.stepN1}) * 0.25);
+    padding-bottom: var(${vars.spacing.step1});
     padding-left: var(${vars.spacing.step3});
     padding-right: var(${vars.spacing.step3});
     padding-top: var(${vars.spacing.step1});
-    padding-bottom: var(${vars.spacing.step1});
     position: relative;
 
     &:before {
-      position: absolute;
       ${decl.color.font.text};
       left: -2px;
+      position: absolute;
     }
 
     &:first-child:before {
@@ -46,8 +46,8 @@ const item = ({ showDivider = true, showLabel = true }) => {
     @media (max-width: 600px) {
       &:before {
         content: '';
-        width: 100%;
         order: 1;
+        width: 100%;
       }
 
       & > li:nth-child(n + 4) {
@@ -89,11 +89,11 @@ const item = ({ showDivider = true, showLabel = true }) => {
 };
 
 const link = toProps(css`
-  text-transform: uppercase;
-  display: flex;
   align-items: center;
-  justify-content: center;
+  display: flex;
   gap: var(${vars.spacing.step1});
+  justify-content: center;
+  text-transform: uppercase;
 `);
 
 const logo = css`

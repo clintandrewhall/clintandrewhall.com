@@ -4,22 +4,22 @@ import { theme } from '@theme';
 const { vars, decl } = theme;
 
 const root = toProps(css`
-  ${decl.font.size.stepN1};
+  ${decl.font.size.stepN1}
   ${decl.color.background.dark}
   ${decl.color.font.text}
-  margin-top: var(${vars.spacing.sectionBottom});
+  align-items: center;
   display: flex;
   flex-flow: row wrap;
   justify-content: center;
-  align-items: center;
+  margin-top: var(${vars.spacing.sectionBottom});
 
   & > span {
     display: inline-block;
-    position: relative;
-    padding-top: var(${vars.spacing.step0});
     padding-bottom: var(${vars.spacing.step0});
     padding-left: var(${vars.spacing.step5});
     padding-right: var(${vars.spacing.step5});
+    padding-top: var(${vars.spacing.step0});
+    position: relative;
 
     & > a {
       display: inline-block;
@@ -32,8 +32,8 @@ const root = toProps(css`
 
     &:before {
       content: '|';
-      position: absolute;
       left: -2px;
+      position: absolute;
     }
 
     &:first-child:before {
@@ -44,8 +44,8 @@ const root = toProps(css`
   @media (max-width: 600px) {
     &:before {
       content: '';
-      width: 100%;
       order: 1;
+      width: 100%;
     }
 
     & > :nth-child(n + 2) {

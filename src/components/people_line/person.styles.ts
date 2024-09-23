@@ -10,25 +10,25 @@ const root = toProps(css`
     var(--person-avatar-size) + var(--person-avatar-shadow) + var(${vars.spacing.step6})
   );
   --person-padding-top: var(${vars.spacing.step9});
-
-  position: relative;
-  padding-left: var(--person-padding-left);
-  padding-top: var(--person-padding-top);
-  padding-right: var(${vars.spacing.step6});
-  margin-top: 0;
-  margin-right: 0;
   margin-bottom: var(${vars.spacing.step9});
   margin-left: 0 0 var(${vars.spacing.step9});
+  margin-right: 0;
+  margin-top: 0;
+  padding-left: var(--person-padding-left);
+  padding-right: var(${vars.spacing.step6});
+  padding-top: var(--person-padding-top);
+
+  position: relative;
 
   &:before {
+    background-color: var(${vars.color.border.grid});
     content: '';
     display: block;
-    width: 1px;
     height: var(--person-padding-top);
-    position: absolute;
     left: calc((var(--person-avatar-size) + (var(--person-avatar-shadow) * 2)) / 2);
+    position: absolute;
     top: 0;
-    background-color: var(${vars.color.border.grid});
+    width: 1px;
   }
 `);
 
@@ -37,19 +37,19 @@ const details = toProps(css`
   ${decl.color.font.dim};
 
   & > dt {
-    visibility: hidden;
     position: absolute;
+    visibility: hidden;
   }
 `);
 
 const avatar = toProps(css`
-  box-shadow: 0 0 0 var(--person-avatar-shadow) var(${vars.color.border.grid});
   border-radius: 100%;
-  position: absolute;
-  left: var(--person-avatar-shadow);
-  top: var(--person-padding-top);
-  outline: none;
+  box-shadow: 0 0 0 var(--person-avatar-shadow) var(${vars.color.border.grid});
   height: var(--person-avatar-size);
+  left: var(--person-avatar-shadow);
+  outline: none;
+  position: absolute;
+  top: var(--person-padding-top);
   width: var(--person-avatar-size);
 `);
 

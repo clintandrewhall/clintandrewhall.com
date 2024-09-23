@@ -15,14 +15,14 @@ const link = toProps(css`
     ${decl.color.background.dark}
 
     display: block;
-    text-transform: uppercase;
     letter-spacing: calc(var(${vars.font.size.stepN1}) * 0.25);
-    text-align: center;
-    padding-top: var(${vars.spacing.step4});
+    line-height: var(${vars.font.size.step3});
     padding-bottom: var(${vars.spacing.step4});
     padding-left: var(${vars.spacing.step9});
     padding-right: var(${vars.spacing.step9});
-    line-height: var(${vars.font.size.step3});
+    padding-top: var(${vars.spacing.step4});
+    text-align: center;
+    text-transform: uppercase;
   }
 
   a&:hover,
