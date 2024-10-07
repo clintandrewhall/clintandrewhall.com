@@ -1,4 +1,4 @@
-import type { ReactNode } from 'react';
+import React, { forwardRef, type ReactNode } from 'react';
 
 import { Layout } from '@components/layout';
 import { cx } from '@lib/css';
@@ -19,16 +19,18 @@ export interface SectionProps {
 
 const Header = slot(SectionHeader, 'header');
 
-const Component = ({ children, id, className, style }: SectionProps) => {
-  const slots = useSlots(children);
+const Component = forwardRef<HTMLDivElement, SectionProps>(
+  ({ children, id, className, style }, ref) => {
+    const slots = useSlots(children);
 
-  return (
-    <Layout element="article" {...{ id, ...cx(styles.root(style), className) }}>
-      {slots.header}
-      {slots.children}
-    </Layout>
-  );
-};
+    return (
+      <Layout element="article" {...{ id, ref, ...cx(styles.root(style), className) }}>
+        {slots.header}
+        {slots.children}
+      </Layout>
+    );
+  },
+);
 
 export const Section = Object.assign(Component, {
   Header,

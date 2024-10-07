@@ -14,7 +14,6 @@ export default defineConfig({
     emptyOutDir: true,
   },
   plugins: [
-    imagetools(),
     markdown({ mode: [Mode.HTML, Mode.REACT, Mode.TOC] }),
     Unfonts(unfontConfig),
     linaria({
@@ -40,6 +39,7 @@ export default defineConfig({
         return null;
       },
     }),
+    imagetools(),
     react(),
   ],
   resolve: {

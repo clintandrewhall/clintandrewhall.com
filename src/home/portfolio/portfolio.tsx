@@ -1,9 +1,10 @@
 import { Section } from '@components/layout';
-import { PortfolioGrid } from '@components/portfolio';
-import { PortfolioItem, type PortfolioItemProps } from '@components/portfolio/portfolio_item';
+import { PortfolioGrid, type PortfolioItemProps } from '@components/portfolio';
 import { useEntryIds, useEntryMetadata, usePortfolioImage } from '@lib/hooks';
+import { type SectionId } from '@lib/site';
 
 import styles from './portfolio.styles';
+import { useHomeTopic } from '../use_home_topic';
 
 const attributes = {
   id: 'portfolio',
@@ -12,7 +13,7 @@ const attributes = {
   subtitle: "Here are a few things I've worked on in my spare time.",
 };
 
-const useEntry = (id: string): PortfolioItemProps | null => {
+const useEntry = (id: SectionId): PortfolioItemProps | null => {
   const entry = useEntryMetadata(id);
   const image = usePortfolioImage(entry?.cover, 480);
 
@@ -33,14 +34,15 @@ const useEntry = (id: string): PortfolioItemProps | null => {
 };
 
 export const Portfolio = () => {
+  const { ref } = useHomeTopic('portfolio');
   const ids = useEntryIds();
   const entries = ids
     .map(useEntry)
     .filter<PortfolioItemProps>((entry) => entry !== null)
-    .map((entry) => <PortfolioItem key={entry.title} {...entry} />);
+    .map((entry) => <PortfolioGrid.Item key={entry.title} {...entry} />);
 
   return (
-    <Section {...attributes} {...styles.root}>
+    <Section {...{ ref, ...attributes, ...styles.root }}>
       <Section.Header {...attributes} {...styles.header} />
       <Section.Divider />
       <div {...styles.content}>

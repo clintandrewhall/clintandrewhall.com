@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { forwardRef } from 'react';
 
 import { cx } from '@lib/css';
 
@@ -13,13 +13,13 @@ export interface LayoutProps {
   id?: string;
 }
 
-const Component = ({ children, className, element = 'div', id }: LayoutProps) => {
+const Component = forwardRef<HTMLDivElement, LayoutProps>(({ children, className, element = 'div', id }, ref) => {
   return (
-    <div {...{ ...cx(styles.outer, className), id }}>
+    <div {...{ ref, ...cx(styles.outer, className), id }}>
       {React.createElement(element, { ...styles.inner }, children)}
     </div>
   );
-};
+});
 
 export const Layout = Object.assign(Component, {
   Footer,

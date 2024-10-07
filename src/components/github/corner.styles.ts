@@ -1,8 +1,13 @@
 import { css, cx, toProps } from '@lib/css';
+import { theme } from '@theme';
+
+const { vars } = theme;
 
 const svgRoot = toProps(css`
-  color: #151513;
-  fill: #fff;
+  color: var(${vars.color.github.color});
+  fill: var(${vars.color.github.fill});
+  height: var(--header-height);
+  width: var(--header-height);
 `);
 
 const root = toProps(css`

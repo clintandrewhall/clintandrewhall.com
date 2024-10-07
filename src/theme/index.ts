@@ -24,6 +24,7 @@ export const theme = {
   icons,
   page: {
     body: `
+      scroll-behavior: smooth;
       -webkit-font-smoothing: antialiased;
       font-feature-settings: 'liga', 'clig';
       font-variant-ligatures: common-ligatures;

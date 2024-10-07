@@ -2,9 +2,10 @@ import { css as csl } from '@linaria/core';
 import type { Preview } from '@storybook/react';
 import 'ress';
 import 'unfonts.css';
-import { withRouter } from 'storybook-addon-remix-react-router';
+import { reactRouterParameters, withRouter } from 'storybook-addon-remix-react-router';
 
 import { css, cx } from '@lib/css';
+// import { useScrollToAnchor } from '@lib/hooks';
 import { theme } from '@theme';
 
 const preview: Preview = {
@@ -21,26 +22,34 @@ const preview: Preview = {
         order: ['Pages', 'Home'],
       },
     },
+    reactRouter: reactRouterParameters({
+      routing: {
+        path: '/',
+        handle: 'Home',
+      },
+    }),
   },
 
   decorators: [
-    withRouter,
-    (Story) => (
-      <div
-        className={cx(
-          csl`
+    (Story) => {
+      return (
+        <div
+          className={cx(
+            csl`
             ${theme.decl.font.size.step0}
             ${theme.decl.font.sansSerif.regular}
           `,
-          css`
-            ${theme.page.body}
-            ${theme.definitions}
-          `,
-        )}
-      >
-        <Story />
-      </div>
-    ),
+            css`
+              ${theme.page.body}
+              ${theme.definitions}
+            `,
+          )}
+        >
+          <Story />
+        </div>
+      );
+    },
+    withRouter,
   ],
 };
 

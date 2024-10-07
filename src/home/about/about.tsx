@@ -6,10 +6,13 @@ import { Summary } from './summary';
 import { Work } from './work';
 
 import styles from './about.styles';
+import { useHomeTopic } from '../use_home_topic';
 
 const Component = () => {
+  const { ref } = useHomeTopic('about');
+
   return (
-    <Section {...attributes}>
+    <Section {...{ ref, ...attributes }}>
       <Section.Header {...attributes} {...styles.header} />
       <About.Summary />
       <About.Work />

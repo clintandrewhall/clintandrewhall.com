@@ -1,0 +1,49 @@
+import { useEffect, useState } from 'react';
+
+import { GithubCorner as Corner } from '@components/github';
+
+import { Navigation } from '../navigation';
+
+import { HeaderLogo as Logo } from './header_logo';
+
+import styles from './header.styles';
+
+const SCROLL_THRESHOLD = 200;
+
+export interface HeaderProps {
+  isLocal?: boolean;
+}
+
+const Component = ({ isLocal }: HeaderProps) => {
+  const [isFloating, setIsFloating] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY >= SCROLL_THRESHOLD) {
+        setIsFloating(true);
+      } else {
+        setIsFloating(false);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, []);
+
+  return (
+    <header {...styles.root(isFloating)}>
+      <Header.Logo />
+      <Header.Navigation {...{ isLocal }} />
+      <Header.Corner />
+    </header>
+  );
+};
+
+export const Header = Object.assign(Component, {
+  Logo,
+  Navigation,
+  Corner,
+});

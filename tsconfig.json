@@ -33,7 +33,10 @@
         "./src/home/index"
       ],
       "@lib/*": [
-        "./src/lib/*"
+        "./src/lib/*.ts"
+      ],
+      "@lib/hooks": [
+        "./src/lib/hooks/index"
       ],
       "@theme": [
         "./src/theme/index"

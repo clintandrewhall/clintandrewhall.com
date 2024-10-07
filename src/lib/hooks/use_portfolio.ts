@@ -1,3 +1,5 @@
+import { type SectionId } from '@lib/site';
+
 // Portfolio Images
 interface OutputMetadata {
   src: string;
@@ -64,7 +66,8 @@ export const useAllEntries = () => entries;
 export const useEntries = (limit = DEFAULT_LIMIT) => useAllEntries().slice(0, limit);
 export const useEntry = (id: string) => useAllEntries().find((entry) => entry.attributes.id === id);
 
-export const useAllEntryIds = () => useAllEntries().map((entry) => entry.attributes.id);
+export const useAllEntryIds = () =>
+  useAllEntries().map((entry) => entry.attributes.id as SectionId);
 export const useEntryIds = (limit = DEFAULT_LIMIT) => useAllEntryIds().slice(0, limit);
 
 export const useAllEntryMetadata = () => entries.map((entry) => entry.attributes);

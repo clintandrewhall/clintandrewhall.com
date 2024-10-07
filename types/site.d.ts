@@ -1,5 +1,3 @@
-declare type Section = 'about' | 'portfolio' | 'career' | 'medium';
-
 declare type DisambiguateSet<T, U> = {
   [P in Exclude<keyof T, keyof U>]?: never;
 };

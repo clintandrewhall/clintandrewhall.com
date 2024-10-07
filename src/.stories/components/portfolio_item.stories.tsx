@@ -1,15 +1,15 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { PortfolioItem as Component } from '@components/portfolio/portfolio_item';
+import { PortfolioGrid } from '@components/portfolio';
 
-const meta: Meta<typeof Component> = {
+const meta: Meta<typeof PortfolioGrid.Item> = {
   title: 'Components/Portfolio Item',
-  component: Component,
+  component: PortfolioGrid.Item,
 };
 
 export default meta;
 
-export const PortfolioItem: StoryObj<typeof Component> = {
+export const PortfolioItem: StoryObj<typeof PortfolioGrid.Item> = {
   args: {
     caption: 'Some caption',
     href: '/portfolio/some-project',

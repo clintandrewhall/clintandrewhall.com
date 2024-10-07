@@ -1,4 +1,4 @@
-import { GithubCorner } from '@components/github/corner';
+import { GithubCorner } from '@components/github';
 
 function App() {
   return (

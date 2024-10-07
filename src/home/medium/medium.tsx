@@ -5,6 +5,7 @@ import { Section } from '@components/layout';
 import { Item } from './item';
 
 import styles from './medium.styles';
+import { useHomeTopic } from '../use_home_topic';
 
 interface Posts {
   posts: MediumPost[];
@@ -18,6 +19,7 @@ const attributes = {
 };
 
 const Component = () => {
+  const { ref } = useHomeTopic('medium');
   const [stories, setStories] = useState<Posts | null>(null);
 
   useEffect(() => {
@@ -37,7 +39,7 @@ const Component = () => {
     .map((entry) => <Medium.Item post={entry} key={`${entry.timestamp}`} />);
 
   return (
-    <Section {...attributes} {...styles.root}>
+    <Section {...{ ref, ...attributes, ...styles.root }}>
       <Section.Header {...attributes} />
       <Section.Divider />
       <div {...styles.content}>{items}</div>

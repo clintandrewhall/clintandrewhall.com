@@ -24,22 +24,46 @@ function isCSSProps(value: any): value is CSSProps {
   return value && typeof value === 'object' && 'className' in value;
 }
 
-export function cx(input: string, className?: string): string;
-export function cx(input: CSSProps, className?: string): CSSProps;
-export function cx(input: unknown, className?: string): unknown {
-  if (!className) {
+export function cx(input: string, append?: string): string;
+export function cx(input: string, append?: CSSProps): CSSProps;
+export function cx(input: CSSProps, append?: string): CSSProps;
+export function cx(input: CSSProps, append?: CSSProps): CSSProps;
+export function cx(input: unknown, append?: unknown): unknown {
+  if (!append || (!input && !append)) {
     return input;
   }
 
+  if (!input) {
+    return append;
+  }
+
   if (isCSSProps(input)) {
-    return {
-      ...input,
-      className: cx(className, input.className),
-    };
+    if (isCSSProps(append)) {
+      return {
+        className: _cx(append.className, input.className),
+        style: { ...input.style, ...append.style },
+      };
+    }
+
+    if (typeof append === 'string') {
+      return {
+        ...input,
+        className: cx(append, input.className),
+      };
+    }
   }
 
   if (typeof input === 'string') {
-    return _cx(className, input);
+    if (isCSSProps(append)) {
+      return {
+        ...append,
+        className: cx(append.className, input),
+      };
+    }
+
+    if (typeof append === 'string') {
+      return _cx(append, input);
+    }
   }
 
   return input;

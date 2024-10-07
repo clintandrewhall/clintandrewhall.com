@@ -60,6 +60,10 @@ const header = toProps(css`
   margin-bottom: 0;
   margin-top: 0;
   width: 100%;
+
+  @media (max-width: 400px), (max-height: 400px) {
+    gap: var(${vars.spacing.step3});
+  }
 `);
 
 const headerGroup = toProps(css`
@@ -109,6 +113,12 @@ const intro = toProps(css`
   margin-top: var(${vars.spacing.step4});
   padding-left: var(--greeting-base);
   text-shadow: 2px 2px 2px var(${vars.color.font.shaded});
+
+  @media (max-width: 400px), (max-height: 450px) {
+    ${decl.font.size.step3}
+    line-height: calc(var(${vars.font.size.step5}));
+    margin-top: var(${vars.spacing.step3});
+  }
 `);
 
 const links = toProps(css`
@@ -127,6 +137,10 @@ const links = toProps(css`
     gap: var(${vars.spacing.step9});
     grid-area: auto / 1 / auto / span 12;
     padding-left: var(--greeting-base);
+  }
+
+  @media (max-width: 400px), (max-height: 450px) {
+    gap: var(${vars.spacing.step5});
   }
 `);
 
@@ -157,6 +171,15 @@ const link = toProps(css`
     flex-grow: 0;
     margin-bottom: var(${vars.spacing.step1});
   }
+
+  @media (max-width: 400px), (max-height: 450px) {
+    & > a {
+      padding-bottom: var(${vars.spacing.step2});
+      padding-left: var(${vars.spacing.step3});
+      padding-right: var(${vars.spacing.step3});
+      padding-top: var(${vars.spacing.step2});
+    }
+  }
 `);
 
 const profiles = toProps(css`
@@ -164,7 +187,11 @@ const profiles = toProps(css`
   justify-content: right;
 
   & i {
-    ${decl.font.size.step2}
+    ${decl.font.size.step3}
+
+    @media (max-width: 500px) and (orientation: portrait) {
+      ${decl.font.size.step4}
+    }
   }
 
   @media (max-width: 975px), (orientation: portrait) {

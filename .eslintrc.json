@@ -30,8 +30,15 @@
     // Add your own rules here to override ones from the extended configs.
     "react/react-in-jsx-scope": "off",
     "react/jsx-uses-react": "off",
-    "@typescript-eslint/consistent-type-imports": "error",
     "@typescript-eslint/no-explicit-any": "off",
+    "@typescript-eslint/consistent-type-imports": [
+      "error",
+      {
+        "prefer": "type-imports",
+        "disallowTypeAnnotations": false,
+        "fixStyle": "inline-type-imports"
+      }
+    ],
     "simple-import-sort/imports": "error",
     "simple-import-sort/exports": "error"
   },

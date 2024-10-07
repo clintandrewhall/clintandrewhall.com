@@ -5,6 +5,7 @@ import { Timeline as TimelineComponent } from '@components/timeline';
 import { useResume } from '@lib/hooks';
 
 import styles from './career.styles';
+import { useHomeTopic } from '../use_home_topic';
 
 const attributes = {
   id: 'career',
@@ -14,6 +15,7 @@ const attributes = {
 };
 
 export const Timeline = () => {
+  const { ref } = useHomeTopic('career');
   const resume = useResume();
 
   if (!resume) {
@@ -23,7 +25,7 @@ export const Timeline = () => {
   const { work } = resume;
 
   return (
-    <Section {...attributes}>
+    <Section {...{ ref, ...attributes }}>
       <Section.Header {...attributes} {...styles.header} />
       <Section.Divider />
       <TimelineComponent

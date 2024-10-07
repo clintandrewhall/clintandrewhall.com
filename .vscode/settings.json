@@ -4,6 +4,6 @@
     "typescript"
   ],
   "editor.codeActionsOnSave": {
-    "source.fixAll.stylelint": "never"
+    "source.fixAll.stylelint": "always"
   },
 }

@@ -1,7 +1,10 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Section as Component, type SectionProps } from '@components/layout';
-import type { SectionHeaderProps } from '@components/layout/section/section_header';
+import {
+  Section as Component,
+  type SectionHeaderProps,
+  type SectionProps,
+} from '@components/layout';
 import { css } from '@lib/css';
 
 const meta: Meta<typeof Component> = {
@@ -15,14 +18,14 @@ type Arguments = SectionProps & SectionHeaderProps;
 
 export const Section: StoryObj<Arguments> = {
   args: {
-    id: 'someSection',
+    id: 'home',
     title: 'The Section Title',
     subtitle: 'A witty subtitle.',
     name: 'Some Section',
   },
   render: (args: Arguments) => {
     return (
-      <Component id="storybook">
+      <Component id="home">
         <Component.Header
           {...args}
           className={css`
