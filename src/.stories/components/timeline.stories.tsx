@@ -1,7 +1,7 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import type { TimelineItemProps } from '@components/timeline';
-import { Timeline as Component, TimelineItem } from '@components/timeline';
+import { Timeline as Component } from '@components/timeline';
 
 const meta: Meta<typeof Component> = {
   title: 'Components/Timeline',
@@ -25,9 +25,9 @@ export const Timeline: StoryObj<Arguments> = {
     return (
       <div style={{ margin: 16 }}>
         <Component>
-          <TimelineItem {...args} />
-          <TimelineItem {...args} />
-          <TimelineItem {...args} />
+          <Component.Item {...args} />
+          <Component.Item {...args} />
+          <Component.Item {...args} />
         </Component>
       </div>
     );

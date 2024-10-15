@@ -1,4 +1,4 @@
-import { TimelineItem, type TimelineItemProps } from '@components/timeline';
+import { TimelineItem, type TimelineItemProps } from './timeline_item';
 
 import styles from './timeline.styles';
 
@@ -12,9 +12,11 @@ interface TimelineWithChildren {
 
 export type TimelineProps = ExclusiveUnion<TimelineWithProp, TimelineWithChildren>;
 
-export const Timeline = ({ children: childrenProp, items }: TimelineProps) => {
+const Component = ({ children: childrenProp, items }: TimelineProps) => {
   const children =
     childrenProp ??
     items.map((item, index) => <TimelineItem key={`${item.title}_${index}`} {...item} />);
   return <div {...styles.root}>{children}</div>;
 };
+
+export const Timeline = Object.assign(Component, { Item: TimelineItem });

@@ -1,11 +1,10 @@
 import { ParallaxBanner, ParallaxBannerLayer, ParallaxProvider } from 'react-scroll-parallax';
 
 import { SocialProfiles } from '@components/social_profiles';
+import { useHomeTopic } from '@lib/hooks';
 
 // @ts-expect-error - required for loading the logo
 import hero from '../content/images/hero.jpg?w=2500&format=webp';
-
-import { useHomeTopic } from './use_home_topic';
 
 import styles from './hero.styles';
 

@@ -1,10 +1,10 @@
 import { Section } from '@components/layout';
 import { PortfolioGrid, type PortfolioItemProps } from '@components/portfolio';
 import { useEntryIds, useEntryMetadata, usePortfolioImage } from '@lib/hooks';
+import { useHomeTopic } from '@lib/hooks';
 import { type SectionId } from '@lib/site';
 
 import styles from './portfolio.styles';
-import { useHomeTopic } from '../use_home_topic';
 
 const attributes = {
   id: 'portfolio',

@@ -38,6 +38,9 @@
       "@lib/hooks": [
         "./src/lib/hooks/index"
       ],
+      "@state/*": [
+        "./src/state/*"
+      ],
       "@theme": [
         "./src/theme/index"
       ],

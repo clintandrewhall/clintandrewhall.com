@@ -4,7 +4,7 @@ import { useMediaQuery } from 'react-responsive';
 import { sectionIds } from '@lib/site';
 
 import { NavigationLink } from './navigation_link';
-import { SectionLink } from './section_link';
+import { ToSectionLink } from './to_section_link';
 
 import styles from './navigation.styles';
 
@@ -28,7 +28,7 @@ export const Navigation = ({ isLocal = false }: NavigationProps) => {
     }
   }, [isNarrow, isOpen]);
 
-  const link = isLocal ? SectionLink : NavigationLink;
+  const link = isLocal ? ToSectionLink : NavigationLink;
   const links = sectionIds.map((id) => <Fragment key={id}>{link({ id })}</Fragment>);
 
   const button = isNarrow ? (

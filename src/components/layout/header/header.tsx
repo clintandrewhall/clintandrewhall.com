@@ -8,18 +8,28 @@ import { HeaderLogo as Logo } from './header_logo';
 
 import styles from './header.styles';
 
-const SCROLL_THRESHOLD = 200;
+const SCROLL_THRESHOLD = 80;
 
 export interface HeaderProps {
   isLocal?: boolean;
 }
+
+const vh = (percent: number): number => {
+  const {
+    document: {
+      documentElement: { clientHeight },
+    },
+    window: { innerHeight },
+  } = window;
+  return (Math.max(clientHeight, innerHeight || 0) * percent) / 100;
+};
 
 const Component = ({ isLocal }: HeaderProps) => {
   const [isFloating, setIsFloating] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY >= SCROLL_THRESHOLD) {
+      if (window.scrollY >= vh(SCROLL_THRESHOLD)) {
         setIsFloating(true);
       } else {
         setIsFloating(false);

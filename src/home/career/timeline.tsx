@@ -3,9 +3,9 @@ import Markdown from 'react-markdown';
 import { Section } from '@components/layout';
 import { Timeline as TimelineComponent } from '@components/timeline';
 import { useResume } from '@lib/hooks';
+import { useHomeTopic } from '@lib/hooks';
 
 import styles from './career.styles';
-import { useHomeTopic } from '../use_home_topic';
 
 const attributes = {
   id: 'career',

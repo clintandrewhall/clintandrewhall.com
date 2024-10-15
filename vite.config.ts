@@ -48,6 +48,7 @@ export default defineConfig({
       { find: '@components', replacement: resolve(__dirname, './src/components') },
       { find: '@home', replacement: resolve(__dirname, './src/home') },
       { find: '@lib', replacement: resolve(__dirname, './src/lib') },
+      { find: '@state', replacement: resolve(__dirname, './src/state') },
       { find: /@theme\//, replacement: `${resolve(__dirname, './src/theme')}/` },
       { find: /@theme$/, replacement: resolve(__dirname, './src/theme/index') },
       { find: '@', replacement: resolve(__dirname, './src') },

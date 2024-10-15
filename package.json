@@ -11,8 +11,8 @@
     "preview": "vite preview",
     "storybook": "cross-env BROWSER=\"google chrome\" OPEN_MATCH_HOST_ONLY=true storybook dev -p 6006",
     "build-storybook": "storybook build",
-    "generate:github": "ts-node ./scripts/github",
-    "generate:medium": "ts-node ./scripts/medium",
+    "generate:github": "tsx ./scripts/github",
+    "generate:medium": "tsx ./scripts/medium",
     "chromatic": "chromatic"
   },
   "dependencies": {

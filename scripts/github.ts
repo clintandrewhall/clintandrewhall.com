@@ -16,6 +16,8 @@ const reposAPI = `${BASE_URL + username}/repos`;
 const values = (obj: { [key: string]: LinesOfCode }): LinesOfCode[] =>
   Object.keys(obj).map((k) => obj[k]);
 
+const exclude = ['clintandrewhall.github.io', 'hero'];
+
 export const getGithubData = async (token?: string) => {
   const headers = token
     ? {
@@ -28,12 +30,17 @@ export const getGithubData = async (token?: string) => {
   const responses = await Promise.all([fetch(userAPI, headers), fetch(reposAPI, headers)]);
   const jsons = await Promise.all(responses.map((result) => result.json()));
   const user = jsons[0];
-  const repos = jsons[1];
+  const rawRepos = jsons[1];
 
-  if (repos.message || user.message) {
-    console.log(repos.message, user.message);
+  if (rawRepos.message || rawRepos.message) {
+    console.log(rawRepos.message, user.message);
     return;
   }
+
+  const repos = rawRepos
+    .filter((repo: any) => !exclude.includes(repo.name))
+    .filter((repo: any) => !repo.archived)
+    .filter((repo: any) => repo.name === 'node-foursquare' || !repo.fork);
 
   const repoReponses: Response[] = await Promise.all(
     repos.map((repo: { languages_url: string }) => fetch(repo.languages_url, headers)),
@@ -43,22 +50,20 @@ export const getGithubData = async (token?: string) => {
 
   const entries: Record<string, LinesOfCode> = {};
 
-  repos
-    .filter((repo: any) => repo.name === 'node-foursquare' || !repo.fork)
-    .forEach((repo: any, index: number) => {
-      Object.entries(languages[index]).forEach((entry) => {
-        const languageName = entry[0] as string;
-        const linesOfCode = parseInt(entry[1] as string, 10) || 0;
-        const item = entries[languageName] || {
-          languageName,
-          totalLines: 0,
-          byProject: {},
-        };
-        item.totalLines += linesOfCode;
-        item.byProject[repo.name] = linesOfCode;
-        entries[languageName] = item;
-      });
+  repos.forEach((repo: any, index: number) => {
+    Object.entries(languages[index]).forEach((entry) => {
+      const languageName = entry[0] as string;
+      const linesOfCode = parseInt(entry[1] as string, 10) || 0;
+      const item = entries[languageName] || {
+        languageName,
+        totalLines: 0,
+        byProject: {},
+      };
+      item.totalLines += linesOfCode;
+      item.byProject[repo.name] = linesOfCode;
+      entries[languageName] = item;
     });
+  });
 
   const loc: LinesOfCode[] = values(entries).sort(
     (a: LinesOfCode, b: LinesOfCode) => b.totalLines - a.totalLines,
@@ -70,7 +75,7 @@ export const getGithubData = async (token?: string) => {
       .reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
   });
 
-  return { user, loc };
+  return { user, languages, loc, repos };
 };
 
 (async function get() {

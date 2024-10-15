@@ -1,12 +1,12 @@
 import { Section } from '@components/layout';
 import { attributes } from '@content/about.md';
+import { useHomeTopic } from '@lib/hooks';
 
 import { Code } from './code';
 import { Summary } from './summary';
 import { Work } from './work';
 
 import styles from './about.styles';
-import { useHomeTopic } from '../use_home_topic';
 
 const Component = () => {
   const { ref } = useHomeTopic('about');

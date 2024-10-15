@@ -1,12 +1,11 @@
 import { type MouseEventHandler, useCallback, useEffect, useState } from 'react';
+import { useCurrentSectionId, useIsHome } from '@state/home';
 
-import { useCurrentSectionId, useIsHome } from '@home';
+import { NavigationLink, type NavigationLinkProps } from './navigation_link';
 
-import { NavigationLink, type NavigationLinkProps } from '../navigation';
+export type ToSectionLinkProps = Pick<NavigationLinkProps, 'id'>;
 
-export type SectionLinkProps = Pick<NavigationLinkProps, 'id'>;
-
-export const SectionLink = ({ id }: SectionLinkProps) => {
+export const ToSectionLink = ({ id }: ToSectionLinkProps) => {
   const href = `#${id}`;
   const [isCurrent, setIsCurrent] = useState(false);
   const { currentSectionId } = useCurrentSectionId();

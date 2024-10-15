@@ -1,11 +1,11 @@
 import { useEffect, useState } from 'react';
 
 import { Section } from '@components/layout';
+import { useHomeTopic } from '@lib/hooks';
 
 import { Item } from './item';
 
 import styles from './medium.styles';
-import { useHomeTopic } from '../use_home_topic';
 
 interface Posts {
   posts: MediumPost[];

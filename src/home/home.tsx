@@ -1,3 +1,5 @@
+import { HomeContextProvider } from '@state/home';
+
 import { Footer, Header } from '@components/layout';
 
 // import { useHistoryReplaceEvent } from '@lib/hooks/use_history_replace';
@@ -6,7 +8,6 @@ import { Career } from './career';
 import { Hero } from './hero';
 import { Medium } from './medium';
 import { Portfolio } from './portfolio';
-import { HomeContextProvider } from './state';
 
 const Component = () => {
   // useHistoryReplaceEvent();
