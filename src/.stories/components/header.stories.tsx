@@ -1,6 +1,6 @@
+import { Home } from '@pages/home';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Home } from '@home';
 import { type SectionId, sectionTitles } from '@lib/site';
 
 const Section = ({ id, color }: { id: SectionId; color: string }) => {

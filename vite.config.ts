@@ -46,8 +46,8 @@ export default defineConfig({
     alias: [
       { find: '@content', replacement: resolve(__dirname, './src/content') },
       { find: '@components', replacement: resolve(__dirname, './src/components') },
-      { find: '@home', replacement: resolve(__dirname, './src/home') },
       { find: '@lib', replacement: resolve(__dirname, './src/lib') },
+      { find: '@pages', replacement: `${resolve(__dirname, './src/pages')}` },
       { find: '@state', replacement: resolve(__dirname, './src/state') },
       { find: /@theme\//, replacement: `${resolve(__dirname, './src/theme')}/` },
       { find: /@theme$/, replacement: resolve(__dirname, './src/theme/index') },

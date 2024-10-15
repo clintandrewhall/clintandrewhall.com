@@ -29,8 +29,8 @@
       "@components/*": [
         "./src/components/*"
       ],
-      "@home": [
-        "./src/home/index"
+      "@pages/*": [
+        "./src/pages/*"
       ],
       "@lib/*": [
         "./src/lib/*.ts"
