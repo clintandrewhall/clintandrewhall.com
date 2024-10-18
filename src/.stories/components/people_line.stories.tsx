@@ -1,14 +1,29 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
 import { PeopleLine as Component, Person, type PersonProps } from '@components/people_line';
+import { theme } from '@theme';
+
+const { vars } = theme;
 
 const meta: Meta<typeof Component> = {
   title: 'Components/People Line',
   component: Component,
   render: ({ people }) => {
     return (
-      <div style={{ background: '#000', padding: '15px' }}>
-        <Component people={people} />
+      <div
+        style={{
+          background: '#000',
+          padding: '30px',
+        }}
+      >
+        <div
+          style={{
+            maxWidth: `var(${vars.grid.maxWidth})`,
+            margin: '0 auto',
+          }}
+        >
+          <Component people={people} />
+        </div>
       </div>
     );
   },

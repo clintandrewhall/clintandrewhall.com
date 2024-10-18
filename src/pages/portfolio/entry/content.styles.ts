@@ -18,13 +18,14 @@ const root = toProps(css`
     ${decl.font.sansSerif.bold}
     ${decl.font.size.step3}
     ${decl.color.font.dark}
-    margin-top: var(${vars.spacing.step9});
     margin-bottom: var(${vars.spacing.step3});
+    margin-top: var(${vars.spacing.step9});
   }
 
   p {
     line-height: var(${vars.font.size.step4});
-    margin-bottom: var(${vars.spacing.step6});
+    margin-bottom: var(${vars.spacing.step3});
+    margin-top: var(${vars.spacing.step3});
   }
 
   ul,
@@ -34,8 +35,8 @@ const root = toProps(css`
 
   li {
     display: list-item;
-    list-style-position: inside;
     line-height: var(${vars.font.size.step4});
+    list-style-position: inside;
   }
 
   a {

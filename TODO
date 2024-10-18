@@ -2,6 +2,7 @@
 
 - Move images to async
 - Stateful navigation bar on sub pages
+- Masonry image grids in portfolio entries
 
 - [@react/spring](https://www.react-spring.dev/)
 - [framer-motion](https://www.framer.com/motion/introduction/)

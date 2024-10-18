@@ -2,8 +2,8 @@ import { usePortfolioImage } from '@lib/hooks/use_portfolio';
 
 import styles from './image.styles';
 
-export const MarkdownImage = ({ id, alt, width: widthProp }: MarkdownImageProps) => {
-  const image = usePortfolioImage(id, widthProp);
+export const MarkdownImage = ({ id, alt, width }: MarkdownImageProps) => {
+  const image = usePortfolioImage(id, width);
 
   if (!image) {
     return null;
@@ -11,5 +11,5 @@ export const MarkdownImage = ({ id, alt, width: widthProp }: MarkdownImageProps)
 
   const { /*height, width,*/ src } = image;
 
-  return <img {...{ src, alt, ...styles.root }} />;
+  return <img {...{ src, alt, ...styles.root(width) }} />;
 };

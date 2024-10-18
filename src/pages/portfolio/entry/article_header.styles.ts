@@ -1,10 +1,9 @@
 import { css, cx, toProps } from '@lib/css';
-import { type OutputMetadata } from '@lib/hooks/use_portfolio';
 import { theme } from '@theme';
 
 const { decl, vars } = theme;
 
-const root = (image: OutputMetadata | null) => {
+const root = (image: ImageOutputMetadata | null) => {
   if (image) {
     return toProps(cx(rootWithImage, rootBase), { backgroundImage: `url(${image.src})` });
   }
@@ -12,23 +11,24 @@ const root = (image: OutputMetadata | null) => {
 };
 
 const rootWithImage = css`
-  background-size: cover;
   background-position: center;
+  background-size: cover;
   height: var(${vars.spacing.articleHeaderHeight});
 `;
 
 const rootBase = css`
   ${decl.color.font.light}
   ${decl.grid.area.full}
-  text-align: center;
-  position: relative;
+  margin-bottom: var(${vars.spacing.step6});
+  text-shadow: var(${vars.color.font.dropShadow}) 1px 1px 4px;
   padding-top: calc(
     (
       ((var(${vars.spacing.articleHeaderHeight}) - var(${vars.font.size.step7})) / 2) -
         (var(${vars.font.size.step7}) / 2)
     )
   );
-  margin-bottom: var(${vars.spacing.step6});
+  position: relative;
+  text-align: center;
 
   & > * {
     position: relative;
@@ -36,6 +36,19 @@ const rootBase = css`
   }
 
   &:before {
+    background-color: #0d0a0b;
+    content: '';
+    display: block;
+    height: 100%;
+    left: 0;
+    opacity: 0.4;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    z-index: 10;
+  }
+
+  &:after {
     display: block;
     content: '';
     position: absolute;
@@ -43,9 +56,8 @@ const rootBase = css`
     left: 0;
     width: 100%;
     height: 100%;
-    opacity: 0.75;
-    background-color: #0d0a0b;
-    z-index: 10;
+    opacity: 0.5;
+    background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 1) 100%);
   }
 `;
 
@@ -53,8 +65,8 @@ const title = toProps(css`
   ${decl.grid.area.full}
   ${decl.font.size.step7}
   ${decl.font.serif.bold}
-  line-height: var(${vars.font.size.step7});
   font-weight: normal;
+  line-height: var(${vars.font.size.step7});
 `);
 
 const subtitle = toProps(css`
@@ -85,9 +97,9 @@ const tagList = toProps(css`
 
 const tag = toProps(css`
   ${decl.font.size.step0};
-  text-transform: uppercase;
 
   letter-spacing: calc(var(${vars.font.size.step1}) * 0.1);
+  text-transform: uppercase;
 `);
 
 export default { root, date, tagList, tag, title, subtitle };

@@ -71,7 +71,6 @@ const parser: Parser<Feed, Item> = new Parser({
     }
     `,
     () => {
-      // eslint-disable-next-line no-console
       console.log('wrote medium');
     },
   );

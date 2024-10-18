@@ -1,48 +1,51 @@
 import { type SectionId } from '@lib/site';
 
-// Portfolio Images
-export interface OutputMetadata {
-  src: string;
-  width: number;
-  height: number;
-  format: string;
-}
-
-type Width = 'small' | 'large';
-
 // Vite needs this to be a literal, but I need it to be a variable
 // to derive the correct key... so it's COPY PASTA TIME
 const IMG_PATH_PREFIX = '/src/content/portfolio/images/';
 
-const jpgModules = import.meta.glob<{ default: OutputMetadata[] }>(
+const jpgModules = import.meta.glob<{ default: ImageOutputMetadata[] }>(
   '@content/portfolio/images/*.jpg',
   {
-    query: { w: '480;1280', as: 'metadata', format: 'webp' },
+    query: { w: '480;880;1280', as: 'metadata', format: 'webp' },
     eager: true,
   },
 );
 
-const pngModules = import.meta.glob<{ default: OutputMetadata[] }>(
+const pngModules = import.meta.glob<{ default: ImageOutputMetadata[] }>(
   '@content/portfolio/images/*.png',
   {
-    query: { w: '480;1280', as: 'metadata', format: 'webp' },
+    query: { w: '480;880;1280', as: 'metadata', format: 'webp' },
     eager: true,
   },
 );
 
 const imageModules = { ...jpgModules, ...pngModules };
 
+const categorize = (item: ImageOutputMetadata) => {
+  if (item.width > 880) {
+    return 'large';
+  }
+  if (item.width > 480) {
+    return 'medium';
+  }
+  return 'small';
+};
+
 const images = Object.fromEntries(
   Object.entries(imageModules).map(([k, v]) => [
     k.replace(IMG_PATH_PREFIX, '').replace('.jpg', '').replace('.png', ''),
     // TODO: Clean up this horrible type cast
-    Object.fromEntries(
-      v.default.map((item) => [item.width > 800 ? 'large' : 'small', item]),
-    ) as Record<Width, OutputMetadata>,
+    Object.fromEntries(v.default.map((item) => [categorize(item), item])) as Record<
+      ImageWidth,
+      ImageOutputMetadata
+    >,
   ]),
 );
 
-export const usePortfolioImage = (id: string | undefined, width: Width = 'large') => {
+console.log('images', images);
+
+export const usePortfolioImage = (id: string | undefined, width: ImageWidth = 'large') => {
   if (id && images[id]) {
     const image = images[id][width];
 

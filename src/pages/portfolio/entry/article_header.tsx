@@ -11,13 +11,15 @@ export type PortfolioEntryArticleHeaderProps = PortfolioEntry['attributes'];
 export const PortfolioEntryArticleHeader = ({
   caption: subtitle,
   cover,
-  id,
   name: title,
   tags: tagsProp,
   timestamp,
-  website,
 }: PortfolioEntryArticleHeaderProps) => {
-  const image = usePortfolioImage(cover);
+  const largeImage = usePortfolioImage(cover);
+  const mediumImage = usePortfolioImage(cover, 'medium');
+  const smallImage = usePortfolioImage(cover, 'small');
+  const image = largeImage ?? mediumImage ?? smallImage;
+
   const tags = tagsProp.map((tag) => ({ label: tag.name, href: `/portfolio/tag/${tag.slug}` }));
 
   const tagList = (tags || []).map((tag, index) => (

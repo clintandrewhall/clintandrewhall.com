@@ -1,14 +1,34 @@
-import { css, toProps } from '@lib/css';
+import { css, cx, toProps } from '@lib/css';
 import { theme } from '@theme';
 
 const { decl } = theme;
 
-const root = toProps(css`
+const rootBase = css`
   ${decl.color.border.outline}
-  border-width: 1px;
   border-style: solid;
-  width: 100%;
+  border-width: 1px;
+`;
+
+const rootLarge = css`
   max-width: 100%;
-`);
+  width: 100%;
+`;
+
+const rootSmall = css`
+  width: 47%;
+  margin-top: 1.5%;
+  margin-bottom: 1.5%
+
+  &:nth-child(odd) {
+    margin-right: 3%;
+  }
+
+  &:nth-child(even) {
+    margin-left: 3%;
+  }
+`;
+
+const root = (size: 'large' | 'small') =>
+  toProps(cx(rootBase, size === 'large' ? rootLarge : rootSmall));
 
 export default { root };

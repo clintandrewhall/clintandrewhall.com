@@ -12,7 +12,7 @@ const { decl, vars } = theme;
 csl`
   :global() {
     .swiper {
-      border-top: 1px solid var(${vars.color.background.subtle});
+      border-top: 1px solid var(${vars.color.border.subtle});
     }
 
     .swiper .swiper-pagination-bullets.swiper-pagination-horizontal {
