@@ -25,12 +25,12 @@ const root = toProps(css`
     z-index: 0;
   }
 
-  @media (max-width: 975px) {
+  ${decl.media.wide} {
     column-count: 1;
     column-width: revert;
   }
 
-  @media (min-width: 975px) {
+  ${decl.media.wide} {
     &::after {
       background-color: var(${vars.color.background.subtler});
       bottom: 0;

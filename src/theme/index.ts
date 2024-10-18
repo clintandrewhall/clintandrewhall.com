@@ -7,15 +7,19 @@ import { grid } from '@theme/grid';
 import { icons } from '@theme/icons';
 import { spacing } from '@theme/spacing';
 
+import { media } from './media';
+
 export const theme = {
   vars: {
+    media: media.vars,
     font: font.vars,
     spacing: spacing.vars,
     color: color.vars,
     grid: grid.vars,
   },
-  decl: { font: font.decl, color: color.decl, grid: grid.decl },
+  decl: { font: font.decl, color: color.decl, grid: grid.decl, media: media.decl },
   definitions: {
+    ...media.definitions,
     ...font.definitions,
     ...spacing.definitions,
     ...color.definitions,

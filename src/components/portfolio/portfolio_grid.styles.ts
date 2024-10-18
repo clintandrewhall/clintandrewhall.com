@@ -19,11 +19,11 @@ const root = toProps(css`
     justify-content: center;
   }
 
-  @media (max-width: 975px) and (min-width: 600px) {
+  ${decl.media.mediumToWide} {
     grid-template-columns: repeat(2, auto);
   }
 
-  @media (max-width: 600px) {
+  ${decl.media.medium} {
     grid-template-columns: repeat(1, auto);
   }
 `);

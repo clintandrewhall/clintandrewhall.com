@@ -80,11 +80,11 @@ const root = (image: string) =>
         }
       }
 
-      @media (max-width: 975px) and (min-width: 600px) {
+      ${decl.media.mediumToWide} {
         ${decl.font.size.step1}
       }
 
-      @media (max-width: 600px) {
+      ${decl.media.medium} {
         ${decl.font.size.step1}
       }
     `,
@@ -108,12 +108,12 @@ const title = toProps(css`
   margin-bottom: var(${vars.spacing.step0});
   text-transform: uppercase;
 
-  @media (max-width: 975px) and (min-width: 600px) {
+  ${decl.media.mediumToWide} {
     ${decl.font.size.step0}
     letter-spacing: calc(var(${vars.font.size.step2}) * 0.1);
   }
 
-  @media (max-width: 600px) {
+  ${decl.media.medium} {
     ${decl.font.size.step1}
     letter-spacing: calc(var(${vars.font.size.step3}) * 0.1);
   }
@@ -144,14 +144,14 @@ const caption = toProps(css`
     }
   }
 
-  @media (max-width: 975px) and (min-width: 600px) {
+  ${decl.media.mediumToWide} {
     left: var(${vars.spacing.step6});
     line-height: var(${vars.spacing.step6});
     right: var(${vars.spacing.step6});
     top: var(${vars.spacing.step6});
   }
 
-  @media (max-width: 600px) {
+  ${decl.media.medium} {
     left: var(${vars.spacing.step9});
     line-height: var(${vars.spacing.step9});
     right: var(${vars.spacing.step9});
@@ -173,13 +173,13 @@ const tags = toProps(css`
     }
   }
 
-  @media (max-width: 975px) and (min-width: 600px) {
+  ${decl.media.mediumToWide} {
     ${decl.font.size.step0}
 
     letter-spacing: calc(var(${vars.font.size.step2}) * 0.08);
   }
 
-  @media (max-width: 600px) {
+  ${decl.media.medium} {
     ${decl.font.size.step1}
 
     letter-spacing: calc(var(${vars.font.size.step3}) * 0.08);
@@ -200,13 +200,13 @@ const details = toProps(css`
   text-align: center;
   text-transform: uppercase;
 
-  @media (max-width: 975px) and (min-width: 600px) {
+  ${decl.media.mediumToWide} {
     ${decl.font.size.step0}
 
     letter-spacing: calc(var(${vars.font.size.step2}) * 0.08);
   }
 
-  @media (max-width: 600px) {
+  ${decl.media.medium} {
     ${decl.font.size.step1}
 
     letter-spacing: calc(var(${vars.font.size.step4}) * 0.08);
@@ -222,11 +222,11 @@ const footer = toProps(css`
 
 const linkIcon = toProps(
   icons.link(css`
-    @media (max-width: 975px) and (min-width: 600px) {
+    ${decl.media.mediumToWide} {
       ${decl.font.size.step1}
     }
 
-    @media (max-width: 600px) {
+    ${decl.media.medium} {
       ${decl.font.size.step2}
     }
   `),
@@ -256,7 +256,7 @@ const projectLink = toProps(css`
     ${decl.color.font.dark}
   }
 
-  @media (max-width: 975px) and (min-width: 600px) {
+  ${decl.media.mediumToWide} {
     ${decl.font.size.step0}
 
     height: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0}));
@@ -267,7 +267,7 @@ const projectLink = toProps(css`
     width: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0}));
   }
 
-  @media (max-width: 600px) {
+  ${decl.media.medium} {
     ${decl.font.size.step0}
 
     height: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step2}));

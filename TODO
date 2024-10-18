@@ -1,4 +1,10 @@
+# TODO
+
+- Move images to async
+- Stateful navigation bar on sub pages
+
 - [@react/spring](https://www.react-spring.dev/)
 - [framer-motion](https://www.framer.com/motion/introduction/)
 - https://github.com/noamr/use-view-transitions
 - Consider TOC for portfolio posts.
+- Consider parallax for portfolio post cover images.

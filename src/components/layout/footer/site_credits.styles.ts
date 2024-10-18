@@ -41,7 +41,7 @@ const root = toProps(css`
     }
   }
 
-  @media (max-width: 600px) {
+  ${decl.media.medium} {
     &:before {
       content: '';
       order: 1;

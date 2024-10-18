@@ -75,7 +75,7 @@ const headerGroup = toProps(css`
   display: flex;
   flex-direction: column-reverse;
 
-  @media (max-width: 975px), (orientation: portrait) {
+  ${decl.media.wideOrPortrait} {
     ${decl.grid.area.full}
   }
 `);
@@ -130,7 +130,7 @@ const links = toProps(css`
   text-align: center;
   text-transform: uppercase;
 
-  @media (max-width: 975px), (orientation: portrait) {
+  ${decl.media.wideOrPortrait} {
     ${decl.grid.area.full}
     display: flex;
     flex-direction: row;
@@ -166,7 +166,7 @@ const link = toProps(css`
     }
   }
 
-  @media (max-width: 975px), (orientation: portrait) {
+  ${decl.media.wideOrPortrait} {
     flex-grow: 0;
     margin-bottom: var(${vars.spacing.step1});
   }
@@ -188,12 +188,12 @@ const profiles = toProps(css`
   & i {
     ${decl.font.size.step3}
 
-    @media (max-width: 500px) and (orientation: portrait) {
+    @media (max-width: 500px), (orientation: portrait) {
       ${decl.font.size.step4}
     }
   }
 
-  @media (max-width: 975px), (orientation: portrait) {
+  ${decl.media.wideOrPortrait} {
     justify-content: left;
     padding-left: var(--greeting-base);
   }

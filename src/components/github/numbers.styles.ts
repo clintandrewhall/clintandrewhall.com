@@ -1,5 +1,6 @@
 import { css, toProps } from '@lib/css';
 import { theme } from '@theme';
+import { BREAKPOINT_MEDIUM, BREAKPOINT_NARROW, BREAKPOINT_WIDE } from '@theme/media';
 
 const { vars, decl } = theme;
 
@@ -16,7 +17,8 @@ const list = toProps(css`
 
   grid-template-columns: repeat(4, 1fr);
 
-  @media (max-width: 975px) and (min-width: 600px), (max-width: 400px) {
+  @media (max-width: ${BREAKPOINT_WIDE}) and (min-width: ${BREAKPOINT_MEDIUM}),
+    (max-width: ${BREAKPOINT_NARROW}) {
     grid-template-columns: repeat(2, 1fr);
   }
 `);

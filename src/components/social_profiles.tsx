@@ -19,7 +19,7 @@ const SocialProfileItem = ({
   showLabel = true,
   showDivider = true,
 }: SocialProfileItemProps) => (
-  <li key={profile.network} {...styles.item({ showDivider })}>
+  <li key={profile.network} {...styles.item({ showDivider, showLabel })}>
     <a href={profile.url} rel="noopener noreferrer" target="_blank" {...styles.link}>
       <i {...styles.logos[profile.network.toLowerCase() as IconSocial]} aria-hidden="true" />
       {showLabel ? <span>{profile.network}</span> : null}

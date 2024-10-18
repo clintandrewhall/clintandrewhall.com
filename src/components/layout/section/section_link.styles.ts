@@ -7,7 +7,7 @@ const root = toProps(css`
   ${decl.grid.area.byThree}
   margin-top: var(${vars.spacing.step4});
 
-  @media (max-width: 400px) {
+  ${decl.media.narrow} {
     ${decl.grid.area.byOne}
   }
 `);

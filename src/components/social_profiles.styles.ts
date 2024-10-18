@@ -43,7 +43,7 @@ const item = ({ showDivider = true, showLabel = true }) => {
   `;
 
   const showLabelClass = css`
-    @media (max-width: 600px) {
+    ${decl.media.medium} {
       &:before {
         content: '';
         order: 1;
@@ -64,28 +64,24 @@ const item = ({ showDivider = true, showLabel = true }) => {
     }
   `;
 
-  return toProps(
-    cx(
-      cx(
-        base,
-        showDivider
-          ? css`
-              &:before {
-                content: '|';
-              }
-            `
-          : css`
-              &:first-child {
-                padding-left: 0;
-              }
-              &:last-child {
-                padding-right: 0;
-              }
-            `,
-      ),
-      showLabel ? showLabelClass : '',
-    ),
-  );
+  const showDividerClass = showDivider
+    ? css`
+        &:before {
+          content: '|';
+        }
+      `
+    : css`
+        &:first-child {
+          padding-left: 0;
+        }
+        &:last-child {
+          padding-right: 0;
+        }
+      `;
+
+  const contentClass = cx(showDividerClass, base);
+
+  return toProps(cx(contentClass, showLabel ? showLabelClass : ''));
 };
 
 const link = toProps(css`

@@ -3,8 +3,6 @@ import { theme } from '@theme';
 
 const { decl, vars } = theme;
 
-const BREAKPOINT = 600;
-
 const header = toProps(css`
   ${decl.grid.area.byOne}
 `);
@@ -41,7 +39,7 @@ const content = toProps(css`
 const work = toProps(css`
   ${decl.grid.area.twoColOne}
 
-  @media (max-width: ${BREAKPOINT}px) {
+  ${decl.media.medium} {
     ${decl.grid.area.full}
   }
 `);
@@ -49,7 +47,7 @@ const work = toProps(css`
 const code = toProps(css`
   ${decl.grid.area.twoColTwo}
 
-  @media (max-width: ${BREAKPOINT}px) {
+  ${decl.media.medium} {
     ${decl.grid.area.full}
   }
 `);

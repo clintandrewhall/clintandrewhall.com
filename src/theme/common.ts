@@ -15,3 +15,4 @@ export const VAR_PREFIX_FONT_WEIGHT = '--font-weight';
 export const VAR_PREFIX_LOGO = '--logo';
 export const VAR_PREFIX_SPACING = '--spacing';
 export const VAR_PREFIX_GRID = '--grid';
+export const VAR_PREFIX_MEDIA = '--media';
