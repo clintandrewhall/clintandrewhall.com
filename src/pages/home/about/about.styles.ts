@@ -6,13 +6,13 @@ const { decl, vars } = theme;
 const BREAKPOINT = 600;
 
 const header = toProps(css`
-  grid-area: auto / 2 / auto / span 10;
+  ${decl.grid.area.byOne}
 `);
 
 const summary = toProps(css`
   ${decl.font.serif.regular}
   ${decl.font.size.step1}
-  grid-area: auto / 2 / auto / span 10;
+  ${decl.grid.area.byOne}
   line-height: var(${vars.spacing.step8});
   text-align: center;
 
@@ -39,16 +39,18 @@ const content = toProps(css`
 `);
 
 const work = toProps(css`
-  grid-area: auto / 1 / auto / span 6;
+  ${decl.grid.area.twoColOne}
+
   @media (max-width: ${BREAKPOINT}px) {
-    grid-area: auto / 1 / auto / span 12;
+    ${decl.grid.area.full}
   }
 `);
 
 const code = toProps(css`
-  grid-area: auto / 7 / auto / span 6;
+  ${decl.grid.area.twoColTwo}
+
   @media (max-width: ${BREAKPOINT}px) {
-    grid-area: auto / 1 / auto / span 12;
+    ${decl.grid.area.full}
   }
 `);
 

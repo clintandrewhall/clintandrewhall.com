@@ -4,7 +4,7 @@ import { SocialProfiles } from '@components/social_profiles';
 import { useHomeTopic } from '@lib/hooks';
 
 // @ts-expect-error - required for loading the logo
-import hero from '../content/images/hero.jpg?w=2500&format=webp';
+import hero from '../../content/images/hero.jpg?w=2500&format=webp';
 
 import styles from './hero.styles';
 

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 
-import { Section } from '@components/layout';
+import { Layout } from '@components/layout';
 import { useHomeTopic } from '@lib/hooks';
 
 import { Item } from './item';
@@ -39,16 +39,15 @@ const Component = () => {
     .map((entry) => <Medium.Item post={entry} key={`${entry.timestamp}`} />);
 
   return (
-    <Section {...{ ref, ...attributes, ...styles.root }}>
-      <Section.Header {...attributes} />
-      <Section.Divider />
+    <Layout.Section {...{ ref, ...attributes, ...styles.root }}>
+      <Layout.Section.Header {...{ ...attributes, ...styles.header }} />
       <div {...styles.content}>{items}</div>
-      <Section.Link
+      <Layout.Section.Link
         href="https://clintandrewhall.medium.com/"
         title="My Medium Profile"
         {...styles.link}
       />
-    </Section>
+    </Layout.Section>
   );
 };
 

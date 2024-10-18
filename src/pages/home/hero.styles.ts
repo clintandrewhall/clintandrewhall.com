@@ -67,16 +67,16 @@ const header = toProps(css`
 `);
 
 const headerGroup = toProps(css`
+  ${decl.grid.area.fourColSpanThree}
   ${decl.color.font.light}
   ${decl.font.size.step5}
   ${decl.font.weight.bold}
 
   display: flex;
   flex-direction: column-reverse;
-  grid-area: auto / 1 / auto / span 9;
 
   @media (max-width: 975px), (orientation: portrait) {
-    grid-area: auto / 1 / auto / span 12;
+    ${decl.grid.area.full}
   }
 `);
 
@@ -89,7 +89,7 @@ const greeting = toProps(css`
   padding-left: var(--greeting-padding);
   padding-right: var(--greeting-padding);
   position: relative;
-  text-shadow: 1px 1px 1px var(${vars.color.font.shaded});
+  text-shadow: 1px 1px 1px var(${vars.color.font.dropShadow});
   text-transform: uppercase;
 
   &:before {
@@ -112,7 +112,7 @@ const intro = toProps(css`
   line-height: calc(var(${vars.font.size.step5}) + var(${vars.font.size.step1}));
   margin-top: var(${vars.spacing.step4});
   padding-left: var(--greeting-base);
-  text-shadow: 2px 2px 2px var(${vars.color.font.shaded});
+  text-shadow: 2px 2px 2px var(${vars.color.font.dropShadow});
 
   @media (max-width: 400px), (max-height: 450px) {
     ${decl.font.size.step3}
@@ -124,18 +124,17 @@ const intro = toProps(css`
 const links = toProps(css`
   ${decl.font.size.stepN1}
   ${decl.font.sansSerif.medium}
-
-  grid-area: auto / 10 / auto / span 3;
+  ${decl.grid.area.fourColFour}
   letter-spacing: calc(var(${vars.font.size.step1}) * 0.15);
   list-style: none;
   text-align: center;
   text-transform: uppercase;
 
   @media (max-width: 975px), (orientation: portrait) {
+    ${decl.grid.area.full}
     display: flex;
     flex-direction: row;
     gap: var(${vars.spacing.step9});
-    grid-area: auto / 1 / auto / span 12;
     padding-left: var(--greeting-base);
   }
 
@@ -183,7 +182,7 @@ const link = toProps(css`
 `);
 
 const profiles = toProps(css`
-  grid-area: auto / 1 / auto / span 12;
+  ${decl.grid.area.full}
   justify-content: right;
 
   & i {

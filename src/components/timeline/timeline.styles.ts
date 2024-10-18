@@ -3,13 +3,13 @@ import { theme } from '@theme';
 
 import { BULLET_PADDING, BULLET_SIZE_EQ, TOP_PADDING } from './timeline_item.styles';
 
-const { vars } = theme;
+const { decl, vars } = theme;
 
 const root = toProps(css`
-
+  ${decl.grid.area.full}
   column-count: 2;
   column-gap: var(${vars.grid.gutter});
-  column-width: calc(50% - var(${vars.grid.gutter}) / 2);  grid-area: auto / 1 / auto / span 12;
+  column-width: calc(50% - var(${vars.grid.gutter}) / 2);
   margin-top: calc(var(${vars.spacing.step7}) * -1);
   position: relative;
 

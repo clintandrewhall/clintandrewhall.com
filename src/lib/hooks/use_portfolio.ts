@@ -1,14 +1,14 @@
 import { type SectionId } from '@lib/site';
 
 // Portfolio Images
-interface OutputMetadata {
+export interface OutputMetadata {
   src: string;
   width: number;
   height: number;
   format: string;
 }
 
-type Width = 480 | 1280;
+type Width = 'small' | 'large';
 
 // Vite needs this to be a literal, but I need it to be a variable
 // to derive the correct key... so it's COPY PASTA TIME
@@ -36,14 +36,13 @@ const images = Object.fromEntries(
   Object.entries(imageModules).map(([k, v]) => [
     k.replace(IMG_PATH_PREFIX, '').replace('.jpg', '').replace('.png', ''),
     // TODO: Clean up this horrible type cast
-    Object.fromEntries(v.default.map((item) => [item.width as Width, item])) as Record<
-      Width,
-      OutputMetadata
-    >,
+    Object.fromEntries(
+      v.default.map((item) => [item.width > 800 ? 'large' : 'small', item]),
+    ) as Record<Width, OutputMetadata>,
   ]),
 );
 
-export const usePortfolioImage = (id: string | undefined, width: Width) => {
+export const usePortfolioImage = (id: string | undefined, width: Width = 'large') => {
   if (id && images[id]) {
     const image = images[id][width];
 

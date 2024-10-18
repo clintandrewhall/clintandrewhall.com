@@ -1,5 +1,5 @@
 /*
-  https://utopia.fyi/type/calculator?c=320,10,1.2,1240,16,1.25,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=m,l,2xl,12
+  https://utopia.fyi/type/calculator/?c=320,10,1.2,1240,16,1.25,7,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=m,l,2xl,12
 */
 
 import { calculateTypeScale } from 'utopia-core';
@@ -15,7 +15,18 @@ import {
   WIDTH_MIN,
 } from '@theme/common';
 
-const SIZES = ['step5', 'step4', 'step3', 'step2', 'step1', 'step0', 'stepN1', 'stepN2'] as const;
+const SIZES = [
+  'step7',
+  'step6',
+  'step5',
+  'step4',
+  'step3',
+  'step2',
+  'step1',
+  'step0',
+  'stepN1',
+  'stepN2',
+] as const;
 type Size = (typeof SIZES)[number];
 
 const scale = calculateTypeScale({
@@ -26,7 +37,7 @@ const scale = calculateTypeScale({
   minTypeScale: TYPE_SCALE_MIN,
   minWidth: WIDTH_MIN,
   negativeSteps: 2,
-  positiveSteps: 5,
+  positiveSteps: 7,
 });
 
 // TODO: hacky, consider refactoring

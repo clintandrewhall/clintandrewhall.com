@@ -1,6 +1,6 @@
 import { HomeContextProvider } from '@state/home';
 
-import { Footer, Header } from '@components/layout';
+import { Layout } from '@components/layout';
 
 // import { useHistoryReplaceEvent } from '@lib/hooks/use_history_replace';
 import { About } from './about';
@@ -26,11 +26,11 @@ const Component = () => {
 };
 
 export const Home = Object.assign(Component, {
-  Header,
+  Header: Layout.Header,
   Hero,
   About,
   Career,
   Portfolio,
   Medium,
-  Footer,
+  Footer: Layout.Footer,
 });

@@ -6,7 +6,7 @@ type FontColor =
   | 'light'
   | 'lightAccent'
   | 'medium'
-  | 'shaded'
+  | 'dropShadow'
   | 'dim'
   | 'text'
   | 'accent'
@@ -14,12 +14,12 @@ type FontColor =
 
 const themeValues: Record<FontColor, string> = {
   dark: '#0D0A0B',
-  shaded: 'rgba(0, 0, 0, .5)',
-  medium: 'rgba(0, 0, 0, .4)',
+  dropShadow: 'rgba(0, 0, 0, .5)',
+  medium: '#666666',
   text: '#5f5f5f',
-  dim: 'rgba(255, 255, 255, 0.5)',
-  light: '#FFF',
-  lightAccent: '#CCC',
+  dim: '#999999',
+  light: '#FFFFFF',
+  lightAccent: '#CCCCCC',
   accent: '#862121',
   link: '#862121',
 };

@@ -1,4 +1,4 @@
-import { Section } from '@components/layout';
+import { Layout } from '@components/layout';
 import { PeopleLine, Person } from '@components/people_line';
 import { useResume } from '@lib/hooks';
 
@@ -42,15 +42,18 @@ export const References = () => {
   }
 
   return (
-    <Section {...attributes} {...styles.root}>
-      <Section.Header {...attributes} {...styles.header} />
-      <Section.Divider />
-      <div>
+    <Layout.Section {...attributes} {...styles.root}>
+      <Layout.Section.Header {...attributes} {...styles.header} />
+      <div {...styles.peopleLine}>
         <PeopleLine {...{ people }} />
       </div>
       {linkedin ? (
-        <Section.Link href={linkedin.url} title="View my LinkedIn Profile" {...styles.link} />
+        <Layout.Section.Link
+          href={linkedin.url}
+          title="View my LinkedIn Profile"
+          {...styles.link}
+        />
       ) : null}
-    </Section>
+    </Layout.Section>
   );
 };

@@ -4,8 +4,8 @@ import { VAR_PREFIX_COLOR as varPrefix } from '@theme/common';
 type BorderColor = 'separator' | 'outline' | 'grid' | 'light';
 
 const themeValues: Record<BorderColor, string> = {
-  separator: 'rgba(0,0,0,.1)',
-  outline: 'rgba(0,0,0,.25)',
+  separator: '#E5E5E5',
+  outline: '#7F7F7F',
   grid: '#333',
   light: '#FFF',
 };

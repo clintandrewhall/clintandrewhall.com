@@ -1,7 +1,7 @@
 /**
  * Reference: https://utopia.fyi/space/calculator
  *
- * https://utopia.fyi/space/calculator/?c=320,10,1.2,1240,16,1.25,5,2,&s=0.75|0.5|0.25,1.25|1.5|1.75|2|2.25|2.5|4|5.75|9.75|18.75|25,s-m&g=m,l,2xl,12
+ * https://utopia.fyi/space/calculator/?c=320,10,1.2,1240,16,1.25,5,2,&s=0.75|0.5|0.25,1.25|1.5|1.75|2|2.25|2.5|4|5.75|9.75|18.75|25|40,s-m&g=m,l,2xl,12
  *
  */
 
@@ -32,6 +32,7 @@ export const UTOPIA_SIZES = [
   'sectionTop',
   'portfolioItemHeight',
   'portfolioItemWidth',
+  'articleHeaderHeight',
 ] as const;
 
 export const SIZES = [...UTOPIA_SIZES, 'sectionDivider'] as const;
@@ -61,7 +62,7 @@ export const scale = calculateSpaceScale({
   maxWidth: WIDTH_MAX,
   maxSize: FONT_SIZE_MAX,
   negativeSteps: [0.25, 0.5, 0.75],
-  positiveSteps: [1.25, 1.5, 1.75, 2, 2.25, 2.5, 4, 5.75, 9.75, 18.75, 25],
+  positiveSteps: [1.25, 1.5, 1.75, 2, 2.25, 2.5, 4, 5.75, 9.75, 18.75, 25, 40],
 });
 
 const { sizes /*, oneUpPairs: dramaticSizes */ } = scale;

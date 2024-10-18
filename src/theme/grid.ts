@@ -40,18 +40,40 @@ const root = `
   grid-template-columns: repeat(var(${vars.columns}), 1fr);
 `;
 
-const children = `
-  & > * {
-    grid-area: auto / auto / auto / span var(${vars.columns});
-  }
-`;
+const area = {
+  full: `
+    grid-area: auto / 1 / auto / calc(var(${vars.columns}) + 1);
+  `,
+  byOne: `
+    grid-area: auto / 2 / auto / calc(var(${vars.columns}));
+  `,
+  byTwo: `
+    grid-area: auto / 3 / auto / calc(var(${vars.columns}) - 1);
+  `,
+  byThree: `
+    grid-area: auto / 4 / auto / calc(var(${vars.columns}) - 2);
+  `,
+  byFour: `
+    grid-area: auto / 5 / auto / calc(var(${vars.columns}) - 3);
+  `,
+
+  twoColOne: `grid-area: auto / 1 / auto / span calc(var(${vars.columns}) / 2);`,
+  twoColTwo: `grid-area: auto / calc(1 + (var(${vars.columns}) / 2)) / auto / span calc(var(${vars.columns}) / 2);`,
+
+  fourColOne: `grid-area: auto / 1 / auto / span calc(var(${vars.columns}) / 4);`,
+  fourColTwo: `grid-area: auto / calc(1 + ((var(${vars.columns}) / 4))) / auto / span calc(var(${vars.columns}) / 4);`,
+  fourColThree: `grid-area: auto / calc(1 + ((var(${vars.columns}) / 4)) * 2) / auto / span calc(var(${vars.columns}) / 4);`,
+  fourColFour: `grid-area: auto / calc(1 + ((var(${vars.columns}) / 4)) * 3) / auto / span calc(var(${vars.columns}) / 4);`,
+
+  fourColSpanThree: `grid-area: auto / 1 / auto / span calc(((var(${vars.columns}) / 4) * 3));`,
+};
 
 export const grid = {
   vars,
   definitions,
   decl: {
+    area,
     container,
     root,
-    children,
   },
 };

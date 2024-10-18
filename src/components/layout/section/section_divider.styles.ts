@@ -1,11 +1,11 @@
 import { css, toProps } from '@lib/css';
 import { theme } from '@theme';
 
-const { vars } = theme;
+const { vars, decl } = theme;
 
 const divider = toProps(css`
+  ${decl.grid.area.byFour}
   background-color: var(${vars.color.border.separator});
-  grid-area: auto/5/auto/span 4;
   height: 1px;
   margin-bottom: var(${vars.spacing.sectionDivider});
   margin-top: var(${vars.spacing.sectionDivider});

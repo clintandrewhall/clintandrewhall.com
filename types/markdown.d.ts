@@ -18,13 +18,8 @@ declare module '*.md' {
 
   // When "Mode.React" is requested. VFC could take a generic like React.VFC<{ MyComponent: TypeOfMyComponent }>
   import type React from 'react';
-  const ReactComponent: React.VFC;
-
-  // When "Mode.Vue" is requested
-  import type { Component, ComponentOptions } from 'vue';
-  const VueComponent: ComponentOptions;
-  const VueComponentWith: (components: Record<string, Component>) => ComponentOptions;
+  const ReactComponent: React.FC;
 
   // Modify below per your usage
-  export { attributes, html, ReactComponent, toc, VueComponent, VueComponentWith };
+  export { attributes, html, ReactComponent, toc };
 }

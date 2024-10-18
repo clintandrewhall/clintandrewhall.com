@@ -7,11 +7,15 @@ const root = toProps(css`
   --spacing-sectionTop: calc(var(${vars.spacing.step8}) * 2);
   --spacing-sectionDivider: var(${vars.spacing.step1});
   ${decl.color.background.dark}
+
+  & > article {
+  }
 `);
 
 const header = toProps(css`
   ${decl.color.font.light}
-  grid-area: auto / 2 / auto / span 10;
+  ${decl.grid.area.byOne}
+  margin-bottom: var(${vars.spacing.step6});
 `);
 
 const link = toProps(css`
@@ -30,4 +34,8 @@ const link = toProps(css`
   }
 `);
 
-export default { root, header, link };
+const peopleLine = toProps(css`
+  ${decl.grid.area.full}
+`);
+
+export default { root, header, link, peopleLine };

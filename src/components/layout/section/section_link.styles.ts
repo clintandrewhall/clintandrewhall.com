@@ -4,11 +4,11 @@ import { theme } from '@theme';
 const { decl, vars } = theme;
 
 const root = toProps(css`
-  grid-area: auto / 4 / auto / 10;
+  ${decl.grid.area.byThree}
   margin-top: var(${vars.spacing.step4});
 
   @media (max-width: 400px) {
-    grid-area: auto / 2 / auto / 12;
+    ${decl.grid.area.byOne}
   }
 `);
 

@@ -8,11 +8,11 @@ const root = toProps(css`
 `);
 
 const header = toProps(css`
-  grid-area: auto / 2 / auto / span 10;
+  ${decl.grid.area.byOne}
 `);
 
 const content = toProps(css`
-  grid-area: auto / 1 / auto / span 12;
+  ${decl.grid.area.full}
 `);
 
 export default { header, content, root };
