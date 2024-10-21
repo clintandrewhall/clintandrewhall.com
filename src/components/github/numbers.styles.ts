@@ -9,6 +9,14 @@ const root = toProps(css`
   ${decl.color.font.dark}
   padding-left: var(${vars.spacing.step5});
   padding-right: var(${vars.spacing.step5});
+  padding-top: var(${vars.spacing.step2});
+  padding-bottom: var(${vars.spacing.step2});
+  margin-bottom: var(${vars.spacing.step5});
+  border-radius: var(${vars.spacing.step0});
+  border-color: var(${vars.color.border.medium});
+  border-width: 1px;
+  border-style: solid;
+  box-shadow: var(--box-shadow-small);
 `);
 
 const list = toProps(css`

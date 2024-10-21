@@ -3,18 +3,12 @@ import { theme } from '@theme';
 
 const { decl, vars } = theme;
 
-export const TOP_PADDING = `var(${vars.spacing.step9})`;
-export const IMAGE_SIZE = `var(${vars.spacing.step5})`;
-export const BULLET_PADDING = `var(${vars.spacing.step1})`;
-export const BULLET_SIZE_EQ = `(${IMAGE_SIZE} + (${BULLET_PADDING} * 2))`;
-
 // Bullet top position
 // 1. Top padding
 // 2. Timeframe text height
 // 3. Timeframe margin
 // 4. Half of the title height
-const BULLET_TOP_EQ = `(
-  ${TOP_PADDING} + 
+const BULLET_TOP = `calc(
   var(${vars.font.lineHeight.step0}) + 
   var(${vars.spacing.step1}) + 
   (var(${vars.spacing.step2}) / 2)
@@ -22,13 +16,44 @@ const BULLET_TOP_EQ = `(
 
 const LOGO_VAR = '--timeline-item-logo';
 
+// Bullet top position
+// 1. Top padding
+// 2. Timeframe text height
+// 3. Timeframe margin
+// 4. Half of the title height
+
 const root = (logo?: string) =>
   toProps(
     css`
+      --bullet-top: ${BULLET_TOP};
       break-inside: avoid;
-      padding-left: calc(${BULLET_SIZE_EQ} + (var(${vars.grid.gutter}) / 2));
-      padding-top: ${TOP_PADDING};
+      padding-left: calc(var(--bullet-size) + (var(${vars.grid.gutter}) / 2));
+      padding-bottom: var(${vars.spacing.step9});
       position: relative;
+
+      &:before {
+        background-color: var(${vars.color.background.subtler});
+        bottom: 0;
+        content: '';
+        display: block;
+        left: calc(var(--bullet-size) / 2);
+        position: absolute;
+        top: 0;
+        width: 1px;
+        z-index: 0;
+      }
+
+      &:first-child:before {
+        top: var(--bullet-size);
+      }
+
+      &:last-child {
+        padding-bottom: 0;
+      }
+
+      &:last-child:before {
+        bottom: 0;
+      }
     `,
     { [LOGO_VAR]: logo ? `url('${logo}')` : 'inherit' },
   );
@@ -41,32 +66,34 @@ const header = toProps(css`
   display: flex;
   flex-direction: column;
 
-  &::before {
+  &:before {
     background-image: var(--timeline-item-logo);
     background-position: center;
-    background-size: ${IMAGE_SIZE};
+    background-size: var(--image-size);
     border-radius: 50%;
     content: '';
     display: block;
-    height: ${IMAGE_SIZE};
-    left: ${BULLET_PADDING};
+    height: var(--image-size);
+    left: var(--bullet-padding);
     position: absolute;
-    top: calc(${BULLET_TOP_EQ});
-    width: ${IMAGE_SIZE};
+    top: var(--bullet-top);
+    width: var(--image-size);
     z-index: 2;
+    box-shadow: var(--box-shadow-medium);
   }
 
-  &::after {
+  &:after {
     background-color: var(${vars.color.background.subtler});
     border-radius: 50%;
     content: '';
     display: block;
-    height: calc(${BULLET_SIZE_EQ});
+    height: var(--bullet-size);
     left: 0;
     position: absolute;
-    top: calc((${BULLET_TOP_EQ}) - ${BULLET_PADDING});
-    width: calc(${BULLET_SIZE_EQ});
+    top: calc(var(--bullet-top) - var(--bullet-padding));
+    width: var(--bullet-size);
     z-index: 1;
+    box-shadow: var(--box-shadow-medium);
   }
 `);
 

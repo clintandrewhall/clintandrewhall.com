@@ -5,6 +5,13 @@ import { GithubStats } from '@components/github';
 const meta: Meta<typeof GithubStats> = {
   title: 'Components/Github/Stats',
   component: GithubStats,
+  decorators: [
+    (Story) => (
+      <div style={{ margin: '50px' }}>
+        <Story />
+      </div>
+    ),
+  ],
 };
 
 export default meta;

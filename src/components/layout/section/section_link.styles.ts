@@ -13,6 +13,8 @@ const root = toProps(css`
 `);
 
 const link = toProps(css`
+  box-shadow: var(--box-shadow-large);
+  border-radius: var(${vars.spacing.step1});
   a& {
     ${decl.color.font.light}
     ${decl.font.size.stepN1}

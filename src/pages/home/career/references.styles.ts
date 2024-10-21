@@ -18,6 +18,7 @@ const header = toProps(css`
 const link = toProps(css`
   ${decl.color.border.light}
 
+  border-radius: var(${vars.spacing.step1});
   border-style: solid;
   border-width: 2px;
 

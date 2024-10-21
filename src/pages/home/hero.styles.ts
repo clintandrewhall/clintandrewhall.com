@@ -145,6 +145,7 @@ const links = toProps(css`
 
 const link = toProps(css`
   border-color: var(${vars.color.font.light});
+  border-radius: var(${vars.spacing.step0});
   border-style: solid;
   border-width: 2px;
   flex-grow: 1;
