@@ -1,4 +1,4 @@
-import { usePortfolioImage } from '@lib/hooks/use_portfolio';
+import { usePortfolioImage } from '@lib/hooks';
 
 import styles from './image.styles';
 

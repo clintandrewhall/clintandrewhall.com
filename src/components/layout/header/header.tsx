@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { GithubCorner as Corner } from '@components/github';
+import { type SectionId } from '@lib/site';
 
 import { Navigation } from '../navigation';
 
@@ -12,6 +13,8 @@ const SCROLL_THRESHOLD = 80;
 
 export interface HeaderProps {
   isLocal?: boolean;
+  background?: 'clear' | 'opaque';
+  selectedId?: SectionId;
 }
 
 const vh = (percent: number): number => {
@@ -24,7 +27,7 @@ const vh = (percent: number): number => {
   return (Math.max(clientHeight, innerHeight || 0) * percent) / 100;
 };
 
-const Component = ({ isLocal }: HeaderProps) => {
+const Component = ({ isLocal, background = 'clear', selectedId }: HeaderProps) => {
   const [isFloating, setIsFloating] = useState(false);
 
   useEffect(() => {
@@ -44,9 +47,9 @@ const Component = ({ isLocal }: HeaderProps) => {
   }, []);
 
   return (
-    <header {...styles.root(isFloating)}>
+    <header {...styles.root(isFloating, background)}>
       <Header.Logo />
-      <Header.Navigation {...{ isLocal }} />
+      <Header.Navigation {...{ isLocal, selectedId }} />
       <Header.Corner />
     </header>
   );

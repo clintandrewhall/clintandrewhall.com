@@ -12,7 +12,7 @@ import { SectionLink as Link } from './section_link';
 import styles from './section.styles';
 
 export interface SectionProps {
-  children: ReactNode;
+  children?: ReactNode;
   id: string;
   className?: string;
   style?: React.CSSProperties;
@@ -24,8 +24,10 @@ const Component = forwardRef<HTMLDivElement, SectionProps>(
   ({ children, id, className, style }, ref) => {
     const slots = useSlots(children);
 
+    const composedClassName = cx(styles.root(style), className);
+
     return (
-      <Layout element="article" {...{ id, ref, ...cx(styles.root(style), className) }}>
+      <Layout element="article" {...{ id, ref, ...composedClassName }}>
         {slots.header}
         {slots.children}
       </Layout>

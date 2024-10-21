@@ -2,7 +2,6 @@ import { HomeContextProvider } from '@state/home';
 
 import { Layout } from '@components/layout';
 
-// import { useHistoryReplaceEvent } from '@lib/hooks/use_history_replace';
 import { About } from './about';
 import { Career } from './career';
 import { Hero } from './hero';

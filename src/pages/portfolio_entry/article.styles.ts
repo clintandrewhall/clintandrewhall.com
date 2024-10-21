@@ -2,8 +2,7 @@ import { css, toProps } from '@lib/css';
 
 const root = toProps(css`
   --spacing-sectionTop: 0;
+  padding-inline: 0;
 `);
 
-const content = toProps(css``);
-
-export default { root, content };
+export default { root };

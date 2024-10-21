@@ -1,4 +1,4 @@
-import { Layout } from '@components/layout';
+import { Section } from '@components/layout';
 import { attributes } from '@content/about.md';
 import { useHomeTopic } from '@lib/hooks';
 
@@ -12,13 +12,13 @@ const Component = () => {
   const { ref } = useHomeTopic('about');
 
   return (
-    <Layout.Section {...{ ref, ...attributes }}>
-      <Layout.Section.Header {...attributes} {...styles.header} />
+    <Section {...{ ref, ...attributes }}>
+      <Section.Header {...attributes} {...styles.header} />
       <About.Summary />
-      <Layout.Section.Divider />
+      <Section.Divider />
       <About.Work />
       <About.Code />
-    </Layout.Section>
+    </Section>
   );
 };
 

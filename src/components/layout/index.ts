@@ -1,2 +1,2 @@
 export { Layout, type LayoutProps } from './layout';
-export type { SectionHeaderProps, SectionProps } from './section';
+export { Section, type SectionHeaderProps, type SectionProps } from './section';

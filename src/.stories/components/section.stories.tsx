@@ -1,10 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Layout, type SectionHeaderProps, type SectionProps } from '@components/layout';
+import {
+  Section as Component,
+  type SectionHeaderProps,
+  type SectionProps,
+} from '@components/layout';
 
-const meta: Meta<typeof Layout.Section> = {
+const meta: Meta<typeof Component> = {
   title: 'Components/Layout/Section',
-  component: Layout.Section,
+  component: Component,
 };
 
 export default meta;
@@ -20,15 +24,15 @@ export const Section: StoryObj<Arguments> = {
   },
   render: (args: Arguments) => {
     return (
-      <Layout.Section id="home">
-        <Layout.Section.Header {...args} />
+      <Component id="home">
+        <Component.Header {...args} />
         <div style={{ textAlign: 'center', gridArea: 'auto / 2 / auto / span 10' }}>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla nec dui nec ligula bibendum
           fringilla. Nulla facilisi. Donec ut nunc nec nunc facilisis fermentum. Nulla facilisi.
           Donec ut nunc nec nunc facilisis fermentum.
         </div>
-        <Layout.Section.Link href="/some-link" title="Some Link" />
-      </Layout.Section>
+        <Component.Link href="/some-link" title="Some Link" />
+      </Component>
     );
   },
 };

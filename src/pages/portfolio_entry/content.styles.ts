@@ -45,7 +45,7 @@ const root = toProps(css`
 `);
 
 const markdown = toProps(css`
-  ${decl.grid.area.full}
+  ${decl.grid.area.byOne}
 `);
 
 export default { root, markdown };

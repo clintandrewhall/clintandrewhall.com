@@ -1,6 +1,6 @@
 import Markdown from 'react-markdown';
 
-import { Layout } from '@components/layout';
+import { Section } from '@components/layout';
 import { Timeline as TimelineComponent } from '@components/timeline';
 import { useResume } from '@lib/hooks';
 import { useHomeTopic } from '@lib/hooks';
@@ -23,8 +23,8 @@ export const Timeline = () => {
   const { work } = resume;
 
   return (
-    <Layout.Section {...{ ref, ...attributes }}>
-      <Layout.Section.Header {...attributes} />
+    <Section {...{ ref, ...attributes }}>
+      <Section.Header {...attributes} />
       <TimelineComponent
         items={work.slice(0, 6).map((item) => ({
           id: item.key,
@@ -35,7 +35,7 @@ export const Timeline = () => {
           children: <Markdown>{item.summary}</Markdown>,
         }))}
       />
-      <Layout.Section.Link href="/resume" title="View my resume" />
-    </Layout.Section>
+      <Section.Link href="/resume" title="View my resume" />
+    </Section>
   );
 };

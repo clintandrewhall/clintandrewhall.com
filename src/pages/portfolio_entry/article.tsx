@@ -12,9 +12,9 @@ export interface PortfolioEntryLayoutProps {
 const Component = ({ entry }: PortfolioEntryLayoutProps) => {
   return (
     <>
-      <PortfolioEntryArticle.Header {...entry.attributes} />
       <PortfolioEntryArticle.Root {...entry.attributes} {...styles.root}>
-        <PortfolioEntryArticle.Content {...entry} {...styles.content} />
+        <PortfolioEntryArticle.Header {...entry.attributes} />
+        <PortfolioEntryArticle.Content {...entry} />
       </PortfolioEntryArticle.Root>
     </>
   );

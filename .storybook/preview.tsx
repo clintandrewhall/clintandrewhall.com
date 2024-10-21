@@ -1,3 +1,4 @@
+import { StrictMode } from 'react';
 import { css as csl } from '@linaria/core';
 import type { Preview } from '@storybook/react';
 import 'ress';
@@ -33,20 +34,22 @@ const preview: Preview = {
   decorators: [
     (Story) => {
       return (
-        <div
-          className={cx(
-            csl`
+        <StrictMode>
+          <div
+            className={cx(
+              csl`
             ${theme.decl.font.size.step0}
             ${theme.decl.font.sansSerif.regular}
           `,
-            css`
-              ${theme.page.body}
-              ${theme.definitions}
-            `,
-          )}
-        >
-          <Story />
-        </div>
+              css`
+                ${theme.page.body}
+                ${theme.definitions}
+              `,
+            )}
+          >
+            <Story />
+          </div>
+        </StrictMode>
       );
     },
     withRouter,

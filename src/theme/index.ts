@@ -24,6 +24,10 @@ export const theme = {
     ...spacing.definitions,
     ...color.definitions,
     ...grid.definitions,
+    '--header-font-size': `var(${font.vars.size.stepN2})`,
+    '--header-padding': `var(${spacing.vars.step4})`,
+    '--header-content-height': `calc(var(${spacing.vars.step6}) + var(--header-font-size))`,
+    '--header-height': `calc(var(--header-content-height) + (var(--header-padding) * 2))`,
   },
   icons,
   page: {
@@ -45,6 +49,7 @@ export const theme = {
           ${color.decl.font.dark}
         }
       }
+
     `,
   },
 };

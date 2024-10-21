@@ -43,8 +43,6 @@ const images = Object.fromEntries(
   ]),
 );
 
-console.log('images', images);
-
 export const usePortfolioImage = (id: string | undefined, width: ImageWidth = 'large') => {
   if (id && images[id]) {
     const image = images[id][width];

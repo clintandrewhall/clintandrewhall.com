@@ -1,13 +1,12 @@
 import { css, toProps } from '@lib/css';
 import { theme } from '@theme';
 
-const { decl } = theme;
+const { decl, vars } = theme;
 
 const root = toProps(css`
   ${decl.color.border.grid}
-  border-style: solid;
-  border-width: 1px 0 0 1px;
   display: grid;
+  grid-gap: var(${vars.spacing.step2});
 
   grid-template-columns: repeat(3, auto);
 

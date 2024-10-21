@@ -9,12 +9,14 @@ export interface SectionHeaderProps {
   name?: string;
   title: string;
   subtitle?: string;
+  noDivider?: boolean;
 }
 
 export const SectionHeader = ({
   name: nameText,
   title: titleText,
   subtitle: subtitleText,
+  noDivider = false,
   className,
 }: SectionHeaderProps) => {
   const name = nameText && nameText.length > 0 ? <h2 {...styles.name}>{nameText}</h2> : null;
@@ -29,7 +31,7 @@ export const SectionHeader = ({
         <h3 {...styles.title}>{titleText}</h3>
         {subtitle}
       </header>
-      {name && subtitle ? <Section.Divider /> : null}
+      {name && subtitle && !noDivider ? <Section.Divider /> : null}
     </>
   );
 };

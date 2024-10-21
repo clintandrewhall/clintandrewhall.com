@@ -33,9 +33,7 @@ Inspired by the shenanigans, I decided I would build a "memory" tool for social 
 The code is now [open-source](https://github.com/clintandrewhall/backstrok.es) on [my Github](https://github.com/clintandrewhall).  I update it as I have time.
 
 <Image id="backstrokes-1" alt="Backstrokes Results View"></Image>
-
 <Image id="backstrokes-2" alt="Custom Parameters"></Image>
-
 <Image id="backstrokes-3" alt="Backstrokes Home"></Image>
 
 # Colophon

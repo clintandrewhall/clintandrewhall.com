@@ -7,9 +7,6 @@ const root = toProps(css`
   --spacing-sectionTop: calc(var(${vars.spacing.step8}) * 2);
   --spacing-sectionDivider: var(${vars.spacing.step1});
   ${decl.color.background.dark}
-
-  & > article {
-  }
 `);
 
 const header = toProps(css`

@@ -3,7 +3,7 @@ import { theme } from '@theme';
 
 const { decl, vars } = theme;
 
-const root = (float: boolean) => {
+const root = (float: boolean, background: 'clear' | 'opaque') => {
   const base = css`
     --header-font-size: var(${vars.font.size.stepN2});
     --header-padding: var(${vars.spacing.step4});
@@ -24,7 +24,7 @@ const root = (float: boolean) => {
     ${decl.color.background.dark};
   `;
 
-  return toProps(float ? cx(base, floating) : base);
+  return toProps(float || background === 'opaque' ? cx(base, floating) : base);
 };
 
 export default { root };

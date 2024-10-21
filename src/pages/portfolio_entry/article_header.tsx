@@ -2,7 +2,7 @@ import moment from 'moment';
 import { Link } from 'react-router-dom';
 
 import { Layout } from '@components/layout';
-import { usePortfolioImage } from '@lib/hooks/use_portfolio';
+import { usePortfolioImage } from '@lib/hooks';
 
 import styles from './article_header.styles';
 
