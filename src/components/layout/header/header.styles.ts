@@ -5,12 +5,8 @@ const { decl, vars } = theme;
 
 const root = (float: boolean, background: 'clear' | 'opaque') => {
   const base = css`
-    --header-font-size: var(${vars.font.size.stepN2});
-    --header-padding: var(${vars.spacing.step4});
-    --header-content-height: calc(var(${vars.spacing.step6}) + var(--header-font-size));
-    --header-height: calc(var(--header-content-height) + (var(--header-padding) * 2));
-    font-size: var(--header-font-size);
-    height: var(--header-height);
+    font-size: var(${vars.header['font-size']});
+    height: var(${vars.header.height});
     left: 0;
     padding-right: 50px;
     position: fixed;

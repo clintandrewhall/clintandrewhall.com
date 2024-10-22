@@ -1,9 +1,9 @@
-import { usePortfolioImage } from '@lib/hooks';
+import { useArticleImage } from '@lib/hooks';
 
 import styles from './image.styles';
 
 export const MarkdownImage = ({ id, alt, width }: MarkdownImageProps) => {
-  const image = usePortfolioImage(id, width);
+  const image = useArticleImage(id, width);
 
   if (!image) {
     return null;

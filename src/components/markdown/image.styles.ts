@@ -15,9 +15,9 @@ const rootLarge = css`
 `;
 
 const rootSmall = css`
-  width: 47%;
+  margin-bottom: 1.5%;
   margin-top: 1.5%;
-  margin-bottom: 1.5%
+  width: 47%;
 
   &:nth-child(odd) {
     margin-right: 3%;

@@ -43,7 +43,26 @@ const images = Object.fromEntries(
   ]),
 );
 
-export const usePortfolioImage = (id: string | undefined, width: ImageWidth = 'large') => {
+const DEFAULT_LIMIT = 6;
+
+// Portfolio Articles
+const contents = import.meta.glob<ArticleImport>('@content/portfolio/*.md', { eager: true });
+const articles = Object.values(contents).sort(
+  (a, b) => b.attributes.timestamp - a.attributes.timestamp,
+);
+
+const useAllArticleIds = () => articles.map((article) => article.attributes.id as SectionId);
+
+const useAllArticleMetadata = () => articles.map((article) => article.attributes);
+
+export const useArticle = (id: string) => articles.find((article) => article.attributes.id === id);
+
+export const useArticleIds = (limit = DEFAULT_LIMIT) => useAllArticleIds().slice(0, limit);
+
+export const useArticleMetadata = (id: string) =>
+  useAllArticleMetadata().find((article) => article.id === id);
+
+export const useArticleImage = (id: string | undefined, width: ImageWidth = 'large') => {
   if (id && images[id]) {
     const image = images[id][width];
 
@@ -54,23 +73,3 @@ export const usePortfolioImage = (id: string | undefined, width: ImageWidth = 'l
 
   return null;
 };
-
-// Portfolio Entries
-const DEFAULT_LIMIT = 6;
-const contents = import.meta.glob<PortfolioEntry>('@content/portfolio/*.md', { eager: true });
-const entries = Object.values(contents).sort(
-  (a, b) => b.attributes.timestamp - a.attributes.timestamp,
-);
-
-export const useAllEntries = () => entries;
-export const useEntries = (limit = DEFAULT_LIMIT) => useAllEntries().slice(0, limit);
-export const useEntry = (id: string) => useAllEntries().find((entry) => entry.attributes.id === id);
-
-export const useAllEntryIds = () =>
-  useAllEntries().map((entry) => entry.attributes.id as SectionId);
-export const useEntryIds = (limit = DEFAULT_LIMIT) => useAllEntryIds().slice(0, limit);
-
-export const useAllEntryMetadata = () => entries.map((entry) => entry.attributes);
-export const useEntriesMetadata = (limit = DEFAULT_LIMIT) => useAllEntryMetadata().slice(0, limit);
-export const useEntryMetadata = (id: string) =>
-  useAllEntryMetadata().find((entry) => entry.id === id);

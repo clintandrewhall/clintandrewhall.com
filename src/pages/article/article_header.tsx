@@ -2,22 +2,22 @@ import moment from 'moment';
 import { Link } from 'react-router-dom';
 
 import { Layout } from '@components/layout';
-import { usePortfolioImage } from '@lib/hooks';
+import { useArticleImage } from '@lib/hooks';
 
 import styles from './article_header.styles';
 
-export type PortfolioEntryArticleHeaderProps = PortfolioEntry['attributes'];
+export type ArticleHeaderProps = ArticleAttributes;
 
-export const PortfolioEntryArticleHeader = ({
+export const ArticleHeader = ({
   caption: subtitle,
   cover,
   name: title,
   tags: tagsProp,
   timestamp,
-}: PortfolioEntryArticleHeaderProps) => {
-  const largeImage = usePortfolioImage(cover);
-  const mediumImage = usePortfolioImage(cover, 'medium');
-  const smallImage = usePortfolioImage(cover, 'small');
+}: ArticleHeaderProps) => {
+  const largeImage = useArticleImage(cover);
+  const mediumImage = useArticleImage(cover, 'medium');
+  const smallImage = useArticleImage(cover, 'small');
   const image = largeImage ?? mediumImage ?? smallImage;
 
   const tags = tagsProp.map((tag) => ({ label: tag.name, href: `/portfolio/tag/${tag.slug}` }));

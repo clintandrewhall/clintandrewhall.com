@@ -25,9 +25,10 @@ export const Timeline: StoryObj<Arguments> = {
     return (
       <div style={{ margin: 16 }}>
         <Component>
-          <Component.Item {...args} />
-          <Component.Item {...args} />
-          <Component.Item {...args} />
+          <Component.Item {...{ ...args, start: '2021-12-21' }} />
+          <Component.Item {...{ ...args, start: '2020-12-21' }} />
+          <Component.Item {...{ ...args, start: '2019-12-21' }} />
+          <Component.Item {...{ ...args, start: '2018-12-21' }} />
         </Component>
       </div>
     );

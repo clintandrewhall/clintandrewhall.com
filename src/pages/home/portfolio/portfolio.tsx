@@ -1,10 +1,6 @@
 import { Section } from '@components/layout';
-import {
-  PortfolioGrid,
-  type PortfolioItemProps,
-  usePortfolioItemProps,
-} from '@components/portfolio';
-import { useEntryIds, useHomeTopic } from '@lib/hooks';
+import { PortfolioGrid, usePortfolioItems } from '@components/portfolio';
+import { useHomeTopic } from '@lib/hooks';
 
 import styles from './portfolio.styles';
 
@@ -17,17 +13,13 @@ const attributes = {
 
 export const Portfolio = () => {
   const { ref } = useHomeTopic('portfolio');
-  const ids = useEntryIds();
-  const entries = ids
-    .map(usePortfolioItemProps)
-    .filter<PortfolioItemProps>((entry) => entry !== null)
-    .map((entry) => <PortfolioGrid.Item key={entry.title} {...entry} />);
+  const items = usePortfolioItems();
 
   return (
     <Section {...{ ref, ...attributes, ...styles.root }}>
       <Section.Header {...attributes} {...styles.header} />
       <div {...styles.content}>
-        <PortfolioGrid>{entries}</PortfolioGrid>
+        <PortfolioGrid>{items.slice(0, 6)}</PortfolioGrid>
       </div>
       <Section.Link href="/portfolio" title="View my portfolio" />
     </Section>

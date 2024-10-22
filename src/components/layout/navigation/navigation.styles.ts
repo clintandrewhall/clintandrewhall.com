@@ -17,14 +17,14 @@ const rootNarrow = css`
   overflow: hidden;
   position: absolute;
   right: 0;
-  top: var(--header-height);
+  top: var(${vars.header.height});
 `;
 
 const list = toProps(css`
   align-items: center;
   display: flex;
   flex-direction: row;
-  height: var(--header-height);
+  height: var(${vars.header.height});
   justify-content: end;
   list-style: none;
 `);
@@ -98,14 +98,14 @@ const menuButtonBase = css`
   border-style: none;
   color: rgba(255, 255, 255, 0.5);
   display: block;
-  height: var(--header-content-height);
+  height: var(${vars.header['content-height']});
   overflow: hidden;
   position: absolute;
-  right: calc(var(--header-height) + var(${vars.spacing.step2}));
+  right: calc(var(${vars.header.height}) + var(${vars.spacing.step2}));
   text-indent: -1000px;
-  top: var(--header-padding);
+  top: var(${vars.header.padding});
   transition: all 0.3s ease-in-out;
-  width: var(--header-content-height);
+  width: var(${vars.header['content-height']});
   z-index: 5000;
 
   & > span {

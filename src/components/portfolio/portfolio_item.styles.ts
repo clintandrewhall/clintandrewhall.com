@@ -8,17 +8,17 @@ const root = (image: string) =>
     css`
       ${decl.color.border.outline}
       ${decl.font.size.step0}
-      box-shadow: var(--box-shadow-large);
+      ${decl.shadow.large}
       background-position: 50% 50%;
       background-repeat: no-repeat;
       background-size: cover;
+      border-radius: var(${vars.spacing.step1});
       border-style: solid;
       border-width: 1px;
       height: 0;
+      overflow: hidden;
       padding-bottom: 75%;
       position: relative;
-      border-radius: var(${vars.spacing.step1});
-      overflow: hidden;
 
       & {
         a {
@@ -263,7 +263,7 @@ const projectLink = toProps(css`
 
     height: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0}));
     line-height: calc(
-      calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0})) +
+      calc(var(${vars.spacing.step9}) + var(/* ${decl.color.font.light}:16 */)) +
         var(/* ${decl.color.font.light}:11 */)
     );
     width: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0}));
@@ -274,7 +274,7 @@ const projectLink = toProps(css`
 
     height: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step2}));
     line-height: calc(
-      calc(var(${vars.spacing.step9}) + var(${vars.spacing.step2})) +
+      calc(var(${vars.spacing.step9}) + var(/* ${decl.color.font.light}:25 */)) +
         var(/* ${decl.color.font.light}:19 */)
     );
     width: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step2}));

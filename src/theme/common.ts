@@ -16,3 +16,5 @@ export const VAR_PREFIX_LOGO = '--logo';
 export const VAR_PREFIX_SPACING = '--spacing';
 export const VAR_PREFIX_GRID = '--grid';
 export const VAR_PREFIX_MEDIA = '--media';
+export const VAR_PREFIX_HEADER = '--header';
+export const VAR_PREFIX_BOX_SHADOW = '--box-shadow';

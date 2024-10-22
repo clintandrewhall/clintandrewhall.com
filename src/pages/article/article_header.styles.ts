@@ -13,7 +13,7 @@ const root = (image: ImageOutputMetadata | null) => {
 const rootWithImage = css`
   background-position: center;
   background-size: cover;
-  height: var(--header-height);
+  height: var(--article-header-height);
 `;
 
 /*
@@ -28,14 +28,14 @@ const rootWithImage = css`
 */
 
 const rootBase = css`
-  --header-height: var(${vars.spacing.articleHeaderHeight});
-  --header-midline: calc((var(--header-height) - var(${vars.font.size.step7})) / 2);
-  --header-offset: calc(var(${vars.font.size.step7}) / 2);
+  --article-header-height: var(${vars.spacing.articleHeaderHeight});
+  --article-header-midline: calc((var(--article-header-height) - var(${vars.font.size.step7})) / 2);
+  --article-header-offset: calc(var(${vars.font.size.step7}) / 2);
   ${decl.color.font.light}
   ${decl.grid.area.full}
   margin-bottom: var(${vars.spacing.step6});
 
-  padding-top: calc(var(--header-midline) - var(--header-offset));
+  padding-top: calc(var(--article-header-midline) - var(--article-header-offset));
   position: relative;
   text-align: center;
   text-shadow: var(${vars.color.font.dropShadow}) 1px 1px 4px;

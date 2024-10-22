@@ -27,8 +27,8 @@ const root = (logo?: string) =>
     css`
       --bullet-top: ${BULLET_TOP};
       break-inside: avoid;
-      padding-left: calc(var(--bullet-size) + (var(${vars.grid.gutter}) / 2));
       padding-bottom: var(${vars.spacing.step9});
+      padding-left: calc(var(--bullet-size) + (var(${vars.grid.gutter}) / 2));
       position: relative;
 
       &:before {
@@ -49,6 +49,20 @@ const root = (logo?: string) =>
 
       &:last-child {
         padding-bottom: 0;
+
+        &:after {
+          background-image: linear-gradient(
+            to bottom,
+            var(${vars.color.background.subtler}) 0%,
+            transparent 100%
+          );
+          bottom: calc(0 - var(${vars.spacing.step9}));
+          content: '';
+          height: var(${vars.spacing.step9});
+          left: calc(var(--bullet-size) / 2);
+          position: absolute;
+          width: 1px;
+        }
       }
 
       &:last-child:before {
@@ -67,6 +81,7 @@ const header = toProps(css`
   flex-direction: column;
 
   &:before {
+    ${decl.shadow.medium}
     background-image: var(--timeline-item-logo);
     background-position: center;
     background-size: var(--image-size);
@@ -79,10 +94,10 @@ const header = toProps(css`
     top: var(--bullet-top);
     width: var(--image-size);
     z-index: 2;
-    box-shadow: var(--box-shadow-medium);
   }
 
   &:after {
+    ${decl.shadow.medium}
     background-color: var(${vars.color.background.subtler});
     border-radius: 50%;
     content: '';
@@ -93,7 +108,6 @@ const header = toProps(css`
     top: calc(var(--bullet-top) - var(--bullet-padding));
     width: var(--bullet-size);
     z-index: 1;
-    box-shadow: var(--box-shadow-medium);
   }
 `);
 

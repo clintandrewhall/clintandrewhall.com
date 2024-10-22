@@ -1,36 +1,40 @@
 // import 'unfonts.css';
 import 'ress';
 
-import { color } from '@theme/color';
-import { font } from '@theme/font';
-import { grid } from '@theme/grid';
-import { icons } from '@theme/icons';
-import { spacing } from '@theme/spacing';
-
+import { color } from './color';
+import { font } from './font';
+import { grid } from './grid';
+import { header } from './header';
+import { icons } from './icons';
 import { media } from './media';
+import { shadow } from './shadow';
+import { spacing } from './spacing';
 
 export const theme = {
   vars: {
-    media: media.vars,
-    font: font.vars,
-    spacing: spacing.vars,
     color: color.vars,
+    font: font.vars,
     grid: grid.vars,
+    header: header.vars,
+    media: media.vars,
+    shadow: shadow.vars,
+    spacing: spacing.vars,
   },
-  decl: { font: font.decl, color: color.decl, grid: grid.decl, media: media.decl },
+  decl: {
+    color: color.decl,
+    font: font.decl,
+    grid: grid.decl,
+    media: media.decl,
+    shadow: shadow.decl,
+  },
   definitions: {
-    ...media.definitions,
-    ...font.definitions,
-    ...spacing.definitions,
     ...color.definitions,
+    ...font.definitions,
     ...grid.definitions,
-    '--header-font-size': `var(${font.vars.size.stepN2})`,
-    '--header-padding': `var(${spacing.vars.step4})`,
-    '--header-content-height': `calc(var(${spacing.vars.step6}) + var(--header-font-size))`,
-    '--header-height': `calc(var(--header-content-height) + (var(--header-padding) * 2))`,
-    '--box-shadow-large': `rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px, rgba(0, 0, 0, 0.07) 0px 8px 8px, rgba(0, 0, 0, 0.07) 0px 16px 16px;`,
-    '--box-shadow-medium': `rgba(0, 0, 0, 0.07) 0px 1px 1px, rgba(0, 0, 0, 0.07) 0px 2px 2px, rgba(0, 0, 0, 0.07) 0px 4px 4px;`,
-    '--box-shadow-small': `rgba(0, 0, 0, 0.45) 0px 12px 10px -15px;`,
+    ...header.definitions,
+    ...media.definitions,
+    ...shadow.definitions,
+    ...spacing.definitions,
   },
   icons,
   page: {

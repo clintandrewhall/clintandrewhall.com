@@ -6,8 +6,8 @@ const { vars } = theme;
 const svgRoot = toProps(css`
   color: var(${vars.color.github.color});
   fill: var(${vars.color.github.fill});
-  height: var(--header-height);
-  width: var(--header-height);
+  height: var(${vars.header.height});
+  width: var(${vars.header.height});
 `);
 
 const root = toProps(css`

@@ -1,11 +1,11 @@
 import { Layout } from '@components/layout';
 import { MarkdownImage } from '@components/markdown';
 
-import styles from './content.styles';
+import styles from './article_markdown.styles';
 
-export type PortfolioEntryContentProps = Pick<PortfolioEntry, 'ReactComponent'>;
+export type ArticleMarkdownProps = Pick<ArticleImport, 'ReactComponent'>;
 
-export const PortfolioEntryContent = ({ ReactComponent }: PortfolioEntryContentProps) => {
+export const ArticleMarkdown = ({ ReactComponent }: ArticleMarkdownProps) => {
   return (
     <Layout {...styles.root}>
       <div {...styles.markdown}>

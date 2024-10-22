@@ -1,13 +1,13 @@
-import { PortfolioEntry as Component } from '@pages/portfolio_entry';
+import { Article as Component } from '@pages/article';
 import type { Meta, StoryObj } from '@storybook/react';
 
-const contents = import.meta.glob<PortfolioEntry>('@content/portfolio/*.md', { eager: true });
+const contents = import.meta.glob<ArticleImport>('@content/portfolio/*.md', { eager: true });
 const entries = Object.values(contents).sort(
   (a, b) => b.attributes.timestamp - a.attributes.timestamp,
 );
 
 const meta: Meta<typeof Component> = {
-  title: 'Pages/Portfolio Entry',
+  title: 'Pages/Article',
   component: Component,
   argTypes: {
     id: {
@@ -19,4 +19,4 @@ const meta: Meta<typeof Component> = {
 
 export default meta;
 
-export const PortfolioEntry: StoryObj<typeof Component> = {};
+export const Article: StoryObj<typeof Component> = {};

@@ -1,22 +1,21 @@
 import { css, toProps } from '@lib/css';
 import { theme } from '@theme';
-import { BREAKPOINT_MEDIUM, BREAKPOINT_NARROW, BREAKPOINT_WIDE } from '@theme/media';
 
 const { vars, decl } = theme;
 
 const root = toProps(css`
   ${decl.color.background.subtlest}
   ${decl.color.font.dark}
+  ${decl.shadow.small}
+  border-color: var(${vars.color.border.medium});
+  border-radius: var(${vars.spacing.step0});
+  border-style: solid;
+  border-width: 1px;
+  margin-bottom: var(${vars.spacing.step5});
+  padding-bottom: var(${vars.spacing.step2});
   padding-left: var(${vars.spacing.step5});
   padding-right: var(${vars.spacing.step5});
   padding-top: var(${vars.spacing.step2});
-  padding-bottom: var(${vars.spacing.step2});
-  margin-bottom: var(${vars.spacing.step5});
-  border-radius: var(${vars.spacing.step0});
-  border-color: var(${vars.color.border.medium});
-  border-width: 1px;
-  border-style: solid;
-  box-shadow: var(--box-shadow-small);
 `);
 
 const list = toProps(css`
@@ -25,8 +24,7 @@ const list = toProps(css`
 
   grid-template-columns: repeat(4, 1fr);
 
-  @media (max-width: ${BREAKPOINT_WIDE}) and (min-width: ${BREAKPOINT_MEDIUM}),
-    (max-width: ${BREAKPOINT_NARROW}) {
+  @media (max-width: pcss_lin1) and (min-width: pcss_lin2), (max-width: .pcss_lin3) {
     grid-template-columns: repeat(2, 1fr);
   }
 `);

@@ -1,19 +1,11 @@
-import { PortfolioEntry as EntryComponent } from '@pages/portfolio_entry';
+import { Article as ArticleComponent } from '@pages/article';
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { Layout } from '@components/layout';
 import { NotFound as Component } from '@components/not_found';
 
 const meta: Meta<typeof Component> = {
   title: 'Components/Not Found',
   component: Component,
-  decorators: [
-    (Story) => (
-      <Layout id="not_found">
-        <Story />
-      </Layout>
-    ),
-  ],
 
   argTypes: {
     title: {
@@ -39,10 +31,10 @@ const meta: Meta<typeof Component> = {
 
 export default meta;
 
-export const Default: StoryObj<typeof Component> = {
+export const Generic: StoryObj<typeof Component> = {
   render: (args) => <Component {...args} />,
 };
 
-export const PortfolioEntry: StoryObj<typeof EntryComponent> = {
-  render: () => <EntryComponent id="not-found" />,
+export const ArticleNotFound: StoryObj<typeof ArticleComponent> = {
+  render: () => <ArticleComponent.NotFound />,
 };
