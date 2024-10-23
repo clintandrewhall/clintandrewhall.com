@@ -4,6 +4,7 @@ import { theme } from '@theme';
 const { decl, vars } = theme;
 
 const root = toProps(css`
+  ${decl.anchor}
   ${decl.font.serif.regular}
   ${decl.font.size.step1}
   ${decl.color.font.text}

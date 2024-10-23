@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { ParallaxBanner, ParallaxBannerLayer, ParallaxProvider } from 'react-scroll-parallax';
 
 import { SocialProfiles } from '@components/social_profiles';
@@ -28,10 +29,10 @@ export const Hero = () => {
               </hgroup>
               <ul {...styles.links}>
                 <li {...styles.link}>
-                  <a href="#portfolio">Latest Projects</a>
+                  <Link to="/#portfolio">Latest Projects</Link>
                 </li>
                 <li {...styles.link}>
-                  <a href="#about">More About Me</a>
+                  <Link to="/#about">More About Me</Link>
                 </li>
               </ul>
               <SocialProfiles showDivider={false} showLabel={false} {...styles.profiles} />

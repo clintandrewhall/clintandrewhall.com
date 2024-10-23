@@ -1,4 +1,5 @@
 import { createContext, useContext, useEffect, useState } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 
 import { type SectionId } from '@lib/site';
 
@@ -15,13 +16,18 @@ const initialState: State = {
 const HomeContext = createContext<State>(initialState);
 
 export const HomeContextProvider = ({ children }: { children: React.ReactNode }) => {
+  const navigate = useNavigate();
+  const { pathname, search, hash } = useLocation();
   const [currentSectionId, setCurrentSectionId] = useState<SectionId>('home');
 
+  console.log('incoming', pathname, search, hash);
+
   useEffect(() => {
-    const root = `${window.location.pathname}${window.location.search}`;
+    const root = `${pathname}${search}`;
     const location = currentSectionId === 'home' ? root : `${root}#${currentSectionId}`;
 
-    window.history.replaceState(null, '', location);
+    navigate(location, { replace: true });
+    // window.history.replaceState(null, '', location);
   }, [currentSectionId]);
 
   return (

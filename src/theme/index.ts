@@ -26,6 +26,17 @@ export const theme = {
     grid: grid.decl,
     media: media.decl,
     shadow: shadow.decl,
+    anchor: `
+      a {
+        ${color.decl.font.accent}
+
+        &:hover,
+        &:active,
+        &:focus {
+          ${color.decl.font.dark}
+        }
+      }
+    `,
   },
   definitions: {
     ...color.definitions,
@@ -44,19 +55,12 @@ export const theme = {
       font-feature-settings: 'liga', 'clig';
       font-variant-ligatures: common-ligatures;
       text-rendering: optimizeLegibility;
+
       a {
-        ${color.decl.font.link}
         font-weight: 600;
         text-decoration: none;
         transition: all .3s ease-in-out;
-
-        &:hover,
-        &:active,
-        &:focus {
-          ${color.decl.font.dark}
-        }
       }
-
     `,
   },
 };

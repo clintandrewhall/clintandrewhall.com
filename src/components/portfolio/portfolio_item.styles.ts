@@ -6,15 +6,11 @@ const { vars, icons, decl } = theme;
 const root = (image: string) =>
   toProps(
     css`
-      ${decl.color.border.outline}
       ${decl.font.size.step0}
-      ${decl.shadow.large}
       background-position: 50% 50%;
       background-repeat: no-repeat;
       background-size: cover;
       border-radius: var(${vars.spacing.step1});
-      border-style: solid;
-      border-width: 1px;
       height: 0;
       overflow: hidden;
       padding-bottom: 75%;

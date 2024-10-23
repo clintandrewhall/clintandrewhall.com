@@ -3,6 +3,10 @@ import { theme } from '@theme';
 
 const { decl, vars } = theme;
 
+const root = toProps(css`
+  ${decl.anchor}
+`);
+
 const header = toProps(css`
   ${decl.grid.area.byOne}
 `);
@@ -52,4 +56,4 @@ const code = toProps(css`
   }
 `);
 
-export default { content, header, title, work, code, summary };
+export default { content, header, title, work, code, summary, root };

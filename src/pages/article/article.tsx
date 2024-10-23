@@ -9,7 +9,11 @@ interface CommonProps {
 }
 
 const Header = ({ article }: CommonProps) => (
-  <LayoutComponent.Header background={!!article ? 'clear' : 'opaque'} selectedId="portfolio" />
+  <LayoutComponent.Header
+    background={!!article ? 'clear' : 'opaque'}
+    selectedId="portfolio"
+    isLocal={false}
+  />
 );
 
 const Layout = ({ article }: CommonProps) =>

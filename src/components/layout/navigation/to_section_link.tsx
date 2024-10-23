@@ -6,7 +6,8 @@ import { NavigationLink, type NavigationLinkProps } from './navigation_link';
 export type ToSectionLinkProps = Pick<NavigationLinkProps, 'id'>;
 
 export const ToSectionLink = ({ id }: ToSectionLinkProps) => {
-  const href = `#${id}`;
+  const href = id === 'resume' ? '/resume' : `#${id}`;
+
   const [isCurrent, setIsCurrent] = useState(false);
   const { currentSectionId } = useCurrentSectionId();
   const isHome = useIsHome();

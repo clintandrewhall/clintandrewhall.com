@@ -1,3 +1,5 @@
+import { Link } from 'react-router-dom';
+
 import styles from './header_logo.styles';
 
 export interface HeaderLogoProps {
@@ -7,9 +9,9 @@ export interface HeaderLogoProps {
 export const HeaderLogo = ({ isLocal = false }: HeaderLogoProps) => {
   return (
     <h1 {...styles.root}>
-      <a {...styles.link} href={isLocal ? '#' : '/'}>
+      <Link {...styles.link} to={isLocal ? '#' : '/'}>
         Clint Andrew Hall
-      </a>
+      </Link>
     </h1>
   );
 };

@@ -12,7 +12,7 @@ const Component = () => {
   const { ref } = useHomeTopic('about');
 
   return (
-    <Section {...{ ref, ...attributes }}>
+    <Section {...{ ref, ...attributes }} {...styles.root}>
       <Section.Header {...attributes} {...styles.header} />
       <About.Summary />
       <Section.Divider />

@@ -1,4 +1,5 @@
 import { type MouseEventHandler } from 'react';
+import { Link } from 'react-router-dom';
 
 import { type SectionId, sectionTitles } from '@lib/site';
 
@@ -11,17 +12,28 @@ export interface NavigationLinkProps {
   isCurrent?: boolean;
 }
 
+const getTo = (id: SectionId) => {
+  switch (id) {
+    case 'resume':
+      return '/resume';
+    case 'portfolio':
+      return '/portfolio';
+    default:
+      return `/#${id}`;
+  }
+};
+
 export const NavigationLink = ({
   id,
   href: hrefProp,
   onClick,
   isCurrent = false,
 }: NavigationLinkProps) => {
-  const href = hrefProp || `/${id}`;
+  const to = hrefProp || getTo(id);
 
   return (
     <li {...styles.root(isCurrent)}>
-      <a {...{ onClick, href, ...styles.link }}>{sectionTitles[id]}</a>
+      <Link {...{ onClick, to, ...styles.link }}>{sectionTitles[id]}</Link>
     </li>
   );
 };

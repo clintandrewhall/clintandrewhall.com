@@ -4,6 +4,8 @@ import { theme } from '@theme';
 const { decl, vars } = theme;
 
 const root = toProps(css`
+  ${decl.anchor}
+
   --image-size: var(${vars.spacing.step5});
   --bullet-padding: var(${vars.spacing.step1});
   --bullet-size: calc(var(--image-size) + (var(--bullet-padding) * 2));
