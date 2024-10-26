@@ -1,1 +1,1 @@
-export { HomeContextProvider, useCurrentSectionId, useIsHome } from './home';
+export { HomeContextProvider, useIsHome, useSelectedSectionId } from './home';

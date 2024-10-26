@@ -9,8 +9,6 @@ import { Medium } from './medium';
 import { Portfolio } from './portfolio';
 
 const Component = () => {
-  // useHistoryReplaceEvent();
-
   return (
     <HomeContextProvider>
       <Home.Header isLocal={true} />

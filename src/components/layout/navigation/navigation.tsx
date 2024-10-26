@@ -31,7 +31,7 @@ export const Navigation = ({ isLocal = false, selectedId }: NavigationProps) => 
 
   const link = isLocal ? ToSectionLink : NavigationLink;
   const links = sectionIds.map((id) => (
-    <Fragment key={id}>{link({ id, isCurrent: selectedId === id })}</Fragment>
+    <Fragment key={id}>{link({ id, isSelected: selectedId === id })}</Fragment>
   ));
 
   const button = isNarrow ? (

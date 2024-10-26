@@ -1,5 +1,5 @@
 import { type MouseEventHandler, useCallback, useEffect, useState } from 'react';
-import { useCurrentSectionId, useIsHome } from '@state/home';
+import { useIsHome, useSelectedSectionId } from '@state/home';
 
 import { NavigationLink, type NavigationLinkProps } from './navigation_link';
 
@@ -8,8 +8,8 @@ export type ToSectionLinkProps = Pick<NavigationLinkProps, 'id'>;
 export const ToSectionLink = ({ id }: ToSectionLinkProps) => {
   const href = id === 'resume' ? '/resume' : `#${id}`;
 
-  const [isCurrent, setIsCurrent] = useState(false);
-  const { currentSectionId } = useCurrentSectionId();
+  const [isSelected, setIsSelected] = useState(false);
+  const { selectedSectionId } = useSelectedSectionId();
   const isHome = useIsHome();
 
   const onClick: MouseEventHandler<HTMLAnchorElement> = useCallback((event) => {
@@ -20,12 +20,13 @@ export const ToSectionLink = ({ id }: ToSectionLinkProps) => {
       event.preventDefault();
       element.scrollIntoView({ behavior: 'smooth' });
     }
+
     target.blur();
   }, []);
 
   useEffect(() => {
-    setIsCurrent(!isHome && currentSectionId === id);
-  }, [currentSectionId, isHome, id]);
+    setIsSelected(!isHome && selectedSectionId === id);
+  }, [selectedSectionId, isHome, id]);
 
-  return <NavigationLink {...{ id, onClick, href, isCurrent }} />;
+  return <NavigationLink {...{ id, onClick, href, isSelected }} />;
 };

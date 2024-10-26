@@ -9,15 +9,14 @@ export interface NavigationLinkProps {
   id: SectionId;
   href?: string;
   onClick?: MouseEventHandler<HTMLAnchorElement>;
-  isCurrent?: boolean;
+  isSelected?: boolean;
 }
 
 const getTo = (id: SectionId) => {
   switch (id) {
     case 'resume':
-      return '/resume';
     case 'portfolio':
-      return '/portfolio';
+      return `/{id}`;
     default:
       return `/#${id}`;
   }
@@ -27,12 +26,12 @@ export const NavigationLink = ({
   id,
   href: hrefProp,
   onClick,
-  isCurrent = false,
+  isSelected = false,
 }: NavigationLinkProps) => {
   const to = hrefProp || getTo(id);
 
   return (
-    <li {...styles.root(isCurrent)}>
+    <li {...styles.root(isSelected)}>
       <Link {...{ onClick, to, ...styles.link }}>{sectionTitles[id]}</Link>
     </li>
   );

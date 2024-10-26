@@ -1,12 +1,12 @@
 # TODO
 
 - Move images to async
-- Stateful navigation bar on sub pages
 - Masonry image grids in portfolio entries
-- Portfolio listing from grid to image and description
+- Refactor `registerHomeSection`, it's a bit gnarly.
 
 - [@react/spring](https://www.react-spring.dev/)
 - [framer-motion](https://www.framer.com/motion/introduction/)
 - https://github.com/noamr/use-view-transitions
 - Consider TOC for portfolio posts.
 - Consider parallax for portfolio post cover images.
+- Consider portfolio listing from grid to image and description
