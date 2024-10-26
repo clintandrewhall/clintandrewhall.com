@@ -14,9 +14,11 @@ export interface NavigationLinkProps {
 
 const getTo = (id: SectionId) => {
   switch (id) {
+    case 'home':
+      return '/';
     case 'resume':
     case 'portfolio':
-      return `/{id}`;
+      return `/${id}`;
     default:
       return `/#${id}`;
   }

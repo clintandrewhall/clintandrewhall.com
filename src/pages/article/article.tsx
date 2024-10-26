@@ -1,4 +1,5 @@
 import { Layout as LayoutComponent } from '@components/layout';
+import { Meta } from '@components/meta';
 import { useArticle } from '@lib/hooks';
 
 import { ArticleLayout as ArticleLayoutComponent } from './article_layout';
@@ -26,8 +27,13 @@ export interface ArticleProps {
 const Component = ({ id }: ArticleProps) => {
   const article = useArticle(id);
 
+  if (!article) {
+    return <ArticleNotFound />;
+  }
+
   return (
     <>
+      <Meta title={article.attributes.name} description={article.attributes.caption} />
       <Article.Header {...{ article }} />
       <Article.Layout {...{ article }} />
       <Article.Footer />

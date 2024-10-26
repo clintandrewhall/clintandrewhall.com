@@ -57,7 +57,6 @@
     "src/**/.stories/**/*.tsx",
     ".storybook/**/*.ts",
     ".storybook/**/*.tsx",
-    "scripts/**/*.ts",
     "types/*.d.ts",
     "vite.config.ts"
   ]

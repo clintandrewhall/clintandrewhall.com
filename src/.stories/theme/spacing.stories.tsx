@@ -74,6 +74,10 @@ const sizes: Record<UtopiaSize, string> = {
     height: var(${spacing.portfolioItemWidth});
     width: var(${spacing.portfolioItemWidth});
   `,
+  articleHeaderHeight: css`
+    height: var(${spacing.articleHeaderHeight});
+    width: var(${spacing.articleHeaderHeight});
+  `,
 };
 
 const Box = ({ size }: { size: UtopiaSize }) => {
