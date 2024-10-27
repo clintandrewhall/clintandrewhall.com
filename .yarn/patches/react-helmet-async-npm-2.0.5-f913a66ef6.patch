@@ -1,0 +1,22 @@
+diff --git a/package.json b/package.json
+index d74b351267cb7df4c7e578aef227a0f6e7963fe5..8e49f79a11e242f65e96c8abec921c34bd831ca3 100644
+--- a/package.json
++++ b/package.json
+@@ -3,8 +3,7 @@
+   "version": "2.0.5",
+   "description": "Thread-safe Helmet for React 16+ and friends",
+   "sideEffects": false,
+-  "main": "./lib/index.js",
+-  "module": "./lib/index.esm.js",
++  "main": "./lib/index.esm.js",
+   "typings": "./lib/index.d.ts",
+   "repository": "http://github.com/staylor/react-helmet-async",
+   "author": "Scott Taylor <scott.c.taylor@mac.com>",
+@@ -12,6 +11,7 @@
+   "files": [
+     "lib/"
+   ],
++  "type": "module",
+   "dependencies": {
+     "invariant": "^2.2.4",
+     "react-fast-compare": "^3.2.2",

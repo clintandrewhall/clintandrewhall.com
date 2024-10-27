@@ -1,7 +1,7 @@
 import { useEffect } from 'react';
 import { Home } from '@pages/home';
 import { Portfolio } from '@pages/portfolio';
-import { createBrowserRouter, Outlet, useLocation } from 'react-router-dom';
+import { Outlet, Route as ReactRoute, Routes as ReactRoutes, useLocation } from 'react-router-dom';
 
 import { Article } from './article';
 
@@ -17,22 +17,14 @@ const ScrollToTop = () => {
   return <Outlet />;
 };
 
-export const router = createBrowserRouter([
-  {
-    element: <ScrollToTop />,
-    children: [
-      {
-        path: '/',
-        element: <Home />,
-      },
-      {
-        path: '/portfolio',
-        element: <Portfolio />,
-      },
-      {
-        path: '/portfolio/:id',
-        element: <Article />,
-      },
-    ],
-  },
-]);
+export const Routes = () => {
+  return (
+    <ReactRoutes>
+      <ReactRoute element={<ScrollToTop />}>
+        <ReactRoute path="/" element={<Home />} />
+        <ReactRoute path="/portfolio" element={<Portfolio />} />
+        <ReactRoute path="/portfolio/:id" element={<Article />} />
+      </ReactRoute>
+    </ReactRoutes>
+  );
+};

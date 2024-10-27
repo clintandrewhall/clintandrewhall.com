@@ -1,17 +1,15 @@
 import { css as csl } from '@linaria/core';
 import 'ress';
 import 'unfonts.css';
-import { HelmetProvider } from 'react-helmet-async';
-import { RouterProvider } from 'react-router-dom';
 
 import { Meta } from '@components/meta';
 import { css, cx } from '@lib/css';
 import { theme } from '@theme';
 
-import { router } from './routing';
+import { Routes } from './routing';
 
 export const App = () => (
-  <HelmetProvider>
+  <>
     <Meta />
     <div
       className={cx(
@@ -25,7 +23,7 @@ export const App = () => (
         `,
       )}
     >
-      <RouterProvider router={router} />
+      <Routes />
     </div>
-  </HelmetProvider>
+  </>
 );

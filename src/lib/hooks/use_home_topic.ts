@@ -1,4 +1,4 @@
-import { useEffect, useLayoutEffect } from 'react';
+import { useEffect } from 'react';
 import { useRegisterHomeSection, useSelectedSectionId } from '@state/home';
 import { type InViewHookResponse, useInView } from 'react-intersection-observer';
 
@@ -30,7 +30,7 @@ export const useHomeTopic = (topicId: SectionId): Response => {
     }
   }, [isInView, updateSelectedSectionId, topicId]);
 
-  useLayoutEffect(() => {
+  useEffect(() => {
     if (entry && entry.target) {
       registerSection(topicId, entry.target);
     }

@@ -8,7 +8,7 @@ const Header = () => <Layout.Header background="opaque" selectedId="portfolio" /
 const Component = () => {
   return (
     <>
-      <Meta title="Portfolio | Clint Andrew Hall" />
+      <Meta title="Portfolio" />
       <Portfolio.Header />
       <Portfolio.List />
       <Portfolio.Footer />

@@ -4,7 +4,7 @@
     "target": "ES2020",
     "useDefineForClassFields": true,
     "lib": [
-      "ES2020",
+      "ES2022",
       "DOM",
       "DOM.Iterable"
     ],
@@ -55,9 +55,14 @@
     "src/**/*.tsx",
     "src/**/.stories/**/*.ts",
     "src/**/.stories/**/*.tsx",
+    "scripts/**/*.ts",
     ".storybook/**/*.ts",
     ".storybook/**/*.tsx",
     "types/*.d.ts",
     "vite.config.ts"
+  ],
+  "exclude": [
+    "scripts/github.ts",
+    "scripts/medium.ts",
   ]
 }

@@ -3,6 +3,7 @@ import { css as csl } from '@linaria/core';
 import type { Preview } from '@storybook/react';
 import 'ress';
 import 'unfonts.css';
+import { HelmetProvider } from 'react-helmet-async';
 import { reactRouterParameters, withRouter } from 'storybook-addon-remix-react-router';
 
 import { css, cx } from '@lib/css';
@@ -35,20 +36,22 @@ const preview: Preview = {
     (Story) => {
       return (
         <StrictMode>
-          <div
-            className={cx(
-              csl`
+          <HelmetProvider>
+            <div
+              className={cx(
+                csl`
             ${theme.decl.font.size.step0}
             ${theme.decl.font.sansSerif.regular}
           `,
-              css`
-                ${theme.page.body}
-                ${theme.definitions}
-              `,
-            )}
-          >
-            <Story />
-          </div>
+                css`
+                  ${theme.page.body}
+                  ${theme.definitions}
+                `,
+              )}
+            >
+              <Story />
+            </div>
+          </HelmetProvider>
         </StrictMode>
       );
     },

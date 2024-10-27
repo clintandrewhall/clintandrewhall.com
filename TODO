@@ -1,5 +1,7 @@
 # TODO
 
+- BUG: navigating back to /#about from other page locks local scrolling navigation.
+- Cleanup prerender.ts
 - Move images to async
 - Masonry image grids in portfolio entries
 - Refactor `registerHomeSection`, it's a bit gnarly.
