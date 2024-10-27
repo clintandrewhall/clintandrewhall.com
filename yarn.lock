@@ -3792,6 +3792,7 @@ __metadata:
     rollup: "npm:^3.29.4"
     rss-parser: "npm:^3.13.0"
     serve: "npm:^14.2.4"
+    sitemap-static: "npm:^0.4.4"
     storybook: "npm:^8.3.6"
     storybook-addon-remix-react-router: "npm:^3.0.0"
     stylelint: "npm:^16.9.0"
@@ -5518,6 +5519,13 @@ __metadata:
     locate-path: "npm:^6.0.0"
     path-exists: "npm:^4.0.0"
   checksum: 10/07955e357348f34660bde7920783204ff5a26ac2cafcaa28bace494027158a97b9f56faaf2d89a6106211a8174db650dd9f503f9c0d526b1202d5554a00b9095
+  languageName: node
+  linkType: hard
+
+"findit@npm:~2.0.0":
+  version: 2.0.0
+  resolution: "findit@npm:2.0.0"
+  checksum: 10/1fa2890cf3f700efb5b28680fcedc64b93fd184e4e2c1e1eb97050be687c53ee165dfa0546902a34be2755a3b3b387d7a2d6f475da5879cc2236dd7787760906
   languageName: node
   linkType: hard
 
@@ -7759,6 +7767,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"minimist@npm:1.2.0":
+  version: 1.2.0
+  resolution: "minimist@npm:1.2.0"
+  checksum: 10/61bf8166199859152cfd3fa4c72e295a35f559029a8965cfdb5f9c6030f70a6f8154d41e85438eb60bee02bc93c177fa2aef623789903087b9d22f264ccfce55
+  languageName: node
+  linkType: hard
+
 "minimist@npm:^1.2.0, minimist@npm:^1.2.6":
   version: 1.2.8
   resolution: "minimist@npm:1.2.8"
@@ -9625,6 +9640,18 @@ __metadata:
   dependencies:
     is-arrayish: "npm:^0.3.1"
   checksum: 10/c6dffff17aaa383dae7e5c056fbf10cf9855a9f79949f20ee225c04f06ddde56323600e0f3d6797e82d08d006e93761122527438ee9531620031c08c9e0d73cc
+  languageName: node
+  linkType: hard
+
+"sitemap-static@npm:^0.4.4":
+  version: 0.4.4
+  resolution: "sitemap-static@npm:0.4.4"
+  dependencies:
+    findit: "npm:~2.0.0"
+    minimist: "npm:1.2.0"
+  bin:
+    sitemap-static: cli.js
+  checksum: 10/5f8b253be55cc5159b0cb2a2e6d4d3cbb3b7075a9c153593a4989822231785d17d2e8f04c8c1afd061f01c703f6d7fb0f53cefb4fc23397318784faa393c6962
   languageName: node
   linkType: hard
 

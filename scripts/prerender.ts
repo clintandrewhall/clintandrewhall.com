@@ -1,5 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
+// @ts-expect-error No types.
+import generateSitemap from 'sitemap-static';
 import { type SSRRenderType } from 'src/entry.server.js';
 import { fileURLToPath } from 'url';
 
@@ -47,4 +49,13 @@ const processTemplate = ({ html, helmet }: ReturnType<SSRRenderType>) => {
     const filePath = `dist/static${url}.html`;
     fs.writeFileSync(toAbsolute(filePath), result);
   }
+
+  const writer = fs.createWriteStream('dist/static/sitemap.xml');
+
+  generateSitemap(writer, {
+    findRoot: 'dist/static',
+    ignoreFile: '',
+    prefix: 'https://clintandrewhall.com/',
+    pretty: true,
+  });
 })();

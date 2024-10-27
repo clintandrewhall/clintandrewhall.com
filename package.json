@@ -103,6 +103,7 @@
     "rollup": "^3.29.4",
     "rss-parser": "^3.13.0",
     "serve": "^14.2.4",
+    "sitemap-static": "^0.4.4",
     "storybook": "^8.3.6",
     "stylelint": "^16.9.0",
     "stylelint-order": "^6.0.4",
