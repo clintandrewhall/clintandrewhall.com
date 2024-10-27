@@ -1,30 +1,21 @@
-import { useEffect } from 'react';
-import { Home } from '@pages/home';
-import { Portfolio } from '@pages/portfolio';
-import { Outlet, Route as ReactRoute, Routes as ReactRoutes, useLocation } from 'react-router-dom';
+import { createRoutesFromElements, Route, Routes } from 'react-router-dom';
 
-import { Article } from './article';
+import { App } from '../app';
 
-const ScrollToTop = () => {
-  // Extracts pathname property(key) from an object
-  const { pathname } = useLocation();
+const others = (
+  <Route element={<App />}>
+    <Route path="/" lazy={async () => ({ Component: (await import('../pages/home')).Home })} />
+    <Route
+      path="/portfolio"
+      lazy={async () => ({ Component: (await import('../pages/portfolio')).Portfolio })}
+    />
+    <Route
+      path="/portfolio/:id"
+      lazy={async () => ({ Component: (await import('./article')).Article })}
+    />
+  </Route>
+);
 
-  // Automatically scrolls to top whenever pathname changes
-  useEffect(() => {
-    window.scrollTo(0, 0);
-  }, [pathname]);
+export const AppRoutes = <Routes>{others}</Routes>;
 
-  return <Outlet />;
-};
-
-export const Routes = () => {
-  return (
-    <ReactRoutes>
-      <ReactRoute element={<ScrollToTop />}>
-        <ReactRoute path="/" element={<Home />} />
-        <ReactRoute path="/portfolio" element={<Portfolio />} />
-        <ReactRoute path="/portfolio/:id" element={<Article />} />
-      </ReactRoute>
-    </ReactRoutes>
-  );
-};
+export const routes = createRoutesFromElements(others);

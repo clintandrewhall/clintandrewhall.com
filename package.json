@@ -21,7 +21,7 @@
     "storybook": "cross-env BROWSER=\"google chrome\" OPEN_MATCH_HOST_ONLY=true storybook dev -p 6006",
     "build:storybook": "storybook build",
     "upgrade:storybook": "yarn dlx storybook@latest upgrade",
-    "chromatic": "chromatic"
+    "chromatic": "chromatic --build-script-name=build:storybook"
   },
   "dependencies": {
     "@linaria/atomic": "^6.2.0",

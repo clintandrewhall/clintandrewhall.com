@@ -1,4 +1,4 @@
-import { Layout } from '@components/layout';
+import { Section } from '@components/layout';
 
 import { ArticleHeader } from './article_header';
 import { ArticleMarkdown } from './article_markdown';
@@ -19,7 +19,7 @@ const Component = ({ article }: ArticleLayoutProps) => (
 );
 
 export const ArticleLayout = Object.assign(Component, {
-  Root: Layout.Section,
+  Root: Section,
   Header: ArticleHeader,
   Markdown: ArticleMarkdown,
 });

@@ -1,4 +1,4 @@
-import { Layout, type SectionProps } from '@components/layout';
+import { Section, type SectionProps } from '@components/layout';
 import { PortfolioGrid, usePortfolioItems } from '@components/portfolio';
 
 import styles from './portfolio_list.styles';
@@ -22,8 +22,8 @@ const Component = () => {
 };
 
 export const PortfolioList = Object.assign(Component, {
-  Header: () => <Layout.Section.Header {...attributes} />,
+  Header: () => <Section.Header {...attributes} />,
   Root: ({ children }: Pick<SectionProps, 'children'>) => (
-    <Layout.Section id="portfolio">{children}</Layout.Section>
+    <Section id="portfolio">{children}</Section>
   ),
 });

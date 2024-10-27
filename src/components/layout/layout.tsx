@@ -4,7 +4,6 @@ import { cx } from '@lib/css';
 
 import { Footer } from './footer';
 import { Header } from './header';
-import { Section } from './section';
 
 import styles from './layout.styles';
 
@@ -27,6 +26,5 @@ const Component = forwardRef<HTMLDivElement, LayoutProps>(
 
 export const Layout = Object.assign(Component, {
   Header,
-  Section,
   Footer,
 });
