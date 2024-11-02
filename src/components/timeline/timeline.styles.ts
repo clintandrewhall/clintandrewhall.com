@@ -17,18 +17,6 @@ const root = toProps(css`
   column-width: calc(50% - var(${vars.grid.gutter}) / 2);
   position: relative;
 
-  &:before {
-    background-color: var(${vars.color.background.subtler});
-    bottom: 0;
-    content: '';
-    display: block;
-    left: calc(var(--bullet-size) / 2);
-    position: absolute;
-    top: calc(var(--bullet-size));
-    width: 1px;
-    z-index: 0;
-  }
-
   ${decl.media.narrow} {
     column-count: 1;
     column-width: revert;

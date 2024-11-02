@@ -15,7 +15,6 @@ const Component = () => {
     <Section {...{ ref, ...attributes }} {...styles.root}>
       <Section.Header {...attributes} {...styles.header} />
       <About.Summary />
-      <Section.Divider />
       <About.Work />
       <About.Code />
     </Section>

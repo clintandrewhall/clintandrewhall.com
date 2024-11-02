@@ -2,7 +2,7 @@
 // to derive the correct key... so it's COPY PASTA TIME
 const IMG_PATH_PREFIX = '/src/content/logos/';
 
-const imageModules = import.meta.glob<{ default: ImageOutputMetadata }>('@content/logos/*.png', {
+const imageModules = import.meta.glob<{ default: ImageOutputMetadata }>('@content/logos/*.*', {
   query: { w: '40', as: 'metadata', format: 'webp' },
   eager: true,
 });

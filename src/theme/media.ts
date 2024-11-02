@@ -17,7 +17,7 @@ const { vars, definitions } = buildTheme(
 const decl = {
   narrow: `@media (max-width: ${BREAKPOINT_NARROW}px)`,
   medium: `@media (max-width: ${BREAKPOINT_MEDIUM}px)`,
-  mediumToWide: `@media (max-width: ${BREAKPOINT_WIDE}px) and (min-width: ${BREAKPOINT_MEDIUM}px))`,
+  mediumToWide: `@media (max-width: ${BREAKPOINT_WIDE}px), (min-width: ${BREAKPOINT_MEDIUM}px))`,
   wide: `@media (max-width: ${BREAKPOINT_WIDE}px))`,
   max: `@media (min-width: ${BREAKPOINT_WIDE}px))`,
   wideOrPortrait: `@media (max-width: ${BREAKPOINT_WIDE}px), (orientation: portrait)`,

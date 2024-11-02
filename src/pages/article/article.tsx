@@ -3,7 +3,7 @@ import { Meta } from '@components/meta';
 import { useArticle } from '@lib/hooks';
 
 import { ArticleLayout as ArticleLayoutComponent } from './article_layout';
-import { ArticleNotFound } from './article_not_found';
+import { ArticleNotFound, notFoundProps } from './article_not_found';
 
 interface CommonProps {
   article?: ArticleImport;
@@ -28,7 +28,14 @@ const Component = ({ id }: ArticleProps) => {
   const article = useArticle(id);
 
   if (!article) {
-    return <ArticleNotFound />;
+    return (
+      <>
+        <Meta {...notFoundProps} />
+        <Article.Header />
+        <ArticleNotFound />
+        <Article.Footer />
+      </>
+    );
   }
 
   return (

@@ -258,10 +258,7 @@ const projectLink = toProps(css`
     ${decl.font.size.step0}
 
     height: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0}));
-    line-height: calc(
-      calc(var(${vars.spacing.step9}) + var(/* ${decl.color.font.light}:16 */)) +
-        var(/* ${decl.color.font.light}:11 */)
-    );
+    line-height: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0}) + 2px);
     width: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0}));
   }
 
@@ -269,10 +266,7 @@ const projectLink = toProps(css`
     ${decl.font.size.step0}
 
     height: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step2}));
-    line-height: calc(
-      calc(var(${vars.spacing.step9}) + var(/* ${decl.color.font.light}:25 */)) +
-        var(/* ${decl.color.font.light}:19 */)
-    );
+    line-height: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step2}) + 2px);
     width: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step2}));
   }
 `);

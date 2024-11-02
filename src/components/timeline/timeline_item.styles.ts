@@ -27,8 +27,9 @@ const root = (logo?: string) =>
     css`
       --bullet-top: ${BULLET_TOP};
       break-inside: avoid;
-      padding-bottom: var(${vars.spacing.step9});
+      padding-bottom: var(${vars.spacing.step3});
       padding-left: calc(var(--bullet-size) + (var(${vars.grid.gutter}) / 2));
+      padding-top: var(${vars.spacing.step3});
       position: relative;
 
       &:before {
@@ -58,7 +59,7 @@ const root = (logo?: string) =>
           );
           bottom: calc(0 - var(${vars.spacing.step9}));
           content: '';
-          height: var(${vars.spacing.step9});
+          height: var(${vars.spacing.sectionTop});
           left: calc(var(--bullet-size) / 2);
           position: absolute;
           width: 1px;
@@ -81,7 +82,7 @@ const header = toProps(css`
   flex-direction: column;
 
   &:before {
-    ${decl.shadow.medium}
+    ${decl.dropShadow.small}
     background-image: var(--timeline-item-logo);
     background-position: center;
     background-size: var(--image-size);
@@ -97,7 +98,7 @@ const header = toProps(css`
   }
 
   &:after {
-    ${decl.shadow.medium}
+    ${decl.boxShadow.small}
     background-color: var(${vars.color.background.subtler});
     border-radius: 50%;
     content: '';

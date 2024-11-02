@@ -7,25 +7,27 @@ import { grid } from './grid';
 import { header } from './header';
 import { icons } from './icons';
 import { media } from './media';
-import { shadow } from './shadow';
+import { boxShadow, dropShadow } from './shadow';
 import { spacing } from './spacing';
 
 export const theme = {
   vars: {
+    boxShadow: boxShadow.vars,
     color: color.vars,
+    dropShadow: dropShadow.vars,
     font: font.vars,
     grid: grid.vars,
     header: header.vars,
     media: media.vars,
-    shadow: shadow.vars,
     spacing: spacing.vars,
   },
   decl: {
+    boxShadow: boxShadow.decl,
     color: color.decl,
+    dropShadow: dropShadow.decl,
     font: font.decl,
     grid: grid.decl,
     media: media.decl,
-    shadow: shadow.decl,
     anchor: `
       a {
         ${color.decl.font.accent}
@@ -39,12 +41,13 @@ export const theme = {
     `,
   },
   definitions: {
+    ...boxShadow.definitions,
     ...color.definitions,
+    ...dropShadow.definitions,
     ...font.definitions,
     ...grid.definitions,
     ...header.definitions,
     ...media.definitions,
-    ...shadow.definitions,
     ...spacing.definitions,
   },
   icons,
