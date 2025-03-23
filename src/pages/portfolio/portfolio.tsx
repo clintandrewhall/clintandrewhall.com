@@ -5,7 +5,7 @@ import { PortfolioList } from './portfolio_list';
 
 const Header = () => <Layout.Header background="opaque" selectedId="portfolio" />;
 
-const Component = () => {
+const PortfolioComponent = () => {
   return (
     <>
       <Meta title="Portfolio" />
@@ -16,7 +16,7 @@ const Component = () => {
   );
 };
 
-export const Portfolio = Object.assign(Component, {
+export const Portfolio = Object.assign(PortfolioComponent, {
   Header,
   List: PortfolioList,
   Footer: Layout.Footer,

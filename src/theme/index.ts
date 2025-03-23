@@ -1,4 +1,3 @@
-// import 'unfonts.css';
 import 'ress';
 
 import { color } from './color';

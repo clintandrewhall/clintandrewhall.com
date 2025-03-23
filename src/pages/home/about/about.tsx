@@ -1,6 +1,7 @@
+import { forwardRef } from 'react';
+
 import { Section } from '@components/layout';
 import { attributes } from '@content/about.md';
-import { useHomeTopic } from '@lib/hooks';
 
 import { Code } from './code';
 import { Summary } from './summary';
@@ -8,9 +9,7 @@ import { Work } from './work';
 
 import styles from './about.styles';
 
-const Component = () => {
-  const { ref } = useHomeTopic('about');
-
+const AboutComponent = forwardRef<HTMLDivElement>(({}, ref) => {
   return (
     <Section {...{ ref, ...attributes }} {...styles.root}>
       <Section.Header {...attributes} {...styles.header} />
@@ -19,9 +18,9 @@ const Component = () => {
       <About.Code />
     </Section>
   );
-};
+});
 
-export const About = Object.assign(Component, {
+export const About = Object.assign(AboutComponent, {
   Code,
   Summary,
   Work,

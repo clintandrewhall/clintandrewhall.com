@@ -5,7 +5,7 @@ import { SiteLogo } from './site_logo';
 
 import styles from './footer.styles';
 
-const Component = () => (
+const FooterComponent = () => (
   <footer {...styles.root}>
     <Footer.SiteLogo />
     <Footer.SocialProfiles {...styles.social} />
@@ -13,7 +13,7 @@ const Component = () => (
   </footer>
 );
 
-export const Footer = Object.assign(Component, {
+export const Footer = Object.assign(FooterComponent, {
   SocialProfiles,
   SiteLogo,
   SiteCredits,

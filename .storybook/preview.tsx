@@ -7,7 +7,6 @@ import { HelmetProvider } from 'react-helmet-async';
 import { reactRouterParameters, withRouter } from 'storybook-addon-remix-react-router';
 
 import { css, cx } from '@lib/css';
-// import { useScrollToAnchor } from '@lib/hooks';
 import { theme } from '@theme';
 
 const preview: Preview = {

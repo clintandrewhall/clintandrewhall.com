@@ -1,9 +1,8 @@
 import { useEffect, useState } from 'react';
 
 import { GithubCorner as Corner } from '@components/github';
-import { type SectionId } from '@lib/site';
 
-import { Navigation } from '../navigation';
+import { Navigation, type NavigationProps } from '../navigation';
 
 import { HeaderLogo as Logo } from './header_logo';
 
@@ -11,10 +10,8 @@ import styles from './header.styles';
 
 const SCROLL_THRESHOLD = 80;
 
-export interface HeaderProps {
-  isLocal?: boolean;
+export interface HeaderProps extends NavigationProps {
   background?: 'clear' | 'opaque';
-  selectedId?: SectionId;
 }
 
 const vh = (percent: number): number => {
@@ -27,16 +24,12 @@ const vh = (percent: number): number => {
   return (Math.max(clientHeight, innerHeight || 0) * percent) / 100;
 };
 
-const Component = ({ isLocal, background = 'clear', selectedId }: HeaderProps) => {
+const HeaderComponent = ({ background = 'clear', ...props }: HeaderProps) => {
   const [isFloating, setIsFloating] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY >= vh(SCROLL_THRESHOLD)) {
-        setIsFloating(true);
-      } else {
-        setIsFloating(false);
-      }
+      setIsFloating(window.scrollY >= vh(SCROLL_THRESHOLD));
     };
 
     window.addEventListener('scroll', handleScroll);
@@ -49,13 +42,13 @@ const Component = ({ isLocal, background = 'clear', selectedId }: HeaderProps) =
   return (
     <header {...styles.root(isFloating, background)}>
       <Header.Logo />
-      <Header.Navigation {...{ isLocal, selectedId }} />
+      <Header.Navigation {...props} />
       <Header.Corner />
     </header>
   );
 };
 
-export const Header = Object.assign(Component, {
+export const Header = Object.assign(HeaderComponent, {
   Logo,
   Navigation,
   Corner,

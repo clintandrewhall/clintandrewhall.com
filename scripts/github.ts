@@ -1,81 +1,88 @@
+import { Octokit } from '@octokit/rest';
 import { config } from 'dotenv';
 import * as fs from 'fs';
 
 config();
-const writePath = './src/content';
 
-import type { Response } from 'node-fetch';
-import fetch from 'node-fetch';
-
-const BASE_URL = 'https://api.github.com/users/';
-const username = 'clintandrewhall';
-
-const userAPI = BASE_URL + username;
-const reposAPI = `${BASE_URL + username}/repos`;
+const WRITE_PATH = './src/content';
+const USERNAME = 'clintandrewhall';
+const EXCLUDE = ['clintandrewhall.github.io', 'hero'];
 
 const values = (obj: { [key: string]: LinesOfCode }): LinesOfCode[] =>
   Object.keys(obj).map((k) => obj[k]);
 
-const exclude = ['clintandrewhall.github.io', 'hero'];
+export const getGithubData = async (auth?: string) => {
+  const octokit = new Octokit({ auth });
+  const {
+    data: { followers, following, public_gists, public_repos },
+  } = await octokit.users.getByUsername({ username: USERNAME });
+  const { data: allRepos } = await octokit.repos.listForUser({ username: USERNAME });
 
-export const getGithubData = async (token?: string) => {
-  const headers = token
-    ? {
-        headers: {
-          Authorization: `token ${token}`,
-        },
-      }
-    : {};
-
-  const responses = await Promise.all([fetch(userAPI, headers), fetch(reposAPI, headers)]);
-  const jsons = await Promise.all(responses.map((result) => result.json()));
-  const user = jsons[0];
-  const rawRepos = jsons[1];
-
-  if (rawRepos.message || rawRepos.message) {
-    console.log(rawRepos.message, user.message);
-    return;
-  }
-
-  const repos = rawRepos
-    .filter((repo: any) => !exclude.includes(repo.name))
+  const repos = allRepos
+    .filter((repo: any) => !EXCLUDE.includes(repo.name))
     .filter((repo: any) => !repo.archived)
     .filter((repo: any) => repo.name === 'node-foursquare' || !repo.fork);
 
-  const repoReponses: Response[] = await Promise.all(
-    repos.map((repo: { languages_url: string }) => fetch(repo.languages_url, headers)),
+  const languages = await Promise.all(
+    repos.map(({ name: repo }) =>
+      octokit.repos.listLanguages({ owner: USERNAME, repo }).then((r) => r.data),
+    ),
   );
 
-  const languages = await Promise.all(repoReponses.map((result) => result.json()));
+  const locByRepo: Record<string, LinesOfCode> = {};
+  const repoInfo: Record<string, RepoInformation> = {};
 
-  const entries: Record<string, LinesOfCode> = {};
-
-  repos.forEach((repo: any, index: number) => {
-    Object.entries(languages[index]).forEach((entry) => {
-      const languageName = entry[0] as string;
-      const linesOfCode = parseInt(entry[1] as string, 10) || 0;
-      const item = entries[languageName] || {
-        languageName,
-        totalLines: 0,
-        byProject: {},
+  repos.forEach(
+    (
+      {
+        name,
+        full_name: fullName,
+        html_url: url,
+        size,
+        stargazers_count: stargazers,
+        watchers_count: watchers,
+        language,
+      },
+      index,
+    ) => {
+      repoInfo[name] = {
+        name,
+        fullName,
+        url,
+        size: size || 0,
+        stargazers: stargazers || 0,
+        watchers: watchers || 0,
+        language: language || 'None',
       };
-      item.totalLines += linesOfCode;
-      item.byProject[repo.name] = linesOfCode;
-      entries[languageName] = item;
-    });
-  });
 
-  const loc: LinesOfCode[] = values(entries).sort(
+      Object.entries(languages[index]).forEach(([languageName, linesOfCode]) => {
+        const item = locByRepo[languageName] || {
+          languageName,
+          totalLines: 0,
+          byProject: {},
+        };
+        item.totalLines += linesOfCode;
+        item.byProject[name] = linesOfCode;
+        locByRepo[languageName] = item;
+      });
+    },
+  );
+
+  const loc: LinesOfCode[] = values(locByRepo).sort(
     (a: LinesOfCode, b: LinesOfCode) => b.totalLines - a.totalLines,
   );
 
   loc.forEach((item) => {
     item.byProject = Object.entries(item.byProject)
-      .sort(([, a], [, b]) => a - b)
+      .sort(([, a], [, b]) => (a ?? 0) - (b ?? 0))
       .reduce((r, [k, v]) => ({ ...r, [k]: v }), {});
   });
 
-  return { user, languages, loc, repos };
+  return {
+    user: { followers, following, gists: public_gists, repos: public_repos },
+    repos: repoInfo,
+    loc,
+  };
 };
 
 (async function get() {
@@ -86,7 +93,7 @@ export const getGithubData = async (token?: string) => {
     return;
   }
 
-  fs.writeFile(`${writePath}/github.json`, JSON.stringify(result), () => {
+  fs.writeFile(`${WRITE_PATH}/github.json`, JSON.stringify(result), () => {
     console.log('wrote github');
   });
 })();

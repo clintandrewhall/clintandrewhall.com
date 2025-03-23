@@ -10,10 +10,6 @@ interface SocialProfileItemProps {
   showDivider?: boolean;
 }
 
-export interface SocialProfilesProps extends Omit<SocialProfileItemProps, 'profile'> {
-  className?: string;
-}
-
 const SocialProfileItem = ({
   profile,
   showLabel = true,
@@ -26,6 +22,9 @@ const SocialProfileItem = ({
     </a>
   </li>
 );
+export interface SocialProfilesProps extends Omit<SocialProfileItemProps, 'profile'> {
+  className?: string;
+}
 
 export const SocialProfiles = ({ className: className, ...props }: SocialProfilesProps) => {
   const profiles = useResume()?.basics.profiles || [];

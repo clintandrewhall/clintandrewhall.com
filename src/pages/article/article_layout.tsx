@@ -9,7 +9,7 @@ export interface ArticleLayoutProps {
   article: ArticleImport;
 }
 
-const Component = ({ article }: ArticleLayoutProps) => (
+const ArticleLayoutComponent = ({ article }: ArticleLayoutProps) => (
   <>
     <ArticleLayout.Root {...article.attributes} {...styles.root}>
       <ArticleLayout.Header {...article.attributes} />
@@ -18,7 +18,7 @@ const Component = ({ article }: ArticleLayoutProps) => (
   </>
 );
 
-export const ArticleLayout = Object.assign(Component, {
+export const ArticleLayout = Object.assign(ArticleLayoutComponent, {
   Root: Section,
   Header: ArticleHeader,
   Markdown: ArticleMarkdown,

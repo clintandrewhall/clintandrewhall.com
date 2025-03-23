@@ -1,4 +1,4 @@
-import { type SectionId } from '@lib/site';
+import { type TopicId } from '@lib/site';
 
 // Vite needs this to be a literal, but I need it to be a variable
 // to derive the correct key... so it's COPY PASTA TIME
@@ -51,7 +51,7 @@ const articles = Object.values(contents).sort(
   (a, b) => b.attributes.timestamp - a.attributes.timestamp,
 );
 
-const useAllArticleIds = () => articles.map((article) => article.attributes.id as SectionId);
+const useAllArticleIds = () => articles.map((article) => article.attributes.id as TopicId);
 
 const useAllArticleMetadata = () => articles.map((article) => article.attributes);
 

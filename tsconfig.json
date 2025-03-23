@@ -61,8 +61,5 @@
     "types/*.d.ts",
     "vite.config.ts"
   ],
-  "exclude": [
-    "scripts/github.ts",
-    "scripts/medium.ts",
-  ]
+  "exclude": []
 }

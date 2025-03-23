@@ -1,7 +1,6 @@
-import { useEffect, useState } from 'react';
+import { forwardRef, useEffect, useState } from 'react';
 
 import { Section } from '@components/layout';
-import { useHomeTopic } from '@lib/hooks';
 
 import { Item } from './item';
 
@@ -18,8 +17,7 @@ const attributes = {
   subtitle: 'Sometimes I like to post notes or thoughts. Opinions are always my own.',
 };
 
-const Component = () => {
-  const { ref } = useHomeTopic('medium');
+const MediumComponent = forwardRef<HTMLDivElement>((_props, ref) => {
   const [stories, setStories] = useState<Posts | null>(null);
 
   useEffect(() => {
@@ -49,8 +47,8 @@ const Component = () => {
       />
     </Section>
   );
-};
+});
 
-export const Medium = Object.assign(Component, {
+export const Medium = Object.assign(MediumComponent, {
   Item,
 });

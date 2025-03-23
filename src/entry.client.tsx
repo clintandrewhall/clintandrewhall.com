@@ -3,9 +3,6 @@ import ReactDOM from 'react-dom/client';
 import { HelmetProvider } from 'react-helmet-async';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-// if (!Object.hasOwn) {
-//   Object.hasOwn = (obj, prop) => Object.prototype.hasOwnProperty.call(obj, prop);
-// }
 import { routes } from './routing';
 
 const root = document.getElementById('root');

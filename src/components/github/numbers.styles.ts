@@ -6,7 +6,6 @@ const { vars, decl } = theme;
 const root = toProps(css`
   ${decl.color.background.subtlest}
   ${decl.color.font.dark}
-  ${decl.boxShadow.small}
   border-color: var(${vars.color.border.medium});
   border-radius: var(${vars.spacing.step0});
   border-style: solid;

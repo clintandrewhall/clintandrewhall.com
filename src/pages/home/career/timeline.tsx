@@ -3,7 +3,6 @@ import Markdown from 'react-markdown';
 import { Section } from '@components/layout';
 import { Timeline as TimelineComponent } from '@components/timeline';
 import { useResume } from '@lib/hooks';
-import { useHomeTopic } from '@lib/hooks';
 
 const attributes = {
   id: 'career',
@@ -13,7 +12,6 @@ const attributes = {
 };
 
 export const Timeline = () => {
-  const { ref } = useHomeTopic('career');
   const resume = useResume();
 
   if (!resume) {
@@ -23,7 +21,7 @@ export const Timeline = () => {
   const { work } = resume;
 
   return (
-    <Section {...{ ref, ...attributes }}>
+    <Section {...attributes}>
       <Section.Header {...attributes} />
       <TimelineComponent
         items={work.slice(0, 6).map((item) => ({

@@ -27,6 +27,8 @@
     "simple-import-sort"
   ],
   "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn",
     // Add your own rules here to override ones from the extended configs.
     "react/react-in-jsx-scope": "off",
     "react/jsx-uses-react": "off",

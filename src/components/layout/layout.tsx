@@ -14,7 +14,7 @@ export interface LayoutProps {
   id?: string;
 }
 
-const Component = forwardRef<HTMLDivElement, LayoutProps>(
+const LayoutComponent = forwardRef<HTMLDivElement, LayoutProps>(
   ({ children, className, element = 'div', id }, ref) => {
     return (
       <div {...{ ref, ...cx(styles.outer, className), id }}>
@@ -24,7 +24,7 @@ const Component = forwardRef<HTMLDivElement, LayoutProps>(
   },
 );
 
-export const Layout = Object.assign(Component, {
+export const Layout = Object.assign(LayoutComponent, {
   Header,
   Footer,
 });

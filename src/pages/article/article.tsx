@@ -10,11 +10,7 @@ interface CommonProps {
 }
 
 const Header = ({ article }: CommonProps) => (
-  <LayoutComponent.Header
-    background={!!article ? 'clear' : 'opaque'}
-    selectedId="portfolio"
-    isLocal={false}
-  />
+  <LayoutComponent.Header background={!!article ? 'clear' : 'opaque'} selectedId="portfolio" />
 );
 
 const Layout = ({ article }: CommonProps) =>
@@ -24,7 +20,7 @@ export interface ArticleProps {
   id: string;
 }
 
-const Component = ({ id }: ArticleProps) => {
+const ArticleComponent = ({ id }: ArticleProps) => {
   const article = useArticle(id);
 
   if (!article) {
@@ -38,9 +34,13 @@ const Component = ({ id }: ArticleProps) => {
     );
   }
 
+  const {
+    attributes: { name: title, caption: description },
+  } = article;
+
   return (
     <>
-      <Meta title={article.attributes.name} description={article.attributes.caption} />
+      <Meta {...{ title, description }} />
       <Article.Header {...{ article }} />
       <Article.Layout {...{ article }} />
       <Article.Footer />
@@ -48,7 +48,7 @@ const Component = ({ id }: ArticleProps) => {
   );
 };
 
-export const Article = Object.assign(Component, {
+export const Article = Object.assign(ArticleComponent, {
   Header,
   Layout,
   Footer: LayoutComponent.Footer,

@@ -22,7 +22,7 @@ export async function createServer() {
     const url = '/';
 
     const template = fs.readFileSync(resolve('../dist/site/index.html'), 'utf-8');
-    // @ts-ignore There might be an error here, if nothing has been built.
+    // @ts-expect-error There might be an error here, if nothing has been built.
     const render = (await import('../dist/server/entry.server.js')).SSRRender;
 
     const { html, helmet } = render(url); //Rendering component without any client side logic de-hydrated like a dry sponge

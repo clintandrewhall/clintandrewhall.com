@@ -12,11 +12,11 @@ interface TimelineWithChildren {
 
 export type TimelineProps = ExclusiveUnion<TimelineWithProp, TimelineWithChildren>;
 
-const Component = ({ children: childrenProp, items }: TimelineProps) => {
+const TimelineComponent = ({ children: childrenProp, items }: TimelineProps) => {
   const children =
     childrenProp ??
     items.map((item, index) => <TimelineItem key={`${item.title}_${index}`} {...item} />);
   return <div {...styles.root}>{children}</div>;
 };
 
-export const Timeline = Object.assign(Component, { Item: TimelineItem });
+export const Timeline = Object.assign(TimelineComponent, { Item: TimelineItem });

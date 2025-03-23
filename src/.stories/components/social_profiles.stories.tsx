@@ -1,7 +1,14 @@
 import type { Meta, StoryObj } from '@storybook/react';
 
-import { SocialProfiles as Component } from '@components/social_profiles';
+import { SocialProfiles as Component, type SocialProfilesProps } from '@components/social_profiles';
 import { useResume } from '@lib/hooks';
+
+const Story = (props: SocialProfilesProps) => {
+  const resume = useResume();
+  const profiles = resume?.basics.profiles || [];
+
+  return <Component {...{ ...props, profiles }} />;
+};
 
 const meta: Meta<typeof Component> = {
   title: 'Components/Social Profiles',
@@ -18,12 +25,7 @@ const meta: Meta<typeof Component> = {
       </div>
     ),
   ],
-  render: (args) => {
-    const resume = useResume();
-    const profiles = resume?.basics.profiles || [];
-
-    return <Component {...{ ...args, profiles }} />;
-  },
+  render: Story,
 };
 
 export default meta;

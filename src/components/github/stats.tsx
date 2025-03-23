@@ -5,13 +5,7 @@ import { Numbers } from './numbers';
 
 export const GithubStats = () => (
   <>
-    <Numbers
-      {...user}
-      {...{
-        gists: user.public_gists,
-        repos: user.public_repos,
-      }}
-    />
+    <Numbers {...user} />
     <LOC loc={loc} />
   </>
 );

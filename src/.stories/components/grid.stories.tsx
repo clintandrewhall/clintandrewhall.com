@@ -20,8 +20,8 @@ const Box = ({ className, children }: { className?: string; children?: ReactNode
       className={cx(
         css`
           background-color: #fff;
-          text-align: center;
           min-height: var(${theme.vars.grid.gutter});
+          text-align: center;
         `,
         className,
       )}

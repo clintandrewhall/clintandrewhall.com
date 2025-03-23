@@ -16,11 +16,4 @@ const meta: Meta<typeof GithubStats> = {
 
 export default meta;
 
-export const Stats: StoryObj<typeof GithubStats> = {
-  args: {
-    followers: 136,
-    following: 16,
-    gists: 11,
-    repos: 45,
-  },
-};
+export const Stats: StoryObj<typeof GithubStats> = {};

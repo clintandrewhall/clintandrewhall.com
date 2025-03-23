@@ -2,7 +2,7 @@ declare module '*.md' {
   // "unknown" would be more detailed depends on how you structure frontmatter
   const attributes: {
     id: string;
-    name?: import('@lib/site').SectionId;
+    name?: import('@lib/site').TopicId;
     title: string;
     subtitle?: string;
   };

@@ -1,17 +1,15 @@
+import { forwardRef } from 'react';
 import { Link } from 'react-router-dom';
 import { ParallaxBanner, ParallaxBannerLayer, ParallaxProvider } from 'react-scroll-parallax';
 
 import { SocialProfiles } from '@components/social_profiles';
-import { useHomeTopic } from '@lib/hooks';
 
 // @ts-expect-error - required for loading the logo
 import hero from '../../content/images/hero.jpg?w=2500&format=webp';
 
 import styles from './hero.styles';
 
-export const Hero = () => {
-  const { ref } = useHomeTopic('home');
-
+export const Hero = forwardRef<HTMLDivElement>(({}, ref) => {
   return (
     <div ref={ref} id="home">
       <ParallaxProvider>
@@ -42,4 +40,4 @@ export const Hero = () => {
       </ParallaxProvider>
     </div>
   );
-};
+});

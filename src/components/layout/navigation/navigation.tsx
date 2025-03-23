@@ -1,19 +1,18 @@
 import { Fragment, useEffect, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
-import { type SectionId, sectionIds } from '@lib/site';
+import { type TopicId, topicIds } from '@lib/site';
 
-import { NavigationLink } from './navigation_link';
-import { ToSectionLink } from './to_section_link';
+import { NavigationLink, type NavigationLinkProps } from './navigation_link';
 
 import styles from './navigation.styles';
 
 export interface NavigationProps {
-  isLocal?: boolean;
-  selectedId?: SectionId;
+  Link?: (props: NavigationLinkProps) => JSX.Element;
+  selectedId?: TopicId;
 }
 
-export const Navigation = ({ isLocal = false, selectedId }: NavigationProps) => {
+export const Navigation = ({ Link = NavigationLink, selectedId }: NavigationProps) => {
   const isNarrow = useMediaQuery({
     maxDeviceWidth: 750,
   });
@@ -29,9 +28,8 @@ export const Navigation = ({ isLocal = false, selectedId }: NavigationProps) => 
     }
   }, [isNarrow, isOpen]);
 
-  const link = isLocal ? ToSectionLink : NavigationLink;
-  const links = sectionIds.map((id) => (
-    <Fragment key={id}>{link({ id, isSelected: selectedId === id })}</Fragment>
+  const links = topicIds.map((id) => (
+    <Fragment key={id}>{Link({ id, isSelected: selectedId === id })}</Fragment>
   ));
 
   const button = isNarrow ? (

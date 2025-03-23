@@ -20,7 +20,7 @@ export interface SectionProps {
 
 const Header = slot(SectionHeader, 'header');
 
-const Component = forwardRef<HTMLDivElement, SectionProps>(
+const SectionComponent = forwardRef<HTMLDivElement, SectionProps>(
   ({ children, id, className, style }, ref) => {
     const slots = useSlots(children);
 
@@ -35,7 +35,7 @@ const Component = forwardRef<HTMLDivElement, SectionProps>(
   },
 );
 
-export const Section = Object.assign(Component, {
+export const Section = Object.assign(SectionComponent, {
   Header,
   Divider,
   Link,

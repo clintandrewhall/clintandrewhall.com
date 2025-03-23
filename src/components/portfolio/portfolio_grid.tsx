@@ -12,9 +12,9 @@ export interface PortfolioGridProps {
   children: ReactNode;
 }
 
-const Component = ({ children, className = '', style = {} }: PortfolioGridProps) => {
+const PortfolioGridComponent = ({ children, className = '', style = {} }: PortfolioGridProps) => {
   const root = cx(styles.root, { style, className });
   return <div {...root}>{children}</div>;
 };
 
-export const PortfolioGrid = Object.assign(Component, { Item: PortfolioItem });
+export const PortfolioGrid = Object.assign(PortfolioGridComponent, { Item: PortfolioItem });

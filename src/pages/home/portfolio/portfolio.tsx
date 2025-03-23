@@ -1,6 +1,7 @@
+import { forwardRef } from 'react';
+
 import { Section } from '@components/layout';
 import { PortfolioGrid, usePortfolioItems } from '@components/portfolio';
-import { useHomeTopic } from '@lib/hooks';
 
 import styles from './portfolio.styles';
 
@@ -11,8 +12,7 @@ const attributes = {
   subtitle: "Here are a few things I've worked on in my spare time.",
 };
 
-export const Portfolio = () => {
-  const { ref } = useHomeTopic('portfolio');
+export const Portfolio = forwardRef<HTMLDivElement>((_props, ref) => {
   const items = usePortfolioItems();
 
   return (
@@ -24,4 +24,4 @@ export const Portfolio = () => {
       <Section.Link href="/portfolio" title="View my portfolio" />
     </Section>
   );
-};
+});
