@@ -1,4 +1,4 @@
-import ReactDOMServer from 'react-dom/server';
+import { renderToStaticMarkup } from 'react-dom/server';
 import { HelmetProvider, type HelmetServerState } from 'react-helmet-async';
 import { StaticRouter } from 'react-router-dom/server';
 
@@ -11,7 +11,7 @@ interface HelmetContext {
 export function SSRRender(url: string | Partial<Location>) {
   const helmetContext: HelmetContext = {} as HelmetContext;
 
-  const html = ReactDOMServer.renderToString(
+  const html = renderToStaticMarkup(
     <StaticRouter location={url}>
       <HelmetProvider context={helmetContext}>{AppRoutes}</HelmetProvider>
     </StaticRouter>,

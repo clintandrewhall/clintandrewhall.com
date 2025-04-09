@@ -2,7 +2,7 @@ import { useEffect } from 'react';
 import { css as csl } from '@linaria/core';
 import 'ress';
 import 'unfonts.css';
-import { Outlet, useLocation } from 'react-router-dom';
+import { Outlet, useLocation } from 'react-router';
 
 import { Meta } from '@components/meta';
 import { css, cx } from '@lib/css';

@@ -57,6 +57,8 @@ export const theme = {
       font-feature-settings: 'liga', 'clig';
       font-variant-ligatures: common-ligatures;
       text-rendering: optimizeLegibility;
+      font-family: var(${font.vars.sansSerif.light});
+      font-size: var(${font.vars.size.step0});
 
       a {
         font-weight: 600;

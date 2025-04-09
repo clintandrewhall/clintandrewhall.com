@@ -1,4 +1,4 @@
-import { createRoutesFromElements, Route, Routes } from 'react-router-dom';
+import { createRoutesFromElements, Route, Routes } from 'react-router';
 
 import { App } from '../app';
 
