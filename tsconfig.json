@@ -21,7 +21,12 @@
     "noUnusedLocals": true,
     "noUnusedParameters": true,
     "noFallthroughCasesInSwitch": true,
+    "verbatimModuleSyntax": true,
     "baseUrl": ".",
+    "rootDirs": [
+      ".",
+      "./.react-router/types"
+    ],
     "paths": {
       "@content/*": [
         "./src/content/*"
@@ -59,7 +64,17 @@
     ".storybook/**/*.ts",
     ".storybook/**/*.tsx",
     "types/*.d.ts",
-    "vite.config.ts"
+    "vite.config.ts",
+    "react-router.config.ts",
+    "**/.server/**/*",
+    "**/.client/**/*",
+    ".react-router/types/**/*"
+  ],
+  "types": [
+    "vite/client",
+    "react-router",
+    "react-router-dom",
+    "node"
   ],
   "exclude": []
 }

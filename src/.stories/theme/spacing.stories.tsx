@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { css, cx } from '@lib/css';
 import { useDimensions } from '@lib/hooks';

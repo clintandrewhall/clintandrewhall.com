@@ -1,12 +1,16 @@
-import react from '@vitejs/plugin-react-swc';
-import linaria from '@wyw-in-js/vite';
-import { resolve } from 'path';
+import { reactRouter } from '@react-router/dev/vite';
+import wyw from '@wyw-in-js/vite';
+import MarkdownIt from 'markdown-it';
+import path, { resolve } from 'path';
 import Unfonts from 'unplugin-fonts/vite';
 import { defineConfig } from 'vite';
 import { imagetools } from 'vite-imagetools';
 import { Mode, plugin as markdown } from 'vite-plugin-markdown';
+import tsconfigPaths from 'vite-tsconfig-paths';
 
-import { unfontConfig } from './config';
+import { markdownImagePlugin, unfontConfig, viteImagePlugin } from './config';
+
+const isStorybook = process.argv[1]?.includes('storybook');
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -14,12 +18,44 @@ export default defineConfig({
     emptyOutDir: true,
   },
   plugins: [
-    markdown({ mode: [Mode.HTML, Mode.REACT, Mode.TOC] }),
+    viteImagePlugin(),
+    imagetools({
+      defaultDirectives: (url) => {
+        const extname = path.extname(url.pathname);
+        if (
+          // formats supported by Sharp (https://sharp.pixelplumbing.com/#formats)
+          ['.png', '.jpg', '.jpeg', '.webp', '.gif', '.avif', '.tiff', '.tif', '.svg'].includes(
+            extname,
+          )
+        ) {
+          return new URLSearchParams([
+            ['as', 'metadata'],
+            ['format', 'webp'],
+            ['w', '480;880;1280'],
+            ...url.searchParams.entries(),
+          ]);
+        } else return url.searchParams;
+      },
+    }),
+    markdown({
+      mode: [Mode.HTML, Mode.TOC, Mode.REACT],
+      markdownIt: (() => {
+        const md = new MarkdownIt({
+          html: true,
+          linkify: true,
+          typographer: true,
+        });
+        // Apply custom image processing
+        markdownImagePlugin(md);
+        return md;
+      })(),
+    }),
+    !isStorybook && reactRouter(),
     Unfonts(unfontConfig),
-    linaria({
-      include: ['**/*.{ts,tsx}'],
+    wyw({
+      include: ['src/**/*.{ts,tsx}'],
       babelOptions: {
-        presets: ['@babel/preset-typescript', '@babel/preset-react', '@wyw-in-js'],
+        presets: ['@babel/preset-typescript', '@babel/preset-react'],
       },
       tagResolver: (source, tag) => {
         if (source === '@lib/css') {
@@ -27,9 +63,9 @@ export default defineConfig({
             return resolve('node_modules/@linaria/atomic/processors/css');
           }
 
-          if (tag === 'css') {
-            return resolve('node_modules/@linaria/core/processors/css');
-          }
+          // if (tag === 'css') {
+          //   return resolve('node_modules/@linaria/core/processors/css');
+          // }
 
           if (tag === 'styled') {
             return resolve('node_modules/@linaria/atomic/processors/styled');
@@ -39,8 +75,7 @@ export default defineConfig({
         return null;
       },
     }),
-    imagetools(),
-    react(),
+    tsconfigPaths(),
   ],
   resolve: {
     alias: [
@@ -51,10 +86,6 @@ export default defineConfig({
       { find: '@state', replacement: resolve(__dirname, './src/state') },
       { find: /@theme\//, replacement: `${resolve(__dirname, './src/theme')}/` },
       { find: /@theme$/, replacement: resolve(__dirname, './src/theme/index') },
-      {
-        find: '@images',
-        replacement: resolve(__dirname, './src/content/portfolio/images'),
-      },
       { find: '@', replacement: resolve(__dirname, './src') },
     ],
   },

@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { PeopleLine as Component, Person, type PersonProps } from '@components/people_line';
 import { theme } from '@theme';

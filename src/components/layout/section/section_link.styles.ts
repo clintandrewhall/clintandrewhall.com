@@ -5,6 +5,7 @@ const { decl, vars } = theme;
 
 const root = toProps(css`
   ${decl.grid.area.byThree}
+  ${decl.font.sansSerif.semiBold}
   margin-top: var(${vars.spacing.step4});
 
   ${decl.media.narrow} {

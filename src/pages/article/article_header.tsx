@@ -1,5 +1,5 @@
 import moment from 'moment';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 
 import { Layout } from '@components/layout';
 import { useArticleImage } from '@lib/hooks';

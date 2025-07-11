@@ -1,13 +1,13 @@
 const google = {
   families: [
-    {
-      name: 'Libre Baskerville',
-      styles: 'ital,wght@0,400;0,700;1,400',
-    },
-    {
-      name: 'Montserrat',
-      styles: 'wght@100;200;300;400;500;600;700',
-    },
+    //   {
+    //     name: 'Libre Baskerville',
+    //     styles: 'ital,wght@0,400;0,700;1,400',
+    //   },
+    //   {
+    //     name: 'Montserrat',
+    //     styles: 'wght@100;200;300;400;500;600;700',
+    //   },
   ],
 };
 
@@ -22,6 +22,11 @@ const custom = {
       name: 'Libre Baskerville Italic',
       local: 'libre-baskerville-italic',
       src: './config/fonts/librebaskerville/librebaskerville-italic-webfont.woff',
+    },
+    {
+      name: 'Libre Baskerville',
+      local: 'libre-baskerville',
+      src: './config/fonts/librebaskerville/librebaskerville-regular-webfont.woff',
     },
     {
       name: 'Montserrat Bold',

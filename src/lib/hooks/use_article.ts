@@ -46,10 +46,12 @@ const images = Object.fromEntries(
 const DEFAULT_LIMIT = 6;
 
 // Portfolio Articles
-const contents = import.meta.glob<ArticleImport>('@content/portfolio/*.md', { eager: true });
-const articles = Object.values(contents).sort(
-  (a, b) => b.attributes.timestamp - a.attributes.timestamp,
-);
+// const contents = import.meta.glob<ArticleImport>('@content/portfolio/*.md', { eager: true });
+// const articles = Object.values(contents).sort(
+//   (a, b) => b.attributes.timestamp - a.attributes.timestamp,
+// );
+
+const articles: ArticleImport[] = [];
 
 const useAllArticleIds = () => articles.map((article) => article.attributes.id as TopicId);
 

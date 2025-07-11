@@ -1,32 +1,23 @@
 import { Layout as LayoutComponent } from '@components/layout';
-import { Meta } from '@components/meta';
-import { useArticle } from '@lib/hooks';
 
 import { ArticleLayout as ArticleLayoutComponent } from './article_layout';
-import { ArticleNotFound, notFoundProps } from './article_not_found';
+import { ArticleNotFound } from './article_not_found';
 
-interface CommonProps {
-  article?: ArticleImport;
+export interface ArticleProps {
+  article?: ArticleImport | null;
 }
 
-const Header = ({ article }: CommonProps) => (
+const Header = ({ article }: ArticleProps) => (
   <LayoutComponent.Header background={!!article ? 'clear' : 'opaque'} selectedId="portfolio" />
 );
 
-const Layout = ({ article }: CommonProps) =>
+const Layout = ({ article }: ArticleProps) =>
   !!article ? <ArticleLayoutComponent {...{ article }} /> : <Article.NotFound />;
 
-export interface ArticleProps {
-  id: string;
-}
-
-const ArticleComponent = ({ id }: ArticleProps) => {
-  const article = useArticle(id);
-
+const ArticleComponent = ({ article }: ArticleProps) => {
   if (!article) {
     return (
       <>
-        <Meta {...notFoundProps} />
         <Article.Header />
         <ArticleNotFound />
         <Article.Footer />
@@ -34,13 +25,8 @@ const ArticleComponent = ({ id }: ArticleProps) => {
     );
   }
 
-  const {
-    attributes: { name: title, caption: description },
-  } = article;
-
   return (
     <>
-      <Meta {...{ title, description }} />
       <Article.Header {...{ article }} />
       <Article.Layout {...{ article }} />
       <Article.Footer />

@@ -1,5 +1,5 @@
 import { Portfolio as Component } from '@pages/portfolio';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 const meta: Meta<typeof Portfolio> = {
   title: 'Pages/Portfolio',

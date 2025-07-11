@@ -105,9 +105,8 @@ const greeting = toProps(css`
 `);
 
 const intro = toProps(css`
-  ${decl.font.serif.regular}
+  ${decl.font.serif.bold}
   ${decl.font.size.step5}
-  ${decl.font.weight.bold}
 
   line-height: calc(var(${vars.font.size.step5}) + var(${vars.font.size.step1}));
   margin-top: var(${vars.spacing.step4});

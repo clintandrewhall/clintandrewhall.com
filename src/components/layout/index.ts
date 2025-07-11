@@ -1,4 +1,3 @@
-export { Head } from './head';
 export { Layout, type LayoutProps } from './layout';
 export {
   Navigation,

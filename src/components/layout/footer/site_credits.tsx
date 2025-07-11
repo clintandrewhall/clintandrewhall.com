@@ -5,7 +5,7 @@ export const SiteCredits = () => {
 
   return (
     <div {...styles.root}>
-      <span>© Copyright Clint Andrew Hall {year}</span>
+      <span>Copyright Clint Andrew Hall {year}</span>
       <span>
         <a href="https://github.com/clintandrewhall/clintandrewhall.com">Crafted</a> with{' '}
         <a href="https://reactjs.org/">React</a>

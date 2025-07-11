@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { SocialProfiles as Component, type SocialProfilesProps } from '@components/social_profiles';
 import { useResume } from '@lib/hooks';

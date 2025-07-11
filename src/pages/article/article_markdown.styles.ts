@@ -47,6 +47,14 @@ const root = toProps(css`
 
 const markdown = toProps(css`
   ${decl.grid.area.byOne}
+
+  picture img {
+    border-color: var(${vars.color.border.outline});
+    border-style: solid;
+    border-width: 1px;
+    max-width: 100%;
+    width: 100%;
+  }
 `);
 
 export default { root, markdown };

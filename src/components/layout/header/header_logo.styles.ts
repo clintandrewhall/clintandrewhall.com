@@ -4,7 +4,7 @@ import { theme } from '@theme';
 const { vars } = theme;
 
 // @ts-expect-error - required for loading the logo
-import logo from '../../../content/images/logo.png?h=50&format=webp';
+import logo from '../../../content/images/logo.png?w=200&format=webp';
 
 const root = toProps(css`
   padding-bottom: var(${vars.spacing.step4});
@@ -25,7 +25,7 @@ const link = toProps(
     text-indent: -1000px;
     width: var(--logo-width);
   `,
-  { backgroundImage: `url(${logo})` },
+  { backgroundImage: `url(${logo.src})` },
 );
 
 export default { root, link };

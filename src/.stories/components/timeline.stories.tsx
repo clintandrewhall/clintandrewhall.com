@@ -1,4 +1,4 @@
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import type { TimelineItemProps } from '@components/timeline';
 import { Timeline as Component } from '@components/timeline';

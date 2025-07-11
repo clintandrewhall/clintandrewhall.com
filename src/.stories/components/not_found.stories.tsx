@@ -1,5 +1,5 @@
 import { Article as ArticleComponent } from '@pages/article';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { NotFound as Component } from '@components/not_found';
 

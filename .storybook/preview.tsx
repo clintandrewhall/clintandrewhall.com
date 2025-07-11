@@ -1,10 +1,10 @@
 import { StrictMode } from 'react';
-import type { Preview } from '@storybook/react';
+import type { Preview } from '@storybook/react-vite';
 import 'ress';
 import 'unfonts.css';
 import { HelmetProvider } from 'react-helmet-async';
-import { reactRouterParameters, withRouter } from 'storybook-addon-remix-react-router';
 
+// import { reactRouterParameters, withRouter } from 'storybook-addon-remix-react-router';
 import { css } from '@lib/css';
 import { theme } from '@theme';
 
@@ -22,12 +22,12 @@ const preview: Preview = {
         order: ['Pages', 'Home', 'Resume'],
       },
     },
-    reactRouter: reactRouterParameters({
-      routing: {
-        path: '/',
-        handle: 'Home',
-      },
-    }),
+    // reactRouter: reactRouterParameters({
+    //   routing: {
+    //     path: '/',
+    //     handle: 'Home',
+    //   },
+    // }),
   },
 
   decorators: [
@@ -47,7 +47,7 @@ const preview: Preview = {
         </StrictMode>
       );
     },
-    withRouter,
+    // withRouter,
   ],
 };
 

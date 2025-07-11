@@ -24,5 +24,5 @@ declare interface ArticleImport {
   attributes: ArticleAttributes;
   toc: { level: string; content: string }[];
   html: string;
-  ReactComponent: React.FC<{ Image: React.FC<MarkdownImageProps> }>;
+  ReactComponent: React.FC<{ Image: React.FC<MarkdownImageProps> }> | undefined;
 }

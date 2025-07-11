@@ -1,5 +1,5 @@
 import { Resume as ResumeComponent } from '@pages/resume';
-import type { Meta, StoryObj } from '@storybook/react';
+import type { Meta, StoryObj } from '@storybook/react-vite';
 
 const meta: Meta<typeof ResumeComponent> = {
   title: 'Resume',

@@ -1,5 +1,5 @@
 import { forwardRef } from 'react';
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router';
 import { ParallaxBanner, ParallaxBannerLayer, ParallaxProvider } from 'react-scroll-parallax';
 
 import { SocialProfiles } from '@components/social_profiles';
@@ -14,7 +14,12 @@ export const Hero = forwardRef<HTMLDivElement>(({}, ref) => {
     <div ref={ref} id="home">
       <ParallaxProvider>
         <ParallaxBanner {...styles.root}>
-          <ParallaxBannerLayer image={hero} speed={-20} expanded={false} {...styles.imageLayer} />
+          <ParallaxBannerLayer
+            image={hero.src}
+            speed={-20}
+            expanded={false}
+            {...styles.imageLayer}
+          />
           <ParallaxBannerLayer speed={-10} expanded={false} {...styles.headerLayer}>
             <header {...styles.header}>
               <hgroup {...styles.headerGroup}>
