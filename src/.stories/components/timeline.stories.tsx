@@ -3,9 +3,12 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import type { TimelineItemProps } from '@components/timeline';
 import { Timeline as Component } from '@components/timeline';
 
+import { decorators } from '../decorators';
+
 const meta: Meta<typeof Component> = {
   title: 'Components/Timeline',
   component: Component,
+  decorators,
 };
 
 export default meta;

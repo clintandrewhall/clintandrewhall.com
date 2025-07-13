@@ -6,8 +6,11 @@ import { css, cx } from '@lib/css';
 import { useDimensions } from '@lib/hooks';
 import { theme } from '@theme';
 
+import { decorators } from '../decorators';
+
 const meta: Meta = {
   title: 'Components/Layout/Layout',
+  decorators,
 };
 
 export default meta;

@@ -20,6 +20,7 @@ declare interface ArticleAttributes {
   tags: ArticleTag[];
   website?: string;
 }
+
 declare interface ArticleImport {
   attributes: ArticleAttributes;
   toc: { level: string; content: string }[];

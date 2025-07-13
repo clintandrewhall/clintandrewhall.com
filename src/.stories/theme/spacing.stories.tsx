@@ -5,8 +5,11 @@ import { useDimensions } from '@lib/hooks';
 import { theme } from '@theme';
 import { type UtopiaSize } from '@theme/spacing';
 
+import { decorators } from '../decorators';
+
 const meta: Meta = {
   title: 'Theme/Spacing',
+  decorators,
 };
 
 export default meta;
@@ -85,7 +88,10 @@ const Box = ({ size }: { size: UtopiaSize }) => {
   return (
     <div
       className={css`
-        margin: 12px;
+        margin-bottom: 12px;
+        margin-left: 12px;
+        margin-right: 12px;
+        margin-top: 12px;
       `}
     >
       <span

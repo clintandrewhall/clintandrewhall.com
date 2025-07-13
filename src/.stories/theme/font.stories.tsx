@@ -3,8 +3,11 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { css } from '@lib/css';
 import { theme } from '@theme';
 
+import { decorators } from '../decorators';
+
 const meta: Meta = {
   title: 'Theme/Font',
+  decorators,
 };
 
 export default meta;

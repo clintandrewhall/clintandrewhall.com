@@ -3,6 +3,8 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { PeopleLine as Component, Person, type PersonProps } from '@components/people_line';
 import { theme } from '@theme';
 
+import { decorators } from '../decorators';
+
 const { vars } = theme;
 
 const meta: Meta<typeof Component> = {
@@ -27,6 +29,7 @@ const meta: Meta<typeof Component> = {
       </div>
     );
   },
+  decorators,
 };
 
 export default meta;

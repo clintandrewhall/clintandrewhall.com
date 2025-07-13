@@ -5,11 +5,7 @@ const config: StorybookConfig = {
   addons: ['@storybook/addon-links', 'storybook-addon-remix-react-router', '@storybook/addon-docs'],
   framework: {
     name: '@storybook/react-vite',
-    options: {
-      builder: {
-        viteConfigPath: './vite.config.ts',
-      },
-    },
+    options: {},
   },
   core: {},
   docs: {},

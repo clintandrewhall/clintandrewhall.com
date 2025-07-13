@@ -3,8 +3,11 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 import { toProps } from '@lib/css';
 import { theme } from '@theme';
 
+import { decorators } from '../decorators';
+
 const meta: Meta = {
   title: 'Theme/Icons',
+  decorators,
 };
 
 export default meta;

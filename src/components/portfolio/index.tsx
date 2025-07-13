@@ -8,9 +8,9 @@ export type { PortfolioItemProps } from './portfolio_item';
 
 export const usePortfolioItemProps = (id: string): PortfolioItemProps | null => {
   const entry = useArticleMetadata(id);
-  const image = useArticleImage(entry?.cover, 'small');
+  const imagePath = useArticleImage(entry?.cover, 'small');
 
-  if (!entry || !image) {
+  if (!entry || !imagePath) {
     return null;
   }
 
@@ -20,7 +20,7 @@ export const usePortfolioItemProps = (id: string): PortfolioItemProps | null => 
     title,
     caption,
     href: `/portfolio/${id}`,
-    imageSrc: image.src,
+    imageSrc: imagePath,
     tags: tags.map((tag) => ({ label: tag.name, href: `/portfolio/tag/${tag.slug}` })),
     website,
   };

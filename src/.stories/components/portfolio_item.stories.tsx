@@ -2,6 +2,8 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { PortfolioGrid } from '@components/portfolio';
 
+import { decorators } from '../decorators';
+
 const meta: Meta<typeof PortfolioGrid.Item> = {
   title: 'Components/Portfolio Item',
   component: PortfolioGrid.Item,
@@ -11,6 +13,7 @@ const meta: Meta<typeof PortfolioGrid.Item> = {
         <Story />
       </div>
     ),
+    ...decorators,
   ],
 };
 

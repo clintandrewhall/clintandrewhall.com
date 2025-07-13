@@ -2,9 +2,12 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { LOC } from '@components/github';
 
+import { decorators } from '../decorators';
+
 const meta: Meta<typeof LOC> = {
   title: 'Components/Github/Lines of Code',
   component: LOC,
+  decorators,
 };
 
 export default meta;

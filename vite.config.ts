@@ -5,6 +5,7 @@ import path, { resolve } from 'path';
 import Unfonts from 'unplugin-fonts/vite';
 import { defineConfig } from 'vite';
 import { imagetools } from 'vite-imagetools';
+import devtoolsJson from 'vite-plugin-devtools-json';
 import { Mode, plugin as markdown } from 'vite-plugin-markdown';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
@@ -14,12 +15,60 @@ const isStorybook = process.argv[1]?.includes('storybook');
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  optimizeDeps: {
+    include: [
+      '@linaria/atomic',
+      '@linaria/core',
+      '@linaria/react',
+      'moment',
+      'numeral',
+      'react-intersection-observer',
+      'react-keyed-flatten-children',
+      'react-markdown',
+      'react-responsive',
+      'react-scroll-parallax',
+      'swiper/modules',
+      'swiper/react',
+      'utopia-core',
+    ],
+    // Exclude native modules and Node.js-only packages from bundling
+    exclude: ['fsevents', 'sharp', 'chokidar'],
+    // Prevent re-optimization during development
+    holdUntilCrawlEnd: true,
+  },
+  server: {
+    // Increase warmup time to allow dependency optimization to complete
+    warmup: {
+      clientFiles: ['./src/lib/css.ts'],
+    },
+  },
   build: {
     emptyOutDir: true,
   },
   plugins: [
+    devtoolsJson(),
     viteImagePlugin(),
+    wyw({
+      include: ['src/**/*.{ts,tsx}'],
+      babelOptions: {
+        presets: ['@babel/preset-typescript', '@babel/preset-react'],
+      },
+      tagResolver: (source, tag) => {
+        if (source === '@lib/css') {
+          if (tag === 'css') {
+            return resolve('node_modules/@linaria/atomic/processors/css');
+          }
+
+          if (tag === 'styled') {
+            return resolve('node_modules/@linaria/atomic/processors/styled');
+          }
+        }
+
+        return null;
+      },
+    }),
     imagetools({
+      exclude: ['./src/content/portfolio/images/**'],
       defaultDirectives: (url) => {
         const extname = path.extname(url.pathname);
         if (
@@ -34,7 +83,9 @@ export default defineConfig({
             ['w', '480;880;1280'],
             ...url.searchParams.entries(),
           ]);
-        } else return url.searchParams;
+        } else {
+          return url.searchParams;
+        }
       },
     }),
     markdown({
@@ -52,29 +103,6 @@ export default defineConfig({
     }),
     !isStorybook && reactRouter(),
     Unfonts(unfontConfig),
-    wyw({
-      include: ['src/**/*.{ts,tsx}'],
-      babelOptions: {
-        presets: ['@babel/preset-typescript', '@babel/preset-react'],
-      },
-      tagResolver: (source, tag) => {
-        if (source === '@lib/css') {
-          if (tag === 'css') {
-            return resolve('node_modules/@linaria/atomic/processors/css');
-          }
-
-          // if (tag === 'css') {
-          //   return resolve('node_modules/@linaria/core/processors/css');
-          // }
-
-          if (tag === 'styled') {
-            return resolve('node_modules/@linaria/atomic/processors/styled');
-          }
-        }
-
-        return null;
-      },
-    }),
     tsconfigPaths(),
   ],
   resolve: {

@@ -24,6 +24,7 @@ const sharpen = async (sourcePath: string, assetPath: string, width: number) =>
 export class ImageProcessor {
   private processingQueue: Set<string> = new Set();
 
+  // TODO - this is super hacky, but it works for now
   get isProcessing(): boolean {
     return this.processingQueue.size > 0;
   }
@@ -63,19 +64,19 @@ export class ImageProcessor {
     }
   }
 
-  private processImageInBackground(imageId: string): void {
+  processImage(imageId: string): void {
     if (this.processingQueue.has(imageId)) {
       return;
     }
 
     this.processingQueue.add(imageId);
 
-    this.processImage(imageId)
+    this._processImage(imageId)
       .catch((error) => console.error(`Error processing image ${imageId}:`, error))
       .finally(() => this.processingQueue.delete(imageId));
   }
 
-  private async processImage(imageId: string): Promise<void> {
+  private async _processImage(imageId: string): Promise<void> {
     const sourceInfo = this.findSourceImage(imageId);
 
     if (!sourceInfo) {
@@ -100,16 +101,26 @@ export class ImageProcessor {
       return '';
     }
 
-    this.processImageInBackground(imageId);
+    this.processImage(imageId);
 
-    const path = (size: number) => `/${DIR}/${imageId}-${size}.webp`;
     return `
     <picture>
-      <source srcSet="${path(IMAGE_LARGE)}" media="(min-width: ${IMAGE_LARGE}px)" />
-      <source srcSet="${path(IMAGE_MEDIUM)}" media="(min-width: ${IMAGE_MEDIUM}px)" />
-      <source srcSet="${path(IMAGE_SMALL)}" media="(max-width: ${IMAGE_MEDIUM - 1}px)" />
-      <img src="${path(IMAGE_SMALL)}" alt="${alt}"  loading="lazy" decoding="async"/>
+      <source srcSet="${getImagePath(imageId, 'large')}" media="(min-width: ${IMAGE_LARGE}px)" />
+      <source srcSet="${getImagePath(imageId, 'medium')}" media="(min-width: ${IMAGE_MEDIUM}px)" />
+      <source srcSet="${getImagePath(imageId, 'small')}" media="(max-width: ${IMAGE_MEDIUM - 1}px)" />
+      <img src="${getImagePath(imageId, 'small')}" alt="${alt}"  loading="lazy" decoding="async"/>
     </picture>
     `.trim();
   }
 }
+
+export const getImagePath = (imageId: string, size: 'small' | 'medium' | 'large'): string => {
+  const sizeMap: Record<string, number> = {
+    small: IMAGE_SMALL,
+    medium: IMAGE_MEDIUM,
+    large: IMAGE_LARGE,
+  };
+
+  const width = sizeMap[size];
+  return `/${DIR}/${imageId}-${width}.webp`;
+};

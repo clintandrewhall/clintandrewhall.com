@@ -3,6 +3,8 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { type TopicId, topicTitles } from '@lib/site';
 
+import { decorators } from '../decorators';
+
 const Section = ({ id, color }: { id: TopicId; color: string }) => {
   return (
     <section id={id} style={{ height: '100vh', backgroundColor: color }}>
@@ -26,6 +28,7 @@ const meta: Meta<typeof Home.Header> = {
       </>
     );
   },
+  decorators,
 };
 
 export default meta;

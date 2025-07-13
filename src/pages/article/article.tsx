@@ -24,6 +24,7 @@ const ArticleComponent = ({ article }: ArticleProps) => {
       </>
     );
   }
+  console.log('ArticleComponent', article);
 
   return (
     <>

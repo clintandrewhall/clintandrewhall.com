@@ -6,9 +6,12 @@ import {
   type SectionProps,
 } from '@components/layout';
 
+import { decorators } from '../decorators';
+
 const meta: Meta<typeof Component> = {
   title: 'Components/Layout/Section',
   component: Component,
+  decorators,
 };
 
 export default meta;

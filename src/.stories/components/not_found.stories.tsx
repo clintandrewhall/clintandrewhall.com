@@ -3,10 +3,11 @@ import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { NotFound as Component } from '@components/not_found';
 
+import { decorators } from '../decorators';
+
 const meta: Meta<typeof Component> = {
   title: 'Components/Not Found',
   component: Component,
-
   argTypes: {
     title: {
       control: {
@@ -27,6 +28,7 @@ const meta: Meta<typeof Component> = {
       defaultValue: null,
     },
   },
+  decorators,
 };
 
 export default meta;
