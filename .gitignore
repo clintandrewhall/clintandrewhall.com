@@ -28,4 +28,4 @@ dist-ssr
 !.yarn/patches/
 storybook-static
 .react-router
-public/webp
+public/images

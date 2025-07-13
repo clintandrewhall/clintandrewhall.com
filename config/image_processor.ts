@@ -2,15 +2,19 @@ import fs from 'fs';
 import path from 'path';
 import sharp from 'sharp';
 
-const IMAGE_SMALL = 480;
-const IMAGE_MEDIUM = 880;
-const IMAGE_LARGE = 1280;
-const SIZES = [IMAGE_SMALL, IMAGE_MEDIUM, IMAGE_LARGE];
+import {
+  getImageFileName,
+  getImagePath,
+  IMAGE_DIR,
+  IMAGE_VALUE_LARGE,
+  IMAGE_VALUE_MEDIUM,
+  type ImageSize,
+  SIZE_TO_VALUE,
+} from '../src/lib/image_path';
 
-const DIR = 'webp';
 const DIR_SOURCE = path.resolve('src/content/portfolio/images');
-const DIR_ASSETS = path.resolve(`dist/assets/${DIR}`);
-const DIR_PUBLIC = path.resolve(`public/${DIR}`);
+const DIR_ASSETS = path.resolve(`dist/assets/${IMAGE_DIR}`);
+const DIR_PUBLIC = path.resolve(`public/${IMAGE_DIR}`);
 const OUTPUT_DIRS = [DIR_ASSETS, DIR_PUBLIC];
 
 const QUALITY = 85;
@@ -84,9 +88,12 @@ export class ImageProcessor {
       return;
     }
 
-    const processPromises = SIZES.map((size) => {
-      const filename = `${imageId}-${size}.webp`;
-      return this.generateImage(sourceInfo.sourcePath, filename, size);
+    const processPromises = (Object.keys(SIZE_TO_VALUE) as ImageSize[]).map((size) => {
+      return this.generateImage(
+        sourceInfo.sourcePath,
+        getImageFileName(imageId, size),
+        SIZE_TO_VALUE[size],
+      );
     });
 
     await Promise.all(processPromises);
@@ -105,22 +112,11 @@ export class ImageProcessor {
 
     return `
     <picture>
-      <source srcSet="${getImagePath(imageId, 'large')}" media="(min-width: ${IMAGE_LARGE}px)" />
-      <source srcSet="${getImagePath(imageId, 'medium')}" media="(min-width: ${IMAGE_MEDIUM}px)" />
-      <source srcSet="${getImagePath(imageId, 'small')}" media="(max-width: ${IMAGE_MEDIUM - 1}px)" />
+      <source srcSet="${getImagePath(imageId, 'large')}" media="(min-width: ${IMAGE_VALUE_LARGE}px)" />
+      <source srcSet="${getImagePath(imageId, 'medium')}" media="(min-width: ${IMAGE_VALUE_MEDIUM}px)" />
+      <source srcSet="${getImagePath(imageId, 'small')}" media="(max-width: ${IMAGE_VALUE_MEDIUM - 1}px)" />
       <img src="${getImagePath(imageId, 'small')}" alt="${alt}"  loading="lazy" decoding="async"/>
     </picture>
     `.trim();
   }
 }
-
-export const getImagePath = (imageId: string, size: 'small' | 'medium' | 'large'): string => {
-  const sizeMap: Record<string, number> = {
-    small: IMAGE_SMALL,
-    medium: IMAGE_MEDIUM,
-    large: IMAGE_LARGE,
-  };
-
-  const width = sizeMap[size];
-  return `/${DIR}/${imageId}-${width}.webp`;
-};

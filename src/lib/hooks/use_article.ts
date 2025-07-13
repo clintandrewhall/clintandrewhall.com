@@ -1,3 +1,4 @@
+import { getImagePath } from '@lib/image_path';
 import { type TopicId } from '@lib/site';
 
 const DEFAULT_LIMIT = 6;
@@ -19,11 +20,4 @@ export const useArticleIds = (limit = DEFAULT_LIMIT) => useAllArticleIds().slice
 export const useArticleMetadata = (id: string) =>
   useAllArticleMetadata().find((article) => article.id === id);
 
-export const useArticleImage = (id: string | undefined, size: 'small' | 'medium' | 'large') => {
-  const sizes = {
-    small: '480',
-    medium: '880',
-    large: '1280',
-  };
-  return `/webp/${id}-${sizes[size]}.webp`;
-};
+export const useArticleImage = getImagePath;

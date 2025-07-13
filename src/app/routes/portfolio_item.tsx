@@ -5,7 +5,9 @@ import type { Route } from './+types/portfolio_item';
 export const loader = async ({ params }: Route.LoaderArgs) => {
   let article: ArticleImport | null = null;
 
-  if (params.id) {
+  console.log('Loading article:', params);
+
+  if (params.id && params.id !== 'undefined') {
     try {
       article = await import(`@content/portfolio/${params.id}.md`);
     } catch (e) {
@@ -18,6 +20,7 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
 };
 
 export default function PortfolioItem({ loaderData: article }: Route.ComponentProps) {
+  console.log('article', article);
   return <Article article={article} />;
 }
 

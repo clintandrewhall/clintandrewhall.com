@@ -3,9 +3,9 @@ import { theme } from '@theme';
 
 const { decl, vars } = theme;
 
-const root = (image: ImageOutputMetadata | null) => {
+const root = (image: string | null) => {
   if (image) {
-    return toProps(cx(rootWithImage, rootBase), { backgroundImage: `url(${image.src})` });
+    return toProps(cx(rootWithImage, rootBase), { backgroundImage: `url(${image})` });
   }
   return toProps(rootBase);
 };

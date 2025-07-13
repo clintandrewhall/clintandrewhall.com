@@ -15,7 +15,7 @@ export const ArticleHeader = ({
   tags: tagsProp,
   timestamp,
 }: ArticleHeaderProps) => {
-  const largeImage = useArticleImage(cover);
+  const largeImage = useArticleImage(cover, 'large');
   const mediumImage = useArticleImage(cover, 'medium');
   const smallImage = useArticleImage(cover, 'small');
   const image = largeImage ?? mediumImage ?? smallImage;
