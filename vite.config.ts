@@ -1,15 +1,14 @@
 import { reactRouter } from '@react-router/dev/vite';
 import wyw from '@wyw-in-js/vite';
-import MarkdownIt from 'markdown-it';
 import path, { resolve } from 'path';
 import Unfonts from 'unplugin-fonts/vite';
 import { defineConfig } from 'vite';
 import { imagetools } from 'vite-imagetools';
 import devtoolsJson from 'vite-plugin-devtools-json';
-import { Mode, plugin as markdown } from 'vite-plugin-markdown';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
-import { markdownImagePlugin, unfontConfig, viteImagePlugin } from './config';
+import { markdownPlugin } from './config';
+import { unfontConfig } from './config';
 
 const isStorybook = process.argv[1]?.includes('storybook');
 
@@ -47,7 +46,6 @@ export default defineConfig({
   },
   plugins: [
     devtoolsJson(),
-    viteImagePlugin(),
     wyw({
       include: ['src/**/*.{ts,tsx}'],
       babelOptions: {
@@ -88,19 +86,7 @@ export default defineConfig({
         }
       },
     }),
-    markdown({
-      mode: [Mode.HTML, Mode.TOC, Mode.REACT],
-      markdownIt: (() => {
-        const md = new MarkdownIt({
-          html: true,
-          linkify: true,
-          typographer: true,
-        });
-        // Apply custom image processing
-        markdownImagePlugin(md);
-        return md;
-      })(),
-    }),
+    markdownPlugin(),
     !isStorybook && reactRouter(),
     Unfonts(unfontConfig),
     tsconfigPaths(),

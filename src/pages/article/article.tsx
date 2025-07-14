@@ -1,14 +1,16 @@
 import { Layout as LayoutComponent } from '@components/layout';
+import type { TopicId } from '@lib/site';
 
 import { ArticleLayout as ArticleLayoutComponent } from './article_layout';
 import { ArticleNotFound } from './article_not_found';
 
 export interface ArticleProps {
   article?: ArticleImport | null;
+  selectedId?: TopicId;
 }
 
-const Header = ({ article }: ArticleProps) => (
-  <LayoutComponent.Header background={!!article ? 'clear' : 'opaque'} selectedId="portfolio" />
+const Header = ({ article, selectedId = 'portfolio' }: ArticleProps) => (
+  <LayoutComponent.Header background={!!article ? 'clear' : 'opaque'} {...{ selectedId }} />
 );
 
 const Layout = ({ article }: ArticleProps) =>
@@ -24,7 +26,6 @@ const ArticleComponent = ({ article }: ArticleProps) => {
       </>
     );
   }
-  console.log('ArticleComponent', article);
 
   return (
     <>

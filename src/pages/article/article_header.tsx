@@ -20,7 +20,7 @@ export const ArticleHeader = ({
   const smallImage = useArticleImage(cover, 'small');
   const image = largeImage ?? mediumImage ?? smallImage;
 
-  const tags = tagsProp.map((tag) => ({ label: tag.name, href: `/portfolio/tag/${tag.slug}` }));
+  const tags = tagsProp.map((tag) => ({ label: tag.name, href: `/tag/${tag.slug}` }));
 
   const tagList = (tags || []).map((tag, index) => (
     <Link {...styles.tag} to={tag.href} key={tag.label}>

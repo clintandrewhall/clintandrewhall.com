@@ -18,6 +18,9 @@ export const getImageFileName = (imageId: string, size: ImageSize): string => {
   return `${imageId}-${width}.webp`;
 };
 
-export const getImagePath = (imageId: string, size: ImageSize): string => {
+export const getImagePath = (imageId?: string, size: ImageSize = 'large'): string | null => {
+  if (!imageId) {
+    return null;
+  }
   return `/${IMAGE_DIR}/${getImageFileName(imageId, size)}`;
 };

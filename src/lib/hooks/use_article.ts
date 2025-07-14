@@ -1,19 +1,31 @@
 import { getImagePath } from '@lib/image_path';
-import { type TopicId } from '@lib/site';
 
 const DEFAULT_LIMIT = 6;
 
 // Portfolio Articles
 const contents = import.meta.glob<ArticleImport>('@content/portfolio/*.md', { eager: true });
+
 const articles = Object.values(contents).sort(
   (a, b) => b.attributes.timestamp - a.attributes.timestamp,
 );
 
-const useAllArticleIds = () => articles.map((article) => article.attributes.id as TopicId);
+export const useArticles = (slug?: string) => {
+  if (slug) {
+    return articles.filter((article) => article.attributes.tags.some((tag) => tag.slug === slug));
+  }
+  return articles;
+};
 
-const useAllArticleMetadata = () => articles.map((article) => article.attributes);
+const useAllArticleIds = () => useArticles().map((article) => article.attributes.id);
 
-export const useArticle = (id: string) => articles.find((article) => article.attributes.id === id);
+const useAllArticleMetadata = () => useArticles().map((article) => article.attributes);
+
+export const useArticleTags = () => useArticles().flatMap((article) => article.attributes.tags);
+
+export const useArticleTag = (slug?: string) => useArticleTags().find((tag) => tag.slug === slug);
+
+export const useArticle = (id: string) =>
+  useArticles().find((article) => article.attributes.id === id);
 
 export const useArticleIds = (limit = DEFAULT_LIMIT) => useAllArticleIds().slice(0, limit);
 

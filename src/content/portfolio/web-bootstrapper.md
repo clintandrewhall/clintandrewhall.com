@@ -23,8 +23,8 @@ As a side project within Cerner, my Web Bootstrapper didn’t get much attention
 
 In 2009, I submitted [a paper](/pdf/web-bootstrapper-paper.pdf) to the [World Wide Web](http://www2009.wwwconference.org/) and [Web4All](http://www.w4a.info/2018/) conferences in Madrid, where I was accepted and [invited to speak](/pdf/web-bootstrapper-deck.pdf) on the impact of Progressive Enhancement on accessibility and code reuse. A few months prior to the conference, Cerner [filed a patent](http://www.faqs.org/patents/app/20100180192). Later that year, I also [presented the approach](http://ajaxexperience.techtarget.com/conference/html/speakers.html#CHall) at the [Ajax Experience](http://ajaxexperience.techtarget.com/conference/index.html) in Boston.
 
-<Image id="bootstrapper-1" alt="Bootstrap the Web" width="medium"></Image>
-<Image id="bootstrapper-2" alt="How the Bootstrapper Works" width="medium"></Image>
-<Image id="bootstrapper-3" alt="Such a Broad Landscape" width="medium"></Image>
-<Image id="bootstrapper-4" alt="Ajax Experience 2009" width="medium"></Image>
-<Image id="bootstrapper-5" alt="Demo of 12 skins on one site" width="medium"></Image> 
+![Bootstrap the Web](bootstrapper-1?medium)
+![How the Bootstrapper Works](bootstrapper-2?medium)
+![Such a Broad Landscape](bootstrapper-3v)
+![Ajax Experience 2009](bootstrapper-4?medium)
+![Demo of 12 skins on one site](bootstrapper-5?medium) 

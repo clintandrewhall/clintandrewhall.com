@@ -16,10 +16,10 @@ In 2010, I signed up for the first annual [Node Knockout](http://www.nodeknockou
 
 I recruited what my friends called a "[Dream Team](http://www.twitter.com/clintandrewhall/status/107130172192473088)" of geeks: designer [Jacob McDaniel](http://www.twitter.com/designbyjm) and developers [Steven Chau](http://www.twitter.com/whereisciao) and [Mike Hemesath](http://www.twitter.com/codegrappler). After many Monday Geek Night hashing out what we would build, we decided on a classic childhood game that had yet to be recreated in the social media space: [Guess Who](http://www.hasbro.com/games/en_US/guess-who/).
 
-<Image id="guess-friends-1" alt="Welcome Screen" width="medium"></Image>
-<Image id="guess-friends-2" alt="Game Board" width="medium"></Image>
-<Image id="guess-friends-3" alt="Lobby" width="medium"></Image>
-<Image id="guess-friends-4" alt="Node Knockout Project Page" width="medium"></Image>
+![Welcome Screen](guess-friends-1?medium)
+![Game Board](guess-friends-2?medium)
+![Lobby](guess-friends-3?medium)
+![Node Knockout Project Page](guess-friends-4?medium)
 
 # Implementation
 We knew from talking to our friends and fellow geeks that using mutual Facebook friends as the “tiles” would give us the greatest traction, (and the most fun gaming experience). We also decided to use [Pusher](http://www.pusher.com/) to give it some async love. Jacob tackled the user experience and I took on most of the core experience code. Mike and Steven took on the new Pusher API and some of the custom Connect middleware. Mike also served as our deployment ninja, keeping our Heroku instance healthy and happy. Steven even got a custom cache out on Amazon for the Facebook images.

@@ -21,7 +21,7 @@ export const usePortfolioItemProps = (id: string): PortfolioItemProps | null => 
     caption,
     href: `/portfolio/${id}`,
     imageSrc: imagePath,
-    tags: tags.map((tag) => ({ label: tag.name, href: `/portfolio/tag/${tag.slug}` })),
+    tags: tags.map((tag) => ({ label: tag.name, href: `/tag/${tag.slug}` })),
     website,
   };
 };

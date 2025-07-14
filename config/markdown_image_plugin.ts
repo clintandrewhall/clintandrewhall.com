@@ -13,7 +13,6 @@ export function markdownImagePlugin(md: MarkdownIt): void {
 
   // Cover image logic: prepend responsive cover if frontmatter.cover exists
   md.core.ruler.push('cover_image', function (state) {
-    // console.log('Processing cover image', state);
     const env = state.env || {};
     if (env.frontmatter && env.frontmatter.cover) {
       const coverId = env.frontmatter.cover;
@@ -28,9 +27,27 @@ export function markdownImagePlugin(md: MarkdownIt): void {
     if (srcIndex >= 0 && token.attrs) {
       const src = token.attrs[srcIndex][1];
       const alt = token.content || '';
+      let imageId = src;
+      let size: 'small' | 'medium' | 'large' = 'large';
 
-      if (src && !src.includes('/') && !src.includes('http') && !src.includes('.')) {
-        return imageProcessor.generateResponsiveHtml(src, alt);
+      // Parse query string for size (e.g., id?small)
+      const match = src.match(/^(.*?)(\?(small|medium|large))?$/);
+
+      if (match) {
+        imageId = match[1];
+        const imageSize = match[3];
+        if (imageSize === 'small' || imageSize === 'medium' || imageSize === 'large') {
+          size = imageSize;
+        }
+      }
+
+      if (
+        imageId &&
+        !imageId.includes('/') &&
+        !imageId.includes('http') &&
+        !imageId.includes('.')
+      ) {
+        return imageProcessor.generateResponsiveHtml(imageId, alt, size);
       }
     }
 

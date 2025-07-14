@@ -14,8 +14,9 @@ I was getting ready to build [Backstrok.es](http://www.clintandrewhall.com/portf
 
 Inevitably, I refactored the fork well beyond a simple pull request. After contacting [the author](https://github.com/yikulju), I applied an MIT license and released my node-foursquare library in the [npmjs](http://www.npmjs.org/) repository for Node. It is currently [listed](https://developer.foursquare.com/docs/libraries.html) on the [Foursquare Developer site](http://developer.foursquare.com/) as the only library for using Foursquare within Node. 
 
-<Image id="node-foursquare-2" alt="Two" width="medium"></Image>
-<Image id="node-foursquare-3" alt="Three" width="medium"></Image> 
+
+![node-foursquare on npm](node-foursquare-2?medium)
+![node-foursquare version history on npm](node-foursquare-3?medium)
 
 # Implementation 
 

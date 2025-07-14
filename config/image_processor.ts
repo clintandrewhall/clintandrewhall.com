@@ -100,7 +100,11 @@ export class ImageProcessor {
     console.log(`Completed processing all sizes for ${imageId}`);
   }
 
-  generateResponsiveHtml(imageId: string, alt: string): string {
+  generateResponsiveHtml(
+    imageId: string,
+    alt: string,
+    size: 'small' | 'medium' | 'large' = 'large',
+  ): string {
     const sourceInfo = this.findSourceImage(imageId);
 
     // TODO - replace with "broken" placeholder image
@@ -111,7 +115,7 @@ export class ImageProcessor {
     this.processImage(imageId);
 
     return `
-    <picture>
+    <picture class="article-image-${size}">
       <source srcSet="${getImagePath(imageId, 'large')}" media="(min-width: ${IMAGE_VALUE_LARGE}px)" />
       <source srcSet="${getImagePath(imageId, 'medium')}" media="(min-width: ${IMAGE_VALUE_MEDIUM}px)" />
       <source srcSet="${getImagePath(imageId, 'small')}" media="(max-width: ${IMAGE_VALUE_MEDIUM - 1}px)" />

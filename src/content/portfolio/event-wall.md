@@ -28,10 +28,10 @@ By then, I had been working for Facebook for three years. It occurred to me that
 
 I refactored and open-sourced the code to it's current iteration: a live-updating display of photos posted to a Facebook wall. It doesn't even require a server: the page is static and can be run from a hard drive or Dropbox.
 
-![Masonry View](event-wall-1)
-![Polaroid View](event-wall-2)
-![A photo from our reception](event-wall-3)
-![A photo from our reception](event-wall-4)
+![Masonry View](event-wall-1?medium)
+![Polaroid View](event-wall-2?medium)
+![A photo from our reception](event-wall-3?medium)
+![A photo from our reception](event-wall-4?medium)
 
 # Colophon
 

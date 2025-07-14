@@ -1,1 +1,0 @@
-export { MarkdownImage } from './image';
