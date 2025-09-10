@@ -1,10 +1,11 @@
 import matter from 'gray-matter';
 import MarkdownIt from 'markdown-it';
+import type { Plugin } from 'vite';
 
 import { imageProcessor, markdownImagePlugin } from './markdown_image_plugin';
 
 // Basic Vite plugin for markdown processing
-export const markdownPlugin = () => {
+export const markdownPlugin = (): Plugin => {
   let hasLogged = false;
   return {
     name: 'custom-markdown-plugin',
@@ -34,7 +35,7 @@ export const markdownPlugin = () => {
 
     async buildStart() {
       if (!hasLogged) {
-        console.log('Starting image processing...');
+        console.log(`Starting image processing...`);
         hasLogged = true;
       }
     },

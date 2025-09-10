@@ -17,12 +17,12 @@ const DIR_ASSETS = path.resolve(`dist/assets/${IMAGE_DIR}`);
 const DIR_PUBLIC = path.resolve(`public/${IMAGE_DIR}`);
 const OUTPUT_DIRS = [DIR_ASSETS, DIR_PUBLIC];
 
-const QUALITY = 85;
+const QUALITY = 70;
 
 const sharpen = async (sourcePath: string, assetPath: string, width: number) =>
   sharp(sourcePath)
     .resize(width, null, { withoutEnlargement: true })
-    .webp({ quality: QUALITY })
+    .webp({ quality: QUALITY, lossless: false, effort: 6 })
     .toFile(assetPath);
 
 export class ImageProcessor {
@@ -62,7 +62,6 @@ export class ImageProcessor {
         sharpen(sourcePath, assetPath, width),
         sharpen(sourcePath, publicPath, width),
       ]);
-      console.log(`Generated ${filename}`);
     } catch (error) {
       console.error(`Error generating image ${filename} at width ${width}:`, error);
     }
@@ -97,7 +96,7 @@ export class ImageProcessor {
     });
 
     await Promise.all(processPromises);
-    console.log(`Completed processing all sizes for ${imageId}`);
+    console.log(`${imageId}: processing complete`);
   }
 
   generateResponsiveHtml(

@@ -21,5 +21,5 @@ declare module '*.md' {
   const ReactComponent: React.FC;
 
   // Modify below per your usage
-  export { attributes, html, ReactComponent, toc };
+  export { attributes, html, raw, ReactComponent, toc };
 }

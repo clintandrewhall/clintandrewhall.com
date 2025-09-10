@@ -1,6 +1,13 @@
 import { Article } from '@pages/article';
 
 import type { Route } from './+types/portfolio_item';
+import { getMeta } from './meta';
+
+export const meta = ({ data }: { data: ArticleImport | null }) => {
+  return getMeta({
+    title: `${data?.attributes?.name}`,
+  })();
+};
 
 export const loader = async ({ params }: Route.LoaderArgs) => {
   let article: ArticleImport | null = null;
