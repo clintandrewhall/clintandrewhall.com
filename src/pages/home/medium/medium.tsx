@@ -1,6 +1,7 @@
-import { forwardRef, useEffect, useState } from 'react';
+import { forwardRef } from 'react';
 
 import { Section } from '@components/layout';
+import posts from '@content/medium.json';
 
 import { Item } from './item';
 
@@ -18,20 +19,7 @@ const attributes = {
 };
 
 const MediumComponent = forwardRef<HTMLDivElement>((_props, ref) => {
-  const [stories, setStories] = useState<Posts | null>(null);
-
-  useEffect(() => {
-    (async function loadPosts() {
-      const posts = await import('@content/medium.json');
-      setStories(posts);
-    })();
-  }, [setStories, stories]);
-
-  if (!stories) {
-    return null;
-  }
-
-  const items = stories.posts
+  const items = (posts as Posts).posts
     .slice(0, 4)
     .sort((a, b) => b.timestamp - a.timestamp)
     .map((entry) => <Medium.Item post={entry} key={`${entry.timestamp}`} />);

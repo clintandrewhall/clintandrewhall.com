@@ -6,24 +6,29 @@ declare interface MarkdownImageProps {
   alt: string;
 }
 
-declare interface ArticleTag {
+declare interface PortfolioTag {
   name: string;
   slug: string;
 }
 
-declare interface ArticleAttributes {
+declare interface PortfolioEntryAttributes {
   id: string;
   name: string;
   caption: string;
   timestamp: number;
   cover: string;
-  tags: ArticleTag[];
+  tags: PortfolioTag[];
   website?: string;
 }
 
-declare interface ArticleImport {
-  attributes: ArticleAttributes;
+declare interface PortfolioEntryImport {
+  attributes: PortfolioEntryAttributes;
   toc: { level: string; content: string }[];
   html: string;
   ReactComponent: React.FC<{ Image: React.FC<MarkdownImageProps> }> | undefined;
 }
+
+// Temporary aliases for backward compatibility during refactor
+type ArticleTag = PortfolioTag;
+type ArticleAttributes = PortfolioEntryAttributes;
+type ArticleImport = PortfolioEntryImport;

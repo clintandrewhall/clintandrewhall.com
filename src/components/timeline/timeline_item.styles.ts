@@ -14,7 +14,7 @@ const BULLET_TOP = `calc(
   (var(${vars.spacing.step2}) / 2)
 )`;
 
-const LOGO_VAR = '--timeline-item-logo';
+// const LOGO_VAR = '--timeline-item-logo';
 
 // Bullet top position
 // 1. Top padding
@@ -22,56 +22,52 @@ const LOGO_VAR = '--timeline-item-logo';
 // 3. Timeframe margin
 // 4. Half of the title height
 
-const root = (logo?: string) =>
-  toProps(
-    css`
-      --bullet-top: ${BULLET_TOP};
-      break-inside: avoid;
-      padding-bottom: var(${vars.spacing.step3});
-      padding-left: calc(var(--bullet-size) + (var(${vars.grid.gutter}) / 2));
-      padding-top: var(${vars.spacing.step3});
-      position: relative;
+const root = toProps(css`
+  --bullet-top: ${BULLET_TOP};
+  break-inside: avoid;
+  padding-bottom: var(${vars.spacing.step3});
+  padding-left: calc(var(--bullet-size) + (var(${vars.grid.gutter}) / 2));
+  padding-top: var(${vars.spacing.step3});
+  position: relative;
 
-      &:before {
-        background-color: var(${vars.color.background.subtler});
-        bottom: 0;
-        content: '';
-        display: block;
-        left: calc(var(--bullet-size) / 2);
-        position: absolute;
-        top: 0;
-        width: 1px;
-        z-index: 0;
-      }
+  &:before {
+    background-color: var(${vars.color.background.subtler});
+    bottom: 0;
+    content: '';
+    display: block;
+    left: calc(var(--bullet-size) / 2);
+    position: absolute;
+    top: 0;
+    width: 1px;
+    z-index: 0;
+  }
 
-      &:first-child:before {
-        top: var(--bullet-size);
-      }
+  &:first-child:before {
+    top: var(--bullet-size);
+  }
 
-      &:last-child {
-        padding-bottom: 0;
+  &:last-child {
+    padding-bottom: 0;
 
-        &:after {
-          background-image: linear-gradient(
-            to bottom,
-            var(${vars.color.background.subtler}) 0%,
-            transparent 100%
-          );
-          bottom: calc(0 - var(${vars.spacing.step9}));
-          content: '';
-          height: var(${vars.spacing.sectionTop});
-          left: calc(var(--bullet-size) / 2);
-          position: absolute;
-          width: 1px;
-        }
-      }
+    &:after {
+      background-image: linear-gradient(
+        to bottom,
+        var(${vars.color.background.subtler}) 0%,
+        transparent 100%
+      );
+      bottom: calc(0 - var(${vars.spacing.step9}));
+      content: '';
+      height: var(${vars.spacing.sectionTop});
+      left: calc(var(--bullet-size) / 2);
+      position: absolute;
+      width: 1px;
+    }
+  }
 
-      &:last-child:before {
-        bottom: 0;
-      }
-    `,
-    { [LOGO_VAR]: logo ? `url('${logo}')` : 'inherit' },
-  );
+  &:last-child:before {
+    bottom: 0;
+  }
+`);
 
 const header = toProps(css`
   ${decl.font.sansSerif.medium}
@@ -81,16 +77,13 @@ const header = toProps(css`
   display: flex;
   flex-direction: column;
 
-  &:before {
+  & img {
     ${decl.dropShadow.small}
-    background-image: var(--timeline-item-logo);
-    background-position: center;
-    background-size: var(--image-size);
     border-radius: 50%;
-    content: '';
     display: block;
     height: var(--image-size);
     left: var(--bullet-padding);
+    object-fit: cover;
     position: absolute;
     top: var(--bullet-top);
     width: var(--image-size);

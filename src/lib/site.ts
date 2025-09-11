@@ -14,3 +14,12 @@ export const topicTitles: Record<TopicId, string> = {
   medium: 'Medium',
   resume: 'Resume',
 } as const;
+
+export function isPortfolioTag(value: unknown): value is PortfolioTag {
+  if (value === null || typeof value !== 'object') {
+    return false;
+  }
+
+  const candidate = value as Record<string, unknown>;
+  return typeof candidate.name === 'string' && typeof candidate.slug === 'string';
+}

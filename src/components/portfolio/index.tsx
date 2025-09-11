@@ -1,4 +1,8 @@
-import { useArticleIds, useArticleImage, useArticleMetadata } from '@lib/hooks';
+import {
+  usePortfolioEntryIds,
+  usePortfolioEntryImage,
+  usePortfolioEntryMetadata,
+} from '@lib/hooks';
 
 import { PortfolioGrid } from './portfolio_grid';
 import { type PortfolioItemProps } from './portfolio_item';
@@ -7,8 +11,8 @@ export { PortfolioGrid, type PortfolioGridProps } from './portfolio_grid';
 export type { PortfolioItemProps } from './portfolio_item';
 
 export const usePortfolioItemProps = (id: string): PortfolioItemProps | null => {
-  const entry = useArticleMetadata(id);
-  const imagePath = useArticleImage(entry?.cover, 'small');
+  const entry = usePortfolioEntryMetadata(id);
+  const imagePath = usePortfolioEntryImage(entry?.cover, 'small');
 
   if (!entry || !imagePath) {
     return null;
@@ -27,7 +31,7 @@ export const usePortfolioItemProps = (id: string): PortfolioItemProps | null => 
 };
 
 export const usePortfolioItems = () => {
-  const ids = useArticleIds();
+  const ids = usePortfolioEntryIds();
 
   return ids
     .map(usePortfolioItemProps)

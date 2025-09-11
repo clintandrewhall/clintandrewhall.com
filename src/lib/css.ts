@@ -28,13 +28,13 @@ export function cx(input: string, append?: string): string;
 export function cx(input: string, append?: CSSProps): CSSProps;
 export function cx(input: CSSProps, append?: string): CSSProps;
 export function cx(input: CSSProps, append?: CSSProps): CSSProps;
-export function cx(input: unknown, append?: unknown): unknown {
+export function cx(input: unknown, append?: unknown): string | CSSProps {
   if (!append || (!input && !append)) {
-    return input;
+    return input as string | CSSProps;
   }
 
   if (!input) {
-    return append;
+    return append as string | CSSProps;
   }
 
   if (isCSSProps(input)) {
@@ -66,7 +66,7 @@ export function cx(input: unknown, append?: unknown): unknown {
     }
   }
 
-  return input;
+  return input as string | CSSProps;
 }
 
 interface DefinitionParams<T extends string, V extends string | number> {

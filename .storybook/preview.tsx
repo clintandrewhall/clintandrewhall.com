@@ -2,7 +2,6 @@ import { StrictMode } from 'react';
 import type { Preview } from '@storybook/react-vite';
 import 'ress';
 import 'unfonts.css';
-import { HelmetProvider } from 'react-helmet-async';
 import { reactRouterParameters, withRouter } from 'storybook-addon-remix-react-router';
 
 const preview: Preview = {
@@ -31,8 +30,7 @@ const preview: Preview = {
     (Story) => {
       return (
         <StrictMode>
-          <HelmetProvider>
-            {/* 
+          {/* 
             This is commented out because, for some reason, linaria is not taking effect
             at top-level storybook objects.  The decorator has to be in the actual
             _story_ to avoid issues.
@@ -43,9 +41,8 @@ const preview: Preview = {
                 ${theme.definitions}
               `}
             > */}
-            <Story />
-            {/* </div> */}
-          </HelmetProvider>
+          <Story />
+          {/* </div> */}
         </StrictMode>
       );
     },

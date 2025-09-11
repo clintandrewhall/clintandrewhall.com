@@ -1,4 +1,8 @@
-import moment from 'moment';
+const dateFormatter = new Intl.DateTimeFormat('en', {
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+});
 
 import styles from './item.styles';
 
@@ -8,7 +12,7 @@ type Props = {
 
 export const Item = ({ post }: Props) => {
   const { link, timestamp, title, categories /*imgSrc*/ } = post;
-  const date = moment(timestamp).format('MMMM Do, YYYY');
+  const date = dateFormatter.format(new Date(timestamp));
 
   return (
     <article {...styles.root()}>

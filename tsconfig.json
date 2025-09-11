@@ -38,7 +38,7 @@
         "./src/pages/*"
       ],
       "@lib/*": [
-        "./src/lib/*.ts"
+        "./src/lib/*"
       ],
       "@lib/hooks": [
         "./src/lib/hooks/index"

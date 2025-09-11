@@ -10,24 +10,22 @@ export const meta = ({ data }: Route.MetaArgs) => {
 };
 
 export const loader = async ({ params }: Route.LoaderArgs) => {
-  let articles: ArticleImport[] = [];
-  let tag: ArticleTag | null = null;
+  let articles: PortfolioEntryImport[] = [];
+  let tag: PortfolioTag | null = null;
 
   if (params.tagId && params.tagId !== 'undefined') {
     try {
-      // Load all portfolio articles
-      const contents = import.meta.glob<ArticleImport>('@content/portfolio/*.md', { eager: true });
-      const allArticles = Object.values(contents).sort(
-        (a, b) => b.attributes.timestamp - a.attributes.timestamp,
+      const { portfolioIndex } = await import('virtual:portfolio-index');
+      // Filter entries that match the tag
+      const matching = portfolioIndex.filter((entry) =>
+        entry.tags.some((articleTag) => articleTag.slug === params.tagId),
       );
 
-      // Filter articles that match the tag
-      articles = allArticles.filter((article) =>
-        article.attributes.tags.some((articleTag) => articleTag.slug === params.tagId),
-      );
+      // shape into PortfolioEntryImport-lite objects for UI reuse
+      articles = matching.map((attributes) => ({ attributes }) as PortfolioEntryImport);
 
       // Find the tag information
-      const allTags = allArticles.flatMap((article) => article.attributes.tags);
+      const allTags = portfolioIndex.flatMap((entry) => entry.tags);
       tag = allTags.find((articleTag) => articleTag.slug === params.tagId) || null;
     } catch (e) {
       console.error(e);

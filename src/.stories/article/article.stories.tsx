@@ -1,9 +1,9 @@
-import { Article as Component } from '@pages/article';
+import { PortfolioEntry as Component } from '@pages/portfolio/entry';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { decorators } from '../decorators';
 
-const contents = import.meta.glob<ArticleImport>('@content/portfolio/*.md', { eager: true });
+const contents = import.meta.glob<PortfolioEntryImport>('@content/portfolio/*.md', { eager: true });
 const articleIds = Object.values(contents)
   .sort((a, b) => b.attributes.timestamp - a.attributes.timestamp)
   .map((entry) => entry.attributes.id);
@@ -13,7 +13,7 @@ const articles = Object.fromEntries(
 );
 
 const meta: Meta<{ articleId: string }> = {
-  title: 'Pages/Article',
+  title: 'Pages/Portfolio/Entry',
   argTypes: {
     articleId: {
       options: ['not-found', ...articleIds],

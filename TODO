@@ -1,10 +1,9 @@
 # TODO
 
-- BUG: navigating back to /#about from other page locks local scrolling navigation.
-- Cleanup prerender.ts
+- I need an updated og:image
 - Move images to async
 - Masonry image grids in portfolio entries
-- Refactor `registerHomeSection`, it's a bit gnarly.
+- SSR of homepage has missing content, missing hero.
 
 - [@react/spring](https://www.react-spring.dev/)
 - [framer-motion](https://www.framer.com/motion/introduction/)
@@ -12,4 +11,3 @@
 - Consider TOC for portfolio posts.
 - Consider parallax for portfolio post cover images.
 - Consider portfolio listing from grid to image and description
-- Consider moving from Helmet to portal (tough for CSS-In-JS without effort)

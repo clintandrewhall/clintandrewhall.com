@@ -3,93 +3,84 @@ import { theme } from '@theme';
 
 const { vars, icons, decl } = theme;
 
-const root = (image: string) =>
-  toProps(
-    css`
-      ${decl.font.size.step0}
-      background-position: 50% 50%;
-      background-repeat: no-repeat;
-      background-size: cover;
-      border-radius: var(${vars.spacing.step1});
-      height: 0;
-      overflow: hidden;
-      padding-bottom: 75%;
-      position: relative;
+const root = toProps(css`
+  ${decl.font.size.step0}
+  border-radius: var(${vars.spacing.step1});
+  height: 0;
+  overflow: hidden;
+  padding-bottom: 75%;
+  position: relative;
 
-      & {
-        a {
-          cursor: pointer;
-        }
+  & {
+    a {
+      cursor: pointer;
+    }
 
-        > p,
-        > footer {
-          opacity: 0;
-          transition: all 0.3s;
-        }
+    > p,
+    > footer {
+      opacity: 0;
+      transition: all 0.3s;
+    }
 
-        > p {
-          top: var(${vars.spacing.step7});
-        }
+    > p {
+      top: var(${vars.spacing.step7});
+    }
 
-        > footer {
-          right: var(${vars.spacing.step9});
-        }
-      }
+    > footer {
+      right: var(${vars.spacing.step9});
+    }
+  }
 
-      &:before,
-      &:after {
-        content: '';
-        height: 100%;
-        left: 0;
-        position: absolute;
-        top: 0;
-        width: 100%;
-      }
+  &:before,
+  &:after {
+    content: '';
+    height: 100%;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
 
-      &:before {
-        background-color: #000;
-        opacity: 0;
-        transition: opacity 0.3s;
-        z-index: 2;
-      }
+  &:before {
+    background-color: #000;
+    opacity: 0;
+    transition: opacity 0.3s;
+    z-index: 2;
+  }
 
-      &:after {
-        background-image: linear-gradient(to bottom, transparent 0%, #000 100%);
-        opacity: 0.8;
-        z-index: 1;
-      }
+  &:after {
+    background-image: linear-gradient(to bottom, transparent 0%, #000 100%);
+    opacity: 0.8;
+    z-index: 1;
+  }
 
-      &:hover {
-        &:before {
-          opacity: 0.8;
-        }
+  &:hover {
+    &:before {
+      opacity: 0.8;
+    }
 
-        > p,
-        > footer {
-          opacity: 1;
-        }
+    > p,
+    > footer {
+      opacity: 1;
+    }
 
-        > p {
-          top: var(${vars.spacing.step3});
-        }
+    > p {
+      top: var(${vars.spacing.step3});
+    }
 
-        > footer {
-          right: var(${vars.spacing.step5});
-        }
-      }
+    > footer {
+      right: var(${vars.spacing.step5});
+    }
+  }
 
-      ${decl.media.mediumToWide} {
-        ${decl.font.size.step1}
-      }
+  ${decl.media.mediumToWide} {
+    ${decl.font.size.step1}
+  }
 
-      ${decl.media.medium} {
-        ${decl.font.size.step1}
-      }
-    `,
-    {
-      backgroundImage: `url(${image})`,
-    },
-  );
+  ${decl.media.medium} {
+    ${decl.font.size.step1}
+  }
+`);
 
 const header = toProps(css`
   bottom: var(${vars.spacing.step3});
@@ -271,4 +262,24 @@ const projectLink = toProps(css`
   }
 `);
 
-export default { root, caption, footer, header, title, tags, details, projectLink, linkIcon };
+const image = toProps(css`
+  height: 100%;
+  inset: 0;
+  object-fit: cover;
+  position: absolute;
+  width: 100%;
+  z-index: 0;
+`);
+
+export default {
+  root,
+  image,
+  caption,
+  footer,
+  header,
+  title,
+  tags,
+  details,
+  projectLink,
+  linkIcon,
+};

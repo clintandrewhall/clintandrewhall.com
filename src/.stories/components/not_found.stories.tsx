@@ -1,4 +1,4 @@
-import { Article as ArticleComponent } from '@pages/article';
+import { PortfolioEntry as PortfolioEntryComponent } from '@pages/portfolio';
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
 import { NotFound as Component } from '@components/not_found';
@@ -37,6 +37,6 @@ export const Generic: StoryObj<typeof Component> = {
   render: (args) => <Component {...args} />,
 };
 
-export const ArticleNotFound: StoryObj<typeof ArticleComponent> = {
-  render: () => <ArticleComponent.NotFound />,
+export const PortfolioEntryNotFound: StoryObj<typeof PortfolioEntryComponent> = {
+  render: () => <PortfolioEntryComponent.NotFound />,
 };

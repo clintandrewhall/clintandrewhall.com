@@ -3,6 +3,8 @@ import fs from 'fs';
 import matter from 'gray-matter';
 import path from 'path';
 
+import { isPortfolioTag } from './src/lib/site';
+
 export default {
   ssr: false,
   prerender: async () => {
@@ -25,10 +27,9 @@ export default {
         const { data: frontmatter } = matter(fileContent);
 
         if (frontmatter.tags && Array.isArray(frontmatter.tags)) {
-          frontmatter.tags.forEach((tag: any) => {
-            if (tag && typeof tag === 'object' && tag.slug) {
-              tagSlugs.add(tag.slug);
-            }
+          const tags = (frontmatter.tags as unknown[]).filter(isPortfolioTag);
+          tags.forEach((tag) => {
+            tagSlugs.add(tag.slug);
           });
         }
       }

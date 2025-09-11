@@ -1,19 +1,19 @@
 import { NotFound } from '@pages/not_found';
 
-import { Layout, Section, type SectionHeaderProps, type SectionProps } from '@components/layout';
+import { Layout, Section } from '@components/layout';
 import { PortfolioGrid, usePortfolioItemProps } from '@components/portfolio';
 
 import styles from './portfolio_tag.styles';
 
 export interface PortfolioTagProps {
-  articles?: ArticleImport[];
-  tag?: ArticleTag | null;
+  articles?: PortfolioEntryImport[];
+  tag?: PortfolioTag | null;
 }
 
 const Header = () => <Layout.Header background="opaque" selectedId="portfolio" />;
 
 const Component = ({ articles = [], tag }: PortfolioTagProps) => {
-  const TagItem = ({ attributes }: { attributes: ArticleAttributes }) => {
+  const TagItem = ({ attributes }: { attributes: PortfolioEntryAttributes }) => {
     const { id } = attributes;
     const props = usePortfolioItemProps(id);
 

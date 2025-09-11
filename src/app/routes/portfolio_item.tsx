@@ -1,16 +1,16 @@
-import { Article } from '@pages/article';
+import { PortfolioEntry } from '@pages/portfolio/entry';
 
 import type { Route } from './+types/portfolio_item';
 import { getMeta } from './meta';
 
-export const meta = ({ data }: { data: ArticleImport | null }) => {
+export const meta = ({ data }: { data: PortfolioEntryImport | null }) => {
   return getMeta({
     title: `${data?.attributes?.name}`,
   })();
 };
 
 export const loader = async ({ params }: Route.LoaderArgs) => {
-  let article: ArticleImport | null = null;
+  let article: PortfolioEntryImport | null = null;
 
   if (params.id && params.id !== 'undefined') {
     try {
@@ -25,5 +25,5 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
 };
 
 export default function PortfolioItem({ loaderData: article }: Route.ComponentProps) {
-  return <Article article={article} />;
+  return <PortfolioEntry article={article} />;
 }

@@ -7,8 +7,9 @@ import { imagetools } from 'vite-imagetools';
 import devtoolsJson from 'vite-plugin-devtools-json';
 import tsconfigPaths from 'vite-tsconfig-paths';
 
-import { markdownPlugin } from './config';
-import { unfontConfig } from './config';
+import { portfolioIndexPlugin } from './config/portfolio_index_plugin';
+import { sitemapPlugin } from './config/sitemap_plugin';
+import { markdownPlugin, unfontConfig } from './config';
 
 const isStorybook = process.argv[1]?.includes('storybook');
 
@@ -19,8 +20,6 @@ export default defineConfig({
       '@linaria/atomic',
       '@linaria/core',
       '@linaria/react',
-      'moment',
-      'numeral',
       'react-intersection-observer',
       'react-keyed-flatten-children',
       'react-markdown',
@@ -46,6 +45,8 @@ export default defineConfig({
   },
   plugins: [
     devtoolsJson(),
+    portfolioIndexPlugin(),
+    sitemapPlugin(),
     wyw({
       include: ['src/**/*.{ts,tsx}'],
       babelOptions: {

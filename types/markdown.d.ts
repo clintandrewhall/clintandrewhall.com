@@ -1,11 +1,5 @@
 declare module '*.md' {
-  // "unknown" would be more detailed depends on how you structure frontmatter
-  const attributes: {
-    id: string;
-    name?: import('@lib/site').TopicId;
-    title: string;
-    subtitle?: string;
-  };
+  const attributes: PortfolioEntryAttributes;
 
   // When "Mode.TOC" is requested
   const toc: { level: string; content: string }[];
@@ -22,4 +16,17 @@ declare module '*.md' {
 
   // Modify below per your usage
   export { attributes, html, raw, ReactComponent, toc };
+}
+
+declare module 'virtual:portfolio-index' {
+  export interface PortfolioIndexEntry {
+    id: string;
+    name: string;
+    caption: string;
+    timestamp: number;
+    cover: string;
+    tags: { name: string; slug: string }[];
+    website?: string;
+  }
+  export const portfolioIndex: PortfolioIndexEntry[];
 }

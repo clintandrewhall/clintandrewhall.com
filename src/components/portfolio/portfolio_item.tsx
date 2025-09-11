@@ -26,7 +26,14 @@ export const PortfolioItem = ({
 
   if (website) {
     websiteLink = (
-      <a href={website} {...styles.projectLink} title="Link to external website" target="_blank">
+      <a
+        href={website}
+        title={`Link to ${title}`}
+        target="_blank"
+        rel="noopener noreferrer"
+        aria-label={`${title} – external link`}
+        {...styles.projectLink}
+      >
         <i {...styles.linkIcon} />
       </a>
     );
@@ -39,7 +46,8 @@ export const PortfolioItem = ({
   ));
 
   return (
-    <article {...styles.root(imageSrc)}>
+    <article {...styles.root}>
+      <img {...styles.image} src={imageSrc} alt={title} loading="lazy" decoding="async" />
       <header {...styles.header}>
         <h4 {...styles.title}>{title}</h4>
         <h5 {...styles.tags}>{subtitle}</h5>

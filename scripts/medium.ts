@@ -44,7 +44,6 @@ const parser: Parser<Feed, Item> = new Parser({
 
 (async () => {
   const feed = await parser.parseURL(FEED);
-  console.log(feed.items);
 
   const result = feed.items.map(
     ({ categories, link, pubDate, title, 'content:encoded': content }) => {
@@ -60,8 +59,6 @@ const parser: Parser<Feed, Item> = new Parser({
       };
     },
   );
-
-  console.log(result);
 
   fs.writeFile(
     `${WRITE_PATH}/medium.json`,

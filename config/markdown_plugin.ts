@@ -35,23 +35,18 @@ export const markdownPlugin = (): Plugin => {
 
     async buildStart() {
       if (!hasLogged) {
-        console.log(`Starting image processing...`);
+        console.log(`[markdown] Starting image processing...`);
         hasLogged = true;
       }
     },
 
     async generateBundle() {
-      console.log('Waiting for image processing to complete...');
-
       await new Promise<void>((resolve) => {
         const checkProcessing = () => {
           if (!imageProcessor.isProcessing) {
-            console.log('All images processed successfully');
+            console.log('[markdown]All images processed successfully');
             resolve();
           } else {
-            console.log(
-              `Waiting for ${imageProcessor.processingCount} images to finish processing...`,
-            );
             setTimeout(checkProcessing, 100);
           }
         };

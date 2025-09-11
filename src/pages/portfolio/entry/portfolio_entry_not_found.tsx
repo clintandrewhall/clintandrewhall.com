@@ -1,14 +1,14 @@
 import { NotFound, type NotFoundProps } from '@components/not_found';
 import { PortfolioGrid, usePortfolioItems } from '@components/portfolio';
 
-import styles from './article_not_found.styles';
+import styles from './portfolio_entry_not_found.styles';
 
 export const notFoundProps: NotFoundProps = {
-  title: 'Article not found.',
-  subtitle: 'But you could read about one of these instead.',
+  title: 'Portfolio entry not found.',
+  subtitle: 'But you could view one of these projects instead.',
 };
 
-export const ArticleNotFound = () => {
+export const PortfolioEntryNotFound = () => {
   const items = usePortfolioItems();
 
   return (
