@@ -3,6 +3,7 @@ import { Link } from 'react-router';
 import { ParallaxBanner, ParallaxBannerLayer, ParallaxProvider } from 'react-scroll-parallax';
 
 import { SocialProfiles } from '@components/social_profiles';
+import { useMotionPreferences } from '@lib/hooks';
 
 // @ts-expect-error - required for loading the logo
 import hero from '../../content/images/hero.jpg?w=2500&format=webp';
@@ -40,9 +41,20 @@ const StaticHero = () => (
         backgroundImage: `url(${hero.src})`,
         backgroundSize: 'cover',
         backgroundRepeat: 'no-repeat',
+        height: '100vh',
+        width: '100vw',
       }}
     />
-    <div {...styles.headerLayer}>
+    <div
+      {...styles.headerLayer}
+      style={{
+        ...(styles.headerLayer.style || {}),
+        position: 'absolute',
+        bottom: 0,
+        width: '100vw',
+        height: '100vh',
+      }}
+    >
       <HeroHeader />
     </div>
   </div>
@@ -60,11 +72,11 @@ const ParallaxHero = () => (
 );
 
 export const Hero = forwardRef<HTMLDivElement>(({}, ref) => {
-  const isServer = typeof window === 'undefined';
+  const { shouldReduceMotion } = useMotionPreferences();
 
   return (
     <div ref={ref} id="home">
-      {isServer ? <StaticHero /> : <ParallaxHero />}
+      {shouldReduceMotion ? <StaticHero /> : <ParallaxHero />}
     </div>
   );
 });

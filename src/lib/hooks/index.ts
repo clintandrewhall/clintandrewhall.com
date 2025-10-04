@@ -1,6 +1,7 @@
 export { useDimensions } from './use_dimensions';
 export { useHomeTopics } from './use_home_topics';
 export { useLogo } from './use_logos';
+export { useMotionPreferences } from './use_motion_preferences';
 export { useAvatar } from './use_people';
 export {
   usePortfolioEntries,

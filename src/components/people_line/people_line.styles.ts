@@ -17,7 +17,9 @@ csl`
 
     .swiper .swiper-pagination-bullets.swiper-pagination-horizontal {
       ${decl.color.background.subtle}
-      display: inline-block;
+      display: flex;
+      justify-content: center;
+      align-items: center;
       left: 50%;
       transform: translateX(-50%);
       width: auto;
@@ -92,7 +94,7 @@ export const root = toProps(css`
     background-image: linear-gradient(
       to left,
       var(${vars.color.background.subtle}),
-      var(${vars.color.background.dark})
+      var(/* ${vars.color.background.light}:8 */)
     );
     left: 0;
   }
@@ -101,7 +103,7 @@ export const root = toProps(css`
     background-image: linear-gradient(
       to right,
       var(${vars.color.background.subtle}),
-      var(${vars.color.background.dark})
+      var(/* ${vars.color.background.light}:10 */)
     );
     right: 0;
   }

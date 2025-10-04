@@ -1,9 +1,7 @@
 # TODO
 
-- I need an updated og:image
-- Move images to async
+- References section doesn't work without JS.
 - Masonry image grids in portfolio entries
-- SSR of homepage has missing content, missing hero.
 
 - [@react/spring](https://www.react-spring.dev/)
 - [framer-motion](https://www.framer.com/motion/introduction/)

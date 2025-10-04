@@ -4,7 +4,7 @@
   "version": "0.0.0",
   "type": "module",
   "scripts": {
-    "clean": "rimraf dist && rimraf storybook-static",
+    "clean": "rimraf dist && rimraf storybook-static && rimraf public/images/portfolio && rimraf public/image_dimensions.json",
     "dev": "react-router dev",
     "build": "yarn clean && react-router build",
     "start": "react-router-serve ./dist/server/index.js",
@@ -94,7 +94,7 @@
     "stylelint-order": "^6.0.4",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2",
-    "unplugin-fonts": "^1.3.1",
+    "unplugin-fonts": "^1.4.0",
     "vite": "^7.0.3",
     "vite-imagetools": "^7.1.0",
     "vite-plugin-devtools-json": "^0.2.1",

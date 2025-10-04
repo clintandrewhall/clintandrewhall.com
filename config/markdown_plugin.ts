@@ -6,25 +6,25 @@ import { imageProcessor, markdownImagePlugin } from './markdown_image_plugin';
 
 // Basic Vite plugin for markdown processing
 export const markdownPlugin = (): Plugin => {
-  let hasLogged = false;
+  const LOG_KEY = '__markdown_image_processing_logged__';
   return {
     name: 'custom-markdown-plugin',
     enforce: 'pre' as const,
-    async transform(src: string, id: string) {
+    async transform(src: string, id: string, options?: { ssr?: boolean }) {
       if (!id.endsWith('.md')) {
         return;
       }
 
       const { content, data: attributes } = matter(src);
 
-      // Process cover image in frontmatter
-      if (attributes.cover) {
+      // Process cover image in frontmatter (client only)
+      if (!options?.ssr && attributes.cover) {
         imageProcessor.processImage(attributes.cover);
       }
 
       const md = new MarkdownIt({ html: true, linkify: true, typographer: true });
-      // Incorporate markdownImagePlugin logic for responsive images
-      markdownImagePlugin(md);
+      // Incorporate markdownImagePlugin logic for responsive images (trigger only on client)
+      markdownImagePlugin(md, !options?.ssr);
       const html = md.render(content, { frontmatter: attributes });
 
       return {
@@ -34,9 +34,9 @@ export const markdownPlugin = (): Plugin => {
     },
 
     async buildStart() {
-      if (!hasLogged) {
+      if (!(globalThis as any)[LOG_KEY]) {
         console.log(`[markdown] Starting image processing...`);
-        hasLogged = true;
+        (globalThis as any)[LOG_KEY] = true;
       }
     },
 
@@ -44,7 +44,7 @@ export const markdownPlugin = (): Plugin => {
       await new Promise<void>((resolve) => {
         const checkProcessing = () => {
           if (!imageProcessor.isProcessing) {
-            console.log('[markdown]All images processed successfully');
+            console.log('[markdown] All images processed successfully');
             resolve();
           } else {
             setTimeout(checkProcessing, 100);

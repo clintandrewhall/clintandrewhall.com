@@ -1,67 +1,56 @@
-const google = {
-  families: [
-    //   {
-    //     name: 'Libre Baskerville',
-    //     styles: 'ital,wght@0,400;0,700;1,400',
-    //   },
-    //   {
-    //     name: 'Montserrat',
-    //     styles: 'wght@100;200;300;400;500;600;700',
-    //   },
-  ],
-};
+import type { Options } from 'unplugin-fonts/types';
 
-const custom = {
+const custom: Options['custom'] = {
   families: [
     {
       name: 'Libre Baskerville Bold',
       local: 'libre-baskerville-bold',
-      src: './config/fonts/librebaskerville/librebaskerville-bold-webfont.woff',
+      src: './config/fonts/librebaskerville/librebaskerville-bold-webfont.woff2',
     },
-    {
-      name: 'Libre Baskerville Italic',
-      local: 'libre-baskerville-italic',
-      src: './config/fonts/librebaskerville/librebaskerville-italic-webfont.woff',
-    },
+    // {
+    //   name: 'Libre Baskerville Italic',
+    //   local: 'libre-baskerville-italic',
+    //   src: './config/fonts/librebaskerville/librebaskerville-italic-webfont.woff',
+    // },
     {
       name: 'Libre Baskerville',
       local: 'libre-baskerville',
-      src: './config/fonts/librebaskerville/librebaskerville-regular-webfont.woff',
+      src: './config/fonts/librebaskerville/librebaskerville-regular-webfont.woff2',
     },
     {
       name: 'Montserrat Bold',
       local: 'montserrat-bold',
-      src: './config/fonts/montserrat/montserrat-bold-webfont.woff',
+      src: './config/fonts/montserrat/montserrat-bold-webfont.woff2',
     },
     {
       name: 'Montserrat Extra Bold',
       local: 'montserrat-extra-bold',
-      src: './config/fonts/montserrat/montserrat-extrabold-webfont.woff',
+      src: './config/fonts/montserrat/montserrat-extrabold-webfont.woff2',
     },
     {
       name: 'Montserrat Medium',
-      local: 'montserrat',
-      src: './config/fonts/montserrat/montserrat-medium-webfont.woff',
+      local: 'montserrat-medium',
+      src: './config/fonts/montserrat/montserrat-medium-webfont.woff2',
     },
     {
       name: 'Montserrat Semibold',
       local: 'montserrat-semi-bold',
-      src: './config/fonts/montserrat/montserrat-semibold-webfont.woff',
+      src: './config/fonts/montserrat/montserrat-semibold-webfont.woff2',
     },
     {
       name: 'Montserrat Regular',
-      local: 'montserrat-semi-bold',
-      src: './config/fonts/montserrat/montserrat-regular-webfont.woff',
+      local: 'montserrat-regular',
+      src: './config/fonts/montserrat/montserrat-regular-webfont.woff2',
     },
     {
       name: 'Montserrat Light',
       local: 'montserrat-light',
-      src: './config/fonts/montserrat/montserrat-light-webfont.woff',
+      src: './config/fonts/montserrat/montserrat-light-webfont.woff2',
     },
     {
       name: 'Iconic',
       local: 'iconic',
-      src: './config/fonts/iconic/iconic-font.woff',
+      src: './config/fonts/iconic/iconic-font.woff2',
     },
     // {
     //   name: 'Montserrat Black',
@@ -82,4 +71,4 @@ const custom = {
   preload: true,
 };
 
-export const unfontConfig = { google, custom };
+export const unfontConfig = { custom };

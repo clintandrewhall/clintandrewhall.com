@@ -8,16 +8,21 @@ const RESOLVED_VIRTUAL_ID = '\0' + VIRTUAL_ID;
 
 function readPortfolioEntries(): PortfolioEntryAttributes[] {
   const portfolioDir = path.resolve('./src/content/portfolio');
-  if (!fs.existsSync(portfolioDir)) return [];
+  if (!fs.existsSync(portfolioDir)) {
+    return [];
+  }
 
   const files = fs.readdirSync(portfolioDir).filter((f) => f.endsWith('.md'));
 
   const entries: PortfolioEntryAttributes[] = [];
+
   for (const file of files) {
     const filePath = path.join(portfolioDir, file);
     try {
       const { data } = matter(fs.readFileSync(filePath, 'utf8'));
-      if (!data || typeof data !== 'object') continue;
+      if (!data || typeof data !== 'object') {
+        continue;
+      }
 
       const entry = {
         id: String(data.id ?? path.basename(file, '.md')),
@@ -31,7 +36,6 @@ function readPortfolioEntries(): PortfolioEntryAttributes[] {
 
       entries.push(entry);
     } catch (err) {
-      // eslint-disable-next-line no-console
       console.warn(`[portfolio_index] Failed to parse ${filePath}:`, err);
     }
   }
@@ -46,11 +50,17 @@ export function portfolioIndexPlugin(): Plugin {
     name: 'portfolio-index-plugin',
     enforce: 'pre',
     resolveId(id) {
-      if (id === VIRTUAL_ID) return RESOLVED_VIRTUAL_ID;
+      if (id === VIRTUAL_ID) {
+        return RESOLVED_VIRTUAL_ID;
+      }
     },
     load(id) {
-      if (id !== RESOLVED_VIRTUAL_ID) return;
-      if (!cache) cache = readPortfolioEntries();
+      if (id !== RESOLVED_VIRTUAL_ID) {
+        return;
+      }
+      if (!cache) {
+        cache = readPortfolioEntries();
+      }
 
       const code = `export const portfolioIndex = ${JSON.stringify(cache)};`;
       return code;

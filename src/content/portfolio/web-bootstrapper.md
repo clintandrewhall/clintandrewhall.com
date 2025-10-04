@@ -27,4 +27,4 @@ In 2009, I submitted [a paper](/pdf/web-bootstrapper-paper.pdf) to the [World 
 ![How the Bootstrapper Works](bootstrapper-2?medium)
 ![Such a Broad Landscape](bootstrapper-3v)
 ![Ajax Experience 2009](bootstrapper-4?medium)
-![Demo of 12 skins on one site](bootstrapper-5?medium) 
+![Demo of 12 skins on one site](bootstrapper-5?medium)

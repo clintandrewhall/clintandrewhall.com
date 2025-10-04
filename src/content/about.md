@@ -10,4 +10,4 @@ I pursue them, too. I enjoy conferences like [SxSW](http://sxsw.com/), gathering
 
 I'm currently the Technical Lead for the Global Experience team within [Kibana](https://www.elastic.co/products/kibana) at [Elastic](https://elastic.co), working from my home in Hamilton, ON.
 
-In the past, I've worked for Facebook, Cerner, Sprint and Accenture, and lived in New York, Vancouver and San Francisco.  My hometown is Kansas City, MO. So far we've visited 44 countries, (and counting).
+In the past, I've worked for Facebook, Cerner, Sprint and Accenture, and lived in New York, Vancouver and San Francisco. My hometown is Kansas City, MO. So far we've visited 44 countries, (and counting).

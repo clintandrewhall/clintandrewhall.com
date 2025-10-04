@@ -37,4 +37,4 @@ I refactored and open-sourced the code to it's current iteration: a live-updatin
 
 The first version was a full-screen instance of Chrome using CSS3 transitions and animations to display the normalized photos. Using Node’s async nature, I was able to process photos very quickly, (I even experimented with facial recognition to properly “center” faces!). I used Socket.io to create real-time posts to the wall– essentially, the admins approvals on the iPad or iPhone would “fly up” into the “Recent Photos” queue beneath the display.
 
-The second version removed all of those dependencies, opting instead for a polling call to a Facebook GraphQL URL. The creator need only issue themselves a long-access token and specify the Facebook ID of the Event they want to display. 
+The second version removed all of those dependencies, opting instead for a polling call to a Facebook GraphQL URL. The creator need only issue themselves a long-access token and specify the Facebook ID of the Event they want to display.

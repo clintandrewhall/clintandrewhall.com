@@ -32,10 +32,9 @@ export function sitemapPlugin(): Plugin {
         const outDir = path.resolve('dist/client');
         fs.mkdirSync(outDir, { recursive: true });
         fs.writeFileSync(path.join(outDir, 'sitemap.xml'), xml);
-        // eslint-disable-next-line no-console
+
         console.log(`[sitemap] Wrote ${routes.length} routes to dist/client/sitemap.xml`);
       } catch (err) {
-        // eslint-disable-next-line no-console
         console.error('[sitemap] Failed to generate sitemap:', err);
       }
     },
