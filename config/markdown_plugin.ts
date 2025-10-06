@@ -10,7 +10,7 @@ export const markdownPlugin = (): Plugin => {
   return {
     name: 'custom-markdown-plugin',
     enforce: 'pre' as const,
-    async transform(src: string, id: string, options?: { ssr?: boolean }) {
+    async transform(src: string, id: string) {
       if (!id.endsWith('.md')) {
         return;
       }
@@ -18,13 +18,13 @@ export const markdownPlugin = (): Plugin => {
       const { content, data: attributes } = matter(src);
 
       // Process cover image in frontmatter (client only)
-      if (!options?.ssr && attributes.cover) {
-        imageProcessor.processImage(attributes.cover);
-      }
+      // if (attributes.cover) {
+      //   imageProcessor.processImage(attributes.cover);
+      // }
 
       const md = new MarkdownIt({ html: true, linkify: true, typographer: true });
-      // Incorporate markdownImagePlugin logic for responsive images (trigger only on client)
-      markdownImagePlugin(md, !options?.ssr);
+
+      markdownImagePlugin(md);
       const html = md.render(content, { frontmatter: attributes });
 
       return {

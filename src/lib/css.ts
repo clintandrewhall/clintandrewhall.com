@@ -24,49 +24,73 @@ function isCSSProps(value: any): value is CSSProps {
   return value && typeof value === 'object' && 'className' in value;
 }
 
-export function cx(input: string, append?: string): string;
-export function cx(input: string, append?: CSSProps): CSSProps;
-export function cx(input: CSSProps, append?: string): CSSProps;
-export function cx(input: CSSProps, append?: CSSProps): CSSProps;
-export function cx(input: unknown, append?: unknown): string | CSSProps {
-  if (!append || (!input && !append)) {
-    return input as string | CSSProps;
-  }
+type ClassValue = Parameters<typeof _cx>[number];
 
-  if (!input) {
-    return append as string | CSSProps;
-  }
+export function cx(...args: string[]): string;
+export function cx(...args: Array<string | CSSProps>): CSSProps;
+export function cx(...args: unknown[]): string | CSSProps {
+  const classValues: ClassValue[] = [];
+  let mergedStyle: CSSProperties | undefined;
+  let dataComponent: string | undefined;
+  let hasCSSProps = false;
 
-  if (isCSSProps(input)) {
-    if (isCSSProps(append)) {
-      return {
-        className: _cx(append.className, input.className),
-        style: { ...input.style, ...append.style },
-      };
+  for (const arg of args) {
+    if (arg === null || arg === undefined) {
+      continue;
     }
 
-    if (typeof append === 'string') {
-      return {
-        ...input,
-        className: cx(append, input.className),
-      };
+    if (typeof arg === 'boolean') {
+      continue;
     }
+
+    if (isCSSProps(arg)) {
+      hasCSSProps = true;
+
+      if (arg.className) {
+        classValues.push(arg.className);
+      }
+
+      if (arg.style) {
+        mergedStyle = {
+          ...(mergedStyle ?? {}),
+          ...arg.style,
+        };
+      }
+
+      if (arg['data-component'] !== undefined) {
+        dataComponent = arg['data-component'];
+      }
+
+      continue;
+    }
+
+    if (typeof arg === 'string') {
+      if (arg) {
+        classValues.push(arg);
+      }
+      continue;
+    }
+
+    classValues.push(arg as ClassValue);
   }
 
-  if (typeof input === 'string') {
-    if (isCSSProps(append)) {
-      return {
-        ...append,
-        className: cx(append.className, input),
-      };
+  const className = classValues.length ? _cx(...classValues) : '';
+
+  if (hasCSSProps) {
+    const result: CSSProps = { className };
+
+    if (mergedStyle && Object.keys(mergedStyle).length > 0) {
+      result.style = mergedStyle;
     }
 
-    if (typeof append === 'string') {
-      return _cx(append, input);
+    if (dataComponent !== undefined) {
+      result['data-component'] = dataComponent;
     }
+
+    return result;
   }
 
-  return input as string | CSSProps;
+  return className;
 }
 
 interface DefinitionParams<T extends string, V extends string | number> {
@@ -81,7 +105,10 @@ export const getDefinitions = <T extends string, V extends string | number>({
   const names = Object.keys(themeValues) as T[];
 
   return names.reduce(
-    (acc, name) => ((acc[`${varPrefix}-${name}`] = themeValues[name] + ''), acc),
+    (acc, name) => {
+      acc[`${varPrefix}-${name}`] = themeValues[name] + '';
+      return acc;
+    },
     {} as Record<string, string>,
   );
 };

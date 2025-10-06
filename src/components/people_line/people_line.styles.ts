@@ -48,10 +48,49 @@ csl`
       right: -22px;
       border-radius: 0 50% 50% 0;
     }
+
+    /* Storybook-only: simulate non-JS behavior when an ancestor adds .simulate-no-js */
+    .simulate-no-js .peopleline .swiper {
+      overflow-x: auto;
+      padding-inline: var(--peopleline-gap, 10px);
+    }
+
+    .simulate-no-js .peopleline .swiper-wrapper {
+      transform: none !important;
+      width: max-content !important;
+      display: grid !important;
+      grid-auto-flow: column !important;
+      grid-auto-columns: var(--peopleline-slide-width, 100%) !important;
+      gap: var(--peopleline-gap, 10px) !important;
+    }
+
+    @media (min-width: 975px) {
+      .simulate-no-js .peopleline .swiper-wrapper {
+        grid-auto-columns: calc((100% - var(--peopleline-gap, 10px)) / 2) !important;
+      }
+      .simulate-no-js .peopleline .swiper-slide {
+        width: calc((100% - var(--peopleline-gap, 10px)) / 2) !important;
+      }
+    }
+
+    .simulate-no-js .peopleline .swiper-slide {
+      width: var(--peopleline-slide-width, 100%) !important;
+      scroll-snap-align: start;
+      flex: 0 0 auto;
+    }
+
+    .simulate-no-js .peopleline .swiper-button-prev,
+    .simulate-no-js .peopleline .swiper-button-next,
+    .simulate-no-js .peopleline .swiper-pagination {
+      display: none !important;
+    }
   }
 `;
 
 export const root = toProps(css`
+  --peopleline-gap: 10px;
+  --peopleline-slide-width: 100%;
+
   --swiper-theme-color: var(${vars.color.background.light});
   --swiper-navigation-size: var(${vars.spacing.step6});
   --swiper-navigation-top-offset: 50%;
@@ -111,6 +150,48 @@ export const root = toProps(css`
 
 const swiper = toProps(css`
   max-width: var(${vars.grid.maxWidth});
+
+  /* Base non-JS fallback: make Swiper act like a native scroll-snap scroller */
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+  padding-inline: var(--peopleline-gap, 10px);
+  scroll-padding-inline: var(--peopleline-gap, 10px);
+  scroll-snap-type: x proximity;
+
+  /* Swiper DOM structure fallback (non-JS): use flex with fixed bases */
+  .swiper-wrapper {
+    display: flex;
+    gap: var(--peopleline-gap, 10px);
+    transform: none;
+  }
+
+  .swiper-slide {
+    /* 1 per view by default */
+    flex: 0 0 var(--peopleline-slide-width, 100%);
+    scroll-snap-align: start;
+  }
+
+  /* Match Swiper breakpoint that shows 2 slides >= 975px */
+  @media (min-width: 975px) {
+    .swiper-slide {
+      /* 2 per view when wide */
+      flex: 0 0 calc((100% - var(--peopleline-gap, 10px)) / 2);
+    }
+  }
 `);
 
-export default { root, swiper };
+/* When JS enhances with Swiper, disable native scroll-snap to avoid conflicts */
+export const enhanced = toProps(css`
+  .swiper {
+    padding-inline: 0;
+    scroll-padding-inline: 0;
+    scroll-snap-type: none;
+  }
+
+  .swiper-wrapper {
+    display: flex;
+    width: 100% !important;
+  }
+`);
+
+export default { root, swiper, enhanced };

@@ -13,9 +13,9 @@ import {
 
 const DIR_SOURCE = path.resolve('src/content/portfolio/images');
 const DIR_IMAGES = 'images/portfolio';
-const DIR_ASSETS = path.resolve(`dist/assets/${DIR_IMAGES}`);
+const DIR_BUILD = path.resolve(`dist/client/${DIR_IMAGES}`);
 const DIR_PUBLIC = path.resolve(`public/${DIR_IMAGES}`);
-const OUTPUT_DIRS = [DIR_ASSETS, DIR_PUBLIC];
+const OUTPUT_DIRS = [DIR_BUILD, DIR_PUBLIC];
 
 const DIMENSIONS_FILE = 'image_dimensions.json';
 const QUALITY = 70;
@@ -127,7 +127,7 @@ export class ImageProcessor {
   }
 
   private async generateImage(sourcePath: string, filename: string, width: number): Promise<void> {
-    const assetPath = path.join(DIR_ASSETS, filename);
+    const assetPath = path.join(DIR_BUILD, filename);
     const publicPath = path.join(DIR_PUBLIC, filename);
 
     try {
@@ -205,7 +205,6 @@ export class ImageProcessor {
     imageId: string,
     alt: string,
     size: 'small' | 'medium' | 'large' = 'large',
-    triggerProcessing: boolean = true,
   ): string {
     const sourcePath = findSourceImage(imageId);
 
@@ -214,16 +213,13 @@ export class ImageProcessor {
       return '';
     }
 
-    if (triggerProcessing) {
-      this.processImage(imageId);
-    }
+    this.processImage(imageId);
 
     const widthAttr = SIZE_TO_VALUE.small;
     const cached = this.dimensionCache.get(imageId);
     const ratio = cached && cached.width > 0 ? cached.height / cached.width : undefined;
     const heightAttr = Math.round(widthAttr * (ratio || 0.75));
     const sizes = `(min-width: ${IMAGE_VALUE_LARGE}px) ${IMAGE_VALUE_LARGE}px, (min-width: ${IMAGE_VALUE_MEDIUM}px) ${IMAGE_VALUE_MEDIUM}px, 100vw`;
-
     return `
     <picture class="article-image-${size}">
       <source srcSet="${getImagePath(imageId, 'large')}" media="(min-width: ${IMAGE_VALUE_LARGE}px)" />

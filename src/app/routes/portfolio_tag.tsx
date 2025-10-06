@@ -1,4 +1,5 @@
 import { PortfolioTag as Component } from '@pages/portfolio';
+import { portfolioIndex } from 'virtual:portfolio-index';
 
 import type { Route } from './+types/portfolio_tag';
 import { getMeta } from './meta';
@@ -15,7 +16,6 @@ export const loader = async ({ params }: Route.LoaderArgs) => {
 
   if (params.tagId && params.tagId !== 'undefined') {
     try {
-      const { portfolioIndex } = await import('virtual:portfolio-index');
       // Filter entries that match the tag
       const matching = portfolioIndex.filter((entry) =>
         entry.tags.some((articleTag) => articleTag.slug === params.tagId),

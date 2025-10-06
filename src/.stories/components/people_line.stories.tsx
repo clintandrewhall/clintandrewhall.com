@@ -7,10 +7,18 @@ import { decorators } from '../decorators';
 
 const { vars } = theme;
 
-const meta: Meta<typeof Component> = {
+type StoryArgs = React.ComponentProps<typeof Component> & { nonJs: boolean };
+
+const meta: Meta<StoryArgs> = {
   title: 'Components/People Line',
   component: Component,
-  render: ({ people }) => {
+  argTypes: {
+    nonJs: { control: 'boolean' },
+  },
+  args: {
+    nonJs: false,
+  },
+  render: ({ people, nonJs }: StoryArgs) => {
     return (
       <div
         style={{
@@ -18,7 +26,9 @@ const meta: Meta<typeof Component> = {
           padding: '30px',
         }}
       >
+        {/* When nonJs is enabled, we just add the class and rely on global styles in people_line.styles.ts */}
         <div
+          className={nonJs ? 'simulate-no-js' : undefined}
           style={{
             maxWidth: `var(${vars.grid.maxWidth})`,
             margin: '0 auto',
@@ -43,7 +53,7 @@ const person: PersonProps = {
   title: 'Title at XYZ',
 };
 
-export const PeopleLine: StoryObj<typeof Component> = {
+export const PeopleLine: StoryObj<StoryArgs> = {
   args: {
     people: {
       person_1: <Person {...person}>Person 1</Person>,

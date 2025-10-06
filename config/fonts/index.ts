@@ -68,6 +68,7 @@ const custom: Options['custom'] = {
     //   src: './config/fonts/montserrat/montserrat-thin-webfont.woff',
     // },
   ],
+  display: 'swap',
   preload: true,
 };
 

@@ -4,12 +4,21 @@ import { ImageProcessor } from './image_processor';
 
 const imageProcessor = new ImageProcessor();
 
-export function markdownImagePlugin(md: MarkdownIt, triggerProcessing: boolean = true): void {
+export function markdownImagePlugin(md: MarkdownIt): void {
   const defaultRender =
     md.renderer.rules.image ||
     function (tokens, idx, options, _env, renderer) {
       return renderer.renderToken(tokens, idx, options);
     };
+
+  // Cover image logic: prepend responsive cover if frontmatter.cover exists
+  md.core.ruler.push('cover_image', function (state) {
+    const env = state.env || {};
+    if (env.frontmatter && env.frontmatter.cover) {
+      const coverId = env.frontmatter.cover;
+      imageProcessor.processImage(coverId);
+    }
+  });
 
   md.renderer.rules.image = function (tokens, idx, options, env, renderer) {
     const token = tokens[idx];
@@ -38,7 +47,7 @@ export function markdownImagePlugin(md: MarkdownIt, triggerProcessing: boolean =
         !imageId.includes('http') &&
         !imageId.includes('.')
       ) {
-        return imageProcessor.generateResponsiveHtml(imageId, alt, size, triggerProcessing);
+        return imageProcessor.generateResponsiveHtml(imageId, alt, size);
       }
     }
 

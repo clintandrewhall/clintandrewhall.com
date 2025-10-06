@@ -52,6 +52,7 @@ export const theme = {
   icons,
   page: {
     body: `
+      font-synthesis: none;
       scroll-behavior: smooth;
       -webkit-font-smoothing: antialiased;
       font-feature-settings: 'liga', 'clig';

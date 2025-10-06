@@ -52,6 +52,7 @@ const markdown = toProps(css`
     border-color: var(${vars.color.border.outline});
     border-style: solid;
     border-width: 1px;
+    height: 100%;
     max-width: 100%;
     width: 100%;
   }

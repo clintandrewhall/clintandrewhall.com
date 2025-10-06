@@ -23,6 +23,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
       <head>
         <meta charSet="utf-8" />
         <Meta />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="theme-color" content="#000000" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="og:locale" content="en_US" />
@@ -30,6 +31,15 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
         <Links />
         <link rel="manifest" href={`/manifest.json`} />
         <link rel="shortcut icon" href={`/favicon.ico`} />
+        <noscript>
+          {/* Fallback to make Swiper lists horizontally scrollable without JS */}
+          <style>{`
+            .peopleline .swiper { overflow-x: auto; padding-inline: var(--peopleline-gap, 10px); }
+            .peopleline .swiper-wrapper { display: flex; gap: var(--peopleline-gap, 10px); transform: none; }
+            .peopleline .swiper-slide { flex: 0 0 var(--peopleline-slide-width, 100%); scroll-snap-align: start; }
+            @media (min-width: 975px) { .peopleline .swiper-slide { flex-basis: calc((100% - var(--peopleline-gap, 10px)) / 2); } }
+          `}</style>
+        </noscript>
       </head>
       <body>
         <div

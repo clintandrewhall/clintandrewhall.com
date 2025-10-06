@@ -1,5 +1,5 @@
 const DEFAULT_DESCRIPTION = 'The portfolio and thoughts of Clint Andrew Hall';
-const DEFAULT_IMAGE_PATH = '/images/image.jpg';
+const DEFAULT_IMAGE_PATH = '/image.jpg';
 export const DEFAULT_SITE_URL = 'https://clintandrewhall.com';
 export const DEFAULT_TITLE = 'Clint Andrew Hall';
 
