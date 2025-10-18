@@ -23,7 +23,7 @@ const list = toProps(css`
 
   grid-template-columns: repeat(4, 1fr);
 
-  @media (max-width: pcss_lin1) and (min-width: pcss_lin2), (max-width: .pcss_lin3) {
+  ${decl.media.mediumToWide}, ${decl.media.narrow} {
     grid-template-columns: repeat(2, 1fr);
   }
 `);

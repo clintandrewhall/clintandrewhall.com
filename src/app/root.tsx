@@ -23,7 +23,7 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
       <head>
         <meta charSet="utf-8" />
         <Meta />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="theme-color" content="#000000" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta property="og:locale" content="en_US" />

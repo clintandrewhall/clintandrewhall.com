@@ -17,7 +17,7 @@ const root = toProps(css`
   column-width: calc(50% - var(${vars.grid.gutter}) / 2);
   position: relative;
 
-  ${decl.media.narrow} {
+  ${decl.media.medium} {
     column-count: 1;
     column-width: revert;
 

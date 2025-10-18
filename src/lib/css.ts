@@ -26,8 +26,8 @@ function isCSSProps(value: any): value is CSSProps {
 
 type ClassValue = Parameters<typeof _cx>[number];
 
-export function cx(...args: string[]): string;
-export function cx(...args: Array<string | CSSProps>): CSSProps;
+export function cx(...args: ClassValue[]): string;
+export function cx(...args: Array<ClassValue | CSSProps>): CSSProps;
 export function cx(...args: unknown[]): string | CSSProps {
   const classValues: ClassValue[] = [];
   let mergedStyle: CSSProperties | undefined;

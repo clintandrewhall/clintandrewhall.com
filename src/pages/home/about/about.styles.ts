@@ -33,10 +33,11 @@ const title = toProps(css`
 const content = toProps(css`
   ${decl.font.serif.regular}
   ${decl.color.font.text}
-  line-height: var(${vars.spacing.step6});
+  ${decl.font.size.step1}
+  line-height: var(${vars.spacing.step8});
 
   & p {
-    margin-bottom: var(${vars.spacing.step6});
+    margin-bottom: var(${vars.spacing.step8});
   }
 `);
 
