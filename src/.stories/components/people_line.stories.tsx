@@ -60,6 +60,12 @@ export const PeopleLine: StoryObj<StoryArgs> = {
       person_2: <Person {...person}>Person 2</Person>,
       person_3: <Person {...person}>Person 3</Person>,
       person_4: <Person {...person}>Person 4</Person>,
+      person_5: <Person {...person}>Person 5</Person>,
+      person_6: <Person {...person}>Person 6</Person>,
+      person_7: <Person {...person}>Person 7</Person>,
+      person_8: <Person {...person}>Person 8</Person>,
+      person_9: <Person {...person}>Person 9</Person>,
+      person_10: <Person {...person}>Person 10</Person>,
     },
   },
 };

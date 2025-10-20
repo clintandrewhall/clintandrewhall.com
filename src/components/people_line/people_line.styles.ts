@@ -183,6 +183,7 @@ const swiper = toProps(css`
 /* When JS enhances with Swiper, disable native scroll-snap to avoid conflicts */
 export const enhanced = toProps(css`
   .swiper {
+    overflow-x: hidden;
     padding-inline: 0;
     scroll-padding-inline: 0;
     scroll-snap-type: none;
@@ -190,6 +191,7 @@ export const enhanced = toProps(css`
 
   .swiper-wrapper {
     display: flex;
+    gap: 0 !important;
     width: 100% !important;
   }
 `);

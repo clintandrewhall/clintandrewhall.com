@@ -29,6 +29,11 @@ const root = toProps(css`
     > footer {
       right: var(${vars.spacing.step9});
     }
+
+    > p > a,
+    > footer a {
+      pointer-events: none;
+    }
   }
 
   &:before,
@@ -54,7 +59,9 @@ const root = toProps(css`
     z-index: 1;
   }
 
-  &:hover {
+  &:hover,
+  &:focus,
+  &:focus-within {
     &:before {
       opacity: 0.8;
     }
@@ -70,6 +77,11 @@ const root = toProps(css`
 
     > footer {
       right: var(${vars.spacing.step5});
+    }
+
+    > p > a,
+    > footer a {
+      pointer-events: auto;
     }
   }
 

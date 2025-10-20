@@ -3,7 +3,7 @@ import { theme } from '@theme';
 
 const { decl, vars } = theme;
 
-const root = (float: boolean, background: 'clear' | 'opaque') => {
+const root = (background: 'clear' | 'opaque') => {
   const base = css`
     font-size: var(${vars.header['font-size']});
     height: var(${vars.header.height});
@@ -12,15 +12,15 @@ const root = (float: boolean, background: 'clear' | 'opaque') => {
     position: fixed;
     right: 0;
     top: 0;
-    transition: background-color 1s;
+    transition: background-color 1s ease;
     z-index: 1000;
   `;
 
-  const floating = css`
+  const opaque = css`
     ${decl.color.background.dark};
   `;
 
-  return toProps(float || background === 'opaque' ? cx(base, floating) : base);
+  return toProps(background === 'opaque' ? cx(base, opaque) : base);
 };
 
 export default { root };

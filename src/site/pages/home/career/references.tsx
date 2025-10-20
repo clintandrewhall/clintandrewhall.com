@@ -44,7 +44,7 @@ export const References = () => {
 
   return (
     <Section {...attributes} {...styles.root}>
-      <Section.Header {...attributes} {...styles.header} />
+      <Section.Header {...attributes} {...styles.header} noDivider />
       <div {...styles.peopleLine}>
         <PeopleLine {...{ people }} />
       </div>

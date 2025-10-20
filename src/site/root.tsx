@@ -2,6 +2,7 @@ import { useEffect } from 'react';
 import { css as csl } from '@linaria/core';
 import 'ress';
 import 'unfonts.css';
+import '@theme/definitions';
 import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, useLocation } from 'react-router';
 
 import { css, cx } from '@lib/css';
@@ -50,7 +51,6 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
         `,
             css`
               ${theme.page.body}
-              ${theme.definitions}
             `,
           )}
         >

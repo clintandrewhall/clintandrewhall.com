@@ -46,7 +46,7 @@ export const PortfolioItem = ({
   ));
 
   return (
-    <article {...styles.root}>
+    <article {...styles.root} tabIndex={0}>
       <img {...styles.image} src={imageSrc} alt={title} loading="lazy" decoding="async" />
       <header {...styles.header}>
         <h4 {...styles.title}>{title}</h4>

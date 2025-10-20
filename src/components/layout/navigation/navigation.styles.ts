@@ -3,97 +3,95 @@ import { theme } from '@theme';
 
 const { decl, vars } = theme;
 
-const rootBase = css`
+const narrowMediaQuery = '(max-width: 750px)';
+
+type NavigationState = {
+  isNarrow: boolean;
+  isOpen: boolean;
+};
+
+const root = css`
   ${decl.font.sansSerif.bold}
   letter-spacing: calc(var(${vars.spacing.step1}) / 2);
   text-transform: uppercase;
+
+  @media ${narrowMediaQuery} {
+    --item-height: calc(var(${vars.font.size.step2}) + (var(${vars.spacing.step7}) * 2) + 1px);
+    --list-height: calc((var(--item-height) * 6) + 1px);
+    left: 0;
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
 `;
 
-const rootNarrow = css`
-  --item-height: calc(var(${vars.font.size.step2}) + (var(${vars.spacing.step7}) * 2) + 1px);
-  --list-height: calc((var(--item-height) * 6) + 1px);
-  height: var(--list-height);
-  left: 0;
-  overflow: hidden;
-  position: absolute;
-  right: 0;
-  top: var(${vars.header.height});
+const rootClosed = css`
+  @media ${narrowMediaQuery} {
+    /* pointer-events: none; */
+  }
 `;
 
-const list = toProps(css`
+const list = css`
   align-items: center;
   display: flex;
   flex-direction: row;
   height: var(${vars.header.height});
   justify-content: end;
   list-style: none;
-`);
 
-const narrowList = (isOpen: boolean = false) =>
-  cx(
-    toProps(
-      css`
-        ${decl.font.size.step2}
-        align-items: baseline;
-        ${decl.color.background.dark}
-        bottom: auto;
-        display: flex;
-        flex-direction: column;
-        height: var(--list-height);
-        justify-content: end;
-        left: 0;
-        line-height: var(${vars.font.size.step2});
-        list-style: none;
-        overflow: hidden;
-        position: absolute;
-        right: 0;
-        top: calc(-1 * var(--list-height));
-        transition: top 0.5s ease-out;
-        width: 100%;
+  @media ${narrowMediaQuery} {
+    align-items: stretch;
+    ${decl.font.size.step2}
+    ${decl.color.background.dark}
+    background-color: rgba(0, 0, 0, 0);
+    bottom: auto;
+    flex-direction: column;
+    height: var(--list-height);
+    justify-content: flex-end;
+    left: 0;
+    line-height: var(${vars.font.size.step2});
+    opacity: 0;
+    overflow: hidden;
+    pointer-events: none;
+    position: absolute;
+    right: 0;
+    top: var(${vars.header.height});
+    transform: translate3d(0, -100%, 0);
+    transition:
+      transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+      opacity 1s ease,
+      background-color 1s ease;
+    width: 100%;
 
-        & > li {
-          width: 100%;
-        }
-
-        & > li > a {
-          border-bottom: 1px solid var(${vars.color.border.grid});
-          display: block;
-          padding-bottom: var(${vars.spacing.step7});
-          padding-left: var(${vars.spacing.step7});
-          padding-right: var(${vars.spacing.step7});
-          padding-top: var(${vars.spacing.step7});
-        }
-
-        & > li:first-child > a {
-          border-top: 1px solid var(${vars.color.border.grid});
-        }
-      `,
-      {
-        top: isOpen ? '0' : 'revert-layer',
-      },
-    ),
-    list,
-  );
-
-const menuButtonOpen = css`
-  & > span {
-    background-color: transparent;
-
-    &:before {
-      background-color: white;
-      top: 0;
-      transform: rotate(135deg);
+    & > li {
+      width: 100%;
     }
 
-    &:after {
-      background-color: white;
-      bottom: 0;
-      transform: rotate(225deg);
+    & > li > a {
+      border-bottom: 1px solid var(${vars.color.border.grid});
+      display: block;
+      padding-bottom: var(${vars.spacing.step7});
+      padding-left: var(${vars.spacing.step7});
+      padding-right: var(${vars.spacing.step7});
+      padding-top: var(${vars.spacing.step7});
+    }
+
+    & > li:first-child > a {
+      border-top: 1px solid var(${vars.color.border.grid});
     }
   }
 `;
 
-const menuButtonBase = css`
+const listOpen = css`
+  @media ${narrowMediaQuery} {
+    background-color: rgba(0, 0, 0, 1);
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate3d(0, 0, 0);
+  }
+`;
+
+const button = css`
   background-color: transparent;
   border-style: none;
   color: rgba(255, 255, 255, 0.5);
@@ -137,11 +135,49 @@ const menuButtonBase = css`
       bottom: -9px;
     }
   }
+
+  @media not ${narrowMediaQuery} {
+    display: none;
+  }
 `;
 
-const menuButton = (isOpen: boolean = false) =>
-  toProps(isOpen ? cx(menuButtonOpen, menuButtonBase) : menuButtonBase);
+const buttonOpen = css`
+  @media ${narrowMediaQuery} {
+    & > span {
+      background-color: transparent;
 
-const root = (isNarrow: boolean = false) => toProps(isNarrow ? cx(rootBase, rootNarrow) : rootBase);
+      &:before {
+        background-color: white;
+        top: 0;
+        transform: rotate(135deg);
+      }
 
-export default { root, list, menuButton, narrowList };
+      &:after {
+        background-color: white;
+        bottom: 0;
+        transform: rotate(225deg);
+      }
+    }
+  }
+`;
+
+const getRoot = ({ isNarrow, isOpen }: NavigationState) =>
+  toProps(cx(root, isNarrow && !isOpen && rootClosed));
+
+const getList = ({ isNarrow, isOpen }: NavigationState) =>
+  toProps(cx(list, isNarrow && isOpen && listOpen));
+
+const getButton = ({ isNarrow, isOpen }: NavigationState) =>
+  toProps(cx(button, isNarrow && isOpen && buttonOpen));
+
+const navigationStyles = (state: NavigationState) => ({
+  root: getRoot(state),
+  list: getList(state),
+  button: getButton(state),
+});
+
+navigationStyles.root = getRoot;
+navigationStyles.list = getList;
+navigationStyles.button = getButton;
+
+export default navigationStyles;

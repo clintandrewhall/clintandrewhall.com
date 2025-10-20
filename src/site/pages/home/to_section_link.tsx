@@ -2,22 +2,26 @@ import { type MouseEventHandler, useCallback } from 'react';
 
 import { NavigationLink, type NavigationLinkProps } from '@components/layout';
 
-export type ToSectionLinkProps = Pick<NavigationLinkProps, 'id' | 'isSelected'>;
+export type ToSectionLinkProps = Pick<NavigationLinkProps, 'id' | 'isSelected' | 'onClick'>;
 
-export const ToSectionLink = ({ id, isSelected }: ToSectionLinkProps) => {
+export const ToSectionLink = ({ id, isSelected, onClick: onClickProp }: ToSectionLinkProps) => {
   const href = id === 'resume' ? '/resume' : `#${id}`;
 
-  const onClick: MouseEventHandler<HTMLAnchorElement> = useCallback((event) => {
-    const target = event.target as HTMLAnchorElement;
-    const element = document.getElementById(target.hash.slice(1));
+  const onClick: MouseEventHandler<HTMLAnchorElement> = useCallback(
+    (event) => {
+      const target = event.target as HTMLAnchorElement;
+      const element = document.getElementById(target.hash.slice(1));
 
-    if (element) {
-      event.preventDefault();
-      element.scrollIntoView({ behavior: 'smooth' });
-    }
+      if (element) {
+        event.preventDefault();
+        element.scrollIntoView({ behavior: 'smooth' });
+      }
 
-    target.blur();
-  }, []);
+      onClickProp?.(event);
+      target.blur();
+    },
+    [onClickProp],
+  );
 
   return <NavigationLink {...{ id, onClick, href, isSelected }} />;
 };

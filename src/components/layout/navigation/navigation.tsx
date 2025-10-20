@@ -1,49 +1,96 @@
-import { Fragment, useEffect, useState } from 'react';
+import { Fragment, useEffect, useRef, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 import { type TopicId, topicIds } from '@lib/site';
 
 import { NavigationLink, type NavigationLinkProps } from './navigation_link';
 
-import styles from './navigation.styles';
+import navigationStyles from './navigation.styles';
 
 export interface NavigationProps {
   Link?: (props: NavigationLinkProps) => JSX.Element;
+  onStateChange?: (state: { isNarrow: boolean; isOpen: boolean }) => void;
   selectedId?: TopicId;
 }
 
-export const Navigation = ({ Link = NavigationLink, selectedId }: NavigationProps) => {
-  const isNarrow = useMediaQuery({
+export const Navigation = ({
+  Link = NavigationLink,
+  onStateChange,
+  selectedId,
+}: NavigationProps) => {
+  const mediaQueryMatch = useMediaQuery({
     maxDeviceWidth: 750,
   });
 
-  const [isOpen, setIsOpen] = useState(!isNarrow);
-  const [listStyle, setListStyle] = useState(styles.list);
+  const [isClient, setIsClient] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const ref = useRef<HTMLElement | null>(null);
 
   useEffect(() => {
-    if (isNarrow) {
-      setListStyle(styles.narrowList(isOpen));
-    } else {
-      setListStyle(styles.list);
+    setIsClient(true);
+  }, []);
+
+  const isNarrow = isClient && mediaQueryMatch;
+
+  useEffect(() => {
+    setIsOpen(!isNarrow);
+  }, [isNarrow]);
+
+  useEffect(() => {
+    if (!isNarrow || !isOpen) {
+      return;
     }
+
+    const handlePointerDown = (event: PointerEvent) => {
+      if (!ref.current) {
+        return;
+      }
+
+      if (!(event.target instanceof Node && ref.current.contains(event.target))) {
+        setIsOpen(false);
+      }
+    };
+
+    window.addEventListener('pointerdown', handlePointerDown);
+
+    return () => {
+      window.removeEventListener('pointerdown', handlePointerDown);
+    };
   }, [isNarrow, isOpen]);
 
+  useEffect(() => {
+    if (!onStateChange) {
+      return;
+    }
+
+    onStateChange({
+      isNarrow,
+      isOpen,
+    });
+  }, [isNarrow, isOpen, onStateChange]);
+
+  const onClick = () => {
+    setIsOpen(false);
+  };
+
   const links = topicIds.map((id) => (
-    <Fragment key={id}>{Link({ id, isSelected: selectedId === id })}</Fragment>
+    <Fragment key={id}>
+      {Link({
+        id,
+        isSelected: selectedId === id,
+        onClick,
+      })}
+    </Fragment>
   ));
 
-  const button = isNarrow ? (
-    <button {...styles.menuButton(isOpen)} onClick={() => setIsOpen(!isOpen)}>
-      <span>Menu</span>
-    </button>
-  ) : null;
+  const styles = navigationStyles({ isNarrow, isOpen });
 
   return (
-    <>
-      <nav {...styles.root(isNarrow)}>
-        <ul {...listStyle}>{links}</ul>
-      </nav>
-      {button}
-    </>
+    <nav ref={ref} {...styles.root}>
+      <ul {...styles.list}>{links}</ul>
+      <button {...styles.button} onClick={() => setIsOpen(!isOpen)}>
+        <span>Menu</span>
+      </button>
+    </nav>
   );
 };
