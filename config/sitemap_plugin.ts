@@ -3,7 +3,7 @@ import path from 'path';
 import type { Plugin } from 'vite';
 
 import routerConfig from '../react-router.config';
-import { DEFAULT_SITE_URL } from '../src/app/routes/meta';
+import { DEFAULT_SITE_URL } from '../src/site/routes/meta';
 
 const toXml = (rootUrl: string, routes: string[]): string => {
   const urls = Array.from(new Set(routes.map((r) => new URL(r, rootUrl).toString())));

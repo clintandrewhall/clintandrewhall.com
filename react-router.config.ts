@@ -40,6 +40,6 @@ export default {
 
     return ['/', ...portfolioRoutes, ...tagRoutes];
   },
-  appDirectory: 'src/app',
+  appDirectory: 'src/site',
   buildDirectory: 'dist',
 } satisfies Config;

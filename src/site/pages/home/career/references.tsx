@@ -6,6 +6,7 @@ import styles from './references.styles';
 
 const attributes = {
   id: 'people',
+  name: 'References',
   title: 'What People Say',
   subtitle: "I've worked with some remarkable people.",
 };

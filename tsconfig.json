@@ -3,7 +3,11 @@
     "esModuleInterop": true,
     "target": "ES2020",
     "useDefineForClassFields": true,
-    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "lib": [
+      "ES2022",
+      "DOM",
+      "DOM.Iterable"
+    ],
     "module": "ESNext",
     "skipLibCheck": true,
     /* Bundler mode */
@@ -19,16 +23,35 @@
     "noFallthroughCasesInSwitch": true,
     "verbatimModuleSyntax": true,
     "baseUrl": ".",
-    "rootDirs": [".", "./.react-router/types"],
+    "rootDirs": [
+      ".",
+      "./.react-router/types"
+    ],
     "paths": {
-      "@content/*": ["./src/content/*"],
-      "@components/*": ["./src/components/*"],
-      "@pages/*": ["./src/pages/*"],
-      "@lib/*": ["./src/lib/*"],
-      "@lib/hooks": ["./src/lib/hooks/index"],
-      "@state/*": ["./src/state/*"],
-      "@theme": ["./src/theme/index"],
-      "@theme/*": ["./src/theme/*"]
+      "@content/*": [
+        "./src/content/*"
+      ],
+      "@components/*": [
+        "./src/components/*"
+      ],
+      "@pages/*": [
+        "./src/site/pages/*"
+      ],
+      "@lib/*": [
+        "./src/lib/*"
+      ],
+      "@lib/hooks": [
+        "./src/lib/hooks/index"
+      ],
+      "@state/*": [
+        "./src/state/*"
+      ],
+      "@theme": [
+        "./src/theme/index"
+      ],
+      "@theme/*": [
+        "./src/theme/*"
+      ]
     }
   },
   "include": [
@@ -47,6 +70,11 @@
     "**/.client/**/*",
     ".react-router/types/**/*"
   ],
-  "types": ["vite/client", "react-router", "react-router-dom", "node"],
+  "types": [
+    "vite/client",
+    "react-router",
+    "react-router-dom",
+    "node"
+  ],
   "exclude": []
 }
