@@ -56,9 +56,9 @@ const HeaderComponent = ({ background: backgroundProp = 'clear', ...props }: Hea
   const backgroundFromScroll = useHeaderBackground(backgroundProp);
   const [navigationState, setNavigationState] = useState({ isNarrow: false, isOpen: false });
 
-  const onStateChange = (state: { isNarrow: boolean; isOpen: boolean }) => {
+  const onStateChange = useCallback((state: { isNarrow: boolean; isOpen: boolean }) => {
     setNavigationState(state);
-  };
+  }, []);
 
   const shouldForceOpaque = navigationState.isNarrow && navigationState.isOpen;
   const background = shouldForceOpaque ? 'opaque' : backgroundFromScroll;

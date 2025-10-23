@@ -12,14 +12,15 @@ const root = toProps(css`
 
   ${decl.grid.area.full}
 
-  column-count: 2;
-  column-gap: var(${vars.grid.gutter});
-  column-width: calc(50% - var(${vars.grid.gutter}) / 2);
+  column-count: 1;
+  column-width: revert;
+
   position: relative;
 
-  ${decl.media.medium} {
-    column-count: 1;
-    column-width: revert;
+  ${decl.media.expanded} {
+    column-count: 2;
+    column-gap: var(${vars.grid.gutter});
+    column-width: calc(50% - var(${vars.grid.gutter}) / 2);
 
     &:after {
       display: none;

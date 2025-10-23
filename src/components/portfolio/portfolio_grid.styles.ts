@@ -8,7 +8,7 @@ const root = toProps(css`
   display: grid;
   grid-gap: var(${vars.spacing.step2});
 
-  grid-template-columns: repeat(3, auto);
+  grid-template-columns: repeat(1, auto);
 
   & > * {
     align-items: center;
@@ -18,12 +18,12 @@ const root = toProps(css`
     justify-content: center;
   }
 
-  ${decl.media.mediumToWide} {
+  ${decl.media.comfortable} {
     grid-template-columns: repeat(2, auto);
   }
 
-  ${decl.media.medium} {
-    grid-template-columns: repeat(1, auto);
+  ${decl.media.comfortableToExpanded} {
+    grid-template-columns: repeat(3, auto);
   }
 `);
 

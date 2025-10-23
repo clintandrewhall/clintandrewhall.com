@@ -15,19 +15,23 @@ import {
   WIDTH_MIN,
 } from '@theme/common';
 
-const SIZES = [
-  'step7',
-  'step6',
-  'step5',
-  'step4',
-  'step3',
-  'step2',
-  'step1',
-  'step0',
-  'stepN1',
-  'stepN2',
-] as const;
-type Size = (typeof SIZES)[number];
+const STEP_KEY = {
+  7: 'step7',
+  6: 'step6',
+  5: 'step5',
+  4: 'step4',
+  3: 'step3',
+  2: 'step2',
+  1: 'step1',
+  0: 'step0',
+  [-1]: 'stepN1',
+  [-2]: 'stepN2',
+} as const;
+
+type StepKey = typeof STEP_KEY;
+type Size = StepKey[keyof StepKey];
+
+const SIZES = Object.values(STEP_KEY);
 
 const scale = calculateTypeScale({
   maxFontSize: FONT_SIZE_MAX,
@@ -41,8 +45,16 @@ const scale = calculateTypeScale({
 });
 
 // TODO: hacky, consider refactoring
-const themeValues = SIZES.reduce(
-  (acc, size, index) => ((acc[size] = `${scale[index].clamp}`), acc),
+const themeValues = scale.reduce(
+  (acc, { step, clamp }) => {
+    const key = STEP_KEY[step as keyof StepKey];
+
+    if (key) {
+      acc[key] = `${clamp}`;
+    }
+
+    return acc;
+  },
   {} as Record<Size, string>,
 );
 

@@ -1,26 +1,22 @@
 import { buildTheme } from '@lib/css';
-import { VAR_PREFIX_MEDIA as varPrefix } from '@theme/common';
+import { VAR_PREFIX_MEDIA as varPrefix, WIDTH_MAX, WIDTH_MIN } from '@theme/common';
 
-export const BREAKPOINT_NARROW = 400;
-export const BREAKPOINT_MEDIUM = 600;
-export const BREAKPOINT_WIDE = 975;
+export const BREAKPOINT_COMPACT = WIDTH_MIN;
+export const BREAKPOINT_COMFORTABLE = Math.round(Math.sqrt(WIDTH_MIN * WIDTH_MAX));
+export const BREAKPOINT_EXPANDED = WIDTH_MAX;
 
 const { vars, definitions } = buildTheme(
   {
-    narrow: `${BREAKPOINT_NARROW}px`,
-    medium: `${BREAKPOINT_MEDIUM}px`,
-    wide: `${BREAKPOINT_WIDE}px`,
+    compact: `${BREAKPOINT_COMPACT}px`,
+    comfortable: `${BREAKPOINT_COMFORTABLE}px`,
+    expanded: `${BREAKPOINT_EXPANDED}px`,
   },
   varPrefix,
 );
-
 const decl = {
-  narrow: `@media (max-width: ${BREAKPOINT_NARROW}px)`,
-  medium: `@media (max-width: ${BREAKPOINT_MEDIUM}px)`,
-  mediumToWide: `@media (min-width: ${BREAKPOINT_MEDIUM}px) and (max-width: ${BREAKPOINT_WIDE}px)`,
-  wide: `@media (max-width: ${BREAKPOINT_WIDE}px)`,
-  max: `@media (min-width: ${BREAKPOINT_WIDE}px)`,
-  wideOrPortrait: `@media (max-width: ${BREAKPOINT_WIDE}px), (orientation: portrait)`,
+  comfortable: `@media (min-width: ${BREAKPOINT_COMFORTABLE}px)`,
+  comfortableToExpanded: `@media (min-width: ${BREAKPOINT_COMFORTABLE}px) and (max-width: ${BREAKPOINT_EXPANDED - 1}px)`,
+  expanded: `@media (min-width: ${BREAKPOINT_EXPANDED}px)`,
 };
 
 export const media = {

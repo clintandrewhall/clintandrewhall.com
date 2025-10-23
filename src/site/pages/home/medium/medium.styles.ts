@@ -16,10 +16,10 @@ const content = toProps(css`
   ${decl.grid.area.byOne}
   display: grid;
   gap: var(${vars.spacing.step9});
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(1, auto);
 
-  ${decl.media.medium} {
-    grid-template-columns: repeat(1, auto);
+  ${decl.media.comfortable} {
+    grid-template-columns: repeat(2, 1fr);
   }
 `);
 

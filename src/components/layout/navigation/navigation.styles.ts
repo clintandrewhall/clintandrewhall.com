@@ -3,30 +3,26 @@ import { theme } from '@theme';
 
 const { decl, vars } = theme;
 
-const narrowMediaQuery = '(max-width: 750px)';
-
 type NavigationState = {
   isNarrow: boolean;
   isOpen: boolean;
 };
 
 const root = css`
+  --item-height: calc(var(${vars.font.size.step2}) + (var(${vars.spacing.step7}) * 2) + 1px);
+  --list-height: calc((var(--item-height) * 6) + 1px);
   ${decl.font.sansSerif.bold}
   letter-spacing: calc(var(${vars.spacing.step1}) / 2);
   text-transform: uppercase;
 
-  @media ${narrowMediaQuery} {
-    --item-height: calc(var(${vars.font.size.step2}) + (var(${vars.spacing.step7}) * 2) + 1px);
+  ${decl.media.comfortable} {
+    --item-height: calc(var(${vars.font.size.step3}) + (var(${vars.spacing.step7}) * 2) + 1px);
     --list-height: calc((var(--item-height) * 6) + 1px);
-    left: 0;
-    position: absolute;
-    right: 0;
-    top: 0;
   }
 `;
 
 const rootClosed = css`
-  @media ${narrowMediaQuery} {
+  @media (max-width: 750px) {
     /* pointer-events: none; */
   }
 `;
@@ -39,7 +35,7 @@ const list = css`
   justify-content: end;
   list-style: none;
 
-  @media ${narrowMediaQuery} {
+  @media (max-width: 750px) {
     align-items: stretch;
     ${decl.font.size.step2}
     ${decl.color.background.dark}
@@ -79,11 +75,34 @@ const list = css`
     & > li:first-child > a {
       border-top: 1px solid var(${vars.color.border.grid});
     }
+    & > li {
+      width: 100%;
+    }
+
+    & > li > a {
+      border-bottom: 1px solid var(${vars.color.border.grid});
+      display: block;
+      padding-bottom: var(${vars.spacing.step7});
+      padding-left: var(${vars.spacing.step7});
+      padding-right: var(${vars.spacing.step7});
+      padding-top: var(${vars.spacing.step7});
+    }
+
+    & > li:first-child > a {
+      border-top: 1px solid var(${vars.color.border.grid});
+    }
   }
 `;
 
 const listOpen = css`
-  @media ${narrowMediaQuery} {
+  @media (max-width: 750px) {
+    background-color: rgba(0, 0, 0, 1);
+    opacity: 1;
+    pointer-events: auto;
+    transform: translate3d(0, 0, 0);
+  }
+
+  @media (max-width: 750px) {
     background-color: rgba(0, 0, 0, 1);
     opacity: 1;
     pointer-events: auto;
@@ -136,13 +155,17 @@ const button = css`
     }
   }
 
-  @media not ${narrowMediaQuery} {
+  ${decl.media.comfortable} {
+    display: none;
+  }
+
+  @media (min-width: 751px) {
     display: none;
   }
 `;
 
 const buttonOpen = css`
-  @media ${narrowMediaQuery} {
+  @media (max-width: 750px) {
     & > span {
       background-color: transparent;
 

@@ -67,7 +67,7 @@ const header = toProps(css`
 `);
 
 const headerGroup = toProps(css`
-  ${decl.grid.area.fourColSpanThree}
+  ${decl.grid.area.full}
   ${decl.color.font.light}
   ${decl.font.size.step5}
   ${decl.font.weight.bold}
@@ -75,8 +75,8 @@ const headerGroup = toProps(css`
   display: flex;
   flex-direction: column-reverse;
 
-  ${decl.media.wideOrPortrait} {
-    ${decl.grid.area.full}
+  ${decl.media.expanded} {
+    ${decl.grid.area.fourColSpanThree}
   }
 `);
 
@@ -123,18 +123,20 @@ const intro = toProps(css`
 const links = toProps(css`
   ${decl.font.size.stepN1}
   ${decl.font.sansSerif.medium}
-  ${decl.grid.area.fourColFour}
+  ${decl.grid.area.full}
+  display: flex;
+  flex-direction: row;
+  gap: var(${vars.spacing.step9});
   letter-spacing: calc(var(${vars.font.size.step1}) * 0.15);
   list-style: none;
+  padding-left: var(--greeting-base);
   text-align: center;
   text-transform: uppercase;
 
-  ${decl.media.wideOrPortrait} {
-    ${decl.grid.area.full}
-    display: flex;
-    flex-direction: row;
-    gap: var(${vars.spacing.step9});
-    padding-left: var(--greeting-base);
+  ${decl.media.expanded} {
+    ${decl.grid.area.fourColFour}
+    display: block;
+    padding-left: 0;
   }
 
   @media (max-width: 400px), (max-height: 450px) {
@@ -147,9 +149,14 @@ const link = toProps(css`
   border-radius: var(${vars.spacing.step0});
   border-style: solid;
   border-width: 2px;
-  flex-grow: 1;
-  margin-bottom: var(${vars.spacing.step3});
+  flex-grow: 0;
+  margin-bottom: var(${vars.spacing.step1});
   white-space: nowrap;
+
+  ${decl.media.expanded} {
+    flex-grow: 1;
+    margin-bottom: var(${vars.spacing.step3});
+  }
 
   & > a {
     ${decl.color.font.light}
@@ -166,11 +173,6 @@ const link = toProps(css`
     }
   }
 
-  ${decl.media.wideOrPortrait} {
-    flex-grow: 0;
-    margin-bottom: var(${vars.spacing.step1});
-  }
-
   @media (max-width: 400px), (max-height: 450px) {
     & > a {
       padding-bottom: var(${vars.spacing.step2});
@@ -183,7 +185,8 @@ const link = toProps(css`
 
 const profiles = toProps(css`
   ${decl.grid.area.full}
-  justify-content: right;
+  justify-content: left;
+  padding-left: var(--greeting-base);
 
   & i {
     ${decl.font.size.step3}
@@ -193,9 +196,9 @@ const profiles = toProps(css`
     }
   }
 
-  ${decl.media.wideOrPortrait} {
-    justify-content: left;
-    padding-left: var(--greeting-base);
+  ${decl.media.expanded} {
+    justify-content: right;
+    padding-left: 0;
   }
 `);
 

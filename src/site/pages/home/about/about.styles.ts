@@ -42,18 +42,18 @@ const content = toProps(css`
 `);
 
 const work = toProps(css`
-  ${decl.grid.area.twoColOne}
+  ${decl.grid.area.full}
 
-  ${decl.media.medium} {
-    ${decl.grid.area.full}
+  ${decl.media.expanded} {
+    ${decl.grid.area.twoColOne}
   }
 `);
 
 const code = toProps(css`
-  ${decl.grid.area.twoColTwo}
+  ${decl.grid.area.full}
 
-  ${decl.media.medium} {
-    ${decl.grid.area.full}
+  ${decl.media.expanded} {
+    ${decl.grid.area.twoColTwo}
   }
 `);
 

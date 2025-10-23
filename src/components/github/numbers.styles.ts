@@ -20,11 +20,10 @@ const root = toProps(css`
 const list = toProps(css`
   display: grid;
   gap: var(${vars.spacing.step2});
+  grid-template-columns: repeat(2, 1fr);
 
-  grid-template-columns: repeat(4, 1fr);
-
-  ${decl.media.mediumToWide}, ${decl.media.narrow} {
-    grid-template-columns: repeat(2, 1fr);
+  ${decl.media.comfortable} {
+    grid-template-columns: repeat(4, 1fr);
   }
 `);
 

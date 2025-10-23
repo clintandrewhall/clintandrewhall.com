@@ -42,7 +42,7 @@ const root = toProps(css`
     }
   }
 
-  ${decl.media.medium} {
+  ${decl.media.comfortable} {
     &:before {
       content: '';
       order: 1;
