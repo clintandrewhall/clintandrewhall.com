@@ -31,8 +31,6 @@ const STEP_KEY = {
 type StepKey = typeof STEP_KEY;
 type Size = StepKey[keyof StepKey];
 
-const SIZES = Object.values(STEP_KEY);
-
 const scale = calculateTypeScale({
   maxFontSize: FONT_SIZE_MAX,
   maxTypeScale: TYPE_SCALE_MAX,

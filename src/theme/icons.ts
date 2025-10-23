@@ -22,32 +22,32 @@ const icon = css`
 const iconClasses: Record<Icon, string> = {
   link: css`
     &:before {
-      content: '\ue04b';
+      content: '\\ue04b';
     }
   `,
   github: css`
     &:before {
-      content: '\ue0b6';
+      content: '\\ue0b6';
     }
   `,
   instagram: css`
     &:before {
-      content: '\ue0b8';
+      content: '\\ue0b8';
     }
   `,
   linkedin: css`
     &:before {
-      content: '\ue0b9';
+      content: '\\ue0b9';
     }
   `,
   twitter: css`
     &:before {
-      content: '\ue0a7';
+      content: '\\ue0a7';
     }
   `,
   facebook: css`
     &:before {
-      content: '\ue0a5';
+      content: '\\ue0a5';
     }
   `,
 };
