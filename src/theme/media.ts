@@ -14,6 +14,8 @@ const { vars, definitions } = buildTheme(
   varPrefix,
 );
 const decl = {
+  compact: `@media (min-width: ${BREAKPOINT_COMPACT}px)`,
+  compactToComfortable: `@media (min-width: ${BREAKPOINT_COMPACT}px) and (max-width: ${BREAKPOINT_COMFORTABLE - 1}px)`,
   comfortable: `@media (min-width: ${BREAKPOINT_COMFORTABLE}px)`,
   comfortableToExpanded: `@media (min-width: ${BREAKPOINT_COMFORTABLE}px) and (max-width: ${BREAKPOINT_EXPANDED - 1}px)`,
   expanded: `@media (min-width: ${BREAKPOINT_EXPANDED}px)`,

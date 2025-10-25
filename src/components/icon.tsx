@@ -1,12 +1,5 @@
 import React from 'react';
-import {
-  FaExternalLinkAlt,
-  FaFacebook,
-  FaGithub,
-  FaInstagram,
-  FaLinkedin,
-  FaTwitter,
-} from 'react-icons/fa';
+import { FaFacebook, FaGithub, FaInstagram, FaLink, FaLinkedin, FaTwitter } from 'react-icons/fa';
 
 import { css, cx } from '@lib/css';
 
@@ -17,7 +10,7 @@ export type IconType = (typeof ICONS)[number];
 export type IconSocial = (typeof ICONS_SOCIAL)[number];
 
 const icons: Record<IconType, React.FC<{ className?: string; size?: number; color?: string }>> = {
-  link: FaExternalLinkAlt,
+  link: FaLink,
   github: FaGithub,
   instagram: FaInstagram,
   linkedin: FaLinkedin,

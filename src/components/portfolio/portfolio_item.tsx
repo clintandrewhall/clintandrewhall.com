@@ -36,7 +36,7 @@ export const PortfolioItem = ({
         aria-label={`${title} – external link`}
         {...styles.projectLink}
       >
-        <Icon name="link" size="stepN1" />
+        <Icon name="link" {...styles.linkIcon} />
       </a>
     );
   }

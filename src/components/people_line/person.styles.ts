@@ -7,7 +7,7 @@ const root = toProps(css`
   --person-avatar-size: var(${vars.spacing.avatar});
   --person-avatar-shadow: var(${vars.spacing.step1});
   --person-padding-left: calc(
-    var(--person-avatar-size) + var(--person-avatar-shadow) + var(/* ${vars.spacing.avatar}:2 */)
+    var(${vars.spacing.step8}) + var(--person-avatar-size) + var(--person-avatar-shadow)
   );
   --person-padding-top: var(${vars.spacing.step9});
   margin-bottom: var(${vars.spacing.step9});

@@ -22,7 +22,7 @@ const root = toProps(css`
     grid-template-columns: repeat(2, auto);
   }
 
-  ${decl.media.comfortableToExpanded} {
+  ${decl.media.expanded} {
     grid-template-columns: repeat(3, auto);
   }
 `);

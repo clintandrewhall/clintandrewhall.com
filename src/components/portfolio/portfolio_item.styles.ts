@@ -11,6 +11,14 @@ const root = toProps(css`
   padding-bottom: 75%;
   position: relative;
 
+  ${decl.media.compact} {
+    ${decl.font.size.step1}
+  }
+
+  ${decl.media.comfortable} {
+    ${decl.font.size.step0}
+  }
+
   & {
     a {
       cursor: pointer;
@@ -84,10 +92,6 @@ const root = toProps(css`
       pointer-events: auto;
     }
   }
-
-  ${decl.media.comfortable} {
-    ${decl.font.size.step1}
-  }
 `);
 
 const header = toProps(css`
@@ -98,25 +102,19 @@ const header = toProps(css`
 `);
 
 const title = toProps(css`
-  ${decl.font.size.stepN1}
   ${decl.color.font.light}
 
   letter-spacing: calc(var(${vars.font.size.step1}) * 0.1);
   margin-bottom: var(${vars.spacing.step0});
   text-transform: uppercase;
-
-  ${decl.media.comfortable} {
-    ${decl.font.size.step0}
-    letter-spacing: calc(var(${vars.font.size.step2}) * 0.1);
-  }
 `);
 
 const caption = toProps(css`
   ${decl.color.font.light}
-  ${decl.font.sansSerif.regular}
 
   left: var(${vars.spacing.step5});
-  line-height: var(${vars.spacing.step5});
+  ${decl.font.sansSerif.regular}
+  line-height: var(${vars.spacing.step7});
   position: absolute;
   right: var(${vars.spacing.step5});
   top: var(${vars.spacing.step5});
@@ -138,15 +136,12 @@ const caption = toProps(css`
 
   ${decl.media.comfortable} {
     left: var(${vars.spacing.step6});
-    line-height: var(${vars.spacing.step6});
     right: var(${vars.spacing.step6});
     top: var(${vars.spacing.step6});
   }
 `);
 
 const tags = toProps(css`
-  ${decl.font.size.stepN1};
-
   letter-spacing: calc(var(${vars.font.size.step1}) * 0.08);
 
   & > a {
@@ -157,16 +152,9 @@ const tags = toProps(css`
       ${decl.color.font.light}
     }
   }
-
-  ${decl.media.comfortable} {
-    ${decl.font.size.step0}
-
-    letter-spacing: calc(var(${vars.font.size.step2}) * 0.08);
-  }
 `);
 
 const details = toProps(css`
-  ${decl.font.size.stepN1}
   ${decl.font.sansSerif.regular}
 
   display: block;
@@ -178,12 +166,6 @@ const details = toProps(css`
   padding-top: var(${vars.spacing.step2});
   text-align: center;
   text-transform: uppercase;
-
-  ${decl.media.comfortable} {
-    ${decl.font.size.step0}
-
-    letter-spacing: calc(var(${vars.font.size.step2}) * 0.08);
-  }
 `);
 
 const footer = toProps(css`
@@ -194,14 +176,11 @@ const footer = toProps(css`
 `);
 
 const linkIcon = toProps(css`
-  ${decl.media.comfortable} {
-    ${decl.font.size.step1}
-  }
+  margin-top: calc(var(${vars.spacing.step0}) * -1);
 `);
 
 const projectLink = toProps(css`
   ${decl.color.font.light}
-  ${decl.font.size.step0}
 
   border-radius: 50%;
   box-shadow: 0 0 0 1px var(${vars.color.background.light});
@@ -224,8 +203,6 @@ const projectLink = toProps(css`
   }
 
   ${decl.media.comfortable} {
-    ${decl.font.size.step0}
-
     height: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0}));
     line-height: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0}) + 2px);
     width: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0}));

@@ -72,6 +72,8 @@ export const utopiaValues = UTOPIA_SIZES.reduce(
   {} as Record<UtopiaSize, string>,
 );
 
+console.log(utopiaValues);
+
 export const themeValues: Record<Size, string> = {
   ...utopiaValues,
   sectionDivider: utopiaValues.step8,

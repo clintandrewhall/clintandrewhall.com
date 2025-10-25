@@ -1,4 +1,4 @@
-import { forwardRef } from 'react';
+import { forwardRef, type MouseEventHandler, useCallback } from 'react';
 import { Link } from 'react-router';
 import { ParallaxBanner, ParallaxBannerLayer, ParallaxProvider } from 'react-scroll-parallax';
 
@@ -10,27 +10,43 @@ import hero from '../../../content/images/hero.jpg?w=2500&format=webp';
 
 import styles from './hero.styles';
 
-const HeroHeader = () => (
-  <header {...styles.header}>
-    <hgroup {...styles.headerGroup}>
-      <h1 {...styles.intro}>
-        I&apos;m Clint Andrew Hall. <br />
-        I&apos;m a Technical Lead <br />
-        and User Interface Engineer.
-      </h1>
-      <h2 {...styles.greeting}>Hello There...!</h2>
-    </hgroup>
-    <ul {...styles.links}>
-      <li {...styles.link}>
-        <Link to="/#portfolio">Latest Projects</Link>
-      </li>
-      <li {...styles.link}>
-        <Link to="/#about">More About Me</Link>
-      </li>
-    </ul>
-    <SocialProfiles showDivider={false} showLabel={false} {...styles.profiles} />
-  </header>
-);
+const HeroHeader = () => {
+  const onClick: MouseEventHandler<HTMLAnchorElement> = useCallback((event) => {
+    const target = event.target as HTMLAnchorElement;
+    const element = document.getElementById(target.hash.slice(1));
+
+    if (element) {
+      event.preventDefault();
+      element.scrollIntoView({ behavior: 'smooth' });
+    }
+    target.blur();
+  }, []);
+  return (
+    <header {...styles.header}>
+      <hgroup {...styles.headerGroup}>
+        <h1 {...styles.intro}>
+          I&apos;m Clint Andrew Hall. <br />
+          I&apos;m a Technical Lead <br />
+          and User Interface Engineer.
+        </h1>
+        <h2 {...styles.greeting}>Hello There...!</h2>
+      </hgroup>
+      <ul {...styles.links}>
+        <li {...styles.link}>
+          <Link to="/#portfolio" onClick={onClick}>
+            Latest Projects
+          </Link>
+        </li>
+        <li {...styles.link}>
+          <Link to="/#about" onClick={onClick}>
+            More About Me
+          </Link>
+        </li>
+      </ul>
+      <SocialProfiles showDivider={false} showLabel={false} {...styles.profiles} />
+    </header>
+  );
+};
 
 const StaticHero = () => (
   <div {...styles.root}>
