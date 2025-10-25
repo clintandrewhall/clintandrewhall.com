@@ -43,11 +43,16 @@ export default defineConfig({
   },
   build: {
     emptyOutDir: true,
+    ...(isStorybook && {
+      rollupOptions: {
+        treeshake: false,
+      },
+    }),
   },
   plugins: [
-    devtoolsJson(),
+    !isStorybook && devtoolsJson(),
     portfolioIndexPlugin(),
-    sitemapPlugin(),
+    !isStorybook && sitemapPlugin(),
     wyw({
       include: ['src/**/*.{ts,tsx}'],
       babelOptions: {
@@ -91,7 +96,7 @@ export default defineConfig({
     markdownPlugin(),
     !isStorybook && reactRouter(),
     tsconfigPaths(),
-  ],
+  ].filter(Boolean),
   resolve: {
     alias: [
       { find: '@content', replacement: resolve(__dirname, './src/content') },

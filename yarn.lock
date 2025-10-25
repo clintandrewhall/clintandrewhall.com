@@ -3350,7 +3350,6 @@ __metadata:
     react-scrollspy-navigation: "npm:^2.0.6"
     ress: "npm:^5.0.2"
     rimraf: "npm:^6.0.1"
-    rollup: "npm:^3.29.4"
     rss-parser: "npm:^3.13.0"
     serve: "npm:^14.2.4"
     sharp: "npm:^0.34.3"
@@ -8570,20 +8569,6 @@ __metadata:
   bin:
     rimraf: dist/esm/bin.mjs
   checksum: 10/0eb7edf08aa39017496c99ba675552dda11a20811ba78f8232da2ba945308c91e9cd673f95998b1a8202bc7436d33390831d23ea38ae52751038d56373ad99e2
-  languageName: node
-  linkType: hard
-
-"rollup@npm:^3.29.4":
-  version: 3.29.5
-  resolution: "rollup@npm:3.29.5"
-  dependencies:
-    fsevents: "npm:~2.3.2"
-  dependenciesMeta:
-    fsevents:
-      optional: true
-  bin:
-    rollup: dist/bin/rollup
-  checksum: 10/5ce0e5f1d9288d4954db93993477f894eb3042ec98a7c9c19980e53b1f58296481e3dc6c2b1a2a3680b20eb6c3fe64ed97942d5ff29df658a059647c33b3593c
   languageName: node
   linkType: hard
 
