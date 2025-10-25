@@ -8,10 +8,9 @@ const LETTER_SPACING_FACTOR = 0.075;
 const name = toProps(
   cx(
     css`
-      ${decl.font.sansSerif.semiBold}
+      ${decl.font.sansSerif.bold}
       ${decl.font.size.step1}
       ${decl.color.font.accent}
-      ${decl.font.weight.normal}
       letter-spacing: calc(var(${vars.font.size.step1}) * ${LETTER_SPACING_FACTOR});
       margin-bottom: var(${vars.spacing.step2});
       text-transform: uppercase;
@@ -26,9 +25,9 @@ const title = toProps(css`
 `);
 
 const subtitle = toProps(css`
-  ${decl.font.sansSerif.regular}
+  ${decl.font.sansSerif.semiBold}
   ${decl.font.size.step1}
-    margin-top: var(${vars.spacing.step2});
+  margin-top: var(${vars.spacing.step2});
 `);
 
 const root = toProps(css`

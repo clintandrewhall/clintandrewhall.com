@@ -1,8 +1,7 @@
-import { css, type CSSProps, cx, toProps } from '@lib/css';
+import { css, cx, toProps } from '@lib/css';
 import { theme } from '@theme';
-import type { IconSocial } from '@theme/icons';
 
-const { vars, icons, decl } = theme;
+const { vars, decl } = theme;
 
 const root = toProps(css`
   display: flex;
@@ -92,21 +91,4 @@ const link = toProps(css`
   text-transform: uppercase;
 `);
 
-const logo = css`
-  ${decl.font.size.step0}
-
-  &:before {
-    position: relative;
-    top: 1px;
-  }
-`;
-
-const logos: Record<IconSocial, CSSProps> = {
-  github: toProps(cx(icons.github(), logo)),
-  linkedin: toProps(cx(icons.linkedin(), logo)),
-  twitter: toProps(cx(icons.twitter(), logo)),
-  instagram: toProps(cx(icons.instagram(), logo)),
-  facebook: toProps(cx(icons.facebook(), logo)),
-};
-
-export default { root, logos, link, item };
+export default { root, link, item };

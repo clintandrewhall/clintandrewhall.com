@@ -70,7 +70,6 @@ const headerGroup = toProps(css`
   ${decl.grid.area.full}
   ${decl.color.font.light}
   ${decl.font.size.step5}
-  ${decl.font.weight.bold}
 
   display: flex;
   flex-direction: column-reverse;
@@ -83,7 +82,6 @@ const headerGroup = toProps(css`
 const greeting = toProps(css`
   ${decl.font.sansSerif.bold}
   ${decl.font.size.step1}
-  ${decl.font.weight.normal}
 
   letter-spacing: calc(var(${vars.font.size.step1}) * 0.25);
   padding-left: var(--greeting-padding);
@@ -188,7 +186,7 @@ const profiles = toProps(css`
   justify-content: left;
   padding-left: var(--greeting-base);
 
-  & i {
+  & svg {
     ${decl.font.size.step3}
 
     @media (max-width: 500px), (orientation: portrait) {

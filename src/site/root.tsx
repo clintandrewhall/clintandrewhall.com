@@ -1,8 +1,10 @@
 import { useEffect } from 'react';
 import { css as csl } from '@linaria/core';
 import 'ress';
-import 'unfonts.css';
 import '@theme/definitions';
+import '@fontsource-variable/montserrat';
+import '@fontsource/libre-baskerville/400.css';
+import '@fontsource/libre-baskerville/700.css';
 import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, useLocation } from 'react-router';
 
 import { css, cx } from '@lib/css';
@@ -10,15 +12,18 @@ import { theme } from '@theme';
 
 import type { Route } from './+types/root';
 
-export const Layout = ({ children }: { children: React.ReactNode }) => {
-  // Extracts pathname property(key) from an object
+// Component to handle scroll-to-top behavior inside router context
+const ScrollToTop = () => {
   const { pathname } = useLocation();
 
-  // Automatically scrolls to top whenever pathname changes
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [pathname]);
 
+  return null;
+};
+
+export const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="en">
       <head>
@@ -90,7 +95,12 @@ export function ErrorBoundary({ error }: Route.ErrorBoundaryProps) {
 }
 
 const App = () => {
-  return <Outlet />;
+  return (
+    <>
+      <ScrollToTop />
+      <Outlet />
+    </>
+  );
 };
 
 export default App;

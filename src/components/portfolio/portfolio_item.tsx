@@ -1,5 +1,7 @@
 import { Link } from 'react-router';
 
+import { Icon } from '../icon';
+
 import styles from './portfolio_item.styles';
 
 export interface PortfolioItemProps {
@@ -34,7 +36,7 @@ export const PortfolioItem = ({
         aria-label={`${title} – external link`}
         {...styles.projectLink}
       >
-        <i {...styles.linkIcon} />
+        <Icon name="link" size="stepN1" />
       </a>
     );
   }

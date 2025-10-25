@@ -4,7 +4,6 @@ import { color } from './color';
 import { font } from './font';
 import { grid } from './grid';
 import { header } from './header';
-import { icons } from './icons';
 import { media } from './media';
 import { boxShadow, dropShadow } from './shadow';
 import { spacing } from './spacing';
@@ -49,17 +48,21 @@ export const theme = {
     ...media.definitions,
     ...spacing.definitions,
   },
-  icons,
   page: {
     body: `
       font-synthesis: none;
       scroll-behavior: smooth;
       -webkit-font-smoothing: antialiased;
-      font-feature-settings: 'liga', 'clig';
+      -moz-osx-font-smoothing: grayscale;
+      font-feature-settings: 'liga', 'clig', 'kern';
       font-variant-ligatures: common-ligatures;
       text-rendering: optimizeLegibility;
-      font-family: var(${font.vars.sansSerif.light});
+      font-family: var(${font.vars.sansSerif.family});
       font-size: var(${font.vars.size.step0});
+      
+      /* Additional font smoothing for Google Fonts */
+      font-display: swap;
+      font-optical-sizing: auto;
 
       a {
         font-weight: 600;

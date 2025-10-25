@@ -1,7 +1,6 @@
 import { reactRouter } from '@react-router/dev/vite';
 import wyw from '@wyw-in-js/vite';
 import path, { resolve } from 'path';
-import Unfonts from 'unplugin-fonts/vite';
 import { defineConfig } from 'vite';
 import { imagetools } from 'vite-imagetools';
 import devtoolsJson from 'vite-plugin-devtools-json';
@@ -9,7 +8,7 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 
 import { portfolioIndexPlugin } from './config/portfolio_index_plugin';
 import { sitemapPlugin } from './config/sitemap_plugin';
-import { markdownPlugin, unfontConfig } from './config';
+import { markdownPlugin } from './config';
 
 const isStorybook = process.argv[1]?.includes('storybook');
 
@@ -33,6 +32,8 @@ export default defineConfig({
     exclude: ['fsevents', 'sharp', 'chokidar'],
     // Prevent re-optimization during development
     holdUntilCrawlEnd: true,
+    // Force pre-bundling of react-icons to avoid Babel warnings
+    force: true,
   },
   server: {
     // Increase warmup time to allow dependency optimization to complete
@@ -89,7 +90,6 @@ export default defineConfig({
     }),
     markdownPlugin(),
     !isStorybook && reactRouter(),
-    Unfonts(unfontConfig),
     tsconfigPaths(),
   ],
   resolve: {

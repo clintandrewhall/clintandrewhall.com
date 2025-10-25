@@ -126,7 +126,7 @@ export const FontFamliy: StoryObj = {
           ${decl.font.sansSerif.regular}
         `}
       >
-        'Montserrat', sans-serif
+        'Montserrat Variable', sans-serif
       </p>
     </div>
   ),

@@ -25,7 +25,6 @@ const summary = toProps(css`
 
 const title = toProps(css`
   ${decl.font.sansSerif.medium}
-  ${decl.font.weight.normal}
   ${decl.font.size.step2}
   margin-bottom: var(${vars.spacing.step4});
 `);

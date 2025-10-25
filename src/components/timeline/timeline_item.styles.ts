@@ -72,7 +72,6 @@ const root = toProps(css`
 const header = toProps(css`
   ${decl.font.sansSerif.medium}
   ${decl.color.font.dark}
-  ${decl.font.weight.normal}
 
   display: flex;
   flex-direction: column;
@@ -106,24 +105,25 @@ const header = toProps(css`
 `);
 
 const timeframe = toProps(css`
-  ${decl.font.sansSerif.medium}
+  ${decl.font.sansSerif.semiBold}
   ${decl.font.size.stepN1}
   ${decl.color.font.text}
 
   letter-spacing: calc(var(${vars.font.size.step0}) * .1);
-  margin-bottom: var(${vars.spacing.step0});
+  margin-bottom: var(${vars.spacing.step1});
+  margin-top: calc(var(${vars.spacing.step2}) * -1);
   order: 1;
   text-transform: uppercase;
 `);
 
 const title = toProps(css`
+  ${decl.font.sansSerif.bold}
   ${decl.font.size.step2}
   margin-bottom: var(${vars.spacing.step0});
   margin-left: 0;
   margin-right: 0;
   margin-top: 0;
   ${decl.font.lineHeight.step2}
-  ${decl.font.weight.normal}
 
   order: 2;
 `);
@@ -133,9 +133,8 @@ const subtitle = toProps(css`
   margin-bottom: var(${vars.spacing.step4});
   margin-left: 0;
   margin-right: 0;
-  margin-top: var(${vars.spacing.step0});
+  margin-top: 0;
   ${decl.font.lineHeight.step1}
-  ${decl.font.weight.normal}
 
   order: 3;
 `);

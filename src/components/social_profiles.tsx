@@ -1,6 +1,8 @@
-import { cx } from '@lib/css';
+import { css, cx } from '@lib/css';
 import { useResume } from '@lib/hooks';
-import type { IconSocial } from '@theme/icons';
+import { theme } from '@theme';
+
+import Icon, { type IconType } from './icon';
 
 import styles from './social_profiles.styles';
 
@@ -17,11 +19,17 @@ const SocialProfileItem = ({
 }: SocialProfileItemProps) => (
   <li key={profile.network} {...styles.item({ showDivider, showLabel })}>
     <a href={profile.url} rel="noopener noreferrer" target="_blank" {...styles.link}>
-      <i {...styles.logos[profile.network.toLowerCase() as IconSocial]} aria-hidden="true" />
+      <Icon
+        name={profile.network.toLowerCase() as IconType}
+        className={css`
+          ${theme.decl.font.size.step1}
+        `}
+      />
       {showLabel ? <span>{profile.network}</span> : null}
     </a>
   </li>
 );
+
 export interface SocialProfilesProps extends Omit<SocialProfileItemProps, 'profile'> {
   className?: string;
 }

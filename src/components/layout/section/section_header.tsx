@@ -1,6 +1,6 @@
 import { cx } from '@lib/css';
 
-import { Section } from './section';
+import { SectionDivider } from './section_divider';
 
 import styles from './section_header.styles';
 
@@ -31,7 +31,7 @@ export const SectionHeader = ({
         {title}
         {subtitle}
       </header>
-      {name && subtitle && !noDivider ? <Section.Divider /> : null}
+      {name && subtitle && !noDivider ? <SectionDivider /> : null}
     </>
   );
 };

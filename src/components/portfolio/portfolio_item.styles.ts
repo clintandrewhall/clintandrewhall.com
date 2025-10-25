@@ -1,7 +1,7 @@
 import { css, toProps } from '@lib/css';
 import { theme } from '@theme';
 
-const { vars, icons, decl } = theme;
+const { vars, decl } = theme;
 
 const root = toProps(css`
   ${decl.font.size.step0}
@@ -151,7 +151,7 @@ const tags = toProps(css`
 
   & > a {
     ${decl.color.font.dim}
-    ${decl.font.sansSerif.light}
+    ${decl.font.sansSerif.regular}
 
     &:hover {
       ${decl.color.font.light}
@@ -193,13 +193,11 @@ const footer = toProps(css`
   z-index: 3;
 `);
 
-const linkIcon = toProps(
-  icons.link(css`
-    ${decl.media.comfortable} {
-      ${decl.font.size.step1}
-    }
-  `),
-);
+const linkIcon = toProps(css`
+  ${decl.media.comfortable} {
+    ${decl.font.size.step1}
+  }
+`);
 
 const projectLink = toProps(css`
   ${decl.color.font.light}

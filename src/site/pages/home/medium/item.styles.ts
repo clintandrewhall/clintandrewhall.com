@@ -6,8 +6,7 @@ const { decl, vars } = theme;
 export const root = (image?: string) =>
   toProps(
     css`
-      ${decl.font.sansSerif.medium}
-      ${decl.font.weight.normal}
+      ${decl.font.sansSerif.semiBold}
 
       background-position: 50% 50%;
       background-repeat: no-repeat;
@@ -27,7 +26,7 @@ export const header = toProps(css`
   position: relative;
 
   & a {
-    ${decl.font.weight.normal}
+    ${decl.font.sansSerif.semiBold}
     ${decl.color.font.dark}
   }
 `);
@@ -39,14 +38,14 @@ export const date = toProps(css`
 `);
 
 export const title = toProps(css`
-  ${decl.font.weight.normal}
+  ${decl.font.sansSerif.semiBold}
   ${decl.font.size.step3}
 
   line-height: var(${vars.font.size.step4});
   min-height: calc(var(${vars.font.size.step4}) * 2);
 
   & a {
-    ${decl.font.weight.normal}
+    ${decl.font.sansSerif.semiBold}
     ${decl.color.font.dark}
   }
 `);
@@ -68,7 +67,7 @@ export const category = toProps(css`
   text-transform: uppercase;
 
   & a {
-    ${decl.font.weight.normal}
+    ${decl.font.sansSerif.bold}
     ${decl.color.font.medium}
 
     &:hover,

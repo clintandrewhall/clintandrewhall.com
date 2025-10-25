@@ -74,15 +74,13 @@ const rootBase = css`
 const title = toProps(css`
   ${decl.grid.area.full}
   ${decl.font.size.step7}
-  ${decl.font.serif.bold}
-  font-weight: normal;
+  ${decl.font.serif.regular}
   line-height: var(${vars.font.size.step7});
 `);
 
 const subtitle = toProps(css`
   ${decl.grid.area.full}
-  ${decl.font.sansSerif.medium};
-  font-weight: normal;
+  ${decl.font.sansSerif.regular};
 `);
 
 const date = toProps(css`
@@ -96,8 +94,7 @@ const tagList = toProps(css`
 
   & > a {
     ${decl.color.font.light}
-    ${decl.font.sansSerif.bold}
-    font-weight: 400;
+    ${decl.font.sansSerif.regular}
 
     &:hover {
       ${decl.color.font.light}

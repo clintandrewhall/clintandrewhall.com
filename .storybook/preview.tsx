@@ -1,8 +1,10 @@
 import { StrictMode } from 'react';
 import type { Preview } from '@storybook/react-vite';
 import 'ress';
-import 'unfonts.css';
-import { reactRouterParameters, withRouter } from 'storybook-addon-remix-react-router';
+import '@fontsource-variable/montserrat';
+import '@fontsource/libre-baskerville/400.css';
+import '@fontsource/libre-baskerville/700.css';
+import { withRouter } from 'storybook-addon-remix-react-router';
 
 const chromatic_viewports = {
   compact: {
@@ -56,15 +58,10 @@ const preview: Preview = {
         order: ['Pages', 'Home', 'Resume'],
       },
     },
-    reactRouter: reactRouterParameters({
-      routing: {
-        path: '/',
-        handle: 'Home',
-      },
-    }),
   },
 
   decorators: [
+    withRouter,
     (Story) => {
       return (
         <StrictMode>
@@ -84,7 +81,6 @@ const preview: Preview = {
         </StrictMode>
       );
     },
-    withRouter,
   ],
 };
 
