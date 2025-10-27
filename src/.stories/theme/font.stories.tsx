@@ -118,7 +118,23 @@ export const FontFamliy: StoryObj = {
           ${decl.font.serif.regular}
         `}
       >
-        'Libre Baskerville', serif
+        'Libre Baskerville', serif, Regular
+      </p>
+      <p
+        className={css`
+          ${decl.font.size.step0}
+          ${decl.font.serif.bold}
+        `}
+      >
+        'Libre Baskerville', serif, Bold
+      </p>
+      <p
+        className={css`
+          ${decl.font.size.step0}
+          ${decl.font.sansSerif.light}
+        `}
+      >
+        'Montserrat Variable', sans-serif, light
       </p>
       <p
         className={css`
@@ -126,7 +142,39 @@ export const FontFamliy: StoryObj = {
           ${decl.font.sansSerif.regular}
         `}
       >
-        'Montserrat Variable', sans-serif
+        'Montserrat Variable', sans-serif, regular
+      </p>
+      <p
+        className={css`
+          ${decl.font.size.step0}
+          ${decl.font.sansSerif.medium}
+        `}
+      >
+        'Montserrat Variable', sans-serif, medium
+      </p>
+      <p
+        className={css`
+          ${decl.font.size.step0}
+          ${decl.font.sansSerif.semiBold}
+        `}
+      >
+        'Montserrat Variable', sans-serif, semi-bold
+      </p>
+      <p
+        className={css`
+          ${decl.font.size.step0}
+          ${decl.font.sansSerif.bold}
+        `}
+      >
+        'Montserrat Variable', sans-serif, bold
+      </p>
+      <p
+        className={css`
+          ${decl.font.size.step0}
+          ${decl.font.sansSerif.extraBold}
+        `}
+      >
+        'Montserrat Variable', sans-serif, extra-bold
       </p>
     </div>
   ),
@@ -163,10 +211,17 @@ export const FontWeight: StoryObj = {
       </p>
       <p
         className={css`
-          font-weight: var(${vars.font.weight.normal});
+          font-weight: var(${vars.font.weight.medium});
         `}
       >
-        Normal
+        Medium
+      </p>
+      <p
+        className={css`
+          font-weight: var(${vars.font.weight.regular});
+        `}
+      >
+        Regular
       </p>
       <p
         className={css`

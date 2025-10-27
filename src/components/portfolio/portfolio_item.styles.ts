@@ -11,11 +11,11 @@ const root = toProps(css`
   padding-bottom: 75%;
   position: relative;
 
-  ${decl.media.compact} {
+  ${decl.media.lessThan.compact} {
     ${decl.font.size.step1}
   }
 
-  ${decl.media.comfortable} {
+  ${decl.media.greaterThan.compact} {
     ${decl.font.size.step0}
   }
 
@@ -134,7 +134,7 @@ const caption = toProps(css`
     }
   }
 
-  ${decl.media.comfortable} {
+  ${decl.media.greaterThan.comfortable} {
     left: var(${vars.spacing.step6});
     right: var(${vars.spacing.step6});
     top: var(${vars.spacing.step6});
@@ -202,7 +202,7 @@ const projectLink = toProps(css`
     ${decl.color.font.dark}
   }
 
-  ${decl.media.comfortable} {
+  ${decl.media.greaterThan.comfortable} {
     height: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0}));
     line-height: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0}) + 2px);
     width: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0}));

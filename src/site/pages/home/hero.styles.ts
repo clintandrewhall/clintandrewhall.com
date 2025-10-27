@@ -74,7 +74,7 @@ const headerGroup = toProps(css`
   display: flex;
   flex-direction: column-reverse;
 
-  ${decl.media.expanded} {
+  ${decl.media.greaterThan.expanded} {
     ${decl.grid.area.fourColSpanThree}
   }
 `);
@@ -131,7 +131,7 @@ const links = toProps(css`
   text-align: center;
   text-transform: uppercase;
 
-  ${decl.media.expanded} {
+  ${decl.media.greaterThan.expanded} {
     ${decl.grid.area.fourColFour}
     display: block;
     padding-left: 0;
@@ -151,7 +151,7 @@ const link = toProps(css`
   margin-bottom: var(${vars.spacing.step1});
   white-space: nowrap;
 
-  ${decl.media.expanded} {
+  ${decl.media.greaterThan.expanded} {
     flex-grow: 1;
     margin-bottom: var(${vars.spacing.step3});
   }
@@ -194,7 +194,7 @@ const profiles = toProps(css`
     }
   }
 
-  ${decl.media.expanded} {
+  ${decl.media.greaterThan.expanded} {
     justify-content: right;
     padding-left: 0;
   }

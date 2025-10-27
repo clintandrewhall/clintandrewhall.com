@@ -17,7 +17,7 @@ const root = toProps(css`
 
   position: relative;
 
-  ${decl.media.expanded} {
+  ${decl.media.greaterThan.expanded} {
     column-count: 2;
     column-gap: var(${vars.grid.gutter});
     column-width: calc(50% - var(${vars.grid.gutter}) / 2);

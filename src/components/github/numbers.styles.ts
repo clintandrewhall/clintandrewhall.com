@@ -22,7 +22,7 @@ const list = toProps(css`
   gap: var(${vars.spacing.step2});
   grid-template-columns: repeat(2, 1fr);
 
-  ${decl.media.comfortable} {
+  ${decl.media.greaterThan.comfortable} {
     grid-template-columns: repeat(4, 1fr);
   }
 `);

@@ -42,7 +42,7 @@ const item = ({ showDivider = true, showLabel = true }) => {
   `;
 
   const showLabelClass = css`
-    ${decl.media.comfortable} {
+    ${decl.media.lessThan.comfortable} {
       &:before {
         content: '';
         order: 1;

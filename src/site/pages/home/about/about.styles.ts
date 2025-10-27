@@ -43,7 +43,7 @@ const content = toProps(css`
 const work = toProps(css`
   ${decl.grid.area.full}
 
-  ${decl.media.expanded} {
+  ${decl.media.greaterThan.expanded} {
     ${decl.grid.area.twoColOne}
   }
 `);
@@ -51,7 +51,7 @@ const work = toProps(css`
 const code = toProps(css`
   ${decl.grid.area.full}
 
-  ${decl.media.expanded} {
+  ${decl.media.greaterThan.expanded} {
     ${decl.grid.area.twoColTwo}
   }
 `);

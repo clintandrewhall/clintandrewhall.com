@@ -1,15 +1,17 @@
 import { buildTheme } from '@lib/css';
 import { VAR_PREFIX_FONT_WEIGHT as varPrefix } from '@theme/common';
 
-export const WEIGHTS = ['extraBold', 'bold', 'semiBold', 'normal', 'light'] as const;
-type Weight = (typeof WEIGHTS)[number];
+export const WEIGHTS = ['extraBold', 'bold', 'regular', 'medium', 'semiBold', 'light'] as const;
 
-const themeValues: Record<Weight, number> = {
-  extraBold: 800,
-  bold: 600,
-  semiBold: 500,
-  normal: 400,
+export type Weight = (typeof WEIGHTS)[number];
+
+export const themeValues: Record<Weight, number> = {
   light: 300,
+  regular: 400,
+  medium: 500,
+  semiBold: 600,
+  bold: 700,
+  extraBold: 800,
 };
 
 export const weight = buildTheme<Weight, number>(themeValues, varPrefix, 'font-weight');

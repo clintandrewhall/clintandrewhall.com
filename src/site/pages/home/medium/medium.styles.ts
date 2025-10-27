@@ -18,7 +18,7 @@ const content = toProps(css`
   gap: var(${vars.spacing.step9});
   grid-template-columns: repeat(1, auto);
 
-  ${decl.media.comfortable} {
+  ${decl.media.greaterThan.comfortable} {
     grid-template-columns: repeat(2, 1fr);
   }
 `);

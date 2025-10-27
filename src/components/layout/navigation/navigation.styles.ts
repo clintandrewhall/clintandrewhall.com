@@ -15,14 +15,14 @@ const root = css`
   letter-spacing: calc(var(${vars.spacing.step1}) / 2);
   text-transform: uppercase;
 
-  ${decl.media.comfortable} {
+  ${decl.media.lessThan.comfortable} {
     --item-height: calc(var(${vars.font.size.step3}) + (var(${vars.spacing.step7}) * 2) + 1px);
     --list-height: calc((var(--item-height) * 6) + 1px);
   }
 `;
 
 const rootClosed = css`
-  @media (max-width: 750px) {
+  ${theme.decl.media.lessThan.comfortable} {
     /* pointer-events: none; */
   }
 `;
@@ -35,7 +35,7 @@ const list = css`
   justify-content: end;
   list-style: none;
 
-  @media (max-width: 750px) {
+  ${theme.decl.media.lessThan.comfortable} {
     align-items: stretch;
     ${decl.font.size.step2}
     ${decl.color.background.dark}
@@ -95,14 +95,7 @@ const list = css`
 `;
 
 const listOpen = css`
-  @media (max-width: 750px) {
-    background-color: rgba(0, 0, 0, 1);
-    opacity: 1;
-    pointer-events: auto;
-    transform: translate3d(0, 0, 0);
-  }
-
-  @media (max-width: 750px) {
+  ${theme.decl.media.lessThan.comfortable} {
     background-color: rgba(0, 0, 0, 1);
     opacity: 1;
     pointer-events: auto;
@@ -155,17 +148,13 @@ const button = css`
     }
   }
 
-  ${decl.media.comfortable} {
-    display: none;
-  }
-
-  @media (min-width: 751px) {
+  ${decl.media.greaterThan.comfortable} {
     display: none;
   }
 `;
 
 const buttonOpen = css`
-  @media (max-width: 750px) {
+  ${theme.decl.media.lessThan.comfortable} {
     & > span {
       background-color: transparent;
 

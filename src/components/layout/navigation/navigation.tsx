@@ -2,6 +2,7 @@ import { Fragment, useEffect, useRef, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 import { type TopicId, topicIds } from '@lib/site';
+import { BREAKPOINT_COMFORTABLE } from '@theme/media';
 
 import { NavigationLink, type NavigationLinkProps } from './navigation_link';
 
@@ -19,7 +20,7 @@ export const Navigation = ({
   selectedId,
 }: NavigationProps) => {
   const mediaQueryMatch = useMediaQuery({
-    maxDeviceWidth: 750,
+    maxWidth: BREAKPOINT_COMFORTABLE,
   });
 
   const [isClient, setIsClient] = useState(false);
@@ -31,10 +32,6 @@ export const Navigation = ({
   }, []);
 
   const isNarrow = isClient && mediaQueryMatch;
-
-  useEffect(() => {
-    setIsOpen(!isNarrow);
-  }, [isNarrow]);
 
   useEffect(() => {
     if (!isNarrow || !isOpen) {
@@ -73,15 +70,18 @@ export const Navigation = ({
     setIsOpen(false);
   };
 
-  const links = topicIds.map((id) => (
-    <Fragment key={id}>
-      {Link({
-        id,
-        isSelected: selectedId === id,
-        onClick,
-      })}
-    </Fragment>
-  ));
+  const links = topicIds.map(
+    (id) =>
+      id !== 'home' && (
+        <Fragment key={id}>
+          {Link({
+            id,
+            isSelected: selectedId === id,
+            onClick,
+          })}
+        </Fragment>
+      ),
+  );
 
   const styles = navigationStyles({ isNarrow, isOpen });
 

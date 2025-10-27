@@ -33,8 +33,8 @@ export const NavigationLink = ({
   const to = hrefProp || getTo(id);
 
   return (
-    <li {...styles.root(isSelected)}>
-      <Link {...{ onClick, to, ...styles.link }}>{topicTitles[id]}</Link>
+    <li {...styles.root}>
+      <Link {...{ onClick, to, ...styles.link(isSelected) }}>{topicTitles[id]}</Link>
     </li>
   );
 };

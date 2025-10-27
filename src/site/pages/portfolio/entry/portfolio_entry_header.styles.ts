@@ -72,14 +72,14 @@ const rootBase = css`
 `;
 
 const title = toProps(css`
-  ${decl.grid.area.full}
+  ${decl.grid.area.byOne}
   ${decl.font.size.step7}
   ${decl.font.serif.regular}
   line-height: var(${vars.font.size.step7});
 `);
 
 const subtitle = toProps(css`
-  ${decl.grid.area.full}
+  ${decl.grid.area.byOne}
   ${decl.font.sansSerif.regular};
 `);
 
