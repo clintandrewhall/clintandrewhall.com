@@ -43,11 +43,6 @@ export default defineConfig({
   },
   build: {
     emptyOutDir: true,
-    ...(isStorybook && {
-      rollupOptions: {
-        treeshake: false,
-      },
-    }),
   },
   plugins: [
     !isStorybook && devtoolsJson(),

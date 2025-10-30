@@ -48,6 +48,9 @@ export const theme = {
     ...media.definitions,
     ...spacing.definitions,
   },
+  util: {
+    font: font.util,
+  },
   page: {
     body: `
       font-synthesis: none;
@@ -66,7 +69,7 @@ export const theme = {
 
       a {
         text-decoration: none;
-        transition: text-decoration 0.3s ease-in-out;
+        /* transition: text-decoration 0.3s ease-in-out; */
       }
 
       .article-image-large {

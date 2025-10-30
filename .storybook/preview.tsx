@@ -41,7 +41,7 @@ const preview: Preview = {
   parameters: {
     layout: 'fullscreen',
     viewport: {
-      options: chromatic_viewports
+      options: chromatic_viewports,
     },
     chromatic: {
       viewports: [320, 630, 1240],
@@ -85,9 +85,9 @@ const preview: Preview = {
   initialGlobals: {
     viewport: {
       value: 'responsive',
-      isRotated: false
-    }
-  }
+      isRotated: false,
+    },
+  },
 };
 
 export default preview;

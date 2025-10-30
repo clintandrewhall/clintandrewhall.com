@@ -6,7 +6,16 @@ import { decorators } from '../decorators';
 const meta: Meta<typeof Home.About> = {
   title: 'Home/Hero',
   component: Home.Hero,
-  decorators,
+  decorators: [
+    ...decorators,
+    (Story) => {
+      return (
+        <div style={{ backgroundColor: 'black', height: '100vh' }}>
+          <Story />
+        </div>
+      );
+    },
+  ],
 };
 
 export default meta;

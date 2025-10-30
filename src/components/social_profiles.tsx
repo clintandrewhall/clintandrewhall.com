@@ -34,7 +34,7 @@ export interface SocialProfilesProps extends Omit<SocialProfileItemProps, 'profi
   className?: string;
 }
 
-export const SocialProfiles = ({ className: className, ...props }: SocialProfilesProps) => {
+export const SocialProfiles = ({ className, ...props }: SocialProfilesProps) => {
   const profiles = useResume()?.basics.profiles || [];
 
   if (!profiles.length) {

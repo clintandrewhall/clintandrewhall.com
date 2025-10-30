@@ -14,7 +14,9 @@ export const Work = () => {
   return (
     <section {...styles.work}>
       <h3 {...styles.title}>About My Work</h3>
-      <Markdown {...styles.content}>{resume.basics.summary}</Markdown>
+      <div {...styles.content}>
+        <Markdown>{resume.basics.summary}</Markdown>
+      </div>
     </section>
   );
 };

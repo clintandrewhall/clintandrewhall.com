@@ -1,3 +1,4 @@
+import { fluidSize } from './fluid';
 import { sansSerif } from './sans_serif';
 import { serif } from './serif';
 import { lineHeight, size } from './size';
@@ -24,5 +25,8 @@ export const font = {
     ...weight.definitions,
     ...serif.definitions,
     ...sansSerif.definitions,
+  },
+  util: {
+    fluidSize,
   },
 };

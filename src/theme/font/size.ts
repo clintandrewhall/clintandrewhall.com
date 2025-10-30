@@ -29,7 +29,7 @@ const STEP_KEY = {
 } as const;
 
 type StepKey = typeof STEP_KEY;
-type Size = StepKey[keyof StepKey];
+export type Size = StepKey[keyof StepKey];
 
 const scale = calculateTypeScale({
   maxFontSize: FONT_SIZE_MAX,

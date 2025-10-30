@@ -65,6 +65,8 @@
     ".storybook/**/*.tsx",
     "types/*.d.ts",
     "vite.config.ts",
+    "vitest.config.ts",
+    "vitest.setup.ts",
     "react-router.config.ts",
     "**/.server/**/*",
     "**/.client/**/*",

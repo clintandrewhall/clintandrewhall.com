@@ -9,7 +9,7 @@ import { NavigationLink, type NavigationLinkProps } from './navigation_link';
 import navigationStyles from './navigation.styles';
 
 export interface NavigationProps {
-  Link?: (props: NavigationLinkProps) => JSX.Element;
+  Link?: (props: NavigationLinkProps) => React.JSX.Element;
   onStateChange?: (state: { isNarrow: boolean; isOpen: boolean }) => void;
   selectedId?: TopicId;
 }
