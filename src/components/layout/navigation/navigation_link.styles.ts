@@ -4,38 +4,30 @@ import { theme } from '@theme';
 const { decl, vars } = theme;
 
 const underlinedLink = css`
-  ${decl.color.font.light}
-  position: relative;
-
-  &:hover,
-  &:active,
-  &:focus,
-  &:visited {
-    ${decl.color.font.light}
-  }
-
-  &::after {
+  ${decl.font.sansSerif.extraBold}
+  &:after {
     left: 0;
     right: 0;
   }
 `;
 
 const defaultLink = css`
-  position: relative;
   ${decl.color.font.light}
+  display: inline-block;
+  margin-left: var(${vars.spacing.step4});
+  margin-right: var(${vars.spacing.step4});
+  position: relative;
+
+  ${decl.media.between.comfortableAndExpanded} {
+    margin-left: var(${vars.spacing.step3});
+    margin-right: var(${vars.spacing.step3});
+  }
 
   &:hover,
   &:active,
   &:focus,
   &:visited {
     ${decl.color.font.light}
-  }
-
-  &:hover {
-    &::after {
-      left: 0;
-      right: 0;
-    }
   }
 
   &::after {
@@ -51,15 +43,21 @@ const defaultLink = css`
       left 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0s,
       right 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0s;
   }
+
+  ${decl.media.greaterThan.comfortable} {
+    &:hover {
+      ${decl.font.sansSerif.extraBold}
+      &:after {
+        left: 0;
+        right: 0;
+      }
+    }
+  }
 `;
 
 const link = (isCurrent: boolean) =>
   toProps(isCurrent ? cx(defaultLink, underlinedLink) : defaultLink);
 
-const root = toProps(css`
-  display: inline-block;
-  padding-left: var(${vars.spacing.step4});
-  padding-right: var(${vars.spacing.step4});
-`);
+const root = toProps(css``);
 
 export default { root, link };

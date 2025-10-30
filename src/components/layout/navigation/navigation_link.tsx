@@ -10,6 +10,7 @@ export interface NavigationLinkProps {
   href?: string;
   onClick?: MouseEventHandler<HTMLAnchorElement>;
   isSelected?: boolean;
+  style?: React.CSSProperties;
 }
 
 const getTo = (id: TopicId) => {
@@ -29,12 +30,16 @@ export const NavigationLink = ({
   href: hrefProp,
   onClick,
   isSelected = false,
+  style,
 }: NavigationLinkProps) => {
   const to = hrefProp || getTo(id);
+  const { style: linkStyle, ...rest } = styles.link(isSelected);
 
   return (
     <li {...styles.root}>
-      <Link {...{ onClick, to, ...styles.link(isSelected) }}>{topicTitles[id]}</Link>
+      <Link {...{ onClick, to, ...rest, style: { ...linkStyle, ...style } }}>
+        {topicTitles[id]}
+      </Link>
     </li>
   );
 };

@@ -27,7 +27,7 @@ const root = toProps(css`
     > p,
     > footer {
       opacity: 0;
-      transition: all 0.3s;
+      transition: opacity 0.3s;
     }
 
     > p {

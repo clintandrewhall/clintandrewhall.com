@@ -14,20 +14,45 @@ const { vars, definitions } = buildTheme(
   varPrefix,
 );
 
+const addOrientation = (query: string, orientation: 'portrait' | 'landscape') =>
+  query.replace('@media', `@media (orientation: ${orientation})`);
+
+const getOrientationGroup = (queries: Record<string, string>) => ({
+  portrait: Object.fromEntries(
+    Object.entries(queries).map(([key, value]) => [key, addOrientation(value, 'portrait')]),
+  ),
+  landscape: Object.fromEntries(
+    Object.entries(queries).map(([key, value]) => [key, addOrientation(value, 'landscape')]),
+  ),
+});
+
+const lessThan = {
+  compact: `@media (max-width: ${BREAKPOINT_COMPACT - 1}px)`,
+  comfortable: `@media (max-width: ${BREAKPOINT_COMFORTABLE - 1}px)`,
+  expanded: `@media (max-width: ${BREAKPOINT_EXPANDED - 1}px)`,
+};
+
+const greaterThan = {
+  compact: `@media (min-width: ${BREAKPOINT_COMPACT}px)`,
+  comfortable: `@media (min-width: ${BREAKPOINT_COMFORTABLE}px)`,
+  expanded: `@media (min-width: ${BREAKPOINT_EXPANDED}px)`,
+};
+
+const between = {
+  compactAndComfortable: `@media (min-width: ${BREAKPOINT_COMPACT}px) and (max-width: ${BREAKPOINT_COMFORTABLE - 1}px)`,
+  comfortableAndExpanded: `@media (min-width: ${BREAKPOINT_COMFORTABLE}px) and (max-width: ${BREAKPOINT_EXPANDED - 1}px)`,
+};
+
 const decl = {
-  lessThan: {
-    compact: `@media (max-width: ${BREAKPOINT_COMPACT - 1}px)`,
-    comfortable: `@media (max-width: ${BREAKPOINT_COMFORTABLE - 1}px)`,
-    expanded: `@media (max-width: ${BREAKPOINT_EXPANDED - 1}px)`,
-  },
-  greaterThan: {
-    compact: `@media (min-width: ${BREAKPOINT_COMPACT}px)`,
-    comfortable: `@media (min-width: ${BREAKPOINT_COMFORTABLE}px)`,
-    expanded: `@media (min-width: ${BREAKPOINT_EXPANDED}px)`,
-  },
-  between: {
-    compactAndComfortable: `@media (min-width: ${BREAKPOINT_COMPACT}px) and (max-width: ${BREAKPOINT_COMFORTABLE - 1}px)`,
-    comfortableAndExpanded: `@media (min-width: ${BREAKPOINT_COMFORTABLE}px) and (max-width: ${BREAKPOINT_EXPANDED - 1}px)`,
+  lessThan,
+  greaterThan,
+  between,
+  orientation: {
+    portrait: `@media (orientation: portrait)`,
+    landscape: `@media (orientation: landscape)`,
+    lessThan: getOrientationGroup(lessThan),
+    greaterThan: getOrientationGroup(greaterThan),
+    between: getOrientationGroup(between),
   },
 };
 

@@ -65,9 +65,8 @@ export const theme = {
       font-optical-sizing: auto;
 
       a {
-        font-weight: 600;
         text-decoration: none;
-        transition: all .3s ease-in-out;
+        transition: text-decoration 0.3s ease-in-out;
       }
 
       .article-image-large {

@@ -70,18 +70,16 @@ export const Navigation = ({
     setIsOpen(false);
   };
 
-  const links = topicIds.map(
-    (id) =>
-      id !== 'home' && (
-        <Fragment key={id}>
-          {Link({
-            id,
-            isSelected: selectedId === id,
-            onClick,
-          })}
-        </Fragment>
-      ),
-  );
+  const links = topicIds.map((id) => (
+    <Fragment key={id}>
+      {Link({
+        id,
+        isSelected: selectedId === id,
+        onClick,
+        style: id === 'home' ? { display: 'none' } : undefined,
+      })}
+    </Fragment>
+  ));
 
   const styles = navigationStyles({ isNarrow, isOpen });
 

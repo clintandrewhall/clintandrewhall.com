@@ -10,14 +10,15 @@ type NavigationState = {
 
 const root = css`
   --item-height: calc(var(${vars.font.size.step2}) + (var(${vars.spacing.step7}) * 2) + 1px);
-  --list-height: calc((var(--item-height) * 6) + 1px);
+  --list-height: calc((var(--item-height) * 5) + 1px);
+  flex-grow: 1;
   ${decl.font.sansSerif.bold}
   letter-spacing: calc(var(${vars.spacing.step1}) / 2);
   text-transform: uppercase;
 
   ${decl.media.lessThan.comfortable} {
-    --item-height: calc(var(${vars.font.size.step3}) + (var(${vars.spacing.step7}) * 2) + 1px);
-    --list-height: calc((var(--item-height) * 6) + 1px);
+    --item-height: calc(var(${vars.font.size.step2}) + (var(${vars.spacing.step7}) * 2) + 1px);
+    --list-height: calc((var(--item-height) * 5) + 1px);
   }
 `;
 
@@ -29,6 +30,7 @@ const rootClosed = css`
 
 const list = css`
   align-items: center;
+  align-self: end;
   display: flex;
   flex-direction: row;
   height: var(${vars.header.height});
@@ -75,22 +77,6 @@ const list = css`
     & > li:first-child > a {
       border-top: 1px solid var(${vars.color.border.grid});
     }
-    & > li {
-      width: 100%;
-    }
-
-    & > li > a {
-      border-bottom: 1px solid var(${vars.color.border.grid});
-      display: block;
-      padding-bottom: var(${vars.spacing.step7});
-      padding-left: var(${vars.spacing.step7});
-      padding-right: var(${vars.spacing.step7});
-      padding-top: var(${vars.spacing.step7});
-    }
-
-    & > li:first-child > a {
-      border-top: 1px solid var(${vars.color.border.grid});
-    }
   }
 `;
 
@@ -109,12 +95,11 @@ const button = css`
   color: rgba(255, 255, 255, 0.5);
   display: block;
   height: var(${vars.header['content-height']});
+  height: 100%;
   overflow: hidden;
   position: absolute;
-  right: calc(var(${vars.header.height}) + var(${vars.spacing.step2}));
+  right: var(${vars.header.height});
   text-indent: -1000px;
-  top: var(${vars.header.padding});
-  transition: all 0.3s ease-in-out;
   width: var(${vars.header['content-height']});
   z-index: 5000;
 
@@ -125,7 +110,6 @@ const button = css`
     margin-top: -1px;
     position: absolute;
     top: 50%;
-    transition: all 0.5s ease-in-out;
     width: 100%;
 
     &:before,
@@ -135,7 +119,10 @@ const button = css`
       height: 100%;
       left: 0;
       position: absolute;
-      transition: all 0.5s ease-in-out;
+      transition:
+        top 0.5s ease-in-out,
+        transform 0.5s ease-in-out,
+        bottom 0.5s ease-in-out;
       width: 100%;
     }
 

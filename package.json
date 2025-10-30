@@ -11,9 +11,10 @@
     "typecheck": "react-router typegen && tsc",
     "generate:github": "tsx ./scripts/github",
     "generate:medium": "tsx ./scripts/medium",
-    "lint": "yarn lint:ts && yarn lint:styles",
+    "lint": "yarn lint:ts",
     "lint:ts": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
-    "lint:styles": "stylelint src/**/*.ts{,x}",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx}\"",
     "storybook": "cross-env BROWSER=\"google chrome\" OPEN_MATCH_HOST_ONLY=true storybook dev -p 6006",
     "build:storybook": "storybook build",
     "upgrade:storybook": "yarn dlx storybook@latest upgrade",
@@ -76,6 +77,7 @@
     "eslint-plugin-import": "^2.28.1",
     "eslint-plugin-jest-dom": "^5.1.0",
     "eslint-plugin-jsx-a11y": "^6.7.1",
+    "eslint-plugin-local-rules": "^3.0.2",
     "eslint-plugin-prefer-object-spread": "^1.2.1",
     "eslint-plugin-prettier": "^5.0.1",
     "eslint-plugin-react": "^7.33.2",
@@ -86,14 +88,13 @@
     "eslint-plugin-testing-library": "^6.1.0",
     "postcss": "^8.4.45",
     "prettier": "^3.0.3",
+    "prettier-plugin-css-order": "^2.1.2",
     "rimraf": "^6.0.1",
     "rss-parser": "^3.13.0",
     "serve": "^14.2.4",
     "sitemap-static": "^0.4.4",
     "storybook": "^9.1.13",
     "storybook-addon-remix-react-router": "^5.0.0",
-    "stylelint": "^16.12.0",
-    "stylelint-order": "^6.0.4",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2",
     "vite": "^7.0.3",
@@ -101,5 +102,5 @@
     "vite-plugin-devtools-json": "^0.2.1",
     "vite-tsconfig-paths": "^5.1.4"
   },
-  "packageManager": "yarn@4.9.2"
+  "packageManager": "yarn@4.10.3"
 }

@@ -1,31 +1,27 @@
 import { css, toProps } from '@lib/css';
 import { theme } from '@theme';
 
-const { vars } = theme;
-
-// @ts-expect-error - required for loading the logo
-import logo from '../../../content/images/logo.png?w=200&format=webp';
+const { decl, vars } = theme;
 
 const root = toProps(css`
-  padding-bottom: var(${vars.spacing.step4});
+  align-self: center;
   padding-left: var(${vars.spacing.step7});
-  padding-top: var(${vars.spacing.step4});
-  position: absolute;
+  text-shadow: 1px 1px 3px var(${vars.color.font.dropShadow});
 `);
 
-const link = toProps(
-  css`
-    --logo-height: calc(var(${vars.spacing.step6}) + var(${vars.font.size.stepN2}));
-    --logo-width: calc(var(--logo-height) * 3);
-    background-size: contain;
-    display: block;
-    height: var(--logo-height);
-    margin-top: -2px;
-    overflow: hidden;
-    text-indent: -1000px;
-    width: var(--logo-width);
-  `,
-  { backgroundImage: `url(${logo.src})` },
-);
+const link = toProps(css`
+  ${decl.font.serif.bold}
+  ${decl.color.font.light}
+  ${decl.font.size.step3}
+  letter-spacing: -1px;
+
+  ${decl.media.between.comfortableAndExpanded} {
+    ${decl.font.size.step1}
+  }
+
+  ${decl.media.lessThan.comfortable} {
+    ${decl.font.size.step3}
+  }
+`);
 
 export default { root, link };

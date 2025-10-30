@@ -5,10 +5,11 @@ const { decl, vars } = theme;
 
 const root = (background: 'clear' | 'opaque') => {
   const base = css`
+    display: flex;
     font-size: var(${vars.header['font-size']});
     height: var(${vars.header.height});
     left: 0;
-    padding-right: 50px;
+    padding-right: var(${vars.header.height});
     position: fixed;
     right: 0;
     top: 0;
