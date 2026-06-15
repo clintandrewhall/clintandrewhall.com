@@ -1,76 +1,60 @@
 import { css, toProps } from '@lib/css';
 import { theme } from '@theme';
 
-const root = toProps(css`
-  ${theme.decl.font.sansSerif.regular}
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  background-color: var(${theme.vars.color.background.dark});
-  align-items: flex-end;
+const { vars } = theme;
 
-  ${theme.decl.media.orientation.portrait} {
-    flex-direction: row;
-  }
+const root = toProps(css`
+  position: relative;
+  width: 100%;
+  height: 100dvh;
+  min-height: 100%;
+  overflow: hidden;
+  background-color: var(${vars.color.background.dark});
+  container-type: size;
+  container-name: hero;
+  isolation: isolate;
 `);
 
-const imageLayer = toProps(css`
+const image = toProps(css`
   position: absolute;
-  top: 0;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  background-size: 100vh 100%;
-  background-position: center left;
-  background-repeat: no-repeat;
-
-  ${theme.decl.media.orientation.portrait} {
-    background-position: top center;
-    background-size: 100% 100vw;
-  }
+  inset: 0;
+  z-index: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  object-position: left top;
+  pointer-events: none;
 `);
 
 const content = toProps(css`
+  position: absolute;
+  inset: min(100cqw, 55cqh) 0 0 0;
+  z-index: 2;
   display: flex;
   flex-direction: column;
-  height: 100vh;
-  flex-grow: 0;
   justify-content: center;
-  position: relative;
-  z-index: 1;
-  gap: var(${theme.vars.spacing.step5});
-  padding-bottom: var(${theme.vars.spacing.step7});
-  padding-left: var(${theme.vars.spacing.step7});
-  padding-right: var(${theme.vars.spacing.step7});
-  padding-top: var(${theme.vars.spacing.step7});
-
+  align-items: flex-start;
+  gap: var(${vars.spacing.step5});
+  padding-bottom: var(${vars.spacing.step7});
+  padding-left: var(${vars.spacing.step7});
+  padding-right: var(${vars.spacing.step7});
+  padding-top: var(${vars.spacing.step7});
+  color: var(${vars.color.font.light});
   background-image: linear-gradient(
-    to right,
+    to bottom,
     transparent 0%,
-    rgba(0, 0, 0, 0.25) 25%,
-    rgba(0, 0, 0, 0.5) 50%,
-    rgba(0, 0, 0, 0.75) 75%,
-    rgba(0, 0, 0, 0.9) 100%
+    rgba(0, 0, 0, 0.45) 30%,
+    rgba(0, 0, 0, 0.85) 75%
   );
 
-  ${theme.decl.media.orientation.portrait} {
+  @container hero (min-aspect-ratio: 1/1) {
     background-image: linear-gradient(
-      to bottom,
+      to right,
       transparent 0%,
-      rgba(0, 0, 0, 0.25) 25%,
-      rgba(0, 0, 0, 0.5) 50%,
-      rgba(0, 0, 0, 0.75) 75%,
-      rgba(0, 0, 0, 0.9) 100%
+      rgba(0, 0, 0, 0.45) 30%,
+      rgba(0, 0, 0, 0.85) 75%
     );
-
-    height: auto;
-    width: 100vw;
-  }
-
-  ${theme.decl.media.lessThan.comfortable} {
-    & br {
-      display: none;
-    }
+    inset: 0 0 0 min(100cqh, 55cqw);
   }
 `);
 
@@ -81,4 +65,4 @@ const socialProfiles = toProps(css`
   }
 `);
 
-export default { root, content, imageLayer, socialProfiles };
+export default { root, image, content, socialProfiles };

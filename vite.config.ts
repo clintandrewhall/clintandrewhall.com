@@ -36,9 +36,21 @@ export default defineConfig({
     force: true,
   },
   server: {
-    // Increase warmup time to allow dependency optimization to complete
     warmup: {
       clientFiles: ['./src/lib/css.ts'],
+    },
+    watch: {
+      ignored: [
+        '**/.git/**',
+        '**/.yarn/**',
+        '**/node_modules/**',
+        '**/dist/**',
+        '**/.vite/**',
+        '**/storybook-static/**',
+        '**/public/images/portfolio/**',
+      ],
+      interval: 500,
+      usePolling: true,
     },
   },
   build: {

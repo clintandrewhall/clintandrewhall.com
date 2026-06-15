@@ -10,9 +10,12 @@ import styles from './static_hero.styles';
 export const StaticHero = () => {
   return (
     <div {...styles.root}>
-      <div
-        {...styles.imageLayer}
-        style={{ ...styles.imageLayer.style, backgroundImage: `url(${hero.src})` }}
+      <img
+        {...styles.image}
+        src={hero.src}
+        alt="Clint Andrew Hall speaking at TEDx"
+        decoding="async"
+        fetchPriority="high"
       />
       <div {...styles.content}>
         <HeroHeader />

@@ -18,7 +18,13 @@ const SocialProfileItem = ({
   showDivider = true,
 }: SocialProfileItemProps) => (
   <li key={profile.network} {...styles.item({ showDivider, showLabel })}>
-    <a href={profile.url} rel="noopener noreferrer" target="_blank" {...styles.link}>
+    <a
+      aria-label={showLabel ? undefined : profile.network}
+      href={profile.url}
+      rel="noopener noreferrer"
+      target="_blank"
+      {...styles.link}
+    >
       <Icon
         name={profile.network.toLowerCase() as IconType}
         className={css`

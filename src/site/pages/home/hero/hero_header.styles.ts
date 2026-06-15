@@ -5,16 +5,12 @@ const { decl, vars } = theme;
 
 const root = toProps(css`
   ${decl.color.font.light}
-  width: 50vw;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
   gap: var(${vars.spacing.step5});
-
-  ${theme.decl.media.orientation.portrait} {
-    width: 100%;
-  }
 `);
 
 const headerGroup = toProps(css`
@@ -24,29 +20,33 @@ const headerGroup = toProps(css`
   align-items: flex-start;
   gap: var(${vars.spacing.step5});
   text-shadow: 1px 1px 3px var(${vars.color.font.dropShadow});
+
+  ${decl.media.lessThan.comfortable} {
+    & br {
+      display: none;
+    }
+  }
 `);
 
 const title = toProps(css`
   ${decl.font.serif.bold}
+  font-size: ${theme.util.font.fluidSize(1.75, 5, 'step5')};
+  line-height: var(${vars.font.lineHeight.step6});
 
-  /* Viewport-based scaling tuned to prevent wrapping */
-  font-size: ${theme.util.font.fluidSize(1.2, 3.25, 'step4')};
-  line-height: var(${vars.font.lineHeight.step5});
-
-  ${theme.decl.media.orientation.portrait} {
-    font-size: ${theme.util.font.fluidSize(1.75, 5, 'step5')};
-    line-height: var(${vars.font.lineHeight.step6});
+  @container hero (min-aspect-ratio: 1/1) {
+    font-size: ${theme.util.font.fluidSize(1.2, 3.25, 'step4')};
+    line-height: var(${vars.font.lineHeight.step5});
   }
 `);
 
 const subtitle = toProps(css`
   ${decl.font.serif.regular}
-  font-size: ${theme.util.font.fluidSize(0.9, 2.25, 'step3')};
-  line-height: var(${vars.font.lineHeight.step4});
+  font-size: ${theme.util.font.fluidSize(1.25, 3.25, 'step4')};
+  line-height: var(${vars.font.lineHeight.step5});
 
-  ${theme.decl.media.orientation.portrait} {
-    font-size: ${theme.util.font.fluidSize(1.25, 3.25, 'step4')};
-    line-height: var(${vars.font.lineHeight.step5});
+  @container hero (min-aspect-ratio: 1/1) {
+    font-size: ${theme.util.font.fluidSize(0.9, 2.25, 'step3')};
+    line-height: var(${vars.font.lineHeight.step4});
   }
 `);
 
@@ -63,12 +63,12 @@ const linkList = toProps(css`
 `);
 
 const linkItem = toProps(css`
-  border-color: var(${theme.vars.color.font.light});
-  border-radius: var(${theme.vars.spacing.step0});
+  border-color: var(${vars.color.font.light});
+  border-radius: var(${vars.spacing.step0});
   border-style: solid;
   border-width: 2px;
   flex-grow: 0;
-  margin-bottom: var(${theme.vars.spacing.step1});
+  margin-bottom: var(${vars.spacing.step1});
   white-space: nowrap;
 `);
 

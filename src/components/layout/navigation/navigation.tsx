@@ -19,6 +19,7 @@ export const Navigation = ({
   onStateChange,
   selectedId,
 }: NavigationProps) => {
+  const menuId = 'site-navigation-menu';
   const mediaQueryMatch = useMediaQuery({
     maxWidth: BREAKPOINT_COMFORTABLE,
   });
@@ -85,8 +86,17 @@ export const Navigation = ({
 
   return (
     <nav ref={ref} {...styles.root}>
-      <ul {...styles.list}>{links}</ul>
-      <button {...styles.button} onClick={() => setIsOpen(!isOpen)}>
+      <ul id={menuId} aria-hidden={isNarrow && !isOpen} {...styles.list}>
+        {links}
+      </ul>
+      <button
+        {...styles.button}
+        aria-controls={menuId}
+        aria-expanded={isOpen}
+        aria-label="Menu"
+        onClick={() => setIsOpen(!isOpen)}
+        type="button"
+      >
         <span>Menu</span>
       </button>
     </nav>

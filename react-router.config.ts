@@ -11,13 +11,11 @@ export default {
     const portfolioDir = path.resolve('./src/content/portfolio');
     const files = fs.readdirSync(portfolioDir);
 
-    // Get portfolio item routes
     const portfolioRoutes = files
       .filter((file) => file.endsWith('.md'))
       .map((file) => path.basename(file, '.md'))
       .map((id) => `/portfolio/${id}`);
 
-    // Collect unique tag slugs from portfolio files
     const tagSlugs = new Set<string>();
 
     for (const file of files) {
@@ -35,10 +33,9 @@ export default {
       }
     }
 
-    // Generate tag routes
     const tagRoutes = Array.from(tagSlugs).map((slug) => `/portfolio/tag/${slug}`);
 
-    return ['/', ...portfolioRoutes, ...tagRoutes];
+    return ['/', '/portfolio', ...portfolioRoutes, ...tagRoutes];
   },
   appDirectory: 'src/site',
   buildDirectory: 'dist',

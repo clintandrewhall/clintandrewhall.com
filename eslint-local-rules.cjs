@@ -1,7 +1,3 @@
-/**
- * Custom ESLint rules for this project
- */
-
 module.exports = {
   'no-multi-value-css-properties': {
     meta: {
@@ -20,30 +16,24 @@ module.exports = {
     },
     create(context) {
       const disallowedProperties = ['margin', 'padding', 'background', 'border'];
-      const disallowedPattern = new RegExp(
-        `^\\s*(${disallowedProperties.join('|')})\\s*:`,
-        'gm'
-      );
+      const disallowedPattern = new RegExp(`^\\s*(${disallowedProperties.join('|')})\\s*:`, 'gm');
 
       return {
         TaggedTemplateExpression(node) {
-          // Only check tagged template expressions with tag name 'css'
           if (node.tag.name !== 'css') {
             return;
           }
 
-          // Get the template literal content
           const quasis = node.quasi.quasis;
           quasis.forEach((quasi) => {
             const content = quasi.value.raw;
             let match;
 
-            // Reset regex index
             disallowedPattern.lastIndex = 0;
 
             while ((match = disallowedPattern.exec(content)) !== null) {
               const property = match[1];
-              
+
               context.report({
                 node: quasi,
                 messageId: 'disallowedProperty',
@@ -58,4 +48,3 @@ module.exports = {
     },
   },
 };
-

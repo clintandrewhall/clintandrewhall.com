@@ -82,7 +82,6 @@ export class ImageProcessor {
     this.readDimensionsCache();
   }
 
-  // TODO - this is super hacky, but it works for now
   get isProcessing(): boolean {
     return this.processingQueue.size > 0;
   }
@@ -190,7 +189,6 @@ export class ImageProcessor {
 
       if (!useDevCache) {
         await this.generateOutputs(imageId, sourcePath);
-        console.log(`[image_processor] ${imageId}: processing complete`);
       }
 
       await this.updateDimensionCache(imageId, sourcePath);
@@ -208,7 +206,6 @@ export class ImageProcessor {
   ): string {
     const sourcePath = findSourceImage(imageId);
 
-    // TODO - replace with "broken" placeholder image
     if (!sourcePath) {
       return '';
     }
