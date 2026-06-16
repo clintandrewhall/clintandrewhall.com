@@ -35,6 +35,10 @@ const config: StorybookConfig = {
 
     return {
       ...config,
+      resolve: {
+        ...config.resolve,
+        dedupe: [...(config.resolve?.dedupe || []), 'react', 'react-dom'],
+      },
       optimizeDeps: {
         ...config.optimizeDeps,
         include: [...(config.optimizeDeps?.include || []), 'react-icons'],
