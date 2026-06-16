@@ -21,7 +21,10 @@ const config: StorybookConfig = {
   async viteFinal(config: UserConfig) {
     // Define chunk splitting rules
     const chunkRules = [
-      { chunk: 'vendor-react', patterns: ['node_modules/react/', 'node_modules/react-dom/'] },
+      {
+        chunk: 'vendor-react',
+        patterns: ['node_modules/react/', 'node_modules/react-dom/', 'node_modules/scheduler/'],
+      },
       { chunk: 'vendor-react-router', patterns: ['node_modules/react-router'] },
       { chunk: 'vendor-icons', patterns: ['node_modules/react-icons/'] },
       { chunk: 'vendor-swiper', patterns: ['node_modules/swiper/'] },
