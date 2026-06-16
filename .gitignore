@@ -10,6 +10,7 @@ lerna-debug.log*
 node_modules
 dist
 dist-ssr
+coverage
 *.local
 
 # Editor directories and files
@@ -28,4 +29,6 @@ dist-ssr
 !.yarn/patches/
 storybook-static
 .react-router
+.vite
 public/images
+public/image_dimensions.json

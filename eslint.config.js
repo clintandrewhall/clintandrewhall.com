@@ -101,6 +101,7 @@ export default [
       'dist/**',
       '.vite/**',
       '.react-router/**',
+      'coverage/**',
       'storybook-static/**',
       'public/images/portfolio/**',
       'public/image_dimensions.json',

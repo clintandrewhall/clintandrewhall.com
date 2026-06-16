@@ -5,6 +5,7 @@ This project uses custom tooling to enforce CSS rules for Linaria atomic styles,
 ## Why Not Stylelint?
 
 The linaria stylelint parser has a critical bug where the auto-fixer corrupts CSS template literal interpolations:
+
 - Before: `var(${vars.spacing.step6})`
 - After: `var(/* ${vars.spacing.step6}:3 */)`
 
@@ -19,6 +20,7 @@ This breaks the styling system, so we use alternative tools instead.
 **How it works:** Automatically sorts CSS properties alphabetically when you format your code.
 
 **Usage:**
+
 ```bash
 # Format all files
 yarn format
@@ -36,6 +38,7 @@ yarn format:check
 **Why:** In Linaria atomic styles, multi-value properties like `margin: 10px 20px` generate multiple atomic classes instead of one, which is problematic.
 
 **Disallowed properties:**
+
 - `margin` → Use `margin-top`, `margin-right`, `margin-bottom`, `margin-left` instead
 - `padding` → Use `padding-top`, `padding-right`, `padding-bottom`, `padding-left` instead
 - `background` → Use `background-color`, `background-image`, etc. instead
@@ -44,12 +47,13 @@ yarn format:check
 **How it works:** The custom ESLint rule scans CSS template literals tagged with `css` and reports errors for disallowed properties.
 
 **Usage:**
+
 ```bash
 # Run linting (includes the custom rule)
 yarn lint
 ```
 
-**Implementation:** See `eslint-local-rules.cjs` and `.eslintrc.json`
+**Implementation:** See `eslint-local-rules.cjs` and `eslint.config.js`
 
 ## Example
 
@@ -78,4 +82,3 @@ const goodStyle = css`
 - Multi-value properties still caught via ESLint
 - TypeScript catches variable reference errors
 - Runs in your existing lint workflow
-
