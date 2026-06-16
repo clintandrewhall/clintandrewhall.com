@@ -1,27 +1,54 @@
 {
   "compilerOptions": {
-    "allowJs": true,
-    "allowSyntheticDefaultImports": true,
-    "downlevelIteration": true,
     "esModuleInterop": true,
-    "forceConsistentCasingInFileNames": true,
-    "importHelpers": true,
-    "isolatedModules": true,
-    "jsx": "react-jsx",
-    "lib": ["esnext", "dom", "dom.iterable"],
-    "module": "esnext",
-    "moduleResolution": "node",
-    "noEmit": true,
-    "noFallthroughCasesInSwitch": true,
-    "resolveJsonModule": true,
+    "target": "ES2020",
+    "useDefineForClassFields": true,
+    "lib": ["ES2022", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
     "skipLibCheck": true,
+    /* Bundler mode */
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
     "strict": true,
-    "target": "es5"
-  },
-  "plugins": [
-    {
-      "name": "typescript-plugin-css-modules"
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "verbatimModuleSyntax": true,
+    "baseUrl": ".",
+    "rootDirs": [".", "./.react-router/types"],
+    "paths": {
+      "@content/*": ["./src/content/*"],
+      "@components/*": ["./src/components/*"],
+      "@pages/*": ["./src/site/pages/*"],
+      "@lib/*": ["./src/lib/*"],
+      "@lib/hooks": ["./src/lib/hooks/index"],
+      "@state/*": ["./src/state/*"],
+      "@theme": ["./src/theme/index"],
+      "@theme/*": ["./src/theme/*"]
     }
+  },
+  "include": [
+    "config/**/*.ts",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/.stories/**/*.ts",
+    "src/**/.stories/**/*.tsx",
+    "scripts/**/*.ts",
+    ".storybook/**/*.ts",
+    ".storybook/**/*.tsx",
+    "types/*.d.ts",
+    "vite.config.ts",
+    "vitest.config.ts",
+    "vitest.setup.ts",
+    "react-router.config.ts",
+    "**/.server/**/*",
+    "**/.client/**/*",
+    ".react-router/types/**/*"
   ],
-  "include": ["**/src/**/*.ts*", "**/types/**/*.ts*", "**/scripts/**/*.ts*"]
+  "types": ["vite/client", "react-router", "react-router-dom", "node"],
+  "exclude": []
 }

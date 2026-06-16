@@ -1,4 +1,10 @@
-build
-assets
-public
-src/content/github/index.js
+node_modules/
+dist/
+storybook-static/
+.react-router/
+coverage/
+public/images/portfolio/
+public/image_dimensions.json
+src/content/github.json
+src/content/medium.json
+.prettierrc.cjs
