@@ -7,15 +7,12 @@ declare module '*.md' {
   // When "Mode.HTML" is requested
   const html: string;
 
-  // When "Mode.RAW" is requested
-  const raw: string;
-
   // When "Mode.React" is requested. VFC could take a generic like React.VFC<{ MyComponent: TypeOfMyComponent }>
   import type React from 'react';
   const ReactComponent: React.FC;
 
   // Modify below per your usage
-  export { attributes, html, raw, ReactComponent, toc };
+  export { attributes, html, ReactComponent, toc };
 }
 
 declare module 'virtual:portfolio-index' {
@@ -29,4 +26,9 @@ declare module 'virtual:portfolio-index' {
     website?: string;
   }
   export const portfolioIndex: PortfolioIndexEntry[];
+}
+
+declare module 'virtual:resume' {
+  const resume: Resume;
+  export default resume;
 }

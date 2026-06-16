@@ -28,7 +28,7 @@ export const markdownPlugin = (): Plugin => {
       const html = md.render(content, { frontmatter: attributes });
 
       return {
-        code: `export const attributes = ${JSON.stringify(attributes)}; export const html = ${JSON.stringify(html)}; export const raw = ${JSON.stringify(content)};`,
+        code: `export const attributes = ${JSON.stringify(attributes)}; export const html = ${JSON.stringify(html)};`,
         map: null,
       };
     },

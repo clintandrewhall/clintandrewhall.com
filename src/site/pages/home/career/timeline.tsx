@@ -1,5 +1,3 @@
-import Markdown from 'react-markdown';
-
 import { Section } from '@components/layout';
 import { Timeline as TimelineComponent } from '@components/timeline';
 import { useResume } from '@lib/hooks';
@@ -30,7 +28,9 @@ export const Timeline = () => {
           subtitle: item.position,
           start: item.startDate,
           end: item.endDate,
-          children: <Markdown>{item.summary}</Markdown>,
+          children: item.summaryHtml ? (
+            <div dangerouslySetInnerHTML={{ __html: item.summaryHtml }} />
+          ) : null,
         }))}
       />
       <Section.Link href="/resume" title="View my resume" />

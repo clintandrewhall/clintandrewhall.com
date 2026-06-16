@@ -91,4 +91,8 @@ const link = toProps(css`
   text-transform: uppercase;
 `);
 
-export default { root, link, item };
+const icon = css`
+  ${decl.font.size.step1}
+`;
+
+export default { root, link, item, icon };

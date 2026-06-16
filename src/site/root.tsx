@@ -2,9 +2,7 @@ import { useEffect } from 'react';
 import { css as csl } from '@linaria/core';
 import 'ress';
 import '@theme/definitions';
-import '@fontsource-variable/montserrat';
-import '@fontsource/libre-baskerville/400.css';
-import '@fontsource/libre-baskerville/700.css';
+import '@theme/fonts.css';
 import { isRouteErrorResponse, Links, Meta, Outlet, Scripts, useLocation } from 'react-router';
 
 import { css, cx } from '@lib/css';
@@ -38,12 +36,8 @@ export const Layout = ({ children }: { children: React.ReactNode }) => {
         <link rel="manifest" href={`/manifest.json`} />
         <link rel="shortcut icon" href={`/favicon.ico`} />
         <noscript>
-          {/* Fallback to make Swiper lists horizontally scrollable without JS */}
           <style>{`
-            .peopleline .swiper { overflow-x: auto; padding-inline: var(--peopleline-gap, 10px); }
-            .peopleline .swiper-wrapper { display: flex; gap: var(--peopleline-gap, 10px); transform: none; }
-            .peopleline .swiper-slide { flex: 0 0 var(--peopleline-slide-width, 100%); scroll-snap-align: start; }
-            @media (min-width: 975px) { .peopleline .swiper-slide { flex-basis: calc((100% - var(--peopleline-gap, 10px)) / 2); } }
+            .peopleline [data-peopleline-controls] { display: none; }
           `}</style>
         </noscript>
       </head>

@@ -8,7 +8,7 @@ import styles from './site_logo.styles';
 export const SiteLogo = () => (
   <p {...styles.root}>
     <Link to="/">
-      <img src={logo.src} alt="Logo" />
+      <img src={logo.src} alt="Logo" loading="lazy" decoding="async" />
     </Link>
   </p>
 );

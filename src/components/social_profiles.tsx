@@ -1,6 +1,5 @@
-import { css, cx } from '@lib/css';
+import { cx } from '@lib/css';
 import { useResume } from '@lib/hooks';
-import { theme } from '@theme';
 
 import Icon, { type IconType } from './icon';
 
@@ -25,12 +24,7 @@ const SocialProfileItem = ({
       target="_blank"
       {...styles.link}
     >
-      <Icon
-        name={profile.network.toLowerCase() as IconType}
-        className={css`
-          ${theme.decl.font.size.step1}
-        `}
-      />
+      <Icon name={profile.network.toLowerCase() as IconType} className={styles.icon} />
       {showLabel ? <span>{profile.network}</span> : null}
     </a>
   </li>

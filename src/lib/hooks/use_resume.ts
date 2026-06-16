@@ -1,4 +1,4 @@
-import resume from '@content/resume.json';
+import resume from 'virtual:resume';
 
 export const useResume = () => {
   return resume as Resume;

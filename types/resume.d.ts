@@ -91,6 +91,7 @@ declare interface Basic {
 
   /** A short bio about the individual. */
   summary: string;
+  summaryHtml?: string;
 
   /** Where the individual is located. */
   location: ResumeLocation;
@@ -184,6 +185,7 @@ declare interface Work extends Occupation {
 
   /** An overview of the responsibilities at the organization. */
   summary: string;
+  summaryHtml?: string;
 
   /** Accomplishments achieved during the position. */
   highlights?: string[];

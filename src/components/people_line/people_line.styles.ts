@@ -1,117 +1,11 @@
-import { css as csl } from '@linaria/core';
-import 'swiper/css';
-import 'swiper/css/navigation';
-import 'swiper/css/pagination';
-
-import { css, toProps } from '@lib/css';
+import { css, cx, toProps } from '@lib/css';
 import { theme } from '@theme';
 
 const { decl, vars } = theme;
 
-/* eslint-disable-next-line @typescript-eslint/no-unused-expressions */
-csl`
-  :global() {
-    .swiper {
-      border-top: 1px solid var(${vars.color.border.subtle});
-    }
-
-    .swiper .swiper-pagination-bullets.swiper-pagination-horizontal {
-      ${decl.color.background.subtle}
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      left: 50%;
-      transform: translateX(-50%);
-      width: auto;
-      height: 22px;
-      padding: 2px 0;
-      line-height: 17px;
-    }
-
-    .swiper-pagination-bullets:before,
-    .swiper-pagination-bullets:after {
-      content: '';
-      ${decl.color.background.subtle}
-      top: 0;
-      bottom: 0;
-      height: 22px;
-      width: 22px;
-      position: absolute;
-    }
-
-    .swiper-pagination-bullets:before {
-      left: -22px;
-      border-radius: 50% 0 0 50%;
-    }
-
-    .swiper-pagination-bullets:after {
-      right: -22px;
-      border-radius: 0 50% 50% 0;
-    }
-
-    /* Storybook-only: simulate non-JS behavior when an ancestor adds .simulate-no-js */
-    .simulate-no-js .peopleline .swiper {
-      overflow-x: auto;
-      padding-inline: var(--peopleline-gap, 10px);
-    }
-
-    .simulate-no-js .peopleline .swiper-wrapper {
-      transform: none !important;
-      width: max-content !important;
-      display: grid !important;
-      grid-auto-flow: column !important;
-      grid-auto-columns: var(--peopleline-slide-width, 100%) !important;
-      gap: var(--peopleline-gap, 10px) !important;
-    }
-
-    @media (min-width: 975px) {
-      .simulate-no-js .peopleline .swiper-wrapper {
-        grid-auto-columns: calc((100% - var(--peopleline-gap, 10px)) / 2) !important;
-      }
-      .simulate-no-js .peopleline .swiper-slide {
-        width: calc((100% - var(--peopleline-gap, 10px)) / 2) !important;
-      }
-    }
-
-    .simulate-no-js .peopleline .swiper-slide {
-      width: var(--peopleline-slide-width, 100%) !important;
-      scroll-snap-align: start;
-      flex: 0 0 auto;
-    }
-
-    .simulate-no-js .peopleline .swiper-button-prev,
-    .simulate-no-js .peopleline .swiper-button-next,
-    .simulate-no-js .peopleline .swiper-pagination {
-      display: none !important;
-    }
-  }
-`;
-
 export const root = toProps(css`
   --peopleline-gap: 10px;
   --peopleline-slide-width: 100%;
-
-  --swiper-theme-color: var(${vars.color.background.light});
-  --swiper-navigation-size: var(${vars.spacing.step6});
-  --swiper-navigation-top-offset: 50%;
-  --swiper-navigation-sides-offset: 0;
-  --swiper-navigation-color: var(--swiper-theme-color);
-  --swiper-pagination-color: var(--swiper-theme-color);
-  --swiper-pagination-left: auto;
-  --swiper-pagination-right: auto;
-  --swiper-pagination-bottom: 0;
-  --swiper-pagination-top: auto;
-  --swiper-pagination-fraction-color: inherit;
-  --swiper-pagination-progressbar-bg-color: var(${vars.color.border.grid});
-  --swiper-pagination-progressbar-size: 4px;
-  --swiper-pagination-bullet-size: 8px;
-  --swiper-pagination-bullet-width: 8px;
-  --swiper-pagination-bullet-height: 8px;
-  --swiper-pagination-bullet-inactive-color: var(${vars.color.background.subtlest});
-  --swiper-pagination-bullet-inactive-opacity: 0.2;
-  --swiper-pagination-bullet-opacity: 1;
-  --swiper-pagination-bullet-horizontal-gap: 4px;
-  --swiper-pagination-bullet-vertical-gap: 6px;
 
   padding-bottom: 0;
   padding-left: var(${vars.spacing.step9});
@@ -148,52 +42,127 @@ export const root = toProps(css`
   }
 `);
 
-const swiper = toProps(css`
+const scroller = toProps(css`
+  border-top: 1px solid var(${vars.color.border.subtle});
+  display: flex;
+  gap: var(--peopleline-gap);
+  margin-left: auto;
+  margin-right: auto;
   max-width: var(${vars.grid.maxWidth});
-
-  /* Base non-JS fallback: make Swiper act like a native scroll-snap scroller */
   -webkit-overflow-scrolling: touch;
   overflow-x: auto;
-  padding-inline: var(--peopleline-gap, 10px);
-  scroll-padding-inline: var(--peopleline-gap, 10px);
-  scroll-snap-type: x proximity;
+  padding-inline: var(--peopleline-gap);
+  scroll-padding-inline: var(--peopleline-gap);
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none;
 
-  /* Swiper DOM structure fallback (non-JS): use flex with fixed bases */
-  .swiper-wrapper {
-    display: flex;
-    gap: var(--peopleline-gap, 10px);
-    transform: none;
-  }
-
-  .swiper-slide {
-    /* 1 per view by default */
-    flex: 0 0 var(--peopleline-slide-width, 100%);
-    scroll-snap-align: start;
-  }
-
-  /* Match Swiper breakpoint that shows 2 slides >= 975px */
-  @media (min-width: 975px) {
-    .swiper-slide {
-      /* 2 per view when wide */
-      flex: 0 0 calc((100% - var(--peopleline-gap, 10px)) / 2);
-    }
+  &::-webkit-scrollbar {
+    display: none;
   }
 `);
 
-/* When JS enhances with Swiper, disable native scroll-snap to avoid conflicts */
-export const enhanced = toProps(css`
-  .swiper {
-    overflow-x: hidden;
-    padding-inline: 0;
-    scroll-padding-inline: 0;
-    scroll-snap-type: none;
-  }
+const item = toProps(css`
+  flex: 0 0 var(--peopleline-slide-width);
+  scroll-snap-align: start;
 
-  .swiper-wrapper {
-    display: flex;
-    gap: 0 !important;
-    width: 100% !important;
+  ${decl.media.greaterThan.expanded} {
+    flex-basis: calc((100% - var(--peopleline-gap)) / 2);
   }
 `);
 
-export default { root, swiper, enhanced };
+const controls = toProps(css`
+  align-items: center;
+  display: flex;
+  gap: var(${vars.spacing.step2});
+  justify-content: center;
+  margin-top: var(${vars.spacing.step4});
+`);
+
+const button = toProps(css`
+  ${decl.boxShadow.small}
+  ${decl.color.background.dark}
+  ${decl.color.font.light}
+
+  align-items: center;
+  border-bottom-width: 0;
+  border-left-width: 0;
+  border-right-width: 0;
+  border-top-width: 0;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  height: var(${vars.spacing.step7});
+  justify-content: center;
+  line-height: 1;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  width: var(${vars.spacing.step7});
+
+  &:hover,
+  &:focus {
+    ${decl.color.background.accent}
+  }
+
+  &:disabled {
+    cursor: default;
+    opacity: 0.35;
+  }
+
+  &:disabled:hover,
+  &:disabled:focus {
+    ${decl.color.background.dark}
+  }
+
+  & > span {
+    ${decl.font.size.step2}
+    display: block;
+    transform: translateY(-1px);
+  }
+`);
+
+const pagination = toProps(css`
+  ${decl.color.background.subtle}
+
+  align-items: center;
+  border-radius: 999px;
+  display: flex;
+  gap: 4px;
+  min-height: 22px;
+  padding-bottom: 2px;
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 2px;
+`);
+
+const dotBase = css`
+  background-color: var(${vars.color.background.subtlest});
+  border-bottom-width: 0;
+  border-left-width: 0;
+  border-radius: 50%;
+  border-right-width: 0;
+  border-top-width: 0;
+  cursor: pointer;
+  height: 8px;
+  opacity: 0.35;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
+  width: 8px;
+
+  &:hover,
+  &:focus {
+    opacity: 0.7;
+  }
+`;
+
+const dotActive = css`
+  background-color: var(${vars.color.background.light});
+  opacity: 1;
+`;
+
+const dot = (isActive: boolean) => toProps(cx(dotBase, isActive && dotActive));
+
+export default { root, scroller, item, controls, button, pagination, dot };

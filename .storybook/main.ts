@@ -27,11 +27,7 @@ const config: StorybookConfig = {
       },
       { chunk: 'vendor-react-router', patterns: ['node_modules/react-router'] },
       { chunk: 'vendor-icons', patterns: ['node_modules/react-icons/'] },
-      { chunk: 'vendor-swiper', patterns: ['node_modules/swiper/'] },
-      {
-        chunk: 'vendor-markdown',
-        patterns: ['node_modules/react-markdown/', 'node_modules/markdown-it/'],
-      },
+      { chunk: 'vendor-markdown', patterns: ['node_modules/markdown-it/'] },
       { chunk: 'vendor-styling', patterns: ['node_modules/@linaria/', 'node_modules/@wyw-in-js/'] },
       { chunk: 'vendor-common', patterns: ['node_modules/'] }, // Catch-all for other vendors
     ];

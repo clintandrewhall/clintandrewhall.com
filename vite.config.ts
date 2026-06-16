@@ -8,7 +8,7 @@ import tsconfigPaths from 'vite-tsconfig-paths';
 
 import { portfolioIndexPlugin } from './config/portfolio_index_plugin';
 import { sitemapPlugin } from './config/sitemap_plugin';
-import { markdownPlugin } from './config';
+import { markdownPlugin, resumePlugin } from './config';
 
 const isStorybook = process.argv[1]?.includes('storybook');
 
@@ -21,11 +21,8 @@ export default defineConfig({
       '@linaria/react',
       'react-intersection-observer',
       'react-keyed-flatten-children',
-      'react-markdown',
       'react-responsive',
       'react-scroll-parallax',
-      'swiper/modules',
-      'swiper/react',
       'utopia-core',
     ],
     // Exclude native modules and Node.js-only packages from bundling
@@ -79,6 +76,7 @@ export default defineConfig({
         return null;
       },
     }),
+    resumePlugin(),
     imagetools({
       exclude: ['./src/content/portfolio/images/**'],
       defaultDirectives: (url) => {
