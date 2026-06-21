@@ -6,3 +6,4 @@ export {
   type NavigationProps,
 } from './navigation';
 export { Section, type SectionHeaderProps, type SectionProps } from './section';
+export { TwoColumn, type TwoColumnProps } from './two_column';

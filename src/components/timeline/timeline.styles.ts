@@ -21,10 +21,6 @@ const root = toProps(css`
     column-count: 2;
     column-gap: var(${vars.grid.gutter});
     column-width: calc(50% - var(${vars.grid.gutter}) / 2);
-
-    &:after {
-      display: none;
-    }
   }
 `);
 

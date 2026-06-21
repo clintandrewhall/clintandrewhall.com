@@ -1,6 +1,6 @@
 import { forwardRef } from 'react';
 
-import { Section } from '@components/layout';
+import { Section, TwoColumn } from '@components/layout';
 import { attributes } from '@content/about.md';
 
 import { Code } from './code';
@@ -14,8 +14,10 @@ const AboutComponent = forwardRef<HTMLDivElement>(({}, ref) => {
     <Section {...{ ref, ...attributes }} {...styles.root}>
       <Section.Header {...attributes} {...styles.header} />
       <About.Summary />
-      <About.Work />
-      <About.Code />
+      <TwoColumn>
+        <About.Work />
+        <About.Code />
+      </TwoColumn>
     </Section>
   );
 });
