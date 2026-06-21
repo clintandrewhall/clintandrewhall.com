@@ -38,7 +38,10 @@ const primary = css`
 
   border-radius: var(${vars.spacing.step1});
   color: var(${vars.color.font.light});
+  display: flex;
+  line-height: var(${vars.font.size.step3});
   padding: var(${vars.spacing.step4}) var(${vars.spacing.step9});
+  width: 100%;
 
   &:hover,
   &:focus {
