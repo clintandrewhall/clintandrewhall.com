@@ -3,6 +3,17 @@ import { theme } from '@theme';
 
 const { decl, vars } = theme;
 
+const tintedDarkShadow = {
+  rest: 'rgba(0, 0, 0, 0.18) 0px 1px 2px, rgba(0, 0, 0, 0.12) 0px 2px 6px',
+  hover:
+    'rgba(0, 0, 0, 0.20) 0px 2px 4px, rgba(0, 0, 0, 0.14) 0px 4px 12px, rgba(0, 0, 0, 0.08) 0px 8px 24px',
+  active: 'rgba(0, 0, 0, 0.22) 0px 1px 2px',
+};
+
+const tintedLightShadow = {
+  hover: 'rgba(255, 255, 255, 0.18) 0px 1px 2px, rgba(255, 255, 255, 0.10) 0px 2px 6px',
+};
+
 const base = css`
   ${decl.font.sansSerif.semiBold}
   ${decl.font.size.stepN1}
@@ -35,10 +46,10 @@ const base = css`
 `;
 
 const primary = css`
-  ${decl.boxShadow.sm}
   ${decl.color.background.dark}
 
   border-radius: var(${vars.spacing.step1});
+  box-shadow: ${tintedDarkShadow.rest};
   color: var(${vars.color.font.light});
   display: flex;
   line-height: var(${vars.font.size.step3});
@@ -47,14 +58,14 @@ const primary = css`
 
   &:hover,
   &:focus {
-    ${decl.boxShadow.md}
     ${decl.color.background.accent}
+    box-shadow: ${tintedDarkShadow.hover};
     color: var(${vars.color.font.light});
     transform: translateY(-1px);
   }
 
   &:active {
-    ${decl.boxShadow.xs}
+    box-shadow: ${tintedDarkShadow.active};
     transform: translateY(0);
   }
 `;
@@ -67,8 +78,8 @@ const secondary = css`
 
   &:hover,
   &:focus {
-    ${decl.boxShadow.sm}
     background-color: var(${vars.color.background.light});
+    box-shadow: ${tintedLightShadow.hover};
     color: var(${vars.color.font.dark});
     transform: translateY(-1px);
   }
@@ -80,11 +91,11 @@ const secondary = css`
 `;
 
 const icon = css`
-  ${decl.boxShadow.sm}
   ${decl.color.background.dark}
 
   border: 0;
   border-radius: 50%;
+  box-shadow: ${tintedDarkShadow.rest};
   color: var(${vars.color.font.light});
   height: var(${vars.spacing.step7});
   letter-spacing: 0;
@@ -93,13 +104,13 @@ const icon = css`
 
   &:hover,
   &:focus {
-    ${decl.boxShadow.md}
     ${decl.color.background.accent}
+    box-shadow: ${tintedDarkShadow.hover};
     transform: translateY(-1px);
   }
 
   &:active {
-    ${decl.boxShadow.xs}
+    box-shadow: ${tintedDarkShadow.active};
     transform: translateY(0);
   }
 
@@ -111,8 +122,8 @@ const icon = css`
 
   &:disabled:hover,
   &:disabled:focus {
-    ${decl.boxShadow.sm}
     ${decl.color.background.dark}
+    box-shadow: ${tintedDarkShadow.rest};
     transform: none;
   }
 `;
