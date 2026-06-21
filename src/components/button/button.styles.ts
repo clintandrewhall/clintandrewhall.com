@@ -23,7 +23,9 @@ const base = css`
   transition:
     background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
     border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-    color 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
   user-select: none;
 
   &:focus-visible {
@@ -45,8 +47,15 @@ const primary = css`
 
   &:hover,
   &:focus {
+    ${decl.boxShadow.md}
     ${decl.color.background.accent}
     color: var(${vars.color.font.light});
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    ${decl.boxShadow.xs}
+    transform: translateY(0);
   }
 `;
 
@@ -58,8 +67,15 @@ const secondary = css`
 
   &:hover,
   &:focus {
+    ${decl.boxShadow.sm}
     background-color: var(${vars.color.background.light});
     color: var(${vars.color.font.dark});
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    box-shadow: none;
+    transform: translateY(0);
   }
 `;
 
@@ -77,12 +93,27 @@ const icon = css`
 
   &:hover,
   &:focus {
+    ${decl.boxShadow.md}
     ${decl.color.background.accent}
+    transform: translateY(-1px);
+  }
+
+  &:active {
+    ${decl.boxShadow.xs}
+    transform: translateY(0);
   }
 
   &:disabled {
     cursor: default;
     opacity: 0.35;
+    transform: none;
+  }
+
+  &:disabled:hover,
+  &:disabled:focus {
+    ${decl.boxShadow.sm}
+    ${decl.color.background.dark}
+    transform: none;
   }
 `;
 
