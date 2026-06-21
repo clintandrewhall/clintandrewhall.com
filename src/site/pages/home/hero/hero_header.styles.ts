@@ -51,42 +51,15 @@ const subtitle = toProps(css`
 `);
 
 const linkList = toProps(css`
-  ${decl.font.size.stepN1}
-  ${decl.font.sansSerif.medium}
   display: flex;
   flex-direction: row;
   gap: var(${vars.spacing.step9});
-  letter-spacing: calc(var(${vars.font.size.step1}) * 0.15);
   list-style: none;
-  text-align: center;
-  text-transform: uppercase;
 `);
 
 const linkItem = toProps(css`
-  border-color: var(${vars.color.font.light});
-  border-radius: var(${vars.spacing.step0});
-  border-style: solid;
-  border-width: 2px;
   flex-grow: 0;
   margin-bottom: var(${vars.spacing.step1});
-  white-space: nowrap;
 `);
 
-const link = toProps(css`
-  ${decl.color.font.light}
-  display: block;
-  padding-bottom: var(${vars.spacing.step3});
-  padding-left: var(${vars.spacing.step4});
-  padding-right: var(${vars.spacing.step4});
-  padding-top: var(${vars.spacing.step3});
-  transition:
-    color 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0s,
-    background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0s;
-
-  &:hover {
-    ${decl.color.font.dark}
-    ${decl.color.background.light}
-  }
-`);
-
-export default { root, headerGroup, title, subtitle, linkList, linkItem, link };
+export default { root, headerGroup, title, subtitle, linkList, linkItem };

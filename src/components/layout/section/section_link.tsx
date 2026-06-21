@@ -1,6 +1,6 @@
-import { Link } from 'react-router';
-
 import { cx } from '@lib/css';
+
+import { Button } from '@components/button';
 
 import styles from './section_link.styles';
 
@@ -10,11 +10,10 @@ export interface SectionLinkProps {
   className?: string;
 }
 
-export const SectionLink = ({ href: to, title: children, className }: SectionLinkProps) => (
+export const SectionLink = ({ href: to, title, className }: SectionLinkProps) => (
   <p {...cx(styles.root, className)}>
-    <Link
-      {...{ ...styles.link, to, children }}
-      target={to.startsWith('http') ? '_blank' : '_self'}
-    />
+    <Button variant="primary" to={to}>
+      {title}
+    </Button>
   </p>
 );

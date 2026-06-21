@@ -78,48 +78,10 @@ const controls = toProps(css`
   margin-top: var(${vars.spacing.step4});
 `);
 
-const button = toProps(css`
-  ${decl.boxShadow.sm}
-  ${decl.color.background.dark}
-  ${decl.color.font.light}
-
-  align-items: center;
-  border-bottom-width: 0;
-  border-left-width: 0;
-  border-right-width: 0;
-  border-top-width: 0;
-  border-radius: 50%;
-  cursor: pointer;
-  display: flex;
-  height: var(${vars.spacing.step7});
-  justify-content: center;
-  line-height: 1;
-  padding-bottom: 0;
-  padding-left: 0;
-  padding-right: 0;
-  padding-top: 0;
-  width: var(${vars.spacing.step7});
-
-  &:hover,
-  &:focus {
-    ${decl.color.background.accent}
-  }
-
-  &:disabled {
-    cursor: default;
-    opacity: 0.35;
-  }
-
-  &:disabled:hover,
-  &:disabled:focus {
-    ${decl.color.background.dark}
-  }
-
-  & > span {
-    ${decl.font.size.step2}
-    display: block;
-    transform: translateY(-1px);
-  }
+const buttonGlyph = toProps(css`
+  ${decl.font.size.step2}
+  display: block;
+  transform: translateY(-1px);
 `);
 
 const pagination = toProps(css`
@@ -165,4 +127,4 @@ const dotActive = css`
 
 const dot = (isActive: boolean) => toProps(cx(dotBase, isActive && dotActive));
 
-export default { root, scroller, item, controls, button, pagination, dot };
+export default { root, scroller, item, controls, buttonGlyph, pagination, dot };

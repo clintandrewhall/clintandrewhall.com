@@ -2,6 +2,8 @@ import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
 import { cx } from '@lib/css';
 
+import { Button } from '@components/button';
+
 import styles from './people_line.styles';
 
 export interface PeopleLineProps {
@@ -112,15 +114,16 @@ export const PeopleLine = ({ people }: PeopleLineProps) => {
       </div>
       {pageCount > 1 ? (
         <div {...styles.controls} data-peopleline-controls="">
-          <button
-            {...styles.button}
-            type="button"
+          <Button
+            variant="icon"
             aria-label="Previous reference"
             disabled={activePage === 0}
             onClick={() => scrollToPage(activePage - 1)}
           >
-            <span aria-hidden="true">‹</span>
-          </button>
+            <span {...styles.buttonGlyph} aria-hidden="true">
+              ‹
+            </span>
+          </Button>
           <div {...styles.pagination} aria-label="Reference pages">
             {Array.from({ length: pageCount }, (_, page) => (
               <button
@@ -133,15 +136,16 @@ export const PeopleLine = ({ people }: PeopleLineProps) => {
               />
             ))}
           </div>
-          <button
-            {...styles.button}
-            type="button"
+          <Button
+            variant="icon"
             aria-label="Next reference"
             disabled={activePage === pageCount - 1}
             onClick={() => scrollToPage(activePage + 1)}
           >
-            <span aria-hidden="true">›</span>
-          </button>
+            <span {...styles.buttonGlyph} aria-hidden="true">
+              ›
+            </span>
+          </Button>
         </div>
       ) : null}
     </div>

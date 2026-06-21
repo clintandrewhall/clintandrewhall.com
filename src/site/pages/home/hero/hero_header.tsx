@@ -1,4 +1,4 @@
-import { Link } from 'react-router';
+import { Button } from '@components/button';
 
 import styles from './hero_header.styles';
 
@@ -19,14 +19,14 @@ export const HeroHeader = () => {
       </hgroup>
       <ul {...styles.linkList}>
         <li {...styles.linkItem}>
-          <Link to="/#portfolio" {...styles.link}>
+          <Button variant="secondary" to="/#portfolio">
             Latest Projects
-          </Link>
+          </Button>
         </li>
         <li {...styles.linkItem}>
-          <Link to="/#about" {...styles.link}>
+          <Button variant="secondary" to="/#about">
             More About Me
-          </Link>
+          </Button>
         </li>
       </ul>
     </header>
