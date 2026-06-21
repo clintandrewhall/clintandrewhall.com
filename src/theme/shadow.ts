@@ -1,58 +1,28 @@
 import { buildTheme } from '@lib/css';
 import { VAR_PREFIX_BOX_SHADOW, VAR_PREFIX_DROP_SHADOW } from '@theme/common';
 
+const layer = (y: number, blur: number, alpha: number): string =>
+  `rgba(0, 0, 0, ${alpha}) 0px ${y}px ${blur}px`;
+
 const shadows = {
-  large: [
-    'rgba(0, 0, 0, 0.07) 0px 1px 1px',
-    'rgba(0, 0, 0, 0.07) 0px 2px 2px',
-    'rgba(0, 0, 0, 0.07) 0px 4px 4px',
-    'rgba(0, 0, 0, 0.07) 0px 8px 8px',
-    'rgba(0, 0, 0, 0.07) 0px 16px 16px',
-  ],
-  medium: [
-    'rgba(0, 0, 0, 0.07) 0px 1px 1px',
-    'rgba(0, 0, 0, 0.07) 0px 2px 2px',
-    'rgba(0, 0, 0, 0.07) 0px 4px 4px',
-  ],
-  small: ['rgba(0, 0, 0, 0.12) 0px 1px 1px', 'rgba(0, 0, 0, 0.24) 0px 1px 1px'],
+  xs: [layer(1, 2, 0.08)],
+  sm: [layer(1, 2, 0.08), layer(2, 6, 0.06)],
+  md: [layer(2, 4, 0.08), layer(4, 12, 0.06), layer(8, 24, 0.04)],
+  lg: [layer(4, 8, 0.08), layer(8, 16, 0.06), layer(16, 32, 0.05), layer(24, 48, 0.04)],
 };
 
-const {
-  vars: boxVars,
-  definitions: boxDef,
-  decl: boxDecl,
-} = buildTheme(
-  {
-    large: `${shadows.large.join(', ')}`,
-    medium: `${shadows.medium.join(', ')}`,
-    small: `${shadows.small.join(', ')}`,
-  },
-  VAR_PREFIX_BOX_SHADOW,
-  'box-shadow',
+type ShadowKey = keyof typeof shadows;
+const keys = Object.keys(shadows) as ShadowKey[];
+
+const boxValues = keys.reduce(
+  (acc, key) => ((acc[key] = shadows[key].join(', ')), acc),
+  {} as Record<ShadowKey, string>,
 );
 
-const {
-  vars: dropShadowVars,
-  definitions: dropShadowDef,
-  decl: dropShadowDecl,
-} = buildTheme(
-  {
-    large: `${shadows.large.map((s) => `drop-shadow(${s})`).join(' ')}`,
-    medium: `${shadows.medium.map((s) => `drop-shadow(${s})`).join(' ')}`,
-    small: `${shadows.small.map((s) => `drop-shadow(${s})`).join(' ')}`,
-  },
-  VAR_PREFIX_DROP_SHADOW,
-  'filter',
+const dropValues = keys.reduce(
+  (acc, key) => ((acc[key] = shadows[key].map((s) => `drop-shadow(${s})`).join(' ')), acc),
+  {} as Record<ShadowKey, string>,
 );
 
-export const boxShadow = {
-  vars: boxVars,
-  definitions: boxDef,
-  decl: boxDecl,
-};
-
-export const dropShadow = {
-  vars: dropShadowVars,
-  definitions: dropShadowDef,
-  decl: dropShadowDecl,
-};
+export const boxShadow = buildTheme(boxValues, VAR_PREFIX_BOX_SHADOW, 'box-shadow');
+export const dropShadow = buildTheme(dropValues, VAR_PREFIX_DROP_SHADOW, 'filter');

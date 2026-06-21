@@ -7,6 +7,13 @@
       "runtimeArgs": ["dev", "--port", "5180"],
       "port": 5180,
       "autoPort": false
+    },
+    {
+      "name": "storybook",
+      "runtimeExecutable": "yarn",
+      "runtimeArgs": ["storybook", "--no-open", "-p", "6006"],
+      "port": 6006,
+      "autoPort": false
     }
   ]
 }

@@ -79,7 +79,7 @@ const controls = toProps(css`
 `);
 
 const button = toProps(css`
-  ${decl.boxShadow.small}
+  ${decl.boxShadow.sm}
   ${decl.color.background.dark}
   ${decl.color.font.light}
 

@@ -14,7 +14,7 @@ const root = toProps(css`
 `);
 
 const link = toProps(css`
-  ${decl.boxShadow.large}
+  ${decl.boxShadow.sm}
   border-radius: var(${vars.spacing.step1});
   a& {
     ${decl.color.font.light}

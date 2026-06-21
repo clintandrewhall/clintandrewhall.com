@@ -77,7 +77,7 @@ const header = toProps(css`
   flex-direction: column;
 
   & img {
-    ${decl.dropShadow.small}
+    ${decl.dropShadow.sm}
     border-radius: 50%;
     display: block;
     height: var(--image-size);
@@ -90,7 +90,7 @@ const header = toProps(css`
   }
 
   &:after {
-    ${decl.boxShadow.small}
+    ${decl.boxShadow.sm}
     background-color: var(${vars.color.background.subtler});
     border-radius: 50%;
     content: '';
