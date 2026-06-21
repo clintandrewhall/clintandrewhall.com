@@ -18,11 +18,11 @@ const root = toProps(css`
     justify-content: center;
   }
 
-  ${decl.media.lessThan.comfortable} {
+  @container section (max-width: 629px) {
     grid-template-columns: repeat(2, auto);
   }
 
-  ${decl.media.greaterThan.comfortable} {
+  @container section (min-width: 630px) {
     grid-template-columns: repeat(3, auto);
   }
 `);

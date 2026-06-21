@@ -38,6 +38,8 @@ const root = `
   display: grid;
   grid-gap: var(${vars.gutter});
   grid-template-columns: repeat(var(${vars.columns}), 1fr);
+  container-type: inline-size;
+  container-name: section;
 `;
 
 const area = {

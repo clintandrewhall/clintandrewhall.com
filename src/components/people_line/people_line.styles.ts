@@ -65,7 +65,7 @@ const item = toProps(css`
   flex: 0 0 var(--peopleline-slide-width);
   scroll-snap-align: start;
 
-  ${decl.media.greaterThan.expanded} {
+  @container section (min-width: 630px) {
     flex-basis: calc((100% - var(--peopleline-gap)) / 2);
   }
 `);
