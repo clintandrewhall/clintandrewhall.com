@@ -18,12 +18,13 @@ const root = toProps(css`
     justify-content: center;
   }
 
-  @container section (max-width: 629px) {
-    grid-template-columns: repeat(2, auto);
-  }
-
   @container section (min-width: 630px) {
-    grid-template-columns: repeat(3, auto);
+    grid-template-columns: repeat(3, 1fr);
+
+    & > *:first-child {
+      grid-column: span 2;
+      grid-row: span 2;
+    }
   }
 `);
 

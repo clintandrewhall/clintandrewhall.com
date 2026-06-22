@@ -63,7 +63,7 @@ const root = toProps(css`
 
   &:after {
     background-image: linear-gradient(to bottom, transparent 0%, #000 100%);
-    opacity: 0.8;
+    opacity: 0.4;
     z-index: 1;
   }
 
