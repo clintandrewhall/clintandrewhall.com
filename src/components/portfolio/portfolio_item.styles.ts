@@ -5,7 +5,7 @@ const { vars, decl } = theme;
 
 const root = toProps(css`
   ${decl.font.size.step0}
-  border-radius: var(${vars.spacing.step1});
+  border-radius: var(${vars.radius.md});
   height: 0;
   overflow: hidden;
   padding-bottom: 75%;
@@ -27,7 +27,7 @@ const root = toProps(css`
     > p,
     > footer {
       opacity: 0;
-      transition: opacity 0.3s;
+      transition: opacity var(${vars.motion.duration.base}) var(${vars.motion.easing.linear});
     }
 
     > p {
@@ -121,16 +121,16 @@ const caption = toProps(css`
   z-index: 3;
 
   & a {
-    ${decl.color.background.dark}
+    ${decl.color.background.inverse}
     ${decl.color.font.light}
 
-    border-color: var(${vars.color.background.light});
+    border-color: var(${vars.color.background.surface});
     border-style: solid;
     border-width: 2px;
 
     &:hover {
       ${decl.color.font.dark}
-      ${decl.color.background.light}
+      ${decl.color.background.surface}
     }
   }
 
@@ -182,8 +182,8 @@ const linkIcon = toProps(css`
 const projectLink = toProps(css`
   ${decl.color.font.light}
 
-  border-radius: 50%;
-  box-shadow: 0 0 0 1px var(${vars.color.background.light});
+  border-radius: var(${vars.radius.full});
+  box-shadow: 0 0 0 1px var(${vars.color.background.surface});
   display: block;
   height: var(${vars.spacing.step9});
   line-height: calc(var(${vars.spacing.step9}) + var(${vars.spacing.step0}));
@@ -191,14 +191,14 @@ const projectLink = toProps(css`
   width: var(${vars.spacing.step9});
 
   a& {
-    ${decl.color.background.dark}
+    ${decl.color.background.inverse}
     ${decl.color.font.light}
   }
 
   &:hover,
   &:active,
   &:focus {
-    ${decl.color.background.light}
+    ${decl.color.background.surface}
     ${decl.color.font.dark}
   }
 

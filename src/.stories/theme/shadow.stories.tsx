@@ -15,7 +15,7 @@ export default meta;
 const { boxShadow, dropShadow, color } = theme.decl;
 
 const page = css`
-  ${color.background.subtlest}
+  ${color.background.surfaceMuted}
   display: grid;
   gap: 48px;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
@@ -23,7 +23,7 @@ const page = css`
 `;
 
 const card = css`
-  ${color.background.light}
+  ${color.background.surface}
   align-items: center;
   border-radius: 8px;
   display: flex;
@@ -35,7 +35,7 @@ const card = css`
 `;
 
 const swatch = css`
-  ${color.background.dark}
+  ${color.background.inverse}
   border-radius: 8px;
   height: 64px;
   width: 64px;

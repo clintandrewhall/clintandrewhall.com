@@ -31,7 +31,7 @@ const root = toProps(css`
   position: relative;
 
   &:before {
-    background-color: var(${vars.color.background.subtler});
+    background-color: var(${vars.color.background.surfaceMutedStrong});
     bottom: 0;
     content: '';
     display: block;
@@ -52,7 +52,7 @@ const root = toProps(css`
     &:after {
       background-image: linear-gradient(
         to bottom,
-        var(${vars.color.background.subtler}) 0%,
+        var(${vars.color.background.surfaceMutedStrong}) 0%,
         transparent 100%
       );
       bottom: calc(0 - var(${vars.spacing.step9}));
@@ -78,7 +78,7 @@ const header = toProps(css`
 
   & img {
     ${decl.dropShadow.sm}
-    border-radius: 50%;
+    border-radius: var(${vars.radius.full});
     display: block;
     height: var(--image-size);
     left: var(--bullet-padding);
@@ -91,8 +91,8 @@ const header = toProps(css`
 
   &:after {
     ${decl.boxShadow.sm}
-    background-color: var(${vars.color.background.subtler});
-    border-radius: 50%;
+    background-color: var(${vars.color.background.surfaceMutedStrong});
+    border-radius: var(${vars.radius.full});
     content: '';
     display: block;
     height: var(--bullet-size);
@@ -107,7 +107,7 @@ const header = toProps(css`
 const timeframe = toProps(css`
   ${decl.font.sansSerif.semiBold}
   ${decl.font.size.stepN1}
-  ${decl.color.font.text}
+  ${decl.color.font.muted}
 
   letter-spacing: calc(var(${vars.font.size.step0}) * .1);
   margin-bottom: var(${vars.spacing.step1});
@@ -141,7 +141,7 @@ const subtitle = toProps(css`
 
 const content = toProps(css`
   ${decl.font.serif.regular}
-  ${decl.color.font.text}
+  ${decl.color.font.muted}
   ${decl.font.size.step0}
   ${decl.font.lineHeight.step3}
 

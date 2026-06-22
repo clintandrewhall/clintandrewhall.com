@@ -6,8 +6,8 @@ const { vars, decl } = theme;
 const root = toProps(css`
   ${decl.anchor}
   ${decl.font.size.stepN1}
-  ${decl.color.background.dark}
-  ${decl.color.font.text}
+  ${decl.color.background.inverse}
+  ${decl.color.font.muted}
   align-items: center;
   display: flex;
   flex-flow: row wrap;

@@ -4,7 +4,7 @@ import { theme } from '@theme';
 const { decl, vars } = theme;
 
 const root = toProps(css`
-  ${decl.color.background.dark}
+  ${decl.color.background.inverse}
   padding-bottom: var(${vars.spacing.step4});
   padding-top: var(${vars.spacing.step4});
 `);

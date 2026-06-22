@@ -33,15 +33,15 @@ const defaultLink = css`
   &::after {
     bottom: -16px;
     content: '';
-    ${decl.color.background.light};
+    ${decl.color.background.surface};
     display: block;
     height: 2px;
     left: 50%;
     position: absolute;
     right: 50%;
     transition:
-      left 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0s,
-      right 0.25s cubic-bezier(0.4, 0, 0.2, 1) 0s;
+      left var(${vars.motion.duration.base}) var(${vars.motion.easing.standard}),
+      right var(${vars.motion.duration.base}) var(${vars.motion.easing.standard});
   }
 
   ${decl.media.greaterThan.comfortable} {

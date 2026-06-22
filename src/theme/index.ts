@@ -5,6 +5,8 @@ import { font } from './font';
 import { grid } from './grid';
 import { header } from './header';
 import { media } from './media';
+import { motion } from './motion';
+import { radius } from './radius';
 import { boxShadow, dropShadow } from './shadow';
 import { spacing } from './spacing';
 
@@ -17,6 +19,8 @@ export const theme = {
     grid: grid.vars,
     header: header.vars,
     media: media.vars,
+    motion: motion.vars,
+    radius: radius.vars,
     spacing: spacing.vars,
   },
   decl: {
@@ -26,6 +30,7 @@ export const theme = {
     font: font.decl,
     grid: grid.decl,
     media: media.decl,
+    radius: radius.decl,
     anchor: `
       a {
         ${color.decl.font.accent}
@@ -46,6 +51,8 @@ export const theme = {
     ...grid.definitions,
     ...header.definitions,
     ...media.definitions,
+    ...motion.definitions,
+    ...radius.definitions,
     ...spacing.definitions,
   },
   util: {

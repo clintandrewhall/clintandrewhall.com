@@ -39,7 +39,7 @@ const totalLines = (percent: string) =>
       ${decl.font.sansSerif.regular}
       ${decl.font.size.stepN1}
       ${decl.color.font.light}
-      ${decl.color.background.dark}
+      ${decl.color.background.inverse}
       border-radius: 3px;
       display: inline-block;
       line-height: var(${vars.spacing.step5});

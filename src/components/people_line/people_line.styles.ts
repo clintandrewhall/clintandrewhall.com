@@ -26,8 +26,8 @@ export const root = toProps(css`
   &:before {
     background-image: linear-gradient(
       to left,
-      var(${vars.color.background.subtle}),
-      var(/* ${vars.color.background.light}:8 */)
+      var(${vars.color.background.inverseMuted}),
+      var(/* ${vars.color.background.surface}:8 */)
     );
     left: 0;
   }
@@ -35,8 +35,8 @@ export const root = toProps(css`
   &:after {
     background-image: linear-gradient(
       to right,
-      var(${vars.color.background.subtle}),
-      var(/* ${vars.color.background.light}:10 */)
+      var(${vars.color.background.inverseMuted}),
+      var(/* ${vars.color.background.surface}:10 */)
     );
     right: 0;
   }
@@ -85,10 +85,10 @@ const buttonGlyph = toProps(css`
 `);
 
 const pagination = toProps(css`
-  ${decl.color.background.subtle}
+  ${decl.color.background.inverseMuted}
 
   align-items: center;
-  border-radius: 999px;
+  border-radius: var(${vars.radius.pill});
   display: flex;
   gap: 4px;
   min-height: 22px;
@@ -99,10 +99,10 @@ const pagination = toProps(css`
 `);
 
 const dotBase = css`
-  background-color: var(${vars.color.background.subtlest});
+  background-color: var(${vars.color.background.surfaceMuted});
   border-bottom-width: 0;
   border-left-width: 0;
-  border-radius: 50%;
+  border-radius: var(${vars.radius.full});
   border-right-width: 0;
   border-top-width: 0;
   cursor: pointer;
@@ -121,7 +121,7 @@ const dotBase = css`
 `;
 
 const dotActive = css`
-  background-color: var(${vars.color.background.light});
+  background-color: var(${vars.color.background.surface});
   opacity: 1;
 `;
 

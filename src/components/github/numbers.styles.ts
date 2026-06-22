@@ -4,10 +4,10 @@ import { theme } from '@theme';
 const { vars, decl } = theme;
 
 const root = toProps(css`
-  ${decl.color.background.subtlest}
+  ${decl.color.background.surfaceMuted}
   ${decl.color.font.dark}
   border-color: var(${vars.color.border.medium});
-  border-radius: var(${vars.spacing.step0});
+  border-radius: var(${vars.radius.sm});
   border-style: solid;
   border-width: 1px;
   margin-bottom: var(${vars.spacing.step5});
@@ -51,7 +51,7 @@ const number = toProps(css`
 `);
 
 const name = toProps(css`
-  ${decl.color.font.medium}
+  ${decl.color.font.muted}
   ${decl.font.sansSerif.medium}
   ${decl.font.size.step0}
   flex: 1;

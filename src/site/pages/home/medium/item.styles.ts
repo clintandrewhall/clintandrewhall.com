@@ -68,7 +68,7 @@ export const category = toProps(css`
 
   & a {
     ${decl.font.sansSerif.bold}
-    ${decl.color.font.medium}
+    ${decl.color.font.muted}
 
     &:hover,
     &:focus,
@@ -78,7 +78,7 @@ export const category = toProps(css`
   }
 
   &::after {
-    ${decl.color.font.medium}
+    ${decl.color.font.muted}
     content: ', ';
   }
 

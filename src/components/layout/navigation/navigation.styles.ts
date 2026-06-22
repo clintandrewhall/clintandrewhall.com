@@ -40,7 +40,7 @@ const list = css`
   ${theme.decl.media.lessThan.comfortable} {
     align-items: stretch;
     ${decl.font.size.step2}
-    ${decl.color.background.dark}
+    ${decl.color.background.inverse}
     background-color: rgba(0, 0, 0, 0);
     bottom: auto;
     flex-direction: column;
@@ -56,9 +56,9 @@ const list = css`
     top: var(${vars.header.height});
     transform: translate3d(0, -100%, 0);
     transition:
-      transform 0.5s cubic-bezier(0.4, 0, 0.2, 1),
-      opacity 1s ease,
-      background-color 1s ease;
+      transform var(${vars.motion.duration.slow}) var(${vars.motion.easing.standard}),
+      opacity var(${vars.motion.duration.slower}) var(${vars.motion.easing.linear}),
+      background-color var(${vars.motion.duration.slower}) var(${vars.motion.easing.linear});
     width: 100%;
 
     & > li {
@@ -120,9 +120,9 @@ const button = css`
       left: 0;
       position: absolute;
       transition:
-        top 0.5s ease-in-out,
-        transform 0.5s ease-in-out,
-        bottom 0.5s ease-in-out;
+        top var(${vars.motion.duration.slow}) var(${vars.motion.easing.inOut}),
+        transform var(${vars.motion.duration.slow}) var(${vars.motion.easing.inOut}),
+        bottom var(${vars.motion.duration.slow}) var(${vars.motion.easing.inOut});
       width: 100%;
     }
 

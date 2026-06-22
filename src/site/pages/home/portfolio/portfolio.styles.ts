@@ -4,7 +4,7 @@ import { theme } from '@theme';
 const { decl } = theme;
 
 const root = toProps(css`
-  ${decl.color.background.subtlest}
+  ${decl.color.background.surfaceMuted}
 `);
 
 const header = toProps(css`

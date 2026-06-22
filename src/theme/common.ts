@@ -19,3 +19,6 @@ export const VAR_PREFIX_MEDIA = '--media';
 export const VAR_PREFIX_HEADER = '--header';
 export const VAR_PREFIX_BOX_SHADOW = '--box-shadow';
 export const VAR_PREFIX_DROP_SHADOW = '--drop-shadow';
+export const VAR_PREFIX_RADIUS = '--radius';
+export const VAR_PREFIX_MOTION_DURATION = '--motion-duration';
+export const VAR_PREFIX_MOTION_EASING = '--motion-easing';

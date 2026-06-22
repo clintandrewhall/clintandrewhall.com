@@ -9,7 +9,7 @@ const root = toProps(css`
   height: 100dvh;
   min-height: 100%;
   overflow: hidden;
-  background-color: var(${vars.color.background.dark});
+  background-color: var(${vars.color.background.inverse});
   container-type: size;
   container-name: hero;
   isolation: isolate;

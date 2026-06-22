@@ -15,7 +15,7 @@ const meta: Meta = {
 export default meta;
 
 const lightStage = css`
-  ${theme.decl.color.background.light}
+  ${theme.decl.color.background.surface}
   align-items: center;
   display: flex;
   flex-wrap: wrap;
@@ -24,7 +24,7 @@ const lightStage = css`
 `;
 
 const darkStage = css`
-  ${theme.decl.color.background.dark}
+  ${theme.decl.color.background.inverse}
   align-items: center;
   display: flex;
   flex-wrap: wrap;

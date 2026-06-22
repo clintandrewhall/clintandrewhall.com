@@ -31,7 +31,7 @@ const item = ({ showDivider = true, showLabel = true }) => {
     position: relative;
 
     &:before {
-      ${decl.color.font.text};
+      ${decl.color.font.muted};
       left: -2px;
       position: absolute;
     }

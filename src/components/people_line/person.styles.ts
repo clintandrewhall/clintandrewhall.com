@@ -41,7 +41,7 @@ const details = toProps(css`
 `);
 
 const avatar = toProps(css`
-  border-radius: 100%;
+  border-radius: var(${vars.radius.full});
   box-shadow: 0 0 0 var(--person-avatar-shadow) var(${vars.color.border.grid});
   height: var(--person-avatar-size);
   left: var(--person-avatar-shadow);

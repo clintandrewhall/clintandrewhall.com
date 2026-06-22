@@ -5,18 +5,16 @@ type FontColor =
   | 'dark'
   | 'light'
   | 'lightAccent'
-  | 'medium'
+  | 'muted'
   | 'dropShadow'
   | 'dim'
-  | 'text'
   | 'accent'
   | 'link';
 
 const themeValues: Record<FontColor, string> = {
   dark: '#0D0A0B',
   dropShadow: 'rgba(0, 0, 0, .5)',
-  medium: '#666666',
-  text: '#5f5f5f',
+  muted: '#5f5f5f',
   dim: '#999999',
   light: '#FFFFFF',
   lightAccent: '#CCCCCC',

@@ -32,11 +32,11 @@ const base = css`
   text-decoration: none;
   text-transform: uppercase;
   transition:
-    background-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-    border-color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-    box-shadow 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-    color 0.25s cubic-bezier(0.4, 0, 0.2, 1),
-    transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+    background-color var(${vars.motion.duration.base}) var(${vars.motion.easing.standard}),
+    border-color var(${vars.motion.duration.base}) var(${vars.motion.easing.standard}),
+    box-shadow var(${vars.motion.duration.base}) var(${vars.motion.easing.standard}),
+    color var(${vars.motion.duration.base}) var(${vars.motion.easing.standard}),
+    transform var(${vars.motion.duration.fast}) var(${vars.motion.easing.standard});
   user-select: none;
 
   &:focus-visible {
@@ -46,9 +46,9 @@ const base = css`
 `;
 
 const primary = css`
-  ${decl.color.background.dark}
+  ${decl.color.background.inverse}
 
-  border-radius: var(${vars.spacing.step1});
+  border-radius: var(${vars.radius.md});
   box-shadow: ${tintedDarkShadow.rest};
   color: var(${vars.color.font.light});
   display: flex;
@@ -72,13 +72,13 @@ const primary = css`
 
 const secondary = css`
   border-color: var(${vars.color.font.light});
-  border-radius: var(${vars.spacing.step0});
+  border-radius: var(${vars.radius.sm});
   color: var(${vars.color.font.light});
   padding: var(${vars.spacing.step3}) var(${vars.spacing.step4});
 
   &:hover,
   &:focus {
-    background-color: var(${vars.color.background.light});
+    background-color: var(${vars.color.background.surface});
     box-shadow: ${tintedLightShadow.hover};
     color: var(${vars.color.font.dark});
     transform: translateY(-1px);
@@ -91,10 +91,10 @@ const secondary = css`
 `;
 
 const icon = css`
-  ${decl.color.background.dark}
+  ${decl.color.background.inverse}
 
   border: 0;
-  border-radius: 50%;
+  border-radius: var(${vars.radius.full});
   box-shadow: ${tintedDarkShadow.rest};
   color: var(${vars.color.font.light});
   height: var(${vars.spacing.step7});
@@ -122,7 +122,7 @@ const icon = css`
 
   &:disabled:hover,
   &:disabled:focus {
-    ${decl.color.background.dark}
+    ${decl.color.background.inverse}
     box-shadow: ${tintedDarkShadow.rest};
     transform: none;
   }

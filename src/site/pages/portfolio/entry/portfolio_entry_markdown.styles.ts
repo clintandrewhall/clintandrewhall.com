@@ -7,7 +7,7 @@ const root = toProps(css`
   ${decl.anchor}
   ${decl.font.serif.regular}
   ${decl.font.size.step1}
-  ${decl.color.font.text}
+  ${decl.color.font.muted}
   ${decl.grid.area.full}
 
   h1,

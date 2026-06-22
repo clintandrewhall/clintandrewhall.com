@@ -6,7 +6,7 @@ const { vars, decl } = theme;
 const root = toProps(css`
   --spacing-sectionTop: calc(var(${vars.spacing.step8}) * 2);
   --spacing-sectionDivider: var(${vars.spacing.step1});
-  ${decl.color.background.dark}
+  ${decl.color.background.inverse}
 `);
 
 const header = toProps(css`
@@ -18,7 +18,7 @@ const header = toProps(css`
 const link = toProps(css`
   ${decl.color.border.light}
 
-  border-radius: var(${vars.spacing.step1});
+  border-radius: var(${vars.radius.md});
   border-style: solid;
   border-width: 2px;
 
@@ -27,7 +27,7 @@ const link = toProps(css`
     &:focus,
     &:active {
       ${decl.color.font.dark}
-      ${decl.color.background.light}
+      ${decl.color.background.surface}
     }
   }
 `);
