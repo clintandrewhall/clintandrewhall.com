@@ -30,10 +30,19 @@ const subtitle = toProps(css`
   margin-top: var(${vars.spacing.step2});
 `);
 
-const root = toProps(css`
+const rootCentered = toProps(css`
   position: relative;
   text-align: center;
   ${decl.grid.area.full}
 `);
+
+const rootLeft = toProps(css`
+  position: relative;
+  text-align: left;
+  ${decl.grid.area.byOne}
+`);
+
+const root = (align: 'centered' | 'left' = 'centered') =>
+  align === 'left' ? rootLeft : rootCentered;
 
 export default { root, name, title, subtitle };

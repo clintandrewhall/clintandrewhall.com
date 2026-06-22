@@ -1,8 +1,8 @@
 export const WIDTH_MIN = 320;
-export const FONT_SIZE_MIN = 10;
+export const FONT_SIZE_MIN = 12;
 export const TYPE_SCALE_MIN = 1.2;
 export const WIDTH_MAX = 1240;
-export const FONT_SIZE_MAX = 16;
+export const FONT_SIZE_MAX = 18;
 export const TYPE_SCALE_MAX = 1.25;
 
 export const VAR_PREFIX_COLOR = '--color';

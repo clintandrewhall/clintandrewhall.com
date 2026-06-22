@@ -10,6 +10,7 @@ export interface SectionHeaderProps {
   title?: string | null;
   subtitle?: string;
   noDivider?: boolean;
+  align?: 'centered' | 'left';
 }
 
 export const SectionHeader = ({
@@ -17,6 +18,7 @@ export const SectionHeader = ({
   title: titleText,
   subtitle: subtitleText,
   noDivider = false,
+  align = 'centered',
   className,
 }: SectionHeaderProps) => {
   const subtitle =
@@ -26,7 +28,7 @@ export const SectionHeader = ({
 
   return (
     <>
-      <header {...cx(styles.root, className)}>
+      <header {...cx(styles.root(align), className)}>
         <h2 {...styles.name}>{name}</h2>
         {title}
         {subtitle}
