@@ -10,6 +10,7 @@ const root = toProps(css`
   border-radius: var(${vars.radius.sm});
   border-style: solid;
   border-width: 1px;
+  container-type: inline-size;
   margin-bottom: var(${vars.spacing.step5});
   padding-bottom: var(${vars.spacing.step2});
   padding-left: var(${vars.spacing.step5});
@@ -22,7 +23,7 @@ const list = toProps(css`
   gap: var(${vars.spacing.step2});
   grid-template-columns: repeat(2, 1fr);
 
-  ${decl.media.greaterThan.comfortable} {
+  @container (min-width: 540px) {
     grid-template-columns: repeat(4, 1fr);
   }
 `);

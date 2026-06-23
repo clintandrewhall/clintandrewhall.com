@@ -20,7 +20,7 @@ export const Timeline = () => {
 
   return (
     <Section {...attributes}>
-      <Section.Header {...attributes} align="left" />
+      <Section.Header {...attributes} />
       <TimelineComponent
         items={work.slice(0, 6).map((item) => ({
           id: item.key,

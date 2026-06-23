@@ -25,24 +25,15 @@ const title = toProps(css`
 `);
 
 const subtitle = toProps(css`
-  ${decl.font.sansSerif.semiBold}
+  ${decl.font.serif.regular}
   ${decl.font.size.step1}
   margin-top: var(${vars.spacing.step2});
 `);
 
-const rootCentered = toProps(css`
+const root = toProps(css`
   position: relative;
   text-align: center;
   ${decl.grid.area.full}
 `);
-
-const rootLeft = toProps(css`
-  position: relative;
-  text-align: left;
-  ${decl.grid.area.byOne}
-`);
-
-const root = (align: 'centered' | 'left' = 'centered') =>
-  align === 'left' ? rootLeft : rootCentered;
 
 export default { root, name, title, subtitle };

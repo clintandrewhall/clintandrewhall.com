@@ -16,7 +16,6 @@ const summary = toProps(css`
   ${decl.font.size.step1}
   ${decl.grid.area.byOne}
   line-height: var(${vars.spacing.step8});
-  text-align: center;
 
   & p {
     margin-bottom: var(${vars.spacing.step4});
