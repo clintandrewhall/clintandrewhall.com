@@ -1355,17 +1355,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource-variable/montserrat@npm:^5.2.8":
-  version: 5.2.8
-  resolution: "@fontsource-variable/montserrat@npm:5.2.8"
-  checksum: 10/fb207dfb330d74f6c641e16b8538e13cdea9b1b5acbeab8f800d27dd0b0d8e892e0741f25ead34ab140633c1504379fe779a26e92dbce3735193cc7ccd8e3aa0
+"@fontsource-variable/geist@npm:^5.2.9":
+  version: 5.2.9
+  resolution: "@fontsource-variable/geist@npm:5.2.9"
+  checksum: 10/cd249dc1e60f96277b9b33f6c4626385d1337a6d3c40b659bdf49e95eabff8a38083d2c579446bdbf77a104906a9b2ba15ad98e2177accdad192dc97d06bb980
   languageName: node
   linkType: hard
 
-"@fontsource/libre-baskerville@npm:^5.2.10":
+"@fontsource-variable/newsreader@npm:^5.2.10":
   version: 5.2.10
-  resolution: "@fontsource/libre-baskerville@npm:5.2.10"
-  checksum: 10/5edd2c28e99ac0eae2d3c262d3c950bcabc2a60a3804b539c31d1713c1fc406417c73e650a59d01da1e9a2a914748c0f67caa9a340747211a0153a08b5f15530
+  resolution: "@fontsource-variable/newsreader@npm:5.2.10"
+  checksum: 10/895848186540b5800214a883960fc296e007126e271ce69fccd35369afe9cc085db2d4e44fefce3a24bde3001fd1785344c489b0f926c7ea426c16b857d0175d
   languageName: node
   linkType: hard
 
@@ -4353,8 +4353,8 @@ __metadata:
     "@babel/core": "npm:^7.29.7"
     "@babel/preset-react": "npm:^7.29.7"
     "@babel/preset-typescript": "npm:^7.29.7"
-    "@fontsource-variable/montserrat": "npm:^5.2.8"
-    "@fontsource/libre-baskerville": "npm:^5.2.10"
+    "@fontsource-variable/geist": "npm:^5.2.9"
+    "@fontsource-variable/newsreader": "npm:^5.2.10"
     "@linaria/atomic": "npm:^6.3.0"
     "@linaria/postcss-linaria": "npm:^6.3.0"
     "@octokit/rest": "npm:^22.0.1"

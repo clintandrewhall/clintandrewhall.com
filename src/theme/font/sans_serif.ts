@@ -8,7 +8,7 @@ export type SansSerifFamily = (typeof SANS_SERIF_FAMILIES)[number];
 
 // Font family values (for CSS custom properties)
 const families = {
-  family: `'Montserrat Variable', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif`,
+  family: `'Geist', system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif`,
 };
 
 const {

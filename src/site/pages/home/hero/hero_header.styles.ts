@@ -29,7 +29,7 @@ const headerGroup = toProps(css`
 `);
 
 const title = toProps(css`
-  ${decl.font.serif.bold}
+  ${decl.font.serif.displayBold}
   font-size: ${theme.util.font.fluidSize(1.75, 5, 'step5')};
   line-height: var(${vars.font.lineHeight.step6});
 
@@ -40,7 +40,7 @@ const title = toProps(css`
 `);
 
 const subtitle = toProps(css`
-  ${decl.font.serif.regular}
+  ${decl.font.serif.displayRegular}
   font-size: ${theme.util.font.fluidSize(1.25, 3.25, 'step4')};
   line-height: var(${vars.font.lineHeight.step5});
 

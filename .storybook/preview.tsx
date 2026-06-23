@@ -1,9 +1,8 @@
 import { StrictMode } from 'react';
 import type { Preview } from '@storybook/react-vite';
 import 'ress';
-import '@fontsource-variable/montserrat';
-import '@fontsource/libre-baskerville/400.css';
-import '@fontsource/libre-baskerville/700.css';
+import '@fontsource-variable/geist';
+import '@fontsource-variable/newsreader';
 import { withRouter } from 'storybook-addon-remix-react-router';
 
 const chromatic_viewports = {

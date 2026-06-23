@@ -6,9 +6,8 @@ import { type Weight, weight } from './weight';
 export const SERIF_FAMILIES = ['family'] as const;
 export type SerifFamily = (typeof SERIF_FAMILIES)[number];
 
-// Font family values (for CSS custom properties)
 const families = {
-  family: `'Libre Baskerville', ui-serif, 'Times New Roman', Times, serif`,
+  family: `'Newsreader', ui-serif, 'Times New Roman', Times, serif`,
 };
 
 export type SerifWeight = Extract<Weight, 'regular' | 'bold'>;
@@ -20,12 +19,19 @@ const {
   decl: familyDecl,
 } = buildTheme<SerifFamily, string>(families, varPrefix, 'font-family');
 
-const combinedStyles = Object.fromEntries(
-  Object.entries(weights).map(([weight, decl]) => [weight, `${familyDecl.family} ${decl}`]),
-) as Record<SerifWeight, string>;
+const TEXT_AXES = `font-variation-settings: "opsz" 14;`;
+const DISPLAY_AXES = `font-variation-settings: "opsz" 72;`;
+
+const compose = (w: string, axes: string) => `${familyDecl.family} ${w} ${axes}`;
 
 export const serif = {
   vars: { ...familyVars, weight: weights },
   definitions: { ...familyDefinitions },
-  decl: { ...combinedStyles, ...familyDecl },
+  decl: {
+    regular: compose(weights.regular, TEXT_AXES),
+    bold: compose(weights.bold, TEXT_AXES),
+    displayRegular: compose(weights.regular, DISPLAY_AXES),
+    displayBold: compose(weights.bold, DISPLAY_AXES),
+    ...familyDecl,
+  },
 };

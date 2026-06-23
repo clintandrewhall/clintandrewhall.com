@@ -53,9 +53,9 @@ const avatar = toProps(css`
 
 const quote = toProps(css`
   ${decl.font.serif.regular};
-  ${decl.color.font.dim};
-  ${decl.font.size.step0};
-  line-height: var(${vars.font.size.step3});
+  ${decl.color.font.lightAccent};
+  ${decl.font.size.step1};
+  line-height: var(${vars.font.size.step4});
   margin-bottom: var(${vars.spacing.step5});
 `);
 
