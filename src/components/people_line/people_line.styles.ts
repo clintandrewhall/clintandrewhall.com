@@ -48,7 +48,8 @@ const scroller = toProps(css`
   gap: var(--peopleline-gap);
   margin-left: auto;
   margin-right: auto;
-  max-width: var(${vars.grid.maxWidth});
+  /* One-up: cap the measure so a single testimonial doesn't run wide. */
+  max-width: 42rem;
   -webkit-overflow-scrolling: touch;
   overflow-x: auto;
   padding-inline: var(--peopleline-gap);
@@ -59,13 +60,17 @@ const scroller = toProps(css`
   &::-webkit-scrollbar {
     display: none;
   }
+
+  @container section (min-width: 900px) {
+    max-width: var(${vars.grid.maxWidth});
+  }
 `);
 
 const item = toProps(css`
   flex: 0 0 var(--peopleline-slide-width);
   scroll-snap-align: start;
 
-  @container section (min-width: 630px) {
+  @container section (min-width: 900px) {
     flex-basis: calc((100% - var(--peopleline-gap)) / 2);
   }
 `);
