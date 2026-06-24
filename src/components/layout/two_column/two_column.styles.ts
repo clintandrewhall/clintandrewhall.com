@@ -9,8 +9,14 @@ const root = toProps(css`
   grid-gap: var(${vars.grid.gutter});
   grid-template-columns: 1fr;
 
-  @container section (min-width: 630px) {
+  /* Single column: cap the measure so prose doesn't run long on wide containers.
+     Threshold matches the timeline and testimonials (editorial two-column). */
+  margin-inline: auto;
+  max-width: 42rem;
+
+  @container section (min-width: 900px) {
     grid-template-columns: 1fr 1fr;
+    max-width: none;
   }
 `);
 
