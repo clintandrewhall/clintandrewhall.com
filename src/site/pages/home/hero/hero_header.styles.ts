@@ -53,6 +53,7 @@ const subtitle = toProps(css`
 const linkList = toProps(css`
   display: flex;
   flex-direction: row;
+  flex-wrap: wrap;
   gap: var(${vars.spacing.step9});
   list-style: none;
 `);

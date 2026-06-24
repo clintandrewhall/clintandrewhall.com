@@ -17,7 +17,10 @@ const page = css`
   display: grid;
   gap: 24px;
   grid-template-columns: 1fr 1fr;
-  padding: 48px;
+  padding-bottom: 48px;
+  padding-left: 48px;
+  padding-right: 48px;
+  padding-top: 48px;
 `;
 
 const group = css`
@@ -26,16 +29,24 @@ const group = css`
   display: flex;
   flex-direction: column;
   gap: 12px;
-  padding: 24px;
+  padding-bottom: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 24px;
 `;
 
 const swatch = css`
   align-items: center;
-  border: 1px solid rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.08);
+  border-style: solid;
+  border-width: 1px;
   border-radius: var(${theme.vars.radius.sm});
   display: flex;
   gap: 16px;
-  padding: 12px;
+  padding-bottom: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-top: 12px;
 `;
 
 const chip = css`
@@ -76,7 +87,9 @@ const fontDark = css`
 `;
 const fontLight = css`
   background-color: #fff;
-  border: 1px solid #eee;
+  border-color: #eee;
+  border-style: solid;
+  border-width: 1px;
 `;
 const fontMuted = css`
   background-color: #5f5f5f;

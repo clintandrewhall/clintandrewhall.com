@@ -13,7 +13,8 @@ const root = (background: 'clear' | 'opaque') => {
     position: fixed;
     right: 0;
     top: 0;
-    transition: background-color var(${vars.motion.duration.slower}) var(${vars.motion.easing.linear});
+    transition: background-color var(${vars.motion.duration.slower})
+      var(${vars.motion.easing.linear});
     z-index: 1000;
   `;
 

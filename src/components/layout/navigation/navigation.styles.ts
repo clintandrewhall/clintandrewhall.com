@@ -16,14 +16,14 @@ const root = css`
   letter-spacing: calc(var(${vars.spacing.step1}) / 2);
   text-transform: uppercase;
 
-  ${decl.media.lessThan.comfortable} {
+  ${decl.media.lessThan.nav} {
     --item-height: calc(var(${vars.font.size.step2}) + (var(${vars.spacing.step7}) * 2) + 1px);
     --list-height: calc((var(--item-height) * 5) + 1px);
   }
 `;
 
 const rootClosed = css`
-  ${theme.decl.media.lessThan.comfortable} {
+  ${theme.decl.media.lessThan.nav} {
     /* pointer-events: none; */
   }
 `;
@@ -37,7 +37,7 @@ const list = css`
   justify-content: end;
   list-style: none;
 
-  ${theme.decl.media.lessThan.comfortable} {
+  ${theme.decl.media.lessThan.nav} {
     align-items: stretch;
     ${decl.font.size.step2}
     ${decl.color.background.inverse}
@@ -81,7 +81,7 @@ const list = css`
 `;
 
 const listOpen = css`
-  ${theme.decl.media.lessThan.comfortable} {
+  ${theme.decl.media.lessThan.nav} {
     background-color: rgba(0, 0, 0, 1);
     opacity: 1;
     pointer-events: auto;
@@ -135,13 +135,13 @@ const button = css`
     }
   }
 
-  ${decl.media.greaterThan.comfortable} {
+  ${decl.media.greaterThan.nav} {
     display: none;
   }
 `;
 
 const buttonOpen = css`
-  ${theme.decl.media.lessThan.comfortable} {
+  ${theme.decl.media.lessThan.nav} {
     & > span {
       background-color: transparent;
 

@@ -2,7 +2,7 @@ import { Fragment, useEffect, useRef, useState } from 'react';
 import { useMediaQuery } from 'react-responsive';
 
 import { type TopicId, topicIds } from '@lib/site';
-import { BREAKPOINT_COMFORTABLE } from '@theme/media';
+import { BREAKPOINT_NAV } from '@theme/media';
 
 import { NavigationLink, type NavigationLinkProps } from './navigation_link';
 
@@ -21,7 +21,7 @@ export const Navigation = ({
 }: NavigationProps) => {
   const menuId = 'site-navigation-menu';
   const mediaQueryMatch = useMediaQuery({
-    maxWidth: BREAKPOINT_COMFORTABLE,
+    maxWidth: BREAKPOINT_NAV,
   });
 
   const [isClient, setIsClient] = useState(false);

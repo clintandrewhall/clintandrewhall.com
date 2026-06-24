@@ -19,7 +19,10 @@ const page = css`
   display: grid;
   gap: 48px;
   grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-  padding: 48px;
+  padding-bottom: 48px;
+  padding-left: 48px;
+  padding-right: 48px;
+  padding-top: 48px;
 `;
 
 const tile = css`

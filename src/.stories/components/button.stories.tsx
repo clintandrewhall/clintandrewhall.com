@@ -1,9 +1,8 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
+import { Button } from '@components/button';
 import { css } from '@lib/css';
 import { theme } from '@theme';
-
-import { Button } from '@components/button';
 
 import { decorators } from '../decorators';
 
@@ -20,7 +19,10 @@ const lightStage = css`
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
-  padding: 48px;
+  padding-bottom: 48px;
+  padding-left: 48px;
+  padding-right: 48px;
+  padding-top: 48px;
 `;
 
 const darkStage = css`
@@ -29,7 +31,10 @@ const darkStage = css`
   display: flex;
   flex-wrap: wrap;
   gap: 24px;
-  padding: 48px;
+  padding-bottom: 48px;
+  padding-left: 48px;
+  padding-right: 48px;
+  padding-top: 48px;
 `;
 
 export const Primary: StoryObj = {

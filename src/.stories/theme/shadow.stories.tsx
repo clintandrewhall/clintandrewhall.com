@@ -19,7 +19,10 @@ const page = css`
   display: grid;
   gap: 48px;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  padding: 48px;
+  padding-bottom: 48px;
+  padding-left: 48px;
+  padding-right: 48px;
+  padding-top: 48px;
 `;
 
 const card = css`
@@ -31,7 +34,10 @@ const card = css`
   gap: 12px;
   justify-content: center;
   min-height: 140px;
-  padding: 24px;
+  padding-bottom: 24px;
+  padding-left: 24px;
+  padding-right: 24px;
+  padding-top: 24px;
 `;
 
 const swatch = css`

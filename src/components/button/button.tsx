@@ -3,7 +3,7 @@ import { Link, type LinkProps } from 'react-router';
 
 import { cx } from '@lib/css';
 
-import { styles, type ButtonVariant } from './button.styles';
+import { type ButtonVariant, styles } from './button.styles';
 
 type BaseProps = {
   children: ReactNode;

@@ -18,7 +18,7 @@ const defaultLink = css`
   margin-right: var(${vars.spacing.step4});
   position: relative;
 
-  ${decl.media.between.comfortableAndExpanded} {
+  ${decl.media.between.navAndExpanded} {
     margin-left: var(${vars.spacing.step3});
     margin-right: var(${vars.spacing.step3});
   }
@@ -44,7 +44,7 @@ const defaultLink = css`
       right var(${vars.motion.duration.base}) var(${vars.motion.easing.standard});
   }
 
-  ${decl.media.greaterThan.comfortable} {
+  ${decl.media.greaterThan.nav} {
     &:hover {
       ${decl.font.sansSerif.extraBold}
       &:after {

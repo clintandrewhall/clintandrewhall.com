@@ -1,8 +1,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react';
 
-import { cx } from '@lib/css';
-
 import { Button } from '@components/button';
+import { cx } from '@lib/css';
 
 import styles from './people_line.styles';
 

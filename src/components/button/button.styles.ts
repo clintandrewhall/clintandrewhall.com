@@ -20,7 +20,9 @@ const base = css`
 
   align-items: center;
   background-color: transparent;
-  border: 2px solid transparent;
+  border-color: transparent;
+  border-style: solid;
+  border-width: 2px;
   cursor: pointer;
   display: inline-flex;
   font: inherit;
@@ -31,6 +33,7 @@ const base = css`
   text-align: center;
   text-decoration: none;
   text-transform: uppercase;
+  white-space: nowrap;
   transition:
     background-color var(${vars.motion.duration.base}) var(${vars.motion.easing.standard}),
     border-color var(${vars.motion.duration.base}) var(${vars.motion.easing.standard}),
@@ -53,7 +56,10 @@ const primary = css`
   color: var(${vars.color.font.light});
   display: flex;
   line-height: var(${vars.font.size.step3});
-  padding: var(${vars.spacing.step4}) var(${vars.spacing.step9});
+  padding-bottom: var(${vars.spacing.step4});
+  padding-left: var(${vars.spacing.step9});
+  padding-right: var(${vars.spacing.step9});
+  padding-top: var(${vars.spacing.step4});
   width: 100%;
 
   &:hover,
@@ -74,7 +80,10 @@ const secondary = css`
   border-color: var(${vars.color.font.light});
   border-radius: var(${vars.radius.sm});
   color: var(${vars.color.font.light});
-  padding: var(${vars.spacing.step3}) var(${vars.spacing.step4});
+  padding-bottom: var(${vars.spacing.step3});
+  padding-left: var(${vars.spacing.step4});
+  padding-right: var(${vars.spacing.step4});
+  padding-top: var(${vars.spacing.step3});
 
   &:hover,
   &:focus {
@@ -93,13 +102,16 @@ const secondary = css`
 const icon = css`
   ${decl.color.background.inverse}
 
-  border: 0;
+  border-width: 0;
   border-radius: var(${vars.radius.full});
   box-shadow: ${tintedDarkShadow.rest};
   color: var(${vars.color.font.light});
   height: var(${vars.spacing.step7});
   letter-spacing: 0;
-  padding: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
   width: var(${vars.spacing.step7});
 
   &:hover,

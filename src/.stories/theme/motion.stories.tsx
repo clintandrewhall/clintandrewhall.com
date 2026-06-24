@@ -19,7 +19,10 @@ const page = css`
   display: grid;
   gap: 32px;
   grid-template-columns: 1fr;
-  padding: 48px;
+  padding-bottom: 48px;
+  padding-left: 48px;
+  padding-right: 48px;
+  padding-top: 48px;
 `;
 
 const swatchRow = css`

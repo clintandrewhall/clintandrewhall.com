@@ -14,6 +14,7 @@ const link = toProps(css`
   ${decl.color.font.light}
   ${decl.font.size.step3}
   letter-spacing: -1px;
+  white-space: nowrap;
 
   ${decl.media.between.comfortableAndExpanded} {
     ${decl.font.size.step1}

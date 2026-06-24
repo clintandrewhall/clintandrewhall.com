@@ -8,7 +8,7 @@ const root = toProps(css`
   ${decl.font.sansSerif.semiBold}
   margin-top: var(${vars.spacing.step4});
 
-  ${decl.media.lessThan.comfortable} {
+  ${decl.media.lessThan.nav} {
     ${decl.grid.area.byOne}
   }
 `);

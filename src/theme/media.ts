@@ -5,10 +5,15 @@ export const BREAKPOINT_COMPACT = WIDTH_MIN;
 export const BREAKPOINT_COMFORTABLE = Math.round(Math.sqrt(WIDTH_MIN * WIDTH_MAX));
 export const BREAKPOINT_EXPANDED = WIDTH_MAX;
 
+// Width below which the horizontal nav collapses to a menu. The full
+// nav plus the wordmark needs more room than `comfortable` provides.
+export const BREAKPOINT_NAV = 820;
+
 const { vars, definitions } = buildTheme(
   {
     compact: `${BREAKPOINT_COMPACT}px`,
     comfortable: `${BREAKPOINT_COMFORTABLE}px`,
+    nav: `${BREAKPOINT_NAV}px`,
     expanded: `${BREAKPOINT_EXPANDED}px`,
   },
   varPrefix,
@@ -29,18 +34,21 @@ const getOrientationGroup = (queries: Record<string, string>) => ({
 const lessThan = {
   compact: `@media (max-width: ${BREAKPOINT_COMPACT - 1}px)`,
   comfortable: `@media (max-width: ${BREAKPOINT_COMFORTABLE - 1}px)`,
+  nav: `@media (max-width: ${BREAKPOINT_NAV - 1}px)`,
   expanded: `@media (max-width: ${BREAKPOINT_EXPANDED - 1}px)`,
 };
 
 const greaterThan = {
   compact: `@media (min-width: ${BREAKPOINT_COMPACT}px)`,
   comfortable: `@media (min-width: ${BREAKPOINT_COMFORTABLE}px)`,
+  nav: `@media (min-width: ${BREAKPOINT_NAV}px)`,
   expanded: `@media (min-width: ${BREAKPOINT_EXPANDED}px)`,
 };
 
 const between = {
   compactAndComfortable: `@media (min-width: ${BREAKPOINT_COMPACT}px) and (max-width: ${BREAKPOINT_COMFORTABLE - 1}px)`,
   comfortableAndExpanded: `@media (min-width: ${BREAKPOINT_COMFORTABLE}px) and (max-width: ${BREAKPOINT_EXPANDED - 1}px)`,
+  navAndExpanded: `@media (min-width: ${BREAKPOINT_NAV}px) and (max-width: ${BREAKPOINT_EXPANDED - 1}px)`,
 };
 
 const decl = {
