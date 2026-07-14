@@ -1,0 +1,1255 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Clint Andrew Hall — Redesign Direction</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Geist:wght@300..700&family=Geist+Mono:wght@400;500&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      /* ============================================================
+         TOKENS
+         Direction: "The Retrospective" — a designed career monograph.
+         Committed warm palette. Grotesque display + neutral UI sans +
+         mono for real data. Two worlds: STAGE (ink) and WORKBENCH (paper).
+         ============================================================ */
+      :root {
+        --ink: #17120e; /* warm near-black (the stage) */
+        --ink-2: #211a14; /* raised dark surface */
+        --ink-line: #3a3128; /* hairline on dark */
+        --paper: #f2f1ee; /* near-neutral off-white (chroma ~0) */
+        --paper-2: #e8e6e0; /* recessed light surface */
+        --paper-line: #d5d2ca; /* hairline on light */
+
+        --text-dark: #211d18; /* body on paper */
+        --text-muted: #5b544c; /* meta on paper (AA) */
+        --text-paper: #f2f1ee; /* body on ink */
+        --text-paper-muted: #a89f93; /* meta on ink */
+
+        --ember: #dd4a26; /* the one committed accent */
+        --ember-ink: #b23a1c; /* AA-safe ember for text on paper */
+        --ember-glow: #ff6a40;
+
+        --maxw: 78rem;
+        --gutter: clamp(1.25rem, 0.7rem + 2.6vw, 3rem);
+
+        --step--1: clamp(0.78rem, 0.75rem + 0.15vw, 0.86rem);
+        --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+        --step-1: clamp(1.2rem, 1.12rem + 0.4vw, 1.5rem);
+        --step-2: clamp(1.45rem, 1.28rem + 0.85vw, 2.1rem);
+        --step-3: clamp(1.9rem, 1.55rem + 1.7vw, 3rem);
+        --step-4: clamp(2.6rem, 1.9rem + 3.4vw, 4.6rem);
+        --step-5: clamp(3rem, 1.7rem + 6.2vw, 6rem);
+
+        --ff-display: "Bricolage Grotesque", ui-sans-serif, system-ui, sans-serif;
+        --ff-sans: "Geist", ui-sans-serif, system-ui, -apple-system, sans-serif;
+        --ff-mono: "Geist Mono", ui-monospace, "SF Mono", Menlo, monospace;
+
+        --ease: cubic-bezier(0.16, 1, 0.3, 1); /* out-expo-ish */
+        --dur: 0.9s;
+      }
+
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      html {
+        scroll-behavior: smooth;
+      }
+      body {
+        font-family: var(--ff-sans);
+        background: var(--paper);
+        color: var(--text-dark);
+        font-size: var(--step-0);
+        line-height: 1.65;
+        -webkit-font-smoothing: antialiased;
+        text-rendering: optimizeLegibility;
+        overflow-x: hidden;
+      }
+      img {
+        display: block;
+        max-width: 100%;
+      }
+      a {
+        color: inherit;
+      }
+
+      .wrap {
+        width: 100%;
+        max-width: var(--maxw);
+        margin-inline: auto;
+        padding-inline: var(--gutter);
+      }
+
+      .mono {
+        font-family: var(--ff-mono);
+        font-size: var(--step--1);
+        letter-spacing: 0.04em;
+        text-transform: uppercase;
+      }
+
+      .display {
+        font-family: var(--ff-display);
+        font-weight: 800;
+        line-height: 0.98;
+        letter-spacing: -0.025em;
+        text-wrap: balance;
+      }
+
+      /* ============================================================
+         HEADER
+         ============================================================ */
+      header.site {
+        position: fixed;
+        inset: 0 0 auto 0;
+        z-index: 100;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        padding: 1.1rem var(--gutter);
+        color: var(--text-paper);
+        mix-blend-mode: difference;
+      }
+      header.site .brand {
+        font-family: var(--ff-display);
+        font-weight: 800;
+        font-size: 1.15rem;
+        letter-spacing: -0.03em;
+      }
+      header.site .brand b {
+        color: var(--ember-glow);
+      }
+      header.site nav {
+        display: flex;
+        gap: clamp(0.8rem, 2vw, 1.8rem);
+      }
+      header.site nav a {
+        font-family: var(--ff-mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        text-decoration: none;
+        opacity: 0.85;
+        transition: opacity 0.3s;
+      }
+      header.site nav a:hover {
+        opacity: 1;
+      }
+      @media (max-width: 720px) {
+        header.site nav {
+          display: none;
+        }
+      }
+
+      /* ============================================================
+         HERO — the STAGE
+         ============================================================ */
+      .hero {
+        position: relative;
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        background: var(--ink);
+        color: var(--text-paper);
+        overflow: hidden;
+        isolation: isolate;
+      }
+      .hero__photo {
+        position: absolute;
+        inset: 0;
+        z-index: -2;
+        background-image: url("../src/content/images/hero.jpg");
+        background-size: cover;
+        background-position: 66% center;
+        filter: saturate(1.08) contrast(1.04) brightness(1.05);
+        transform: scale(1.04);
+        animation: heroZoom 18s var(--ease) forwards;
+      }
+      @keyframes heroZoom {
+        to {
+          transform: scale(1);
+        }
+      }
+      .hero__scrim {
+        position: absolute;
+        inset: 0;
+        z-index: -1;
+        background:
+          linear-gradient(90deg, rgba(23, 18, 14, 0.95) 0%, rgba(23, 18, 14, 0.78) 30%, rgba(23, 18, 14, 0.12) 60%, rgba(23, 18, 14, 0.28) 100%),
+          linear-gradient(0deg, rgba(23, 18, 14, 0.95) 2%, rgba(23, 18, 14, 0) 42%);
+      }
+      .hero__inner {
+        width: 100%;
+        max-width: var(--maxw);
+        margin-inline: auto;
+        padding: 0 var(--gutter) clamp(1.5rem, 4vh, 3rem);
+      }
+      .hero__meta {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 1.5rem;
+        color: var(--ember-glow);
+        margin-bottom: clamp(1rem, 3vh, 2rem);
+      }
+      .hero__meta span {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.55rem;
+      }
+      .hero__meta span::before {
+        content: "";
+        width: 6px;
+        height: 6px;
+        background: var(--ember);
+        border-radius: 50%;
+      }
+      .hero h1 {
+        font-family: var(--ff-display);
+        font-weight: 800;
+        font-size: var(--step-5);
+        line-height: 0.9;
+        letter-spacing: -0.035em;
+        text-wrap: balance;
+        max-width: 15ch;
+      }
+      .hero h1 .light {
+        font-weight: 400;
+        color: var(--text-paper-muted);
+      }
+      .hero__lede {
+        margin-top: clamp(1.2rem, 3vh, 2rem);
+        font-size: var(--step-1);
+        line-height: 1.4;
+        max-width: 30ch;
+        font-weight: 300;
+        color: #e7e2da;
+      }
+      .hero__lede b {
+        font-weight: 500;
+        color: #fff;
+      }
+
+      /* bottom index rail */
+      .index {
+        border-top: 1px solid var(--ink-line);
+        margin-top: clamp(1.5rem, 5vh, 3.5rem);
+      }
+      .index ol {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        list-style: none;
+      }
+      .index li {
+        border-left: 1px solid var(--ink-line);
+      }
+      .index li:first-child {
+        border-left: 0;
+      }
+      .index a {
+        display: block;
+        padding: 1rem 0.9rem 1.1rem;
+        text-decoration: none;
+        transition: background 0.3s;
+      }
+      .index a:hover {
+        background: rgba(221, 74, 38, 0.14);
+      }
+      .index .n {
+        font-family: var(--ff-mono);
+        font-size: 0.7rem;
+        color: var(--ember);
+      }
+      .index .t {
+        display: block;
+        margin-top: 0.35rem;
+        font-weight: 500;
+        font-size: clamp(0.8rem, 2vw, 1rem);
+      }
+      @media (max-width: 720px) {
+        .index ol {
+          grid-template-columns: repeat(2, 1fr);
+        }
+        .index li:nth-child(3) {
+          border-left: 0;
+        }
+        .index li:nth-child(n + 3) a {
+          border-top: 1px solid var(--ink-line);
+        }
+      }
+
+      /* ============================================================
+         SECTION FURNITURE
+         ============================================================ */
+      section {
+        padding-block: clamp(4rem, 10vh, 8rem);
+      }
+      .head {
+        display: flex;
+        align-items: baseline;
+        gap: 1rem;
+        margin-bottom: clamp(2rem, 5vh, 3.5rem);
+      }
+      .head .kicker {
+        color: var(--ember-ink);
+        white-space: nowrap;
+      }
+      .head h2 {
+        font-family: var(--ff-display);
+        font-weight: 800;
+        font-size: var(--step-4);
+        line-height: 0.95;
+        letter-spacing: -0.03em;
+        text-wrap: balance;
+      }
+      .rule {
+        flex: 1;
+        height: 1px;
+        background: var(--paper-line);
+        align-self: center;
+      }
+
+      /* ============================================================
+         ABOUT — the WORKBENCH
+         ============================================================ */
+      .about {
+        background: var(--paper);
+      }
+      .about__grid {
+        display: grid;
+        grid-template-columns: 1.15fr 0.85fr;
+        gap: clamp(2rem, 5vw, 5rem);
+        align-items: start;
+      }
+      @media (max-width: 860px) {
+        .about__grid {
+          grid-template-columns: 1fr;
+        }
+      }
+      .about__lead {
+        font-family: var(--ff-display);
+        font-weight: 500;
+        font-size: var(--step-2);
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        text-wrap: balance;
+        margin-bottom: 1.5rem;
+      }
+      .about__body p {
+        max-width: 60ch;
+        margin-bottom: 1.1rem;
+        color: var(--text-dark);
+        text-wrap: pretty;
+      }
+      .about__body a {
+        color: var(--ember-ink);
+        text-underline-offset: 3px;
+        text-decoration-thickness: 1px;
+      }
+      .fieldnotes {
+        border-top: 2px solid var(--ink);
+        padding-top: 1rem;
+      }
+      .fieldnotes .cap {
+        color: var(--text-muted);
+        margin-bottom: 0.8rem;
+      }
+      .fieldnotes dl {
+        display: grid;
+        gap: 0;
+      }
+      .fieldnotes div {
+        display: grid;
+        grid-template-columns: 9ch 1fr;
+        gap: 0.75rem;
+        padding: 0.6rem 0;
+        border-bottom: 1px solid var(--paper-line);
+      }
+      .fieldnotes dt {
+        font-family: var(--ff-mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.03em;
+        text-transform: uppercase;
+        color: var(--text-muted);
+        padding-top: 0.15rem;
+      }
+      .fieldnotes dd {
+        font-weight: 500;
+        line-height: 1.35;
+      }
+
+      /* ============================================================
+         SELECTED WORK
+         ============================================================ */
+      .work {
+        background: var(--ink);
+        color: var(--text-paper);
+      }
+      .work .head h2,
+      .work .head .kicker {
+        color: var(--text-paper);
+      }
+      .work .kicker {
+        color: var(--ember-glow) !important;
+      }
+      .work .rule {
+        background: var(--ink-line);
+      }
+      .worklist {
+        border-top: 1px solid var(--ink-line);
+      }
+      .work-item {
+        display: grid;
+        grid-template-columns: 4rem 1fr auto;
+        gap: clamp(1rem, 3vw, 2.5rem);
+        align-items: center;
+        padding: clamp(1.4rem, 3vw, 2.2rem) 0;
+        border-bottom: 1px solid var(--ink-line);
+        text-decoration: none;
+        position: relative;
+      }
+      .work-item .wn,
+      .work-item > span:nth-child(2) {
+        transition: transform 0.5s var(--ease);
+      }
+      .work-item:hover .wn,
+      .work-item:hover > span:nth-child(2) {
+        transform: translateX(0.7rem);
+      }
+      .work-item .wn {
+        font-family: var(--ff-mono);
+        color: var(--ember-glow);
+        font-size: 0.82rem;
+      }
+      .work-item .wt {
+        font-family: var(--ff-display);
+        font-weight: 700;
+        font-size: var(--step-3);
+        line-height: 1;
+        letter-spacing: -0.02em;
+      }
+      .work-item .wd {
+        color: var(--text-paper-muted);
+        margin-top: 0.5rem;
+        max-width: 52ch;
+        font-size: var(--step-0);
+        line-height: 1.45;
+      }
+      .work-item .wtags {
+        display: flex;
+        gap: 0.4rem;
+        margin-top: 0.7rem;
+        flex-wrap: wrap;
+      }
+      .work-item .wtags i {
+        font-family: var(--ff-mono);
+        font-style: normal;
+        font-size: 0.66rem;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        color: var(--text-paper-muted);
+        border: 1px solid var(--ink-line);
+        border-radius: 999px;
+        padding: 0.2rem 0.6rem;
+      }
+      .work-item .wthumb {
+        width: clamp(7rem, 16vw, 13rem);
+        aspect-ratio: 16/10;
+        overflow: hidden;
+        border-radius: 3px;
+        background: var(--ink-2);
+        filter: grayscale(1) contrast(1.05) brightness(0.8);
+        transition: filter 0.6s var(--ease), transform 0.6s var(--ease);
+      }
+      .work-item:hover .wthumb {
+        filter: grayscale(0) contrast(1) brightness(1);
+        transform: scale(1.03);
+      }
+      .work-item .wthumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+      .work-item .arrow {
+        position: absolute;
+        right: 0;
+        bottom: clamp(1.4rem, 3vw, 2.2rem);
+        color: var(--ember-glow);
+        opacity: 0;
+        transform: translateX(-8px);
+        transition: all 0.5s var(--ease);
+        font-size: 1.4rem;
+      }
+      .work-item:hover .arrow {
+        opacity: 1;
+        transform: translateX(0);
+      }
+      @media (max-width: 720px) {
+        .work-item {
+          grid-template-columns: 2.4rem 1fr;
+        }
+        .work-item .wthumb {
+          display: none;
+        }
+      }
+
+      /* ============================================================
+         CAREER — the SPINE (timeline)
+         ============================================================ */
+      .career {
+        background: var(--paper);
+      }
+      .timeline {
+        position: relative;
+      }
+      .era {
+        display: grid;
+        grid-template-columns: 12rem 1fr;
+        gap: clamp(1rem, 3vw, 3rem);
+        padding-block: clamp(1.5rem, 4vh, 3rem);
+        border-top: 1px solid var(--paper-line);
+      }
+      .era:first-child {
+        border-top: 2px solid var(--ink);
+      }
+      .era__co {
+        position: sticky;
+        top: 5rem;
+        align-self: start;
+      }
+      .era__co .co {
+        font-family: var(--ff-display);
+        font-weight: 800;
+        font-size: var(--step-2);
+        line-height: 0.95;
+        letter-spacing: -0.02em;
+      }
+      .era__co .span {
+        font-family: var(--ff-mono);
+        font-size: 0.74rem;
+        color: var(--text-muted);
+        margin-top: 0.4rem;
+        display: block;
+      }
+      .era__co.now .co::after {
+        content: "NOW";
+        display: inline-block;
+        vertical-align: middle;
+        margin-left: 0.6rem;
+        font-family: var(--ff-mono);
+        font-size: 0.6rem;
+        letter-spacing: 0.1em;
+        color: var(--paper);
+        background: var(--ember);
+        padding: 0.2rem 0.45rem;
+        border-radius: 999px;
+        transform: translateY(-0.2em);
+      }
+      .roles {
+        display: grid;
+        gap: 0.2rem;
+      }
+      .role {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 1.1rem;
+        padding: 0.9rem 0;
+        border-bottom: 1px solid var(--paper-line);
+      }
+      .role:last-child {
+        border-bottom: 0;
+      }
+      .role__node {
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        border: 2px solid var(--text-muted);
+        margin-top: 0.5rem;
+        background: var(--paper);
+      }
+      .role.active .role__node {
+        border-color: var(--ember);
+        background: var(--ember);
+        box-shadow: 0 0 0 4px rgba(221, 74, 38, 0.18);
+      }
+      .role__pos {
+        font-family: var(--ff-display);
+        font-weight: 600;
+        font-size: var(--step-1);
+        line-height: 1.1;
+        letter-spacing: -0.01em;
+      }
+      .role__when {
+        font-family: var(--ff-mono);
+        font-size: 0.72rem;
+        color: var(--text-muted);
+        margin: 0.3rem 0 0.5rem;
+      }
+      .role__sum {
+        color: var(--text-dark);
+        max-width: 62ch;
+        font-size: var(--step-0);
+      }
+      .role__tags {
+        display: flex;
+        gap: 0.4rem;
+        margin-top: 0.7rem;
+        flex-wrap: wrap;
+      }
+      .role__tags i {
+        font-family: var(--ff-mono);
+        font-style: normal;
+        font-size: 0.64rem;
+        text-transform: uppercase;
+        letter-spacing: 0.04em;
+        color: var(--text-muted);
+        background: var(--paper-2);
+        border-radius: 3px;
+        padding: 0.18rem 0.5rem;
+      }
+      @media (max-width: 760px) {
+        .era {
+          grid-template-columns: 1fr;
+          gap: 1rem;
+        }
+        .era__co {
+          position: static;
+        }
+      }
+
+      /* ============================================================
+         REFERENCES — back to the STAGE
+         ============================================================ */
+      .refs {
+        background: var(--ink);
+        color: var(--text-paper);
+      }
+      .refs .head h2 {
+        color: var(--text-paper);
+      }
+      .refs .kicker {
+        color: var(--ember-glow);
+      }
+      .refs .rule {
+        background: var(--ink-line);
+      }
+      .quote-lead {
+        font-family: var(--ff-display);
+        font-weight: 500;
+        font-size: var(--step-3);
+        line-height: 1.15;
+        letter-spacing: -0.02em;
+        max-width: 20ch;
+        text-wrap: balance;
+        margin-bottom: 2.5rem;
+      }
+      .quote-lead .em {
+        color: var(--ember-glow);
+      }
+      .refgrid {
+        columns: 3 18rem;
+        column-gap: clamp(1rem, 2.5vw, 2rem);
+      }
+      .ref {
+        break-inside: avoid;
+        margin-bottom: clamp(1rem, 2.5vw, 2rem);
+        padding: 1.4rem;
+        border: 1px solid var(--ink-line);
+        border-radius: 4px;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), transparent);
+      }
+      .ref p {
+        font-size: 0.98rem;
+        line-height: 1.55;
+        color: #e7e2da;
+      }
+      .ref footer {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+        margin-top: 1.1rem;
+        padding-top: 1rem;
+        border-top: 1px solid var(--ink-line);
+      }
+      .ref img {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        object-fit: cover;
+        filter: grayscale(0.4);
+      }
+      .ref .who {
+        font-weight: 600;
+        font-size: 0.9rem;
+        line-height: 1.2;
+      }
+      .ref .role-t {
+        font-family: var(--ff-mono);
+        font-size: 0.66rem;
+        text-transform: uppercase;
+        letter-spacing: 0.03em;
+        color: var(--text-paper-muted);
+        margin-top: 0.15rem;
+      }
+
+      /* ============================================================
+         SPEAKING band
+         ============================================================ */
+      .speaking {
+        background: var(--paper-2);
+      }
+      .speaklist {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+        gap: 1px;
+        background: var(--paper-line);
+        border: 1px solid var(--paper-line);
+      }
+      .speak {
+        background: var(--paper);
+        padding: 1.6rem;
+      }
+      .speak .yr {
+        font-family: var(--ff-mono);
+        color: var(--ember-ink);
+        font-size: 0.8rem;
+      }
+      .speak .ev {
+        font-family: var(--ff-display);
+        font-weight: 600;
+        font-size: 1.15rem;
+        line-height: 1.1;
+        margin: 0.5rem 0 0.3rem;
+        letter-spacing: -0.01em;
+      }
+      .speak .host {
+        color: var(--text-muted);
+        font-size: 0.9rem;
+      }
+
+      /* ============================================================
+         FOOTER — closing STAGE
+         ============================================================ */
+      footer.end {
+        background: var(--ink);
+        color: var(--text-paper);
+        padding-block: clamp(4rem, 10vh, 7rem) 3rem;
+      }
+      .end__cta {
+        font-family: var(--ff-display);
+        font-weight: 800;
+        font-size: var(--step-5);
+        line-height: 0.92;
+        letter-spacing: -0.035em;
+        text-wrap: balance;
+        max-width: 16ch;
+      }
+      .end__cta a {
+        color: var(--ember-glow);
+        text-decoration: none;
+        border-bottom: 3px solid transparent;
+        transition: border-color 0.4s;
+      }
+      .end__cta a:hover {
+        border-color: var(--ember-glow);
+      }
+      .end__foot {
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        margin-top: clamp(2.5rem, 6vh, 4rem);
+        padding-top: 1.5rem;
+        border-top: 1px solid var(--ink-line);
+      }
+      .end__foot .socials {
+        display: flex;
+        gap: 1.2rem;
+      }
+      .end__foot a {
+        font-family: var(--ff-mono);
+        font-size: 0.72rem;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: var(--text-paper-muted);
+        transition: color 0.3s;
+      }
+      .end__foot a:hover {
+        color: var(--ember-glow);
+      }
+      .end__sig {
+        font-family: var(--ff-mono);
+        font-size: 0.7rem;
+        color: var(--text-paper-muted);
+        letter-spacing: 0.03em;
+      }
+
+      /* ============================================================
+         MOTION — reveals enhance an already-visible default
+         ============================================================ */
+      .js .reveal {
+        opacity: 0;
+        transform: translateY(22px);
+        transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
+      }
+      .js .reveal.in {
+        opacity: 1;
+        transform: none;
+      }
+      .js .stagger > * {
+        opacity: 0;
+        transform: translateY(18px);
+        transition: opacity 0.7s var(--ease), transform 0.7s var(--ease);
+      }
+      .js .stagger.in > * {
+        opacity: 1;
+        transform: none;
+      }
+      @media (prefers-reduced-motion: reduce) {
+        * {
+          animation: none !important;
+          transition-duration: 0.01ms !important;
+        }
+        html {
+          scroll-behavior: auto;
+        }
+        .js .reveal,
+        .js .stagger > * {
+          opacity: 1;
+          transform: none;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="site">
+      <div class="brand">clint<b>.</b></div>
+      <nav>
+        <a href="#about">01 About</a>
+        <a href="#work">02 Work</a>
+        <a href="#career">03 Career</a>
+        <a href="#refs">04 Voices</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </header>
+
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="hero__photo" role="img" aria-label="Clint Andrew Hall speaking on the TEDxRenfrewCollingwood stage"></div>
+      <div class="hero__scrim"></div>
+      <div class="hero__inner">
+        <div class="hero__meta mono">
+          <span>Technical Lead &amp; UI Engineer</span>
+          <span>Hamilton, ON</span>
+          <span>Building the web since 1998</span>
+        </div>
+        <h1>Clint <span class="light">Andrew</span> Hall</h1>
+        <p class="hero__lede">
+          I make the web beautiful — <b>on its surface and beneath</b>. Engineering leader, designer at heart, and a
+          firm believer that <b>code wins arguments</b>.
+        </p>
+        <div class="index">
+          <ol>
+            <li>
+              <a href="#about"><span class="n">01</span><span class="t">Who I am</span></a>
+            </li>
+            <li>
+              <a href="#work"><span class="n">02</span><span class="t">Selected work</span></a>
+            </li>
+            <li>
+              <a href="#career"><span class="n">03</span><span class="t">25 years, indexed</span></a>
+            </li>
+            <li>
+              <a href="#refs"><span class="n">04</span><span class="t">In their words</span></a>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABOUT -->
+    <section class="about" id="about">
+      <div class="wrap">
+        <div class="head">
+          <span class="kicker mono">01 — Who I am</span>
+          <div class="rule"></div>
+        </div>
+        <div class="about__grid">
+          <div>
+            <p class="about__lead reveal">I live for experiences. I craft them for a living, and I chase them for the fun of it.</p>
+            <div class="about__body reveal">
+              <p>
+                I'm an engineering lead and user-interface engineer with a demonstrated love for HTML, CSS and
+                JavaScript, React and its ecosystem, and the unglamorous craft underneath — semantics, web agnostics,
+                and accessibility. I'm as comfortable as a designer as an engineer, advising on the technical and the
+                aesthetic in the same breath.
+              </p>
+              <p>
+                I'm currently Tech Lead for Shared User Experience at
+                <a href="https://elastic.co">Elastic</a>, working from home in Hamilton, Ontario. Before that: Facebook
+                and Meta, Cerner, and a long tail of startups and clients. Off the clock you'll find me
+                <a href="http://themoth.org">telling a story at The Moth</a>, onstage in community theatre, building with
+                Lego, or traveling the world with my wife Olivia.
+              </p>
+            </div>
+          </div>
+          <aside class="fieldnotes reveal">
+            <div class="cap mono">Field notes</div>
+            <dl>
+              <div><dt>Based</dt><dd>Hamilton, Ontario 🇨🇦</dd></div>
+              <div><dt>From</dt><dd>Kansas City, Missouri</dd></div>
+              <div><dt>Visited</dt><dd>44 countries, and counting</dd></div>
+              <div><dt>Stages</dt><dd>TEDx · The Moth · community theatre</dd></div>
+              <div><dt>Builds</dt><dd>Lego, VR rigs, and his own desk</dd></div>
+              <div><dt>Family</dt><dd>Olivia, and two beautiful kids</dd></div>
+            </dl>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- SELECTED WORK -->
+    <section class="work" id="work">
+      <div class="wrap">
+        <div class="head">
+          <span class="kicker mono">02 — Selected work</span>
+          <div class="rule"></div>
+        </div>
+        <div class="worklist stagger">
+          <a class="work-item" href="http://metaphorical.ly/">
+            <span class="wn">01</span>
+            <span>
+              <span class="wt">Metaphorical.ly</span>
+              <span class="wd">A TEDx talk and open-source tool for explaining technology through metaphor — bridging what people believe software can do and what it actually can.</span>
+              <span class="wtags"><i>TEDx</i><i>Web</i><i>Open Source</i></span>
+            </span>
+            <span class="wthumb"><img loading="lazy" src="../public/images/portfolio/metaphorically-1-880.webp" alt="Metaphorical.ly project" /></span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="work-item" href="https://dl.acm.org/citation.cfm?id=1535654">
+            <span class="wn">02</span>
+            <span>
+              <span class="wt">The Web Bootstrapper</span>
+              <span class="wd">A patented technique for serving one site as many experiences — delivering only the resources each device needs, by the most performant means possible. Presented at the WWW Conference in Madrid.</span>
+              <span class="wtags"><i>Patent</i><i>Accessibility</i><i>Performance</i></span>
+            </span>
+            <span class="wthumb"><img loading="lazy" src="../public/images/portfolio/bootstrapper-1-880.webp" alt="Web Bootstrapper" /></span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="work-item" href="#">
+            <span class="wn">03</span>
+            <span>
+              <span class="wt">Backstrok.es</span>
+              <span class="wd">A playful NodeJS experiment built on the Swarm/Foursquare API — location, presence, and a little fun.</span>
+              <span class="wtags"><i>NodeJS</i><i>Swarm</i></span>
+            </span>
+            <span class="wthumb"><img loading="lazy" src="../public/images/portfolio/backstrokes-1-880.webp" alt="Backstrok.es" /></span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="work-item" href="#">
+            <span class="wn">04</span>
+            <span>
+              <span class="wt">Guess Friends</span>
+              <span class="wd">A Node Knockout entry — a fast, social guessing game built in 48 hours with NodeJS.</span>
+              <span class="wtags"><i>NodeJS</i><i>Node Knockout</i></span>
+            </span>
+            <span class="wthumb"><img loading="lazy" src="../public/images/portfolio/guess-friends-1-880.webp" alt="Guess Friends" /></span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="work-item" href="#">
+            <span class="wn">05</span>
+            <span>
+              <span class="wt">Event Photo Wall</span>
+              <span class="wd">A real-time photo wall for Facebook Events — NodeJS, sockets, and a lot of live images.</span>
+              <span class="wtags"><i>NodeJS</i><i>Facebook</i></span>
+            </span>
+            <span class="wthumb"><img loading="lazy" src="../public/images/portfolio/event-wall-1-880.webp" alt="Event Photo Wall" /></span>
+            <span class="arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- CAREER -->
+    <section class="career" id="career">
+      <div class="wrap">
+        <div class="head">
+          <span class="kicker mono">03 — 25 years, indexed</span>
+          <div class="rule"></div>
+        </div>
+        <div class="timeline">
+          <div class="era">
+            <div class="era__co now">
+              <span class="co">Elastic</span>
+              <span class="span">2018 — Present · Distributed</span>
+            </div>
+            <div class="roles">
+              <div class="role active">
+                <span class="role__node"></span>
+                <div>
+                  <div class="role__pos">Tech Lead, Shared User Experience</div>
+                  <div class="role__when">Dec 2021 — Present</div>
+                  <div class="role__sum">Leading a team conceived to bridge design and the many solutions across Elastic's Application Experience org — making consistency itself a product through shared components, hooks, services, and evangelism.</div>
+                  <div class="role__tags"><i>Lead</i><i>React</i><i>TypeScript</i><i>CSS</i></div>
+                </div>
+              </div>
+              <div class="role">
+                <span class="role__node"></span>
+                <div>
+                  <div class="role__pos">Area Lead, Presentation Team</div>
+                  <div class="role__when">Oct 2020 — Dec 2021</div>
+                  <div class="role__sum">Led Kibana's Presentation team — Canvas, Dashboard, and every "presentation container" — coordinating technical efforts and shipping moonshot enhancements at a larger scale.</div>
+                  <div class="role__tags"><i>Lead</i><i>React</i><i>Redux</i><i>TypeScript</i></div>
+                </div>
+              </div>
+              <div class="role">
+                <span class="role__node"></span>
+                <div>
+                  <div class="role__pos">Area Lead, Canvas — Kibana</div>
+                  <div class="role__when">Oct 2018 — Oct 2020</div>
+                  <div class="role__sum">Directed 1 major and 9 minor releases including Canvas's GA from beta; introduced TypeScript, i18n, Storybook, and architecture that stabilized a ground-breaking plugin.</div>
+                  <div class="role__tags"><i>React</i><i>Redux</i><i>TypeScript</i><i>JavaScript</i></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="era">
+            <div class="era__co">
+              <span class="co">Facebook &amp; Meta</span>
+              <span class="span">2012 — 2018 · NYC · Vancouver · Menlo Park</span>
+            </div>
+            <div class="roles">
+              <div class="role">
+                <span class="role__node"></span>
+                <div>
+                  <div class="role__pos">User Interface Engineer — NYC</div>
+                  <div class="role__when">2015 — 2018</div>
+                  <div class="role__sum">Converted Composer to React and built the Share Dialog, then rejoined Events remotely to build the new Dashboard and Permalink in Relay and XHP.</div>
+                  <div class="role__tags"><i>React</i><i>Flux</i><i>Relay</i><i>XHP</i></div>
+                </div>
+              </div>
+              <div class="role">
+                <span class="role__node"></span>
+                <div>
+                  <div class="role__pos">User Interface Engineer — Vancouver</div>
+                  <div class="role__when">2013 — 2015</div>
+                  <div class="role__sum">Brought Facebook culture to a new office; built a React messaging inbox for Protect &amp; Care and the Open Graph Share dialog for FB Platform.</div>
+                  <div class="role__tags"><i>React</i><i>XHP</i><i>JS</i><i>CSS</i></div>
+                </div>
+              </div>
+              <div class="role">
+                <span class="role__node"></span>
+                <div>
+                  <div class="role__pos">User Interface Engineer — HQ</div>
+                  <div class="role__when">2012 — 2013</div>
+                  <div class="role__sum">Joined on Mobile Core Web, then Accessibility — including a new way to "see" photos — before rewriting Events across mobile and web and reworking Platform flows like OAuth.</div>
+                  <div class="role__tags"><i>Accessibility</i><i>XHP</i><i>JS</i><i>CSS</i></div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="era">
+            <div class="era__co">
+              <span class="co">Cerner</span>
+              <span class="span">2003 — 2012 · Kansas City, MO</span>
+            </div>
+            <div class="roles">
+              <div class="role">
+                <span class="role__node"></span>
+                <div>
+                  <div class="role__pos">Web Evangelist</div>
+                  <div class="role__when">2009 — 2012</div>
+                  <div class="role__sum">Cerner's first Web Evangelist — advancing semantics, accessibility, web agnostics and the responsible use of CSS and JavaScript across teams.</div>
+                </div>
+              </div>
+              <div class="role">
+                <span class="role__node"></span>
+                <div>
+                  <div class="role__pos">Software Architect</div>
+                  <div class="role__when">2007 — 2009</div>
+                  <div class="role__sum">Invented the patented "Web Bootstrapper," inculcated a browser-agnostic philosophy, and mentored teams on accessibility and performance.</div>
+                </div>
+              </div>
+              <div class="role">
+                <span class="role__node"></span>
+                <div>
+                  <div class="role__pos">Sr. Software Engineer</div>
+                  <div class="role__when">2005 — 2007</div>
+                  <div class="role__sum">Built ePrescribing and Community Health Record UIs, and led the "New Navigation" redesign grounded in usability research.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="era">
+            <div class="era__co">
+              <span class="co">Earlier</span>
+              <span class="span">1998 — 2003</span>
+            </div>
+            <div class="roles">
+              <div class="role">
+                <span class="role__node"></span>
+                <div>
+                  <div class="role__pos">Application Developer · Sprint &amp; Accenture</div>
+                  <div class="role__when">2001 — 2003</div>
+                  <div class="role__sum">Java interfaces for billing and care platforms, architecture patterns, and test plans across telecom engagements in the US and Canada.</div>
+                </div>
+              </div>
+              <div class="role">
+                <span class="role__node"></span>
+                <div>
+                  <div class="role__pos">Intern · Symbol Technologies</div>
+                  <div class="role__when">1998 — 2001</div>
+                  <div class="role__sum">Three summers writing complete web applications for quality-control efforts — where the web habit began.</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REFERENCES -->
+    <section class="refs" id="refs">
+      <div class="wrap">
+        <div class="head">
+          <span class="kicker mono">04 — In their words</span>
+          <div class="rule"></div>
+        </div>
+        <p class="quote-lead reveal">
+          "Clint is a rare technologist — able to combine engineering, design, and product into a
+          <span class="em">cohesive vision.</span>"
+        </p>
+        <div class="refgrid stagger">
+          <figure class="ref">
+            <p>Clint is a rare technologist, able to combine software engineering, design, and product into a cohesive vision and produce world-class products with an eye for user experience. He is always pushing for ambitious projects, and his passion has a positive effect on the team around him.</p>
+            <footer>
+              <img src="../src/content/people/tim.jpg" alt="Tim Schnell" />
+              <div><div class="who">Tim Schnell</div><div class="role-t">Director of Engineering · Elastic</div></div>
+            </footer>
+          </figure>
+          <figure class="ref">
+            <p>From the moment I interviewed Clint I knew he was going to be a great addition. He solved complex problems under pressure with good humor and a cool head, encouraged junior members, and would find new technology, study it, and use it to solve a problem in the codebase. If the opportunity arose I'd hire him again.</p>
+            <footer>
+              <img src="../src/content/people/jim.jpg" alt="Jim Goodwin" />
+              <div><div class="who">Jim Goodwin</div><div class="role-t">VP of Engineering · Elastic</div></div>
+            </footer>
+          </figure>
+          <figure class="ref">
+            <p>Clint is one of the best engineers I've worked with. He is especially passionate about making products available to as many people as possible — pushing for accessibility and inclusive design, and building at a high standard while demonstrating compassion for the people who use what he builds.</p>
+            <footer>
+              <img src="../src/content/people/erik.jpg" alt="Erik Vorhes" />
+              <div><div class="who">Erik Vorhes</div><div class="role-t">Lead Software Engineer · Chegg</div></div>
+            </footer>
+          </figure>
+          <figure class="ref">
+            <p>Thoughtful and pragmatic engineer with an advanced understanding of how to scale code for future usability and performance. One of the strongest engineers I know and a great all-around person to boot. Would highly recommend Clint.</p>
+            <footer>
+              <img src="../src/content/people/naithan.jpg" alt="Naithan Jones" />
+              <div><div class="who">Naithan Jones</div><div class="role-t">Partner · Andreessen Horowitz</div></div>
+            </footer>
+          </figure>
+          <figure class="ref">
+            <p>Clint combines technical excellence with a feel for UX and the ability to lead a team of engineers to deliver consistent business outcomes. Love his empathy and focus on moving the product forward incrementally.</p>
+            <footer>
+              <img src="../src/content/people/raya.jpg" alt="Raya Fratkina" />
+              <div><div class="who">Raya Fratkina</div><div class="role-t">Director of Engineering · Elastic</div></div>
+            </footer>
+          </figure>
+          <figure class="ref">
+            <p>Clint is a powerhouse of code and collaboration. He single-handedly maintained and updated the product on web, was proactive with design, and brought good questions to round out the approach. Even remote, it felt like he was always ready to help.</p>
+            <footer>
+              <img src="../src/content/people/patrick.jpg" alt="Patrick Keenan" />
+              <div><div class="who">Patrick Keenan</div><div class="role-t">Lead Product Designer · Facebook</div></div>
+            </footer>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <!-- SPEAKING -->
+    <section class="speaking">
+      <div class="wrap">
+        <div class="head">
+          <span class="kicker mono">Selected talks &amp; recognition</span>
+          <div class="rule"></div>
+        </div>
+        <div class="speaklist">
+          <div class="speak">
+            <div class="yr mono">2014</div>
+            <div class="ev">Redefining How We See Technology</div>
+            <div class="host">TEDx RenfrewCollingwood</div>
+          </div>
+          <div class="speak">
+            <div class="yr mono">2009</div>
+            <div class="ev">Bootstrapping for Accessibility &amp; Performance</div>
+            <div class="host">W4A / WWW Conference · Madrid</div>
+          </div>
+          <div class="speak">
+            <div class="yr mono">1999</div>
+            <div class="ev">Explorations in 3D Internet Learning</div>
+            <div class="host">SIGGRAPH</div>
+          </div>
+          <div class="speak">
+            <div class="yr mono">1997</div>
+            <div class="ev">2nd Place, Arts &amp; Literature</div>
+            <div class="host">ThinkQuest · $48,000 in scholarships</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="end" id="contact">
+      <div class="wrap">
+        <div class="end__cta reveal">
+          Let's make something <a href="mailto:resume@clintandrewhall.com">worth inspecting.</a>
+        </div>
+        <div class="end__foot">
+          <div class="socials">
+            <a href="https://github.com/clintandrewhall">GitHub</a>
+            <a href="https://www.linkedin.com/in/clintandrewhall">LinkedIn</a>
+            <a href="https://twitter.com/clintandrewhall">Twitter</a>
+            <a href="mailto:resume@clintandrewhall.com">Email</a>
+          </div>
+          <div class="end__sig">Clint Andrew Hall · Code wins arguments · Hamilton, ON</div>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      document.documentElement.classList.add("js");
+      if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+        const io = new IntersectionObserver(
+          (entries) => {
+            for (const e of entries) {
+              if (e.isIntersecting) {
+                e.target.classList.add("in");
+                io.unobserve(e.target);
+              }
+            }
+          },
+          { threshold: 0.14, rootMargin: "0px 0px -8% 0px" }
+        );
+        document.querySelectorAll(".reveal, .stagger").forEach((el, i) => io.observe(el));
+
+        // stagger children
+        document.querySelectorAll(".stagger").forEach((group) => {
+          [...group.children].forEach((c, i) => {
+            c.style.transitionDelay = Math.min(i * 70, 420) + "ms";
+          });
+        });
+      } else {
+        document.querySelectorAll(".reveal, .stagger").forEach((el) => el.classList.add("in"));
+      }
+    </script>
+  </body>
+</html>

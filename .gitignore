@@ -32,3 +32,8 @@ storybook-static
 .vite
 public/images
 public/image_dimensions.json
+
+# Local AI-tooling state (machine-specific hooks and caches)
+.cursor/
+.impeccable/
+.github/hooks/
