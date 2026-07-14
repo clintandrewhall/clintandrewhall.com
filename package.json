@@ -28,7 +28,7 @@
   },
   "dependencies": {
     "@fontsource-variable/hanken-grotesk": "^5.2.8",
-    "@fontsource-variable/newsreader": "^5.2.10",
+    "@fontsource-variable/hedvig-letters-serif": "^5.2.8",
     "@linaria/atomic": "^6.3.0",
     "@react-router/node": "^7.17.0",
     "dotenv": "^17.4.2",

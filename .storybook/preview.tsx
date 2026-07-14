@@ -1,8 +1,8 @@
 import { StrictMode } from 'react';
 import type { Preview } from '@storybook/react-vite';
 import 'ress';
-import '@fontsource-variable/geist';
-import '@fontsource-variable/newsreader';
+import '@fontsource-variable/hanken-grotesk';
+import '@fontsource-variable/hedvig-letters-serif';
 import { withRouter } from 'storybook-addon-remix-react-router';
 
 const chromatic_viewports = {

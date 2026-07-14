@@ -20,7 +20,7 @@ const name = toProps(
 );
 
 const title = toProps(css`
-  ${decl.font.serif.displayBold}
+  ${decl.font.serif.display}
   ${decl.font.size.step5}
 `);
 

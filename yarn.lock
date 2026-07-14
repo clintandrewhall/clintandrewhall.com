@@ -1362,10 +1362,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource-variable/newsreader@npm:^5.2.10":
-  version: 5.2.10
-  resolution: "@fontsource-variable/newsreader@npm:5.2.10"
-  checksum: 10/895848186540b5800214a883960fc296e007126e271ce69fccd35369afe9cc085db2d4e44fefce3a24bde3001fd1785344c489b0f926c7ea426c16b857d0175d
+"@fontsource-variable/hedvig-letters-serif@npm:^5.2.8":
+  version: 5.2.8
+  resolution: "@fontsource-variable/hedvig-letters-serif@npm:5.2.8"
+  checksum: 10/491cccbd4dd084900612e8b20c5493343eb250f20ea289fb2aa8ee116ac8610b43b0b0d4dc970178627338789dd24cb9d5c2904c396b2b2a80ec91875bfac2c7
   languageName: node
   linkType: hard
 
@@ -4354,7 +4354,7 @@ __metadata:
     "@babel/preset-react": "npm:^7.29.7"
     "@babel/preset-typescript": "npm:^7.29.7"
     "@fontsource-variable/hanken-grotesk": "npm:^5.2.8"
-    "@fontsource-variable/newsreader": "npm:^5.2.10"
+    "@fontsource-variable/hedvig-letters-serif": "npm:^5.2.8"
     "@linaria/atomic": "npm:^6.3.0"
     "@linaria/postcss-linaria": "npm:^6.3.0"
     "@octokit/rest": "npm:^22.0.1"

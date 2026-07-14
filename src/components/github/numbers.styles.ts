@@ -39,7 +39,7 @@ const item = toProps(css`
 `);
 
 const number = toProps(css`
-  ${decl.font.serif.bold}
+  ${decl.font.serif.display}
   ${decl.font.size.step3}
   border-bottom: 1px solid var(${vars.color.border.separator});
   flex: 1;

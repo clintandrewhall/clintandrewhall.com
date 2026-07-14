@@ -50,13 +50,13 @@ const headerGroup = toProps(css`
 `);
 
 const title = toProps(css`
-  ${decl.font.serif.displayBold}
+  ${decl.font.serif.display}
   display: flex;
   flex-direction: column;
   width: 100%;
   font-size: ${theme.util.font.fluidSize(1.6, 5, 'step5')};
-  line-height: var(${vars.font.lineHeight.step6});
-  letter-spacing: -0.015em;
+  line-height: 1.1;
+  letter-spacing: normal;
   text-wrap: balance;
   overflow-wrap: break-word;
 

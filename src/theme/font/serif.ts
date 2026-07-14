@@ -1,17 +1,18 @@
 import { buildTheme } from '@lib/css';
 import { VAR_PREFIX_FONT_FACE_SERIF as varPrefix } from '@theme/common';
 
-import { type Weight, weight } from './weight';
+import { weight } from './weight';
 
 export const SERIF_FAMILIES = ['family'] as const;
 export type SerifFamily = (typeof SERIF_FAMILIES)[number];
 
 const families = {
-  family: `'Newsreader', ui-serif, 'Times New Roman', Times, serif`,
+  family: `'Hedvig Letters Serif', ui-serif, 'Times New Roman', Times, serif`,
 };
 
-export type SerifWeight = Extract<Weight, 'regular' | 'bold'>;
-const weights = { regular: weight.decl.regular, bold: weight.decl.bold };
+// Hedvig Letters Serif ships a single weight (400); serif hierarchy comes
+// from size, color, and the optical size axis (12–24) — never faux bold.
+const weights = { regular: weight.decl.regular };
 
 const {
   vars: familyVars,
@@ -19,8 +20,8 @@ const {
   decl: familyDecl,
 } = buildTheme<SerifFamily, string>(families, varPrefix, 'font-family');
 
-const TEXT_AXES = `font-variation-settings: "opsz" 14;`;
-const DISPLAY_AXES = `font-variation-settings: "opsz" 72;`;
+const TEXT_AXES = `font-variation-settings: "opsz" 12;`;
+const DISPLAY_AXES = `font-variation-settings: "opsz" 24;`;
 
 const compose = (w: string, axes: string) => `${familyDecl.family} ${w} ${axes}`;
 
@@ -29,9 +30,7 @@ export const serif = {
   definitions: { ...familyDefinitions },
   decl: {
     regular: compose(weights.regular, TEXT_AXES),
-    bold: compose(weights.bold, TEXT_AXES),
-    displayRegular: compose(weights.regular, DISPLAY_AXES),
-    displayBold: compose(weights.bold, DISPLAY_AXES),
+    display: compose(weights.regular, DISPLAY_AXES),
     ...familyDecl,
   },
 };

@@ -10,10 +10,10 @@ const root = toProps(css`
 `);
 
 const link = toProps(css`
-  ${decl.font.serif.bold}
+  ${decl.font.serif.display}
   ${decl.color.font.light}
   ${decl.font.size.step3}
-  letter-spacing: -1px;
+  letter-spacing: normal;
   white-space: nowrap;
 
   ${decl.media.between.comfortableAndExpanded} {

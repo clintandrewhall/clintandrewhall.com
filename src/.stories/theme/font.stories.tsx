@@ -118,15 +118,15 @@ export const FontFamliy: StoryObj = {
           ${decl.font.serif.regular}
         `}
       >
-        'Libre Baskerville', serif, Regular
+        'Hedvig Letters Serif', serif, text (opsz 12)
       </p>
       <p
         className={css`
           ${decl.font.size.step0}
-          ${decl.font.serif.bold}
+          ${decl.font.serif.display}
         `}
       >
-        'Libre Baskerville', serif, Bold
+        'Hedvig Letters Serif', serif, display (opsz 24)
       </p>
       <p
         className={css`
@@ -134,7 +134,7 @@ export const FontFamliy: StoryObj = {
           ${decl.font.sansSerif.light}
         `}
       >
-        'Montserrat Variable', sans-serif, light
+        'Hanken Grotesk', sans-serif, light
       </p>
       <p
         className={css`
@@ -142,7 +142,7 @@ export const FontFamliy: StoryObj = {
           ${decl.font.sansSerif.regular}
         `}
       >
-        'Montserrat Variable', sans-serif, regular
+        'Hanken Grotesk', sans-serif, regular
       </p>
       <p
         className={css`
@@ -150,7 +150,7 @@ export const FontFamliy: StoryObj = {
           ${decl.font.sansSerif.medium}
         `}
       >
-        'Montserrat Variable', sans-serif, medium
+        'Hanken Grotesk', sans-serif, medium
       </p>
       <p
         className={css`
@@ -158,7 +158,7 @@ export const FontFamliy: StoryObj = {
           ${decl.font.sansSerif.semiBold}
         `}
       >
-        'Montserrat Variable', sans-serif, semi-bold
+        'Hanken Grotesk', sans-serif, semi-bold
       </p>
       <p
         className={css`
@@ -166,7 +166,7 @@ export const FontFamliy: StoryObj = {
           ${decl.font.sansSerif.bold}
         `}
       >
-        'Montserrat Variable', sans-serif, bold
+        'Hanken Grotesk', sans-serif, bold
       </p>
       <p
         className={css`
@@ -174,7 +174,7 @@ export const FontFamliy: StoryObj = {
           ${decl.font.sansSerif.extraBold}
         `}
       >
-        'Montserrat Variable', sans-serif, extra-bold
+        'Hanken Grotesk', sans-serif, extra-bold
       </p>
     </div>
   ),
