@@ -6,12 +6,16 @@ const durations = {
   base: '0.25s',
   slow: '0.5s',
   slower: '1s',
+  // Cinematic entrances (hero image settle, first-load choreography).
+  entrance: '1.1s',
 };
 
 const easings = {
   standard: 'cubic-bezier(0.4, 0, 0.2, 1)',
   linear: 'ease',
   inOut: 'ease-in-out',
+  // Confident, decisive deceleration for reveals — no overshoot.
+  expo: 'cubic-bezier(0.16, 1, 0.3, 1)',
 };
 
 const duration = buildTheme(durations, VAR_PREFIX_MOTION_DURATION);

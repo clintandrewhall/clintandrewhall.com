@@ -13,7 +13,7 @@ export const StaticHero = () => {
       <img
         {...styles.image}
         src={hero.src}
-        alt="Clint Andrew Hall speaking at TEDx"
+        alt="Clint Andrew Hall mid-talk on a TEDx stage, beside a towering red X"
         decoding="async"
         fetchPriority="high"
       />

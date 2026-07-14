@@ -1355,10 +1355,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@fontsource-variable/geist@npm:^5.2.9":
-  version: 5.2.9
-  resolution: "@fontsource-variable/geist@npm:5.2.9"
-  checksum: 10/cd249dc1e60f96277b9b33f6c4626385d1337a6d3c40b659bdf49e95eabff8a38083d2c579446bdbf77a104906a9b2ba15ad98e2177accdad192dc97d06bb980
+"@fontsource-variable/hanken-grotesk@npm:^5.2.8":
+  version: 5.2.8
+  resolution: "@fontsource-variable/hanken-grotesk@npm:5.2.8"
+  checksum: 10/6c9af749c87501b0bb59d5edcf86d60b23429b86486e6185ad46b52ccb3d88851bb9bb9f1e6be3d6fd8dbbbcaaf4b092b98785e7da0b70f509f32e51b9a63f6f
   languageName: node
   linkType: hard
 
@@ -4353,7 +4353,7 @@ __metadata:
     "@babel/core": "npm:^7.29.7"
     "@babel/preset-react": "npm:^7.29.7"
     "@babel/preset-typescript": "npm:^7.29.7"
-    "@fontsource-variable/geist": "npm:^5.2.9"
+    "@fontsource-variable/hanken-grotesk": "npm:^5.2.8"
     "@fontsource-variable/newsreader": "npm:^5.2.10"
     "@linaria/atomic": "npm:^6.3.0"
     "@linaria/postcss-linaria": "npm:^6.3.0"
