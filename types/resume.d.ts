@@ -194,6 +194,15 @@ declare interface Work extends Occupation {
   key: string;
   keywords: string[];
   hideFromSite?: boolean;
+
+  /**
+   * A one-line summary of this role, used where space is tight (e.g. the home
+   * career timeline). Custom extension — the JSON Resume schema sets
+   * `additionalProperties: true`, so this validates while remaining
+   * clintandrewhall.com-specific. When absent, consumers fall back to the
+   * first sentence of {@link summary}.
+   */
+  tagline?: string;
 }
 
 declare interface Volunteer extends Occupation {

@@ -4,27 +4,30 @@ import { theme } from '@theme';
 const { decl, vars } = theme;
 
 const root = toProps(css`
-  ${decl.anchor}
-
-  --image-size: var(${vars.spacing.step5});
-  --bullet-padding: var(${vars.spacing.step1});
-  --bullet-size: calc(var(--image-size) + (var(--bullet-padding) * 2));
-
   ${decl.grid.area.full}
 
-  /* Single column: cap the measure so wide containers don't run lines long. */
-  column-count: 1;
-  column-width: revert;
-  margin-inline: auto;
-  max-width: 42rem;
+  /* Logo bullet geometry — shared by every company node on the rail. */
+  --logo-size: var(${vars.spacing.step5});
+  --bullet-padding: var(${vars.spacing.step1});
+  --bullet-size: calc(var(--logo-size) + (var(--bullet-padding) * 2));
+  --rail-x: calc(var(--bullet-size) / 2);
+
+  /* Horizontal distance from a role's content edge back to the rail — used to
+     draw each role's branch connector and dot. */
+  --rail-offset: calc((var(--bullet-size) / 2) + (var(${vars.grid.gutter}) / 2));
 
   position: relative;
+  display: flex;
+  flex-direction: column;
+
+  /* A timeline reads as a sequence: one rail, top to bottom. Cap the measure so
+     the prose never runs long; the rail widens on larger sections to give the
+     desktop two-up role rows room to breathe. */
+  margin-inline: auto;
+  max-width: 46rem;
 
   @container section (min-width: 900px) {
-    column-count: 2;
-    column-gap: var(${vars.grid.gutter});
-    column-width: calc(50% - var(${vars.grid.gutter}) / 2);
-    max-width: none;
+    max-width: 54rem;
   }
 `);
 

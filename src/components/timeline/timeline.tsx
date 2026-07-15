@@ -1,22 +1,25 @@
-import { TimelineItem, type TimelineItemProps } from './timeline_item';
+import { TimelineCompany, type TimelineCompanyProps } from './timeline_company';
 
 import styles from './timeline.styles';
 
 interface TimelineWithProp {
-  items: TimelineItemProps[];
+  companies: TimelineCompanyProps[];
 }
 
 interface TimelineWithChildren {
-  children: React.ReactElement<TimelineItemProps> | React.ReactElement<TimelineItemProps>[];
+  children: React.ReactElement<TimelineCompanyProps> | React.ReactElement<TimelineCompanyProps>[];
 }
 
 export type TimelineProps = ExclusiveUnion<TimelineWithProp, TimelineWithChildren>;
 
-const TimelineComponent = ({ children: childrenProp, items }: TimelineProps) => {
+const TimelineComponent = ({ children: childrenProp, companies }: TimelineProps) => {
   const children =
     childrenProp ??
-    items.map((item, index) => <TimelineItem key={`${item.title}_${index}`} {...item} />);
+    companies.map((company, index) => (
+      <TimelineCompany key={`${company.id}_${index}`} enterIndex={index} {...company} />
+    ));
+
   return <div {...styles.root}>{children}</div>;
 };
 
-export const Timeline = Object.assign(TimelineComponent, { Item: TimelineItem });
+export const Timeline = Object.assign(TimelineComponent, { Company: TimelineCompany });

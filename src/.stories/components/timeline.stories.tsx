@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from '@storybook/react-vite';
 
-import type { TimelineItemProps } from '@components/timeline';
+import type { TimelineCompanyProps } from '@components/timeline';
 import { Timeline as Component } from '@components/timeline';
 
 import { decorators } from '../decorators';
@@ -13,27 +13,68 @@ const meta: Meta<typeof Component> = {
 
 export default meta;
 
-type Arguments = TimelineItemProps;
-
-export const Timeline: StoryObj<Arguments> = {
-  args: {
-    title: 'Elastic',
-    subtitle: 'Tech Lead, Shared UX',
-    start: '2021-12-21',
+const companies: TimelineCompanyProps[] = [
+  {
     id: 'elastic',
-    children:
-      'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent hendrerit dui vel pulvinar interdum. Cras fermentum lorem diam, sit amet semper nisl convallis eu. In feugiat ex vel lorem hendrerit, ac viverra ex ullamcorper. Pellentesque finibus vel sem sed rhoncus.\n\nAliquam a diam efficitur, fringilla mauris euismod, ullamcorper eros. Cras efficitur id est non volutpat. Aliquam erat volutpat. Donec in ipsum id urna faucibus pellentesque at quis turpis. Etiam aliquam odio arcu, et interdum velit gravida vel. Praesent laoreet urna et sapien accumsan, ut ullamcorper mi faucibus.',
+    name: 'Elastic',
+    location: 'Distributed',
+    start: '2018-10-01',
+    roles: [
+      {
+        position: 'Tech Lead, Shared User Experience',
+        start: '2021-12-15',
+        location: 'Distributed',
+        tagline:
+          "Leading a team that bridges design and the many solutions across Elastic's Application Experience org — making consistency itself a product.",
+      },
+      {
+        position: 'Area Lead, Presentation Team',
+        start: '2020-10-12',
+        end: '2021-12-15',
+        location: 'Distributed',
+        tagline:
+          'Led Kibana’s Presentation team — Canvas, Dashboard, and every "presentation container" — at a larger scale.',
+      },
+      {
+        position: 'Area Lead, Canvas — Kibana',
+        start: '2018-10-01',
+        end: '2020-10-12',
+        location: 'Distributed',
+        tagline:
+          'Directed Canvas from beta to GA; introduced TypeScript, i18n, and Storybook to a ground-breaking plugin.',
+      },
+    ],
   },
-  render: (args: Arguments) => {
-    return (
-      <div style={{ margin: 16 }}>
-        <Component>
-          <Component.Item {...{ ...args, start: '2021-12-21' }} />
-          <Component.Item {...{ ...args, start: '2020-12-21' }} />
-          <Component.Item {...{ ...args, start: '2019-12-21' }} />
-          <Component.Item {...{ ...args, start: '2018-12-21' }} />
-        </Component>
-      </div>
-    );
+  {
+    id: 'facebook',
+    name: 'Facebook',
+    start: '2012-01-01',
+    end: '2018-06-01',
+    roles: [
+      {
+        position: 'User Interface Engineer',
+        start: '2015-04-01',
+        end: '2018-06-01',
+        location: 'New York City',
+        tagline:
+          'Converted Composer to React, built the Share Dialog, and shipped the Events Dashboard and Permalink in Relay.',
+      },
+      {
+        position: 'User Interface Engineer',
+        start: '2013-08-01',
+        end: '2015-04-01',
+        location: 'Vancouver',
+        tagline:
+          'Built a React messaging inbox for Protect & Care, and the Open Graph Share dialog for FB Platform.',
+      },
+    ],
   },
+];
+
+export const Timeline: StoryObj<typeof Component> = {
+  render: () => (
+    <div style={{ margin: 16 }}>
+      <Component companies={companies} />
+    </div>
+  ),
 };

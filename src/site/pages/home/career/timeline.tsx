@@ -1,6 +1,6 @@
 import { Section } from '@components/layout';
 import { Timeline as TimelineComponent } from '@components/timeline';
-import { useResume } from '@lib/hooks';
+import { useCareer } from '@lib/hooks';
 
 const attributes = {
   id: 'career',
@@ -10,29 +10,18 @@ const attributes = {
 };
 
 export const Timeline = () => {
-  const resume = useResume();
+  // The two most recent companies carry the story on the home page; the full
+  // history lives on the résumé.
+  const companies = useCareer(2);
 
-  if (!resume) {
+  if (!companies.length) {
     return null;
   }
-
-  const { work } = resume;
 
   return (
     <Section {...attributes}>
       <Section.Header {...attributes} />
-      <TimelineComponent
-        items={work.slice(0, 6).map((item) => ({
-          id: item.key,
-          title: item.name,
-          subtitle: item.position,
-          start: item.startDate,
-          end: item.endDate,
-          children: item.summaryHtml ? (
-            <div dangerouslySetInnerHTML={{ __html: item.summaryHtml }} />
-          ) : null,
-        }))}
-      />
+      <TimelineComponent companies={companies} />
       <Section.Link href="/resume" title="View my resume" />
     </Section>
   );

@@ -1,3 +1,4 @@
+export { type CareerCompany, type CareerRole, useCareer } from './use_career';
 export { useDimensions } from './use_dimensions';
 export { useHomeTopics } from './use_home_topics';
 export { useLogo } from './use_logos';
