@@ -54,9 +54,9 @@ const image = toProps(css`
   pointer-events: none;
 
   @media (prefers-reduced-motion: no-preference) {
+    animation: heroImageSettle var(${vars.motion.duration.entrance}) var(${vars.motion.easing.expo})
+      both;
     will-change: transform, opacity;
-    animation: heroImageSettle var(${vars.motion.duration.entrance})
-      var(${vars.motion.easing.expo}) both;
   }
 `);
 
@@ -73,7 +73,9 @@ const content = toProps(css`
   justify-content: flex-end;
   align-items: flex-start;
   gap: var(${vars.spacing.step5});
-  padding: var(${vars.spacing.step7});
+  padding-left: var(${vars.spacing.step7});
+  padding-right: var(${vars.spacing.step7});
+  padding-top: var(${vars.spacing.step7});
   padding-bottom: var(${vars.spacing.step9});
   color: var(${vars.color.font.light});
   background-image: linear-gradient(
@@ -85,8 +87,6 @@ const content = toProps(css`
   );
 
   @container hero (min-aspect-ratio: 1/1) {
-    inset: 0 0 0 min(100cqh, 50cqw);
-    justify-content: center;
     background-image: linear-gradient(
       100deg,
       transparent 0%,
@@ -94,6 +94,8 @@ const content = toProps(css`
       rgba(0, 0, 0, 0.72) 52%,
       rgba(0, 0, 0, 0.94) 74%
     );
+    inset: 0 0 0 min(100cqh, 50cqw);
+    justify-content: center;
   }
 `);
 
@@ -105,9 +107,9 @@ const socialProfiles = toProps(css`
   }
 
   @media (prefers-reduced-motion: no-preference) {
-    will-change: transform, opacity;
     animation: heroRiseIn var(${vars.motion.duration.slow}) var(${vars.motion.easing.expo}) both;
     animation-delay: 0.5s;
+    will-change: transform, opacity;
   }
 `);
 

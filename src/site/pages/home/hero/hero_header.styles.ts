@@ -107,8 +107,8 @@ const linkList = toProps(
     /* On phones the two labels won't sit side by side without crowding the
        edge, so stack them full-width — bigger touch targets, no overflow. */
     ${decl.media.lessThan.comfortable} {
-      flex-direction: column;
       align-items: stretch;
+      flex-direction: column;
       gap: var(${vars.spacing.step3});
     }
   `,
@@ -142,11 +142,11 @@ const ctaPrimary = css`
   &:focus {
     background-color: var(${vars.color.background.accent});
     border-color: var(${vars.color.background.accent});
-    color: var(${vars.color.font.light});
-    filter: brightness(1.14);
     box-shadow:
       rgba(0, 0, 0, 0.32) 0px 4px 12px,
       rgba(0, 0, 0, 0.22) 0px 10px 28px;
+    color: var(${vars.color.font.light});
+    filter: brightness(1.14);
     transform: translateY(-1px);
   }
 

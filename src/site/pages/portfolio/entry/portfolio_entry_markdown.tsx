@@ -10,8 +10,10 @@ export const PortfolioEntryMarkdown = ({ html: __html }: PortfolioEntryMarkdownP
   }
 
   return (
-    <Layout {...styles.root}>
-      <div {...styles.markdown} dangerouslySetInnerHTML={{ __html }} />
-    </Layout>
+    <div {...styles.root}>
+      <Layout>
+        <div {...styles.markdown} dangerouslySetInnerHTML={{ __html }} />
+      </Layout>
+    </div>
   );
 };

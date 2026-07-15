@@ -9,6 +9,26 @@
       "autoPort": false
     },
     {
+      "name": "dev-b",
+      "runtimeExecutable": "yarn",
+      "runtimeArgs": ["dev", "--port", "5181"],
+      "port": 5181,
+      "autoPort": false
+    },
+    {
+      "name": "scratchpad",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": [
+        "-m",
+        "http.server",
+        "4173",
+        "-d",
+        "/private/tmp/claude-501/-Users-clint-Projects-clintandrewhall-com/159732d5-cb76-4e99-8a53-cdb9739c1500/scratchpad"
+      ],
+      "port": 4173,
+      "autoPort": false
+    },
+    {
       "name": "storybook",
       "runtimeExecutable": "yarn",
       "runtimeArgs": ["storybook", "--no-open", "-p", "6006"],
