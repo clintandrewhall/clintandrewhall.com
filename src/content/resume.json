@@ -1,9 +1,9 @@
 {
-  "$schema": "https://raw.githubusercontent.com/jsonresume/resume-schema/v1.2.1/schema.json",
+  "$schema": "https://cdn.jsdelivr.net/npm/@jsonresume/schema@1.7.0/schema.json",
   "basics": {
     "name": "Clint Andrew Hall",
-    "summary": "I'm an Engineering Lead and User Interface Engineer.  I work to make the web beautiful, both on its surface and beneath.\n\nI'm a demonstrated expert in HTML, CSS and JavaScript, React/Flux/Relay, and more.  I specialize in techniques promoting web agnostics, semantics, and accessibility.  I'm comfortable with varying levels of skill in any web full stack, having written and maintained production code in JS, PHP, Java and Ruby-on-Rails.  I currently prefer React+Node or React Native for most of my personal projects.\n\nI'm a regular consumer and occasional contributor to open source projects and client APIs.  If I have a suggestion for a website or application, I prefer to demonstrate the idea using an API rather than just describe it-- Code Wins Arguments.\n\nI look for opportunities where I can make strong, direct and meaningful contributions to a team, to users and to the web. I'm comfortable functioning as both designer and engineer, advising on both the technical and aesthetic.  I'm affable and good-natured, yet results-driven and competitive.  I have extensive experience working remotely, particularly during my time at Facebook and Elastic.",
-    "label": "Technical Lead and User Interface Engineer",
+    "summary": "I'm a Principal Engineer and engineering leader focused on user interfaces. I work to make the web beautiful, both on its surface and beneath.\n\nToday I help steer Global UX at Elastic: the EUI design system, Shared UX, and the cross-cutting experiences every Elastic application is built on. I set technical direction across teams, coordinate work that spans organizations, and still ship significant code myself — from TypeScript and React architecture down to the CSS and accessibility details most people never see.\n\nI'm at my best where design and engineering meet. I respect designers' craft and build alongside them, and when I have an idea I'd rather prove it with a working demo than describe it — code wins arguments.\n\nI'm affable and good-natured, yet results-driven and competitive, and I've led and worked within distributed teams for more than a decade, at Facebook and at Elastic.",
+    "label": "Principal Engineer & Tech Lead — UI, Design Systems & Accessibility",
     "image": "https://www.gravatar.com/avatar/302764dcbe429cbf873064a2b8653da4.jpg?s=200",
     "email": "resume@clintandrewhall.com",
     "location": {
@@ -43,24 +43,86 @@
   },
   "awards": [
     {
-      "type": "nomination",
       "awarder": "KC/ACTF",
       "title": "Irene Ryan Acting Scholarship",
-      "event": "KC/ACTF Region V Conference",
       "date": "2001-05-01",
-      "summary": "Three-time nominee for excellence in Acting."
+      "summary": "Three-time nominee for excellence in Acting.",
+      "custom": {
+        "type": "nomination",
+        "event": "KC/ACTF Region V Conference"
+      }
     },
     {
-      "type": "award",
       "awarder": "ThinkQuest",
       "title": "2nd Place - Arts and Literature",
-      "event": "ThinkQuest 1997",
-      "url": "https://web.archive.org/web/20140822164240/http://library.thinkquest.org/10502/",
       "date": "1997-10-01",
-      "summary": "Created \"Shakey's Place\", a website about Shakespeare featuring a 3D Globe Theatre. Placed Second in Arts and Literature category totaling $48,000 in scholarships. Team Leader, designed interface and 3D graphics, programmed Perl 5 scripts, designed HTML layout."
+      "summary": "Created \"Shakey's Place\", a website about Shakespeare featuring a 3D Globe Theatre. Placed Second in Arts and Literature category totaling $48,000 in scholarships. Team Leader, designed interface and 3D graphics, programmed Perl 5 scripts, designed HTML layout.",
+      "custom": {
+        "type": "award",
+        "event": "ThinkQuest 1997",
+        "url": "https://web.archive.org/web/20140822164240/http://library.thinkquest.org/10502/"
+      }
     }
   ],
   "certificates": [],
+  "custom": {
+    "principles": [
+      {
+        "statement": "Code wins arguments.",
+        "detail": "When I wanted to prove every Kibana illustration could theme itself from a single file, I didn't write a proposal — I built the proof-of-concept. A working demo ends the debate.",
+        "proof": {
+          "label": "See the proof-of-concept",
+          "href": "/portfolio/adaptive-illustrations"
+        }
+      },
+      {
+        "statement": "No wall between design and engineering.",
+        "detail": "I respect and expect designers' craft, and I build alongside them. My team at Elastic was built to bridge design and engineering — turning consistency across our products into shared infrastructure, not a handoff over a fence.",
+        "proof": { "label": "Elastic's design system", "href": "https://eui.elastic.co" }
+      },
+      {
+        "statement": "The web is for everyone.",
+        "detail": "Semantics, keyboard paths, and screen-reader support aren't a checklist I bolt on at the end — they're where I start. This site included.",
+        "proof": { "label": "Read the source", "href": "https://github.com/clintandrewhall" }
+      },
+      {
+        "statement": "AI is a tool, not a magician.",
+        "detail": "Years ago I gave a TEDx talk on why technology sold as “magic” leaves people worse off. AI is no exception: I direct it, review every line, and own the result. The judgment stays mine.",
+        "proof": { "label": "My TEDx talk", "href": "/portfolio/metaphorically" }
+      }
+    ],
+    "resume": {
+      "summary": "Principal Engineer and Tech Lead focused on UI architecture, design systems and accessibility. Sets technical direction for Elastic's EUI design system and Shared UX while still shipping significant code, bridging design and engineering by proving ideas with working code.",
+      "omit": ["sag"],
+      "companies": {
+        "elastic": {
+          "highlights": [
+            "One of two Tech Leads for Elastic's Application Experience org, directing Global UX: the EUI design system, Shared UX, and Search and ML experiences.",
+            "Co-founded the Shared UX team to make consistency across Elastic's solutions a product: shared components, services and application chrome.",
+            "Co-created the Kibana Workspace proof-of-concept, funded as a cross-team project and the reference for Kibana's new Workspace Chrome layout and visual refresh.",
+            "Designed the developer API and session model for EUI's Flyout System (EUI v111), now used by Kibana Core and across Discover, APM, SLOs and Alerting.",
+            "Built Content List, a composable replacement for Kibana's listing pages; migrated Graph, Maps and Annotations, and another team adopted it independently.",
+            "Shipped @kbn/one-navigation, letting other Elastic web apps reuse Kibana's navigation, and AI Assistant iconography adopted by Observability, Search and Security.",
+            "As Area Lead, took Kibana Canvas from beta to GA over ten releases, then led the Presentation team; introduced TypeScript, i18n and Storybook to Canvas."
+          ]
+        },
+        "facebook": {
+          "highlights": [
+            "Rebuilt Facebook Events on the web: a new Events Dashboard in Relay and Permalink across desktop and mobile web.",
+            "Converted the Composer to React and built the new Share Dialog on top of it.",
+            "Built a React messaging inbox for the Help Center and the Open Graph Share dialog for Facebook Platform.",
+            "Improved accessibility for screen-reader users, including a new way to “see” photos; rebuilt OAuth dialogs and social plugins for developers."
+          ]
+        },
+        "cerner": {
+          "highlights": [
+            "Cerner's first Web Evangelist, advising product teams on semantics, accessibility, progressive enhancement and responsible use of CSS and JavaScript.",
+            "Invented the Web Bootstrapper, a patented technique that lets one semantic site adapt to any device; presented it at WWW and W4A."
+          ]
+        }
+      }
+    }
+  },
   "education": [
     {
       "studyType": "BS",
@@ -73,9 +135,9 @@
   ],
   "interests": [],
   "meta": {
-    "canonical": "https://raw.githubusercontent.com/jsonresume/resume-schema/master/resume.json",
-    "version": "v1.0.0",
-    "lastModified": "2022-04-25T00:00:00.000Z"
+    "canonical": "https://raw.githubusercontent.com/clintandrewhall/clintandrewhall.com/main/src/content/resume.json",
+    "version": "v1.4.0",
+    "lastModified": "2026-10-26T00:00:00.000Z"
   },
   "projects": [
     {
@@ -83,7 +145,7 @@
       "type": "conference",
       "entity": "TEDx RenfrewCollingwood",
       "roles": ["speaker"],
-      "description": "I was invited to speak at TEDxRenfrewCollingwood about using metaphors to explain technology, to “bridge the gap” between what people believe software can do, and what it actually can do.  I created an open-source website called metaphorical.ly where anyone could create a technology metaphor.",
+      "summary": "I was invited to speak at TEDxRenfrewCollingwood about using metaphors to explain technology, to “bridge the gap” between what people believe software can do, and what it actually can do.  I created an open-source website called metaphorical.ly where anyone could create a technology metaphor.",
       "startDate": "2014-10-01",
       "endDate": "2014-10-01",
       "highlights": [],
@@ -95,7 +157,7 @@
       "type": "conference",
       "entity": "International Cross-Disciplinary Conference on Web Accessibility",
       "roles": ["speaker"],
-      "description": "I wrote a paper and delivered a talk about my findings using the Web Bootstrapper at Cerner in Madrid, Spain.",
+      "summary": "I wrote a paper and delivered a talk about my findings using the Web Bootstrapper at Cerner in Madrid, Spain.",
       "startDate": "2009-04-20",
       "endDate": "2009-04-20",
       "url": "https://dl.acm.org/citation.cfm?id=1535654"
@@ -105,7 +167,7 @@
       "type": "conference",
       "entity": "18th International World Wide Web Conference",
       "roles": ["speaker"],
-      "description": "I delivered a talk on the Web Bootstrapper I developed at Cerner at the WWW Conference in Madrid, Spain.",
+      "summary": "I delivered a talk on the Web Bootstrapper I developed at Cerner at the WWW Conference in Madrid, Spain.",
       "startDate": "2009-04-20",
       "endDate": "2009-04-20",
       "url": "http://www2009.wwwconference.org/developers.html"
@@ -115,7 +177,7 @@
       "type": "conference",
       "entity": "SIGGRAPH",
       "roles": ["speaker"],
-      "description": "I was a speaker in the 'Playground' and 'Classroom' discussing the success of my 1997 and 1998 ThinkQuest websites, which used 3D graphics combined with Internet technology to teach difficult subjects to students of all ages.",
+      "summary": "I was a speaker in the 'Playground' and 'Classroom' discussing the success of my 1997 and 1998 ThinkQuest websites, which used 3D graphics combined with Internet technology to teach difficult subjects to students of all ages.",
       "startDate": "1999-03-03",
       "endDate": "1999-03-03",
       "url": "https://www.siggraph.org/s99/media/news/rel4.html"
@@ -123,158 +185,250 @@
   ],
   "publications": [
     {
-      "title": "Web Presentation Layer Bootstrapping for Accessibility and Performance",
+      "name": "Web Presentation Layer Bootstrapping for Accessibility and Performance",
       "publisher": "W4A",
       "releaseDate": "2009-04-20",
       "url": "https://dl.acm.org/citation.cfm?id=1535654.1535671",
-      "summary": "In this paper, I present a the Web Bootstrapper, a technique that allows a developer to write a single site while still providing multiple experiences, or \"skins,\" without altering source or running costly client-side code. It is a process by which an accurate collection of only those static resources and metadata necessary for a unique experience be delivered passively, by the most performant means possible."
+      "summary": "In this paper, I present the Web Bootstrapper, a technique that allows a developer to write a single site while still providing multiple experiences, or \"skins,\" without altering source or running costly client-side code. It is a process by which an accurate collection of only those static resources and metadata necessary for a unique experience be delivered passively, by the most performant means possible."
     }
   ],
   "references": [
     {
       "name": "Tim Schnell",
-      "image": "tim",
-      "title": "Director of Engineering at Elastic",
-      "connection": "Tim managed Clint directly",
-      "timestamp": 1651032000,
-      "reference": "Clint is a rare technologist, able to combine software engineering, design, and product into a cohesive vision and produce world-class products with an eye for user experience. I have had the pleasure of working directly with Clint at Elastic, building out the Canvas and Dashboard tools within Kibana. During our time working together I was always impressed by Clint's ability to turn ideas into code. Clint is always pushing for ambitious projects and his passion for the work has a positive effect on the team around him. I always appreciated his ability to simplify complex problems and create clarity for those around him. Clint is truly an asset to any group that he works with."
+      "relationship": "Tim managed Clint directly",
+      "date": "2022-04-27",
+      "reference": "Clint is a rare technologist, able to combine software engineering, design, and product into a cohesive vision and produce world-class products with an eye for user experience. I have had the pleasure of working directly with Clint at Elastic, building out the Canvas and Dashboard tools within Kibana. During our time working together I was always impressed by Clint's ability to turn ideas into code. Clint is always pushing for ambitious projects and his passion for the work has a positive effect on the team around him. I always appreciated his ability to simplify complex problems and create clarity for those around him. Clint is truly an asset to any group that he works with.",
+      "custom": {
+        "image": "tim",
+        "title": "Director of Engineering at Elastic"
+      }
     },
     {
       "name": "Raya Fratkina",
-      "image": "raya",
-      "title": "Director of Engineering at Elastic",
-      "connection": "Raya managed Clint directly",
-      "timestamp": 1650999316,
-      "reference": "Clint combines technical excellence with a feel for UX and ability to lead a team of engineers to deliver consistent business outcomes. It has been amazing working with him and watching him build and grow his team. Love his empathy and focus on outcomes and moving the product forward incrementally."
+      "relationship": "Raya managed Clint directly",
+      "date": "2022-04-26",
+      "reference": "Clint combines technical excellence with a feel for UX and ability to lead a team of engineers to deliver consistent business outcomes. It has been amazing working with him and watching him build and grow his team. Love his empathy and focus on outcomes and moving the product forward incrementally.",
+      "custom": {
+        "image": "raya",
+        "title": "Director of Engineering at Elastic"
+      }
     },
     {
       "name": "Jim Goodwin",
-      "image": "jim",
-      "title": "Vice President of Engineering at Elastic",
-      "connection": "Jim managed Clint directly",
-      "timestamp": 1650917334,
-      "reference": "From the moment I interviewed Clint I knew he was going to be a great addition to the team. Throughout my time working with Clint he came up with creative and useful solutions. He encouraged and supported more junior members of the team. He solved complex problems under pressure with good humor and a cool head. His knowledge was impressive and always growing, he would find new technology, study it and share it and often solve a problem in the codebase with it. He's also a kind, smart and fun person to work with. If the opportunity arose I'd hire him again."
+      "relationship": "Jim managed Clint directly",
+      "date": "2022-04-25",
+      "reference": "From the moment I interviewed Clint I knew he was going to be a great addition to the team. Throughout my time working with Clint he came up with creative and useful solutions. He encouraged and supported more junior members of the team. He solved complex problems under pressure with good humor and a cool head. His knowledge was impressive and always growing, he would find new technology, study it and share it and often solve a problem in the codebase with it. He's also a kind, smart and fun person to work with. If the opportunity arose I'd hire him again.",
+      "custom": {
+        "image": "jim",
+        "title": "Vice President of Engineering at Elastic"
+      }
     },
     {
       "name": "Erik Vorhes",
-      "image": "erik",
-      "title": "Lead Software Engineer at Chegg",
-      "connection": "Clint worked with Erik in different groups at Facebook",
-      "timestamp": 1536902621,
-      "quote": "Clint is one of the best engineers I've worked with. He is especially passionate about making products available to as many people as possible — not only in terms of pushing for accessibility best practices and for inclusive design, but also in making sure to make things available to people whose devices aren't the latest and greatest devices and whose internet connections are suboptimal. Clint is capable of building things quickly and at a high standard of excellence while also demonstrating compassion for the people who use the things he builds."
+      "relationship": "Clint worked with Erik in different groups at Facebook",
+      "date": "2018-09-14",
+      "reference": "Clint is one of the best engineers I've worked with. He is especially passionate about making products available to as many people as possible — not only in terms of pushing for accessibility best practices and for inclusive design, but also in making sure to make things available to people whose devices aren't the latest and greatest devices and whose internet connections are suboptimal. Clint is capable of building things quickly and at a high standard of excellence while also demonstrating compassion for the people who use the things he builds.",
+      "custom": {
+        "image": "erik",
+        "title": "Lead Software Engineer at Chegg"
+      }
     },
     {
       "name": "Patrick Keenan",
-      "image": "patrick",
-      "title": "Lead Product Designer: Facebook Local App",
-      "connection": "Clint worked with Patrick on the same team at Facebook",
-      "timestamp": 1526342400,
-      "reference": "Clint is a powerhouse of code and collaboration. He single handedly maintained and updated the product on web, refactoring when appropriate. He was proactive in working with design and also brought good questions to help round out the approach. Even in a remote office, it felt like he was always ready to help out."
+      "relationship": "Clint worked with Patrick on the same team at Facebook",
+      "date": "2018-05-15",
+      "reference": "Clint is a powerhouse of code and collaboration. He single handedly maintained and updated the product on web, refactoring when appropriate. He was proactive in working with design and also brought good questions to help round out the approach. Even in a remote office, it felt like he was always ready to help out.",
+      "custom": {
+        "image": "patrick",
+        "title": "Lead Product Designer: Facebook Local App"
+      }
     },
     {
       "name": "Freddy Gottesman",
-      "image": "freddy",
-      "title": "Director of Product Manager at Meta",
-      "connection": "Clint worked with Freddy in the same group at Meta",
-      "timestamp": 1526601600,
-      "reference": "Clint is a motivated and creative engineer with exceptional product sense. In my time working with him I was impressed by his ability to identify a user problem, design a solution and then implement the code to make it happen."
+      "relationship": "Clint worked with Freddy in the same group at Meta",
+      "date": "2018-05-18",
+      "reference": "Clint is a motivated and creative engineer with exceptional product sense. In my time working with him I was impressed by his ability to identify a user problem, design a solution and then implement the code to make it happen.",
+      "custom": {
+        "image": "freddy",
+        "title": "Director of Product Management at Meta"
+      }
     },
     {
       "name": "Jacob McDaniel",
-      "image": "jacob",
-      "title": "Sr. Experience Designer at HomeAway",
-      "connection": "Jacob worked with Clint, but at different companies",
-      "timestamp": 1526515200,
-      "reference": "Hands down, Clint is by far one of the most intelligent engineers I have had the opportunity of working near. As an experience designer working with an engineer, building the most intuitive and functionally sound experience is critical. Clint brings a different perspective to the table and isn't afraid to get his hands dirty. He has an incredible capability of asking comprehensive questions to understand the requirements and data for building the appropriate solution. If given the opportunity in the future to work with Clint, I would sprint versus walk."
+      "relationship": "Jacob worked with Clint, but at different companies",
+      "date": "2018-05-17",
+      "reference": "Hands down, Clint is by far one of the most intelligent engineers I have had the opportunity of working near. As an experience designer working with an engineer, building the most intuitive and functionally sound experience is critical. Clint brings a different perspective to the table and isn't afraid to get his hands dirty. He has an incredible capability of asking comprehensive questions to understand the requirements and data for building the appropriate solution. If given the opportunity in the future to work with Clint, I would sprint versus walk.",
+      "custom": {
+        "image": "jacob",
+        "title": "Sr. Experience Designer at HomeAway"
+      }
     },
     {
       "name": "Naithan Jones",
-      "image": "naithan",
-      "title": "Partner at Andreessen Horowitz",
-      "connection": "Naithan worked with Clint but at different companies",
-      "timestamp": 1526256000,
-      "reference": "Clint worked as an consulting engineer on the initial build of my first venture backed product. Thoughtful and pragmatic engineer with advanced understanding of how to scale code for future usability and performance. One of the strongest engineers I know and a great all around person to boot. Would highly recommend Clint."
+      "relationship": "Naithan worked with Clint but at different companies",
+      "date": "2018-05-14",
+      "reference": "Clint worked as an consulting engineer on the initial build of my first venture backed product. Thoughtful and pragmatic engineer with advanced understanding of how to scale code for future usability and performance. One of the strongest engineers I know and a great all around person to boot. Would highly recommend Clint.",
+      "custom": {
+        "image": "naithan",
+        "title": "Partner at Andreessen Horowitz"
+      }
     },
     {
       "name": "David Cacioppo",
-      "image": "david",
-      "title": "President/CEO of emfluence",
-      "connection": "David was a client of Clint's",
-      "timestamp": 1317081600,
-      "reference": "Clint delivers on what he says he will and brings great ideas to the table. If you get the opportunity to work with Clint, bring him in early in the concept phase of your project. Odds are, he will have input that makes your project better."
+      "relationship": "David was a client of Clint's",
+      "date": "2011-09-27",
+      "reference": "Clint delivers on what he says he will and brings great ideas to the table. If you get the opportunity to work with Clint, bring him in early in the concept phase of your project. Odds are, he will have input that makes your project better.",
+      "custom": {
+        "image": "david",
+        "title": "President/CEO of emfluence"
+      }
     },
     {
       "name": "Scott Ackerson",
-      "image": "scott",
-      "title": "Vice President at Cerner Corporation",
-      "connection": "Scott managed Clint directly at Cerner",
-      "timestamp": 1316995200,
-      "reference": "Clint Hall embodies all that is web. His code, ideas and passion for all things web extend past his professional career into his social and personal life. He is un-conventional only in the fact that he is ahead of the thought leadership and natural curve of web developers. He also has a certain social adeptness that garners many opportunities for him and those around him."
+      "relationship": "Scott managed Clint directly at Cerner",
+      "date": "2011-09-26",
+      "reference": "Clint Hall embodies all that is web. His code, ideas and passion for all things web extend past his professional career into his social and personal life. He is un-conventional only in the fact that he is ahead of the thought leadership and natural curve of web developers. He also has a certain social adeptness that garners many opportunities for him and those around him.",
+      "custom": {
+        "image": "scott",
+        "title": "Vice President at Cerner Corporation"
+      }
     },
     {
       "name": "Bo Fishback",
-      "image": "bo",
-      "title": "CEO of Zaarly, Inc",
-      "connection": "Bo worked with Clint, but at different companies",
-      "timestamp": 1315785600,
-      "reference": "Clint is a great guy to work with. He's a sharp, curious, problem solver and has both a deep knowledge base to draw from and an impressive capacity to learn quickly and apply new skills. I've had the chance to work with him on multiple occasions at multiple different companies and have been impressed at every turn."
+      "relationship": "Bo worked with Clint, but at different companies",
+      "date": "2011-09-12",
+      "reference": "Clint is a great guy to work with. He's a sharp, curious, problem solver and has both a deep knowledge base to draw from and an impressive capacity to learn quickly and apply new skills. I've had the chance to work with him on multiple occasions at multiple different companies and have been impressed at every turn.",
+      "custom": {
+        "image": "bo",
+        "title": "CEO of Zaarly, Inc"
+      }
     }
   ],
-  "skills": [],
+  "skills": [
+    {
+      "name": "Languages",
+      "keywords": ["TypeScript", "JavaScript", "HTML", "CSS"]
+    },
+    {
+      "name": "Frameworks & tools",
+      "keywords": ["React", "Redux", "Relay", "Node", "Storybook"]
+    },
+    {
+      "name": "Focus",
+      "keywords": ["Accessibility", "Design Systems", "Engineering Leadership"]
+    }
+  ],
   "volunteer": [],
   "work": [
     {
-      "key": "elastic",
+      "name": "Elastic",
+      "position": "Principal Engineer & Tech Lead, Application Experience",
+      "location": "Distributed, Amer",
+      "summary": "A June 2026 reorganization named me one of two Tech Leads for Elastic's Application Experience organization, with my focus on Global UX.  Global UX brings together the Shared UX and Elastic User Interface (EUI) teams with our Search experiences and Machine Learning (ML) UX — the shared foundation and cross-cutting experiences that the rest of the org's solutions are built on.\n\nI lead this group through a technology lens: setting technical direction across its teams, coordinating projects that span organizations, and consulting with the other tech leaders across Application Experience and the wider company.  As a Principal Engineer I also contribute significant and moonshot work directly, and continue to champion consistency, accessibility, and a durable design system as the foundation for every Elastic application.",
+      "startDate": "2026-06-24",
+      "keywords": [
+        "Lead",
+        "Principal",
+        "React",
+        "TypeScript",
+        "CSS",
+        "Design Systems",
+        "Accessibility"
+      ],
+      "custom": {
+        "key": "elastic",
+        "tagline": "My scope grew with the reorg — one of two Tech Leads under Application Experience, now steering a broader Global UX: Shared UX, EUI, Search experiences, and ML UX."
+      },
+      "highlights": [
+        "[kibana/268796](https://github.com/elastic/kibana/pull/268796): Leading the move of Kibana's listing pages to Content List — Graph, Maps and Annotations migrated so far, with the Alerting v2 team adopting it independently."
+      ]
+    },
+    {
+      "name": "Elastic",
+      "position": "Principal Engineer & Tech Lead, Global Experience",
+      "location": "Distributed, Amer",
+      "summary": "Global Experience is the umbrella for the common experiences across Kibana — home pages, application chrome, content navigation, and the shared components every Elastic application starts from.  It comprises two teams: the Elastic User Interface (EUI) — a design system of patterns and guidelines embodying the Elastic brand, paired with the component library that follows them — and Shared UX, the group of product, design, and engineering specialists making consistency in Kibana a product by providing common UX infrastructure like chrome, modals, and state management.\n\nI lead Global Experience through a technology lens as its Tech Lead, and was named Principal Engineer along the way.  I coordinate technical efforts across the group, represent it across Kibana and the wider Application Experience organization, and consult with tech leaders throughout Elastic.  Our scope spans navigation, layout and the home page, shared components, accessibility, the EUI design system, and the platform's file and ML/AI-connector experiences.",
+      "startDate": "2022-10-18",
+      "endDate": "2026-06-24",
+      "keywords": [
+        "Lead",
+        "Principal",
+        "React",
+        "TypeScript",
+        "CSS",
+        "Design Systems",
+        "Accessibility"
+      ],
+      "custom": {
+        "key": "elastic",
+        "tagline": "Principal Engineer for Global Experience — the umbrella over EUI and Shared UX, owning the chrome, navigation, and design system every Elastic app is built on."
+      },
+      "highlights": [
+        "[kibana/212002](https://github.com/elastic/kibana/pull/212002): Co-built the Kibana Workspace proof-of-concept that was ratified into a funded, cross-team Workspace Chrome project; its phase-2 exploration ([kibana/235808](https://github.com/elastic/kibana/pull/235808)) became the reference for the sidebar and visual-refresh epics.",
+        "[kibana/242734](https://github.com/elastic/kibana/pull/242734): Created `@kbn/one-navigation`, an external package that lets other Elastic web apps share Kibana's navigation.",
+        "[eui/8939](https://github.com/elastic/eui/pull/8939): Authored the developer API and session model for EUI's Flyout System, shipped in EUI v111 and now used through Kibana Core's `openSystemFlyout` and across Discover, APM, SLOs and Alerting.",
+        "[kibana/247778](https://github.com/elastic/kibana/pull/247778): Designed Content List, a composable replacement for Kibana's monolithic `TableListView` listing pages.",
+        "[kibana/203879](https://github.com/elastic/kibana/pull/203879): Created the shared AI Assistant icon, avatar and beacon components, adopted across Observability, Search and Security.",
+        "Founded Horizons, Global Experience's bottom-up R&D track for exploratory work like theme-adaptive illustrations, code sharing between web apps, and visual regression testing."
+      ]
+    },
+    {
       "name": "Elastic",
       "position": "Tech Lead, Shared User Experience",
       "location": "Distributed, Amer",
-      "tagline": "Leading a team that bridges design and the many solutions across Elastic's Application Experience org — making consistency itself a product.",
       "summary": "I'm the Tech Lead for Shared User Experience (UX) for the Application Experience organization at Elastic.  The team was conceived by myself and other leaders to bridge the gap between design and the myriad of solutions that comprise our Application Experience organization.  Our mission is to make consistency across our solutions a product.  My role is leading the team through a technology lens, coordinating projects, and consulting with other tech leaders across Elastic.\n\nMy team is responsible for creating, maintaining and supporting shared UX infrastructure, like components, hooks and services.  We also promote patterns from our design organizations, fostering adoption through evangelism and codifying them in our infrastructure.  We're also responsible for unique UX solutions, driving our projects across organizations, and consulting with teams to deliver consistent experiences.",
       "startDate": "2021-12-15",
-      "keywords": ["Lead", "React", "Typescript", "CSS"]
+      "endDate": "2022-10-18",
+      "keywords": ["Lead", "React", "TypeScript", "CSS"],
+      "custom": {
+        "key": "elastic",
+        "tagline": "Leading a team that bridges design and the many solutions across Elastic's Application Experience org — making consistency itself a product."
+      }
     },
     {
-      "key": "elastic",
       "name": "Elastic",
       "position": "Area Lead, Presentation Team",
       "location": "Distributed, Amer",
-      "tagline": "Led Kibana's Presentation team — Canvas, Dashboard, and every \"presentation container\" — at a larger scale.",
-      "summary": "The Kibana organization created a new team-- Presentation-- responsible for [Canvas](https://www.elastic.co/what-is/kibana-canvas), [Dashboard](https://www.elastic.co/kibana/kibana-dashboard), and any other product considered a \"presentation container\".  I became the Area Lead for this new team, coordinating efforts between these products and the rest of Kibana.  I continued my previous responsibilites, this time on a larger scale: overseeing and coordinating technical efforts, representing the team across the org, and contributing significant or moonshot enhancements.",
+      "summary": "The Kibana organization created a new team — Presentation — responsible for [Canvas](https://www.elastic.co/what-is/kibana-canvas), [Dashboard](https://www.elastic.co/kibana/kibana-dashboard), and any other product considered a \"presentation container\".  I became the Area Lead for this new team, coordinating efforts between these products and the rest of Kibana.  I continued my previous responsibilities, this time on a larger scale: overseeing and coordinating technical efforts, representing the team across the org, and contributing significant or moonshot enhancements.",
       "startDate": "2020-10-12",
       "endDate": "2021-12-15",
-      "keywords": ["Lead", "React", "Redux", "Typescript", "Javascript", "CSS"],
+      "keywords": ["Lead", "React", "Redux", "TypeScript", "JavaScript", "CSS"],
       "highlights": [
         "[kibana/51318](https://github.com/elastic/kibana/issues/51318): Coordinated completion of \"Time to Visualize\".",
         "[kibana/88112](https://github.com/elastic/kibana/pull/88112): Plugin Services abstraction and shared component library.",
         "[kibana/95435](https://github.com/elastic/kibana/pull/95435): \"Labs\" service for enabling experimental projects.",
         "[kibana/102446](https://github.com/elastic/kibana/pull/102446): New Canvas Homepage",
         "[kibana/103202](https://github.com/elastic/kibana/pull/103202): Convert Canvas to use Service Abstractions API"
-      ]
+      ],
+      "custom": {
+        "key": "elastic",
+        "tagline": "Led Kibana's Presentation team — Canvas, Dashboard, and every \"presentation container\" — at a larger scale."
+      }
     },
     {
-      "key": "elastic",
       "name": "Elastic",
-      "position": "Area Lead, Canvas - Kibana",
+      "position": "Area Lead, Kibana Canvas",
       "location": "Distributed, US",
-      "tagline": "Directed Canvas from beta to GA; introduced TypeScript, i18n, and Storybook to a ground-breaking plugin.",
       "summary": "In October of 2018, I accepted a role with [Elastic](https://www.elastic.co) to work on [Kibana](https://www.elastic.co/kibana), specifically a new, ground-breaking beta plugin called [Canvas](https://www.elastic.co/what-is/kibana-canvas).  Soon after, I was named the new Area Lead.  I was responsible for overseeing and coordinating our technical efforts, representing the team across the org, and contributing significant or moonshot enhancements.\n\nDuring my tenure I directed project efforts for 1 major and 9 minor releases, including the General Availability (GA) release of Canvas from beta.  I introduced a number of technologies and architecture approaches that stabilized and enhanced the plugin, and oversaw migration of valuable bespoke technology to the Kibana ecosystem, (e.g. [`expressions`](https://www.elastic.co/guide/en/kibana/current/kibana-expressions-plugin.html)).",
       "startDate": "2018-10-01",
       "endDate": "2020-10-12",
-      "keywords": ["Lead", "React", "Redux", "Typescript", "Javascript", "CSS"],
+      "keywords": ["Lead", "React", "Redux", "TypeScript", "JavaScript", "CSS"],
       "highlights": [
         "[kibana/31734](https://github.com/elastic/kibana/pull/31734): Significant React performance investigation.",
         "[kibana/35087](https://github.com/elastic/kibana/pull/35087): Introduced Typescript.",
         "[kibana/36252](https://github.com/elastic/kibana/pull/36252): Introduced internationalization architecture.",
         "[kibana/38850](https://github.com/elastic/kibana/pull/38850): Introduced [Storybook](https://storybook.js.org) for rapid development and testing.",
         "[kibana/46278](https://github.com/elastic/kibana/pull/46278): Built novel means of embedding Canvas Workpads."
-      ]
+      ],
+      "custom": {
+        "key": "elastic",
+        "tagline": "Directed Canvas from beta to GA; introduced TypeScript, i18n, and Storybook to a ground-breaking plugin."
+      }
     },
     {
-      "key": "facebook",
       "name": "Facebook",
       "position": "User Interface Engineer",
       "location": "New York City, NY, USA",
-      "tagline": "Converted Composer to React, built the Share Dialog, and shipped the Events Dashboard and Permalink in Relay.",
       "summary": "When I first moved to the NYC Facebook office, I joined the Composer team for a \"hack-a-quarter\", converting the Composer to React, and then worked on the Share Dialog.\n\nEventually Events found themselves with a large number of React and Relay projects, so I rejoined my former team remotely. I built the new Events Dashboard and Permalink, and implemented many \"under the hood\" improvements.",
       "startDate": "2015-04-01",
       "endDate": "2018-06-01",
@@ -284,16 +438,18 @@
         "New Events Dashboard for the mobile site in XHP.",
         "New Events Permalink for all web surfaces in XHP.",
         "New React + Flux Composer, and the new Share Dialog using that component.",
-        "New 'Minutiae' controls-- the structured data (Photos, Activity, Tags) found in Composer."
-      ]
+        "New 'Minutiae' controls — the structured data (Photos, Activity, Tags) found in Composer."
+      ],
+      "custom": {
+        "key": "facebook",
+        "tagline": "Converted Composer to React, built the Share Dialog, and shipped the Events Dashboard and Permalink in Relay."
+      }
     },
     {
-      "key": "facebook",
       "name": "Facebook",
       "position": "User Interface Engineer",
       "location": "Vancouver, BC, Canada",
-      "tagline": "Built a React messaging inbox for Protect & Care, and the Open Graph Share dialog for FB Platform.",
-      "summary": "In 2013 I joined the Vancouver office with an amazing cadre of engineers from all over the world. With a Canadian fiance, it made sense for me to bring Facebook experience (and culture) to a group of \"n00bs\".\n\nWhile there, I worked on the Protect and Care team developing a new Messaging Inbox built in React. I also implemented the Open Graph Share dialog for FB Platform in XHP.",
+      "summary": "In 2013 I joined Facebook's new Vancouver office, bringing Facebook experience and culture to a team of engineers from all over the world.\n\nThere I worked on the Protect and Care team, building a new Help Center messaging inbox in React, and implemented the Open Graph Share dialog for FB Platform in XHP.",
       "startDate": "2013-08-01",
       "endDate": "2015-04-01",
       "keywords": ["XHP", "HTML", "JS", "CSS"],
@@ -301,14 +457,16 @@
         "New Help Center Inbox for desktop in React.",
         "New \"How-to\" panels for the Help Center.",
         "New Platform Share Dialog for mobile and desktop in XHP."
-      ]
+      ],
+      "custom": {
+        "key": "facebook",
+        "tagline": "Built a React messaging inbox for Protect & Care, and the Open Graph Share dialog for FB Platform."
+      }
     },
     {
-      "key": "facebook",
       "name": "Facebook",
       "position": "User Interface Engineer",
       "location": "Menlo Park, CA, USA",
-      "tagline": "Joined on Mobile Core Web and Accessibility — including a new way to \"see\" photos — before rewriting Events across web.",
       "summary": "I joined Facebook in 2012 as a User Interface Engineer (UIE) on the Mobile Core Web team.  I then joined the Accessibility team to help make Facebook more useful to everyone on the web.\n\nAfter several hackathons involving Events, I joined the team full time to rewrite the web experiences on both the mobile and main website.\n\nAfterwards, I spent some time with the Platform team, reworking a number of different web flows, like OAuth, and embeddable components like Share, Hashtags and Topics.",
       "startDate": "2012-01-01",
       "endDate": "2013-08-01",
@@ -319,10 +477,13 @@
         "New mobile web experience for the Events Dashboard and Permalink.",
         "Improved the Accessibility of Facebook, including a new way to \"see\" photos.",
         "New core components for mobile web for product teams."
-      ]
+      ],
+      "custom": {
+        "key": "facebook",
+        "tagline": "Joined on Mobile Core Web and Accessibility — including a new way to \"see\" photos — before rewriting Events across web."
+      }
     },
     {
-      "key": "cerner",
       "name": "Cerner Corporation",
       "position": "Web Evangelist",
       "location": "Kansas City, MO, USA",
@@ -332,13 +493,16 @@
       "keywords": [],
       "highlights": [
         "New OpenID SDK for the iPhone.",
-        "Redesigned a semantic search servive to use JSON-P",
-        "\"Proscenium\", an experimental technique of compiling templates in JS libaries for isomorphic rendering.",
+        "Redesigned a semantic search service to use JSON-P",
+        "\"Proscenium\", an experimental technique of compiling templates in JS libraries for isomorphic rendering.",
         "Spoke about Progressive Enhancement as a necessary philosophy."
-      ]
+      ],
+      "custom": {
+        "key": "cerner",
+        "tagline": "Cerner's first Web Evangelist — advising teams across the company on semantics, accessibility, and the responsible use of CSS and JavaScript."
+      }
     },
     {
-      "key": "sag",
       "name": "Socially Adept Geek, LLC",
       "position": "Principal Architect",
       "location": "Kansas City, MO, USA",
@@ -346,25 +510,31 @@
       "startDate": "2010-10-01",
       "endDate": "2012-01-01",
       "keywords": [],
-      "highlights": []
+      "highlights": [],
+      "custom": {
+        "key": "sag",
+        "tagline": "Independent consultancy delivering code, strategy and advice for clients' web projects."
+      }
     },
     {
-      "key": "cerner",
       "name": "Cerner Corporation",
       "position": "Software Architect",
       "location": "Kansas City, MO, USA",
-      "summary": "For a several years I was a Software Architect for Healthe, enforcing cross-browser compatibility, semantic markup and accessibility, developing CSS layouts and advanced JavaScript controls, and conducting platform research.  I would also prototype HTML code based on paper designs, allowing the team to communicate intent to clients, stakeholders, usability and engineers.",
+      "summary": "For several years I was a Software Architect for Healthe, enforcing cross-browser compatibility, semantic markup and accessibility, developing CSS layouts and advanced JavaScript controls, and conducting platform research.  I would also prototype HTML code based on paper designs, allowing the team to communicate intent to clients, stakeholders, usability and engineers.",
       "startDate": "2007-01-01",
       "endDate": "2009-10-01",
       "keywords": [],
       "highlights": [
-        "Inculcated a comprehensive browser-agnostic web philosophy, massively improving accessibility, portability and performance.",
+        "Championed a comprehensive browser-agnostic web philosophy, massively improving accessibility, portability and performance.",
         "Invented the 'Web Bootstrapper', a patented technology that allowed semantic web pages to adapt to the heuristics of any device, dynamically.",
         "Consultant and mentor to teams and engineers on web technology and development."
-      ]
+      ],
+      "custom": {
+        "key": "cerner",
+        "tagline": "Invented the patented Web Bootstrapper and set a browser-agnostic web practice for Healthe, improving accessibility, portability and performance."
+      }
     },
     {
-      "key": "cerner",
       "name": "Cerner Corporation",
       "position": "Sr. Software Engineer",
       "location": "Kansas City, MO, USA",
@@ -376,10 +546,13 @@
         "Proposed and built the \"New Navigation\" project, which was a radical redesign of the UI based on usability studies and feedback from sales.",
         "Novel architecture pattern discarding JSPs in favor of full modules of aggregate presentation components, adding entire workflows to any WAR using standard J2EE and Struts configurations.",
         "Mentored software engineers and other architects in semantic markup practices and prudent Javascript."
-      ]
+      ],
+      "custom": {
+        "key": "cerner",
+        "tagline": "Proposed and built a usability-driven redesign of the ePrescribing and Community Health Record interfaces."
+      }
     },
     {
-      "key": "cerner",
       "name": "Cerner Corporation",
       "position": "Application Developer",
       "location": "Kansas City, MO, USA",
@@ -388,12 +561,15 @@
       "endDate": "2005-01-01",
       "keywords": [],
       "highlights": [
-        "Reusable, component-based rendering system which resulted in an 80% reduction in markup in JPSs, as well as sharing between solutions.",
+        "Reusable, component-based rendering system which resulted in an 80% reduction in markup in JSPs, as well as sharing between solutions.",
         "Subject matter expert for most presentation layer technologies, and reviewed most of that code from my (and other) teams.  I ended up teaching a few courses for new associates."
-      ]
+      ],
+      "custom": {
+        "key": "cerner",
+        "tagline": "Built a reusable, component-based rendering system for Order Management that cut JSP markup by 80%."
+      }
     },
     {
-      "key": "sprint",
       "name": "Sprint",
       "position": "Application Developer II",
       "location": "Overland Park, KS, USA",
@@ -401,10 +577,12 @@
       "startDate": "2003-06-01",
       "endDate": "2003-10-01",
       "keywords": [],
-      "highlights": []
+      "highlights": [],
+      "custom": {
+        "key": "sprint"
+      }
     },
     {
-      "key": "accenture",
       "name": "Accenture",
       "position": "Outsourced Analyst",
       "location": "Overland Park, KS, USA",
@@ -416,10 +594,12 @@
         "At a Wireless Telecom engagement, I wrote web-based Java interfaces for a customer care billing platform.",
         "At a Long Distance Telecom engagement, I was on-call and responsible for monitoring load balance and processing time on switches using SQL.",
         "At a Broadband Telecom engagement, I created test plans for development teams across the US and Canada."
-      ]
+      ],
+      "custom": {
+        "key": "accenture"
+      }
     },
     {
-      "key": "symbol",
       "name": "Symbol Technologies",
       "position": "Intern",
       "location": "Holtsville, NY, USA",
@@ -427,7 +607,10 @@
       "startDate": "1998-01-01",
       "endDate": "2001-01-01",
       "keywords": [],
-      "highlights": []
+      "highlights": [],
+      "custom": {
+        "key": "symbol"
+      }
     }
   ]
 }

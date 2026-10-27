@@ -37,3 +37,6 @@ public/image_dimensions.json
 .cursor/
 .impeccable/
 .github/hooks/
+
+.claude/worktrees/
+.redesign

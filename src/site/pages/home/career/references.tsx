@@ -27,12 +27,14 @@ export const References = () => {
 
   const people: Record<string, React.ReactNode> = {};
 
-  references.forEach(({ connection, image, name, reference, title }, index) => {
-    if (connection && image && name && reference && title) {
+  references.forEach(({ custom, name, reference, relationship }, index) => {
+    const { image, title } = custom ?? {};
+
+    if (relationship && image && name && reference && title) {
       people[index] = (
         <Person
           key={index}
-          {...{ quote: reference, imageKey: image, name, title, subtitle: connection }}
+          {...{ quote: reference, imageKey: image, name, title, subtitle: relationship }}
         />
       );
     }

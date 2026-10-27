@@ -10,7 +10,7 @@ export const HeroHeader = () => {
           <span {...styles.titleLine(0)}>I make the web beautiful,</span>
           <span {...styles.titleLine(1)}>on its surface and beneath.</span>
         </h1>
-        <p {...styles.subtitle}>Technical Lead &amp; Senior UI Engineer</p>
+        <p {...styles.subtitle}>I'm a Technical Lead &amp; UX Engineer.</p>
       </hgroup>
       <ul {...styles.linkList}>
         <li {...styles.linkItem}>

@@ -49,24 +49,26 @@ const firstSentence = (summary: string) => {
 
 /**
  * Groups a flat, role-per-entry work history into company nodes, keyed by the
- * shared logo `key`. Roles sort newest-first; company span and locations are
- * derived. Entries flagged `hideFromSite` are dropped.
+ * shared logo `custom.key`. Roles sort newest-first; company span and locations
+ * are derived. Entries flagged `custom.hideFromSite` are dropped.
  */
 export const groupWorkByCompany = (work: Work[]): CareerCompany[] => {
   const order: string[] = [];
   const byKey = new Map<string, Work[]>();
 
   for (const entry of work) {
-    if (entry.hideFromSite) {
+    const { key, hideFromSite } = entry.custom;
+
+    if (hideFromSite) {
       continue;
     }
 
-    if (!byKey.has(entry.key)) {
-      byKey.set(entry.key, []);
-      order.push(entry.key);
+    if (!byKey.has(key)) {
+      byKey.set(key, []);
+      order.push(key);
     }
 
-    byKey.get(entry.key)!.push(entry);
+    byKey.get(key)!.push(entry);
   }
 
   const companies = order.map((key): CareerCompany => {
@@ -95,7 +97,7 @@ export const groupWorkByCompany = (work: Work[]): CareerCompany[] => {
         start: role.startDate,
         end: role.endDate,
         location: city(role.location),
-        tagline: role.tagline ?? firstSentence(role.summary),
+        tagline: role.custom.tagline ?? firstSentence(role.summary),
       })),
     };
   });

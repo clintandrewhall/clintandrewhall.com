@@ -33,6 +33,9 @@ declare interface Resume {
   /** Professional skills. */
   skills?: Skill[];
 
+  /** clintandrewhall.com-specific data; see {@link ResumeCustom}. */
+  custom?: ResumeCustom;
+
   /** List of languages one speaks. */
   languages?: Language[];
 
@@ -47,6 +50,77 @@ declare interface Resume {
 
   /** The schema version and any other tooling configuration lives here. */
   meta: Meta;
+}
+
+/*
+ * CUSTOMIZATIONS FOR clintandrewhall.com
+ *
+ * JSON Resume 1.7 reserves a `custom` object — at the top level and on every
+ * item — for data with no standard field yet. Themes don't render it, and tools
+ * preserve it unchanged. Everything site-specific lives there, un-namespaced:
+ * this site is the file's only consumer.
+ */
+
+/** Top-level custom data. */
+declare interface ResumeCustom {
+  /** Point-of-view statements — "what I believe" — surfaced in the About section. */
+  principles?: Principle[];
+
+  /** Copy for the printable résumé (PDF), kept apart from the site's narrative. */
+  resume?: ResumeDocument;
+}
+
+/** Print-résumé copy: a short summary and outcome-first bullets per company. */
+declare interface ResumeDocument {
+  /** Two-to-three sentence summary under the name. */
+  summary?: string;
+
+  /** Company keys ({@link WorkCustom.key}) to leave off the printed résumé. */
+  omit?: string[];
+
+  /** Achievement bullets per company key, replacing per-role summaries in print. */
+  companies?: Record<string, { highlights: string[] }>;
+}
+
+/** Per-role custom data for a {@link Work} entry. */
+declare interface WorkCustom {
+  /** Logo key shared across a company's roles; groups roles into one company node. */
+  key: string;
+
+  /** Drop this role from the site while keeping it in the résumé. */
+  hideFromSite?: boolean;
+
+  /**
+   * A one-line summary of this role, used where space is tight (e.g. the home
+   * career timeline). When absent, consumers fall back to the first sentence of
+   * {@link Work.summary}.
+   */
+  tagline?: string;
+}
+
+/** Custom data for an {@link Award}. */
+declare interface AwardCustom {
+  /** Whether this was won outright or a nomination. */
+  type?: 'award' | 'nomination';
+
+  /** The competition or conference the award was given at, e.g. "ThinkQuest 1997". */
+  event?: string;
+
+  /** Link to the award or the winning work. */
+  url?: string;
+}
+
+/** Custom data for a {@link Reference}. */
+declare interface ReferenceCustom {
+  /** Key of the referee's portrait image. */
+  image?: string;
+
+  /**
+   * The referee's title when they wrote the reference, e.g. "Partner at
+   * Andreessen Horowitz". Not {@link Reference.organization}, which is where
+   * you worked together.
+   */
+  title?: string;
 }
 
 /** Basic information of an individual.  */
@@ -190,19 +264,11 @@ declare interface Work extends Occupation {
   /** Accomplishments achieved during the position. */
   highlights?: string[];
 
-  /* CUSTOMIZATIONS FOR clintandrewhall.com */
-  key: string;
+  /** Skills, tools or technologies used in this role, e.g. React. */
   keywords: string[];
-  hideFromSite?: boolean;
 
-  /**
-   * A one-line summary of this role, used where space is tight (e.g. the home
-   * career timeline). Custom extension — the JSON Resume schema sets
-   * `additionalProperties: true`, so this validates while remaining
-   * clintandrewhall.com-specific. When absent, consumers fall back to the
-   * first sentence of {@link summary}.
-   */
-  tagline?: string;
+  /** clintandrewhall.com-specific data. */
+  custom: WorkCustom;
 }
 
 declare interface Volunteer extends Occupation {
@@ -253,6 +319,9 @@ declare interface Award {
 
   /** e.g. Received for my work with Quantum Physics */
   summary?: string;
+
+  /** clintandrewhall.com-specific data. */
+  custom?: AwardCustom;
 }
 
 declare interface Certificate {
@@ -305,6 +374,24 @@ declare interface Skill {
   keywords?: string[];
 }
 
+/**
+ * A point-of-view statement. Custom extension for clintandrewhall.com — see
+ * {@link ResumeCustom.principles}.
+ */
+declare interface Principle {
+  /** The conviction, stated plainly (e.g. "Code wins arguments."). */
+  statement: string;
+
+  /** Substantiating prose — how the conviction shows up in real work. */
+  detail: string;
+
+  /** Optional link to concrete proof (a portfolio piece, a repo, an artifact). */
+  proof?: {
+    label: string;
+    href: string;
+  };
+}
+
 /** Fluency of a language. */
 declare interface Language {
   /**
@@ -345,11 +432,30 @@ declare interface Reference {
    * nothing. */
   reference?: string;
 
-  /* CUSTOMIZATIONS FOR clintandrewhall.com */
-  image?: string;
-  title?: string;
-  connection?: string;
-  timestamp?: number;
+  /**
+   * How the referee knows you.
+   *
+   * For example: Manager, Peer, Client, Thesis advisor
+   */
+  relationship?: string;
+
+  /**
+   * Where you worked together.
+   *
+   * For example: Pied Piper
+   */
+  organization?: string;
+
+  /** When the reference was given, e.g. 2022-04-27. */
+  date?: string;
+
+  /**
+   * Show "available on request" rather than publishing the reference.
+   */
+  availableOnRequest?: boolean;
+
+  /** clintandrewhall.com-specific data. */
+  custom?: ReferenceCustom;
 }
 
 /**
@@ -368,6 +474,14 @@ declare interface Project extends Occupation {
    * A short summary of project.
    *
    * For example: Collated works of 2017.
+   */
+  summary?: string;
+
+  /**
+   * Deprecated alias of {@link summary}, kept for compatibility; when both are
+   * set, `summary` wins.
+   *
+   * @deprecated Use {@link summary}.
    */
   description?: string;
 
